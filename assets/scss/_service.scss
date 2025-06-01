@@ -1,0 +1,290 @@
+/* service page - start
+==================================================================================================== */
+
+/* service section - start */
+.service_section {
+	&.bg_gray {
+		background-color: #f5f6fa;
+	}
+}
+/* service section - end */
+
+
+/* service grid - start */
+.service_grid {
+	max-width: 370px;
+	margin: 50px auto 0px;
+	.item_image {
+		overflow: hidden;
+		position: relative;
+	}
+	.item_content {
+		z-index: 1;
+		max-width: 330px;
+		padding: 40px 35px;
+		position: relative;
+		text-align: center;
+		margin: -40px auto 0px;
+		background-color: #ffffff;
+		&.bg_gray {
+			background-color: #f5f6fa;
+		}
+	}
+	.bg_icon {
+		top: 50%;
+		left: 50%;
+		z-index: -1;
+		opacity: 0.04;
+		max-width: 155px;
+		position: absolute;
+		transform: translate(-50%, -50%);
+	}
+
+	.item_title {
+		line-height: 1;
+		font-size: 22px;
+		font-weight: 500;
+		margin-bottom: 12px;
+	}
+
+	p {
+		margin: 0px;
+		line-height: 1.867;
+	}
+
+	.icon_btn {
+		top: -20px;
+		right: 15px;
+		z-index: 2;
+		width: 40px;
+		height: 40px;
+		color: #ffffff;
+		font-size: 13px;
+		line-height: 42px;
+		position: absolute;
+		background-color: $default_yellow;
+		&:before {
+			background: $default_orange;
+		}
+	}
+	&:hover {
+		.icon_btn {
+			&:before {
+				left: 0px;
+				width: 100%;
+				right: auto;
+			}
+		}
+	}
+}
+/* service grid - end */
+
+
+/* service grid 2 - start */
+.service_grid_2 {
+	max-width: 570px;
+	margin: 30px auto 0px;
+	background-color: #f5f6fa;
+	.item_image {
+		display: block;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.item_content_wrap {
+		padding: 60px 50px 68px;
+	}
+	.item_icon {
+		float: left;
+		width: 90px;
+		height: 90px;
+		line-height: 92px;
+		margin-right: 30px;
+		text-align: center;
+		border-radius: 100%;
+	}
+	.item_content {
+		display: table;
+	}
+	.item_title {
+		line-height: 1;
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+}
+/* service grid 2 - end */
+
+
+/* service boxed - start */
+.service_boxed {
+	max-width: 270px;
+	padding: 45px 35px;
+	margin: 30px auto 0px;
+	.item_icon {
+		height: 80px;
+		display: flex;
+		align-items: center;
+		margin-bottom: 27px;
+		justify-content: center;
+	}
+
+	.item_title {
+		line-height: 1;
+		font-size: 22px;
+		margin-bottom: 15px;
+	}
+	p {
+		margin-bottom: 18px;
+		color: $default_black;
+	}
+
+	.text_btn {
+		span {
+			&:before {
+				background: $default_black;
+			}
+		}
+		i {
+			color: $default_black;
+		}
+	}
+
+	&.text-white {
+		p,
+		.item_title {
+			color: #ffffff;
+		}
+		.text_btn {
+			span {
+				color: #ffffff;
+				&:before {
+					background: #ffffff;
+				}
+			}
+			i {
+				color: #ffffff;
+			}
+		}
+	}
+}
+/* service boxed - end */
+
+
+/* service list layout boxed - start */
+.service_listlayout_boxed {
+	display: flex;
+	max-width: 570px;
+	padding: 50px 55px;
+	align-items: center;
+	margin: 30px auto 0px;
+	background-color: #ffffff;
+	.item_image {
+		float: left;
+		max-width: 140px;
+		min-width: 140px;
+		overflow: hidden;
+		margin-right: 30px;
+		border-radius: 100%;
+	}
+	.item_content {
+		display: table;
+	}
+	.item_title {
+		line-height: 1;
+		font-size: 22px;
+		margin-bottom: 15px;
+	}
+	p {
+		margin-bottom: 15px;
+	}
+	.text_btn {}
+}
+/* service list layout boxed - end */
+
+
+/* service split - start */
+.service_split {
+	max-width: 590px;
+	margin: 0px auto;
+	.item_image,
+	.item_content {
+		width: 50%;
+		float: left;
+		display: inline-block;
+	}
+	.item_image {
+		display: flex;
+		height: 330px;
+		img {
+			object-fit: cover;
+		}
+	}
+
+	.service_boxed {
+		margin: 0px;
+		max-width: 100%;
+		padding: 48.5px 35px;
+	}
+}
+/* service split - end */
+
+
+/* service card - start */
+.service_card {
+	max-width: 370px;
+	margin: 30px auto 0px;
+	.item_image {
+		display: block;
+		overflow: hidden;
+		position: relative;
+		>img {
+			transition: $default_transition;
+		}
+	}
+	&:hover {
+		.item_image {
+			>img {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	.item_content {
+		z-index: 2;
+		max-width: 320px;
+		position: relative;
+		padding: 25px 30px;
+		padding-right: 75px;
+		margin: -30px auto 0px;
+		background-color: #ffffff;
+	}
+
+	.item_type {
+		display: block;
+		line-height: 1;
+		font-size: 15px;
+		margin-bottom: 10px;
+		color: $default_orange;
+		font-family: $secondary_font;
+	}
+
+	.item_title {
+		line-height: 1;
+		font-size: 20px;
+	}
+
+	.icon_btn {
+		top: 50%;
+		right: 30px;
+		width: 45px;
+		height: 45px;
+		font-size: 14px;
+		line-height: 47px;
+		position: absolute;
+		transform: translateY(-50%);
+	}
+}
+/* service card - end */
+
+/* service page - end
+==================================================================================================== */
