@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Build output
+dist/
+build/
+*.log
+
+# Cache and temporary files
+.cache/
+tmp/
+temp/
+*.tmp 
