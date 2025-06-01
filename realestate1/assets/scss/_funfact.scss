@@ -1,0 +1,76 @@
+/* funfact - start
+==================================================================================================== */
+
+/* funfact section - start */
+.funfact_wrap {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	background-color: #ffffff;
+}
+.funfact_item {
+	flex: 0 0 25%;
+	max-width: 25%;
+	display: flex;
+	min-height: 335px;
+	padding: 50px 30px;
+	align-items: center;
+	justify-content: center;
+	&:not(:last-child) {
+		border-right: 1px solid #ececec;
+	}
+	.item_icon {
+		width: 110px;
+		height: 110px;
+		display: flex;
+		align-items: center;
+		margin: 0px auto 30px;
+		justify-content: center;
+		border: 1px solid #dfdfdf;
+		span {
+			width: 80px;
+			height: 80px;
+			display: flex;
+			color: #ffffff;
+			font-size: 30px;
+			align-items: center;
+			justify-content: center;
+			&.bg_default_yellow {
+				color: $default_black;
+			}
+		}
+	}
+	.counte_text {
+		display: block;
+		line-height: 1;
+		font-size: 35px;
+		font-weight: 500;
+		margin-bottom: 14px;
+		color: $default_black;
+		font-family: $heading_font;
+	}
+	.item_title {
+		line-height: 1;
+		font-size: 15px;
+		font-weight: 500;
+		margin-bottom: 0px;
+		color: $default_color;
+		font-family: $body_font;
+	}
+}
+
+.funfact_bordered {
+	background-color: transparent;
+	border-left: 1px solid #ececec;
+	border-right: 1px solid #ececec;
+	.funfact_item {
+		display: flex;
+		min-height: 465px;
+		align-items: center;
+		justify-content: center;
+	}
+}
+/* funfact section - start */
+
+/* funfact - end
+==================================================================================================== */

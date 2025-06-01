@@ -1,0 +1,152 @@
+/* Main Styles */
+@charset "UTF-8";
+
+/* Base styles */
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #6c757d;
+    --text-color: #333333;
+    --light-bg: #f8f9fa;
+}
+
+/* Typography */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Utility Classes */
+.mb_30 { margin-bottom: 30px; }
+.mb_60 { margin-bottom: 60px; }
+.mt-4 { margin-top: 1.5rem; }
+.w-100 { width: 100%; }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Header Styles */
+.header_section {
+    background: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.sticky_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Mobile Menu Styles */
+.mobile_menu_btn {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Brand Logo */
+.brand_logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Section Styles */
+.section_title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.small_title {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.big_title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Product Cards */
+.product_card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.product_card:hover {
+    transform: translateY(-5px);
+}
+
+.item_image img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.item_content {
+    padding: 1.5rem;
+}
+
+.item_title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.item_price {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .big_title {
+        font-size: 2rem;
+    }
+    
+    .product_card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Animation Classes */
+.wow {
+    visibility: hidden;
+}
+
+.fadeInUp {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

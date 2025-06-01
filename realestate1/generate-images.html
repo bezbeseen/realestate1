@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate A-Frame Images</title>
+</head>
+<body>
+    <h1>A-Frame Image Generator</h1>
+    <div id="output"></div>
+
+    <script>
+        // Image configurations
+        const images = [
+            // Main product images
+            { name: 'standard.jpg', title: 'Standard A-Frame Sign', type: 'product' },
+            { name: 'custom.jpg', title: 'Custom A-Frame Sign', type: 'product' },
+            { name: 'deluxe.jpg', title: 'Deluxe A-Frame Sign', type: 'product' },
+            { name: 'premium.jpg', title: 'Premium A-Frame Sign', type: 'product' },
+            
+            // Thumbnail images
+            { name: 'standard-thumb.jpg', title: 'Standard', type: 'thumb' },
+            { name: 'custom-thumb.jpg', title: 'Custom', type: 'thumb' },
+            { name: 'deluxe-thumb.jpg', title: 'Deluxe', type: 'thumb' },
+            { name: 'premium-thumb.jpg', title: 'Premium', type: 'thumb' },
+            
+            // Package images
+            { name: 'package-standard.jpg', title: 'Standard Package', type: 'package' },
+            { name: 'package-custom.jpg', title: 'Custom Package', type: 'package' },
+            { name: 'package-deluxe.jpg', title: 'Deluxe Package', type: 'package' },
+            { name: 'package-premium.jpg', title: 'Premium Package', type: 'package' },
+            { name: 'package-bulk.jpg', title: 'Bulk Package', type: 'package' }
+        ];
+
+        // Image dimensions
+        const dimensions = {
+            product: { width: 800, height: 600 },
+            thumb: { width: 100, height: 75 },
+            package: { width: 400, height: 300 }
+        };
+
+        // Colors
+        const colors = {
+            background: '#f8f9fa',
+            frame: '#e9ecef',
+            text: '#6c757d'
+        };
+
+        function generateImage(config) {
+            const { width, height } = dimensions[config.type];
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+
+            // Background
+            ctx.fillStyle = colors.background;
+            ctx.fillRect(0, 0, width, height);
+
+            // A-Frame shape
+            ctx.fillStyle = colors.frame;
+            const frameWidth = width * 0.6;
+            const frameHeight = height * 0.8;
+            const x = (width - frameWidth) / 2;
+            const y = height * 0.1;
+            
+            ctx.beginPath();
+            ctx.moveTo(x + frameWidth/2, y);
+            ctx.lineTo(x, y + frameHeight);
+            ctx.lineTo(x + frameWidth, y + frameHeight);
+            ctx.closePath();
+            ctx.fill();
+
+            // Text
+            ctx.fillStyle = colors.text;
+            ctx.font = `${config.type === 'thumb' ? '12' : '24'}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(config.title, width/2, height/2);
+
+            // Create download link
+            const link = document.createElement('a');
+            link.download = config.name;
+            link.href = canvas.toDataURL('image/jpeg', 0.9);
+            link.textContent = `Download ${config.name}`;
+            link.className = 'download-link';
+            document.getElementById('output').appendChild(link);
+            document.getElementById('output').appendChild(document.createElement('br'));
+        }
+
+        // Generate all images
+        images.forEach(config => {
+            generateImage(config);
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .download-link {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 5px 10px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .download-link:hover {
+            background: #0056b3;
+        }
+    </style>
+</body>
+</html> 

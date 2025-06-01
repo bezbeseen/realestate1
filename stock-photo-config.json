@@ -1,0 +1,226 @@
+{
+    "business-cards": {
+        "gallery": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "business card mockup stationery",    
+                    "collections": ["8961162", "1417351"]
+                }
+            },
+            "premium_sources": {
+                "spot_uv": {
+                    "source": "Adobe Stock",
+                    "search_terms": "luxury business cards spot UV coating",  
+                    "requirements": "Show contrast between matte and glossy areas"
+                },
+                "gold_foil": {
+                    "source": "Adobe Stock",
+                    "search_terms": "gold foil business cards luxury",
+                    "requirements": "Show metallic reflection on dark background"
+                },
+                "embossed": { 
+                    "source": "Adobe Stock",
+                    "search_terms": "embossed business cards white raised",
+                    "requirements": "Side-lit photos showing raised texture"
+                }
+            }
+        },
+        "products": {
+            "free_sources": { 
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "business card design stack",
+                    "collections": ["8961162"]
+                }
+            }
+        }
+    },
+    "real-estate-signs": {
+        "gallery": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "real estate sign property",
+                    "collections": ["8961162"]
+                }
+            },
+            "premium_sources": {
+                "installed": {
+                    "source": "Adobe Stock",
+                    "search_terms": "professional real estate sign installation",
+                    "requirements": "Show sign in real environment"
+                }
+            }
+        },
+        "products": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "real estate signage professional",
+                    "collections": ["8961162"]
+                }
+            }
+        }
+    },
+    "banners": {
+        "gallery": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "vinyl banner display advertising",
+                    "collections": ["8961162"]
+                }
+            },
+            "premium_sources": {
+                "outdoor": {
+                    "source": "Adobe Stock",
+                    "search_terms": "outdoor vinyl banner installation",
+                    "requirements": "Show durability and scale"
+                }
+            }
+        },
+        "products": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "banner printing display",
+                    "collections": ["8961162"]
+                }
+            }
+        }
+    },
+    "presentation-folders": {
+        "gallery": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "presentation folder corporate branding",
+                    "collections": ["8961162"]
+                }
+            },
+            "premium_sources": {
+                "spot_uv": {
+                    "source": "Adobe Stock",
+                    "search_terms": "luxury presentation folder spot UV",
+                    "requirements": "Show professional finish and branding"
+                }
+            }
+        },
+        "products": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "corporate folder design",
+                    "collections": ["8961162"]
+                }
+            }
+        }
+    },
+    "lawn-signs": {
+        "gallery": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "yard sign real estate",
+                    "collections": ["8961162"]
+                }
+            }
+        },
+        "products": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "lawn sign display",
+                    "collections": ["8961162"]
+                }
+            }
+        }
+    },
+    "a-frames": {
+        "gallery": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "sidewalk sign a-frame",
+                    "collections": ["8961162"]
+                }
+            }
+        },
+        "products": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "a-frame sign display",
+                    "collections": ["8961162"]
+                }
+            }
+        }
+    },
+    "window-clings": {
+        "gallery": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "window decal storefront",
+                    "collections": ["8961162"]
+                }
+            }
+        },
+        "products": {
+            "free_sources": {
+                "standard": {
+                    "source": "Unsplash",
+                    "query": "window graphics retail",
+                    "collections": ["8961162"]
+                }
+            }
+        }
+    },
+    "image_specifications": {
+        "gallery": {
+            "main": {
+                "min_width": 800,
+                "aspect_ratio": "4:3",
+                "resolution": "300 DPI"
+            },
+            "thumbnails": {
+                "size": "200x150",
+                "resolution": "72 DPI"
+            }
+        },
+        "products": {
+            "cards": {
+                "width": 400,
+                "aspect_ratio": "1:1",
+                "resolution": "150 DPI"
+            },
+            "signs": {
+                "width": 800,
+                "aspect_ratio": "3:2",
+                "resolution": "150 DPI"
+            },
+            "banners": {
+                "width": 1200,
+                "aspect_ratio": "16:9",
+                "resolution": "150 DPI"
+            }
+        }
+    },
+    "best_practices": {
+        "lighting": "Consistent across all product images",
+        "backgrounds": {
+            "standard": "Light/white for regular products",
+            "specialty": "Dark for specialty finishes",
+            "outdoor": "Natural environment for signs and banners"
+        },
+        "composition": "Show product details clearly",
+        "quality": "High resolution, sharp focus",
+        "attribution": "Required for Unsplash images",
+        "context": {
+            "indoor": "Show in appropriate business setting",
+            "outdoor": "Show in actual installation environment",
+            "signage": "Include scale reference when possible"
+        }
+    }
+} 

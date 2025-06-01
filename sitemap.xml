@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Home Page -->
+    <url>
+        <loc>https://getbeseen.com/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Main Product Pages -->
+    <url>
+        <loc>https://realestate.getbeseen.com/real-estate-products.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Individual Product Pages -->
+    <url>
+        <loc>https://realestate.getbeseen.com/products/banners.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c45520b246836fa26c1a.png</image:loc>
+            <image:title>Professional Real Estate Banners</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://realestate.getbeseen.com/products/business-cards.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/business-cards-main.png</image:loc>
+            <image:title>Professional Business Cards</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://realestate.getbeseen.com/products/a-frames.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png</image:loc>
+            <image:title>Professional A-Frame Signs</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://realestate.getbeseen.com/products/flags.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b1e283c3295278bc16fc.webp</image:loc>
+            <image:title>Professional Real Estate Flags</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://realestate.getbeseen.com/products/lawn-signs.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/68365471b543ef0d917565ec.jpeg</image:loc>
+            <image:title>Professional Lawn Signs</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://realestate.getbeseen.com/products/presentation-folders.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b9b12b779f4cbfcc1361.png</image:loc>
+            <image:title>Professional Presentation Folders</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://realestate.getbeseen.com/products/riders.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/68365471498b1661a2d95601.webp</image:loc>
+            <image:title>Professional Real Estate Riders</image:title>
+        </image:image>
+    </url>
+
+    <!-- Information Pages -->
+    <url>
+        <loc>https://getbeseen.com/about.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://getbeseen.com/contact.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+</urlset>

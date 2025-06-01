@@ -1,0 +1,180 @@
+<!-- mobile menu - start -->
+<div class="sidebar-menu-wrapper"> 
+    <div class="mobile_sidebar_menu">
+        <button type="button" class="close_btn"><i class="fal fa-times"></i></button>
+
+        <div class="about_content mb_60">
+            <div class="brand_logo mb_30">
+                <a href="https://www.realestate.getbeseen.com">
+                    <img src="assets/images/logo/BeSeen_1.png" alt="BE SEEN Logo">
+                </a>
+            </div>
+            <p class="mb-0">
+                Professional real estate marketing materials and sign installation services.
+            </p>
+        </div>
+
+        <div class="menu_list mb_60">
+            <h3 class="menu_title">Menu</h3>
+            <ul class="list-unstyled">
+                <li class="active">
+                    <a href="https://www.realestate.getbeseen.com">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#!" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products/business-cards">Business Cards</a></li>
+                        <li><a href="products/a-frames">A-Frame Signs</a></li>
+                        <li><a href="products/lawn-signs">Lawn Signs</a></li>
+                        <li><a href="products/flags">Marketing Flags</a></li>
+                        <li><a href="products/presentation-folders">Presentation Folders</a></li>
+                        <li><a href="products/banners">Marketing Banners</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="real-estate-post-installation">Sign Installation</a>
+                </li>
+                <li>
+                    <a href="contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contact_info mb_60">
+            <h3 class="menu_title">Contact Info</h3>
+            <ul class="list-unstyled">
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Santa Clara County & San Mateo County</span>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@getbeseen.com">info@getbeseen.com</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="booking_btn">
+            <a class="btn btn-success w-100" href="real-estate-post-installation">
+                Order Sign Installation
+            </a>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+</div>
+<!-- mobile menu - end -->
+
+<style>
+.sidebar-menu-wrapper {
+    position: fixed;
+    top: 0;
+    right: -475px;
+    height: 100vh;
+    width: 475px;
+    background-color: #ffffff;
+    padding: 50px;
+    z-index: 999;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+}
+
+.sidebar-menu-wrapper.active {
+    right: 0;
+}
+
+.mobile_sidebar_menu .close_btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+}
+
+.mobile_sidebar_menu .menu_list ul li {
+    margin-bottom: 15px;
+}
+
+.mobile_sidebar_menu .menu_list ul li a {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mobile_sidebar_menu .menu_list ul li a:hover {
+    color: #28a745;
+}
+
+.mobile_sidebar_menu .dropdown-menu {
+    border: none;
+    background: #f8f9fa;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.mobile_sidebar_menu .dropdown-menu li {
+    margin-bottom: 0;
+    padding: 5px 15px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 576px) {
+    .sidebar-menu-wrapper {
+        width: 100%;
+        padding: 30px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile_menu_btn');
+    const sidebarMenu = document.querySelector('.sidebar-menu-wrapper');
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close_btn');
+
+    mobileMenuBtn.addEventListener('click', function() {
+        sidebarMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    function closeMenu() {
+        sidebarMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Handle dropdowns
+    const dropdowns = document.querySelectorAll('.dropdown > a');
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            e.preventDefault();
+            const menu = this.nextElementSibling;
+            menu.classList.toggle('show');
+        });
+    });
+});
+</script> 
