@@ -23,4 +23,12 @@ build/
 .cache/
 tmp/
 temp/
-*.tmp 
+*.tmp
+
+# FTP specific
+.ftpconfig
+.ftp-simple/
+*.ftp
+ftp-simple.json
+*.bak
+*~ 
