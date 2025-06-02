@@ -10,25 +10,15 @@
 	<meta name="description" content="Make a lasting impression with our premium business cards. Choose from various finishes including matte, glossy, spot UV, and foil stamping. Professional printing services by BE SEEN.">
 
 	<!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="../assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="../assets/images/favicon/safari-pinned-tab.svg" color="#da532c">
-    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="../assets/images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
     <!-- CSS Includes -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/fontawesome.css">
     <link rel="stylesheet" href="../assets/css/flaticon.css">
     <link rel="stylesheet" href="../assets/css/animate.css"> 
@@ -38,8 +28,6 @@
     <link rel="stylesheet" href="../assets/css/magnific-popup.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/bez.css"> 
-
-   
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRYL5ZHY12"></script>
@@ -62,7 +50,33 @@
         })(window, document, "clarity", "script", "lkihe2qcle");      
     </script>   
 
-    
+    <style>
+        .fa, .fas, .far, .fal, .fab {
+            -moz-osx-font-smoothing: grayscale;  
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal; 
+            font-variant: normal; 
+            text-rendering: auto;
+            /* line-height: 2; */    
+        }
+
+        .custom_btn span {
+            width: 45px;  
+            height: 45px;
+            line-height: 47px;
+            font-size: 15px;
+            overflow: hidden;
+            margin-left: 40px;
+            text-align: center;
+            position: relative;
+            margin-right: -30px;
+            color: #222222;
+            display: inline-block;
+            background-color: #ffffff;
+            transition: all 0.3s ease-in-out;
+        } 
+    </style>  
 
     <script>
         function includeHTML() {
@@ -87,7 +101,7 @@
                     }
                     xhttp.open("GET", file, true);
                     xhttp.send();
-                    /* Exit the function: */
+                    /* Exit the function: */ 
                     return;
                 }
             }
@@ -124,38 +138,40 @@
 								</li>								
 							</ul>
 						</div>
-					</div>  
-				</div> 
-			</div> 
+					</div>
+				</div>
+			</div>
 
 			<div class="header_bottom">
 				<div class="maxw_1420 container">
 					<div class="row align-items-center">
 
-						<div class="col-lg-2">
+						<div class="col-lg-3">
 							<div class="brand_logo">
 								<a href="index.html">
-									<img src="../assets/images/logo/BeSeen_1.png" srcset="../assets/images/logo/BeSeen_1.png" alt="logo_not_found">
+									<img src="../assets/images/logo/BeSeen_1.png" alt="logo_not_found">
 								</a>
 								
 								<ul class="mobilemenu_btns_group ul_li_right clearfix">
-									 
+									<li>
+										<button type="button" class="search_btn" data-bs-toggle="collapse" data-bs-target="#search_body_collapse" aria-expanded="false" aria-controls="search_body_collapse">
+											<i class="fal fa-search"></i>
+										</button>
+									</li>
 									<li>
 										<button type="button" class="cart_btn">
 											<i class="fal fa-shopping-cart"></i>
 											<small class="cart_counter">2</small>
 										</button>
-									</li>									
+									</li>
 									<li>
-										<button type="button" class="mobile_menu_btn">
-											<i class="fal fa-bars"></i>
-										</button>
+										<button type="button" class="mobile_menu_btn"><i class="fal fa-bars"></i></button>
 									</li>
 								</ul>
 							</div>
 						</div>
 
-						<div class="col-lg-9">
+						<div class="col-lg-6">
 							<nav class="main_menu clearfix">
 								<ul class="ul_li_center clearfix">
 									<li class="has_child">
@@ -247,8 +263,13 @@
 							</nav>
 						</div>
 
-						<div class="col-lg-1">
-							<ul class="header_icon_btns ul_li_right clearfix">							
+						<div class="col-lg-3">
+							<ul class="header_icon_btns ul_li_right clearfix">
+								<li>
+									<button type="button" class="login">
+										<i class="fal fa-store"></i>
+									</button>
+								</li>
 								<li>
 									<button type="button" class="cart_btn">
 										<i class="fal fa-shopping-cart"></i> 
@@ -290,107 +311,106 @@
 		<main>
 
 
-			<!-- sidebar mobile menu - start -->
+			<!-- sidebar mobile menu - start
+			================================================== -->
 			<div class="sidebar-menu-wrapper">
-				<div class="overlay"></div>
 				<div class="sidebar_mobile_menu">
-					<button type="button" class="close_btn"><i class="fal fa-times"></i></button>
-					<div class="mobile_menu_list">
+
+					<span class="close_btn"><i class="fal fa-times"></i></span>
+
+					<div class="mobile_menu_list clearfix">
 						<ul class="ul_li_block clearfix">
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+							<li><a href="about.html">Home</a></li>
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">Printing</a></li>
-									<li><a class="dropdown-item" href="#">Graphic Design</a></li>
-									<li><a class="dropdown-item" href="#">Web Design</a></li>
-									<li><a class="dropdown-item" href="#">Sign Permiting</a></li>
-									<li><a class="dropdown-item" href="#">Mailing</a></li>
-									<li><a class="dropdown-item" href="#">Sign Installation</a></li>
-								</ul>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
-								<ul class="dropdown-menu">
-									<li class="dropend">
-										<a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Prints</a>
-										<ul class="dropdown-menu">
-											<li><a class="dropdown-item" href="#">Business Cards</a></li>
-											<li><a class="dropdown-item" href="#">Stickers</a></li>
-											<li><a class="dropdown-item" href="#">Posters</a></li>
-											<li><a class="dropdown-item" href="#">Flyers</a></li>
-											<li><a class="dropdown-item" href="#">Brochures</a></li>
-											<li><a class="dropdown-item" href="#">Banners</a></li>
-											<li><a class="dropdown-item" href="#">Presentation Folders</a></li>
-											<li><a class="dropdown-item" href="#">Decals</a></li>
-											<li><a class="dropdown-item" href="#">Window Clings</a></li>
-											<li><a class="dropdown-item" href="#">Photos</a></li>
-											<li><a class="dropdown-item" href="#">Canvas Prints</a></li>
-										</ul>
+									<li>
+										<a href="index_1.html">Printing</a>
 									</li>
-									<li class="dropend">
-										<a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Signs</a>
-										<ul class="dropdown-menu">
-											<li><a class="dropdown-item" href="#">Monument Signs</a></li>
-											<li><a class="dropdown-item" href="#">Channel Lettering</a></li>
-											<li><a class="dropdown-item" href="#">A-Frames</a></li>
-											<li><a class="dropdown-item" href="#">Corrugated</a></li>
-											<li><a class="dropdown-item" href="#">Flags</a></li>
-											<li><a class="dropdown-item" href="#">Retractable Banners</a></li>
-											<li><a class="dropdown-item" href="#">Yard Signs</a></li>
-											<li><a class="dropdown-item" href="#">Light Boxes</a></li>
-											<li><a class="dropdown-item" href="#">3D Lettering</a></li>
-										</ul>
+									<li>
+										<a href="index_1.html">Graphic Design</a>
 									</li>
-									<li class="dropend">
-										<a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Promotional</a>
-										<ul class="dropdown-menu">
-											<li><a class="dropdown-item" href="#">Branded Apparel</a></li>
-											<li><a class="dropdown-item" href="#">Booths</a></li>
-											<li><a class="dropdown-item" href="#">Pens</a></li>
-											<li><a class="dropdown-item" href="#">Bags</a></li>
-											<li><a class="dropdown-item" href="#">Tents</a></li>
-											<li><a class="dropdown-item" href="#">Table Cloths</a></li>
-										</ul>
+									<li>
+										<a href="index_1.html">Web Design</a>
+									</li>
+									<li>
+										<a href="index_1.html">Sign Permiting</a>
+									</li>
+									<li>
+										<a href="index_1.html">Mailing</a>
+									</li>
+									<li>
+										<a href="index_1.html">Sign Installation</a>
 									</li>
 								</ul>
 							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Real Estate</a>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">Open House Sign Installation</a></li>
-									<li><a class="dropdown-item" href="#">Business Cards</a></li>
-									<li><a class="dropdown-item" href="#">Yard Signs</a></li>
-									<li><a class="dropdown-item" href="#">Open House Signs</a></li>
-									<li><a class="dropdown-item" href="#">Postcards/Mailers</a></li>
-									<li><a class="dropdown-item" href="#">Flyers</a></li>
-									<li><a class="dropdown-item" href="#">Brochures</a></li>
-									<li><a class="dropdown-item" href="#">Presentation Folders</a></li>
+									<li>
+										<a href="index_1.html">Prints</a>
+									</li>
+									<li>
+										<a href="index_1.html">Signs</a>
+									</li>
+									<li>
+										<a href="index_1.html">Promotional</a>
+									</li>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="#">Promo Store</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Real Estate</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="">Open House Sign Installation</a>
+									</li>
+									<li>
+										<a href="">Business Cards</a>
+									</li>
+									<li>
+										<a href="">Yard Signs</a>
+									</li>
+									<li>
+										<a href="">Open House Signs</a>
+									</li>
+									<li>
+										<a href="">Postcards/Mailers</a>
+									</li>
+									<li>
+										<a href="">Flyers</a>
+									</li>
+									<li>
+										<a href="">Brochures</a>
+									</li>
+								</ul>
+							</li>							
+							<li><a href="contact.html">Promo Store</a></li>  
+							<li><a href="contact.html">About</a></li>    
+							<li><a href="contact.html">Contact</a></li>    
 						</ul>
 					</div>
+
 				</div>
+				<div class="overlay"></div>
 			</div>
-			<!-- sidebar mobile menu - end -->
+			<!-- sidebar mobile menu - end
+			================================================== -->
 
 
 		<!-- Breadcrumb -->
-		<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop'); background-size: cover; background-position: center; min-height: 400px; position: relative;">
-			<div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
-			<div class="container" style="position: relative; z-index: 2;">
+		<section class="breadcrumb_section d-flex align-items-center clearfix" data-background="">
+			<div class="container">
 				<div class="row align-items-center justify-content-lg-between">
 					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-delay=".1s">
-						<h1 class="page_title mb-0 text-white">Professional Business Cards</h1>
+						<h1 class="page_title mb-0">Professional Business Cards</h1>
 						<p class="text-white mt-2">Premium Quality Cards for Real Estate Professionals</p>
 					</div>
 					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInRight" data-wow-delay=".1s">
 						<ul class="breadcrumb_nav ul_li_right clearfix">
-							<li><a href="../index.html" class="text-white">Home</a></li>
-							<li><a href="../real-estate-products.html" class="text-white">Real Estate Products</a></li>
-							<li class="text-white">Business Cards</li>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../real-estate-products.html">Real Estate Products</a></li>
+							<li>Business Cards</li>
 						</ul>
 					</div>
 				</div>
@@ -493,7 +513,7 @@
 								
 
 								<!-- Add to Cart -->
-								<!-- <div class="quantity_form mb_30">
+								 <div class="quantity_form mb_30">
 									<h4 class="quantity_title mb_15">Card Style</h4>
 									<form action="#">
 										<div class="quantity_input">
@@ -530,7 +550,7 @@
 											<button type="button" class="custom_btn bg_default_blue">Start Design</button>
 										</div>
 									</div>
-								</div> -->
+								</div> 
 
 								<!-- Social Share -->
 								<div class="share_links d-flex align-items-center clearfix">
@@ -723,7 +743,7 @@
 						</div>
 					</div>
 				</div>
-			</div> 
+			</div>
 		</section>
 
 		<!-- Order Form Section -->
@@ -741,32 +761,42 @@
 			</div>
 		</section>
 
-	</main> 
-
-
-
+	</main>
 
 	<!-- Footer Include -->
-	<div w3-include-html="../include-footer.html"> </div>
- 
+	<div w3-include-html="../include-footer.html"></div>
+
 	<!-- JavaScript -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="../assets/js/jquery-3.5.1.min.js"></script>
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script src="../assets/js/owl.carousel.min.js"></script>
+	<script src="../assets/js/mCustomScrollbar.js"></script>
+	<script src="../assets/js/nice-select.min.js"></script>
+	<script src="../assets/js/circle-progress.min.js"></script>
+	<script src="../assets/js/magnific-popup.min.js"></script>
+	<script src="../assets/js/isotope.pkgd.js"></script>
+	<script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+	<script src="../assets/js/masonry.pkgd.min.js"></script>
+	<script src="../assets/js/countto.js"></script>
+	<script src="../assets/js/jquery-ui.js"></script>   
+	<script src="../assets/js/parallax.min.js"></script>  
+	<script src="../assets/js/wow.min.js"></script>
 	<script src="../assets/js/custom.js"></script>
+	<script src="../assets/js/free-pik-images.js"></script>
 
 	<script>
-	console.log('Page loaded, checking for breadcrumb section...');
-	document.addEventListener('DOMContentLoaded', function() {
-		const breadcrumb = document.querySelector('.breadcrumb_section');
-		console.log('Breadcrumb section found:', breadcrumb);
-		if (breadcrumb) {
-			console.log('Current background:', breadcrumb.style.backgroundImage);
-			console.log('Current data-background:', breadcrumb.getAttribute('data-background'));
-		}
-	});
+		console.log('Page loaded, checking for breadcrumb section...');
+		document.addEventListener('DOMContentLoaded', function() {
+			const breadcrumb = document.querySelector('.breadcrumb_section');
+			console.log('Breadcrumb section found:', breadcrumb);
+			if (breadcrumb) {
+				console.log('Current background:', breadcrumb.style.backgroundImage);
+				console.log('Current data-background:', breadcrumb.getAttribute('data-background'));
+			}
+		});
 	</script>
 
-	<!-- Chat Widget Styles -->
+	<!-- Chat Widget -->
 	<style>
 		/* Chat widget container styles */
 		chat-widget {
@@ -812,8 +842,6 @@
 			background: white;
 		}
 	</style>
-
-	<!-- Chat Widget -->
 	<chat-widget 
 		location-id="TIotUx9EgciHgNOwY4he"
 		data-loading="lazy"
@@ -827,66 +855,264 @@
 		onerror="console.error('Failed to load chat widget')"
 	></script>
 
-	<!-- Image alt text handling -->
 	<script>
-	document.addEventListener("DOMContentLoaded", function() {
-		var images = document.querySelectorAll("img");
-		images.forEach(function(img) {
-			var altText = img.getAttribute("alt");
-			if (altText) {
+		document.addEventListener("DOMContentLoaded", function() {
+			// Add freepik-target class to all business card images
+			const businessCardImages = document.querySelectorAll('.tab-content img, .product_card img');
+			businessCardImages.forEach(img => {
 				img.classList.add('freepik-target');
-			}
+				// Store original src as data attribute
+				img.dataset.originalSrc = img.src;
+			});
 		});
-	});
 	</script>
 
-	<!-- Include HTML content -->
 	<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		document.querySelectorAll('[data-include]').forEach(el => {
-			const url = el.getAttribute('data-include');
-			fetch(url)
-				.then(resp => {
-					if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${url}`);
-					return resp.text();
-				})
-				.then(html => {
-					el.insertAdjacentHTML('afterend', html);
-					el.remove();
-				})
-				.catch(err => console.error('Include failed:', err));
-		});
-	});
+		includeHTML();
 	</script>
 
-	<!-- Sticky header functionality -->
-	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const header = document.querySelector('.header_section.sticky_header');
-		const body = document.body;
-		let lastScroll = 0;
-		
-		if(header) {
-			const headerHeight = header.offsetHeight;
-			body.style.paddingTop = headerHeight + 'px';
-			body.classList.add('header-is-sticky');
-		}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-include]').forEach(el => {
+      const url = el.getAttribute('data-include');
+      fetch(url)
+        .then(resp => {
+        if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${url}`);
+        return resp.text();
+        })
+        .then(html => {
+        // insert the content and remove the placeholder
+        el.insertAdjacentHTML('afterend', html);
+        el.remove();
+        })
+        .catch(err => console.error('Include failed:', err));
+      });
+    });
+    </script>
 
-		window.addEventListener('scroll', function() {
-			if(!header) return;
-			
-			const currentScroll = window.pageYOffset;
-			
-			if(currentScroll > 50) {
-				header.classList.add('scrolled');
-			} else {
-				header.classList.remove('scrolled');
-			}
-			
-			lastScroll = currentScroll;
-		});
-	});
-	</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var images = document.querySelectorAll("img");
+        images.forEach(function(img) {
+            var altText = img.getAttribute("alt");
+            if (altText) {
+                img.classList.add('freepik-target');
+            }
+        });
+    });
+</script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Bootstrap dropdowns
+    var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+    var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+        return new bootstrap.Dropdown(dropdownToggleEl);
+    });
+
+    // Handle mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile_menu_btn');
+    const sidebarMenu = document.querySelector('.sidebar-menu-wrapper');
+    const closeBtn = document.querySelector('.close_btn');
+    const overlay = document.querySelector('.overlay');
+
+    if(mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            sidebarMenu.classList.add('active');
+            document.body.classList.add('menu-open');
+        });
+    }
+
+    if(closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            sidebarMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    }
+
+    if(overlay) {
+        overlay.addEventListener('click', function() {
+            sidebarMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    }
+
+    // Add click handlers for mobile dropdowns
+    document.querySelectorAll('.mobile_menu_list .dropdown-toggle').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const dropdownMenu = this.nextElementSibling;
+            if(dropdownMenu) {
+                dropdownMenu.classList.toggle('show');
+                this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+            }
+        });
+    });
+});
+</script>
+
+<style>
+.sidebar-menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    height: 100vh;
+    width: 300px;
+    background: #fff;
+    z-index: 999;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar-menu-wrapper.active {
+    left: 0;
+}
+
+.sidebar_mobile_menu .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    padding-left: 15px;
+    border: none;
+    background: transparent;
+    display: none;
+}
+
+.sidebar_mobile_menu .dropdown-menu.show {
+    display: block;
+}
+
+.sidebar_mobile_menu .dropdown-toggle::after {
+    float: right;
+    margin-top: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    display: none;
+}
+
+.sidebar-menu-wrapper.active + .overlay {
+    display: block;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.mobile_menu_list {
+    padding: 20px;
+}
+
+.mobile_menu_list .ul_li_block {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile_menu_list .ul_li_block > li {
+    margin-bottom: 10px;
+}
+
+.mobile_menu_list .ul_li_block > li > a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 8px 0;
+}
+
+.close_btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+</style>
+
+<style>
+/* Sticky Header Styles */
+.header_section.sticky_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Add padding to body to prevent content jump when header becomes fixed */
+body {
+    padding-top: 0;
+    transition: padding-top 0.3s ease;
+}
+
+body.header-is-sticky {
+    padding-top: 0px !important; /* Adjust this value based on your header height */
+}
+
+/* Hide top bar when scrolling */
+.header_section.sticky_header.scrolled .header_top {
+    display: none;
+}
+
+/* Adjust header bottom styling when scrolled */
+.header_section.sticky_header.scrolled .header_bottom {
+    padding: 10px 0;
+}
+
+/* Ensure header content stays on top */
+.header_section.sticky_header .header_bottom {
+    background-color: #ffffff;
+    transition: padding 0.3s ease;
+    padding: 15px 0;
+}
+
+@media (max-width: 991px) {
+    body.header-is-sticky {
+        padding-top: 0px !important; /* Adjust for mobile header height */
+    }
+}
+</style>
+
+<script>
+// Add this after your existing scripts
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.header_section.sticky_header');
+    const body = document.body;
+    let lastScroll = 0;
+    
+    // Set initial state
+    if(header) {
+        const headerHeight = header.offsetHeight;
+        body.style.paddingTop = headerHeight + 'px';
+        body.classList.add('header-is-sticky');
+    }
+
+    // Handle scroll events
+    window.addEventListener('scroll', function() {
+        if(!header) return;
+        
+        const currentScroll = window.pageYOffset;
+        
+        if(currentScroll > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    });
+});
+</script>
 </body>
-</html>
+</html>  

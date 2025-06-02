@@ -1,29 +1,31 @@
-# Real Estate Website Project
+# Real Estate Website Subdomain
 
-This repository contains the website code for realestate.getbeseen.com. The project uses HTML, CSS, and JavaScript to create a responsive real estate website.
+This repository contains the codebase for the real estate market-focused subdomain of our website. The site is designed to provide specialized real estate services and information to our clients.
 
 ## Project Structure
 
-- `assets/` - Contains all static assets (CSS, JS, images)
-- `products/` - Product pages and templates
-- `includes/` - Reusable HTML components
-- `services/` - Service-related pages
+This is a dedicated subdomain focused on real estate services, separate from the main website. It contains all necessary assets, styles, and functionality specific to our real estate offerings.
 
 ## Development
 
-This project is managed using FTP-Simple for deployment. The workflow is:
+The project uses the following branch structure:
+- `main`: Production-ready code
+- `staging`: Pre-production testing
+- `development`: Active development
 
-1. Make changes locally
-2. Test changes
-3. FTP-Simple will sync changes to the remote server
+## Getting Started
 
-## Git Usage
+1. Clone this repository
+2. Make sure you're on the appropriate branch for your work
+3. Follow standard Git workflow:
+   - Pull latest changes
+   - Create feature branches from development
+   - Submit pull requests for review
 
-While using FTP-Simple, remember to:
-- Commit changes regularly
-- Push to remote repository if needed
-- Be careful with large binary files (images, etc)
+## Deployment
+
+Deployment details and procedures should be documented here based on your specific setup.
 
 ## Contact
 
-For questions or issues, please contact the development team. 
+Add relevant contact information and maintenance procedures here. 

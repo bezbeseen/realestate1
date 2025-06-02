@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
                 header.removeClass('scrolled');
             }
         });
-    };
+    }; 
 
     // Mobile Menu
     const mobileMenuInit = function() {
