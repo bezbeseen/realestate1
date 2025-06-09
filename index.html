@@ -327,7 +327,7 @@
       <div class="col-md-3">
         <div class="mb-3"><span class="fs-1">🚚</span></div>
         <h5>We Handle the Rest</h5>
-        <p class="text-muted">We install on time — and pick it up when it’s sold.</p>
+        <p class="text-muted">We install on time — and pick it up when it's sold.</p>
       </div>
     </div>
   </div>
@@ -495,6 +495,12 @@
                xhttp.open("GET", file, true);
                xhttp.send();
                return;
+           }
+       }
+       // All includes are loaded, now update the cart counter
+       if (!includesFoundThisIteration) {
+           if (typeof Cart !== 'undefined' && typeof Cart.updateCartCounter === 'function') {
+               Cart.updateCartCounter();
            }
        }
    }

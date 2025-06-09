@@ -1,0 +1,33 @@
+// default font - start
+// ==================================================
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$body_font: 'Hind', sans-serif;
+$heading_font: 'Rubik', sans-serif;
+$secondary_font: 'Pacifico', cursive;
+// default font - end
+// ==================================================
+
+
+// default colors - start
+// ==================================================
+$default_past: #20ad96;
+$default_pink: #e6498f;
+$default_blue: #1a1e5d;
+$default_color: #757575;
+$default_black: #222222;
+$default_orange: #ff4328;
+$default_purple: #5f43c5;
+$default_yellow: #fec931;
+$default_lightblue: #209ffa;
+// default colors - end
+// ==================================================
+
+
+// transition - start
+// ==================================================
+$default_transition: all .3s ease-in-out;
+// transition - end
+// ==================================================

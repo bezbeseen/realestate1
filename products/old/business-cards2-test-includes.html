@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head> 
+	<script>
+		function includeHTML(callback) {
+			var z, i, elmnt, file, xhttp, allIncludesProcessed = true;
+			/* Loop through a collection of all HTML elements: */
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				/*search for elements with a certain atrribute:*/
+				file = elmnt.getAttribute("w3-include-html");
+				if (file) {
+					allIncludesProcessed = false; // Found an include, so not all processed yet
+					/* Make an HTTP request using the attribute value as the file name: */
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4) {
+							if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+							if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+							/* Remove the attribute, and call this function once more: */
+							elmnt.removeAttribute("w3-include-html");
+							includeHTML(callback); // Recursive call
+						}
+					}
+					xhttp.open("GET", file, true);
+					xhttp.send();
+					/* Exit the function: */ 
+					return;
+				}
+			}
+			// If we reach here and allIncludesProcessed is true, it means no 'w3-include-html' attributes were found in the last pass.
+			// This signifies that all includes are done.
+			if (allIncludesProcessed && callback) {
+				callback();
+			}
+		}
+	</script>
+
+	<div w3-include-html="../includes/common-head.html"></div>
+	<title>Business Cards - Premium Quality Business Cards | BE SEEN</title>
+	<meta name="description" content="Make a lasting impression with our premium business cards. Choose from various finishes including matte, glossy, spot UV, and foil stamping. Professional printing services by BE SEEN.">
+
+	<!-- Page-specific SEO, if any, would go here or be part of the w3-include-html below -->
+	<!-- <div w3-include-html="../includes/seo/business-cards-seo.html"></div> -->
+
+    <style>
+        .fa, .fas, .far, .fal, .fab {
+            -moz-osx-font-smoothing: grayscale;  
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal; 
+            font-variant: normal; 
+            text-rendering: auto;
+            /* line-height: 2; */    
+        }
+
+        .custom_btn span {
+            width: 45px;  
+            height: 45px;
+            line-height: 47px;
+            font-size: 15px;
+            overflow: hidden;
+            margin-left: 40px;
+            text-align: center;
+            position: relative;
+            margin-right: -30px;
+            color: #222222;
+            display: inline-block;
+            background-color: #ffffff;
+            transition: all 0.3s ease-in-out;
+        } 
+    </style>  
+
+    <!-- SEO Include -->
+    
+
+</head>
+<body> 
+  
+	<div w3-include-html="../includes/site-header.html"></div>
+
+		<!-- main body - start
+		================================================== -->
+		<main>
+
+
+			<!-- sidebar mobile menu - start
+			================================================== -->
+			<div class="sidebar-menu-wrapper">
+				<div class="sidebar_mobile_menu">
+					<span class="close_btn"><i class="fal fa-times"></i></span>
+					<div class="mobile_menu_list clearfix">
+						<ul class="ul_li_block clearfix">
+							<li><a href="contact.html">Home</a></li>
+							<li class="dropdown">
+								<a href="#!" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Services</a>
+								<ul class="dropdown-menu">
+									<li><a href="">Printing</a></li>
+									<li><a href="">Graphic Design</a></li>
+									<li><a href="">Web Design</a></li>
+									<li><a href="">Sign Permiting</a></li>
+									<li><a href="">Mailing</a></li>
+									<li><a href="">Sign Installation</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#!" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Print Products</a>
+								<ul class="dropdown-menu">
+									<li><a href="">Business Cards</a></li>
+									<li><a href="">Stickers</a></li>
+									<li><a href="">Posters</a></li>
+									<li><a href="">Flyers</a></li>
+									<li><a href="">Brochures</a></li>
+									<li><a href="">Banners</a></li>
+									<li><a href="">Presentation Folders</a></li>
+									<li><a href="">Decals</a></li>
+									<li><a href="">Window Clings</a></li>
+									<li><a href="">Photos</a></li>
+									<li><a href="">Canvas Prints</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#!" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Promotional Products</a>
+								<ul class="dropdown-menu">
+									<li><a href="">Branded Apparel</a></li>
+									<li><a href="">Booths</a></li>
+									<li><a href="">Pens</a></li>
+									<li><a href="">Bags</a></li>
+									<li><a href="">Tents</a></li>
+									<li><a href="">Table Cloths</a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a href="#!" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Signs</a>
+								<ul class="dropdown-menu">
+									<li><a href="">Monument Signs</a></li>
+									<li><a href="">Channel Lettering</a></li>
+									<li><a href="">A-Frames</a></li>
+									<li><a href="">Corrugated</a></li>
+									<li><a href="">Flags</a></li>
+									<li><a href="">Retractable Banners</a></li>
+									<li><a href="">Yard Signs</a></li>
+									<li><a href="">Light Boxes</a></li>
+									<li><a href="">3D Lettering</a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a href="#!" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Real Estate</a>
+								<ul class="dropdown-menu">
+									<li><a href="">Open House Sign Installation</a></li>
+									<li><a href="">Business Cards</a></li>
+									<li><a href="">Yard Signs</a></li>
+									<li><a href="">Open House Signs</a></li>
+									<li><a href="">Postcards/Mailers</a></li>
+									<li><a href="">Flyers</a></li>
+									<li><a href="">Brochures</a></li>
+									<li><a href="">Presentation Folders</a></li>
+								</ul>
+							</li>
+
+							
+							
+							<li><a href="contact.html">Promo Store</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							
+
+
+						</ul>
+					</div>
+				</div>
+				<div class="overlay"></div>
+			</div>
+			<!-- sidebar mobile menu - end
+			================================================== -->
+
+
+		<!-- Breadcrumb -->
+		<section class="breadcrumb_section d-flex align-items-center clearfix" data-background="">
+			<div class="container">
+				<div class="row align-items-center justify-content-lg-between">
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-delay=".1s">
+						<h1 class="page_title mb-0">Professional Business Cards</h1>
+						<p class="text-white mt-2">Premium Quality Cards for Real Estate Professionals</p>
+					</div>
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInRight" data-wow-delay=".1s">
+						<ul class="breadcrumb_nav ul_li_right clearfix">
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../real-estate-products.html">Real Estate Products</a></li>
+							<li>Business Cards</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Product Details -->
+		<section class="details_section shop_details sec_ptb_130 pt-0 bg_gray clearfix">
+			<div class="shop_container">
+				<div class="container">
+					<!-- Product Gallery -->
+					<div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
+						<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
+							<div class="details_image clearfix">
+								<div class="tab-content">
+									<div id="image_1" class="tab-pane active">
+										<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg"
+											alt="Premium Real Estate Business Cards"
+											width="800"
+											height="600"
+											style="max-width: 100%; height: auto;">
+									</div>
+									<div id="image_2" class="tab-pane fade">
+										<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b77aba6ffe59bbb18405.jpeg"
+											alt="Luxury Real Estate Business Cards"
+											width="800"
+											height="600"
+											style="max-width: 100%; height: auto;">
+									</div>
+									<div id="image_3" class="tab-pane fade">
+										<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/683656af00e93030b970950c.webp"
+											alt="Professional Real Estate Business Cards"
+											width="800"
+											height="600"
+											style="max-width: 100%; height: auto;">
+									</div>
+									<div id="image_4" class="tab-pane fade">
+										<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b64e4eb4a14cd712aa3a.jpeg"
+											alt="Embossed Business Cards"
+											width="800"
+											height="600"
+											style="max-width: 100%; height: auto;">
+									</div>
+								</div>
+
+								<ul class="nav ul_li_block clearfix" role="tablist">
+									<li>
+										<a class="active" data-bs-toggle="tab" href="#image_1">
+											<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg" 
+												alt="Premium Cards Stack"
+												width="200"
+												height="150"
+												style="max-width: 100%; height: auto;">
+										</a>
+									</li>
+									<li>
+										<a data-bs-toggle="tab" href="#image_2">
+											<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b77aba6ffe59bbb18405.jpeg" 
+												alt="Spot UV Cards"
+												width="200"
+												height="150"
+												style="max-width: 100%; height: auto;">
+										</a>
+									</li>
+									<li>
+										<a data-bs-toggle="tab" href="#image_3">
+											<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/683656af00e93030b970950c.webp" 
+												alt="Gold Foil Cards"
+												width="200"
+												height="150"
+												style="max-width: 100%; height: auto;">
+										</a>
+									</li>
+									<li>
+										<a data-bs-toggle="tab" href="#image_4">
+											<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b64e4eb4a14cd712aa3a.jpeg" 
+												alt="Embossed Cards"
+												width="200"
+												height="150"
+												style="max-width: 100%; height: auto;">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Product Details -->
+						<div class="col-lg-4 col-md-8 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
+							<div class="details_content">
+								<h2 class="item_title mb_30">Professional Real Estate Business Cards</h2>
+								<p class="mb_30">
+									Make a lasting impression with our premium real estate business cards. Each card is crafted using high-quality materials and finished with your choice of professional coatings. Perfect for real estate agents who want to stand out in a competitive market.
+								</p>
+                                <p class="mb_15">
+									Choose from various finishes including matte, glossy, or soft-touch coating. Available in standard or custom sizes with options for specialty features like spot UV, foil stamping, and embossing.
+								</p>
+								
+								<span class="price_text mb_30"><strong>Starting at $25.83</strong> <del>$89.00</del></span>
+								
+								
+
+								<!-- Add to Cart -->
+
+								
+
+								 <div class="quantity_form mb_30">
+									
+									
+									
+									<form action="#">
+										<div class="quantity_input">
+											<select class="nice-select" id="cardStyle" name="cardStyle" autocomplete="off">
+												<option value="1">Standard Matte</option>
+												<option value="2">Premium Spot UV</option>
+												<option value="3">Luxury Gold Foil</option>
+												<option value="4">Custom Design</option>
+											</select>
+										</div>
+									</form>
+								</div>
+
+								<div class="quantity_form mb_30">
+									<h4 class="quantity_title mb_15">Quantity</h4>
+									<form action="#">
+										<div class="quantity_input">
+											<select class="nice-select" id="quantity" name="quantity" autocomplete="off">
+												<option value="1">250 Cards - $49.99</option>
+												<option value="2">500 Cards - $79.99</option>
+												<option value="3">1000 Cards - $129.99</option>
+												<option value="4">2500 Cards - $249.99</option>
+											</select>
+										</div>
+									</form>
+								</div>								
+
+								<div class="cart_btns_wrap">
+									<div class="row">
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+											<button class="custom_btn bg_default_orange"  id="addToCartBtn">Add to Cart</button>
+										</div>
+										<!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+											<button type="button" class="custom_btn bg_default_orange">Upload Design</button>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+											<button type="button" class="custom_btn bg_default_blue">Start Design</button>
+										</div> -->
+									</div>
+								</div> 
+
+								<!-- Social Share -->
+								<div class="share_links d-flex align-items-center clearfix">
+									<span class="social_title">Share Now</span>
+									<ul class="primary_social_links ul_li clearfix">
+										<li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#!"><i class="fab fa-linkedin"></i></a></li>
+										<li><a href="#!"><i class="fab fa-pinterest"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<!-- Product Description Tabs -->
+					<div class="shop_description clearfix">
+						<ul class="nav description_tabnav ul_li wow fadeInUp2 clearfix" data-wow-delay=".1s" role="tablist">
+							<li><a class="active" data-bs-toggle="tab" href="#overview_tab">Overview</a></li>
+							<li><a data-bs-toggle="tab" href="#faq_tab">FAQ</a></li>
+							<li><a data-bs-toggle="tab" href="#specs_tab">Specs</a></li>
+						</ul>
+
+						<div class="tab-content wow fadeInUp2" data-wow-delay=".3s">
+							<!-- Overview Tab -->
+							<div id="overview_tab" class="tab-pane active">
+								<h3 class="mb_30">Premium Business Card Options</h3>
+								<div class="row mb_50">
+									<div class="col-lg-6">
+										<h4>Standard Features:</h4>
+										<ul class="list-unstyled">
+											<li><i class="fas fa-check text-success mr-2"></i> 16pt Premium Card Stock</li>
+											<li><i class="fas fa-check text-success mr-2"></i> Full Color Both Sides</li>
+											<li><i class="fas fa-check text-success mr-2"></i> UV Coating Available</li>
+											<li><i class="fas fa-check text-success mr-2"></i> Fast 3-5 Day Turnaround</li>
+										</ul>
+									</div>
+									<div class="col-lg-6">
+										<h4>Premium Add-ons:</h4>
+										<ul class="list-unstyled">
+											<li><i class="fas fa-star text-warning mr-2"></i> Spot UV Highlights</li>
+											<li><i class="fas fa-star text-warning mr-2"></i> Metallic Foil Accents</li>
+											<li><i class="fas fa-star text-warning mr-2"></i> Embossed Elements</li>
+											<li><i class="fas fa-star text-warning mr-2"></i> Silk Lamination</li>
+										</ul>
+									</div>
+								</div>
+
+								<h3 class="mb_30">Why Choose Our Business Cards?</h3>
+								<p class="mb_30">
+									Your business card is often the first physical representation of your brand that potential clients encounter. Our premium printing services ensure that this crucial first impression is memorable and professional. We use state-of-the-art digital and offset printing technology to deliver exceptional quality and consistency across every order.
+								</p>
+								<p class="mb-0">
+									Whether you're a corporate professional, creative entrepreneur, or small business owner, we offer business card solutions that match your brand's personality and budget. Our expert design team can help you create a custom design or bring your existing vision to life with precision and attention to detail.
+								</p>
+							</div>
+
+							<!-- FAQ Tab -->
+							<div id="faq_tab" class="tab-pane fade">
+								<h3 class="mb_30">Frequently Asked Questions</h3>
+								<div class="accordion" id="businessCardFAQ">
+									<div class="accordion-item mb_15">
+										<h4 class="accordion-header">What paper stocks do you offer?</h4>
+										<div class="accordion-body">
+											We offer multiple premium stocks including 16pt, 32pt ultra-thick, and eco-friendly options. Each stock is carefully selected to provide the perfect foundation for your design.
+										</div>
+									</div>
+									<div class="accordion-item mb_15">
+										<h4 class="accordion-header">How long does printing take?</h4>
+										<div class="accordion-body">
+											Standard orders are typically completed within 3-5 business days. Rush services are available for faster turnaround times.
+										</div>
+									</div>
+									<div class="accordion-item mb_15">
+										<h4 class="accordion-header">Do you offer design services?</h4>
+										<div class="accordion-body">
+											Yes! Our professional design team can create a custom business card design that matches your brand identity. We also accept print-ready files if you have your own design.
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Specs Tab -->
+							<div id="specs_tab" class="tab-pane fade">
+								<h3 class="mb_30">Technical Specifications</h3>
+								<div class="row mb_50">
+									<div class="col-lg-6">
+										<h4>Standard Specifications:</h4>
+										<ul class="list-unstyled">
+											<li>• Size: 3.5" x 2" (Standard US)</li>
+											<li>• Resolution: 300 DPI minimum</li>
+											<li>• Color: CMYK full color</li>
+											<li>• Bleed: 0.125" on all sides</li>
+										</ul>
+									</div>
+									<div class="col-lg-6">
+										<h4>File Requirements:</h4>
+										<ul class="list-unstyled">
+											<li>• Accepted formats: PDF, AI, PSD</li>
+											<li>• Text converted to outlines</li>
+											<li>• All layers flattened</li>
+											<li>• Embedded images</li>
+										</ul>
+									</div>
+								</div>
+
+								<h4 class="mb_30">Templates</h4>
+								<p>Download our ready-to-use templates to ensure your design meets our printing specifications:</p>
+								<ul class="list-unstyled">
+									<li><a href="#!"><i class="fas fa-download"></i> Adobe Illustrator Template</a></li>
+									<li><a href="#!"><i class="fas fa-download"></i> Photoshop Template</a></li>
+									<li><a href="#!"><i class="fas fa-download"></i> PDF Template</a></li>
+								</ul>
+							</div> 
+						</div>
+					</div>
+
+					<hr>
+
+					<!-- Related Products -->
+					<div class="row mt__30 justify-content-center">
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
+							<div class="product_card text-center bg_gray">
+								<a class="item_image" target="_blank" href="#!">
+									<img src="https://img.freepik.com/free-psd/standard-business-card-mockup-stack_337857-179.jpg" 
+										alt="Standard Business Cards"
+										width="800"
+										height="600"
+										style="max-width: 100%; height: auto;">
+								</a>
+								<div class="item_content">
+									<h3 class="item_title">Standard Package</h3>
+									<p class="mb-2">16pt Premium Stock</p>
+									<span class="item_price">Starting at $49.99</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+							<div class="product_card text-center bg_gray">
+								<a class="item_image" target="_blank" href="#!">
+									<img src="https://img.freepik.com/free-psd/premium-business-card-stack-mockup_337857-180.jpg" 
+										alt="Premium Business Cards"
+										width="800"
+										height="600"
+										style="max-width: 100%; height: auto;">
+								</a>
+								<div class="item_content">
+									<h3 class="item_title">Premium Package</h3>
+									<p class="mb-2">32pt Ultra-Thick</p>
+									<span class="item_price">Starting at $79.99</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
+							<div class="product_card text-center bg_gray">
+								<a class="item_image" target="_blank" href="#!">
+									<img src="https://img.freepik.com/free-psd/luxury-business-card-stack-mockup_337857-407.jpg" 
+										alt="Luxury Business Cards"
+										width="800"
+										height="600"
+										style="max-width: 100%; height: auto;">
+								</a>
+								<div class="item_content">
+									<h3 class="item_title">Luxury Package</h3>
+									<p class="mb-2">Foil & Spot UV</p>
+									<span class="item_price">Starting at $129.99</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".7s">
+							<div class="product_card text-center bg_gray">
+								<a class="item_image" target="_blank" href="#!">
+									<img src="https://img.freepik.com/free-psd/custom-design-business-card-stack-mockup_337857-408.jpg" 
+										alt="Custom Design Package"
+										width="800"
+										height="600"
+										style="max-width: 100%; height: auto;">
+								</a>
+								<div class="item_content">
+									<h3 class="item_title">Custom Design</h3>
+									<p class="mb-2">Professional Design</p>
+									<span class="item_price">Starting at $199.99</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Order Form Section -->
+		<section id="order_form" class="sec_ptb_130 bg_gray clearfix">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="section_title text-center mb-4">
+							<h2>Order Your Business Cards</h2>
+							<p>Fill out the form below to start your order</p>
+						</div>
+						<!-- Form will be added here -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<!-- Footer Include -->
+
+	<!-- <div w3-include-html="../include-footer.html"></div> -->
+	<footer class="footer_section bg_gray clearfix">
+		<div class="container"> 
+	
+			<!-- <div class="footer_brand_area border_bottom clearfix">
+				<div class="row align-items-center justify-content-lg-between">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div class="brand_logo">
+							<a href="#!">
+								<img src="assets/images/logo/logo_02_1x.png" srcset="assets/images/logo/logo_02_2x.png 2x" alt="logo_not_found">
+							</a>
+						</div>
+					</div>
+	
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+						<div class="brands_list">
+							<div class="logo_image">
+								<a href="#!">
+									<img src="assets/images/brands/img_01.png" alt="logo_not_found">
+								</a>
+							</div>
+	
+							<div class="logo_image">
+								<a href="#!">
+									<img src="assets/images/brands/img_02.png" alt="logo_not_found">
+								</a>
+							</div>
+	
+							<div class="logo_image">
+								<a href="#!">
+									<img src="assets/images/brands/img_03.png" alt="logo_not_found">
+								</a>
+							</div>
+	
+							<div class="logo_image">
+								<a href="#!">
+									<img src="assets/images/brands/img_04.png" alt="logo_not_found">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+	
+			<div class="footer_widget_area clearfix">
+				<div class="row justify-content-lg-between">
+					<div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+						<div class="widget footer_useful_links">
+							<h3 class="footer_widget_title">Quick Links</h3>
+							<ul class="ul_li_block clearfix">
+								<li><a href="/">Home</a></li>
+								<li><a href="about.html">About Us </a></li>
+								<li><a href="contact.html">Contact</a></li>	
+								<li><a href="blog.html">Blog</a></li>								
+							</ul>
+						</div>
+					</div>
+	
+					<div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+						<div class="widget footer_useful_links">
+							<h3 class="footer_widget_title">Services</h3>
+							<ul class="ul_li_block clearfix">
+								<li><a href="printing.html">Printing</a></li>
+								<li><a href="graphic-design.html">Graphic Design</a></li>
+								<li><a href="web-design.html">Web Design</a></li>
+								<li><a href="mailing.html">Mailing</a></li>	
+								<li><a href="signs.html">Signs</a></li>	
+								<li><a href="promotional.html">Promotional</a></li>								
+							</ul>
+						</div>
+					</div>
+	
+					<div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+						<div class="widget footer_useful_links">
+							<h3 class="footer_widget_title">Industry</h3>
+							<ul class="ul_li_block clearfix">
+								<li><a href="events.html">Events</a></li>
+								<li><a href="real-estate.html">Real Estate</a></li>                     					
+							</ul>
+						</div>
+					</div>
+	
+					<!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div class="widget recent_works_list">
+							<h3 class="footer_widget_title">Recent News</h3>
+							<ul class="ul_li_block clearfix">
+								<li>
+									<div class="small_blog clearfix">
+										<a class="item_image" target="_blank" href="blog_details.html">
+											<img src="assets/images/recent_works/img_01.png" alt="image_not_found">
+										</a>
+										<div class="item_content">
+											<h3 class="item_title">
+												<a target="_blank" href="blog_details.html">
+													Web Designers Can Help Restaura Move Into
+												</a>
+											</h3>
+											<span class="post_date"><i class="far fa-calendar-alt"></i> 25 Nov 2020</span>
+										</div>
+									</div>
+								</li>
+	
+								<li>
+									<div class="small_blog clearfix">
+										<a class="item_image" target="_blank" href="blog_details.html">
+											<img src="assets/images/recent_works/img_02.png" alt="image_not_found">
+										</a>
+										<div class="item_content">
+											<h3 class="item_title">
+												<a target="_blank" href="blog_details.html">
+													Building Facial Recognits Web Application React
+												</a>
+											</h3>
+											<span class="post_date"><i class="far fa-calendar-alt"></i> 25 Nov 2020</span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div> -->
+	
+					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+						<div class="widget footer_contact_form">
+							<h3 class="footer_widget_title">Contact Us</h3>
+							<p class="mb_30">
+								It's good to BE SEEN so contact us to help your busines today!
+							</p>
+							<!-- <form action="#">
+								<div class="form_item">
+									<input type="email" name="email" placeholder="Enter Your Email">
+									<button type="submit" class="submit_btn"><i class="far fa-arrow-right"></i></button>
+								</div>
+							</form> -->
+	
+							<a class="custom_btn bg_default_yellow" href="contact.html">
+								Contact
+								<span><i class="fal fa-arrow-right"></i></span>
+							</a>
+							<span class="footer_hotline" style="padding-top:15px;"><i class="far fa-phone"></i>(669) 273-1583</span>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="footer_bottom_boxed bg_white clearfix">
+				<div class="row align-items-center justify-content-lg-between">
+					<div class="col-lg-6 col-md-6">
+						<p class="copyright_text mb-0">© Copyright 2024 All Right Reserved Design By <a class="author_links" href="/"">BE SEEN LLC</a></p>
+					</div>
+	
+					<!-- <div class="col-lg-6 col-md-6">
+						<ul class="circle_social_links ul_li_right clearfix">
+							<li>
+								<a class="bg_facebook" href="#!">
+									<i class="fab fa-facebook-f"></i>
+									<i class="fab fa-facebook-f"></i>
+								</a>
+							</li>
+							<li>
+								<a class="bg_twitter" href="#!">
+									<i class="fab fa-twitter"></i>
+									<i class="fab fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a class="bg_youtube" href="#!">
+									<i class="fab fa-youtube"></i>
+									<i class="fab fa-youtube"></i>
+								</a>
+							</li>
+							<li>
+								<a class="bg_linkedin" href="#!">
+									<i class="fab fa-linkedin"></i>
+									<i class="fab fa-linkedin"></i>
+								</a>
+							</li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+			
+		</div>
+	</footer>
+	
+
+	<!-- JavaScript -->
+  <div w3-include-html="../includes/common-scripts.html"></div>
+
+
+<script>
+function initializePageScripts() {
+    console.log('All includes loaded, initializing page-specific scripts...');
+
+    // Breadcrumb script (logging only)
+    console.log('Page loaded, checking for breadcrumb section (from initializePageScripts)...');
+    const breadcrumb = document.querySelector('.breadcrumb_section');
+    // console.log('Breadcrumb section found:', breadcrumb); // Already know this works
+    if (breadcrumb) {
+        // console.log('Current background:', breadcrumb.style.backgroundImage);
+        // console.log('Current data-background:', breadcrumb.getAttribute('data-background'));
+    }
+
+    // Attempt to re-initialize NiceSelect if it's used and jQuery is available
+    if (typeof $ !== 'undefined' && typeof $.fn.niceSelect === 'function') {
+        console.log('Re-initializing niceSelect components.');
+        $('select').niceSelect('update'); // Or simply $('select').niceSelect();
+    } else {
+        console.log('jQuery or niceSelect not available for re-initialization at this point.');
+    }
+
+    // Mobile Menu Logic (adapted from custom.js parts)
+    // Assumes .mobile_menu_btn is in the included header
+    // Assumes .sidebar_mobile_menu, .overlay, .sidebar_mobile_menu .close_btn are in the main page HTML
+    const mobileMenuBtn = document.querySelector('.mobile_menu_btn');
+    const sidebarMobileMenu = document.querySelector('.sidebar_mobile_menu'); // This is in the main page
+    const siteOverlay = document.querySelector('.overlay'); // This is in the main page
+    const mobileMenuCloseBtn = sidebarMobileMenu ? sidebarMobileMenu.querySelector('.close_btn') : null;
+
+    if (mobileMenuBtn && sidebarMobileMenu && siteOverlay && mobileMenuCloseBtn) {
+        console.log('Setting up mobile menu event listeners.');
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Good practice for buttons that toggle things
+            sidebarMobileMenu.classList.add('active');
+            siteOverlay.classList.add('active');
+            document.body.classList.add('menu-open');
+        });
+        mobileMenuCloseBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            sidebarMobileMenu.classList.remove('active');
+            siteOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+        siteOverlay.addEventListener('click', (e) => {
+            e.preventDefault();
+            // This overlay is shared; only act if mobile menu is active
+            if (sidebarMobileMenu.classList.contains('active')) {
+                sidebarMobileMenu.classList.remove('active');
+                siteOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    } else {
+        console.warn('Mobile menu elements not all found for listener setup:');
+        if (!mobileMenuBtn) console.warn('- mobile_menu_btn missing (expected in included header)');
+        if (!sidebarMobileMenu) console.warn('- sidebar_mobile_menu missing (expected in main page)');
+        if (!siteOverlay) console.warn('- overlay missing (expected in main page)');
+        if (!mobileMenuCloseBtn) console.warn('- .sidebar_mobile_menu .close_btn missing');
+    }
+
+    // Sticky Header (adapted from custom.js)
+    // Assumes .header_section.sticky_header is in the included header
+    const header = document.querySelector('.header_section.sticky_header');
+    if (header) {
+        console.log('Setting up sticky header.');
+        const body = document.body;
+        
+        // Apply initial padding after header is fully rendered
+        const applyHeaderPadding = () => {
+            if(header.offsetHeight > 0) { // Ensure header has height
+                 body.style.paddingTop = header.offsetHeight + 'px';
+                 body.classList.add('header-is-sticky'); // If this class adds the fixed behavior
+            } else {
+                // Header might not have height yet if images inside are still loading, retry
+                // This is a bit of a hack, ideally CSS would handle this better
+                // or a more robust way to know when header rendering is complete.
+                // For now, try once more shortly after.
+                setTimeout(applyHeaderPadding, 100); 
+            }
+        };
+        
+        if (document.readyState === "complete") {
+            applyHeaderPadding();
+        } else {
+             window.addEventListener('load', applyHeaderPadding);
+        }
+
+        let lastScroll = 0; // Not used in this version of sticky, keep for potential future use
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 120) { // Value from custom.js
+                header.classList.add('stuck');
+            } else {
+                header.classList.remove('stuck');
+            }
+        });
+    } else {
+        console.warn('Sticky header element (.header_section.sticky_header) not found (expected in included header).');
+    }
+    
+    // cart.js should handle its own initializations like updateCartCounter
+    // We expect updateCartCounter to be called within cart.js, possibly on load or after DOM ready.
+    // If it's not updating, we might need to explicitly call it here, assuming it's globally available.
+    if (typeof updateCartCounter === 'function') {
+        console.log('Calling updateCartCounter() from initializePageScripts.');
+        updateCartCounter();
+    } else {
+        console.warn('updateCartCounter function not found globally. Cart counter might not update on initial load.');
+    }
+}
+
+// Call includeHTML and pass initializePageScripts as the callback
+includeHTML(initializePageScripts);
+</script>
+
+</body>
+</html>  

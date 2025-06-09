@@ -1,0 +1,415 @@
+/* footer - start
+==================================================================================================== */
+
+/* footer section - start */
+.footer_section {
+	padding-bottom: 25px;
+	&.bg_gray {
+		background-color: #f5f6fa;
+	}
+	&.bg_black {
+		background-color: #212121;
+	}
+}
+
+.footer_widget_title {
+	line-height: 1;
+	font-size: 22px;
+	font-weight: 500;
+	margin-bottom: 35px;
+}
+
+.footer_widget_area {
+	padding: 80px 0px;
+}
+
+.footer_bottom_boxed {
+	padding: 25px 50px;
+	&.bg_white {
+		background-color: #ffffff;
+	}
+}
+/* footer section - start */
+
+
+/* footer brand list - start */
+.footer_brand_area {
+	padding: 60px 0px;
+	&.border_bottom {
+		border-bottom: 1px solid #e0e0e0;
+	}
+}
+/* footer brand list - end */
+
+
+/* footer useful links - start */
+.footer_useful_links {
+	li {
+		line-height: 1;
+		&:not(:last-child) {
+			margin-bottom: 22px;
+		}
+	}
+	a {
+		color: $default_color;
+		&:hover {
+			color: $default_orange;
+		}
+	}
+}
+/* footer useful links - end */
+
+
+/* footer contact form - start */
+.footer_contact_form {
+	.form_item {
+		input {
+			height: 55px;
+			color: #ffffff;
+			background-color: $default_blue;
+
+			&:-moz-placeholder {
+				color: #d4d7ff;
+			}
+			&::-moz-placeholder {
+				color: #d4d7ff;
+			}
+			&:-ms-input-placeholder {
+				color: #d4d7ff;
+			}
+			&::-webkit-input-placeholder {
+				color: #d4d7ff;
+			}
+		}
+
+		.submit_btn {
+			height: 55.5px;
+			min-width: 55px;
+			line-height: 57px;
+			font-size: 18px;
+			color: #ffffff;
+			text-align: center;
+			background-color: $default_orange;
+		}
+	}
+}
+/* footer contact form - end */
+
+
+/* footer hotline - start */
+.footer_hotline {
+	display: block;
+	line-height: 1;
+	font-size: 18px;
+	color: $default_black;
+	font-family: $heading_font;
+	i {
+		margin-right: 10px;
+		color: $default_orange;
+	}
+}
+/* footer hotline - end */
+
+
+/* author links - start */
+.author_links {
+	color: $default_orange;
+}
+/* author links - end */
+
+
+/* footer about - start */
+.footer_about {
+	&.bg_black {
+		background-color: #171717;
+	}
+}
+/* footer about - end */
+
+
+/* footer contact info list - start */
+.footer_contact_info {
+	li {
+		display: flex;
+		align-items: center;
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+	}
+	.item_icon {
+		width: 40px;
+		height: 40px;
+		color: #ffffff;
+		line-height: 44px;
+		border-radius: 5px;
+		text-align: center;
+		margin-right: 15px;
+		&.bg_default_yellow {
+			color: $default_black;
+		}
+	}
+	h4 {
+		line-height: 1;
+		font-size: 14px;
+		font-weight: 600;
+		margin-bottom: 5px;
+		color: $default_color;
+		font-family: $body_font;
+		text-transform: uppercase;
+	}
+	p {
+		margin: 0px;
+		line-height: 1;
+		font-size: 18px;
+		font-family: $heading_font;
+	}
+}
+/* footer contact info list - end */
+
+
+/* footer newsletter boxed - start */
+.footer_newsletter_boxed {
+	padding: 35px 50px;
+	background-color: #171717;
+	.newsletter_title {
+		font-size: 22px;
+		line-height: 1.273;
+		margin-bottom: 0px;
+	}
+	.form_list {
+		>li {
+			&:not(:last-child) {
+				margin-right: 7px;
+			}
+		}
+	}
+
+	input {
+		height: 55px;
+		width: 280px;
+		outline: none;
+		display: block;
+		color: #ffffff;
+		padding: 0px 30px;
+		border: 1px solid #272727;
+		background-color: transparent;
+		transition: $default_transition;
+		&:focus {
+			border-color: $default_yellow;
+		}
+		&:-moz-placeholder {
+			color: #595959;
+		}
+		&::-moz-placeholder {
+			color: #595959;
+		}
+		&:-ms-input-placeholder {
+			color: #595959;
+		}
+		&::-webkit-input-placeholder {
+			color: #595959;
+		}
+	}
+
+	.icon_btn {
+		width: 55px;
+		height: 55px;
+		font-size: 18px;
+		line-height: 59px;
+	}
+}
+/* footer newsletter boxed - end */
+
+
+/* footer white content - start */
+.footer_section {
+	.text-white {
+		p {
+			color: #b2b5ec;
+		}
+	}
+}
+
+.text-white {
+
+	.footer_widget_title {
+		color: #ffffff;
+		margin-bottom: 35px;
+	}
+
+	.footer_brand_area {
+		&.border_bottom {
+			border-bottom: 1px solid #24296f;
+		}
+	}
+
+	.footer_useful_links {
+		a {
+			color: #b2b5ec;
+			&:hover {
+				color: $default_orange;
+			}
+		}
+	}
+
+	.small_blog {
+		.item_title {
+			>a {
+				color: #ffffff;
+			}
+		}
+		&:hover {
+			.item_title {
+				>a {
+					color: $default_orange;
+				}
+			}
+		}
+
+		.post_date {
+			color: #b2b5ec;
+		}
+	}
+
+	.footer_contact_form {
+		.form_item {
+			input {
+				background-color: rgb(31, 35, 102);
+			}
+		}
+	}
+
+	.footer_hotline {
+		color: #b2b5ec;
+	}
+
+	.footer_bottom_boxed {
+		background-color: rgb(31, 35, 102);
+	}
+
+	.circle_social_links {
+		a {
+			color: #ababab;
+			background-color: rgb(41, 45, 119);
+			&:hover {
+				i {
+					color: #ffffff;
+				}
+			}
+		}
+	}
+
+	.author_links {
+		color: $default_yellow;
+	}
+
+	.footer_contact_info {
+		p {
+			color: #ffffff;
+		}
+	}
+
+	.footer_newsletter_boxed {
+		margin-top: 47px;
+		.newsletter_title {
+			color: #ffffff;
+		}
+	}
+
+}
+/* footer white content - end */
+
+
+/* secondary footer - start
+================================================== */
+.secondary_footer {
+	z-index: 1;
+	padding: 80px 0px;
+	position: relative;
+	.border_shapes {
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		z-index: -1;
+		width: 100%;
+		position: absolute;
+		background-size: auto;
+		background-position: right center;
+	}
+
+	&.text-white {
+		p {
+			color: #979797;
+		}
+		a {
+			color: #979797;
+			&:hover {
+				color: $default_yellow;
+			}
+		}
+
+		.footer_contact_info {
+			p {
+				color: #ffffff;
+			}
+		}
+	}
+
+	.footer_about {
+		margin-top: -80px;
+		padding: 80px 45px 30px;
+		.brand_logo {
+			display: none;
+		}
+	}
+
+	.circle_social_links {
+		a {
+			width: 50px;
+			height: 50px;
+			background-color: rgb(33, 33, 33);
+		}
+	}
+
+	.copyright_text {
+		padding: 22px 35px;
+		background-color: #212121;
+		.author_links {
+			color: $default_yellow;
+			&:hover {
+				color: $default_orange;
+			}
+		}
+	}
+
+	.footer_widget_area {
+		padding: 0px;
+		padding-left: 40px;
+	}
+
+	.small_blog {
+		.item_title {
+			>a {
+				line-height: 1.556;
+			}
+		}
+		&:hover {
+			.item_title {
+				>a {
+					color: $default_yellow;
+				}
+			}
+		}
+		.post_date {
+			color: #979797;
+			i {
+				color: $default_yellow;
+			}
+		}
+	}
+}
+/* secondary footer - end
+================================================== */
+
+/* footer - end
+==================================================================================================== */

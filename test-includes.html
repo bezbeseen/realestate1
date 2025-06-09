@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Common Head Content (CSS, Favicons, Global Meta, Tracking) -->
+    <div w3-include-html="includes/common-head.html"></div>
+
+    <!-- Page-Specific Meta Tags for Test Page -->
+    <title>Include Test Page</title>
+    <meta name="description" content="A page to test HTML includes.">
+    <!-- Any other SEO meta tags specific to THIS page -->
+</head>
+<body>
+
+    <!-- Site Header -->
+    <div w3-include-html="includes/site-header.html"></div>
+
+    <!-- Main Page Content -->
+    <main>
+        <div class="container" style="padding: 20px; text-align: center;">
+            <h1>HTML Include Test Page</h1>
+            <p>If you see the header above and this text, the includes are working.</p>
+            <p>The footer should appear below if it's also included.</p>
+            <p>Check the browser console for any errors.</p>
+        </div>
+    </main>
+
+    <!-- Site Footer (We'll skip this for now as you're handling it) -->
+    <!-- <div w3-include-html="includes/site-footer.html"></div> -->
+
+    <!-- Common JavaScript Files -->
+    <div w3-include-html="includes/common-scripts.html"></div>
+
+    <!-- includeHTML() function definition & call -->
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                            if (this.status == 404) {elmnt.innerHTML = "Include not found: " + file;}
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML(); // Call again to find next include
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return; // Exit after finding one, includeHTML will be called again
+                }
+            }
+        }
+        includeHTML();
+    </script>
+
+    <!-- Page-Specific JavaScript (if any) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Test page Document Loaded and Parsed.');
+        });
+    </script>
+
+</body>
+</html> 

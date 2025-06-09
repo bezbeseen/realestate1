@@ -1,0 +1,100 @@
+/* pricing page - start
+==================================================================================================== */
+
+/* pricing section - start */
+.pricing_section {
+	&.bg_gray {
+		background-color: #f5f6fa;
+	}
+
+	.shape_1 {
+		left: 0px;
+		bottom: 0px;
+		max-width: 352px;
+	}
+	.shape_2 {
+		top: 0px;
+		right: 0px;
+		max-width: 189px;
+	}
+}
+/* pricing section - end */
+
+
+/* pricing plan - start */
+.pricing_plan {
+	max-width: 370px;
+	padding: 60px 50px;
+	margin: 30px auto 0px;
+	background-color: #ffffff;
+
+	.sub_title {
+		display: block;
+		line-height: 1;
+		font-size: 24px;
+		margin-bottom: 15px;
+		color: $default_orange;
+		font-family: $secondary_font;
+	}
+	.item_title {
+		line-height: 1;
+		font-size: 35px;
+	}
+
+	.item_body {
+		padding: 30px 0px;
+	}
+	.item_icon {
+		display: flex;
+		min-height: 165px;
+		align-items: center;
+		margin-bottom: 40px;
+		justify-content: center;
+		>img {
+			margin: auto;
+			max-width: 220px;
+		}
+	}
+	.pricing_text {
+		display: block;
+		line-height: .8;
+		font-size: 55px;
+		font-weight: 500;
+		margin-bottom: 35px;
+		color: $default_blue;
+		font-family: $heading_font;
+		sup {
+			top: -19px;
+			line-height: 1;
+			font-size: 24px;
+			font-weight: 400;
+			color: $default_orange;
+		}
+	}
+
+	.price_info {
+		padding-top: 37px;
+		border-top: 1px solid #e5e5e5;
+		li {
+			line-height: 1;
+			font-size: 18px;
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.custom_btn {
+		padding: 10px 20px;
+		span {
+			width: 35px;
+			height: 35px;
+			line-height: 39px;
+			margin-right: -10px;
+		}
+	}
+}
+/* pricing plan - end */
+
+/* pricing page - end
+==================================================================================================== */
