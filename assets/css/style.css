@@ -952,10 +952,11 @@ i {
 }
 .section_title .small_title {
   line-height: 1;
-  font-size: 24px;
-  margin-bottom: 25px;
+  font-size: 48px;
+  margin-bottom: 25px; 
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
 }
 .section_title .big_title {
   font-size: 50px;
@@ -971,8 +972,9 @@ i {
   font-size: 150px;
   position: absolute;
   transform: translateY(-50%);
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
   color: rgba(34, 34, 34, 0.102);
+  font-weight: bold;
 }
 .section_title.text-center .biggest_title {
   top: 50%;
@@ -2349,14 +2351,17 @@ button {
   content: "";
   z-index: -1;
   position: absolute;
-  background-color: rgba(4, 7, 57, 0.4);
+  background-image: url(../images/backgrounds/bg.png);
+ background-size: cover;  
+ overlay: rgba(86, 202, 36, 0.5);
+
 }
 
 .page_title {
   color: #ffffff;
   line-height: 1;
   font-size: 70px;
-  letter-spacing: -2.5px;
+  letter-spacing: -2.5px; 
 }
 
 .breadcrumb_nav > li {
@@ -3188,7 +3193,7 @@ button {
   font-size: 15px;
   margin-bottom: 15px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .feature_listlayout_boxed2 .item_title {
   font-size: 24px;
@@ -3297,7 +3302,7 @@ button {
   display: block;
   margin-bottom: 15px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .feature_card .item_title {
   line-height: 1;
@@ -3773,7 +3778,7 @@ button {
   font-size: 15px;
   margin-bottom: 10px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .service_card .item_title {
   line-height: 1;
@@ -4882,7 +4887,7 @@ blockquote .blockquote_admin i {
   font-size: 24px;
   margin-bottom: 15px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .pricing_plan .item_title {
   line-height: 1;
@@ -5258,7 +5263,7 @@ blockquote .blockquote_admin i {
   padding-left: 60px;
   margin-bottom: 40px;
   color: #fec931;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .home_one_banner .sub_title:before {
   top: 50%;
@@ -5286,7 +5291,7 @@ blockquote .blockquote_admin i {
   font-size: 220px;
   position: absolute;
   transform: rotate(-45deg);
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
   -webkit-text-stroke-width: 1px;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.03);
@@ -5379,7 +5384,7 @@ blockquote .blockquote_admin i {
   line-height: 0.9;
   margin-right: 20px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 /* what we do section - end */
@@ -5454,7 +5459,7 @@ blockquote .blockquote_admin i {
   padding-left: 60px;
   margin-bottom: 40px;
   color: #fec931;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .home_two_banner .sub_title:before {
   top: 50%;
@@ -5482,7 +5487,7 @@ blockquote .blockquote_admin i {
   font-size: 220px;
   position: absolute;
   transform: rotate(-45deg);
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
   -webkit-text-stroke-width: 1px;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.03);
@@ -5581,7 +5586,7 @@ blockquote .blockquote_admin i {
   padding-left: 60px;
   margin-bottom: 30px;
   color: #fec931;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .home_three_slider .small_title:before {
   top: 50%;
@@ -8467,4 +8472,32 @@ blockquote .blockquote_admin i {
 9 - media screen and (max-width: 320px) - end
 ==================================================================================================== */
 
-/*# sourceMappingURL=style.css.map */
+/* Product-specific breadcrumb backgrounds */
+.breadcrumb_section.business-card-bg:before {
+    background: linear-gradient(rgba(4, 7, 57, 0.4), rgba(4, 7, 57, 0.4)),
+                url('/assets/images/backgrounds/business-card-bg.jpg') center center/cover no-repeat;
+}
+.breadcrumb_section.a-frame-bg:before {
+    background: linear-gradient(rgba(4, 7, 57, 0.4), rgba(4, 7, 57, 0.4)),
+                url('/assets/images/backgrounds/a-frame-bg.jpg') center center/cover no-repeat;
+}
+.breadcrumb_section.banner-bg:before {
+    background: linear-gradient(rgba(4, 7, 57, 0.4), rgba(4, 7, 57, 0.4)),
+                url('/assets/images/backgrounds/banner-bg.jpg') center center/cover no-repeat;
+}
+.breadcrumb_section.flag-bg:before {
+    background: linear-gradient(rgba(4, 7, 57, 0.4), rgba(4, 7, 57, 0.4)),
+                url('/assets/images/backgrounds/flag-bg.jpg') center center/cover no-repeat;
+}
+.breadcrumb_section.folder-bg:before {
+    background: linear-gradient(rgba(4, 7, 57, 0.4), rgba(4, 7, 57, 0.4)),
+                url('/assets/images/backgrounds/folder-bg.jpg') center center/cover no-repeat;
+}
+.breadcrumb_section.postcard-bg:before {
+    background: linear-gradient(rgba(4, 7, 57, 0.4), rgba(4, 7, 57, 0.4)),
+                url('/assets/images/backgrounds/postcard-bg.jpg') center center/cover no-repeat;
+}
+.breadcrumb_section.yard-sign-bg:before {
+    background: linear-gradient(rgba(4, 7, 57, 0.4), rgba(4, 7, 57, 0.4)),
+                url('/assets/images/backgrounds/yard-sign-bg.jpg') center center/cover no-repeat;
+}

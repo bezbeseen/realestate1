@@ -1,142 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
- 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <script>
-        function includeHTML() {
-            var z, i, elmnt, file, xhttp;
-            z = document.getElementsByTagName("*");
-            var includesFoundThisIteration = false;
-            for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                    includesFoundThisIteration = true;
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4) {
-                            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                            elmnt.removeAttribute("w3-include-html");
-                            includeHTML(); 
-                        }
-                    }
-                    xhttp.open("GET", file, true);
-                    xhttp.send();
-                    return; 
-                }
-            }
-            if (!includesFoundThisIteration) {
-                // console.log("No includes found in this iteration. Checking for initializeProductPageScripts.");
-                if (typeof initializeProductPageScripts === 'function') {
-                    // console.log("Calling initializeProductPageScripts");
-                    initializeProductPageScripts();
-                }
-            }
-        }
 
-        function initializeProductPageScripts() {
-            // console.log("All includes finished. Initializing product page scripts...");
-            // if (typeof setupAddToCart === 'function') {
-            //     // console.log("setupAddToCart function found, calling it.");
-            //     setupAddToCart();
-            // } else {
-            //     // console.log("setupAddToCart function NOT found.");
-            // }
-            console.log("Product page scripts initialized (cart functionality removed for now).");
-        }
-    </script>
+		<div w3-include-html="/includes_new/seo.html"></div>
 
-    <!-- SEO Include -->
-    <div w3-include-html="../includes/seo/lawn-signs-seo.html"></div>
+		<title>Real Estate Lawn Signs - Durable & Weather-Resistant | BE SEEN</title>
+		<meta name="description" content="High-quality real estate lawn signs. Durable, weather-resistant, and fully customizable to showcase your properties. Perfect for open houses and sales.">
 
-    <!-- Framework - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+		<!-- fraimwork - css include -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 
-    <!-- Icon - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/flaticon.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/fontawesome.css">
+		<!-- icon - css include -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/flaticon.css">
+		<link rel="stylesheet" type="text/css" href="/assets/css/fontawesome.css">
 
-    <!-- Animation - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
+		<!-- animation - css include -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
 
-    <!-- Carousel - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/owl.theme.default.min.css">
+		<!-- carousel - css include -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" type="text/css" href="/assets/css/owl.theme.default.min.css"> 
 
-    <!-- Nice Select - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/nice-select.css">
+		<!-- nice select - css include -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/nice-select.css">
 
-    <!-- Magnific Popup - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/magnific-popup.css">
+		<!-- magnific popup - css include -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/magnific-popup.css">
 
-    <!-- Custom - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../assets/scss/style.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/bez.css">
+		<!-- custom - css include -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
     <style>
-        .fa, .fas, .far, .fal, .fab {
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-font-smoothing: antialiased;
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-        }
-
-        .custom_btn span {
-            width: 45px;
-            height: 45px;
-            line-height: 47px;
-            font-size: 15px;
-            overflow: hidden;
-            margin-left: 40px;
-            text-align: center;
-            position: relative;
-            margin-right: -30px;
-            color: #222222;
-            display: inline-block;
-            background-color: #ffffff;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Custom select styling */
-        .form-select {
-            display: block;
-            width: 100%;
-            padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            background-color: #fff;
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 0.75rem center;
-            background-size: 16px 12px;
-            border: 1px solid #ced4da;
-            border-radius: 0.375rem;
-            appearance: none;
-        }
-
-        .form-select:focus {
-            border-color: #86b7fe;
-            outline: 0;
-            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+			.variant-option, .quantity-option {
+				cursor: pointer;
         }
     </style>  
-
 </head>
 
-
 <body>
-
-
 <!-- backtotop - start -->
 <div id="thetop"></div>
 <div id="backtotop">
@@ -144,87 +49,51 @@
      <i class="far fa-arrow-up"></i>
  </a>
 </div>
-
-
+		<!-- backtotop - end -->
 
 <!-- header_section - start
 ================================================== -->
-<header class="header_section sticky_header secondary_header clearfix">
-
- <div w3-include-html="../includes/header.html"></div>
-
- <div class="header_bottom">
-     <div class="maxw_1420 container">
-         <div class="row align-items-center">
-             <div class="col-lg-3">
-                 <div class="brand_logo">
-                     <a href="../">
-                         <img src="../../assets/images/logo/BeSeen_1.png" srcset="../../assets/images/logo/BeSeen_1.png" alt="logo_not_found">
-                     </a>
-             
-                     <ul class="mobilemenu_btns_group ul_li_right clearfix">
-                         <li>
-                             <button type="button" class="mobile_menu_btn"><i class="fal fa-bars"></i></button>
-                         </li>
-                     </ul>
-                 </div>
-             </div>
-
-             
-
-         </div>  
-     </div>
- </div>  
-
-
-
-</header>
+		<div w3-include-html="/includes_new/header.html"></div>
 <!-- header_section - end
  ================================================== -->
-
- 
- 
- 
-
 
  <!-- main body - start
  ================================================== -->
  <main>
-
-
      <!-- sidebar mobile menu - start
      ================================================== -->
-
      <div class="sidebar-menu-wrapper">
         <div class="sidebar_mobile_menu">
             <span class="close_btn"><i class="fal fa-times"></i></span>
             <div class="mobile_menu_list clearfix">
-                <ul class="ul_li_block clearfix" w3-include-html="../includes/mobile-menu.html">
+						<ul class="ul_li_block clearfix">
+							<div w3-include-html="/includes_new/mobile-menu.html"></div>
                 </ul>
             </div>
         </div>
+				<div w3-include-html="/includes_new/cart-sidebar.html"></div>
         <div class="overlay"></div>
     </div>
-     
      <!-- sidebar mobile menu - end
      ================================================== -->
+
         <!-- Breadcrumb -->
-        <section class="breadcrumb_section d-flex align-items-center clearfix" data-background="../assets/images/backgrounds/engin-akyurt-GgTRsZXzmvE-unsplash.jpg">
+        <section class="breadcrumb_section d-flex align-items-center clearfix">
             <div class="container">
                 <div class="row align-items-center justify-content-lg-between">
                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-delay=".1s">
-                        <h1 class="page_title mb-0">Professional Lawn Signs</h1>
-                        <p class="text-white mt-2">Weather-Resistant Signs for Effective Property Marketing</p>
+                        <h1 class="page_title mb-0">Real Estate Lawn Signs</h1>
+                        <p class="text-white mt-2">Professional Marketing Materials for Real Estate</p>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInRight" data-wow-delay=".1s">
                         <ul class="breadcrumb_nav ul_li_right clearfix">
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="../real-estate-products.html">Real Estate Products</a></li>
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/real-estate-products.html">Real Estate Products</a></li> 
                             <li>Lawn Signs</li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> 
         </section>
 
         <!-- Product Details -->
@@ -269,22 +138,38 @@
                                 <ul class="nav ul_li_block clearfix" role="tablist">
                                     <li>
                                         <a class="active" data-bs-toggle="tab" href="#image_1">
-                                            <img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/68365471498b1661a2d95601.webp">
+												<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/68365471498b1661a2d95601.webp"
+													alt="Professional Lawn Sign"
+													width="200"
+													height="150"
+													style="max-width: 100%; height: auto;">
                                         </a>
                                     </li>
                                     <li>
                                         <a data-bs-toggle="tab" href="#image_2">
-                                             <img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6836547115cad85380dae22a.webp">
+												<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6836547115cad85380dae22a.webp"
+													alt="Custom Yard Sign"
+													width="200"
+													height="150"
+													style="max-width: 100%; height: auto;">
                                         </a>
                                     </li>
                                     <li>
                                         <a data-bs-toggle="tab" href="#image_3">
-                                            <img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/68365471b543ef0d917565ec.jpeg">
+												<img src="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/68365471b543ef0d917565ec.jpeg"
+													alt="Premium Property Sign"
+													width="200"
+													height="150"
+													style="max-width: 100%; height: auto;">
                                         </a>
                                     </li>
                                     <li>
                                         <a data-bs-toggle="tab" href="#image_4">
-                                            <img src="">
+												<img src=""
+													alt="Deluxe Sign Package"
+													width="200"
+													height="150"
+													style="max-width: 100%; height: auto;">
                                         </a>
                                     </li>
                                 </ul>
@@ -297,7 +182,7 @@
                                  data-product-id="lawn-sign-standard"
                                  data-product-name="Professional Lawn Sign"
                                  data-product-price="19.99"
-                                 data-product-image="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/lawn-sign-standard.png">
+									data-product-image="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/68365471498b1661a2d95601.webp">
                                 <h2 class="item_title mb_15">Professional Real Estate Lawn Signs</h2>
                                 <ul class="rating_star ul_li mb_30 clearfix">
                                     <li><i class="fas fa-star"></i></li>
@@ -306,14 +191,59 @@
                                     <li><i class="fas fa-star"></i></li>
                                     <li><i class="fas fa-star"></i></li>
                                 </ul>
-                                <!-- <span class="price_text mb_30"><strong>Starting at $19.99</strong> per sign</span> -->
-                                <p class="mb_30">
+									<span class="price_text mb_30"><strong>Starting at $19.99</strong> per sign</span>
+									<p class="mb_15">
                                     Choose from various sizes and styles, including frames and stakes. Professional-grade materials ensure your signs look great in any weather.
                                 </p>
+									<p class="mb_30">
+										Perfect for open houses, property sales, and real estate marketing. Our signs are built to withstand the elements while maintaining their professional appearance.
+									</p>
 
-                                <!-- Commented out Social Share section -->
-                                <!-- 
-                                <div class="share_links d-flex align-items-center clearfix">
+									<!-- Product Options -->
+									<div class="product-options mb-4">
+										<label class="form-label d-block"><strong>Select Style</strong></label>
+										<div class="variant-options d-grid gap-2">
+											<div class="variant-option card p-2 border-primary" data-variant="standard" data-price-change="0">
+												<div class="d-flex justify-content-between">
+													<span>Standard</span>
+													<span>(Basic)</span>
+												</div>
+											</div>
+											<div class="variant-option card p-2" data-variant="premium" data-price-change="10">
+												<div class="d-flex justify-content-between">
+													<span>Premium</span>
+													<span>+$10.00</span>
+												</div>
+											</div>
+											<div class="variant-option card p-2" data-variant="deluxe" data-price-change="20">
+												<div class="d-flex justify-content-between">
+													<span>Deluxe</span>
+													<span>+$20.00</span>
+												</div>
+											</div>
+										</div>
+										<input type="hidden" id="selectedVariant" value="standard">
+									</div>
+
+									<!-- Quantity Options -->
+									<div class="product-options mb-4">
+										<label class="form-label d-block"><strong>Select Quantity</strong></label>
+										<div class="quantity-options d-grid gap-2" style="grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));">
+											<div class="quantity-option card p-2 text-center border-primary" data-quantity="1">1</div>
+											<div class="quantity-option card p-2 text-center" data-quantity="5">5</div>
+											<div class="quantity-option card p-2 text-center" data-quantity="10">10</div>
+											<div class="quantity-option card p-2 text-center" data-quantity="25">25</div>
+										</div>
+										<input type="hidden" id="selectedQuantity" value="1">
+									</div>
+
+									<!-- Add to Cart -->
+									<div class="d-grid">
+										<button class="addtocart_btn custom_btn bg_default_orange btn-lg">Add To Cart</button>
+									</div>
+
+									<!-- Social Share -->
+									<div class="share_links d-flex align-items-center clearfix mt-4">
                                     <span class="social_title">Share Now</span>
                                     <ul class="primary_social_links ul_li clearfix">
                                         <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
@@ -322,7 +252,6 @@
                                         <li><a href="#!"><i class="fab fa-pinterest"></i></a></li>
                                     </ul>
                                 </div>
-                                -->
                             </div>
                         </div>
                     </div>
@@ -361,6 +290,14 @@
                                         </ul>
                                     </div>
                                 </div>
+
+									<h3 class="mb_30">Why Choose Our Lawn Signs?</h3>
+									<p class="mb_30">
+										Our lawn signs are designed specifically for real estate professionals who demand quality and durability. Each sign is crafted with premium materials and built to withstand various weather conditions while maintaining their professional appearance.
+									</p>
+									<p class="mb-0">
+										With customizable options and professional-grade construction, our signs help you make a strong impression in your local market. Whether you're hosting an open house or marketing a new listing, our signs will help you stand out from the competition.
+									</p>
                             </div>
 
                             <!-- Styles Tab -->
@@ -368,43 +305,21 @@
                                 <h3 class="mb_30">Available Styles</h3>
                                 <div class="row mb_50">
                                     <div class="col-lg-6">
-                                        <h4>Sign Types:</h4>
+											<h4>Standard Style:</h4>
                                         <ul class="list-unstyled">
-                                            <li>• Standard Lawn Signs</li>
-                                            <li>• Premium Metal Frame</li>
-                                            <li>• Illuminated Signs</li>
-                                            <li>• Custom Shapes</li>
+												<li>• 18" x 24" Corrugated Plastic</li>
+												<li>• Basic H-Stakes</li>
+												<li>• Double-Sided Printing</li>
+												<li>• Standard Colors</li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6">
-                                        <h4>Size Options:</h4>
+											<h4>Premium Style:</h4>
                                         <ul class="list-unstyled">
-                                            <li>• 18" x 24" (Standard)</li>
-                                            <li>• 24" x 36" (Large)</li>
-                                            <li>• 12" x 18" (Small)</li>
-                                            <li>• Custom Sizes Available</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <h3 class="mb_30">Design Options</h3>
-                                <div class="row mb_50">
-                                    <div class="col-lg-6">
-                                        <h4>Standard Templates:</h4>
-                                        <ul class="list-unstyled">
-                                            <li>• FOR SALE</li>
-                                            <li>• OPEN HOUSE</li>
-                                            <li>• SOLD</li>
-                                            <li>• COMING SOON</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <h4>Customization:</h4>
-                                        <ul class="list-unstyled">
-                                            <li>• Company Branding</li>
-                                            <li>• Agent Information</li>
-                                            <li>• Property Details</li>
-                                            <li>• Custom Graphics</li>
+												<li>• 24" x 36" Heavy-Duty Plastic</li>
+												<li>• Metal Frame Option</li>
+												<li>• Premium Printing</li>
+												<li>• Extended Color Options</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -415,80 +330,23 @@
                                 <h3 class="mb_30">Technical Specifications</h3>
                                 <div class="row mb_50">
                                     <div class="col-lg-6">
-                                        <h4>Material Specifications:</h4>
+											<h4>Materials:</h4>
                                         <ul class="list-unstyled">
-                                            <li>• 4mm Corrugated Plastic</li>
-                                            <li>• Weather-Resistant Inks</li>
-                                            <li>• Anti-UV Coating</li>
-                                            <li>• Reinforced Corners</li>
+												<li>• Corrugated Plastic (4mm)</li>
+												<li>• UV-Resistant Ink</li>
+												<li>• Galvanized Steel Stakes</li>
+												<li>• Weather-Resistant Coating</li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6">
-                                        <h4>Hardware:</h4>
+											<h4>Dimensions:</h4>
                                         <ul class="list-unstyled">
-                                            <li>• Steel H-Stakes</li>
-                                            <li>• Rider Clips</li>
-                                            <li>• Solar LED Components</li>
-                                            <li>• Metal Frame Options</li>
+												<li>• Standard: 18" x 24"</li>
+												<li>• Premium: 24" x 36"</li>
+												<li>• Stake Height: 36"</li>
+												<li>• Weight: 2-4 lbs</li>
                                         </ul>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr>
-
-                    <!-- Related Products -->
-                    <div class="row mt__30 justify-content-center">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
-                            <div class="product_card text-center bg_gray">
-                                <a class="item_image" target="_blank" href="#!">
-                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23eee'/%3E%3Ctext x='400' y='300' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle'%3ELoading...%3C/text%3E%3C/svg%3E" alt="Standard Package">
-                                </a>
-                                <div class="item_content">
-                                    <h3 class="item_title">Standard Package</h3>
-                                    <p class="mb-2">18" x 24" Sign</p>
-                                    <span class="item_price">Starting at $29.99</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
-                            <div class="product_card text-center bg_gray">
-                                <a class="item_image" target="_blank" href="#!">
-                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23eee'/%3E%3Ctext x='400' y='300' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle'%3ELoading...%3C/text%3E%3C/svg%3E" alt="Premium Package">
-                                </a>
-                                <div class="item_content">
-                                    <h3 class="item_title">Premium Package</h3>
-                                    <p class="mb-2">24" x 36" Sign</p>
-                                    <span class="item_price">Starting at $49.99</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
-                            <div class="product_card text-center bg_gray">
-                                <a class="item_image" target="_blank" href="#!">
-                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23eee'/%3E%3Ctext x='400' y='300' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle'%3ELoading...%3C/text%3E%3C/svg%3E" alt="Solar Package">
-                                </a>
-                                <div class="item_content">
-                                    <h3 class="item_title">Solar Package</h3>
-                                    <p class="mb-2">LED Illuminated</p>
-                                    <span class="item_price">Starting at $79.99</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".7s">
-                            <div class="product_card text-center bg_gray">
-                                <a class="item_image" target="_blank" href="#!">
-                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23eee'/%3E%3Ctext x='400' y='300' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle'%3ELoading...%3C/text%3E%3C/svg%3E" alt="Bulk Package">
-                                </a>
-                                <div class="item_content">
-                                    <h3 class="item_title">Bulk Package</h3>
-                                    <p class="mb-2">10+ Signs</p>
-                                    <span class="item_price">Starting at $24.99/each</span>
                                 </div>
                             </div>
                         </div>
@@ -496,36 +354,47 @@
                 </div>
             </div>
         </section>
+
+        <hr>
+        <div w3-include-html="/includes_new/related-products.html"></div>
     </main>
 
     <!-- Footer Include -->
-    <div w3-include-html="../includes/footer.html"></div>  
+	<footer w3-include-html="/includes_new/footer.html" class="footer_section bg_gray clearfix">
+	</footer>
+	
+	
 
-    <!-- JavaScript -->
-    <script src="../assets/js/jquery-3.5.1.min.js"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/owl.carousel.min.js"></script>
-    <script src="../assets/js/mCustomScrollbar.js"></script>
-    <!-- <script src="../assets/js/nice-select.min.js"></script> -->
-    <script src="../assets/js/circle-progress.min.js"></script>
-    <script src="../assets/js/magnific-popup.min.js"></script>
-    <script src="../assets/js/isotope.pkgd.js"></script>
-    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="../assets/js/masonry.pkgd.min.js"></script>
-    <script src="../assets/js/countto.js"></script>
-    <script src="../assets/js/jquery-ui.js"></script>
-    <script src="../assets/js/parallax.min.js"></script>
-    <script src="../assets/js/wow.min.js"></script>
-    <script src="../assets/js/custom.js"></script>
-    
+	<!-- Fraimwork - Jquery Include -->
+	<script src="/assets/js/jquery-3.5.1.min.js"></script>
+	<script src="/assets/js/bootstrap.bundle.min.js"></script>
+	<script src="/assets/js/jquery-ui.js"></script>
+	<script src="/assets/js/mCustomScrollbar.js"></script>
+  
+	<!-- Carousel - Jquery Include -->
+	<script src="/assets/js/owl.carousel.min.js"></script>
 
-    <!-- Chat Widget -->
-    <chat-widget location-id="TIotUx9EgciHgNOwY4he"></chat-widget>
-    <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"></script>
+	<!-- Nice Select - Jquery Include -->
+	<script src="/assets/js/nice-select.min.js"></script>
 
-    <script>
-        includeHTML();
-    </script>
+	<!-- Magnific Popup - Jquery Include -->
+	<script src="/assets/js/magnific-popup.min.js"></script>
 
+	<!-- Other Plugins - Jquery Include -->
+	<script src="/assets/js/circle-progress.min.js"></script>
+	<script src="/assets/js/isotope.pkgd.js"></script>
+	<script src="/assets/js/masonry.pkgd.min.js"></script>
+	<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+	<script src="/assets/js/wow.min.js"></script>
+	<script src="/assets/js/countto.js"></script>
+	
+	<!-- Custom - Jquery Include -->
+	<script src="/assets/js/main.js"></script>
+
+	<!-- Cart and App Initializer -->
+	<script src="/assets/js/cart.js"></script>
+	<script src="/assets/js/cart-display.js"></script>
+	<script src="/assets/js/app-initializer.js"></script>
+	<script src="/includes_new/breadcrumb-init.js"></script>
 </body>
 </html>  

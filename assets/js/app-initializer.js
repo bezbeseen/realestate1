@@ -77,7 +77,7 @@ function initializeApp() {
             };
             
             Cart.addItem(productData);
-            CartDisplay.render(); // Re-render the cart display
+            Cart.openCartSidebar(); // Open the sidebar after adding item
         });
     }
 
