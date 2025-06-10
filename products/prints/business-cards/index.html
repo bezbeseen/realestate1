@@ -37,10 +37,6 @@
 		.variant-option, .quantity-option {
 			cursor: pointer;
 		}
-		.variant-option.selected, .quantity-option.selected {
-			border-color: #ff6b6b !important;
-			background-color: #fff5f5;
-		}
 	</style>
 </head>
 
@@ -74,6 +70,7 @@
 					</ul>
 				</div>
 			</div>
+			<div w3-include-html="/includes_new/cart-sidebar.html"></div>
 			<div class="overlay"></div>
 		</div>
 		<!-- sidebar mobile menu - end
@@ -180,7 +177,11 @@
 
 						<!-- Product Details -->
 						<div class="col-lg-4 col-md-8 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
-							<div class="details_content">
+							<div class="details_content product-container" 
+								 data-product-id="business-cards-premium"
+								 data-product-name="Premium Business Cards"
+								 data-product-price="25.83" 
+								 data-product-image="https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg">
 								<h2 class="item_title mb_15">Professional Real Estate Business Cards</h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
 									<li><i class="fas fa-star"></i></li>
@@ -189,7 +190,7 @@
 									<li><i class="fas fa-star"></i></li>
 									<li><i class="fas fa-star"></i></li>
 								</ul>
-								<span class="price_text mb_30"><strong>$<span id="productPrice">25.83</span></strong></span>
+								<span class="price_text mb_30"><strong>$25.83</strong></span>
 								<p class="mb_15">
 									Make a lasting impression with our premium real estate business cards. Each card is crafted using high-quality materials and finished with your choice of professional coatings. Perfect for real estate agents who want to stand out in a competitive market.
 								</p>
@@ -201,7 +202,7 @@
 								<div class="product-options mb-4">
 									<label class="form-label d-block"><strong>Select Finish</strong></label>
 									<div class="variant-options d-grid gap-2">
-										<div class="variant-option card p-2 border-primary selected" data-variant="matte" data-price-change="0">
+										<div class="variant-option card p-2 border-primary" data-variant="matte" data-price-change="0">
 											<div class="d-flex justify-content-between">
 												<span>Matte Finish</span>
 												<span>(Standard)</span>
@@ -220,22 +221,24 @@
 											</div>
 										</div>
 									</div>
+									<input type="hidden" id="selectedVariant" value="matte">
 								</div>
 
 								<!-- Quantity Options -->
 								<div class="product-options mb-4">
 									<label class="form-label d-block"><strong>Select Quantity</strong></label>
 									<div class="quantity-options d-grid gap-2" style="grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));">
-										<div class="quantity-option card p-2 text-center border-primary selected" data-quantity="100">100</div>
+										<div class="quantity-option card p-2 text-center border-primary" data-quantity="100">100</div>
 										<div class="quantity-option card p-2 text-center" data-quantity="250">250</div>
 										<div class="quantity-option card p-2 text-center" data-quantity="500">500</div>
 										<div class="quantity-option card p-2 text-center" data-quantity="1000">1000</div>
 									</div>
+									<input type="hidden" id="selectedQuantity" value="100">
 								</div>
 
 								<!-- Add to Cart -->
 								<div class="d-grid">
-									<button id="checkout-button" class="custom_btn bg_default_orange btn-lg">Checkout</button>
+									<button class="addtocart_btn custom_btn bg_default_orange btn-lg">Add To Cart</button>
 								</div>
 
 								<!-- Social Share -->
@@ -394,121 +397,10 @@
 	<!-- Custom - Jquery Include -->
 	<script src="/assets/js/main.js"></script>
 
-	<!-- Stripe Integration -->
-	<script src="https://js.stripe.com/v3/"></script>
-	<script>
-		// Initialize Stripe
-		const stripe = Stripe('pk_test_51RYGJPQ67OoMep3yKwHEZgm4ryGehWXH2MzkE2GeSg0otn9O8jxDfcpUHMfKTlmjQpYBveOZ5NPl1NOVUqfIQPem00DPrC8jrN');
-
-		// Product configuration
-		const productConfig = {
-			basePrice: 25.83,
-			variants: {
-				matte: { priceChange: 0, name: 'Matte Finish' },
-				glossy: { priceChange: 5, name: 'Glossy Finish' },
-				'soft-touch': { priceChange: 10, name: 'Soft-Touch Lamination' }
-			},
-			quantities: {
-				100: { priceMultiplier: 1 },
-				250: { priceMultiplier: 0.9 },
-				500: { priceMultiplier: 0.85 },
-				1000: { priceMultiplier: 0.8 }
-			}
-		};
-
-		// Selected options
-		let selectedVariant = 'matte';
-		let selectedQuantity = 100;
-
-		// Update price display
-		function updatePrice() {
-			const variantPrice = productConfig.variants[selectedVariant].priceChange;
-			const quantityMultiplier = productConfig.quantities[selectedQuantity].priceMultiplier;
-			const totalPrice = (productConfig.basePrice + variantPrice) * quantityMultiplier;
-			document.getElementById('productPrice').textContent = totalPrice.toFixed(2);
-		}
-
-		// Handle variant selection
-		document.querySelectorAll('.variant-option').forEach(option => {
-			option.addEventListener('click', function() {
-				document.querySelectorAll('.variant-option').forEach(opt => opt.classList.remove('selected'));
-				this.classList.add('selected');
-				selectedVariant = this.dataset.variant;
-				updatePrice();
-			});
-		});
-
-		// Handle quantity selection
-		document.querySelectorAll('.quantity-option').forEach(option => {
-			option.addEventListener('click', function() {
-				document.querySelectorAll('.quantity-option').forEach(opt => opt.classList.remove('selected'));
-				this.classList.add('selected');
-				selectedQuantity = parseInt(this.dataset.quantity);
-				updatePrice();
-			});
-		});
-
-		// Handle checkout
-		document.getElementById('checkout-button').addEventListener('click', async function() {
-			const button = this;
-			button.disabled = true;
-			button.textContent = 'Processing...';
-
-			try {
-				// Create a checkout session on your server
-				const response = await fetch('/api/create-checkout-session', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						variant: selectedVariant,
-						quantity: selectedQuantity,
-						price: parseFloat(document.getElementById('productPrice').textContent)
-					})
-				});
-
-				// Log the response for debugging
-				console.log('Response status:', response.status);
-				console.log('Response headers:', Object.fromEntries(response.headers.entries()));
-
-				const contentType = response.headers.get('content-type');
-				if (!contentType || !contentType.includes('application/json')) {
-					const text = await response.text();
-					console.error('Invalid response type:', contentType);
-					console.error('Response text:', text);
-					throw new Error('Server returned invalid response type');
-				}
-
-				const data = await response.json();
-				console.log('Response data:', data);
-
-				if (!response.ok) {
-					throw new Error(data.error || 'Failed to create checkout session');
-				}
-
-				if (!data.id) {
-					throw new Error('No session ID received');
-				}
-
-				// Redirect to Stripe Checkout
-				const result = await stripe.redirectToCheckout({
-					sessionId: data.id
-				});
-
-				if (result.error) {
-					throw new Error(result.error.message);
-				}
-			} catch (error) {
-				console.error('Error:', error);
-				alert('An error occurred: ' + error.message);
-				button.disabled = false;
-				button.textContent = 'Checkout';
-			}
-		});
-
-		// Initialize price
-		updatePrice();
-	</script>
+	<!-- Cart and App Initializer -->
+	<script src="/assets/js/cart.js"></script>
+	<script src="/assets/js/cart-display.js"></script>
+	<script src="/assets/js/app-initializer.js"></script>
+	<script src="/includes_new/breadcrumb-init.js"></script>
 </body>
 </html> 
