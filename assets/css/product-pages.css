@@ -1,0 +1,63 @@
+/* Product page styles */
+
+/* Product gallery styles */
+.details_image {
+    position: relative;
+}
+
+.details_image .tab-content {
+    margin-bottom: 20px;
+}
+
+.details_image .tab-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.details_image_list {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.details_image_list li {
+    flex: 1;
+    max-width: 25%;
+}
+
+.details_image_list li a {
+    display: block;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.details_image_list li a.active {
+    border-color: #ff6b00;
+}
+
+.details_image_list li img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Product content styles */
+.details_content p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.details_content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Product option styles */
+.variant-option, 
+.quantity-option {
+    cursor: pointer;
+} 

@@ -189,12 +189,16 @@ function includeHTML(callback) {
                 return response.text();
             })
             .then(html => {
-                const fragment = document.createRange().createContextualFragment(html);
-                el.parentNode.replaceChild(fragment, el);
+                if (el.parentNode) {
+                    const fragment = document.createRange().createContextualFragment(html);
+                    el.parentNode.replaceChild(fragment, el);
+                }
             })
             .catch(error => {
                 console.error(error);
-                el.remove();
+                if (el.parentNode) {
+                    el.parentNode.removeChild(el);
+                }
             });
         promises.push(promise);
     });
