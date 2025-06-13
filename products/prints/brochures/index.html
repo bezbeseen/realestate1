@@ -100,43 +100,69 @@
 					<div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
 						<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 							<div class="details_image clearfix">
-								<div class="tab-content">
-									<div id="image_1" class="tab-pane active">
-										<img src="/assets/images/products/brochures/main.jpg" alt="Custom Brochures" width="800" height="600" style="max-width: 100%; height: auto;">
+								<div class="tab-content" id="productTabContent">
+									<div class="tab-pane fade show active" id="main" role="tabpanel">
+										<img src="assets/images/products/brochures/main.jpg" alt="Professional tri-fold brochure with clear, readable text content, featuring business information and contact details in a clean, modern layout" class="img-fluid" width="800" height="600">
 									</div>
-									<div id="image_2" class="tab-pane fade">
-										<img src="/assets/images/products/brochures/view2.jpg" alt="Custom Brochures view 2" width="800" height="600" style="max-width: 100%; height: auto;">
+									<div class="tab-pane fade" id="view2" role="tabpanel">
+										<img src="assets/images/products/brochures/view2.jpg" alt="Z-fold brochure with professional text layout, showcasing readable business content and product information in a modern design" class="img-fluid" width="800" height="600">
 									</div>
-									<div id="image_3" class="tab-pane fade">
-										<img src="/assets/images/products/brochures/view3.jpg" alt="Custom Brochures view 3" width="800" height="600" style="max-width: 100%; height: auto;">
+									<div class="tab-pane fade" id="view3" role="tabpanel">
+										<img src="assets/images/products/brochures/view3.jpg" alt="Accordion fold brochure with clear, professional text content, featuring readable business information and marketing copy" class="img-fluid" width="800" height="600">
 									</div>
-									<div id="image_4" class="tab-pane fade">
-										<img src="/assets/images/products/brochures/view4.jpg" alt="Custom Brochures view 4" width="800" height="600" style="max-width: 100%; height: auto;">
+									<div class="tab-pane fade" id="view4" role="tabpanel">
+										<img src="assets/images/products/brochures/view4.jpg" alt="Gate fold brochure with professional text layout, showcasing readable business content and product details" class="img-fluid" width="800" height="600">
+									</div>
+									<div class="tab-pane fade" id="view5" role="tabpanel">
+										<img src="assets/images/products/brochures/view5.jpg" alt="Half-fold brochure with clear, readable text content, featuring professional business information and contact details" class="img-fluid" width="800" height="600">
+									</div>
+									<div class="tab-pane fade" id="view6" role="tabpanel">
+										<img src="assets/images/products/brochures/view6.jpg" alt="Perfect bound booklet with professional text layout, featuring readable content and high-quality printing" class="img-fluid" width="800" height="600">
+									</div>
+									<div class="tab-pane fade" id="view7" role="tabpanel">
+										<img src="assets/images/products/brochures/view7.jpg" alt="Saddle stitched booklet with clear, readable text content, showcasing professional business information and product details" class="img-fluid" width="800" height="600">
 									</div>
 								</div>
 
-								<ul class="nav ul_li_block clearfix" role="tablist">
-									<li>
-										<a class="active" data-bs-toggle="tab" href="#image_1">
-											<img src="/assets/images/products/brochures/thumb1.jpg" alt="Custom Brochures thumbnail 1" width="200" height="150" style="max-width: 100%; height: auto;">
-										</a>
-									</li>
-									<li>
-										<a data-bs-toggle="tab" href="#image_2">
-											<img src="/assets/images/products/brochures/thumb2.jpg" alt="Custom Brochures thumbnail 2" width="200" height="150" style="max-width: 100%; height: auto;">
-										</a>
-									</li>
-									<li>
-										<a data-bs-toggle="tab" href="#image_3">
-											<img src="/assets/images/products/brochures/thumb3.jpg" alt="Custom Brochures thumbnail 3" width="200" height="150" style="max-width: 100%; height: auto;">
-										</a>
-									</li>
-									<li>
-										<a data-bs-toggle="tab" href="#image_4">
-											<img src="/assets/images/products/brochures/thumb4.jpg" alt="Custom Brochures thumbnail 4" width="200" height="150" style="max-width: 100%; height: auto;">
-										</a>
-									</li>
-								</ul>
+								<div class="mt-3">
+									<ul class="nav nav-tabs" id="productTab" role="tablist">
+										<li class="nav-item" role="presentation">
+											<button class="nav-link active" id="main-tab" data-bs-toggle="tab" data-bs-target="#main" type="button" role="tab">
+												<img src="assets/images/products/brochures/thumb1.jpg" alt="Professional tri-fold brochure with clear, readable text content, featuring business information and contact details in a clean, modern layout" class="img-fluid" width="100" height="75">
+											</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="nav-link" id="view2-tab" data-bs-toggle="tab" data-bs-target="#view2" type="button" role="tab">
+												<img src="assets/images/products/brochures/thumb2.jpg" alt="Z-fold brochure with professional text layout, showcasing readable business content and product information in a modern design" class="img-fluid" width="100" height="75">
+											</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="nav-link" id="view3-tab" data-bs-toggle="tab" data-bs-target="#view3" type="button" role="tab">
+												<img src="assets/images/products/brochures/thumb3.jpg" alt="Accordion fold brochure with clear, professional text content, featuring readable business information and marketing copy" class="img-fluid" width="100" height="75">
+											</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="nav-link" id="view4-tab" data-bs-toggle="tab" data-bs-target="#view4" type="button" role="tab">
+												<img src="assets/images/products/brochures/thumb4.jpg" alt="Gate fold brochure with professional text layout, showcasing readable business content and product details" class="img-fluid" width="100" height="75">
+											</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="nav-link" id="view5-tab" data-bs-toggle="tab" data-bs-target="#view5" type="button" role="tab">
+												<img src="assets/images/products/brochures/thumb5.jpg" alt="Half-fold brochure with clear, readable text content, featuring professional business information and contact details" class="img-fluid" width="100" height="75">
+											</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="nav-link" id="view6-tab" data-bs-toggle="tab" data-bs-target="#view6" type="button" role="tab">
+												<img src="assets/images/products/brochures/thumb6.jpg" alt="Perfect bound booklet with professional text layout, featuring readable content and high-quality printing" class="img-fluid" width="100" height="75">
+											</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="nav-link" id="view7-tab" data-bs-toggle="tab" data-bs-target="#view7" type="button" role="tab">
+												<img src="assets/images/products/brochures/thumb7.jpg" alt="Saddle stitched booklet with clear, readable text content, showcasing professional business information and product details" class="img-fluid" width="100" height="75">
+											</button>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 
