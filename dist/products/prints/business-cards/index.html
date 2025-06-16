@@ -177,7 +177,7 @@
 	</header> 
 	<!-- main body - start
 	================================================== -->
-	<main class="main-content">
+	<main>
 		<!-- sidebar mobile menu - start
 		================================================== -->
 		<div class="sidebar-menu-wrapper">
@@ -385,9 +385,10 @@
 						<!-- Product Details -->
 						<div class="col-lg-5 col-md-9 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 							<div class="details_content product-container" 
-								 data-product-id=""
-								 data-product-name=""
-								 data-product-price="">
+								 data-product-id="business-cards"
+								 data-product-name="Premium Real Estate Business Cards"
+								 data-product-price="29.99" 
+								 data-product-image="https://img.b2bpic.net/premium-photo/blank-white-business-cards-mockup_93675-34431.jpg">
 								<h2 class="item_title mb_15">Professional Real Estate Business Cards</h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
 									<li><i class="fas fa-star"></i></li>
@@ -750,15 +751,32 @@
 
 	<!-- isotope - js include -->
 	<script src="/assets/js/isotope.pkgd.js"></script>
-    <script src="/assets/js/nice-select.min.js"></script>
 
 	<!-- custom - js include -->
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/cart.js"></script>
+	<script src="/assets/js/app-initializer.js"></script>
 
-    <script>
-        // Pass variant data to the frontend
-        window.productVariants = ;
-    </script>
-</body>
+	<!-- Cart and App Initializer -->
+	<script src="/assets/js/cart.js"></script>
+	<script src="/assets/js/cart-display.js"></script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const variantOptions = document.querySelectorAll('.variant-option');
+			const tabs = new bootstrap.Tab(document.querySelector('#productTab a'));
+
+			variantOptions.forEach(option => {
+				option.addEventListener('click', function() {
+					const target = this.dataset.imageTarget;
+					if (target) {
+						const tabToShow = document.querySelector(`[data-bs-toggle="tab"][href="${target}"]`);
+						if (tabToShow) {
+							const tab = new bootstrap.Tab(tabToShow);
+							tab.show();
+						}
+					}
+				});
+			});
+		});
+	</script>
+	
 </html> 
