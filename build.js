@@ -177,8 +177,18 @@ async function build() {
             }
         }
 
-        // Copy root HTML files
-        const otherHtmlFiles = await glob('*.html', { cwd: config.baseDir });
+        // --- Generate Products Page from template ---\
+        const productsPageTemplatePath = path.join(config.templatesDir, 'products-page-template.html');
+        if (fs.existsSync(productsPageTemplatePath)) {
+            const productsPageTemplate = Handlebars.compile(fs.readFileSync(productsPageTemplatePath, 'utf8'));
+            const compiledHtml = productsPageTemplate({}); // No specific data needed for this page
+            const outputPath = path.join(config.outputDir, 'products.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated products.html from template');
+        }
+
+        // Copy root HTML files (excluding the now-templated products.html)
+        const otherHtmlFiles = await glob('*.html', { cwd: config.baseDir, ignore: 'products.html' });
         for (const file of otherHtmlFiles) {
              fs.copySync(path.join(config.baseDir, file), path.join(config.outputDir, file));
         }
