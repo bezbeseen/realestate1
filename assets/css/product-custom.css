@@ -61,4 +61,26 @@
   .shop_details .details_image .nav {
     display: block !important;
   }
+}
+
+/* Category Page Product Title Styles */
+.product_card .item_title a {
+    font-family: "Poppins", sans-serif;
+    color: #333333; /* A dark grey for better readability */
+    font-weight: 600; /* Bolder font for emphasis */
+}
+
+.product_card .item_title a:hover {
+    color: #007bff; /* Keep the hover effect consistent */
+}
+
+/* Override 'Hind' font from main stylesheet */
+body,
+button,
+strong,
+span,
+small,
+label,
+i {
+    font-family: "Poppins", sans-serif;
 } 

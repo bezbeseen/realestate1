@@ -328,7 +328,13 @@
 							<div class="details_image clearfix">
 								<div class="tab-content" id="productTabContent">
 									<div id="image_1" class="tab-pane active">
-										<img src="https://via.placeholder.com/800x600.png/0088ee?text&#x3D;Branded+Apparel" alt="Branded Apparel">
+										<img src="/assets/images/products/branded-apparel/shirts.jpg" alt="Shirts">
+									</div>
+									<div id="image_2" class="tab-pane fade">
+										<img src="/assets/images/products/branded-apparel/sweaters.jpg" alt="Sweaters">
+									</div>
+									<div id="image_3" class="tab-pane fade">
+										<img src="/assets/images/products/branded-apparel/hats.jpg" alt="Hats">
 									</div>
 								</div>
 							</div>
@@ -336,6 +342,24 @@
 							<!-- Thumbnail Nav -->
 							<div class="mt-3">
 								<ul class="nav ul_li product_image_nav" id="productTab" role="tablist">
+									<li>
+										<a class="active" data-bs-toggle="tab" href="#image_1">
+											<img src="/assets/images/products/branded-apparel/shirts.jpg" alt="Shirts">
+											<span class="thumbnail-label">Shirts</span>
+										</a>
+									</li>
+									<li>
+										<a class="" data-bs-toggle="tab" href="#image_2">
+											<img src="/assets/images/products/branded-apparel/sweaters.jpg" alt="Sweaters">
+											<span class="thumbnail-label">Sweaters</span>
+										</a>
+									</li>
+									<li>
+										<a class="" data-bs-toggle="tab" href="#image_3">
+											<img src="/assets/images/products/branded-apparel/hats.jpg" alt="Hats">
+											<span class="thumbnail-label">Hats</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -346,7 +370,7 @@
 								 data-product-id="branded-apparel"
 								 data-product-name="Branded Apparel"
 								 data-product-price="19.99" 
-								 data-product-image="/assets/images/placeholder.jpg">
+								 data-product-image="/assets/images/products/branded-apparel/shirts.jpg">
 								<h2 class="item_title mb_15">Custom Branded Apparel</h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
 									<li><i class="fas fa-star"></i></li>
@@ -364,6 +388,27 @@
 								</p>
 
 								<!-- Product Options -->
+								<div class="product-options mb-4">
+									<label class="form-label d-block"><strong>Select Option</strong></label>
+									<div class="variant-options d-grid gap-2">
+										<div class="variant-option card p-2 " data-variant="Shirts" data-price-change="0" data-image-target="#image_">
+											<div class="d-flex justify-content-between">
+												<span>Shirts</span>
+											</div>
+										</div>
+										<div class="variant-option card p-2 " data-variant="Sweaters" data-price-change="0" data-image-target="#image_">
+											<div class="d-flex justify-content-between">
+												<span>Sweaters</span>
+											</div>
+										</div>
+										<div class="variant-option card p-2 " data-variant="Hats" data-price-change="0" data-image-target="#image_">
+											<div class="d-flex justify-content-between">
+												<span>Hats</span>
+											</div>
+										</div>
+									</div>
+									<input type="hidden" id="selectedVariant" value="Shirts">
+								</div>
 
 								<!-- Quantity Options -->
 								<div class="product-options mb-4">

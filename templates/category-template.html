@@ -9,7 +9,15 @@
     <!-- CSS includes -->
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/nice-select.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/product-custom.css">
 </head>
 
 <body>
@@ -32,12 +40,12 @@
         </section>
 
         <!-- Product Grid -->
-        <section class="shop_section sec_ptb_130 clearfix">
+        <section class="shop_section sec_ptb_130 bg_gray clearfix">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     {{#each products}}
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="shop_item">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product_card text-center">
                             <a class="item_image" href="/{{this.path}}">
                                 <img src="{{this.product_image}}" alt="{{this.product_name}}">
                             </a>
