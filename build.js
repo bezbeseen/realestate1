@@ -1,110 +1,132 @@
-const fs = require('fs').promises;
+const fs = require('fs-extra');
 const path = require('path');
 const { glob } = require('glob');
 const Handlebars = require('handlebars');
+const Papa = require('papaparse');
+const { marked } = require('marked');
 
-// A function to recursively copy a directory
-async function copyDir(src, dest) {
-    await fs.mkdir(dest, { recursive: true });
-    let entries = await fs.readdir(src, { withFileTypes: true });
-
-    for (let entry of entries) {
-        let srcPath = path.join(src, entry.name);
-        let destPath = path.join(dest, entry.name);
-
-        entry.isDirectory() ? await copyDir(srcPath, destPath) : await fs.copyFile(srcPath, destPath);
-    }
-}
-
-// Function to process includes
-async function processIncludes(html, sourceDir) {
-    const includeRegex = /<div w3-include-html="(.+?)"><\/div>|<footer w3-include-html="(.+?)"(.+?)><\/footer>/g;
-    let match;
-    let processedHtml = html;
-
-    while ((match = includeRegex.exec(html)) !== null) {
-        const includePath = match[1] || match[2];
-        const fullPath = path.join(sourceDir, includePath);
-        try {
-            const includeContent = await fs.readFile(fullPath, 'utf8');
-            processedHtml = processedHtml.replace(match[0], includeContent);
-        } catch (error) {
-            console.warn(`  -> WARN: Could not include ${includePath}. File not found at ${fullPath}.`);
-            processedHtml = processedHtml.replace(match[0], `<!-- WARN: Include not found: ${includePath} -->`);
-        }
-    }
-    return processedHtml;
-}
+const config = {
+    dataDir: path.join(__dirname, 'data'),
+    templatesDir: path.join(__dirname, 'templates'),
+    outputDir: path.join(__dirname, 'dist'),
+    assetsDir: path.join(__dirname, 'assets'),
+    includesDir: path.join(__dirname, 'includes_new'),
+    baseDir: __dirname,
+};
 
 async function build() {
     try {
-        console.log('Starting template-based site build...');
+        console.log('Starting CSV-enhanced build...');
+
+        // Register Handlebars partials
+        const partialsDir = config.includesDir;
+        if (fs.existsSync(partialsDir)) {
+            const partialFiles = fs.readdirSync(partialsDir);
+            partialFiles.forEach(file => {
+                if (file.endsWith('.html')) {
+                    const partialName = path.basename(file, '.html');
+                    const partialContent = fs.readFileSync(path.join(partialsDir, file), 'utf8');
+                    Handlebars.registerPartial(partialName, partialContent);
+                }
+            });
+        }
         
-        const config = {
-            outputDir: 'dist',
-            assetsDir: 'assets',
-            dataDir: 'data',
-            templatesDir: 'templates',
-            sourceDir: '.' // Relative to project root
-        };
+        // Clean and recreate the output directory
+        fs.removeSync(config.outputDir);
+        fs.mkdirSync(config.outputDir, { recursive: true });
 
-        // 1. Clean and create the output directory
-        await fs.rm(config.outputDir, { recursive: true, force: true });
-        await fs.mkdir(config.outputDir, { recursive: true });
-        console.log(`Cleaned and created output directory: ${config.outputDir}`);
+        // Copy static assets
+        if (fs.existsSync(config.assetsDir)) {
+            fs.copySync(config.assetsDir, path.join(config.outputDir, 'assets'));
+        }
+        if (fs.existsSync(config.dataDir)) {
+            fs.copySync(config.dataDir, path.join(config.outputDir, 'data'));
+        }
+         if (fs.existsSync(config.templatesDir)) {
+            fs.copySync(config.templatesDir, path.join(config.outputDir, 'templates'));
+        }
 
-        // 2. Read product data and the main template
-        const productDataPath = path.join(config.dataDir, 'products.json');
-        const products = JSON.parse(await fs.readFile(productDataPath, 'utf-8'));
-        console.log(`Loaded ${products.length} products from ${productDataPath}`);
+        // Load main data file
+        const productsFilePath = path.join(config.dataDir, 'products.json');
+        if (!fs.existsSync(productsFilePath)) {
+            console.log('products.json not found. Skipping product page generation.');
+            return;
+        }
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf8'));
+        
+        console.log(`Found ${products.length} products to process.`);
 
-        const templatePath = path.join(config.templatesDir, 'product-template.html');
-        const productTemplateSource = await fs.readFile(templatePath, 'utf-8');
-        const productTemplate = Handlebars.compile(productTemplateSource);
-        console.log(`Loaded product template from ${templatePath}`);
-
-        // 3. Generate product pages from the template
+        // --- Merge CSV and Markdown data into products ---
         for (const product of products) {
-            console.log(`Processing product: ${product.product_name}...`);
-            const generatedHtml = productTemplate(product);
-            const finalHtml = await processIncludes(generatedHtml, config.sourceDir);
-            
-            const outputPath = path.join(config.outputDir, product.path);
-            await fs.mkdir(path.dirname(outputPath), { recursive: true });
-            await fs.writeFile(outputPath, finalHtml);
-            console.log(`  -> Generated page at ${outputPath}`);
-        }
+            console.log(`Processing product: ${product.id}`);
+            // Merge CSV data for product options
+            const csvPath = path.join(config.dataDir, 'csv', `${product.id}.csv`);
+            if (fs.existsSync(csvPath)) {
+                console.log(`  -> Merging CSV data for ${product.id}`);
+                const csvFile = fs.readFileSync(csvPath, 'utf8');
+                const { data: csvData } = Papa.parse(csvFile, { header: true, skipEmptyLines: true });
+                
+                if (csvData.length > 0) {
+                    const variants = csvData.map(row => {
+                        if (!row.product_option) return null;
+                        return {
+                            name: row.product_option,
+                            image_url: row.image_url,
+                            quantity: row.quantity,
+                            price_change: 0, 
+                            default: row.default?.toLowerCase() === 'true',
+                            alt_tag: row.product_option,
+                            label: row.product_option,
+                            freepik_prompt: row.freepik_prompt,
+                        };
+                    }).filter(v => v);
 
-        // 4. Find and process all other non-template HTML files (like index.html, about.html, etc.)
-        const otherHtmlFiles = await glob('**/*.html', { 
-            cwd: config.sourceDir, 
-            ignore: [`${config.templatesDir}/**`, 'node_modules/**', `${config.outputDir}/**`]
-        });
-
-        console.log(`\nProcessing ${otherHtmlFiles.length} other HTML files...`);
-        for (const file of otherHtmlFiles) {
-             // Skip files that are generated from product data
-            if (products.some(p => p.path === file)) {
-                continue;
+                    if (variants.length > 0) {
+                        product.product_details.options = [{
+                            name: "Select Option",
+                            variants: variants
+                        }];
+                    }
+                }
             }
-            console.log(`Processing ${file}...`);
-            const filePath = path.join(config.sourceDir, file);
-            const content = await fs.readFile(filePath, 'utf8');
-            const processedContent = await processIncludes(content, path.dirname(filePath));
-            
-            const destPath = path.join(config.outputDir, file);
-            await fs.mkdir(path.dirname(destPath), { recursive: true });
-            await fs.writeFile(destPath, processedContent);
+
+            // Merge Markdown content for the product body
+            const mdPath = path.join(__dirname, 'content', 'products', `${product.id}.md`);
+            if (fs.existsSync(mdPath)) {
+                console.log(`  -> Merging Markdown content for ${product.id}`);
+                const mdContent = fs.readFileSync(mdPath, 'utf8');
+                product.product_content = marked(mdContent);
+            }
+
+            // Merge HTML content for the product body (overwrites Markdown if present)
+            const htmlPath = path.join(__dirname, 'content', 'products', `${product.id}.html`);
+            if (fs.existsSync(htmlPath)) {
+                console.log(`  -> Merging HTML content for ${product.id}`);
+                product.product_content = fs.readFileSync(htmlPath, 'utf8');
+            }
         }
 
-        // 5. Copy the assets directory
-        const sourceAssets = path.join(config.sourceDir, config.assetsDir);
-        const destAssets = path.join(config.outputDir, config.assetsDir);
-        await copyDir(sourceAssets, destAssets);
-        console.log(`Successfully copied assets to ${destAssets}`);
+        // Compile and generate product pages
+        const productTemplatePath = path.join(config.templatesDir, 'product-template.html');
+        if (fs.existsSync(productTemplatePath)) {
+            const productTemplate = Handlebars.compile(fs.readFileSync(productTemplatePath, 'utf8'));
+            for (const product of products) {
+                if(product.path) {
+                    const compiledHtml = productTemplate(product);
+                    const outputPath = path.join(config.outputDir, product.path);
+                    fs.ensureDirSync(path.dirname(outputPath));
+                    fs.writeFileSync(outputPath, compiledHtml);
+                }
+            }
+        }
 
-        console.log('\nFull build successful!');
+        // Copy root HTML files
+        const otherHtmlFiles = await glob('*.html', { cwd: config.baseDir });
+        for (const file of otherHtmlFiles) {
+             fs.copySync(path.join(config.baseDir, file), path.join(config.outputDir, file));
+        }
 
+        console.log('Build successful!');
     } catch (error) {
         console.error('Build failed:', error);
     }

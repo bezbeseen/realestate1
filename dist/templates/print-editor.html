@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Products Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .product-editor-card { margin-bottom: 2rem; }
+        .variant-row { display: grid; grid-template-columns: 1.5fr 1.5fr 0.5fr 0.5fr 2fr auto; gap: 10px; align-items: center; margin-bottom: 10px; }
+        .variant-row-header { font-weight: bold; }
+        .variant-row input, .variant-row select { width: 100%; }
+        .freepik-prompt { font-family: monospace; font-size: 0.9em; background-color: #e9ecef; }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Print Products Editor</h1>
+            <p class="lead">Edit options and generate CSV files for each product.</p>
+        </div>
+        
+        <div id="editor-container">
+            <!-- Product editors will be dynamically inserted here -->
+        </div>
+
+        <div id="loading-state" class="text-center">
+            <p>Loading products...</p>
+        </div>
+        <div id="error-state" class="alert alert-danger" style="display: none;"></div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    const editorContainer = document.getElementById('editor-container');
+    const loadingState = document.getElementById('loading-state');
+    const errorState = document.getElementById('error-state');
+
+    try {
+        // Fetch all necessary data
+        const productsRes = await fetch('/data/products.json');
+
+        if (!productsRes.ok) {
+            throw new Error('Failed to load core data files.');
+        }
+
+        const allProducts = await productsRes.json();
+        
+        // Filter for products in the 'prints' category based on their path
+        const printProducts = allProducts.filter(p => p.path && p.path.includes('/prints/'));
+
+        // Create an editor for each print product
+        for (const product of printProducts) {
+            const productCard = await createProductEditor(product);
+            editorContainer.appendChild(productCard);
+        }
+
+        loadingState.style.display = 'none';
+
+    } catch (error) {
+        console.error('Editor initialization failed:', error);
+        loadingState.style.display = 'none';
+        errorState.textContent = `Error: ${error.message}`;
+        errorState.style.display = 'block';
+    }
+});
+
+async function createProductEditor(product) {
+    const card = document.createElement('div');
+    card.className = 'card product-editor-card';
+    card.id = `editor-${product.id}`;
+    card.dataset.productName = product.product_name; // Store product name for prompt generation
+
+    let variantsHtml = `
+        <div class="variant-row variant-row-header">
+            <span>Product Option</span>
+            <span>Image URL</span>
+            <span>Quantity</span>
+            <span>Default?</span>
+            <span>Freepik Prompt (Auto-Generated)</span>
+            <span>Actions</span>
+        </div>
+    `;
+
+    // Try to fetch existing CSV data
+    try {
+        const csvRes = await fetch(`/data/csv/${product.id}.csv`);
+        if (csvRes.ok) {
+            const csvText = await csvRes.text();
+            const parsedCsv = Papa.parse(csvText, { header: true, skipEmptyLines: true }).data;
+            parsedCsv.forEach(row => {
+                variantsHtml += createVariantRow(row.product_option, row.image_url, row.quantity, row.default, row.freepik_prompt);
+            });
+        } else {
+             // If no CSV, start with one empty row
+            variantsHtml += createVariantRow();
+        }
+    } catch (e) {
+        variantsHtml += createVariantRow();
+    }
+
+    card.innerHTML = `
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">${product.product_name}</h4>
+            <span class="text-muted">${product.id}.csv</span>
+        </div>
+        <div class="card-body">
+            <div id="variants-${product.id}" class="variants-container">
+                ${variantsHtml}
+            </div>
+            <button class="btn btn-sm btn-outline-primary mt-3" onclick="addVariantRow('${product.id}')">Add Variant</button>
+        </div>
+        <div class="card-footer text-end">
+            <button class="btn btn-primary" onclick="generateCsv('${product.id}')">Generate & Download CSV</button>
+        </div>
+    `;
+    return card;
+}
+
+function createVariantRow(name = '', imageUrl = '', quantity = '1', isDefault = 'false', prompt = '') {
+    const isChecked = String(isDefault).toLowerCase() === 'true' ? 'checked' : '';
+    return `
+        <div class="variant-row">
+            <input type="text" class="form-control product-option" placeholder="e.g., Matte Finish" value="${name}" oninput="updateFreepikPrompt(this)">
+            <input type="text" class="form-control" placeholder="https://example.com/image.jpg" value="${imageUrl}">
+            <input type="number" class="form-control" value="${quantity}">
+            <div class="form-check text-center"><input class="form-check-input" type="checkbox" ${isChecked}></div>
+            <input type="text" class="form-control freepik-prompt" placeholder="Auto-generated..." value="${prompt}" readonly>
+            <button class="btn btn-sm btn-danger" onclick="this.parentElement.remove()">Remove</button>
+        </div>
+    `;
+}
+
+function updateFreepikPrompt(productOptionInput) {
+    const row = productOptionInput.closest('.variant-row');
+    const promptInput = row.querySelector('.freepik-prompt');
+    const editorCard = productOptionInput.closest('.product-editor-card');
+    const productName = editorCard.dataset.productName;
+    const optionName = productOptionInput.value;
+    
+    if (optionName) {
+        promptInput.value = `A photorealistic image of high-quality ${productName}, showcasing the ${optionName} style.`;
+    } else {
+        promptInput.value = '';
+    }
+}
+
+function addVariantRow(productId) {
+    const container = document.getElementById(`variants-${productId}`);
+    container.insertAdjacentHTML('beforeend', createVariantRow());
+}
+
+function generateCsv(productId) {
+    const container = document.getElementById(`variants-${productId}`);
+    const rows = container.querySelectorAll('.variant-row:not(.variant-row-header)');
+    
+    const headers = ['product_option', 'image_url', 'quantity', 'default', 'freepik_prompt'];
+    const data = [];
+
+    rows.forEach(row => {
+        const inputs = row.querySelectorAll('input, select');
+        const rowData = {
+            product_option: inputs[0].value,
+            image_url: inputs[1].value,
+            quantity: inputs[2].value,
+            default: inputs[3].checked,
+            freepik_prompt: inputs[4].value
+        };
+        // Only include rows that have at least a product option name
+        if(rowData.product_option.trim()){
+            data.push(rowData);
+        }
+    });
+
+    const csvContent = Papa.unparse({
+        fields: headers,
+        data: data
+    });
+
+    downloadCsv(csvContent, `${productId}.csv`);
+}
+
+function downloadCsv(content, fileName) {
+    const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", fileName);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+}
+
+</script>
+<!-- Papa Parse library for CSV handling -->
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</body>
+</html> 
