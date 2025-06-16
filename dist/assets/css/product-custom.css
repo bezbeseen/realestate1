@@ -23,4 +23,35 @@
 
 .shop_details .details_image .tab-content {
     width: 100%;
+}
+
+.product_image_nav li img {
+    max-width: 100px; /* Or any other size that fits your design */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* Styles for Thumbnail Labels */
+.product_image_nav li a {
+    text-decoration: none;
+    color: #212529;
+    display: block;
+    text-align: center;
+}
+
+.product_image_nav li a:hover {
+    color: #007bff;
+}
+
+.thumbnail-label {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+}
+
+.product_image_nav li a.active .thumbnail-label {
+    color: #007bff; /* Bootstrap primary blue */
 } 

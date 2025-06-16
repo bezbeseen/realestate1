@@ -1,0 +1,83 @@
+[
+  {
+    "id": "business-cards-premium",
+    "path": "products/prints/business-cards/index.html",
+    "product_name": "Premium Real Estate Business Cards",
+    "page_title": "Professional Business Cards - Premium Quality Cards for Real Estate Professionals | BE SEEN",
+    "seo_description": "Make a lasting impression with our premium real estate business cards. Each card is crafted using high-quality materials and finished with your choice of professional coatings.",
+    "hero_image_url": "https://www.realestate.getbeseen.com/assets/images/products/business-cards/hero.jpg",
+    "breadcrumbs": [
+      {"name": "Home", "link": "/index.html"},
+      {"name": "Products", "link": "/products.html"},
+      {"name": "Prints", "link": "/products/prints.html"},
+      {"name": "Business Cards"}
+    ],
+    "gallery": {
+      "main_images": [
+        {
+          "id": "image_1",
+          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg",
+          "alt": "Premium Real Estate Business Cards"
+        },
+        {
+          "id": "image_2",
+          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg",
+          "alt": "Luxury Real Estate Business Cards"
+        },
+        {
+          "id": "image_3",
+          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg",
+          "alt": "Professional Real Estate Business Cards"
+        },
+        {
+          "id": "image_4",
+          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg",
+          "alt": "Embossed Business Cards"
+        }
+      ],
+      "thumbnails": [
+        {
+          "target": "#image_1",
+          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg",
+          "alt": "Premium Cards Stack",
+          "label": "Premium"
+        },
+        {
+          "target": "#image_2",
+          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg",
+          "alt": "Spot UV Cards",
+          "label": "Spot UV"
+        },
+        {
+          "target": "#image_3",
+          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg",
+          "alt": "Gold Foil Cards",
+          "label": "Gold Foil"
+        },
+        {
+          "target": "#image_4",
+          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg",
+          "alt": "Embossed Cards",
+          "label": "Embossed"
+        }
+      ]
+    },
+    "product_details": {
+      "title": "Professional Real Estate Business Cards",
+      "price": "29.99",
+      "description_short": "Make a lasting impression with our premium real estate business cards, designed to stand out.",
+      "description_long": "Choose from various finishes including matte, glossy, or soft-touch coating. Available in standard or custom sizes with options for specialty features like spot UV, foil stamping, and embossing.",
+      "options": [
+        {
+          "name": "Select Finish",
+          "variants": [
+            {"name": "Matte Finish", "price_change": 0, "default": true},
+            {"name": "Glossy Finish", "price_change": 5},
+            {"name": "Soft-Touch Lamination", "price_change": 10}
+          ]
+        }
+      ],
+      "quantity_options": [100, 250, 500, 1000]
+    }
+  }
+] 

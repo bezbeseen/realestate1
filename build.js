@@ -1,6 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const { glob } = require('glob');
+const Handlebars = require('handlebars');
 
 // A function to recursively copy a directory
 async function copyDir(src, dest) {
@@ -15,17 +16,36 @@ async function copyDir(src, dest) {
     }
 }
 
+// Function to process includes
+async function processIncludes(html, sourceDir) {
+    const includeRegex = /<div w3-include-html="(.+?)"><\/div>|<footer w3-include-html="(.+?)"(.+?)><\/footer>/g;
+    let match;
+    let processedHtml = html;
+
+    while ((match = includeRegex.exec(html)) !== null) {
+        const includePath = match[1] || match[2];
+        const fullPath = path.join(sourceDir, includePath);
+        try {
+            const includeContent = await fs.readFile(fullPath, 'utf8');
+            processedHtml = processedHtml.replace(match[0], includeContent);
+        } catch (error) {
+            console.warn(`  -> WARN: Could not include ${includePath}. File not found at ${fullPath}.`);
+            processedHtml = processedHtml.replace(match[0], `<!-- WARN: Include not found: ${includePath} -->`);
+        }
+    }
+    return processedHtml;
+}
+
 async function build() {
     try {
-        console.log('Starting full site build...');
+        console.log('Starting template-based site build...');
         
-        // Configuration for the build
         const config = {
-            sourceDir: '.',
             outputDir: 'dist',
-            htmlFiles: '**/*.html',
-            exclude: ['node_modules/**', 'dist/**', '**/index-static.html'],
-            assetsDir: 'assets'
+            assetsDir: 'assets',
+            dataDir: 'data',
+            templatesDir: 'templates',
+            sourceDir: '.' // Relative to project root
         };
 
         // 1. Clean and create the output directory
@@ -33,52 +53,60 @@ async function build() {
         await fs.mkdir(config.outputDir, { recursive: true });
         console.log(`Cleaned and created output directory: ${config.outputDir}`);
 
-        // 2. Find all HTML files to process
-        const files = await glob(config.htmlFiles, { cwd: config.sourceDir, ignore: config.exclude });
-        console.log(`Found ${files.length} HTML files to process.`);
+        // 2. Read product data and the main template
+        const productDataPath = path.join(config.dataDir, 'products.json');
+        const products = JSON.parse(await fs.readFile(productDataPath, 'utf-8'));
+        console.log(`Loaded ${products.length} products from ${productDataPath}`);
 
-        // 3. Process each HTML file
-        for (const file of files) {
-            const sourcePath = path.join(config.sourceDir, file);
-            const outputPath = path.join(config.outputDir, file);
+        const templatePath = path.join(config.templatesDir, 'product-template.html');
+        const productTemplateSource = await fs.readFile(templatePath, 'utf-8');
+        const productTemplate = Handlebars.compile(productTemplateSource);
+        console.log(`Loaded product template from ${templatePath}`);
+
+        // 3. Generate product pages from the template
+        for (const product of products) {
+            console.log(`Processing product: ${product.product_name}...`);
+            const generatedHtml = productTemplate(product);
+            const finalHtml = await processIncludes(generatedHtml, config.sourceDir);
             
-            console.log(`Processing ${sourcePath}...`);
-            let content = await fs.readFile(sourcePath, 'utf8');
-
-            const includeRegex = /<div\s+w3-include-html="([^"]+)"\s*><\/div>|<header[^>]*\s+w3-include-html="([^"]+)"[^>]*><\/header>|<footer[^>]*\s+w3-include-html="([^"]+)"[^>]*><\/footer>/g;
-            const matches = Array.from(content.matchAll(includeRegex));
-
-            for (const match of matches) {
-                const placeholder = match[0];
-                const includePath = match[1] || match[2] || match[3];
-
-                if (includePath) {
-                    const fullIncludePath = path.resolve(path.dirname(sourcePath), includePath);
-                    try {
-                        const includeContent = await fs.readFile(fullIncludePath, 'utf8');
-                        content = content.replace(placeholder, includeContent);
-                        // console.log(`  -> Included ${fullIncludePath}`); // Optional: uncomment for verbose logging
-                    } catch (err) {
-                        console.warn(`  -> WARN: Could not include ${includePath}. File not found at ${fullIncludePath}.`);
-                        content = content.replace(placeholder, `<!-- INCLUDE FAILED: ${includePath} -->`);
-                    }
-                }
-            }
-            
+            const outputPath = path.join(config.outputDir, product.path);
             await fs.mkdir(path.dirname(outputPath), { recursive: true });
-            await fs.writeFile(outputPath, content);
+            await fs.writeFile(outputPath, finalHtml);
+            console.log(`  -> Generated page at ${outputPath}`);
         }
 
-        // 4. Copy the assets directory
-        const assetsSource = path.join(config.sourceDir, config.assetsDir);
-        const assetsDest = path.join(config.outputDir, config.assetsDir);
-        await copyDir(assetsSource, assetsDest);
-        console.log(`Successfully copied assets to ${assetsDest}`);
+        // 4. Find and process all other non-template HTML files (like index.html, about.html, etc.)
+        const otherHtmlFiles = await glob('**/*.html', { 
+            cwd: config.sourceDir, 
+            ignore: [`${config.templatesDir}/**`, 'node_modules/**', `${config.outputDir}/**`]
+        });
 
-        console.log(`\nFull build successful! ${files.length} pages processed.`);
+        console.log(`\nProcessing ${otherHtmlFiles.length} other HTML files...`);
+        for (const file of otherHtmlFiles) {
+             // Skip files that are generated from product data
+            if (products.some(p => p.path === file)) {
+                continue;
+            }
+            console.log(`Processing ${file}...`);
+            const filePath = path.join(config.sourceDir, file);
+            const content = await fs.readFile(filePath, 'utf8');
+            const processedContent = await processIncludes(content, path.dirname(filePath));
+            
+            const destPath = path.join(config.outputDir, file);
+            await fs.mkdir(path.dirname(destPath), { recursive: true });
+            await fs.writeFile(destPath, processedContent);
+        }
 
-    } catch (err) {
-        console.error('\nBuild failed:', err);
+        // 5. Copy the assets directory
+        const sourceAssets = path.join(config.sourceDir, config.assetsDir);
+        const destAssets = path.join(config.outputDir, config.assetsDir);
+        await copyDir(sourceAssets, destAssets);
+        console.log(`Successfully copied assets to ${destAssets}`);
+
+        console.log('\nFull build successful!');
+
+    } catch (error) {
+        console.error('Build failed:', error);
     }
 }
 
