@@ -5,6 +5,10 @@ const Handlebars = require('handlebars');
 const Papa = require('papaparse');
 const { marked } = require('marked');
 
+Handlebars.registerHelper('json', function(context) {
+    return JSON.stringify(context);
+});
+
 const config = {
     dataDir: path.join(__dirname, 'data'),
     templatesDir: path.join(__dirname, 'templates'),
