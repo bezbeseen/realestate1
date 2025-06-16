@@ -95,6 +95,33 @@ async function build() {
                         if (primaryVariant) {
                             product.product_image = primaryVariant.image_url;
                         }
+
+                        // --- Dynamically build the gallery from variants ---
+                        const galleryImages = variants.map((variant, index) => {
+                            if (!variant.image_url) return null;
+                            return {
+                                id: `image_${index + 1}`,
+                                src: variant.image_url,
+                                alt: variant.alt_tag || variant.name
+                            };
+                        }).filter(Boolean);
+
+                        const galleryThumbnails = variants.map((variant, index) => {
+                            if (!variant.image_url) return null;
+                            return {
+                                target: `#image_${index + 1}`,
+                                src: variant.image_url,
+                                alt: variant.alt_tag || variant.name,
+                                label: variant.label || variant.name
+                            };
+                        }).filter(Boolean);
+                        
+                        if (galleryImages.length > 0) {
+                            product.gallery = {
+                                main_images: galleryImages,
+                                thumbnails: galleryThumbnails
+                            };
+                        }
                     }
                 }
             }

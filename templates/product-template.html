@@ -107,9 +107,9 @@
 						<div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 							<div class="details_image clearfix">
 								<div class="tab-content" id="productTabContent">
-									{{#each product_details.options.0.variants}}
-									<div id="variant-{{@index}}" class="tab-pane {{#if @first}}active{{else}}fade{{/if}}">
-										<img src="{{#if image_url}}{{image_url}}{{else}}/assets/images/placeholder.jpg{{/if}}" alt="{{alt_tag}}">
+									{{#each gallery.main_images}}
+									<div id="{{id}}" class="tab-pane {{#if @first}}active{{else}}fade{{/if}}">
+										<img src="{{#if src}}{{src}}{{else}}/assets/images/placeholder.jpg{{/if}}" alt="{{alt}}">
 									</div>
 									{{/each}}
 								</div>
@@ -118,10 +118,10 @@
 							<!-- Thumbnail Nav -->
 							<div class="mt-3">
 								<ul class="nav ul_li product_image_nav" id="productTab" role="tablist">
-									{{#each product_details.options.0.variants}}
+									{{#each gallery.thumbnails}}
 									<li>
-										<a class="{{#if @first}}active{{/if}}" data-bs-toggle="tab" href="#variant-{{@index}}">
-											<img src="{{#if image_url}}{{image_url}}{{else}}/assets/images/placeholder.jpg{{/if}}" alt="{{alt_tag}}">
+										<a class="{{#if @first}}active{{/if}}" data-bs-toggle="tab" href="{{target}}">
+											<img src="{{#if src}}{{src}}{{else}}/assets/images/placeholder.jpg{{/if}}" alt="{{alt}}">
 											<span class="thumbnail-label">{{label}}</span>
 										</a>
 									</li>
@@ -159,7 +159,7 @@
 									<label class="form-label d-block"><strong>{{name}}</strong></label>
 									<div class="variant-options d-grid gap-2">
 										{{#each variants}}
-										<div class="variant-option card p-2 {{#if default}}border-primary{{/if}}" data-variant="{{name}}" data-price-change="{{price_change}}" data-image-target="#variant-{{@index}}">
+										<div class="variant-option card p-2 {{#if default}}border-primary{{/if}}" data-variant="{{name}}" data-price-change="{{price_change}}" data-image-target="#image_{{@index_1}}">
 											<div class="d-flex justify-content-between">
 												<span>{{name}}</span>
 											</div>

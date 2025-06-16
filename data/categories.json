@@ -24,5 +24,18 @@
             { "name": "Products", "link": "/products.html" },
             { "name": "Signs" }
         ]
+    },
+    {
+        "id": "promotional",
+        "category_name": "Promotional Products",
+        "path": "products/promotional.html",
+        "page_title": "Custom Promotional Products | BE SEEN",
+        "seo_description": "Branded promotional products to represent your business.",
+        "hero_image_url": "/assets/images/breadcrumb/bg_04.jpg",
+        "breadcrumbs": [
+            { "name": "Home", "link": "/index.html" },
+            { "name": "Products", "link": "/products.html" },
+            { "name": "Promotional" }
+        ]
     }
 ] 

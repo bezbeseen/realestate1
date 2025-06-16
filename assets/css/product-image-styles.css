@@ -24,16 +24,15 @@
     position: relative;
     display: block;
     width: 100px; /* Or your desired thumbnail width */
-    height: 75px;  /* Maintain 4:3 aspect ratio */
-    overflow: hidden;
     background-color: #f0f0f0;
 }
 
 .product_image_nav a img {
-    width: 100%;
-    height: 100%;
+    width: 100px;  /* Set fixed thumbnail size */
+    height: 75px; /* Set fixed thumbnail size */
     object-fit: cover;
     object-position: center;
+    display: block;
 }
 
 /* --- Category Page Product Grid --- */

@@ -54,4 +54,11 @@
 
 .product_image_nav li a.active .thumbnail-label {
     color: #007bff; /* Bootstrap primary blue */
+}
+
+/* OVERRIDE: Ensure thumbnail navigation is always visible */
+@media screen and (max-width: 1310px) {
+  .shop_details .details_image .nav {
+    display: block !important;
+  }
 } 

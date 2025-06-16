@@ -2,16 +2,42 @@ const axios = require('axios');
 const fs = require('fs-extra');
 const path = require('path');
 const Papa = require('papaparse');
+const sharp = require('sharp');
+const { glob } = require('glob');
 
-const API_KEY = 'FPSXa4f54291a1c68d77624fc2bedb15d2ef'; // From our previous scripts
+const API_KEY = 'FPSXa4f54291a1c68d77624fc2bedb15d2ef';
 const BASE_URL = 'https://api.freepik.com/v1';
+const IMAGE_WIDTH = 800;
+const IMAGE_HEIGHT = 600;
 
 const config = {
     csvDir: path.join(__dirname, 'data', 'csv'),
-    // We don't need an assetsDir because we'll be using the direct URLs from Freepik.
+    outputDir: path.join(__dirname, 'assets', 'images', 'products')
 };
 
-async function findStockImage(searchTerm) {
+async function downloadAndResizeImage(imageUrl, outputPath) {
+    try {
+        const response = await axios({
+            url: imageUrl,
+            responseType: 'arraybuffer'
+        });
+        const buffer = Buffer.from(response.data, 'binary');
+
+        await fs.ensureDir(path.dirname(outputPath));
+
+        await sharp(buffer)
+            .resize(IMAGE_WIDTH, IMAGE_HEIGHT)
+            .toFile(outputPath);
+        
+        console.log(`  ** Saved and resized image to: ${outputPath}`);
+        return true;
+    } catch (error) {
+        console.error(`  !! Failed to download or resize image from ${imageUrl}`, error.message);
+        return false;
+    }
+}
+
+async function findAndProcessImage(searchTerm) {
     try {
         console.log(`-> Searching for stock image with term: "${searchTerm}"`);
         const response = await axios.get(`${BASE_URL}/resources`, {
@@ -26,7 +52,7 @@ async function findStockImage(searchTerm) {
 
         const imageUrl = response.data.data?.[0]?.image?.source?.url;
         if (imageUrl) {
-            console.log(`  ** Found image: ${imageUrl}`);
+            console.log(`  ** Found image source: ${imageUrl}`);
             return imageUrl;
         } else {
             console.log('  -- No image found for this term.');
@@ -38,14 +64,10 @@ async function findStockImage(searchTerm) {
     }
 }
 
-async function processProduct(productId) {
+async function processCsvFile(csvPath) {
+    const productId = path.basename(csvPath, '.csv');
     console.log(`\nProcessing product: ${productId}`);
-    const csvPath = path.join(config.csvDir, `${productId}.csv`);
-    if (!fs.existsSync(csvPath)) {
-        console.log(`  -> CSV not found for ${productId}, skipping.`);
-        return;
-    }
-
+    
     const csvFile = fs.readFileSync(csvPath, 'utf8');
     const { data: rows } = Papa.parse(csvFile, { header: true, skipEmptyLines: true });
     let csvUpdated = false;
@@ -58,12 +80,23 @@ async function processProduct(productId) {
             continue;
         }
 
-        const searchTerm = `${productId} ${row.product_option}`;
-        const imageUrl = await findStockImage(searchTerm);
+        // Use the Freepik prompt if it exists, otherwise generate a search term
+        const searchTerm = row.freepik_prompt ? row.freepik_prompt : `${productId} ${row.product_option}`;
+        const imageUrl = await findAndProcessImage(searchTerm);
 
         if (imageUrl) {
-            rows[index].image_url = imageUrl;
-            csvUpdated = true;
+            // Sanitize the option name to create a valid filename
+            const safeOptionName = row.product_option.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            const outputFileName = `${safeOptionName}.jpg`;
+            const localOutputPath = path.join(config.outputDir, productId, outputFileName);
+            
+            const success = await downloadAndResizeImage(imageUrl, localOutputPath);
+
+            if (success) {
+                // Update the CSV with the local, root-relative path
+                rows[index].image_url = `/assets/images/products/${productId}/${outputFileName}`;
+                csvUpdated = true;
+            }
         }
     }
 
@@ -78,14 +111,22 @@ async function processProduct(productId) {
 }
 
 async function main() {
-    const productId = process.argv[2];
-    if (!productId) {
-        console.error("Please provide a product ID to process (e.g., 'banners').");
+    console.log('Starting stock image fetching and processing for all products...');
+    
+    const csvFiles = await glob('*.csv', { cwd: config.csvDir });
+
+    if (csvFiles.length === 0) {
+        console.log("No CSV files found to process.");
         return;
     }
 
-    await processProduct(productId);
-    console.log('\nStock image fetching process complete.');
+    for (const csvFile of csvFiles) {
+        await processCsvFile(path.join(config.csvDir, csvFile));
+    }
+
+    console.log('\n\n-----------------------------------------');
+    console.log('Stock image fetching process complete.');
+    console.log('-----------------------------------------');
 }
 
 main(); 
