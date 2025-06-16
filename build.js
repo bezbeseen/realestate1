@@ -45,6 +45,12 @@ async function build() {
          if (fs.existsSync(config.templatesDir)) {
             fs.copySync(config.templatesDir, path.join(config.outputDir, 'templates'));
         }
+        
+        // Copy services directory
+        const servicesDir = path.join(__dirname, 'services');
+        if (fs.existsSync(servicesDir)) {
+            fs.copySync(servicesDir, path.join(config.outputDir, 'services'));
+        }
 
         // Load main data file
         const productsFilePath = path.join(config.dataDir, 'products.json');
@@ -187,7 +193,7 @@ async function build() {
             console.log('-> Generated products.html from template');
         }
 
-getg        // --- Generate Services Page from template ---\
+        // --- Generate Services Page from template ---
         const servicesPageTemplatePath = path.join(config.templatesDir, 'services-page-template.html');
         if (fs.existsSync(servicesPageTemplatePath)) {
             const servicesPageTemplate = Handlebars.compile(fs.readFileSync(servicesPageTemplatePath, 'utf8'));
@@ -195,6 +201,38 @@ getg        // --- Generate Services Page from template ---\
             const outputPath = path.join(config.outputDir, 'services.html');
             fs.writeFileSync(outputPath, compiledHtml);
             console.log('-> Generated services.html from template');
+        }
+
+        // --- Generate Individual Service Pages ---
+        const serviceDetailsTemplatePath = path.join(config.templatesDir, 'service-details-template.html');
+        const servicesContentDir = path.join(__dirname, 'content', 'services');
+        
+        if (fs.existsSync(serviceDetailsTemplatePath) && fs.existsSync(servicesContentDir)) {
+            const serviceDetailsTemplate = Handlebars.compile(fs.readFileSync(serviceDetailsTemplatePath, 'utf8'));
+            const serviceFiles = fs.readdirSync(servicesContentDir).filter(file => file.endsWith('.html'));
+            
+            // Ensure services directory exists in output
+            fs.ensureDirSync(path.join(config.outputDir, 'services'));
+            
+            for (const serviceFile of serviceFiles) {
+                const serviceName = path.basename(serviceFile, '.html');
+                const serviceContent = fs.readFileSync(path.join(servicesContentDir, serviceFile), 'utf8');
+                
+                // Create page title from filename
+                const pageTitle = serviceName.split('-').map(word => 
+                    word.charAt(0).toUpperCase() + word.slice(1)
+                ).join(' ');
+                
+                const serviceData = {
+                    page_title: pageTitle,
+                    service_content: serviceContent
+                };
+                
+                const compiledHtml = serviceDetailsTemplate(serviceData);
+                const outputPath = path.join(config.outputDir, 'services', serviceFile);
+                fs.writeFileSync(outputPath, compiledHtml);
+                console.log(`-> Generated service page: services/${serviceFile}`);
+            }
         }
 
         // Copy root HTML files (excluding the now-templated pages)

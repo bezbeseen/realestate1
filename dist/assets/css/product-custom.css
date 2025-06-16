@@ -83,13 +83,4 @@ small,
 label,
 i {
     font-family: "Poppins", sans-serif;
-}
-
-.home_two_banner {
-    display: flex;
-    /* min-height: 950px; */
-    padding-top: 60px;
-    align-items: center;
-    padding-bottom: 60px;
-    background-image: linear-gradient(0deg, rgb(26, 30, 93) 0%, rgb(87, 52, 201) 99%);
 } 

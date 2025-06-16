@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const axios = require('axios');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -11,95 +11,37 @@ app.use(cors());
 
 // Middleware
 app.use(express.json());
-app.use(express.static('.'));
+app.use(express.static('dist'));
 
-// Freepik API configuration
-const FREEPIK_API_BASE = 'https://api.freepik.com/v1';
-const apiKey = process.env.FREEPIK_API_KEY;
-
-if (!apiKey) {
-    console.error('FREEPIK_API_KEY environment variable is not set');
-    process.exit(1);
-}
-
-// Search endpoint
-app.get('/api/freepik/search', async (req, res) => {
-    try {
-        const { q, limit = 1, page = 1 } = req.query;
-        
-        console.log('Search request:', { q, limit, page });
-        
-        const response = await axios.get(`${FREEPIK_API_BASE}/resources/search`, {
-            params: {
-                q,
-                limit: parseInt(limit),
-                page: parseInt(page),
-                format: 'json',
-                language: 'en',
-                type: 'photo',
-                order: 'trending'
-            },
-            headers: {
-                'X-Freepik-API-Key': apiKey,
-                'Accept': 'application/json'
-            }
-        });
-
-        console.log('Freepik API response:', {
-            status: response.status,
-            data: response.data
-        });
-
-        res.json(response.data);
-    } catch (error) {
-        console.error('Freepik API error:', {
-            status: error.response?.status,
-            data: error.response?.data,
-            message: error.message
-        });
-
-        res.status(error.response?.status || 500).json({
-            error: 'Freepik API error',
-            message: error.response?.data?.message || error.message
-        });
+// Catch-all route for HTML files
+app.get('*', (req, res, next) => {
+    const requestedPath = req.path;
+    let filePath = requestedPath;
+    
+    // If the path doesn't end with .html, try adding it
+    if (!filePath.endsWith('.html')) {
+        filePath = filePath + '.html';
     }
-});
-
-// Download endpoint
-app.get('/api/freepik/download/:id', async (req, res) => {
-    try {
-        const { id } = req.params;
-        console.log('Download request for ID:', id);
-
-        const response = await axios.get(`${FREEPIK_API_BASE}/resources/${id}/download`, {
-            headers: {
-                'X-Freepik-API-Key': apiKey,
-                'Accept': 'application/json'
-            }
-        });
-
-        console.log('Download response:', {
-            status: response.status,
-            data: response.data
-        });
-
-        res.json(response.data);
-    } catch (error) {
-        console.error('Download error:', {
-            status: error.response?.status,
-            data: error.response?.data,
-            message: error.message
-        });
-
-        res.status(error.response?.status || 500).json({
-            error: 'Download error',
-            message: error.response?.data?.message || error.message
-        });
+    
+    // Remove leading slash
+    filePath = filePath.replace(/^\//, '');
+    
+    // Check if file exists in dist directory
+    const distFilePath = path.join('dist', filePath);
+    if (fs.existsSync(distFilePath)) {
+        res.sendFile(path.join(__dirname, distFilePath));
+    } else {
+        // If file doesn't exist, try index.html in that directory
+        const indexPath = path.join('dist', path.dirname(filePath), 'index.html');
+        if (fs.existsSync(indexPath)) {
+            res.sendFile(path.join(__dirname, indexPath));
+        } else {
+            next(); // Pass to next middleware if file not found
+        }
     }
 });
 
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
-    console.log(`Freepik API configured at ${FREEPIK_API_BASE}`);
 }); 
