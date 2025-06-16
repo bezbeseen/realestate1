@@ -1,0 +1,26 @@
+/* Product Gallery Thumbnail Scrolling */
+.product_image_nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.product_image_nav li {
+    display: inline-block; /* Make list items sit side-by-side */
+    flex-shrink: 0; /* Prevent items from shrinking */
+    margin-right: 10px;
+}
+
+/* Hide scrollbar for a cleaner look, but still allow scrolling */
+.product_image_nav::-webkit-scrollbar {
+    display: none;
+}
+.product_image_nav {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.shop_details .details_image .tab-content {
+    width: 100%;
+} 
