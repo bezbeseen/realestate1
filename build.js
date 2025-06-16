@@ -187,8 +187,18 @@ async function build() {
             console.log('-> Generated products.html from template');
         }
 
-        // Copy root HTML files (excluding the now-templated products.html)
-        const otherHtmlFiles = await glob('*.html', { cwd: config.baseDir, ignore: 'products.html' });
+getg        // --- Generate Services Page from template ---\
+        const servicesPageTemplatePath = path.join(config.templatesDir, 'services-page-template.html');
+        if (fs.existsSync(servicesPageTemplatePath)) {
+            const servicesPageTemplate = Handlebars.compile(fs.readFileSync(servicesPageTemplatePath, 'utf8'));
+            const compiledHtml = servicesPageTemplate({}); // No specific data needed for this page
+            const outputPath = path.join(config.outputDir, 'services.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated services.html from template');
+        }
+
+        // Copy root HTML files (excluding the now-templated pages)
+        const otherHtmlFiles = await glob('*.html', { cwd: config.baseDir, ignore: ['products.html', 'services.html'] });
         for (const file of otherHtmlFiles) {
              fs.copySync(path.join(config.baseDir, file), path.join(config.outputDir, file));
         }
