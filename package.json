@@ -9,7 +9,7 @@
     "dev": "browser-sync start --server 'dist' --browser 'google chrome' --files 'dist' --ignore 'node_modules' --no-notify & chokidar '**/*.html' 'assets/**/*' -c 'npm run build' --initial --ignore 'dist/**' --ignore 'node_modules/**'"
   },
   "dependencies": {
-    "axios": "^1.9.0",
+    "axios": "^1.10.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "fs-extra": "^11.3.0",

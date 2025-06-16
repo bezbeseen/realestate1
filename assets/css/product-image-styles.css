@@ -1,0 +1,89 @@
+/* --- Product Image Consistency --- */
+
+/* Main Product Image Gallery */
+.details_image .tab-content .tab-pane {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio (3 / 4 = 0.75) */
+    overflow: hidden;
+    background-color: #f0f0f0; /* Light gray background for placeholders */
+}
+
+.details_image .tab-content .tab-pane img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will cover the area without stretching the image */
+    object-position: center;
+}
+
+/* Thumbnail Navigation Images */
+.product_image_nav a {
+    position: relative;
+    display: block;
+    width: 100px; /* Or your desired thumbnail width */
+    height: 75px;  /* Maintain 4:3 aspect ratio */
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.product_image_nav a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* --- Category Page Product Grid --- */
+.shop_item .item_image {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.shop_item .item_image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.shop_item:hover .item_image img {
+    transform: scale(1.05);
+}
+
+/* --- Category Page Grid Alignment --- */
+.shop_section .row > [class*="col-"] {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 30px; 
+}
+
+.shop_item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; 
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.shop_item .item_content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 15px;
+}
+
+.shop_item .item_title {
+    flex-grow: 1;
+} 

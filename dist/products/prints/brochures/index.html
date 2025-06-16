@@ -32,6 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/product-pages.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/product-custom.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/product-image-styles.css">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
@@ -325,16 +326,40 @@
 						<!-- Main Product Image -->
 						<div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 							<div class="details_image clearfix">
-								<div class="tab-content">
-									<div id="image_1" class="tab-pane active">
-										<img src="https://via.placeholder.com/800x600.png/0088ee?text&#x3D;Brochure" alt="Brochure">
+								<div class="tab-content" id="productTabContent">
+									<div id="variant-0" class="tab-pane active">
+										<img src="https://img.b2bpic.net/premium-photo/blank-trifold-us-letter-size-brochure-3d-render_926199-4257808.jpg" alt="tri-fold">
+									</div>
+									<div id="variant-1" class="tab-pane fade">
+										<img src="https://img.b2bpic.net/premium-photo/blank-4panel-accordion-fold-brochure-render-present-your-design_433979-5219.jpg" alt="z-fold">
+									</div>
+									<div id="variant-2" class="tab-pane fade">
+										<img src="https://img.b2bpic.net/premium-photo/set-black-brochure-poster-templates-abstract-style-mock-up-design_1308175-222457.jpg" alt="booklet">
 									</div>
 								</div>
 							</div>
 
 							<!-- Thumbnail Nav -->
 							<div class="mt-3">
-								<ul class="nav ul_li product_image_nav" role="tablist">
+								<ul class="nav ul_li product_image_nav" id="productTab" role="tablist">
+									<li>
+										<a class="active" data-bs-toggle="tab" href="#variant-0">
+											<img src="https://img.b2bpic.net/premium-photo/blank-trifold-us-letter-size-brochure-3d-render_926199-4257808.jpg" alt="tri-fold">
+											<span class="thumbnail-label">tri-fold</span>
+										</a>
+									</li>
+									<li>
+										<a class="" data-bs-toggle="tab" href="#variant-1">
+											<img src="https://img.b2bpic.net/premium-photo/blank-4panel-accordion-fold-brochure-render-present-your-design_433979-5219.jpg" alt="z-fold">
+											<span class="thumbnail-label">z-fold</span>
+										</a>
+									</li>
+									<li>
+										<a class="" data-bs-toggle="tab" href="#variant-2">
+											<img src="https://img.b2bpic.net/premium-photo/set-black-brochure-poster-templates-abstract-style-mock-up-design_1308175-222457.jpg" alt="booklet">
+											<span class="thumbnail-label">booklet</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -345,7 +370,7 @@
 								 data-product-id="brochures"
 								 data-product-name="Professional Brochures"
 								 data-product-price="99.99" 
-								 data-product-image="https://via.placeholder.com/800x600.png/0088ee?text&#x3D;Brochure">
+								 data-product-image="https://img.b2bpic.net/premium-photo/blank-trifold-us-letter-size-brochure-3d-render_926199-4257808.jpg">
 								<h2 class="item_title mb_15">Custom Brochures</h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
 									<li><i class="fas fa-star"></i></li>
@@ -363,6 +388,27 @@
 								</p>
 
 								<!-- Product Options -->
+								<div class="product-options mb-4">
+									<label class="form-label d-block"><strong>Select Option</strong></label>
+									<div class="variant-options d-grid gap-2">
+										<div class="variant-option card p-2 border-primary" data-variant="tri-fold" data-price-change="0" data-image-target="#variant-0">
+											<div class="d-flex justify-content-between">
+												<span>tri-fold</span>
+											</div>
+										</div>
+										<div class="variant-option card p-2 " data-variant="z-fold" data-price-change="0" data-image-target="#variant-1">
+											<div class="d-flex justify-content-between">
+												<span>z-fold</span>
+											</div>
+										</div>
+										<div class="variant-option card p-2 " data-variant="booklet" data-price-change="0" data-image-target="#variant-2">
+											<div class="d-flex justify-content-between">
+												<span>booklet</span>
+											</div>
+										</div>
+									</div>
+									<input type="hidden" id="selectedVariant" value="tri-fold">
+								</div>
 
 								<!-- Quantity Options -->
 								<div class="product-options mb-4">
@@ -397,8 +443,27 @@
 					<hr>
 
 					<!-- Product Description Tabs -->
-					
-					<hr>
+						<div class="shop_description clearfix">
+						    <ul class="nav description_tabnav ul_li wow fadeInUp2" data-wow-delay=".1s" role="tablist">
+						        <li><a class="active" data-bs-toggle="tab" href="#overview_tab">Overview</a></li>
+						        <li><a data-bs-toggle="tab" href="#details_tab">Details</a></li>
+						        <li><a data-bs-toggle="tab" href="#shipping_tab">Shipping & Delivery</a></li>
+						    </ul>
+						
+						    <div class="tab-content wow fadeInUp2" data-wow-delay=".2s">
+						        <div id="overview_tab" class="tab-pane active">
+						            <p>Our products are crafted with the highest quality materials and attention to detail, ensuring a professional finish that you can be proud of.</p>
+						        </div>
+						
+						        <div id="details_tab" class="tab-pane fade">
+						            <p>Detailed specifications, including materials, dimensions, and finishing options, are available for this product. Please consult the options above or contact us for more information.</p>
+						        </div>
+						
+						        <div id="shipping_tab" class="tab-pane fade">
+						            <p>We offer flexible shipping options to meet your needs. Standard shipping typically takes 5-7 business days. Expedited options are available at checkout. All orders are carefully packaged to ensure they arrive in perfect condition.</p>
+						        </div>
+						    </div>
+						</div> 					<hr>
 					<div class="related-products-container">
 						<!-- related_products_section - start ================================================== -->
 						<section class="related_products_section clearfix">
@@ -588,29 +653,20 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			const variantOptions = document.querySelectorAll('.variant-option');
-			
-			// Find the main image element. We need to find the one inside the *active* tab pane.
-			const mainImageContainer = document.querySelector('.details_image .tab-content');
+			const tabs = new bootstrap.Tab(document.querySelector('#productTab a'));
 
-			if (variantOptions.length > 0 && mainImageContainer) {
-				variantOptions.forEach(option => {
-					option.addEventListener('click', function() {
-						// Update active state for the clicked option
-						variantOptions.forEach(opt => opt.classList.remove('border-primary'));
-						this.classList.add('border-primary');
-
-						const newImageUrl = this.dataset.imageUrl;
-
-						// Only change the image if a URL is provided in the CSV
-						if (newImageUrl) {
-							const mainImage = mainImageContainer.querySelector('.tab-pane.active img');
-							if(mainImage) {
-								mainImage.src = newImageUrl;
-							}
+			variantOptions.forEach(option => {
+				option.addEventListener('click', function() {
+					const target = this.dataset.imageTarget;
+					if (target) {
+						const tabToShow = document.querySelector(`[data-bs-toggle="tab"][href="${target}"]`);
+						if (tabToShow) {
+							const tab = new bootstrap.Tab(tabToShow);
+							tab.show();
 						}
-					});
+					}
 				});
-			}
+			});
 		});
 	</script>
 	

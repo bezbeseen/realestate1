@@ -172,7 +172,8 @@
 								 data-product-id="brochures-001"
 								 data-product-name="Custom Brochures"
 								 data-product-price="99.00" 
-								 data-product-image="/assets/images/products/brochures/main.jpg">
+								 data-product-image="/assets/images/products/brochures/main.jpg"
+								 data-csv-path="/data/csv/brochures.csv">
 								<h2 class="item_title mb_15">Custom Brochures</h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
 									<li><i class="fas fa-star"></i></li>
@@ -190,7 +191,7 @@
 								</p>
 
 								<!-- Product Options -->
-								<div class="product-options mb-4">
+								<div id="product-options-container" class="product-options mb-4">
 									<label class="form-label d-block"><strong>Select Folding</strong></label>
 									<div class="variant-options d-grid gap-2" style="grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));">
 										<div class="variant-option border p-2 text-center cursor-pointer" data-variant="bi-fold" data-price-change="0">
@@ -414,31 +415,24 @@
 	</footer>
 
 	<!-- Fraimwork - Jquery Include -->
-	<script src="/assets/js/jquery-3.5.1.min.js"></script>
-	<script src="/assets/js/bootstrap.bundle.min.js"></script>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
 
-	<!-- animation - js include -->
-	<script src="/assets/js/wow.min.js"></script>
-
-	<!-- carousel - js include -->
+	<!-- carousel - jquery include -->
 	<script src="/assets/js/owl.carousel.min.js"></script>
 
-	<!-- magnific popup - js include -->
-	<script src="/assets/js/magnific-popup.min.js"></script>
+	<!-- nice select - jquery include -->
+	<script src="/assets/js/jquery.nice-select.min.js"></script>
 
-	<!-- isotope - js include -->
-	<script src="/assets/js/isotope.pkgd.js"></script>
+	<!-- magnific popup - jquery include -->
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
 
-	<!-- custom - js include -->
-	<script src="/assets/js/app-initializer.js"></script>
+	<!-- custom - jquery include -->
+	<script src="/assets/js/main.js"></script>
+	<script src="/assets/js/w3-include-html.js"></script>
+	<script src="/assets/js/papaparse.min.js"></script> <!-- Papa Parse for CSV parsing -->
+	<script src="/assets/js/product-loader.js"></script> <!-- Our new product loader script -->
 
-	<!-- Cart and App Initializer -->
-	<script src="/assets/js/cart.js"></script>
-	<script src="/assets/js/cart-display.js"></script>
-	<script src="/includes_new/breadcrumb-init.js"></script>
-	<script src="/assets/js/include.js"></script>
-	<script>
-		includeHTML();
-	</script>
 </body>
-</html> 
+</html>

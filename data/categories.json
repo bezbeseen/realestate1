@@ -1,0 +1,28 @@
+[
+    {
+        "id": "prints",
+        "category_name": "Printing Services",
+        "path": "products/prints.html",
+        "page_title": "Professional Printing Services | BE SEEN",
+        "seo_description": "High-quality printing for business cards, brochures, flyers, and more.",
+        "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
+        "breadcrumbs": [
+            { "name": "Home", "link": "/index.html" },
+            { "name": "Products", "link": "/products.html" },
+            { "name": "Prints" }
+        ]
+    },
+    {
+        "id": "signs",
+        "category_name": "Custom Signs & Banners",
+        "path": "products/signs.html",
+        "page_title": "Custom Signs and Banners | BE SEEN",
+        "seo_description": "Durable and vibrant signs and banners for indoor and outdoor use.",
+        "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
+        "breadcrumbs": [
+            { "name": "Home", "link": "/index.html" },
+            { "name": "Products", "link": "/products.html" },
+            { "name": "Signs" }
+        ]
+    }
+] 

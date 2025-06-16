@@ -86,6 +86,15 @@ async function build() {
                             name: "Select Option",
                             variants: variants
                         }];
+
+                        // Find the default variant or the first one with an image url
+                        const defaultVariant = variants.find(v => v.default && v.image_url);
+                        const firstImageVariant = variants.find(v => v.image_url);
+                        const primaryVariant = defaultVariant || firstImageVariant;
+
+                        if (primaryVariant) {
+                            product.product_image = primaryVariant.image_url;
+                        }
                     }
                 }
             }
@@ -117,6 +126,27 @@ async function build() {
                     fs.ensureDirSync(path.dirname(outputPath));
                     fs.writeFileSync(outputPath, compiledHtml);
                 }
+            }
+        }
+
+        // --- Generate Category Pages ---
+        const categoryTemplatePath = path.join(config.templatesDir, 'category-template.html');
+        const categoriesFilePath = path.join(config.dataDir, 'categories.json');
+
+        if (fs.existsSync(categoryTemplatePath) && fs.existsSync(categoriesFilePath)) {
+            const categoryTemplate = Handlebars.compile(fs.readFileSync(categoryTemplatePath, 'utf8'));
+            const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf8'));
+
+            for (const category of categories) {
+                // Filter products that belong to the current category
+                category.products = products.filter(p => p.category === category.id);
+                
+                // Generate the page
+                const compiledHtml = categoryTemplate(category);
+                const outputPath = path.join(config.outputDir, category.path);
+                fs.ensureDirSync(path.dirname(outputPath));
+                fs.writeFileSync(outputPath, compiledHtml);
+                console.log(`-> Generated category page: ${category.path}`);
             }
         }
 

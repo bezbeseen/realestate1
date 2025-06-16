@@ -6,6 +6,8 @@
     "page_title": "Professional Business Cards - Premium Quality Cards for Real Estate Professionals | BE SEEN",
     "seo_description": "Make a lasting impression with our premium real estate business cards. Each card is crafted using high-quality materials and finished with your choice of professional coatings.",
     "hero_image_url": "https://www.realestate.getbeseen.com/assets/images/products/business-cards/hero.jpg",
+    "product_image": "/assets/images/products/business-cards/main.jpg",
+    "category": "prints",
     "breadcrumbs": [
       {"name": "Home", "link": "/index.html"},
       {"name": "Products", "link": "/products.html"},
@@ -106,19 +108,18 @@
     ],
     "gallery": {
       "main_images": [
-        {
-          "id": "image_1",
-          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b69335f63901b089c2ce.jpeg",
-          "alt": "Vinyl Banner"
-        }
+        { "id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Standard+13oz", "alt": "Standard 13oz Vinyl Banner" },
+        { "id": "image_2", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Stretch", "alt": "Stretch Vinyl Banner" },
+        { "id": "image_3", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Blackout", "alt": "Blackout Vinyl Banner" },
+        { "id": "image_4", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Mesh", "alt": "Mesh Vinyl Banner" },
+        { "id": "image_5", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Backlit", "alt": "Backlit Vinyl Banner" }
       ],
       "thumbnails": [
-        {
-          "target": "#image_1",
-          "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b69335f63901b089c2ce.jpeg",
-          "alt": "Vinyl Banner",
-          "label": "Standard"
-        }
+        { "target": "#image_1", "src": "https://via.placeholder.com/100x100.png/0088ee?text=Standard", "alt": "Standard 13oz Vinyl Banner", "label": "Standard 13 oz" },
+        { "target": "#image_2", "src": "https://via.placeholder.com/100x100.png/0088ee?text=Stretch", "alt": "Stretch Vinyl Banner", "label": "Stretch" },
+        { "target": "#image_3", "src": "https://via.placeholder.com/100x100.png/0088ee?text=Blackout", "alt": "Blackout Vinyl Banner", "label": "Blackout" },
+        { "target": "#image_4", "src": "https://via.placeholder.com/100x100.png/0088ee?text=Mesh", "alt": "Mesh Vinyl Banner", "label": "Mesh" },
+        { "target": "#image_5", "src": "https://via.placeholder.com/100x100.png/0088ee?text=Backlit", "alt": "Backlit Vinyl Banner", "label": "Backlit" }
       ]
     },
     "product_details": {
@@ -137,6 +138,8 @@
     "page_title": "Custom Brochures | BE SEEN",
     "seo_description": "High-quality, full-color brochures for your business.",
     "hero_image_url": "/assets/images/backgrounds/bg_14.jpg",
+    "product_image": "/assets/images/products/brochures/main.jpg",
+    "category": "prints",
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Prints", "link": "/products/prints.html"}, {"name": "Brochures"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Brochure", "alt": "Brochure"}], "thumbnails": []},
     "product_details": {"title": "Custom Brochures", "price": "99.99", "description_short": "Full-color, professional brochures.", "description_long": "", "options": [], "quantity_options": [50, 100, 250]}
@@ -148,6 +151,8 @@
     "page_title": "Custom Canvas Prints | BE SEEN",
     "seo_description": "High-quality canvas prints for your home or office.",
     "hero_image_url": "/assets/images/backgrounds/bg_15.jpg",
+    "product_image": "/assets/images/products/canvas-prints/main.jpg",
+    "category": "prints",
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Prints", "link": "/products/prints.html"}, {"name": "Canvas Prints"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Canvas+Print", "alt": "Canvas Print"}], "thumbnails": []},
     "product_details": {"title": "Custom Canvas Prints", "price": "79.99", "description_short": "Beautiful canvas prints.", "description_long": "", "options": [], "quantity_options": [1, 5, 10]}
@@ -159,6 +164,8 @@
     "page_title": "Custom Decals | BE SEEN",
     "seo_description": "Durable and weather-resistant custom decals.",
     "hero_image_url": "/assets/images/backgrounds/bg_16.jpg",
+    "product_image": "/assets/images/products/decals/main.jpg",
+    "category": "prints",
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Prints", "link": "/products/prints.html"}, {"name": "Decals"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Decal", "alt": "Decal"}], "thumbnails": []},
     "product_details": {"title": "Custom Decals", "price": "19.99", "description_short": "High-quality custom decals.", "description_long": "", "options": [], "quantity_options": [25, 50, 100]}
@@ -170,6 +177,8 @@
     "page_title": "Custom Business Flyers | BE SEEN",
     "seo_description": "Promotional flyers for your business.",
     "hero_image_url": "/assets/images/backgrounds/bg_17.jpg",
+    "product_image": "/assets/images/products/flyers/main.jpg",
+    "category": "prints",
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Prints", "link": "/products/prints.html"}, {"name": "Flyers"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Flyer", "alt": "Flyer"}], "thumbnails": []},
     "product_details": {"title": "Custom Business Flyers", "price": "49.99", "description_short": "Effective promotional flyers.", "description_long": "", "options": [], "quantity_options": [100, 250, 500]}
@@ -181,6 +190,8 @@
     "page_title": "High-Quality Photo Prints | BE SEEN",
     "seo_description": "Professional quality photo prints.",
     "hero_image_url": "/assets/images/backgrounds/bg_18.jpg",
+    "product_image": "/assets/images/products/photos/main.jpg",
+    "category": "prints",
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Prints", "link": "/products/prints.html"}, {"name": "Photos"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Photo+Print", "alt": "Photo Print"}], "thumbnails": []},
     "product_details": {"title": "High-Quality Photo Prints", "price": "9.99", "description_short": "Vibrant, long-lasting photo prints.", "description_long": "", "options": [], "quantity_options": [10, 20, 50]}
@@ -192,6 +203,8 @@
     "page_title": "Custom Posters | BE SEEN",
     "seo_description": "Large format custom posters.",
     "hero_image_url": "/assets/images/backgrounds/bg_19.jpg",
+    "product_image": "/assets/images/products/posters/main.jpg",
+    "category": "prints",
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Prints", "link": "/products/prints.html"}, {"name": "Posters"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Poster", "alt": "Poster"}], "thumbnails": []},
     "product_details": {"title": "Custom Posters", "price": "24.99", "description_short": "High-impact posters.", "description_long": "", "options": [], "quantity_options": [1, 5, 10]}
@@ -203,6 +216,8 @@
     "page_title": "Custom Presentation Folders | BE SEEN",
     "seo_description": "Professional presentation folders.",
     "hero_image_url": "/assets/images/backgrounds/bg_20.jpg",
+    "product_image": "/assets/images/products/presentation-folders/main.jpg",
+    "category": "prints",
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Prints", "link": "/products/prints.html"}, {"name": "Presentation Folders"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Folder", "alt": "Folder"}], "thumbnails": []},
     "product_details": {"title": "Custom Presentation Folders", "price": "149.99", "description_short": "High-quality presentation folders.", "description_long": "", "options": [], "quantity_options": [50, 100, 250]}
@@ -214,6 +229,8 @@
     "page_title": "Custom Stickers | BE SEEN",
     "seo_description": "Durable, vinyl custom stickers.",
     "hero_image_url": "/assets/images/backgrounds/bg_21.jpg",
+    "product_image": "/assets/images/products/stickers/main.jpg",
+    "category": "prints",
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Prints", "link": "/products/prints.html"}, {"name": "Stickers"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Sticker", "alt": "Sticker"}], "thumbnails": []},
     "product_details": {"title": "Custom Stickers", "price": "14.99", "description_short": "Vinyl stickers in any shape or size.", "description_long": "", "options": [], "quantity_options": [50, 100, 250]}
@@ -225,6 +242,8 @@
     "page_title": "Custom Window Clings | BE SEEN",
     "seo_description": "Reusable window clings for your business.",
     "hero_image_url": "/assets/images/backgrounds/bg_22.jpg",
+    "product_image": "/assets/images/products/window-clings/main.jpg",
+    "category": "prints",
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Prints", "link": "/products/prints.html"}, {"name": "Window Clings"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Window+Cling", "alt": "Window Cling"}], "thumbnails": []},
     "product_details": {"title": "Custom Window Clings", "price": "39.99", "description_short": "Easy to apply and remove window clings.", "description_long": "", "options": [], "quantity_options": [1, 5, 10]}
