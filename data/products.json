@@ -507,5 +507,47 @@
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Signs", "link": "/products/signs.html"}, {"name": "Magnets"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Car+Magnet", "alt": "Car Magnet"}], "thumbnails": []},
     "product_details": {"title": "Custom Car Magnets", "price": "19.99", "description_short": "Durable and weather-resistant vehicle magnets.", "description_long": "", "options": [], "quantity_options": [1, 2, 10]}
+  },
+  {
+    "id": "a-frames",
+    "path": "products/signs/a-frames/index.html",
+    "product_name": "A-Frame Signs",
+    "page_title": "Professional A-Frame Signs - Portable Sidewalk Signs | BE SEEN",
+    "seo_description": "Professional A-Frame signs perfect for sidewalk advertising, open houses, and business promotions. Durable, portable, and weather-resistant.",
+    "hero_image_url": "/assets/images/backgrounds/bg_35.jpg",
+    "product_image": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png",
+    "category": "signs",
+    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Signs", "link": "/products/signs.html"}, {"name": "A-Frame Signs"}],
+    "gallery": {
+      "main_images": [
+        {"id": "image_1", "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "Professional A-Frame Sign"},
+        {"id": "image_2", "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "A-Frame Sign Display"},
+        {"id": "image_3", "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "Portable A-Frame Sign"},
+        {"id": "image_4", "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "Weather-Resistant A-Frame"}
+      ],
+      "thumbnails": [
+        {"target": "#image_1", "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "Professional A-Frame Sign", "label": "Standard"},
+        {"target": "#image_2", "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "A-Frame Sign Display", "label": "Display"},
+        {"target": "#image_3", "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "Portable A-Frame Sign", "label": "Portable"},
+        {"target": "#image_4", "src": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "Weather-Resistant A-Frame", "label": "Weather-Resistant"}
+      ]
+    },
+    "product_details": {
+      "title": "Professional A-Frame Signs",
+      "price": "89.99",
+      "description_short": "Portable sidewalk signs perfect for attracting foot traffic and promoting your business.",
+      "description_long": "Our A-Frame signs are designed for maximum visibility and portability. Perfect for restaurants, retail stores, real estate open houses, and special events. Built with durable materials to withstand outdoor conditions while maintaining professional appearance.",
+      "options": [
+        {
+          "name": "Select Size",
+          "variants": [
+            {"name": "18\" x 24\"", "price_change": 0, "default": true},
+            {"name": "24\" x 36\"", "price_change": 20},
+            {"name": "30\" x 40\"", "price_change": 40}
+          ]
+        }
+      ],
+      "quantity_options": [1, 2, 5, 10]
+    }
   }
 ] 
