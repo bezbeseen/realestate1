@@ -1,0 +1,341 @@
+<!-- Analytics Loader - Comprehensive Tracking System -->
+<!-- Google Analytics (existing tracking) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H16V1KPFT"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3H16V1KPFT');
+</script>
+
+<!-- Base Analytics Tracker -->
+<script src="/assets/js/analytics-tracker.js"></script>
+
+<!-- Enhanced BeSeen Business Analytics -->
+<script src="/assets/js/enhanced-analytics.js"></script>
+
+<!-- Analytics Configuration & Initialization -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Analytics System Fully Loaded');
+    
+    // Enhanced tracking for BeSeen specific elements
+    setupBeSeenSpecificTracking();
+});
+
+function setupBeSeenSpecificTracking() {
+    // Track phone number clicks specifically
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('a[href^="tel:"]')) {
+            const phoneNumber = e.target.closest('a').getAttribute('href').replace('tel:', '');
+            gtag('event', 'phone_call_click', {
+                'phone_number': phoneNumber,
+                'page_location': window.location.href,
+                'event_category': 'contact'
+            });
+        }
+    });
+
+    // Track email clicks specifically  
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('a[href^="mailto:"]')) {
+            const email = e.target.closest('a').getAttribute('href').replace('mailto:', '');
+            gtag('event', 'email_click', {
+                'email_address': email,
+                'page_location': window.location.href,
+                'event_category': 'contact'
+            });
+        }
+    });
+
+    // Track external link clicks (Promo Store, Login, etc.)
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        if (link && link.getAttribute('href')) {
+            const href = link.getAttribute('href');
+            const isExternal = href.startsWith('http') && !href.includes(window.location.hostname);
+            
+            if (isExternal) {
+                gtag('event', 'external_link_click', {
+                    'link_url': href,
+                    'link_text': link.textContent.trim(),
+                    'page_location': window.location.href,
+                    'event_category': 'outbound'
+                });
+            }
+        }
+    });
+
+    // Track cart interactions
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.cart_btn')) {
+            gtag('event', 'cart_open_attempt', {
+                'page_location': window.location.href,
+                'event_category': 'ecommerce'
+            });
+        }
+    });
+
+    // Track login button clicks
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.login')) {
+            gtag('event', 'login_attempt', {
+                'page_location': window.location.href,
+                'event_category': 'user_engagement'
+            });
+        }
+    });
+
+    // Track search functionality if present
+    document.addEventListener('submit', function(e) {
+        if (e.target.matches('form[role="search"], .search-form')) {
+            const searchTerm = e.target.querySelector('input[type="search"], input[name="search"], input[name="q"]')?.value;
+            if (searchTerm) {
+                gtag('event', 'search', {
+                    'search_term': searchTerm,
+                    'event_category': 'site_search'
+                });
+            }
+        }
+    });
+
+    // Track video interactions if present
+    document.addEventListener('play', function(e) {
+        if (e.target.tagName === 'VIDEO') {
+            gtag('event', 'video_play', {
+                'video_title': e.target.title || 'Unknown Video',
+                'event_category': 'video'
+            });
+        }
+    }, true);
+
+    // Track PDF/Document downloads
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        if (link && link.getAttribute('href')) {
+            const href = link.getAttribute('href');
+            const isDownload = /\.(pdf|doc|docx|xls|xlsx|ppt|pptx|zip|rar)$/i.test(href);
+            
+            if (isDownload) {
+                gtag('event', 'file_download', {
+                    'file_name': href.split('/').pop(),
+                    'file_type': href.split('.').pop().toLowerCase(),
+                    'link_text': link.textContent.trim(),
+                    'event_category': 'download'
+                });
+            }
+        }
+    });
+
+    // Track scroll depth milestones
+    let scrollDepthMarkers = [25, 50, 75, 100];
+    let scrollDepthReached = [];
+    
+    window.addEventListener('scroll', function() {
+        const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+        
+        scrollDepthMarkers.forEach(function(marker) {
+            if (scrollPercent >= marker && !scrollDepthReached.includes(marker)) {
+                scrollDepthReached.push(marker);
+                gtag('event', 'scroll_depth', {
+                    'percent_scrolled': marker,
+                    'event_category': 'engagement'
+                });
+            }
+        });
+    });
+
+    // Track time on page milestones
+    const timeMarkers = [30, 60, 120, 300, 600]; // 30s, 1m, 2m, 5m, 10m
+    let timeMarkersReached = [];
+    const startTime = Date.now();
+
+    timeMarkers.forEach(function(marker) {
+        setTimeout(function() {
+            if (!document.hidden) {
+                timeMarkersReached.push(marker);
+                gtag('event', 'time_on_page', {
+                    'time_seconds': marker,
+                    'event_category': 'engagement'
+                });
+            }
+        }, marker * 1000);
+    });
+
+    // Track page visibility changes
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+            gtag('event', 'page_hidden', {
+                'time_on_page': timeOnPage,
+                'event_category': 'engagement'
+            });
+        } else {
+            gtag('event', 'page_visible', {
+                'event_category': 'engagement'
+            });
+        }
+    });
+
+    // Track form interactions
+    document.addEventListener('submit', function(e) {
+        const form = e.target;
+        if (form.tagName === 'FORM') {
+            const formName = form.name || form.id || 'unnamed_form';
+            const formData = new FormData(form);
+            const fieldCount = Array.from(formData.keys()).length;
+            
+            gtag('event', 'form_submit', {
+                'form_name': formName,
+                'form_fields': fieldCount,
+                'event_category': 'form'
+            });
+        }
+    });
+
+    // Track error events
+    window.addEventListener('error', function(e) {
+        gtag('event', 'javascript_error', {
+            'error_message': e.message,
+            'error_source': e.filename,
+            'error_line': e.lineno,
+            'event_category': 'error'
+        });
+    });
+
+    // Track unhandled promise rejections
+    window.addEventListener('unhandledrejection', function(e) {
+        gtag('event', 'promise_rejection', {
+            'error_reason': e.reason,
+            'event_category': 'error'
+        });
+    });
+}
+
+// Performance monitoring
+window.addEventListener('load', function() {
+    // Track page load time
+    setTimeout(function() {
+        const perfData = performance.getEntriesByType('navigation')[0];
+        if (perfData) {
+            gtag('event', 'page_load_time', {
+                'load_time': Math.round(perfData.loadEventEnd - perfData.loadEventStart),
+                'dom_ready_time': Math.round(perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart),
+                'event_category': 'performance'
+            });
+        }
+    }, 0);
+});
+
+// Track custom BeSeen events
+function trackCustomEvent(eventName, parameters = {}) {
+    gtag('event', eventName, {
+        ...parameters,
+        'custom_tracking': true,
+        'site_section': getBeSeeenSiteSection()
+    });
+}
+
+function getBeSeeenSiteSection() {
+    const path = window.location.pathname;
+    if (path.includes('/products/')) return 'products';
+    if (path.includes('/services/')) return 'services';
+    if (path.includes('/about')) return 'about';
+    if (path.includes('/contact')) return 'contact';
+    if (path === '/' || path === '/index.html') return 'home';
+    return 'other';
+}
+
+// Make tracking function globally available
+window.trackCustomEvent = trackCustomEvent;
+
+// Log analytics initialization
+console.log('📊 BeSeen Analytics System Initialized');
+console.log('📋 Tracking: Page views, clicks, forms, scrolling, time on page, errors, performance');
+console.log('🎯 Business Events: Phone calls, emails, cart, login, downloads, videos');
+console.log('📱 Enhanced: Mobile interactions, product views, lead scoring');
+</script>
+
+<!-- Development Analytics Dashboard Toggle -->
+<script>
+if (window.location.hostname === 'localhost' || window.location.hostname.includes('dev') || window.location.search.includes('debug=analytics')) {
+    // Add analytics debug panel
+    document.addEventListener('DOMContentLoaded', function() {
+        const debugPanel = document.createElement('div');
+        debugPanel.innerHTML = `
+            <div id="analytics-debug" style="
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                background: rgba(0,0,0,0.9);
+                color: white;
+                padding: 15px;
+                border-radius: 8px;
+                font-family: monospace;
+                font-size: 12px;
+                z-index: 999999;
+                max-width: 400px;
+                max-height: 300px;
+                overflow-y: auto;
+                display: none;
+            ">
+                <h4 style="margin: 0 0 10px 0;">🔍 Analytics Debug Panel</h4>
+                <div id="debug-events"></div>
+                <button onclick="clearDebugEvents()" style="margin-top: 10px; padding: 5px 10px; background: #007cba; color: white; border: none; border-radius: 3px; cursor: pointer;">Clear</button>
+            </div>
+            <button onclick="toggleDebugPanel()" style="
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                background: #007cba;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                z-index: 1000000;
+                font-size: 20px;
+            ">📊</button>
+        `;
+        document.body.appendChild(debugPanel);
+
+        // Override gtag to capture events in debug panel
+        const originalGtag = window.gtag;
+        window.gtag = function() {
+            originalGtag.apply(window, arguments);
+            
+            if (arguments[0] === 'event') {
+                addDebugEvent(arguments[1], arguments[2]);
+            }
+        };
+
+        window.toggleDebugPanel = function() {
+            const panel = document.getElementById('analytics-debug');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        };
+
+        window.clearDebugEvents = function() {
+            document.getElementById('debug-events').innerHTML = '';
+        };
+
+        window.addDebugEvent = function(eventName, parameters) {
+            const debugEvents = document.getElementById('debug-events');
+            if (debugEvents) {
+                const eventDiv = document.createElement('div');
+                eventDiv.style.cssText = 'margin: 5px 0; padding: 5px; background: rgba(255,255,255,0.1); border-radius: 3px; font-size: 11px;';
+                eventDiv.innerHTML = `
+                    <strong>${eventName}</strong> <small>${new Date().toLocaleTimeString()}</small><br>
+                    <small>${JSON.stringify(parameters, null, 2).substring(0, 100)}...</small>
+                `;
+                debugEvents.insertBefore(eventDiv, debugEvents.firstChild);
+                
+                // Keep only last 20 events
+                while (debugEvents.children.length > 20) {
+                    debugEvents.removeChild(debugEvents.lastChild);
+                }
+            }
+        };
+    });
+}
+</script> 
