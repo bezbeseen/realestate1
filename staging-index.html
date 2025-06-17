@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>BeSeen Staging Site - Navigation Hub</title>
+    <meta name="description" content="BeSeen Staging Site - Navigate to different sections and preview new features." />
+    
+    <!-- Framework CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/flaticon.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/scss/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bez.css">
+
+    <style>
+        .staging-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .staging-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .staging-banner p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .navigation-grid {
+            padding: 80px 0;
+        }
+        
+        .nav-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .nav-card i {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .nav-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .nav-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .nav-btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-btn:hover {
+            background: #5a67d8;
+            color: white;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+        
+        .staging-notice {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            margin: 40px 0;
+        }
+        
+        .staging-notice h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .real-estate-highlight {
+            background: linear-gradient(135deg, #2d5aa0 0%, #1a365d 100%);
+        }
+        
+        .real-estate-highlight .nav-card i {
+            color: #2d5aa0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header_section clearfix">
+        <div data-include="include-header-top.html"></div>
+        
+        <div class="header_bottom">
+            <div class="maxw_1420 container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3">
+                        <div class="brand_logo">
+                            <img src="assets/images/logo/BeSeen_1.png" alt="BE SEEN Logo">
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="text-right">
+                            <span class="badge badge-info" style="font-size: 1rem; padding: 8px 15px;">STAGING SITE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Staging Banner -->
+    <section class="staging-banner">
+        <div class="container">
+            <h1>BeSeen Staging Site</h1>
+            <p>Welcome to our development preview! Navigate through the different sections below to explore our new website features and real estate solutions.</p>
+        </div>
+    </section>
+
+    <!-- Navigation Grid -->
+    <section class="navigation-grid">
+        <div class="container">
+            
+            <!-- Staging Notice -->
+            <div class="staging-notice">
+                <h4><i class="fas fa-info-circle"></i> Staging Environment</h4>
+                <p><strong>This is a preview site for development and testing.</strong> You're seeing the latest updates before they go live. Some features may still be in development.</p>
+            </div>
+
+            <div class="row">
+                
+                <!-- Real Estate Section - Highlighted -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="nav-card real-estate-highlight">
+                        <i class="fas fa-home"></i>
+                        <h3>Real Estate Solutions</h3>
+                        <p>Complete real estate marketing products including lawn signs, flags, banners, business cards, and A-frames.</p>
+                        <a href="services/real-estate/" class="nav-btn">Explore Real Estate</a>
+                    </div>
+                </div>
+
+                <!-- Main Services -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="nav-card">
+                        <i class="fas fa-print"></i>
+                        <h3>All Services</h3>
+                        <p>Browse our complete range of printing and signage services for businesses of all sizes.</p>
+                        <a href="services.html" class="nav-btn">View Services</a>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="nav-card">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3>Products</h3>
+                        <p>Explore our product catalog with detailed specifications and pricing.</p>
+                        <a href="products.html" class="nav-btn">Browse Products</a>
+                    </div>
+                </div>
+
+                <!-- Commercial Signage -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="nav-card">
+                        <i class="fas fa-building"></i>
+                        <h3>Commercial Signage</h3>
+                        <p>Professional commercial signage solutions for businesses and organizations.</p>
+                        <a href="commercial-signage.html" class="nav-btn">View Signage</a>
+                    </div>
+                </div>
+
+                <!-- Shopping Cart -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="nav-card">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Shopping Experience</h3>
+                        <p>Test our new shopping cart and checkout process with enhanced user experience.</p>
+                        <a href="shopping-cart.html" class="nav-btn">Test Shopping Cart</a>
+                    </div>
+                </div>
+
+                <!-- Contact & Info -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="nav-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Contact Information</h3>
+                        <p>Get in touch with our team for quotes, questions, or project consultations.</p>
+                        <a href="#contact" class="nav-btn">Contact Details</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="staging-notice">
+                        <h4><i class="fas fa-chart-line"></i> Quick Navigation</h4>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <strong>Real Estate Pages:</strong>
+                                <ul class="list-unstyled">
+                                    <li><a href="services/real-estate/real-estate-business-cards.html">Business Cards</a></li>
+                                    <li><a href="services/real-estate/real-estate-lawn-signs.html">Lawn Signs</a></li>
+                                    <li><a href="services/real-estate/real-estate-flags.html">Marketing Flags</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <strong>More Real Estate:</strong>
+                                <ul class="list-unstyled">
+                                    <li><a href="services/real-estate/real-estate-banners.html">Banners</a></li>
+                                    <li><a href="services/real-estate/real-estate-a-frames.html">A-Frame Signs</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <strong>Shopping:</strong>
+                                <ul class="list-unstyled">
+                                    <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                                    <li><a href="success.html">Success Page</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <strong>Testing:</strong>
+                                <ul class="list-unstyled">
+                                    <li><a href="?debug=analytics">Debug Analytics</a></li>
+                                    <li><a href="test-includes.html">Test Includes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background: #f8f9fa; padding: 60px 0;">
+        <div class="container text-center">
+            <h3>Contact Information</h3>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                    <p>377 Laurelwood Road<br>Santa Clara, CA</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                    <p>contact@getbeseen.com</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                    <p>(669) 273-1583</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Notice -->
+    <footer style="background: #333; color: white; padding: 30px 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2024 BeSeen Sign Shop - Staging Environment | This is a development preview site</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Load includes
+        document.addEventListener('DOMContentLoaded', function() {
+            const includes = document.querySelectorAll('[data-include]');
+            includes.forEach(element => {
+                const file = element.getAttribute('data-include');
+                fetch(file)
+                    .then(response => response.text())
+                    .then(content => {
+                        element.innerHTML = content;
+                    })
+                    .catch(error => console.error('Include failed:', error));
+            });
+        });
+    </script>
+
+</body>
+</html> 
