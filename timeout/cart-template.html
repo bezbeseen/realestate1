@@ -1,0 +1,99 @@
+<!-- Cart Template - Complete Integration -->
+<!-- This template shows how to properly integrate the cart system -->
+
+<!-- 1. Cart Sidebar HTML (goes in includes/cart-sidebar.html) -->
+<div class="cart_sidebar">
+    <div class="cart_header">
+        <h3 class="mb-0">Shopping Cart</h3>
+        <button type="button" class="close_btn"><i class="fal fa-times"></i></button>
+    </div>
+    <div class="cart_items_list">
+        <ul class="ul_li_block clearfix">
+            <!-- Cart items will be dynamically inserted here by SimpleCart -->
+            <li class="text-center p-4">Your cart is empty</li>
+        </ul>
+    </div>
+    <div class="cart_footer">
+        <ul class="total_price ul_li_block clearfix">
+            <li><span>Subtotal:</span> <small class="cart-subtotal">$0.00</small></li>
+            <li><span>VAT:</span> <small class="cart-vat">$0.00</small></li>
+            <li class="total"><span>Total:</span> <small class="cart-total">$0.00</small></li>
+        </ul>
+        <div class="btns_group">
+            <a class="btn btn-primary w-100 mb-2" href="/cart">View Cart</a>
+            <a class="btn btn-success w-100" href="/checkout">Checkout</a>
+        </div>
+    </div>
+</div>
+
+<!-- 2. Cart Scripts (goes in includes/scripts.html) -->
+<!-- Replace the existing cart scripts section with this: -->
+<!--
+<!-- Cart and App Initializer -->
+<script src="/assets/js/simple-cart.js"></script>
+<script>
+    // Initialize cart when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Make sure SimpleCart is available globally
+        if (typeof SimpleCart !== 'undefined') {
+            SimpleCart.init();
+            
+            // Connect cart button in header - replaces onclick="Cart.openCartSidebar()"
+            const cartButton = document.querySelector('.cart_btn');
+            if (cartButton) {
+                cartButton.removeAttribute('onclick'); // Remove old onclick
+                cartButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    SimpleCart.openCartSidebar();
+                });
+            }
+            
+            // Connect close button in cart sidebar
+            const closeButton = document.querySelector('.cart_sidebar .close_btn');
+            if (closeButton) {
+                closeButton.addEventListener('click', function() {
+                    document.querySelector('.sidebar-menu-wrapper').classList.remove('active');
+                });
+            }
+            
+            // Connect overlay to close sidebar
+            const overlay = document.querySelector('.sidebar-menu-wrapper .overlay');
+            if (overlay) {
+                overlay.addEventListener('click', function() {
+                    document.querySelector('.sidebar-menu-wrapper').classList.remove('active');
+                });
+            }
+        }
+    });
+</script>
+<script src="/includes_new/breadcrumb-init.js"></script>
+<script src="/assets/js/include.js"></script>
+<script>
+    includeHTML();
+</script>
+-->
+
+<!-- 3. Template Usage Instructions -->
+<!--
+INTEGRATION STEPS:
+
+1. The cart sidebar HTML above should replace the content in includes/cart-sidebar.html
+
+2. The cart scripts section above should replace the "Cart and App Initializer" section in includes/scripts.html
+
+3. Make sure assets/js/simple-cart.js exists in your assets folder
+
+4. Run the build system: node build/build.js
+
+5. The cart will automatically work with existing:
+   - .addtocart_btn buttons on product pages
+   - .cart_btn header button
+   - data-product-* attributes on product containers
+
+TEMPLATE FORMAT NOTES:
+- Uses {{> include-name}} syntax for includes
+- Handlebars templates process includes during build
+- Generated files will have the cart functionality integrated
+- Cart state persists in localStorage
+- Works with existing Bootstrap styling
+--> 
