@@ -1,0 +1,94 @@
+{
+  "posts": [
+    {
+      "slug": "the-power-of-custom-banners",
+      "title": "The Power of Custom Banners: A Marketing Must-Have",
+      "shortTitle": "Custom Banners",
+      "metaDescription": "Custom banners have become a cornerstone in modern marketing strategies. Learn how to leverage them for maximum impact with our expert tips.",
+      "category": "Design",
+      "author": "GetBeSeen Team",
+      "publishDate": "04 July 2024",
+      "featuredImage": "assets/images/blog/fullimage/7865180.jpg",
+      "imageAlt": "Custom banner marketing display",
+      "tags": [
+        {"name": "Banners", "url": "/products/prints/banners.html"},
+        {"name": "Marketing", "url": "/blog.html"},
+        {"name": "Design", "url": "/services/graphic-design.html"}
+      ],
+      "relatedPosts": [
+        {
+          "title": "How to Create Stunning Brochures",
+          "url": "/how-to-create-stunning-brochures-expert-printing-services-tips.html",
+          "thumbnail": "assets/images/blog/fullimage/brochure.jpg",
+          "date": "04 July 2024"
+        },
+        {
+          "title": "How to Choose a Printing Company",
+          "url": "/how-to-choose-a-printing-company.html",
+          "thumbnail": "assets/images/blog/fullimage/group-three-fashion-designers-working-atelier-with-color-palette.jpg",
+          "date": "22 Apr 2024"
+        }
+      ]
+    },
+    {
+      "slug": "how-to-create-stunning-brochures-expert-printing-services-tips",
+      "title": "How to Create Stunning Brochures: Expert Printing Services Tips",
+      "shortTitle": "Stunning Brochures",
+      "metaDescription": "A brochure is a versatile marketing tool that serves to inform, engage, and persuade potential customers. Learn expert tips for creating stunning brochures.",
+      "category": "Design",
+      "author": "GetBeSeen Team",
+      "publishDate": "04 July 2024",
+      "featuredImage": "assets/images/blog/fullimage/brochure.jpg",
+      "imageAlt": "Professional brochure design examples",
+      "tags": [
+        {"name": "Brochures", "url": "/products/prints/brochures.html"},
+        {"name": "Design & Branding", "url": "/services/graphic-design.html"},
+        {"name": "Marketing", "url": "/blog.html"}
+      ],
+      "relatedPosts": [
+        {
+          "title": "The Power of Custom Banners",
+          "url": "/the-power-of-custom-banners.html",
+          "thumbnail": "assets/images/blog/fullimage/7865180.jpg",
+          "date": "04 July 2024"
+        },
+        {
+          "title": "How to Choose a Printing Company",
+          "url": "/how-to-choose-a-printing-company.html",
+          "thumbnail": "assets/images/blog/fullimage/group-three-fashion-designers-working-atelier-with-color-palette.jpg",
+          "date": "22 Apr 2024"
+        }
+      ]
+    },
+    {
+      "slug": "how-to-choose-a-printing-company",
+      "title": "How to Choose a Printing Company",
+      "shortTitle": "Choosing a Printer",
+      "metaDescription": "Selecting the right printing company is crucial for any business. Learn what to look for when choosing a printing partner that aligns with your vision.",
+      "category": "Business",
+      "author": "GetBeSeen Team",
+      "publishDate": "22 Apr 2024",
+      "featuredImage": "assets/images/blog/fullimage/group-three-fashion-designers-working-atelier-with-color-palette.jpg",
+      "imageAlt": "Team choosing printing company",
+      "tags": [
+        {"name": "Business Tips", "url": "/blog.html"},
+        {"name": "Printing Services", "url": "/services.html"},
+        {"name": "Quality", "url": "/about.html"}
+      ],
+      "relatedPosts": [
+        {
+          "title": "The Power of Custom Banners",
+          "url": "/the-power-of-custom-banners.html",
+          "thumbnail": "assets/images/blog/fullimage/7865180.jpg",
+          "date": "04 July 2024"
+        },
+        {
+          "title": "How to Create Stunning Brochures",
+          "url": "/how-to-create-stunning-brochures-expert-printing-services-tips.html",
+          "thumbnail": "assets/images/blog/fullimage/brochure.jpg",
+          "date": "04 July 2024"
+        }
+      ]
+    }
+  ]
+} 

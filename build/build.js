@@ -18,7 +18,7 @@ async function build() {
     try {
         console.log('Starting CSV-enhanced build...');
 
-        // Register Handlebars partials
+        // Register Handlebars partials with tracking comments
         const partialsDir = config.includesDir;
         if (fs.existsSync(partialsDir)) {
             const partialFiles = fs.readdirSync(partialsDir);
@@ -26,7 +26,11 @@ async function build() {
                 if (file.endsWith('.html')) {
                     const partialName = path.basename(file, '.html');
                     const partialContent = fs.readFileSync(path.join(partialsDir, file), 'utf8');
-                    Handlebars.registerPartial(partialName, partialContent);
+                    
+                    // Wrap partial content with tracking comments
+                    const wrappedContent = `<!-- INCLUDE START: ${partialName} -->\n${partialContent}\n<!-- INCLUDE END: ${partialName} -->`;
+                    
+                    Handlebars.registerPartial(partialName, wrappedContent);
                 }
             });
         }
@@ -34,7 +38,7 @@ async function build() {
         // Clean and recreate the output directory
         if (fs.existsSync(config.outputDir)) {
             try {
-                fs.removeSync(config.outputDir);
+        fs.removeSync(config.outputDir);
             } catch (err) {
                 console.log('Warning: Could not fully remove output directory, continuing...');
             }
@@ -255,6 +259,7 @@ async function build() {
             for (const service of services) {
                 const compiledHtml = serviceDetailsTemplate(service);
                 const outputPath = path.join(config.outputDir, service.path);
+                fs.ensureDirSync(path.dirname(outputPath));
                 fs.writeFileSync(outputPath, compiledHtml);
                 console.log(`-> Generated service page: ${service.path}`);
             }
@@ -302,10 +307,68 @@ async function build() {
             console.log('-> Generated index.html from template');
         }
 
+        // --- Generate Customer Homepage from template ---
+        const homepageTemplatePath = path.join(config.templatesDir, 'homepage-template.html');
+        if (fs.existsSync(homepageTemplatePath)) {
+            const homepageTemplate = Handlebars.compile(fs.readFileSync(homepageTemplatePath, 'utf8'));
+            const compiledHtml = homepageTemplate({}); // No specific data needed for this page
+            const outputPath = path.join(config.outputDir, 'homepage.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated homepage.html from template');
+        }
+
+        // --- Generate About Page from template ---
+        const aboutTemplatePath = path.join(config.templatesDir, 'about-template.html');
+        if (fs.existsSync(aboutTemplatePath)) {
+            const aboutTemplate = Handlebars.compile(fs.readFileSync(aboutTemplatePath, 'utf8'));
+            const compiledHtml = aboutTemplate({}); // No specific data needed for this page
+            const outputPath = path.join(config.outputDir, 'about.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated about.html from template');
+        }
+
+        // --- Generate Contact Page from template ---
+        const contactTemplatePath = path.join(config.templatesDir, 'contact-template.html');
+        if (fs.existsSync(contactTemplatePath)) {
+            const contactTemplate = Handlebars.compile(fs.readFileSync(contactTemplatePath, 'utf8'));
+            const compiledHtml = contactTemplate({}); // No specific data needed for this page
+            const outputPath = path.join(config.outputDir, 'contact.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated contact.html from template');
+        }
+
+        // --- Generate Blog Page from template ---
+        const blogTemplatePath = path.join(config.templatesDir, 'blog-template.html');
+        if (fs.existsSync(blogTemplatePath)) {
+            const blogTemplate = Handlebars.compile(fs.readFileSync(blogTemplatePath, 'utf8'));
+            const compiledHtml = blogTemplate({}); // No specific data needed for this page
+            const outputPath = path.join(config.outputDir, 'blog.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated blog.html from template');
+        }
+
+        // --- Generate Search Results Page from template ---
+        const searchResultsTemplatePath = path.join(config.templatesDir, 'search-results-template.html');
+        if (fs.existsSync(searchResultsTemplatePath)) {
+            const searchResultsTemplate = Handlebars.compile(fs.readFileSync(searchResultsTemplatePath, 'utf8'));
+            const compiledHtml = searchResultsTemplate({}); // No specific data needed for this page
+            const outputPath = path.join(config.outputDir, 'search-results.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated search-results.html from template');
+        }
+
         // Copy root HTML files (excluding the now-templated pages and index files)
-        const otherHtmlFiles = await glob('*.html', { cwd: config.baseDir, ignore: ['products.html', 'services.html', 'products/promotional.html', 'index.html', 'staging-index.html'] });
+        const otherHtmlFiles = await glob('*.html', { cwd: config.baseDir, ignore: ['products.html', 'services.html', 'products/promotional.html', 'index.html', 'staging-index.html', 'about.html', 'contact.html', 'blog.html'] });
         for (const file of otherHtmlFiles) {
              fs.copySync(path.join(config.baseDir, file), path.join(config.outputDir, file));
+        }
+
+        // Copy developer tools page
+        const devToolsSource = path.join(__dirname, '..', 'developer-tools.html');
+        const devToolsDest = path.join(config.outputDir, 'developer-tools.html');
+        if (fs.existsSync(devToolsSource)) {
+            fs.copyFileSync(devToolsSource, devToolsDest);
+            console.log('-> Copied developer-tools.html');
         }
 
         // --- Generate Sitemap ---

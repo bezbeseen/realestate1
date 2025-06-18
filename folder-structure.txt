@@ -1,0 +1,141 @@
+# Product Image Folder Structure
+
+/assets/images/products/
+├── business-cards/
+│   ├── business-cards_standard.jpg
+│   ├── business-cards_premium.jpg
+│   ├── business-cards_luxury.jpg
+│   └── business-cards_economy.jpg
+├── banners/
+│   ├── banners_vinyl.jpg
+│   ├── banners_mesh.jpg
+│   ├── banners_fabric.jpg
+│   └── banners_retractable.jpg
+├── yard-signs/
+│   ├── yard-signs_standard.jpg
+│   ├── yard-signs_premium.jpg
+│   └── yard-signs_double-sided.jpg
+├── retractable-banners/
+│   ├── retractable-banners_economy.jpg
+│   ├── retractable-banners_standard.jpg
+│   ├── retractable-banners_premium.jpg
+│   └── retractable-banners_deluxe.jpg
+├── flyers/
+│   ├── flyers_standard.jpg
+│   ├── flyers_premium.jpg
+│   └── flyers_glossy.jpg
+├── brochures/
+│   ├── brochures_bi-fold.jpg
+│   ├── brochures_tri-fold.jpg
+│   └── brochures_z-fold.jpg
+├── posters/
+│   ├── posters_small-format.jpg
+│   ├── posters_large-format.jpg
+│   └── posters_custom.jpg
+├── table-cloths/
+│   ├── table-cloths_6ft.jpg
+│   ├── table-cloths_8ft.jpg
+│   └── table-cloths_custom.jpg
+├── window-clings/
+│   ├── window-clings_standard.jpg
+│   └── window-clings_custom.jpg
+├── stickers/
+│   ├── stickers_vinyl.jpg
+│   ├── stickers_custom-shapes.jpg
+│   └── stickers_weather-resistant.jpg
+├── presentation-folders/
+│   ├── presentation-folders_standard.jpg
+│   ├── presentation-folders_business-card-slits.jpg
+│   └── presentation-folders_custom.jpg
+├── aluminum-signs/
+│   ├── aluminum-signs_18x24.jpg
+│   ├── aluminum-signs_24x36.jpg
+│   └── aluminum-signs_custom.jpg
+├── foam-board/
+│   ├── foam-board_standard.jpg
+│   └── foam-board_premium.jpg
+├── corrugated/
+│   ├── corrugated_4mm.jpg
+│   └── corrugated_6mm.jpg
+├── pvc-board/
+│   ├── pvc-board_standard.jpg
+│   └── pvc-board_premium.jpg
+├── styrene/
+│   ├── styrene_standard.jpg
+│   └── styrene_premium.jpg
+├── acrylic/
+│   ├── acrylic_clear.jpg
+│   └── acrylic_colored.jpg
+├── flags/
+│   ├── flags_feather.jpg
+│   ├── flags_rectangle.jpg
+│   └── flags_teardrop.jpg
+├── channel-lettering/
+│   ├── channel-lettering_standard.jpg
+│   └── channel-lettering_led.jpg
+├── 3d-lettering/
+│   ├── 3d-lettering_standard.jpg
+│   └── 3d-lettering_premium.jpg
+├── light-boxes/
+│   ├── light-boxes_standard.jpg
+│   └── light-boxes_led.jpg
+├── magnets/
+│   ├── magnets_standard.jpg
+│   └── magnets_custom.jpg
+├── a-frames/
+│   ├── a-frames_standard.jpg
+│   └── a-frames_premium.jpg
+├── pens/
+│   ├── pens_basic.jpg
+│   ├── pens_premium.jpg
+│   └── pens_metal.jpg
+├── tents/
+│   ├── tents_10x10.jpg
+│   ├── tents_10x15.jpg
+│   └── tents_10x20.jpg
+├── booths/
+│   ├── booths_standard.jpg
+│   └── booths_premium.jpg
+├── bags/
+│   ├── bags_tote.jpg
+│   ├── bags_drawstring.jpg
+│   └── bags_messenger.jpg
+├── branded-apparel/
+│   ├── branded-apparel_t-shirts.jpg
+│   ├── branded-apparel_polos.jpg
+│   ├── branded-apparel_hoodies.jpg
+│   └── branded-apparel_hats.jpg
+├── photos/
+│   ├── photos_standard.jpg
+│   └── photos_premium.jpg
+├── decals/
+│   ├── decals_standard.jpg
+│   └── decals_custom.jpg
+├── canvas-prints/
+│   ├── canvas-prints_gallery-wrap.jpg
+│   └── canvas-prints_museum-quality.jpg
+├── commercial-signage/
+│   ├── commercial-signage_storefront.jpg
+│   ├── commercial-signage_monument.jpg
+│   ├── commercial-signage_led.jpg
+│   ├── commercial-signage_window-graphics.jpg
+│   └── commercial-signage_office.jpg
+├── real-estate-business-cards/
+│   ├── real-estate-business-cards_standard.jpg
+│   ├── real-estate-business-cards_premium.jpg
+│   └── real-estate-business-cards_luxury.jpg
+├── real-estate-lawn-signs/
+│   ├── real-estate-lawn-signs_18x24.jpg
+│   ├── real-estate-lawn-signs_24x36.jpg
+│   └── real-estate-lawn-signs_double-sided.jpg
+├── real-estate-banners/
+│   ├── real-estate-banners_standard.jpg
+│   └── real-estate-banners_premium.jpg
+├── real-estate-flags/
+│   ├── real-estate-flags_feather.jpg
+│   └── real-estate-flags_rectangle.jpg
+└── real-estate-a-frames/
+    ├── real-estate-a-frames_standard.jpg
+    └── real-estate-a-frames_premium.jpg
+
+# Total: 38 product folders, ~115 images 
