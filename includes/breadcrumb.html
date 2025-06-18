@@ -1,0 +1,28 @@
+<!-- Breadcrumb -->
+<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url({{hero_image_url}});">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="page_title mb-0">{{page_title}}</h1>
+                {{#if seo_description}}
+                <div class="row">
+                    <div class="col-lg-9 col-md-10 col-sm-12">
+                        <p class="mb-0 subtitle-text text-white" style="font-size: 1.35rem; line-height: 1.6; margin-top: 0.75rem;">
+                            {{seo_description}}
+                        </p>
+                    </div>
+                </div>
+                {{/if}}
+                <div class="mt-4">
+                    <ul class="breadcrumb_nav ul_li_right clearfix">
+                        {{#each breadcrumbs}}
+                        <li>
+                            {{#if link}}<a href="{{link}}">{{name}}</a>{{else}}{{name}}{{/if}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 

@@ -1,0 +1,195 @@
+[
+    {
+        "id": "graphic-design",
+        "service_name": "Graphic Design",
+        "path": "services/graphic-design.html",
+        "page_title": "Professional Graphic Design Services | BE SEEN",
+        "seo_description": "Expert graphic design services including logo design, branding, photo editing, and print layouts to elevate your visual identity.",
+        "hero_image_url": "/assets/images/services/graphic-design.png",
+        "main_description": "Elevate your brand's visual identity with our expert Graphic Design services. Our team of skilled designers combines artistry and technical proficiency to create stunning visuals that resonate with your audience. From crafting captivating logos and establishing a unique brand identity to designing eye-catching marketing collateral and digital assets, we tailor our services to meet your specific needs. We collaborate closely with you, ensuring that every design element aligns seamlessly with your brand vision. Whether you're a start-up in need of a memorable logo or an established business seeking a comprehensive branding overhaul, our Graphic Design services are designed to make a lasting impact. Let us transform your ideas into visually compelling designs that set you apart in today's competitive landscape.",
+        "sub_services": [
+            {
+                "id": "logos",
+                "name": "Logo Design",
+                "description": "Create impactful logos that capture your brand essence with our expert design services. Our logo design process involves understanding your business values, target audience, and industry to craft a unique visual identity that stands out in the marketplace.",
+                "icon": "/assets/images/misc/logo-image.png"
+            },
+            {
+                "id": "branding",
+                "name": "Branding",
+                "description": "Build a strong brand identity that resonates with your audience and drives success. Our comprehensive branding services ensure consistency across all your marketing materials, creating a professional and recognizable presence.",
+                "icon": "/assets/images/misc/company-branding.png"
+            },
+            {
+                "id": "photo-editing",
+                "name": "Photo Editing",
+                "description": "Transform your photos with professional editing services that bring your vision to life. From basic retouching and color correction to advanced compositing and creative effects, we enhance your images to meet exact specifications.",
+                "icon": "/assets/images/misc/photo-editing_1.png"
+            },
+            {
+                "id": "print-layout",
+                "name": "Print Layout",
+                "description": "Create visually appealing print layouts that make a lasting impression. Our print layout services ensure your materials are not only visually appealing but also optimized for printing with proper specifications.",
+                "icon": "/assets/images/misc/graphic-layout.png"
+            },
+            {
+                "id": "fonts-typography",
+                "name": "Fonts / Typography",
+                "description": "Professional typography and font selection that enhances your brand's visual communication and readability across all marketing materials."
+            }
+        ],
+        "breadcrumbs": [
+            { "name": "Home", "link": "/index.html" },
+            { "name": "Services", "link": "/services.html" },
+            { "name": "Graphic Design" }
+        ]
+    },
+    {
+        "id": "web-design",
+        "service_name": "Web Design",
+        "path": "services/web-design.html",
+        "page_title": "Professional Web Design Services | BE SEEN",
+        "seo_description": "Custom web design services including HTML websites, WordPress development, email templates, and SEO optimization for your online presence.",
+        "hero_image_url": "/assets/images/services/web-design.png",
+        "main_description": "Transform your online presence with our cutting-edge Web Design services. Our expert team combines creativity and functionality to craft visually stunning and user-friendly websites tailored to your unique goals. From intuitive navigation and responsive layouts to compelling visuals and seamless user experiences, we prioritize every detail to ensure your website stands out in the digital landscape. Whether you're launching a new site, refreshing an existing one, or need e-commerce functionality, our Web Design services are geared towards enhancing your brand's online impact. We work closely with you to understand your business objectives, integrating the latest design trends and technologies to deliver a website that not only looks impressive but also drives engagement and conversions. Elevate your online presence and leave a lasting impression with our bespoke Web Design solutions.",
+        "sub_services": [
+            {
+                "id": "websites",
+                "name": "Websites",
+                "description": "Craft visually stunning websites that captivate users and drive online success. Custom HTML websites built from scratch with clean, semantic code that's fast-loading and SEO-friendly."
+            },
+            {
+                "id": "web-services",
+                "name": "Web Services",
+                "description": "Unlock your online potential with our comprehensive web services for businesses. From e-commerce functionality to content management systems, we provide complete web solutions."
+            },
+            {
+                "id": "custom-email-design",
+                "name": "Custom E-Mail Design",
+                "description": "Professional email templates for newsletters, marketing campaigns, and automated email sequences. Designed to be mobile-responsive and optimized for deliverability across all major email clients."
+            },
+            {
+                "id": "marketing-campaigns",
+                "name": "Marketing Campaigns",
+                "description": "Comprehensive digital marketing strategies including content creation, online advertising setup, conversion optimization, and analytics tracking to help grow your online business."
+            },
+            {
+                "id": "social-media",
+                "name": "Social Media",
+                "description": "Boost your brand's online presence with strategic social media marketing solutions. Eye-catching social media graphics, covers, and post templates that maintain brand consistency."
+            },
+            {
+                "id": "seo",
+                "name": "SEO - Search Engine Optimization",
+                "description": "Drive organic traffic and boost your online visibility with our expert SEO services. We optimize your site structure, content, meta tags, and implement best practices to increase your online visibility."
+            }
+        ],
+        "breadcrumbs": [
+            { "name": "Home", "link": "/index.html" },
+            { "name": "Services", "link": "/services.html" },
+            { "name": "Web Design" }
+        ]
+    },
+    {
+        "id": "commercial-signage",
+        "service_name": "Commercial Signage",
+        "path": "services/commercial-signage.html",
+        "page_title": "Commercial Signage Services | BE SEEN",
+        "seo_description": "Professional commercial signage including LED signs, monument signs, storefront displays, and complete installation services for your business visibility.",
+        "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
+        "main_description": "Transform your business visibility with our comprehensive Commercial Signage solutions. We specialize in creating professional, eye-catching signs that effectively communicate your brand message and attract customers. From storefront displays to large-scale outdoor advertising, our expert team combines innovative design with durable materials to deliver signage that stands the test of time. Whether you need illuminated channel letters, monument signs, window graphics, or custom displays, we work closely with you to understand your specific requirements and deliver solutions that enhance your business presence. Our full-service approach includes design consultation, permitting assistance, professional installation, and ongoing maintenance support.",
+        "sub_services": [
+            {
+                "id": "storefront-signs",
+                "name": "Storefront Signs",
+                "description": "Eye-catching storefront signage that attracts customers and clearly identifies your business. We design and install professional signs that comply with local regulations and enhance your business's street appeal and visibility."
+            },
+            {
+                "id": "monument-signs",
+                "name": "Monument Signs",
+                "description": "Impressive ground-mounted signs that make a lasting first impression. Our monument signs are built with durable materials and can include LED lighting, landscaping elements, and multi-tenant capabilities for business complexes."
+            },
+            {
+                "id": "led-illuminated-signs",
+                "name": "LED Illuminated Signs",
+                "description": "Energy-efficient LED signage that ensures your business is visible 24/7. Our LED signs offer brilliant illumination, long lifespan, and can include programmable features for dynamic messaging and eye-catching effects."
+            },
+            {
+                "id": "window-graphics",
+                "name": "Window Graphics",
+                "description": "Professional window graphics and decals that turn your storefront windows into powerful marketing tools. From promotional graphics to privacy films, we create custom solutions that enhance your space while promoting your brand."
+            },
+            {
+                "id": "office-signage",
+                "name": "Office Signage",
+                "description": "Professional interior signage for offices, lobbies, and corporate environments. Including reception signs, directory boards, room identification, and ADA-compliant signage that creates a professional atmosphere."
+            },
+            {
+                "id": "wayfinding-systems",
+                "name": "Wayfinding Systems",
+                "description": "Complete wayfinding and directional signage systems for large facilities, campuses, and commercial complexes. We design clear, intuitive signage that helps visitors navigate your space efficiently and professionally."
+            },
+            {
+                "id": "custom-displays",
+                "name": "Custom Displays",
+                "description": "Unique custom display solutions for trade shows, retail environments, and special events. From pop-up displays to permanent installations, we create eye-catching displays that effectively showcase your products and services."
+            },
+            {
+                "id": "installation-maintenance",
+                "name": "Installation & Maintenance",
+                "description": "Professional installation services and ongoing maintenance support for all types of signage. Our certified installers ensure proper mounting, electrical connections, and compliance with local codes, plus we offer maintenance plans to keep your signs looking great."
+            }
+        ],
+        "breadcrumbs": [
+            { "name": "Home", "link": "/index.html" },
+            { "name": "Services", "link": "/services.html" },
+            { "name": "Commercial Signage" }
+        ]
+    },
+    {
+        "id": "mailing",
+        "service_name": "Mailing Services",
+        "path": "services/mailing.html",
+        "page_title": "Professional Mailing Services | BE SEEN",
+        "seo_description": "Complete mailing services including direct mail campaigns, EDDM, postcards, and newsletters to reach your target audience effectively.",
+        "hero_image_url": "/assets/images/services/mailing.avif",
+        "main_description": "Simplify your communication and streamline your outreach with our Mailing Service. Whether you're sending out personalized invitations, promotional materials, or important announcements, we've got you covered. Our efficient and reliable mailing services ensure that your messages reach the right recipients on time, every time. From addressing and sorting to postage and delivery, we handle the logistics, allowing you to focus on what matters most—connecting with your audience. With a commitment to accuracy and attention to detail, our mailing service is designed to save you time and resources while ensuring a professional and polished presentation. Experience hassle-free mailings with our dedicated team, providing a seamless solution for all your mailing needs. Let us enhance the efficiency of your communication strategy, so you can make a lasting impression with every piece of mail.",
+        "sub_services": [
+            {
+                "id": "eddm",
+                "name": "EDDM",
+                "description": "Reach a targeted local audience with our efficient Every Door Direct Mail (EDDM) service. Cost-effective marketing that delivers your materials to every address in selected postal routes without needing mailing lists."
+            },
+            {
+                "id": "newsletters",
+                "name": "News Letters",
+                "description": "Professional newsletter printing and mailing services to keep your customers and stakeholders informed. We handle the complete process from design assistance to postal delivery, ensuring your newsletters arrive on time and in perfect condition."
+            },
+            {
+                "id": "postcards",
+                "name": "Postcards",
+                "description": "Print personalized postcards that leave a lasting impression on your recipients. High-impact postcard mailings that grab attention and drive response with eye-catching designs."
+            },
+            {
+                "id": "direct-mailers",
+                "name": "Direct Mailers",
+                "description": "Deliver your message directly to your target audience with our effective direct mail services. Targeted campaigns that reach your ideal customers with personalized messaging to maximize your marketing ROI."
+            },
+            {
+                "id": "contact-list-cleaning",
+                "name": "Contact List Cleaning",
+                "description": "Ensure your mailing campaigns reach their intended recipients with our professional contact list cleaning and verification services to improve deliverability and reduce costs."
+            },
+            {
+                "id": "interactive-mail",
+                "name": "Interactive Mail Campaigns",
+                "description": "Engage your audience with interactive mail that captivates and drives action. Creative campaigns that go beyond traditional direct mail to create memorable customer experiences."
+            }
+        ],
+        "breadcrumbs": [
+            { "name": "Home", "link": "/index.html" },
+            { "name": "Services", "link": "/services.html" },
+            { "name": "Mailing Services" }
+        ]
+    }
+] 
