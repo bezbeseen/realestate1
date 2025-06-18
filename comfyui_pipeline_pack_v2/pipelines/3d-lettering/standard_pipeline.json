@@ -1,0 +1,64 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "type": "LoadImage",
+            "position": [
+                0,
+                0
+            ],
+            "data": {
+                "image_path": "https://www.4over.com/images/anchors/3d-lettering/standard_anchor.jpg"
+            }
+        },
+        {
+            "id": 2,
+            "type": "StableDiffusionLoader",
+            "position": [
+                200,
+                0
+            ],
+            "data": {
+                "model": "RealisticVisionV6"
+            }
+        },
+        {
+            "id": 3,
+            "type": "PromptGenerator",
+            "position": [
+                400,
+                0
+            ],
+            "data": {
+                "prompt": "Professional product photography of 3D letters, acrylic or metal construction, SOLD text for real estate, office wall mounting, showing dimensional depth, professional interior setting, studio lighting"
+            }
+        },
+        {
+            "id": 4,
+            "type": "ImageGenerator",
+            "position": [
+                600,
+                0
+            ],
+            "inputs": {
+                "model": 2,
+                "prompt": 3
+            }
+        },
+        {
+            "id": 5,
+            "type": "SaveImage",
+            "position": [
+                800,
+                0
+            ],
+            "inputs": {
+                "image": 4
+            },
+            "data": {
+                "filename": "3d-lettering_standard_v1",
+                "folder": "3d-lettering/standard"
+            }
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+  "prompt": {
+    "1": {
+      "inputs": {
+        "text": "a beautiful landscape"
+      },
+      "class_type": "CLIPTextEncode"
+    }
+  }
+} 

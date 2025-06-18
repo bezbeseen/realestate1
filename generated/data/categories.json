@@ -39,6 +39,19 @@
         ]
     },
     {
+        "id": "materials",
+        "category_name": "Sign Materials",
+        "path": "products/materials.html",
+        "page_title": "Sign Materials & Substrates | BE SEEN",
+        "seo_description": "Professional sign materials including corrugated plastic, foam board, PVC, styrene, and acrylic for all your signage needs.",
+        "hero_image_url": "/assets/images/breadcrumb/bg_05.jpg",
+        "breadcrumbs": [
+            { "name": "Home", "link": "/index.html" },
+            { "name": "Products", "link": "/products.html" },
+            { "name": "Materials" }
+        ]
+    },
+    {
         "id": "real-estate",
         "category_name": "Real Estate Marketing",
         "path": "products/real-estate.html",

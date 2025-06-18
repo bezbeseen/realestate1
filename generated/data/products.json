@@ -315,13 +315,13 @@
   },
   {
     "id": "corrugated",
-    "path": "products/signs/corrugated/index.html",
-    "product_name": "Corrugated Signs",
-    "page_title": "Corrugated Signs | BE SEEN",
+    "path": "products/materials/corrugated/index.html",
+    "product_name": "Corrugated Plastic",
+    "page_title": "Corrugated Plastic Signs | BE SEEN",
     "seo_description": "Lightweight and durable corrugated plastic signs.",
     "product_image": "https://via.placeholder.com/800x600.png/0088ee?text=Corrugated+Sign",
-    "category": "signs",
-    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Signs", "link": "/products/signs.html"}, {"name": "Corrugated Signs"}],
+    "category": "materials",
+    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Materials", "link": "/products/materials.html"}, {"name": "Corrugated Plastic"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Corrugated+Sign", "alt": "Corrugated Sign"}], "thumbnails": []},
     "product_details": {"title": "Corrugated Signs", "price": "19.99", "description_short": "Affordable and versatile corrugated signs.", "description_long": "", "options": [], "quantity_options": [10, 25, 50]}
   },
@@ -350,6 +350,54 @@
     "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Signs", "link": "/products/signs.html"}, {"name": "3D Lettering"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=3D+Lettering", "alt": "3D Lettering"}], "thumbnails": []},
     "product_details": {"title": "Custom 3D Lettering", "price": "199.99", "description_short": "High-quality dimensional lettering.", "description_long": "", "options": [], "quantity_options": [1]}
+  },
+  {
+    "id": "commercial-signage",
+    "path": "products/signs/commercial-signage/index.html",
+    "product_name": "Commercial Signage",
+    "page_title": "Commercial Signage Services | BE SEEN",
+    "seo_description": "Professional commercial signage including LED signs, monument signs, storefront displays, and complete installation services for your business visibility.",
+    "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
+    "product_image": "/assets/images/products/commercial-signage/main.jpg",
+    "category": "signs",
+    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Signs", "link": "/products/signs.html"}, {"name": "Commercial Signage"}],
+    "gallery": {
+      "main_images": [
+        {"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Storefront+Signs", "alt": "Storefront Signs"},
+        {"id": "image_2", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Monument+Signs", "alt": "Monument Signs"},
+        {"id": "image_3", "src": "https://via.placeholder.com/800x600.png/0088ee?text=LED+Signs", "alt": "LED Illuminated Signs"},
+        {"id": "image_4", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Window+Graphics", "alt": "Window Graphics"},
+        {"id": "image_5", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Office+Signage", "alt": "Office Signage"}
+      ],
+      "thumbnails": [
+        {"target": "#image_1", "src": "https://via.placeholder.com/100x100.png/0088ee?text=Storefront", "alt": "Storefront Signs", "label": "Storefront"},
+        {"target": "#image_2", "src": "https://via.placeholder.com/100x100.png/0088ee?text=Monument", "alt": "Monument Signs", "label": "Monument"},
+        {"target": "#image_3", "src": "https://via.placeholder.com/100x100.png/0088ee?text=LED", "alt": "LED Signs", "label": "LED"},
+        {"target": "#image_4", "src": "https://via.placeholder.com/100x100.png/0088ee?text=Window", "alt": "Window Graphics", "label": "Window"},
+        {"target": "#image_5", "src": "https://via.placeholder.com/100x100.png/0088ee?text=Office", "alt": "Office Signage", "label": "Office"}
+      ]
+    },
+    "product_details": {
+      "title": "Professional Commercial Signage Solutions",
+      "price": "299.99",
+      "description_short": "Transform your business visibility with our comprehensive Commercial Signage solutions.",
+      "description_long": "We specialize in creating professional, eye-catching signs that effectively communicate your brand message and attract customers. From storefront displays to large-scale outdoor advertising, our expert team combines innovative design with durable materials to deliver signage that stands the test of time. Whether you need illuminated channel letters, monument signs, window graphics, or custom displays, we work closely with you to understand your specific requirements and deliver solutions that enhance your business presence. Our full-service approach includes design consultation, permitting assistance, professional installation, and ongoing maintenance support.",
+      "options": [
+        {
+          "name": "Sign Type",
+          "variants": [
+            {"name": "Storefront Signs", "price_change": 0, "default": true},
+            {"name": "Monument Signs", "price_change": 200},
+            {"name": "LED Illuminated Signs", "price_change": 150},
+            {"name": "Window Graphics", "price_change": -100},
+            {"name": "Office Signage", "price_change": 50},
+            {"name": "Channel Lettering", "price_change": 300},
+            {"name": "Custom Displays", "price_change": 100}
+          ]
+        }
+      ],
+      "quantity_options": [1, 2, 5]
+    }
   },
   {
     "id": "table-cloths",
@@ -437,49 +485,49 @@
   },
   {
     "id": "foam-board",
-    "path": "products/signs/foam-board/index.html",
-    "product_name": "Foam Board Signs",
-    "page_title": "Custom Foam Board Signs | BE SEEN",
+    "path": "products/materials/foam-board/index.html",
+    "product_name": "Foam Board",
+    "page_title": "Foam Board Signs | BE SEEN",
     "seo_description": "Lightweight and versatile foam board signs.",
     "product_image": "https://via.placeholder.com/800x600.png/0088ee?text=Foam+Board",
-    "category": "signs",
-    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Signs", "link": "/products/signs.html"}, {"name": "Foam Board"}],
+    "category": "materials",
+    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Materials", "link": "/products/materials.html"}, {"name": "Foam Board"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Foam+Board", "alt": "Foam Board"}], "thumbnails": []},
     "product_details": {"title": "Custom Foam Board Signs", "price": "29.99", "description_short": "Great for presentations and displays.", "description_long": "", "options": [], "quantity_options": [1, 5, 10]}
   },
   {
     "id": "pvc-board",
-    "path": "products/signs/pvc-board/index.html",
-    "product_name": "PVC Board Signs",
-    "page_title": "Custom PVC Board Signs | BE SEEN",
+    "path": "products/materials/pvc-board/index.html",
+    "product_name": "PVC Board",
+    "page_title": "PVC Board Signs | BE SEEN",
     "seo_description": "Durable and smooth PVC board signs.",
     "product_image": "https://via.placeholder.com/800x600.png/0088ee?text=PVC+Board",
-    "category": "signs",
-    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Signs", "link": "/products/signs.html"}, {"name": "PVC Board"}],
+    "category": "materials",
+    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Materials", "link": "/products/materials.html"}, {"name": "PVC Board"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=PVC+Board", "alt": "PVC Board"}], "thumbnails": []},
     "product_details": {"title": "Custom PVC Board Signs", "price": "34.99", "description_short": "Matte finish, perfect for indoor use.", "description_long": "", "options": [], "quantity_options": [1, 5, 10]}
   },
   {
     "id": "styrene",
-    "path": "products/signs/styrene/index.html",
-    "product_name": "Styrene Signs",
-    "page_title": "Custom Styrene Signs | BE SEEN",
+    "path": "products/materials/styrene/index.html",
+    "product_name": "Styrene",
+    "page_title": "Styrene Signs | BE SEEN",
     "seo_description": "Flexible and durable styrene signs.",
     "product_image": "https://via.placeholder.com/800x600.png/0088ee?text=Styrene",
-    "category": "signs",
-    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Signs", "link": "/products/signs.html"}, {"name": "Styrene"}],
+    "category": "materials",
+    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Materials", "link": "/products/materials.html"}, {"name": "Styrene"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Styrene", "alt": "Styrene"}], "thumbnails": []},
     "product_details": {"title": "Custom Styrene Signs", "price": "24.99", "description_short": "Thin, flexible, and waterproof.", "description_long": "", "options": [], "quantity_options": [1, 5, 10]}
   },
   {
     "id": "acrylic",
-    "path": "products/signs/acrylic/index.html",
-    "product_name": "Acrylic Signs",
-    "page_title": "Custom Acrylic Signs | BE SEEN",
+    "path": "products/materials/acrylic/index.html",
+    "product_name": "Acrylic",
+    "page_title": "Acrylic Signs | BE SEEN",
     "seo_description": "Modern and professional acrylic signs.",
     "product_image": "https://via.placeholder.com/800x600.png/0088ee?text=Acrylic",
-    "category": "signs",
-    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Signs", "link": "/products/signs.html"}, {"name": "Acrylic"}],
+    "category": "materials",
+    "breadcrumbs": [{"name": "Home", "link": "/index.html"}, {"name": "Products", "link": "/products.html"}, {"name": "Materials", "link": "/products/materials.html"}, {"name": "Acrylic"}],
     "gallery": {"main_images": [{"id": "image_1", "src": "https://via.placeholder.com/800x600.png/0088ee?text=Acrylic", "alt": "Acrylic"}], "thumbnails": []},
     "product_details": {"title": "Custom Acrylic Signs", "price": "99.99", "description_short": "Elegant signs with a glass-like finish.", "description_long": "", "options": [], "quantity_options": [1, 2, 5]}
   },

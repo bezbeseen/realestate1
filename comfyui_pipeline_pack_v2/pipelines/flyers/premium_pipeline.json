@@ -1,0 +1,64 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "type": "LoadImage",
+            "position": [
+                0,
+                0
+            ],
+            "data": {
+                "image_path": "https://www.vistaprint.com/images/anchors/flyers/premium_anchor.jpg"
+            }
+        },
+        {
+            "id": 2,
+            "type": "StableDiffusionLoader",
+            "position": [
+                200,
+                0
+            ],
+            "data": {
+                "model": "RealisticVisionV6"
+            }
+        },
+        {
+            "id": 3,
+            "type": "PromptGenerator",
+            "position": [
+                400,
+                0
+            ],
+            "data": {
+                "prompt": "Professional photography of premium flyers, thick cardstock with matte finish, elegant design, held in hand showing substantial feel, high-quality printing visible, real estate luxury property featured, white background, professional lighting"
+            }
+        },
+        {
+            "id": 4,
+            "type": "ImageGenerator",
+            "position": [
+                600,
+                0
+            ],
+            "inputs": {
+                "model": 2,
+                "prompt": 3
+            }
+        },
+        {
+            "id": 5,
+            "type": "SaveImage",
+            "position": [
+                800,
+                0
+            ],
+            "inputs": {
+                "image": 4
+            },
+            "data": {
+                "filename": "flyers_premium_v1",
+                "folder": "flyers/premium"
+            }
+        }
+    ]
+}

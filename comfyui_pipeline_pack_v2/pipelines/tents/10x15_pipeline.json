@@ -1,0 +1,64 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "type": "LoadImage",
+            "position": [
+                0,
+                0
+            ],
+            "data": {
+                "image_path": "https://www.4over.com/images/anchors/tents/10x15_anchor.jpg"
+            }
+        },
+        {
+            "id": 2,
+            "type": "StableDiffusionLoader",
+            "position": [
+                200,
+                0
+            ],
+            "data": {
+                "model": "RealisticVisionV6"
+            }
+        },
+        {
+            "id": 3,
+            "type": "PromptGenerator",
+            "position": [
+                400,
+                0
+            ],
+            "data": {
+                "prompt": "Professional product photography of 10x15 event tent, larger format, real estate open house event, multiple branded elements, outdoor residential setting, natural lighting"
+            }
+        },
+        {
+            "id": 4,
+            "type": "ImageGenerator",
+            "position": [
+                600,
+                0
+            ],
+            "inputs": {
+                "model": 2,
+                "prompt": 3
+            }
+        },
+        {
+            "id": 5,
+            "type": "SaveImage",
+            "position": [
+                800,
+                0
+            ],
+            "inputs": {
+                "image": 4
+            },
+            "data": {
+                "filename": "tents_10x15_v1",
+                "folder": "tents/10x15"
+            }
+        }
+    ]
+}

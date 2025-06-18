@@ -1,0 +1,116 @@
+{
+    "last_node_id": 7,
+    "last_link_id": 6,
+    "nodes": [
+        {
+            "id": 1,
+            "type": "LoadImageFromURL",
+            "position": [
+                0,
+                0
+            ],
+            "data": {
+                "url": "https://www.printplace.com/images/anchors/booths/standard_anchor.jpg"
+            }
+        },
+        {
+            "id": 2,
+            "type": "CheckpointLoaderSimple",
+            "position": [
+                200,
+                0
+            ],
+            "data": {
+                "ckpt_name": "RealisticVisionV6"
+            }
+        },
+        {
+            "id": 3,
+            "type": "CLIPTextEncode",
+            "position": [
+                200,
+                200
+            ],
+            "inputs": {
+                "clip": [
+                    2,
+                    1
+                ]
+            },
+            "data": {
+                "text": "Professional product photography of standard trade show booth, 10x10 space, real estate company display, backdrop and table setup, convention center environment, professional lighting"
+            }
+        },
+        {
+            "id": 4,
+            "type": "KSampler",
+            "position": [
+                400,
+                0
+            ],
+            "inputs": {
+                "model": [
+                    2,
+                    0
+                ],
+                "positive": [
+                    3,
+                    0
+                ],
+                "negative": [
+                    3,
+                    0
+                ],
+                "latent_image": [
+                    2,
+                    2
+                ]
+            },
+            "data": {
+                "seed": 42,
+                "steps": 20,
+                "cfg": 7.5,
+                "sampler_name": "euler",
+                "scheduler": "normal",
+                "denoise": 1.0
+            }
+        },
+        {
+            "id": 5,
+            "type": "VAEDecode",
+            "position": [
+                600,
+                0
+            ],
+            "inputs": {
+                "samples": [
+                    4,
+                    0
+                ],
+                "vae": [
+                    2,
+                    1
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "type": "SaveImage",
+            "position": [
+                800,
+                0
+            ],
+            "inputs": {
+                "images": [
+                    5,
+                    0
+                ]
+            },
+            "data": {
+                "filename_prefix": "booths_standard_v1",
+                "output_path": "outputs/booths/standard"
+            }
+        }
+    ],
+    "links": []
+}

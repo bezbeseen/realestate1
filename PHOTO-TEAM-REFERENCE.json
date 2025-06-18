@@ -1,0 +1,243 @@
+{
+  "PHOTO_SOURCING_GUIDE": {
+    "overview": "This file shows all products that need professional images",
+    "total_products": 37,
+    "estimated_images_needed": "150+",
+    "image_requirements": {
+      "resolution": "1200x1200px minimum (square format)",
+      "aspect_ratio": "1:1 (square) - REQUIRED",
+      "format": "JPG or PNG",
+      "style": "Professional, clean, well-lit product shots",
+      "background": "Clean white or light gray backgrounds",
+      "sizing": "All images must be exactly the same dimensions",
+      "optimization": "Web-ready, compressed but high quality"
+    },
+    "urgent_priority_products": [
+      "business-cards",
+      "banners", 
+      "yard-signs",
+      "retractable-banners",
+      "flyers",
+      "brochures"
+    ]
+  },
+  
+  "PRODUCTS_NEEDING_IMAGES": {
+    "CRITICAL_NOTE": "ALL IMAGES MUST BE PRODUCT-SPECIFIC, NOT GENERIC STOCK PHOTOS",
+    
+    "prints_category": {
+      "business-cards": {
+        "variants": ["Standard", "Premium", "Luxury", "Economy"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 3,
+        "freepik_prompts_available": true,
+        "SPECIFIC_REQUIREMENTS": {
+          "show_actual_cards": "Real business card layouts with text/logos, not blank cards",
+          "paper_finishes": "Different paper stocks - matte, glossy, textured visible",
+          "special_effects": "Show foil, embossing, spot UV, rounded corners",
+          "context": "Professional business setting or clean product shots",
+          "variants_must_show": {
+            "Standard": "Basic matte cardstock business cards",
+            "Premium": "Glossy or textured finish cards",
+            "Luxury": "Foil, embossing, or premium paper effects",
+            "Economy": "Simple, cost-effective design"
+          }
+        }
+      },
+      "banners": {
+        "variants": ["Vinyl", "Mesh", "Fabric", "Retractable"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 4,
+        "freepik_prompts_available": true,
+        "SPECIFIC_REQUIREMENTS": {
+          "show_displayed": "Banners HANGING or DISPLAYED, not flat artwork",
+          "real_context": "Outdoor events, storefronts, trade shows",
+          "material_visible": "Show texture differences between vinyl/mesh/fabric",
+          "installation": "Show grommets, poles, hanging systems",
+          "variants_must_show": {
+            "Vinyl": "Glossy outdoor banner hanging with grommets",
+            "Mesh": "Perforated banner in windy conditions",
+            "Fabric": "Soft fabric banner at indoor event",
+            "Retractable": "Pull-up banner stand at trade show/event"
+          }
+        }
+      },
+      "brochures": {
+        "variants": ["Bi-fold", "Tri-fold", "Z-fold"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 3,
+        "freepik_prompts_available": false
+      },
+      "flyers": {
+        "variants": ["Standard", "Premium", "Glossy"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 3,
+        "freepik_prompts_available": true
+      },
+      "posters": {
+        "variants": ["Small", "Medium", "Large", "Extra Large"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 4,
+        "freepik_prompts_available": true
+      }
+    },
+    
+    "signs_category": {
+      "yard-signs": {
+        "variants": ["Standard", "Premium", "Double-sided", "Stakes Included"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 4,
+        "freepik_prompts_available": true,
+        "SPECIFIC_REQUIREMENTS": {
+          "show_installed": "Signs IN REAL OUTDOOR SETTINGS with stakes in ground",
+          "real_context": "Front yards, construction sites, events, roadsides",
+          "material_visible": "Show corrugated plastic texture and thickness",
+          "installation": "Stakes, wire frames, mounting hardware visible",
+          "variants_must_show": {
+            "Standard": "Basic corrugated yard sign with H-stakes in yard",
+            "Premium": "Thicker material with professional frame stakes",
+            "Double-sided": "Sign showing both sides, professional installation",
+            "Stakes Included": "Complete setup with stakes/hardware visible"
+          }
+        }
+      },
+      "retractable-banners": {
+        "variants": ["Economy", "Standard", "Premium", "Deluxe"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 4,
+        "freepik_prompts_available": true,
+        "SPECIFIC_REQUIREMENTS": {
+          "show_mechanism": "ACTUAL RETRACTABLE STAND with banner pulled up",
+          "real_context": "Trade shows, lobbies, retail stores, events",
+          "hardware_visible": "Show base, pole, and retraction mechanism",
+          "setup_context": "Banner stands in professional environments",
+          "variants_must_show": {
+            "Economy": "Basic retractable stand with simple base",
+            "Standard": "Professional stand with stable base",
+            "Premium": "Heavy-duty stand with premium hardware",
+            "Deluxe": "Top-tier stand with advanced features/wider base"
+          }
+        }
+      },
+      "aluminum-signs": {
+        "variants": ["18x24", "24x36", "Custom Size"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 3,
+        "freepik_prompts_available": false
+      },
+      "acrylic": {
+        "variants": ["Clear", "Frosted", "Colored", "LED-lit"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 4,
+        "freepik_prompts_available": false
+      }
+    },
+    
+    "promotional_category": {
+      "table-cloths": {
+        "variants": ["6ft", "8ft", "Custom Size"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 3,
+        "freepik_prompts_available": false
+      },
+      "branded-apparel": {
+        "variants": ["T-Shirts", "Polos", "Hoodies", "Hats"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 4,
+        "freepik_prompts_available": false
+      },
+      "pens": {
+        "variants": ["Basic", "Premium", "Metal", "Custom Colors"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 4,
+        "freepik_prompts_available": false
+      }
+    },
+    
+    "real_estate_category": {
+      "real-estate-business-cards": {
+        "variants": ["Standard", "Premium", "Luxury"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 3,
+        "freepik_prompts_available": false
+      },
+      "real-estate-lawn-signs": {
+        "variants": ["18x24", "24x36", "Double-sided"],
+        "hero_image_needed": true,
+        "gallery_images_needed": 3,
+        "freepik_prompts_available": false
+      }
+    }
+  },
+  
+  "WORKFLOW_FOR_PHOTO_TEAM": {
+    "step_1": "Review data/products.json for complete product list",
+    "step_2": "Check data/csv/[product-id].csv for all variants",
+    "step_3": "Create/source images for each variant - SQUARE FORMAT ONLY (1200x1200px)",
+    "step_4": "Ensure ALL images are exactly the same dimensions",
+    "step_5": "Name files to match variant names exactly",
+    "step_6": "Update image URLs in CSV files",
+    "step_7": "Test with: node build/build.js",
+    "step_8": "Verify images load correctly and are consistent in size"
+  },
+  
+  "EXAMPLE_FILE_NAMING": {
+    "business-cards": {
+      "standard.jpg": "Standard business card variant",
+      "premium.jpg": "Premium business card variant", 
+      "luxury.jpg": "Luxury business card variant"
+    },
+    "banners": {
+      "vinyl.jpg": "Vinyl banner variant",
+      "mesh.jpg": "Mesh banner variant",
+      "fabric.jpg": "Fabric banner variant"
+    }
+  },
+  
+  "WHERE_TO_UPDATE_URLS": {
+    "csv_files": "data/csv/[product-id].csv - Update image_url column",
+    "products_json": "data/products.json - Update product_image field",
+    "gallery_images": "data/products.json - Update gallery.main_images array"
+  },
+  
+  "REFERENCE_WEBSITES": {
+    "inspiration_sites": {
+      "vistaprint.com": "Professional product photography style",
+      "4over.com": "Clean, technical product shots",
+      "printplace.com": "High-quality printing product images",
+      "uprinting.com": "Modern, well-lit product photography",
+      "gotprint.com": "Professional business printing visuals"
+    },
+    "stock_photo_sources": {
+      "unsplash.com": "Free high-quality stock photos",
+      "pexels.com": "Free professional stock images",
+      "freepik.com": "AI-generated and stock images (some paid)",
+      "shutterstock.com": "Premium stock photography (paid)",
+      "getty_images.com": "High-end professional imagery (paid)"
+    },
+    "ai_generation_tools": {
+      "midjourney.com": "High-quality AI image generation",
+      "dall-e.openai.com": "OpenAI's image generation",
+      "leonardo.ai": "Professional AI image creation",
+      "freepik_ai": "Freepik's AI image generator",
+      "canva.com": "Design tool with AI features"
+    },
+    "style_guidelines": {
+      "format": "SQUARE ONLY - 1:1 aspect ratio required",
+      "dimensions": "1200x1200px minimum - all images same size",
+      "background": "Clean white or light gray backgrounds",
+      "lighting": "Professional, even lighting - no harsh shadows",
+      "angle": "Slight 3/4 view for dimensional products, straight-on for flat items",
+      "composition": "Product centered, adequate white space around edges",
+      "consistency": "Identical dimensions, similar lighting and background across ALL products",
+      "resolution": "High-res for web use, optimized file sizes"
+    }
+  },
+
+  "CONTACT_INFO": {
+    "questions": "Ask developer about specific product requirements",
+    "testing": "Always test images by running build script",
+    "priority": "Focus on business-cards, banners, yard-signs first",
+    "style_reference": "Check vistaprint.com and uprinting.com for professional examples"
+  }
+} 

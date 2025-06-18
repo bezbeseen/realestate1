@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<script>
+            function includeHTML() {
+              var z, i, elmnt, file, xhttp;
+              /* Loop through a collection of all HTML elements: */
+              z = document.getElementsByTagName("*");
+              for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                  /* Make an HTTP request using the attribute value as the file name: */
+                  xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                      /* Remove the attribute, and call this function once more: */
+                      elmnt.removeAttribute("w3-include-html");
+                      includeHTML();
+                    }
+                  }
+                  xhttp.open("GET", file, true);
+                  xhttp.send();
+                  /* Exit the function: */
+                  return;
+                }
+              }
+            }
+            </script>
+
+		
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<title>BE SEEN </title>
+		<link rel="shortcut icon" href="assets/images/logo/favourite_icon_01.png">
+
+			<link rel="shortcut icon" href="assets/images/favicon/favicon-32x32.png">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="assets/images/favicon/site.webmanifest">
+		<link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- fraimwork - css include -->
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+		<!-- icon - css include -->
+		<link rel="stylesheet" type="text/css" href="assets/css/flaticon.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
+
+		<!-- animation - css include -->
+		<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+
+		<!-- carousel - css include -->
+		<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+
+		<!-- nice select - css include -->
+		<link rel="stylesheet" type="text/css" href="assets/css/nice-select.css">
+
+		<!-- magnific popup - css include -->
+		<link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+
+		<!-- custom - css include -->
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<!-- Bez CSS-->
+		<link rel="stylesheet" type="text/css" href="assets/css/bez.css">
+
+		<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRYL5ZHY12"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-WRYL5ZHY12');
+			</script>
+		
+		<!-- Start of HubSpot Embed Code -->
+		<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/44599314.js"></script>
+		<!-- End of HubSpot Embed Code -->	
+
+		<script type="text/javascript">
+			(function(c,l,a,r,i,t,y){
+				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+				y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+			})(window, document, "clarity", "script", "lkihe2qcle");
+		</script>
+
+		
+
+
+		
+
+	</head>
+
+
+	<body>
+
+
+		<!-- backtotop - start -->
+		<div id="thetop"></div>
+		<div id="backtotop">
+			<a href="#" id="scroll">
+				<i class="far fa-arrow-up"></i>
+			</a>
+		</div>
+		<!-- backtotop - end -->
+
+		
+
+
+		<!-- header_section - start
+		================================================== -->
+		<header class="header_section sticky_header secondary_header clearfix">
+			<!-- <div class="header_top bg_light clearfix">
+				<div class="maxw_1420 container">
+					<div class="row align-items-center">
+						<div class="col-lg-12">
+							<ul class="header_contact_info ul_li clearfix">
+								<li><i class="far fa-map-marker-alt"></i> 377 Laurelwood Road Santa Clara, CA</li>
+								<li><i class="far fa-envelope-open"></i> contact@beseensignshop.com</li>
+								<li><i class="far fa-phone"></i>408.896.8161</li>
+							</ul>
+						</div>						
+					</div>
+				</div>
+			</div> -->
+
+			<div w3-include-html="header-top.html"></div>
+
+			
+
+			<div class="header_bottom">
+				<div class="maxw_1420 container">
+					<div class="row align-items-center">
+
+						<div class="col-lg-3">
+							<div class="brand_logo">
+								<a href="index.html">
+									<img src="assets/images/logo/BeSeen_1.png" srcset="assets/images/logo/BeSeen_1.png 2x" alt="logo_not_found" style="height:80px">
+								</a>
+
+								<ul class="mobilemenu_btns_group ul_li_right clearfix">
+									<li>
+										<button type="button" class="mobile_menu_btn"><i class="fal fa-bars"></i></button>
+									</li>																
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<nav class="main_menu clearfix">
+								<ul class="ul_li_center clearfix">
+									<li>
+										<a href="index.html">Home</a>
+									</li>
+									<li><a href="about.html">About</a></li>
+									<li class="has_child">
+										<a href="#!">Services</a>
+										<ul class="submenu">
+											<li><a href="printing.html">Printing</a></li>
+											<li><a href="graphic-design.html">Graphic Design</a></li>											
+											<li><a href="web-design.html">Web Design</a></li>
+											<li><a href="mailing.html">Mailing Services</a></li>
+											<li><a href="signs.html">Signs</a></li>
+											<li><a href="promotional.html">Promotional</a></li>
+										</ul>
+									</li>
+									<li><a href="contact.html">Contact</a></li>    
+								</ul>
+							</nav>
+						</div>
+
+						<div class="col-lg-3">
+							<ul class="header_btns_group ul_li_right clearfix">
+								
+								<li>
+									<a class="custom_btn bg_default_yellow" href="contact.html">
+										Contact
+										<span><i class="fal fa-arrow-right"></i></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>			
+		</header>
+		<!-- header_section - end
+		================================================== -->
+
+
+		<!-- main body - start
+		================================================== -->
+		<main>
+
+
+			<!-- sidebar mobile menu - start
+			================================================== -->
+			<div class="sidebar-menu-wrapper">
+				<div class="sidebar_mobile_menu">
+					<span class="close_btn"><i class="fal fa-times"></i></span>
+					<div class="mobile_menu_list clearfix">
+						<ul class="ul_li_block clearfix">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li class="active dropdown">
+								<a href="#!" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+								<ul class="dropdown-menu">
+									<li><a href="printing.html">Printing</a></li>
+									<li><a href="graphic-design.html">Design</a></li>
+									<li><a href="web-design.html">Web Services</a></li>
+									<li><a href="mailing.html">Mailing & Marketing</a></li>
+									<li><a href="signs.html">Signs</a></li>
+									<li><a href="promotional.html">promotional</a></li>
+								</ul>
+							</li>
+							<li><a href="contact.html">Contact</a></li>			 
+						</ul>
+					</div>
+				</div>				
+
+				<div class="overlay"></div>
+			</div>
+			<!-- sidebar mobile menu - end
+			================================================== -->
+
+
+			<!-- slider_section - start
+			================================================== -->
+			<section class="slider_section home_three_slider clearfix">
+				<div class="main_slider owl-carousel owl-theme clearfix">
+
+					<div class="item" data-background="assets/images/banner/sf-bg.png">
+						<div class="container">
+							<div class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
+								<div class="col-lg-5 col-md-8 col-sm-12 col-xs-12 order-lg-last">
+									<div class="slider_image">
+										<img src="assets/images/banner/15195280.png" alt="image_not_found">
+									</div>
+								</div>
+
+								<div class="col-lg-7 col-md-8 col-sm-12 col-xs-12">
+									<div class="slider_content text-white">
+										<h4 class="small_title">Welcome to  Be Seen</h4>
+										<h3 class="item_title text-uppercase text-white mb-0">We <span style="color:gold">print</span>, <br>  we <span style="color:gold">design</span>, <br> we help you <span style="color:gold">be seen</span></h3>
+										<p>
+											From stunning designs to high-quality printing and targeted direct mail campaigns, we offer end-to-end solutions to elevate your marketing efforts. Let's create, print, and deliver success!
+										</p>
+										<ul class="btns_group ul_li clearfix">
+											<li>
+												<a class="custom_btn bg_default_orange"  href="contact.html">
+													Contact Us
+													<span><i class="fal fa-arrow-right"></i></span>
+												</a>
+											</li>											
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item" data-background="assets/images/banner/sf-bg.png">
+						<div class="container">
+							<div class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
+								<div class="col-lg-5 col-md-8 col-sm-12 col-xs-12 order-lg-last">
+									<div class="slider_image">
+										<img src="assets/images/banner/graphicdesign.png" alt="image_not_found">
+									</div>
+								</div>
+
+								<div class="col-lg-7 col-md-8 col-sm-12 col-xs-12">
+									<div class="slider_content text-white">
+										<h4 class="small_title">Graphic Design</h4>
+										<h3 class="item_title text-uppercase text-white mb-0">Elevate Your Brand with 
+										<span style="color:gold">Graphic Design</span></h3>
+										<!-- <p>
+											Graphic ass shit is happening up in this bitch.. you're welcome.
+										</p> -->
+										<ul class="btns_group ul_li clearfix">
+											<li>
+												<a class="custom_btn bg_default_orange"  href="contact.html">
+													Contact Us
+													<span><i class="fal fa-arrow-right"></i></span>
+												</a>
+											</li>											
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item" data-background="assets/images/banner/sf-bg.png">
+						<div class="container">
+							<div class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
+								<div class="col-lg-5 col-md-8 col-sm-12 col-xs-12 order-lg-last">
+									<div class="slider_image">
+										<img src="assets/images/banner/webdesign.png" alt="image_not_found">
+									</div>
+								</div>
+
+								<div class="col-lg-7 col-md-8 col-sm-12 col-xs-12">
+									<div class="slider_content text-white">
+										<h4 class="small_title">Web Services</h4>
+										<h3 class="item_title text-uppercase text-white mb-0">
+											<span style="color:gold">Stunning Web Design</span>
+											for Your Business
+										</h3>
+										<!-- <p>
+											Aint no one sed nom nedda like you say nom nedda.		
+										</p> -->
+										<ul class="btns_group ul_li clearfix">
+											<li>
+												<a class="custom_btn bg_default_orange"  href="contact.html">
+													Contact Us
+													<span><i class="fal fa-arrow-right"></i></span>
+												</a>
+											</li>											
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item" data-background="assets/images/banner/sf-bg.png">
+						<div class="container">
+							<div class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
+								<div class="col-lg-5 col-md-8 col-sm-12 col-xs-12 order-lg-last">
+									<div class="slider_image">
+										<img src="assets/images/banner/mailer.png" alt="image_not_found">
+									</div>
+								</div>
+
+								<div class="col-lg-7 col-md-8 col-sm-12 col-xs-12">
+									<div class="slider_content text-white">
+										<h4 class="small_title">Marketing and Mailing</h4>
+										<h3 class="item_title text-uppercase text-white mb-0">
+											<span style="color:gold">Deliver Results</span>
+											with Direct Mail Marketing
+										</h3>
+											
+										<!-- <p>
+											Its a form of communication that you cant do... but we can so let us do this damn thing!
+										</p> -->
+										<ul class="btns_group ul_li clearfix">
+											<li>
+												<a class="custom_btn bg_default_orange"  href="contact.html">
+													Contact Us
+													<span><i class="fal fa-arrow-right"></i></span>
+												</a>
+											</li>											
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- slider_section - end
+			================================================== -->
+
+
+			<!-- feature_section - start
+			================================================== -->
+			<section class="feature_section bg_gray clearfix">
+				<div class="maxw_1780 container">
+					<div class="row g-0 justify-content-lg-between">
+
+						<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeInUp2" data-wow-delay=".05s">
+							<div class="feature_listlayout_boxed2 deco_wrap">
+								<div class="item_icon">
+									<img src="assets/images/feature/icon_01.png" alt="image_not_found">
+								</div>
+								<div class="item_content">
+									<span class="item_type">We Print</span>
+									<h3 class="item_title">Printing of All Kinds									
+									</h3>
+									<p>
+										Business Cards, Poster, Postcards, Vinyl, Signs, Banners, Stickers.
+									</p>
+									<a class="text_btn" href="printing.html">
+										<span>Read More</span>
+										<i class="far fa-arrow-right"></i>
+									</a>
+								</div>
+
+								<div class="deco_image shape_1">
+									<img src="assets/images/feature/shape_01.png" alt="image_not_found">
+								</div>
+								<div class="deco_image shape_2">
+									<img src="assets/images/feature/shape_02.png" alt="image_not_found">
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+							<div class="feature_listlayout_boxed2 deco_wrap">
+								<div class="item_icon">
+									<img src="assets/images/feature/icon_02.png" alt="image_not_found">
+								</div>
+								<div class="item_content">
+									<span class="item_type">We Design</span>
+									<h3 class="item_title">Graphic Design</h3>
+									<p>
+										Graphic Design, logo design, brand integrity, campaign development, photo editing
+									</p>
+									<a class="text_btn" href="graphic-design.html">
+										<span>Read More</span>
+										<i class="far fa-arrow-right"></i>
+									</a>
+								</div>
+
+								<div class="deco_image shape_1">
+									<img src="assets/images/feature/shape_01.png" alt="image_not_found">
+								</div>
+								<div class="deco_image shape_2">
+									<img src="assets/images/feature/shape_02.png" alt="image_not_found">
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+							<div class="feature_listlayout_boxed2 deco_wrap">
+								<div class="item_icon">
+									<img src="assets/images/feature/serives-web.png" alt="image_not_found">
+								</div>
+								<div class="item_content">
+									<span class="item_type">We Code</span>
+									<h3 class="item_title">Website Services</h3>
+									<p>
+										Website design, consulting services, web hosting, SEO
+									</p>
+									<a class="text_btn" href="web-design.html">
+										<span>Read More</span>
+										<i class="far fa-arrow-right"></i>
+									</a>
+								</div>
+
+								<div class="deco_image shape_1">
+									<img src="assets/images/feature/shape_01.png" alt="image_not_found">
+								</div>
+								<div class="deco_image shape_2">
+									<img src="assets/images/feature/shape_02.png" alt="image_not_found">
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
+							<div class="feature_listlayout_boxed2 deco_wrap">
+								<div class="item_icon">
+									<img src="assets/images/feature/icon_03.png" alt="image_not_found">
+								</div>
+								<div class="item_content">
+									<span class="item_type">We Mail</span>
+									<h3 class="item_title">Mailing Marketing</h3>
+									<p>
+										Every Door Delivery Mail, direct mail, oversized pieces
+									</p>
+									<a class="text_btn" href="mailing.html">
+										<span>Read More</span>
+										<i class="far fa-arrow-right"></i>
+									</a>
+								</div>
+
+								<div class="deco_image shape_1">
+									<img src="assets/images/feature/shape_01.png" alt="image_not_found">
+								</div>
+								<div class="deco_image shape_2">
+									<img src="assets/images/feature/shape_02.png" alt="image_not_found">
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!-- feature_section - end
+			================================================== -->
+
+			<!-- portfolio_section - start
+			================================================== -->
+			<!-- <section class="portfolio_section sec_ptb_130 pb-0 clearfix">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+							<div class="section_title text-center mb_50 wow fadeInUp2" data-wow-delay=".05s">
+								<h4 class="small_title">Done Did It</h4>
+								<h2 class="big_title mb-0">
+									Meet The People We Have Helped Be Seen
+								</h2>
+								<span class="biggest_title">Customers</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="masonry_portfolio_grid grid wow fadeInUp2" data-wow-delay=".3s">
+						<div class="grid-sizer"></div>
+						
+
+						<div class="grid-item w_50">
+							<div class="portfolio_fullimage">
+								<a class="plus_effect" target="_blank" href="portfolio_details.html">
+									<img src="assets/images/portfolio/masonry/img_05.jpg" alt="image_not_found">
+									<h4 style="color: #ffffff; padding: 10px;"> 
+										Baekjong
+									</h4>
+								</a>
+							</div>
+						</div>
+
+						<div class="grid-item w_50">
+							<div class="portfolio_fullimage">
+								<a class="plus_effect" target="_blank" href="portfolio_details.html">
+									<img src="assets/images/portfolio/masonry/img_06.jpg" alt="image_not_found">
+									<h4 style="color: #ffffff; padding: 10px;">
+										Los Gatos Music and Arts
+									</h4>
+								</a>
+							</div>
+						</div>
+
+						<div class="grid-item w_50">
+							<div class="portfolio_fullimage">
+								<a class="plus_effect" target="_blank" href="portfolio_details.html">
+									<img src="assets/images/portfolio/masonry/img_05.jpg" alt="image_not_found">
+									<h4 style="color: #ffffff; padding: 10px;">
+										Kollab
+									</h4>
+								</a>
+							</div>
+						</div>
+
+						<div class="grid-item w_50">
+							<div class="portfolio_fullimage">
+								<a class="plus_effect" target="_blank" href="portfolio_details.html">
+									<img src="assets/images/portfolio/masonry/img_06.jpg" alt="image_not_found">
+									<h4 style="color: #ffffff; padding: 10px;">
+										Los Gatos Monte Sereno Police Foundation
+									</h4>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
+			<!-- portfolio_section - end
+			================================================== -->
+
+			
+
+			<!-- cta_section - start
+			================================================== -->
+			<section class="cta_section sec_ptb_130 bg_default_blue clearfix" style="margin-top:40px;">
+				<div class="container">
+					<div class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
+
+						<!-- <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 order-lg-last">
+							<div class="cta_image_1 wow fadeIn" data-wow-delay=".05s">
+								<img src="assets/images/cta/img_01.png" alt="image_not_found">
+							</div>
+						</div> -->
+
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="cta_content text-white">
+								<div class="section_title mb_30 wow fadeInUp2" data-wow-delay=".05s">
+									<h4 class="small_title">Contact us</h4>
+									<h2 class="big_title mb-0 text-white">
+										Have a project that you need to BE SEEN?
+									</h2>
+									<span class="biggest_title">Quote</span>
+								</div>
+								<h4 class="mb_30 border_left_yellow text-white wow fadeInUp2" data-wow-delay=".2s">
+									Ready to bring your vision to life? Ask us about our top-notch print and design services today! Whether you need eye-catching marketing materials, stunning business cards, or captivating graphics, our team is here to help. Don't miss out on the opportunity to make a lasting impression. Contact us now and let's create something extraordinary together!
+								</h4>
+								<a class="custom_btn bg_default_yellow wow fadeInUp2" data-wow-delay=".3s" target="_blank" href="team.html">
+									Contact Us.
+									<span><i class="fal fa-arrow-right"></i></span>
+								</a>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			<!-- cta_section - end
+			================================================== -->
+
+
+
+			
+
+			<!-- PRINT section - start
+			================================================== -->
+			<section class="about_section sec_ptb_130 clearfix">
+				<div class="container">
+					<div class="section_title text-center mb_80">
+						<div class="row justify-content-center">
+							<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".05s">
+								<h4 class="small_title">Printing</h4>
+								<h2 class="big_title mb-0">
+									We Print it ALL
+								</h2>
+								<span class="biggest_title">We Print it ALL</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="about_image_2 wow fadeInUp2" data-wow-delay=".2s">
+								<img src="assets/images/misc/printing-screenshot.png" alt="icon_not_found">
+								<a class="play_btn popup_video bg_white" href="assets/images/videos/video - comp 1.11 Grey.mp4">
+									<i class="fas fa-play"></i>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="about_content">
+								<h3 class="border_left_orange mb-0 wow fadeInUp2" data-wow-delay=".2s">
+									High-quality printing and signage solutions that make your business stand out. Let's make an impression!
+								</h3>				
+							
+								
+
+								<div class="row justify-content-lg-between">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_yellow"> -->
+												<!-- <i class="fal fa-print"></i> -->
+											<!-- </div> -->
+											<div class="item_content">
+												<h3 class="item_title">Digital Printing</h3>
+												<p>
+													Elevate your brand with our professional printing services, delivering impeccable quality, attention to detail, and a polished finish that will impress your clients and set you apart from the competition.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".4s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_orange">
+												<i class="fal fa-laptop-code"></i>
+											</div> -->
+											<div class="item_content">
+												<h3 class="item_title">Vinyl</h3>
+												<p>
+													Maximize your brand visibility and make a bold statement with our durable and eye-catching vinyl signs, designed to withstand the elements and attract attention to your business or event.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_blue"> -->
+												<!-- <i class="fal fa-cube"></i> -->
+											<!-- </div> -->
+											<div class="item_content">
+												<h3 class="item_title">Stickers</h3>
+												<p>
+													Unlock endless creative possibilities and promote your brand with our high-quality sticker printing services, perfect for adding a touch of personality to your products, packaging, or marketing materials.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".6s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_pink"> -->
+												<!-- <i class="fal fa-cog"></i> -->
+											<!-- </div> -->
+											<div class="item_content">
+												<h3 class="item_title">Wide Format</h3>
+												<p>
+													Make a big impact with our wide format printing services, offering stunningly large and vibrant prints that are perfect for capturing attention, showcasing your brand, and creating memorable visual experiences.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- DEISGN SECITION END -->
+
+
+
+			<!-- DESIGN section - start
+			================================================== -->
+			<section class="about_section sec_ptb_130 clearfix">
+				<div class="container">
+					<div class="section_title text-center mb_80">
+						<div class="row justify-content-center">
+							<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".05s">
+								<h4 class="small_title">Design & Branding</h4>
+								<h2 class="big_title mb-0">
+									Need a Design? We got you.
+								</h2>
+								<span class="biggest_title">Design</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="about_content">
+								<h3 class="border_left_orange mb-0 wow fadeInUp2" data-wow-delay=".2s">
+									Eye-catching designs that captivate your audience and bring your brand to life. Let's make it visually stunning!
+								</h3>				
+							
+								
+
+								<div class="row justify-content-lg-between">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_yellow"> -->
+												<!-- <i class="fal fa-print"></i> -->
+											<!-- </div> -->
+											<div class="item_content">
+												<h3 class="item_title">Logos</h3>
+												<p>
+													Transform your brand identity with our expert logo design services, where we combine creativity, strategy, and craftsmanship to create a unique and impactful logo that represents your business's values and resonates with your target audience.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".4s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_orange"> -->
+												<!-- <i class="fal fa-laptop-code"></i> -->
+											<!-- </div> -->
+											<div class="item_content">
+												<h3 class="item_title">Web Design</h3>
+												<p>
+													Elevate your online presence and captivate your audience with our professional web design services, crafting visually stunning and user-friendly websites that drive engagement, conversions, and business growth.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_blue"> -->
+												<!-- <i class="fal fa-cube"></i> -->
+											<!-- </div> -->
+											<div class="item_content">
+												<h3 class="item_title">Photo Editing</h3>
+												<p>
+													Enhance the beauty and impact of your photos with our professional photo editing services, where we bring out the best in your images, ensuring they are visually stunning, polished, and ready to make a lasting impression.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".6s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_pink"> -->
+												<!-- <i class="fal fa-cog"></i> -->
+											<!-- </div> -->
+											<div class="item_content">
+												<h3 class="item_title">Branding Identity Management</h3>
+												<p>
+													Simplify and strengthen your brand's presence across all channels with our brand identity management services, ensuring consistency, cohesiveness, and a strong brand image that resonates with your audience and builds trust.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="about_image_2 wow fadeInUp2" data-wow-delay=".2s">
+								<img src="assets/images/misc/15195287.png" alt="icon_not_found">
+								<!-- <a class="play_btn popup_video bg_white" href="assets/images/videos/video - comp 1.11 Grey.mp4">
+									<i class="fas fa-play"></i>
+								</a> -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- DEISGN SECITION END -->
+
+				<!-- WEB section - start
+			================================================== -->
+			<section class="about_section sec_ptb_130 clearfix">
+				<div class="container">
+					<div class="section_title text-center mb_80">
+						<div class="row justify-content-center">
+							<<h4 class="small_title">Web Services</h4>
+							<h2 class="big_title mb-0">
+								We deisgn websites that will BE SEEN!
+							</h2>
+							<span class="biggest_title">Web Services</span>
+						</div>
+					</div>
+
+					<div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="about_image_2 wow fadeInUp2" data-wow-delay=".2s">
+								<img src="assets/images/misc/webdesign.png" alt="icon_not_found">
+								<!-- <a class="play_btn popup_video bg_white" href="assets/images/videos/video - comp 1.11 Grey.mp4">
+									<i class="fas fa-play"></i>
+								</a> -->
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="about_content">
+								<h3 class="border_left_orange mb-0 wow fadeInUp2" data-wow-delay=".2s">
+									Beautiful, responsive websites that drive conversions and elevate your brand. Let's create something amazing together!
+								</h3>				
+							
+								
+
+								<div class="row justify-content-lg-between">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_yellow"> -->
+												<!-- <i class="fal fa-print"></i> -->
+											<!-- </div> -->
+											<div class="item_content">
+												<h3 class="item_title">Web Design</h3>
+												<p>
+													Transform your online presence with our expert web design services, creating visually stunning, user-friendly websites that not only captivate your audience but also drive conversions and business growth
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".4s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_orange">
+												<i class="fal fa-laptop-code"></i>
+											</div> -->
+											<div class="item_content">
+												<h3 class="item_title">SEO</h3>
+												<p>
+													Boost your online visibility and drive organic traffic to your website with our comprehensive SEO services, leveraging proven strategies and techniques to improve your search engine rankings and increase your online presence.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_blue">
+												<i class="fal fa-cube"></i>
+											</div> -->
+											<div class="item_content">
+												<h3 class="item_title">Consulting</h3>
+												<p>
+													Unlock the full potential of your online presence with our web consulting services, where our experienced team provides strategic guidance and expert advice to optimize your website, enhance user experience, and drive measurable results.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".6s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_pink">
+												<i class="fal fa-cog"></i>
+											</div> -->
+											<div class="item_content">
+												<h3 class="item_title">Hosting</h3>
+												<p>
+													Ensure a reliable and secure online presence for your small business with our affordable web hosting service, offering fast loading times, robust security measures, and exceptional customer support to keep your website running smoothly.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- WEB SECITION END -->
+
+
+
+			<!-- MAIL section - start
+			================================================== -->
+			<section class="about_section sec_ptb_130 clearfix">
+				<div class="container">
+					<div class="section_title text-center mb_80">
+						<div class="row justify-content-center">
+							<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".05s">
+								<h4 class="small_title">Mailing</h4>
+								<h2 class="big_title mb-0">
+									Need to mail something? We got you covered.
+								</h2>
+								<span class="biggest_title">Mailing</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="about_content">
+								<h3 class="border_left_orange mb-0 wow fadeInUp2" data-wow-delay=".2s">
+									Reach your audience directly with personalized mailings that drive engagement and increase conversions. Let's connect!
+								</h3>				
+							
+								
+
+								<div class="row justify-content-lg-between">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_yellow">
+												<i class="fal fa-print"></i>
+											</div> -->
+											<div class="item_content">
+												<h3 class="item_title">Direct Mail</h3>
+												<p>
+													Harness the power of direct mail marketing to reach your target audience directly, stand out from digital clutter, and create a tangible and memorable connection that drives response rates and boosts your marketing ROI.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".4s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_orange">
+												<i class="fal fa-laptop-code"></i>
+											</div> -->
+											<div class="item_content">
+												<h3 class="item_title">Postcards</h3>
+												<p>
+													Make a lasting impression and drive customer engagement with our postcard marketing services, delivering eye-catching designs and compelling messages that grab attention, generate leads, and increase brand awareness.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_blue">
+												<i class="fal fa-cube"></i>
+											</div> -->
+											<div class="item_content">
+												<h3 class="item_title">Every Door Direct Mail</h3>
+												<p>
+													Reach a wide local audience and maximize your marketing impact with our Every Door Direct Mail (EDDM) service, allowing you to effortlessly target specific neighborhoods and deliver your message directly to potential customers' mailboxes.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".6s">
+										<div class="feature_primary_2 clearfix">
+											<!-- <div class="item_icon bg_default_pink">
+												<i class="fal fa-cog"></i>
+											</div> -->
+											<div class="item_content">
+												<h3 class="item_title">Interactive Mail Campaigns</h3>
+												<p>
+													Elevate your direct mail campaigns with our Interactive Mail using Informed Delivery, combining the power of physical mail and digital engagement to captivate recipients, drive response rates, and provide a seamless and interactive brand experience.
+												</p>
+												<!-- <a class="text_btn" target="_blank" href="service_details.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="about_image_2 wow fadeInUp2" data-wow-delay=".2s">
+								<img src="assets/images/misc/15195298.png" alt="icon_not_found">
+								<!-- <a class="play_btn popup_video bg_white" href="assets/images/videos/video - comp 1.11 Grey.mp4">
+									<i class="fas fa-play"></i>
+								</a> -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- DEISGN SECITION END -->
+
+				<div class="cricle_border">
+					<img src="assets/images/about/circle_border.png" alt="icon_not_found">
+				</div>
+			</section>
+			<!-- about_section - end
+			================================================== -->
+
+
+			
+
+			
+
+
+			<!-- portfolio_section - start
+			================================================== -->
+			<!-- <section class="portfolio_section sec_ptb_130 clearfix">
+				<div class="container">
+
+					<div class="row justify-content-center">
+						<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+							<div class="section_title text-center mb_50 wow fadeInUp2" data-wow-delay=".05s">
+								<h4 class="small_title">Our Recent Works</h4>
+								<h2 class="big_title mb-0">
+									Let’s See Our Latest Project That Recently Done
+								</h2>
+								<span class="biggest_title">Works</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="portfolio_carousel w_1545 owl-carousel owl-theme wow fadeInUp2" data-wow-delay=".3s">
+						<div class="item">
+							<div class="portfolio_fullimage">
+								<img src="assets/images/portfolio/carousel/img_01.jpg" alt="image_not_found">
+								<div class="title_wrap">
+									<h3 class="item_title mb-0">T - Shirt Printing</h3>
+									<a class="icon_btn" target="_blank" href="portfolio_details.html"><i class="fal fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="portfolio_fullimage">
+								<img src="assets/images/portfolio/carousel/img_02.jpg" alt="image_not_found">
+								<div class="title_wrap">
+									<h3 class="item_title mb-0">T - Shirt Printing</h3>
+									<a class="icon_btn" target="_blank" href="portfolio_details.html"><i class="fal fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="portfolio_fullimage">
+								<img src="assets/images/portfolio/carousel/img_03.jpg" alt="image_not_found">
+								<div class="title_wrap">
+									<h3 class="item_title mb-0">T - Shirt Printing</h3>
+									<a class="icon_btn" target="_blank" href="portfolio_details.html"><i class="fal fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="portfolio_fullimage">
+								<img src="assets/images/portfolio/carousel/img_04.jpg" alt="image_not_found">
+								<div class="title_wrap">
+									<h3 class="item_title mb-0">T - Shirt Printing</h3>
+									<a class="icon_btn" target="_blank" href="portfolio_details.html"><i class="fal fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="portfolio_fullimage">
+								<img src="assets/images/portfolio/carousel/img_01.jpg" alt="image_not_found">
+								<div class="title_wrap">
+									<h3 class="item_title mb-0">T - Shirt Printing</h3>
+									<a class="icon_btn" target="_blank" href="portfolio_details.html"><i class="fal fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="portfolio_fullimage">
+								<img src="assets/images/portfolio/carousel/img_02.jpg" alt="image_not_found">
+								<div class="title_wrap">
+									<h3 class="item_title mb-0">T - Shirt Printing</h3>
+									<a class="icon_btn" target="_blank" href="portfolio_details.html"><i class="fal fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="portfolio_fullimage">
+								<img src="assets/images/portfolio/carousel/img_03.jpg" alt="image_not_found">
+								<div class="title_wrap">
+									<h3 class="item_title mb-0">T - Shirt Printing</h3>
+									<a class="icon_btn" target="_blank" href="portfolio_details.html"><i class="fal fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="portfolio_fullimage">
+								<img src="assets/images/portfolio/carousel/img_04.jpg" alt="image_not_found">
+								<div class="title_wrap">
+									<h3 class="item_title mb-0">T - Shirt Printing</h3>
+									<a class="icon_btn" target="_blank" href="portfolio_details.html"><i class="fal fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section> -->
+			<!-- portfolio_section - end
+			================================================== -->
+
+
+			<!-- faq_section - start
+			================================================== -->
+			<!-- <section class="faq_section bg_default_blue clearfix">
+				<div class="container-fluid p-0">
+					<div class="row g-0 align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
+
+						<div class="col-lg-6 col-md-8 col-sm-9 col-xs-12">
+							<div class="faq_image wow fadeIn" data-wow-delay=".05s">
+								<img src="assets/images/faqs/img_01.jpg" alt="image_not_found">
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-8 col-sm-9 col-xs-12">
+							<div class="faq_content_wrap text-white">
+								<div class="section_title mb_50 wow fadeInUp2" data-wow-delay=".2s">
+									<h4 class="small_title">Faq</h4>
+									<h2 class="big_title text-white mb-0">
+										Frequently Asked Questions
+									</h2>
+									<span class="biggest_title">Faq</span>
+								</div>
+
+								<div id="faq_accordion" class="faq_accordion wow fadeInUp2" data-wow-delay=".3s">
+									<div class="card">
+										<div class="card-header" id="heading_one">
+											<button data-bs-toggle="collapse" data-bs-target="#collapse_one" aria-expanded="true" aria-controls="collapse_one">
+												What We Do For Printing Business
+											</button>
+										</div>
+
+										<div id="collapse_one" class="collapse show" aria-labelledby="heading_one" data-bs-parent="#faq_accordion">
+											<div class="card-body">
+												<p class="mb-0">
+													But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer 
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="card">
+										<div class="card-header" id="heading_two">
+											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapse_two" aria-expanded="false" aria-controls="collapse_two">
+												How To Test A Design Concept For Effectiveness
+											</button>
+										</div>
+										<div id="collapse_two" class="collapse" aria-labelledby="heading_two" data-bs-parent="#faq_accordion">
+											<div class="card-body">
+												<p class="mb-0">
+													But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer 
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="card">
+										<div class="card-header" id="heading_three">
+											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapse_three" aria-expanded="false" aria-controls="collapse_three">
+												Mirage Deep Dive: Understanding Factories, Fixtures 
+											</button>
+										</div>
+										<div id="collapse_three" class="collapse" aria-labelledby="heading_three" data-bs-parent="#faq_accordion">
+											<div class="card-body">
+												<p class="mb-0">
+													But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer 
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="card">
+										<div class="card-header" id="heading_four">
+											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapse_four" aria-expanded="false" aria-controls="collapse_four">
+												How To Run The Right Kind Of Research Study 
+											</button>
+										</div>
+										<div id="collapse_four" class="collapse" aria-labelledby="heading_four" data-bs-parent="#faq_accordion">
+											<div class="card-body">
+												<p class="mb-0">
+													But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer 
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section> -->
+			<!-- faq_section - end
+			================================================== -->
+
+
+			<!-- team_section - start
+			================================================== -->
+			<!-- <section class="team_section sec_ptb_130 clearfix">
+				<div class="container">
+
+					<div class="row justify-content-center">
+						<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+							<div class="section_title text-center mb_30 wow fadeInUp2" data-wow-delay=".05s">
+								<h4 class="small_title">Join Our Teams</h4>
+								<h2 class="big_title mb-0">
+									Meet Our Exclusive Team Member
+								</h2>
+								<span class="biggest_title">Team</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+							<div class="team_grid">
+								<div class="item_image">
+									<img src="assets/images/team/img_01.jpg" alt="image_not_found">
+								</div>
+								<div class="item_content">
+									<h3 class="member_name">Myron L. Boykin</h3>
+									<span class="member_title">Web Designer</span>
+									<ul class="square_social_links ul_li clearfix">
+										<li>
+											<a class="bg_default_lightblue" href="#!">
+												<i class="fab fa-facebook-f"></i>
+												<i class="fab fa-facebook-f"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_orange" href="#!">
+												<i class="fab fa-twitter"></i>
+												<i class="fab fa-twitter"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_yellow" href="#!">
+												<i class="fab fa-youtube"></i>
+												<i class="fab fa-youtube"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_purple" href="#!">
+												<i class="fab fa-linkedin"></i>
+												<i class="fab fa-linkedin"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
+							<div class="team_grid">
+								<div class="item_image">
+									<img src="assets/images/team/img_02.jpg" alt="image_not_found">
+								</div>
+								<div class="item_content">
+									<h3 class="member_name">Manuel M. Brode</h3>
+									<span class="member_title">Senior Developer</span>
+									<ul class="square_social_links ul_li clearfix">
+										<li>
+											<a class="bg_default_lightblue" href="#!">
+												<i class="fab fa-facebook-f"></i>
+												<i class="fab fa-facebook-f"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_orange" href="#!">
+												<i class="fab fa-twitter"></i>
+												<i class="fab fa-twitter"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_yellow" href="#!">
+												<i class="fab fa-youtube"></i>
+												<i class="fab fa-youtube"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_purple" href="#!">
+												<i class="fab fa-linkedin"></i>
+												<i class="fab fa-linkedin"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".7s">
+							<div class="team_grid">
+								<div class="item_image">
+									<img src="assets/images/team/img_03.jpg" alt="image_not_found">
+								</div>
+								<div class="item_content">
+									<h3 class="member_name">Frank E. Stuber</h3>
+									<span class="member_title">Web Designer</span>
+									<ul class="square_social_links ul_li clearfix">
+										<li>
+											<a class="bg_default_lightblue" href="#!">
+												<i class="fab fa-facebook-f"></i>
+												<i class="fab fa-facebook-f"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_orange" href="#!">
+												<i class="fab fa-twitter"></i>
+												<i class="fab fa-twitter"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_yellow" href="#!">
+												<i class="fab fa-youtube"></i>
+												<i class="fab fa-youtube"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_purple" href="#!">
+												<i class="fab fa-linkedin"></i>
+												<i class="fab fa-linkedin"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".9s">
+							<div class="team_grid">
+								<div class="item_image">
+									<img src="assets/images/team/img_04.jpg" alt="image_not_found">
+								</div>
+								<div class="item_content">
+									<h3 class="member_name">Miguel D. Vegaen</h3>
+									<span class="member_title">Web Designer</span>
+									<ul class="square_social_links ul_li clearfix">
+										<li>
+											<a class="bg_default_lightblue" href="#!">
+												<i class="fab fa-facebook-f"></i>
+												<i class="fab fa-facebook-f"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_orange" href="#!">
+												<i class="fab fa-twitter"></i>
+												<i class="fab fa-twitter"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_yellow" href="#!">
+												<i class="fab fa-youtube"></i>
+												<i class="fab fa-youtube"></i>
+											</a>
+										</li>
+										<li>
+											<a class="bg_default_purple" href="#!">
+												<i class="fab fa-linkedin"></i>
+												<i class="fab fa-linkedin"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</section> -->
+			<!-- team_section - end
+			================================================== -->
+
+
+			<!-- funfact_section - start
+			================================================== -->
+			<!-- <section class="funfact_section sec_ptb_130 clearfix" data-background="assets/images/backgrounds/bg_01.jpg">
+				<div class="container">
+					<div class="funfact_wrap">
+
+						<div class="funfact_item text-center wow fadeInUp2" data-wow-delay=".05s">
+							<div class="content_wrap">
+								<div class="item_icon">
+									<span class="bg_default_orange">
+										<i class="fal fa-heart"></i>
+									</span>
+								</div>
+								<strong class="counte_text" data-from="0" data-to="356435">356435</strong>
+								<h3 class="item_title">Loving Customer</h3>
+							</div>
+						</div>
+
+						<div class="funfact_item text-center wow fadeInUp2" data-wow-delay=".3s">
+							<div class="content_wrap">
+								<div class="item_icon">
+									<span class="bg_default_lightblue">
+										<i class="fal fa-trophy-alt"></i>
+									</span>
+								</div>
+								<strong class="counte_text" data-from="0" data-to="653142">653142</strong>
+								<h3 class="item_title">Awards Winns</h3>
+							</div>
+						</div>
+
+						<div class="funfact_item text-center wow fadeInUp2" data-wow-delay=".5s">
+							<div class="content_wrap">
+								<div class="item_icon">
+									<span class="bg_default_yellow">
+										<i class="fal fa-truck"></i>
+									</span>
+								</div>
+								<strong class="counte_text" data-from="0" data-to="485620">485620</strong>
+								<h3 class="item_title">Transportations</h3>
+							</div>
+						</div>
+
+						<div class="funfact_item text-center wow fadeInUp2" data-wow-delay=".7s">
+							<div class="content_wrap">
+								<div class="item_icon">
+									<span class="bg_default_purple">
+										<i class="fal fa-laptop-code"></i>
+									</span>
+								</div>
+								<strong class="counte_text" data-from="0" data-to="475868">475868</strong>
+								<h3 class="item_title">Digital Computer</h3>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section> -->
+			<!-- funfact_section - end
+			================================================== -->
+
+
+			
+
+			<!-- cta_section - start
+			================================================== -->
+			<section class="cta_section sec_ptb_130 bg_default_blue clearfix">
+				<div class="container">
+					<div class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
+
+						<!-- <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 order-lg-last">
+							<div class="cta_image_1 wow fadeIn" data-wow-delay=".05s">
+								<img src="assets/images/cta/img_01.png" alt="image_not_found">
+							</div>
+						</div> -->
+
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="cta_content text-white">
+								<div class="section_title mb_30 wow fadeInUp2" data-wow-delay=".05s">
+									<h4 class="small_title">Contact us</h4>
+									<h2 class="big_title mb-0 text-white">
+										Let us help you BE SEEN.
+									</h2>
+									<span class="biggest_title">Quote</span>
+								</div>
+								<h4 class="mb_30 border_left_yellow text-white wow fadeInUp2" data-wow-delay=".2s">
+									Looking to captivate your audience and boost customer engagement? Our team specializes in creating interactive mail campaigns and EDDM (Every Door Direct Mail) strategies that will leave a lasting impression on your target market. Let us help you create a memorable and effective direct mail campaign that drives results.
+								</h4>
+								<a class="custom_btn bg_default_yellow wow fadeInUp2" data-wow-delay=".3s" target="_blank" href="team.html">
+									Contact Us.
+									<span><i class="fal fa-arrow-right"></i></span>
+								</a>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			<!-- cta_section - end
+			================================================== -->
+
+
+			<!-- testimonial_section - start
+			================================================== -->
+			<!-- <section class="testimonial_section bg_gray clearfix">
+				<div class="container-fluid p-0">
+					<div class="row g-0 align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
+
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 order-lg-last">
+							<div class="testimonial_image wow fadeIn" data-wow-delay=".05s">
+								<img src="assets/images/testimonial/img_05.jpg" alt="image_not_found">
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="testimonial_auto_wrap">
+								<div class="section_title mb_30 wow fadeInUp2" data-wow-delay=".2s">
+									<h4 class="small_title">Clients Reviews</h4>
+									<h2 class="big_title mb-0">
+										What Our Clients Say About Our Works
+									</h2>
+									<span class="biggest_title">Says</span>
+								</div>
+
+								<div class="testimonial_carousel column_1_carousel owl-carousel owl-theme wow fadeInUp2" data-wow-delay=".3s">
+									<div class="item">
+										<div class="testimonial_primary">
+											<div class="content_wrap">
+												<p class="font_24">
+													Sed ut perspiciatis unde omnis iste natus 
+													error sit voluptatem accusantium doloremq
+													ue laudantium totam rem aperiam eaqupsa quae abillo inventore veritatis et quasi arch
+													itecto beatae vitae dicta sunt
+													<strong>
+														Accusantim dolorem laudantium totam rem aperiam eaqupsa quae abillo
+													</strong>
+												</p>
+												<span class="quote_icon">
+													<img src="assets/images/testimonial/quote_01.png" alt="icon_not_found">
+												</span>
+											</div>
+											<div class="hero_info_wrap">
+												<div class="hero_thumbnail">
+													<img src="assets/images/testimonial/img_01.png" alt="icon_not_found">
+												</div>
+												<div class="hero_info">
+													<h3 class="hero_name">Casey M. Vargas</h3>
+													<span class="hero_title">Web designer</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="testimonial_primary">
+											<div class="content_wrap">
+												<p class="font_24">
+													Sed ut perspiciatis unde omnis iste natus 
+													error sit voluptatem accusantium doloremq
+													ue laudantium totam rem aperiam eaqupsa quae abillo inventore veritatis et quasi arch
+													itecto beatae vitae dicta sunt
+													<strong>
+														Accusantim dolorem laudantium totam rem aperiam eaqupsa quae abillo
+													</strong>
+												</p>
+												<span class="quote_icon">
+													<img src="assets/images/testimonial/quote_01.png" alt="icon_not_found">
+												</span>
+											</div>
+											<div class="hero_info_wrap">
+												<div class="hero_thumbnail">
+													<img src="assets/images/testimonial/img_02.png" alt="icon_not_found">
+												</div>
+												<div class="hero_info">
+													<h3 class="hero_name">Westover Charles</h3>
+													<span class="hero_title">Web designer</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="testimonial_primary">
+											<div class="content_wrap">
+												<p class="font_24">
+													Sed ut perspiciatis unde omnis iste natus 
+													error sit voluptatem accusantium doloremq
+													ue laudantium totam rem aperiam eaqupsa quae abillo inventore veritatis et quasi arch
+													itecto beatae vitae dicta sunt
+													<strong>
+														Accusantim dolorem laudantium totam rem aperiam eaqupsa quae abillo
+													</strong>
+												</p>
+												<span class="quote_icon">
+													<img src="assets/images/testimonial/quote_01.png" alt="icon_not_found">
+												</span>
+											</div>
+											<div class="hero_info_wrap">
+												<div class="hero_thumbnail">
+													<img src="assets/images/testimonial/img_03.png" alt="icon_not_found">
+												</div>
+												<div class="hero_info">
+													<h3 class="hero_name">Westover Charles</h3>
+													<span class="hero_title">Web designer</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="testimonial_primary">
+											<div class="content_wrap">
+												<p class="font_24">
+													Sed ut perspiciatis unde omnis iste natus 
+													error sit voluptatem accusantium doloremq
+													ue laudantium totam rem aperiam eaqupsa quae abillo inventore veritatis et quasi arch
+													itecto beatae vitae dicta sunt
+													<strong>
+														Accusantim dolorem laudantium totam rem aperiam eaqupsa quae abillo
+													</strong>
+												</p>
+												<span class="quote_icon">
+													<img src="assets/images/testimonial/quote_01.png" alt="icon_not_found">
+												</span>
+											</div>
+											<div class="hero_info_wrap">
+												<div class="hero_thumbnail">
+													<img src="assets/images/testimonial/img_01.png" alt="icon_not_found">
+												</div>
+												<div class="hero_info">
+													<h3 class="hero_name">Casey M. Vargas</h3>
+													<span class="hero_title">Web designer</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="testimonial_primary">
+											<div class="content_wrap">
+												<p class="font_24">
+													Sed ut perspiciatis unde omnis iste natus 
+													error sit voluptatem accusantium doloremq
+													ue laudantium totam rem aperiam eaqupsa quae abillo inventore veritatis et quasi arch
+													itecto beatae vitae dicta sunt
+													<strong>
+														Accusantim dolorem laudantium totam rem aperiam eaqupsa quae abillo
+													</strong>
+												</p>
+												<span class="quote_icon">
+													<img src="assets/images/testimonial/quote_01.png" alt="icon_not_found">
+												</span>
+											</div>
+											<div class="hero_info_wrap">
+												<div class="hero_thumbnail">
+													<img src="assets/images/testimonial/img_02.png" alt="icon_not_found">
+												</div>
+												<div class="hero_info">
+													<h3 class="hero_name">Westover Charles</h3>
+													<span class="hero_title">Web designer</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="testimonial_primary">
+											<div class="content_wrap">
+												<p class="font_24">
+													Sed ut perspiciatis unde omnis iste natus 
+													error sit voluptatem accusantium doloremq
+													ue laudantium totam rem aperiam eaqupsa quae abillo inventore veritatis et quasi arch
+													itecto beatae vitae dicta sunt
+													<strong>
+														Accusantim dolorem laudantium totam rem aperiam eaqupsa quae abillo
+													</strong>
+												</p>
+												<span class="quote_icon">
+													<img src="assets/images/testimonial/quote_01.png" alt="icon_not_found">
+												</span>
+											</div>
+											<div class="hero_info_wrap">
+												<div class="hero_thumbnail">
+													<img src="assets/images/testimonial/img_03.png" alt="icon_not_found">
+												</div>
+												<div class="hero_info">
+													<h3 class="hero_name">Westover Charles</h3>
+													<span class="hero_title">Web designer</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section> -->
+			<!-- testimonial_section - end
+			================================================== -->
+
+
+			<!-- blog_section - start
+			================================================== -->
+			<!-- <section class="blog_section sec_ptb_130 clearfix">
+				<div class="container">
+
+					<div class="row justify-content-center">
+						<div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
+							<div class="section_title text-center mb_50 wow fadeInUp2" data-wow-delay=".05s">
+								<h4 class="small_title">Latest News & Blog</h4>
+								<h2 class="big_title mb-0">
+									Get More Update For News & Articles
+								</h2>
+								<span class="biggest_title">Blogs</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+							<div class="blog_grid_2">
+								<a class="item_image" target="_blank" href="blog_details.html">
+									<img src="assets/images/blog/grid/img_01.jpg" alt="image_not_found">
+								</a>
+								<div class="item_content">
+									<a class="post_category bg_default_orange" target="_blank" href="blog_grid.html">mockup</a>
+									<h3 class="item_title">
+										<a target="_blank" href="blog_details.html">
+											Solving Common Cross Plat Form Issues When Working With Flutter Ways
+										</a>
+									</h3>
+								</div>
+								<ul class="post_meta ul_li clearfix">
+									<li><a href="#!"><i class="far fa-comments"></i> Comments (05)</a></li>
+									<li><a href="#!"><i class="far fa-heart"></i> View (1k)</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
+							<div class="blog_grid_2">
+								<a class="item_image" target="_blank" href="blog_details.html">
+									<img src="assets/images/blog/grid/img_02.jpg" alt="image_not_found">
+								</a>
+								<div class="item_content">
+									<a class="post_category bg_default_orange" target="_blank" href="blog_grid.html">mockup</a>
+									<h3 class="item_title">
+										<a target="_blank" href="blog_details.html">
+											Introduction To SWR React Hooks For Remote Data Fetc Monthly Update Things
+										</a>
+									</h3>
+								</div>
+								<ul class="post_meta ul_li clearfix">
+									<li><a href="#!"><i class="far fa-comments"></i> Comments (05)</a></li>
+									<li><a href="#!"><i class="far fa-heart"></i> View (1k)</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".7s">
+							<div class="blog_grid_2">
+								<a class="item_image" target="_blank" href="blog_details.html">
+									<img src="assets/images/blog/grid/img_03.jpg" alt="image_not_found">
+								</a>
+								<div class="item_content">
+									<a class="post_category bg_default_orange" target="_blank" href="blog_grid.html">mockup</a>
+									<h3 class="item_title">
+										<a target="_blank" href="blog_details.html">
+											How To Run The Right Kind Of Research Study With The Double-Diamond Model
+										</a>
+									</h3>
+								</div>
+								<ul class="post_meta ul_li clearfix">
+									<li><a href="#!"><i class="far fa-comments"></i> Comments (05)</a></li>
+									<li><a href="#!"><i class="far fa-heart"></i> View (1k)</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</section> -->
+			<!-- blog_section - end
+			================================================== -->
+
+
+		</main>
+		<!-- main body - end
+		================================================== -->
+
+
+
+		<!-- footer_section - start
+		================================================== -->
+		<footer class="footer_section bg_default_blue text-white clearfix">
+			<div class="container">
+
+				<div class="footer_brand_area border_bottom clearfix">
+					<div class="row align-items-center justify-content-lg-between">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<!-- <div class="brand_logo">
+								<a href="#!">
+									<img src="assets/images/logo/logo_01_1x.png" srcset="assets/images/logo/logo_01_2x.png 2x" alt="logo_not_found">
+								</a>
+							</div> -->
+						</div>
+
+						
+					</div>
+				</div>
+
+				
+
+				<div class="footer_bottom_boxed clearfix">
+					<div class="row align-items-center justify-content-lg-between justify-content-md-between">
+						<div class="col-lg-6 col-md-6">
+							<p class="copyright_text mb-0">2024 All Right Reserved</p>
+						</div>
+
+						<div class="col-lg-6 col-md-6">
+							<p>
+								Be Seen LLC
+								<br>
+								377 Laurelwood Road
+								<br>
+								Santa Clara CA 95054
+								<br>
+								408.896.8161
+							</p>
+						
+							<!-- <ul class="circle_social_links ul_li_right clearfix">
+								<li>
+									<a class="bg_facebook" href="https://www.facebook.com/beseensignshop">
+										<i class="fab fa-facebook-f"></i>
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a class="bg_youtube" href="#!">
+										<i class="fab fa-youtube"></i>
+										<i class="fab fa-youtube"></i>
+									</a>
+								</li>
+								<li>
+									<a class="bg_linkedin" href="#!">
+										<i class="fab fa-linkedin"></i>
+										<i class="fab fa-linkedin"></i>
+									</a>
+								</li>
+							</ul> -->
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</footer>
+		<!-- footer_section - end
+		================================================== -->
+	
+
+		
+		<!-- fraimwork - jquery include -->
+		<script src="assets/js/jquery-3.5.1.min.js"></script>
+		<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+		<!-- carousel - jquery include -->
+        <script src="assets/js/owl.carousel.min.js"></script>
+
+		<!-- mobile menu - jquery include -->
+        <script src="assets/js/mCustomScrollbar.js"></script>
+
+		<!-- google map - jquery include -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&ver=2.1.6"></script>
+        <script src="assets/js/gmaps.min.js"></script>
+
+		<!-- nice select - jquery include -->
+        <script src="assets/js/nice-select.min.js"></script>
+
+		<!-- circle progress - jquery include -->
+        <script src="assets/js/circle-progress.min.js"></script>
+
+		<!-- magnific popup - jquery include -->
+        <script src="assets/js/magnific-popup.min.js"></script>
+
+        <!-- filter & masonry js -->
+		<script src="assets/js/isotope.pkgd.js"></script>
+		<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+		<script src="assets/js/masonry.pkgd.min.js"></script>
+
+		<!-- counter - jquery include -->
+		<script src="assets/js/countto.js"></script>
+
+		<!-- pricing range - jquery include -->
+		<script src="assets/js/jquery-ui.js"></script>
+
+		<!-- animation - jquery include -->
+		<script src="assets/js/parallax.min.js"></script>
+		<script src="assets/js/wow.min.js"></script>
+
+		<!-- custom - jquery include -->
+		<script src="assets/js/custom.js"></script>
+
+		<chat-widget
+			location-id="TIotUx9EgciHgNOwY4he">
+		</chat-widget>
+		<script
+		src="https://widgets.leadconnectorhq.com/loader.js" 
+		data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" >
+		</script>
+
+		<script>
+			includeHTML();
+		</script>
+
+		
+	</body>
+</html>

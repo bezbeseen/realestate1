@@ -1,0 +1,64 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "type": "LoadImage",
+            "position": [
+                0,
+                0
+            ],
+            "data": {
+                "image_path": "https://www.4over.com/images/anchors/branded-apparel/polos_anchor.jpg"
+            }
+        },
+        {
+            "id": 2,
+            "type": "StableDiffusionLoader",
+            "position": [
+                200,
+                0
+            ],
+            "data": {
+                "model": "RealisticVisionV6"
+            }
+        },
+        {
+            "id": 3,
+            "type": "PromptGenerator",
+            "position": [
+                400,
+                0
+            ],
+            "data": {
+                "prompt": "Professional product photography of branded polo shirts, professional embroidery on chest, premium fabric quality visible, business casual presentation, office environment backdrop, professional lighting"
+            }
+        },
+        {
+            "id": 4,
+            "type": "ImageGenerator",
+            "position": [
+                600,
+                0
+            ],
+            "inputs": {
+                "model": 2,
+                "prompt": 3
+            }
+        },
+        {
+            "id": 5,
+            "type": "SaveImage",
+            "position": [
+                800,
+                0
+            ],
+            "inputs": {
+                "image": 4
+            },
+            "data": {
+                "filename": "branded-apparel_polos_v1",
+                "folder": "branded-apparel/polos"
+            }
+        }
+    ]
+}

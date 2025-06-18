@@ -3,7 +3,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.867;
   font-style: normal;
@@ -995,7 +995,7 @@ i {
   position: relative;
   .small_title {
     line-height: 1;
-    font-size: 24px;
+    font-size: 48px;
     margin-bottom: 25px;
     color: $default_orange;
     font-family: $secondary_font;
@@ -1303,3 +1303,19 @@ button {
 ================================================== */
 /* global area - end
 ==================================================================================================== */
+
+ .carousel-highlight{
+    color: $default_orange;
+  }
+
+
+//   .home_three_slider .item:before {
+//     background-color: #ffffff;
+// }
+
+// h3 .item_title .text-white {
+//     color: $default_orange !important;
+// }
+
+
+

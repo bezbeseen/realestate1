@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Tools - GetBeSeen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 10px;
+        }
+        .button-container {
+            margin: 30px 0;
+        }
+        .big-button {
+            background-color: #ff6b35;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .big-button:hover {
+            background-color: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        .big-button.green {
+            background-color: #28a745;
+        }
+        .big-button.green:hover {
+            background-color: #218838;
+        }
+        .stats {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stats h2 {
+            color: #ff6b35;
+            margin-top: 0;
+        }
+        .page-list {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .page-list h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .page-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .page-list li {
+            padding: 5px 0;
+        }
+        .page-list a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .page-list a:hover {
+            text-decoration: underline;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Developer Tools - GetBeSeen Website</h1>
+    
+    <div class="stats">
+        <h2>📊 Website Statistics</h2>
+        <p><strong>Total Pages:</strong> 101+ pages</p>
+        <p><strong>Product Pages:</strong> 37</p>
+        <p><strong>Service Pages:</strong> 17</p>
+        <p><strong>Category Pages:</strong> 5</p>
+        <p><strong>Other Pages:</strong> Homepage, About, Contact, Blog, Industries</p>
+    </div>
+
+    <div class="button-container">
+        <button class="big-button" onclick="openAllPages()">
+            🎯 Open All Pages (101+ pages)
+        </button>
+    </div>
+
+    <div class="button-container">
+        <button class="big-button green" onclick="checkAllNavLinks()">
+            🔍 Check All Navigation Links
+        </button>
+    </div>
+
+    <div class="button-container">
+        <button class="big-button" onclick="checkAllImages()" style="background-color: #6c757d;">
+            🖼️ Check All Images
+        </button>
+    </div>
+
+    <div class="button-container">
+        <button class="big-button" onclick="validateAllForms()" style="background-color: #17a2b8;">
+            📝 Validate All Forms
+        </button>
+    </div>
+
+    <div class="button-container">
+        <button class="big-button" onclick="checkPageSpeeds()" style="background-color: #ffc107; color: #333;">
+            ⚡ Check Page Load Speeds
+        </button>
+    </div>
+
+    <div class="button-container">
+        <button class="big-button" onclick="generateSEOReport()" style="background-color: #6610f2;">
+            📊 Generate SEO Report
+        </button>
+    </div>
+
+    <div class="button-container">
+        <button class="big-button" onclick="findDuplicateContent()" style="background-color: #e83e8c;">
+            🔄 Find Duplicate Content
+        </button>
+    </div>
+
+    <div class="button-container">
+        <button class="big-button" onclick="checkIncludesUsage()" style="background-color: #20c997;">
+            🔧 Check Include Files Usage
+        </button>
+    </div>
+
+    <div id="linkCheckResults" style="display: none;">
+        <div class="stats">
+            <h2>🔗 Navigation Link Check Results</h2>
+            <div id="linkCheckProgress"></div>
+            <div id="linkCheckSummary"></div>
+        </div>
+        <div class="page-list" id="brokenLinksContainer" style="display: none;">
+            <h3>❌ Broken Links Found</h3>
+            <ul id="brokenLinksList"></ul>
+        </div>
+        <div class="page-list" id="workingLinksContainer" style="display: none;">
+            <h3>✅ Working Links</h3>
+            <ul id="workingLinksList"></ul>
+        </div>
+    </div>
+
+    <div id="imageCheckResults" style="display: none;">
+        <div class="stats">
+            <h2>🖼️ Image Check Results</h2>
+            <div id="imageCheckProgress"></div>
+            <div id="imageCheckSummary"></div>
+        </div>
+    </div>
+
+    <div id="formValidationResults" style="display: none;">
+        <div class="stats">
+            <h2>📝 Form Validation Results</h2>
+            <div id="formValidationProgress"></div>
+            <div id="formValidationSummary"></div>
+        </div>
+    </div>
+
+    <div id="speedCheckResults" style="display: none;">
+        <div class="stats">
+            <h2>⚡ Page Speed Results</h2>
+            <div id="speedCheckProgress"></div>
+            <div id="speedCheckSummary"></div>
+        </div>
+    </div>
+
+    <div id="seoReportResults" style="display: none;">
+        <div class="stats">
+            <h2>📊 SEO Report</h2>
+            <div id="seoReportProgress"></div>
+            <div id="seoReportSummary"></div>
+        </div>
+    </div>
+
+    <div id="duplicateContentResults" style="display: none;">
+        <div class="stats">
+            <h2>🔄 Duplicate Content Report</h2>
+            <div id="duplicateContentProgress"></div>
+            <div id="duplicateContentSummary"></div>
+        </div>
+    </div>
+
+    <div id="includesCheckResults" style="display: none;">
+        <div class="stats">
+            <h2>🔧 Include Files Usage Report</h2>
+            <div id="includesCheckProgress"></div>
+            <div id="includesCheckSummary"></div>
+        </div>
+        <div class="page-list" id="pagesNotUsingIncludes" style="display: none;">
+            <h3>⚠️ Pages Not Using Includes</h3>
+            <ul id="pagesNotUsingIncludesList"></ul>
+        </div>
+        <div class="page-list" id="includeFilesFound" style="display: none;">
+            <h3>📁 Include Files Found</h3>
+            <ul id="includeFilesFoundList"></ul>
+        </div>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ Warning:</strong> This will open 101+ browser tabs. Make sure your browser can handle it!
+    </div>
+
+    <div class="page-list">
+        <h3>📄 Main Pages</h3>
+        <ul id="mainPages"></ul>
+    </div>
+
+    <div class="page-list">
+        <h3>🛍️ Product Pages</h3>
+        <ul id="productPages"></ul>
+    </div>
+
+    <div class="page-list">
+        <h3>🔧 Service Pages</h3>
+        <ul id="servicePages"></ul>
+    </div>
+
+    <script>
+        // All pages to open
+        const allPages = [
+            // Main pages
+            '/index.html',
+            '/homepage.html',
+            '/about.html',
+            '/contact.html',
+            '/blog.html',
+            '/products.html',
+            '/services.html',
+            '/industries.html',
+            
+            // Category pages
+            '/products/prints.html',
+            '/products/signs.html',
+            '/products/promotional.html',
+            '/products/materials.html',
+            '/products/real-estate.html',
+            
+            // Product pages - Prints
+            '/products/prints/business-cards.html',
+            '/products/prints/banners.html',
+            '/products/prints/brochures.html',
+            '/products/prints/canvas-prints.html',
+            '/products/prints/decals.html',
+            '/products/prints/flyers.html',
+            '/products/prints/photos.html',
+            '/products/prints/posters.html',
+            '/products/prints/presentation-folders.html',
+            '/products/prints/stickers.html',
+            '/products/prints/window-clings.html',
+            
+            // Product pages - Signs
+            '/products/signs/yard-signs.html',
+            '/products/signs/retractable-banners.html',
+            '/products/signs/window-graphics.html',
+            '/products/signs/flags.html',
+            '/products/signs/light-boxes.html',
+            '/products/signs/channel-lettering.html',
+            '/products/signs/3d-lettering.html',
+            '/products/signs/commercial-signage.html',
+            '/products/signs/aluminum-signs.html',
+            '/products/signs/magnets.html',
+            '/products/signs/a-frames.html',
+            
+            // Product pages - Materials
+            '/products/materials/corrugated.html',
+            '/products/materials/foam-board.html',
+            '/products/materials/pvc-board.html',
+            '/products/materials/styrene.html',
+            '/products/materials/acrylic.html',
+            
+            // Product pages - Promotional
+            '/products/promotional/table-cloths.html',
+            '/products/promotional/tents.html',
+            '/products/promotional/pens.html',
+            '/products/promotional/booths.html',
+            '/products/promotional/branded-apparel.html',
+            '/products/promotional/bags.html',
+            
+            // Product pages - Real Estate
+            '/products/real-estate/business-cards.html',
+            '/products/real-estate/banners.html',
+            '/products/real-estate/flags.html',
+            '/products/real-estate/lawn-signs.html',
+            '/products/real-estate/a-frames.html',
+            
+            // Service pages
+            '/services/graphic-design.html',
+            '/services/web-design.html',
+            '/services/mailing.html',
+            
+            // Service sub-pages - Graphic Design
+            '/services/graphic-design/logo-design.html',
+            '/services/graphic-design/branding.html',
+            '/services/graphic-design/photo-editing.html',
+            '/services/graphic-design/print-layout.html',
+            '/services/graphic-design/fonts-typography.html',
+            
+            // Service sub-pages - Web Design
+            '/services/web-design/websites.html',
+            '/services/web-design/web-services.html',
+            '/services/web-design/custom-email-design.html',
+            '/services/web-design/marketing-campaigns.html',
+            '/services/web-design/social-media.html',
+            '/services/web-design/seo.html',
+            
+            // Service sub-pages - Mailing
+            '/services/mailing/eddm.html',
+            '/services/mailing/newsletters.html',
+            '/services/mailing/postcards.html',
+            '/services/mailing/direct-mailers.html',
+            '/services/mailing/contact-list-cleaning.html',
+            '/services/mailing/interactive-mail.html',
+            
+            // Industry pages
+            '/industries/real-estate.html'
+        ];
+
+        function openAllPages() {
+            if (confirm(`This will open ${allPages.length} browser tabs. Are you sure?`)) {
+                allPages.forEach((page, index) => {
+                    setTimeout(() => {
+                        window.open(page, '_blank');
+                    }, index * 100); // Stagger opening to prevent browser overload
+                });
+            }
+        }
+
+        // Display pages in lists
+        function displayPages() {
+            const mainPagesList = document.getElementById('mainPages');
+            const productPagesList = document.getElementById('productPages');
+            const servicePagesList = document.getElementById('servicePages');
+            
+            allPages.forEach(page => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = page;
+                a.textContent = page;
+                a.target = '_blank';
+                li.appendChild(a);
+                
+                if (page.includes('/products/') && !page.endsWith('/products.html')) {
+                    productPagesList.appendChild(li);
+                } else if (page.includes('/services/') && !page.endsWith('/services.html')) {
+                    servicePagesList.appendChild(li);
+                } else {
+                    mainPagesList.appendChild(li);
+                }
+            });
+        }
+
+        // Display pages on load
+        displayPages();
+
+        // Navigation link checker
+        async function checkAllNavLinks() {
+            const resultsDiv = document.getElementById('linkCheckResults');
+            const progressDiv = document.getElementById('linkCheckProgress');
+            const summaryDiv = document.getElementById('linkCheckSummary');
+            const brokenLinksContainer = document.getElementById('brokenLinksContainer');
+            const brokenLinksList = document.getElementById('brokenLinksList');
+            const workingLinksContainer = document.getElementById('workingLinksContainer');
+            const workingLinksList = document.getElementById('workingLinksList');
+            
+            // Reset display
+            resultsDiv.style.display = 'block';
+            brokenLinksContainer.style.display = 'none';
+            workingLinksContainer.style.display = 'none';
+            brokenLinksList.innerHTML = '';
+            workingLinksList.innerHTML = '';
+            
+            progressDiv.innerHTML = '<p>🔄 Starting navigation link check...</p>';
+            
+            const navLinks = new Set();
+            const brokenLinks = [];
+            const workingLinks = [];
+            let pagesChecked = 0;
+            
+            // Function to extract navigation links from a page
+            async function extractNavLinks(pageUrl) {
+                try {
+                    const response = await fetch(pageUrl);
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+                    
+                    // Find all navigation links (header and mobile menu)
+                    const navSelectors = [
+                        'nav a',
+                        '.navbar a',
+                        '.nav-menu a',
+                        '.sidebar-menu a',
+                        '.menu-list a',
+                        'header a',
+                        '.mobile-menu a'
+                    ];
+                    
+                    navSelectors.forEach(selector => {
+                        doc.querySelectorAll(selector).forEach(link => {
+                            const href = link.getAttribute('href');
+                            if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                                // Normalize the URL
+                                let fullUrl = href;
+                                if (href.startsWith('/')) {
+                                    fullUrl = window.location.origin + href;
+                                } else if (!href.startsWith('http')) {
+                                    const basePath = pageUrl.substring(0, pageUrl.lastIndexOf('/'));
+                                    fullUrl = basePath + '/' + href;
+                                }
+                                navLinks.add(fullUrl);
+                            }
+                        });
+                    });
+                    
+                    pagesChecked++;
+                    progressDiv.innerHTML = `<p>🔄 Checked ${pagesChecked}/${allPages.length} pages for navigation links...</p>`;
+                    
+                } catch (error) {
+                    console.error(`Error checking page ${pageUrl}:`, error);
+                }
+            }
+            
+            // Extract navigation links from all pages
+            progressDiv.innerHTML = '<p>🔄 Scanning all pages for navigation links...</p>';
+            
+            // Process pages in batches to avoid overwhelming the browser
+            const batchSize = 10;
+            for (let i = 0; i < allPages.length; i += batchSize) {
+                const batch = allPages.slice(i, i + batchSize);
+                await Promise.all(batch.map(page => extractNavLinks(window.location.origin + page)));
+            }
+            
+            // Check each unique navigation link
+            progressDiv.innerHTML = `<p>🔄 Found ${navLinks.size} unique navigation links. Checking each one...</p>`;
+            
+            let linksChecked = 0;
+            const navLinksArray = Array.from(navLinks);
+            
+            // Check links in batches
+            for (let i = 0; i < navLinksArray.length; i += batchSize) {
+                const batch = navLinksArray.slice(i, i + batchSize);
+                await Promise.all(batch.map(async (link) => {
+                    try {
+                        const response = await fetch(link, { method: 'HEAD' });
+                        if (response.ok) {
+                            workingLinks.push(link);
+                        } else {
+                            brokenLinks.push({ url: link, status: response.status });
+                        }
+                    } catch (error) {
+                        brokenLinks.push({ url: link, error: error.message });
+                    }
+                    linksChecked++;
+                    progressDiv.innerHTML = `<p>🔄 Checked ${linksChecked}/${navLinksArray.length} navigation links...</p>`;
+                }));
+            }
+            
+            // Display results
+            progressDiv.style.display = 'none';
+            
+            const totalLinks = navLinks.size;
+            const brokenCount = brokenLinks.length;
+            const workingCount = workingLinks.length;
+            
+            summaryDiv.innerHTML = `
+                <p><strong>Total Navigation Links Found:</strong> ${totalLinks}</p>
+                <p><strong>✅ Working Links:</strong> ${workingCount}</p>
+                <p><strong>❌ Broken Links:</strong> ${brokenCount}</p>
+                <p><strong>📊 Success Rate:</strong> ${totalLinks > 0 ? ((workingCount / totalLinks) * 100).toFixed(1) : 0}%</p>
+            `;
+            
+            // Show broken links if any
+            if (brokenLinks.length > 0) {
+                brokenLinksContainer.style.display = 'block';
+                brokenLinks.forEach(link => {
+                    const li = document.createElement('li');
+                    const errorInfo = link.status ? `Status: ${link.status}` : `Error: ${link.error}`;
+                    li.innerHTML = `<a href="${link.url}" target="_blank">${link.url}</a> - <span style="color: red;">${errorInfo}</span>`;
+                    brokenLinksList.appendChild(li);
+                });
+            }
+            
+            // Show working links (collapsed by default)
+            if (workingLinks.length > 0) {
+                workingLinksContainer.style.display = 'block';
+                const toggleButton = document.createElement('button');
+                toggleButton.textContent = 'Show/Hide Working Links';
+                toggleButton.style.marginBottom = '10px';
+                toggleButton.onclick = () => {
+                    workingLinksList.style.display = workingLinksList.style.display === 'none' ? 'block' : 'none';
+                };
+                workingLinksContainer.insertBefore(toggleButton, workingLinksList);
+                workingLinksList.style.display = 'none';
+                
+                workingLinks.forEach(link => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
+                    workingLinksList.appendChild(li);
+                });
+            }
+        }
+
+        // Check All Images Button
+        async function checkAllImages() {
+            const resultsDiv = document.getElementById('imageCheckResults');
+            const progressDiv = document.getElementById('imageCheckProgress');
+            const summaryDiv = document.getElementById('imageCheckSummary');
+            
+            resultsDiv.style.display = 'block';
+            progressDiv.innerHTML = '<p>🔄 Scanning all pages for images...</p>';
+            
+            let totalImages = 0;
+            let brokenImages = 0;
+            let largeImages = 0;
+            let missingAlt = 0;
+            
+            for (let i = 0; i < allPages.length; i++) {
+                try {
+                    const response = await fetch(allPages[i]);
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+                    
+                    const images = doc.querySelectorAll('img');
+                    totalImages += images.length;
+                    
+                    images.forEach(img => {
+                        if (!img.alt) missingAlt++;
+                    });
+                    
+                    progressDiv.innerHTML = `<p>🔄 Checked ${i + 1}/${allPages.length} pages...</p>`;
+                } catch (error) {
+                    console.error(`Error checking images on ${allPages[i]}:`, error);
+                }
+            }
+            
+            progressDiv.style.display = 'none';
+            summaryDiv.innerHTML = `
+                <p><strong>Total Images Found:</strong> ${totalImages}</p>
+                <p><strong>🖼️ Average per page:</strong> ${(totalImages / allPages.length).toFixed(1)}</p>
+                <p><strong>⚠️ Missing Alt Text:</strong> ${missingAlt}</p>
+                <p><strong>📊 Alt Text Coverage:</strong> ${totalImages > 0 ? (((totalImages - missingAlt) / totalImages) * 100).toFixed(1) : 0}%</p>
+            `;
+        }
+
+        // Validate All Forms Button
+        async function validateAllForms() {
+            const resultsDiv = document.getElementById('formValidationResults');
+            const progressDiv = document.getElementById('formValidationProgress');
+            const summaryDiv = document.getElementById('formValidationSummary');
+            
+            resultsDiv.style.display = 'block';
+            progressDiv.innerHTML = '<p>🔄 Validating forms across all pages...</p>';
+            
+            let totalForms = 0;
+            let formsWithoutAction = 0;
+            let formsWithoutMethod = 0;
+            let inputsWithoutLabels = 0;
+            
+            for (let i = 0; i < allPages.length; i++) {
+                try {
+                    const response = await fetch(allPages[i]);
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+                    
+                    const forms = doc.querySelectorAll('form');
+                    totalForms += forms.length;
+                    
+                    forms.forEach(form => {
+                        if (!form.action) formsWithoutAction++;
+                        if (!form.method) formsWithoutMethod++;
+                    });
+                    
+                    progressDiv.innerHTML = `<p>🔄 Validated ${i + 1}/${allPages.length} pages...</p>`;
+                } catch (error) {
+                    console.error(`Error validating forms on ${allPages[i]}:`, error);
+                }
+            }
+            
+            progressDiv.style.display = 'none';
+            summaryDiv.innerHTML = `
+                <p><strong>Total Forms Found:</strong> ${totalForms}</p>
+                <p><strong>📝 Forms per page:</strong> ${(totalForms / allPages.length).toFixed(2)}</p>
+                <p><strong>⚠️ Forms without action:</strong> ${formsWithoutAction}</p>
+                <p><strong>⚠️ Forms without method:</strong> ${formsWithoutMethod}</p>
+                <p><strong>✅ Valid Forms:</strong> ${totalForms - Math.max(formsWithoutAction, formsWithoutMethod)}</p>
+            `;
+        }
+
+        // Check Page Speeds Button
+        async function checkPageSpeeds() {
+            const resultsDiv = document.getElementById('speedCheckResults');
+            const progressDiv = document.getElementById('speedCheckProgress');
+            const summaryDiv = document.getElementById('speedCheckSummary');
+            
+            resultsDiv.style.display = 'block';
+            progressDiv.innerHTML = '<p>🔄 Measuring page load speeds...</p>';
+            
+            let totalTime = 0;
+            let fastPages = 0;
+            let slowPages = 0;
+            let pageCount = 0;
+            
+            const batchSize = 5;
+            for (let i = 0; i < allPages.length; i += batchSize) {
+                const batch = allPages.slice(i, i + batchSize);
+                await Promise.all(batch.map(async (page) => {
+                    const startTime = performance.now();
+                    try {
+                        await fetch(page);
+                        const loadTime = performance.now() - startTime;
+                        totalTime += loadTime;
+                        pageCount++;
+                        
+                        if (loadTime < 200) fastPages++;
+                        else if (loadTime > 1000) slowPages++;
+                        
+                    } catch (error) {
+                        console.error(`Error loading ${page}:`, error);
+                    }
+                }));
+                progressDiv.innerHTML = `<p>🔄 Tested ${Math.min(i + batchSize, allPages.length)}/${allPages.length} pages...</p>`;
+            }
+            
+            const avgTime = totalTime / pageCount;
+            
+            progressDiv.style.display = 'none';
+            summaryDiv.innerHTML = `
+                <p><strong>Pages Tested:</strong> ${pageCount}</p>
+                <p><strong>⚡ Average Load Time:</strong> ${avgTime.toFixed(0)}ms</p>
+                <p><strong>🚀 Fast Pages (&lt;200ms):</strong> ${fastPages}</p>
+                <p><strong>🐌 Slow Pages (&gt;1s):</strong> ${slowPages}</p>
+                <p><strong>📊 Performance Score:</strong> ${fastPages > slowPages ? '✅ Good' : '⚠️ Needs Optimization'}</p>
+            `;
+        }
+
+        // Generate SEO Report Button
+        async function generateSEOReport() {
+            const resultsDiv = document.getElementById('seoReportResults');
+            const progressDiv = document.getElementById('seoReportProgress');
+            const summaryDiv = document.getElementById('seoReportSummary');
+            
+            resultsDiv.style.display = 'block';
+            progressDiv.innerHTML = '<p>🔄 Analyzing SEO metrics...</p>';
+            
+            let pagesWithTitle = 0;
+            let pagesWithMeta = 0;
+            let pagesWithH1 = 0;
+            let totalH1Count = 0;
+            
+            for (let i = 0; i < allPages.length; i++) {
+                try {
+                    const response = await fetch(allPages[i]);
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+                    
+                    if (doc.querySelector('title')) pagesWithTitle++;
+                    if (doc.querySelector('meta[name="description"]')) pagesWithMeta++;
+                    
+                    const h1s = doc.querySelectorAll('h1');
+                    if (h1s.length > 0) pagesWithH1++;
+                    totalH1Count += h1s.length;
+                    
+                    progressDiv.innerHTML = `<p>🔄 Analyzed ${i + 1}/${allPages.length} pages...</p>`;
+                } catch (error) {
+                    console.error(`Error analyzing SEO for ${allPages[i]}:`, error);
+                }
+            }
+            
+            progressDiv.style.display = 'none';
+            summaryDiv.innerHTML = `
+                <p><strong>Total Pages Analyzed:</strong> ${allPages.length}</p>
+                <p><strong>📄 Pages with Title:</strong> ${pagesWithTitle} (${((pagesWithTitle / allPages.length) * 100).toFixed(0)}%)</p>
+                <p><strong>📝 Pages with Meta Description:</strong> ${pagesWithMeta} (${((pagesWithMeta / allPages.length) * 100).toFixed(0)}%)</p>
+                <p><strong>🎯 Pages with H1:</strong> ${pagesWithH1} (${((pagesWithH1 / allPages.length) * 100).toFixed(0)}%)</p>
+                <p><strong>📊 Average H1s per page:</strong> ${(totalH1Count / allPages.length).toFixed(1)}</p>
+                <p><strong>SEO Score:</strong> ${pagesWithTitle === allPages.length && pagesWithMeta > allPages.length * 0.8 ? '✅ Excellent' : '⚠️ Needs Work'}</p>
+            `;
+        }
+
+        // Find Duplicate Content Button
+        async function findDuplicateContent() {
+            const resultsDiv = document.getElementById('duplicateContentResults');
+            const progressDiv = document.getElementById('duplicateContentProgress');
+            const summaryDiv = document.getElementById('duplicateContentSummary');
+            
+            resultsDiv.style.display = 'block';
+            progressDiv.innerHTML = '<p>🔄 Scanning for duplicate content...</p>';
+            
+            const contentHashes = new Map();
+            const duplicateGroups = new Map();
+            let duplicates = 0;
+            
+            for (let i = 0; i < allPages.length; i++) {
+                try {
+                    const response = await fetch(allPages[i]);
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+                    
+                    // Remove navigation, header, footer, and other common elements
+                    const elementsToRemove = [
+                        'header', 'nav', 'footer', 
+                        '.header', '.navigation', '.footer',
+                        '.sidebar-menu-wrapper', '.mobile-menu',
+                        '#backtotop', '.breadcrumb_section'
+                    ];
+                    
+                    elementsToRemove.forEach(selector => {
+                        const elements = doc.querySelectorAll(selector);
+                        elements.forEach(el => el.remove());
+                    });
+                    
+                    // Try to find the main content area
+                    let mainContent = doc.querySelector('main');
+                    if (!mainContent) {
+                        mainContent = doc.querySelector('.main-content');
+                    }
+                    if (!mainContent) {
+                        mainContent = doc.querySelector('.content');
+                    }
+                    if (!mainContent) {
+                        mainContent = doc.querySelector('section.sec_ptb_130');
+                    }
+                    if (!mainContent) {
+                        // Last resort - use body but remove script tags
+                        mainContent = doc.body;
+                        const scripts = mainContent.querySelectorAll('script');
+                        scripts.forEach(script => script.remove());
+                    }
+                    
+                    // Get text content and clean it up
+                    let contentText = mainContent ? mainContent.textContent : '';
+                    contentText = contentText
+                        .replace(/\s+/g, ' ') // Normalize whitespace
+                        .trim()
+                        .substring(0, 1000); // Take more content for better comparison
+                    
+                    // Only check for duplicates if content is substantial
+                    if (contentText.length > 200) {
+                        const contentHash = simpleHash(contentText);
+                        
+                        if (contentHashes.has(contentHash)) {
+                            duplicates++;
+                            // Track which pages have duplicate content
+                            if (!duplicateGroups.has(contentHash)) {
+                                duplicateGroups.set(contentHash, [contentHashes.get(contentHash)]);
+                            }
+                            duplicateGroups.get(contentHash).push(allPages[i]);
+                            console.log(`Duplicate content found between ${allPages[i]} and ${contentHashes.get(contentHash)}`);
+                        } else {
+                            contentHashes.set(contentHash, allPages[i]);
+                        }
+                    }
+                    
+                    progressDiv.innerHTML = `<p>🔄 Checked ${i + 1}/${allPages.length} pages...</p>`;
+                } catch (error) {
+                    console.error(`Error checking content on ${allPages[i]}:`, error);
+                }
+            }
+            
+            // Simple hash function
+            function simpleHash(str) {
+                let hash = 0;
+                for (let i = 0; i < str.length; i++) {
+                    const char = str.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash;
+                }
+                return hash.toString();
+            }
+            
+            progressDiv.style.display = 'none';
+            
+            const uniquePages = allPages.length - duplicates;
+            const uniquenessScore = ((uniquePages / allPages.length) * 100).toFixed(0);
+            
+            summaryDiv.innerHTML = `
+                <p><strong>Pages Scanned:</strong> ${allPages.length}</p>
+                <p><strong>🔄 Duplicate Content Found:</strong> ${duplicates} pages</p>
+                <p><strong>📊 Uniqueness Score:</strong> ${uniquenessScore}%</p>
+                <p><strong>Status:</strong> ${duplicates === 0 ? '✅ All content is unique!' : duplicates < 10 ? '⚠️ Some duplicate content detected' : '❌ Significant duplicate content detected'}</p>
+            `;
+            
+            // Show duplicate groups if any
+            if (duplicateGroups.size > 0) {
+                const groupsDiv = document.createElement('div');
+                groupsDiv.style.marginTop = '20px';
+                groupsDiv.innerHTML = '<h4>Duplicate Content Groups:</h4>';
+                
+                let groupNum = 1;
+                duplicateGroups.forEach((pages, hash) => {
+                    if (pages.length > 1) {
+                        const groupDiv = document.createElement('div');
+                        groupDiv.style.marginBottom = '15px';
+                        groupDiv.innerHTML = `<strong>Group ${groupNum}:</strong>`;
+                        const ul = document.createElement('ul');
+                        pages.forEach(page => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<a href="${page}" target="_blank">${page}</a>`;
+                            ul.appendChild(li);
+                        });
+                        groupDiv.appendChild(ul);
+                        groupsDiv.appendChild(groupDiv);
+                        groupNum++;
+                    }
+                });
+                
+                summaryDiv.appendChild(groupsDiv);
+            }
+        }
+
+        // Check Include Files Usage Button
+        async function checkIncludesUsage() {
+            const resultsDiv = document.getElementById('includesCheckResults');
+            const progressDiv = document.getElementById('includesCheckProgress');
+            const summaryDiv = document.getElementById('includesCheckSummary');
+            const notUsingContainer = document.getElementById('pagesNotUsingIncludes');
+            const notUsingList = document.getElementById('pagesNotUsingIncludesList');
+            const includesFoundContainer = document.getElementById('includeFilesFound');
+            const includesFoundList = document.getElementById('includeFilesFoundList');
+            
+            // Reset display
+            resultsDiv.style.display = 'block';
+            notUsingContainer.style.display = 'none';
+            includesFoundContainer.style.display = 'none';
+            notUsingList.innerHTML = '';
+            includesFoundList.innerHTML = '';
+            
+            progressDiv.innerHTML = '<p>🔄 Checking for include file usage...</p>';
+            
+            const includeMarkers = new Set();
+            const pagesWithIncludes = [];
+            const pagesWithoutIncludes = [];
+            let totalIncludes = 0;
+            
+            // Check each page for include markers
+            for (let i = 0; i < allPages.length; i++) {
+                try {
+                    const response = await fetch(allPages[i]);
+                    const text = await response.text();
+                    
+                    // Look for our include markers
+                    const includeMatches = text.match(/<!-- INCLUDE START: ([^-]+) -->/g) || [];
+                    
+                    if (includeMatches.length > 0) {
+                        pagesWithIncludes.push(allPages[i]);
+                        totalIncludes += includeMatches.length;
+                        
+                        // Extract include names
+                        includeMatches.forEach(match => {
+                            const includeName = match.match(/<!-- INCLUDE START: ([^-]+) -->/)[1].trim();
+                            includeMarkers.add(includeName);
+                        });
+                    } else {
+                        pagesWithoutIncludes.push(allPages[i]);
+                    }
+                    
+                    progressDiv.innerHTML = `<p>🔄 Checked ${i + 1}/${allPages.length} pages...</p>`;
+                } catch (error) {
+                    console.error(`Error checking includes on ${allPages[i]}:`, error);
+                }
+            }
+            
+            // Display results
+            progressDiv.style.display = 'none';
+            
+            summaryDiv.innerHTML = `
+                <p><strong>Total Pages Checked:</strong> ${allPages.length}</p>
+                <p><strong>✅ Pages Using Includes:</strong> ${pagesWithIncludes.length} (${((pagesWithIncludes.length / allPages.length) * 100).toFixed(0)}%)</p>
+                <p><strong>❌ Pages Without Includes:</strong> ${pagesWithoutIncludes.length}</p>
+                <p><strong>📁 Unique Include Files Found:</strong> ${includeMarkers.size}</p>
+                <p><strong>📊 Total Include Usage:</strong> ${totalIncludes} instances</p>
+                <p><strong>Status:</strong> ${pagesWithoutIncludes.length === 0 ? '✅ All pages use includes!' : '⚠️ Some pages need to be updated'}</p>
+            `;
+            
+            // Show pages not using includes
+            if (pagesWithoutIncludes.length > 0) {
+                notUsingContainer.style.display = 'block';
+                pagesWithoutIncludes.forEach(page => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${page}" target="_blank">${page}</a>`;
+                    notUsingList.appendChild(li);
+                });
+            }
+            
+            // Show include files found
+            if (includeMarkers.size > 0) {
+                includesFoundContainer.style.display = 'block';
+                Array.from(includeMarkers).sort().forEach(includeName => {
+                    const li = document.createElement('li');
+                    li.textContent = `${includeName}.html`;
+                    includesFoundList.appendChild(li);
+                });
+            }
+        }
+    </script>
+</body>
+</html> 

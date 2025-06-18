@@ -1,0 +1,64 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "type": "LoadImage",
+            "position": [
+                0,
+                0
+            ],
+            "data": {
+                "image_path": "https://www.printplace.com/images/anchors/light-boxes/standard_anchor.jpg"
+            }
+        },
+        {
+            "id": 2,
+            "type": "StableDiffusionLoader",
+            "position": [
+                200,
+                0
+            ],
+            "data": {
+                "model": "RealisticVisionV6"
+            }
+        },
+        {
+            "id": 3,
+            "type": "PromptGenerator",
+            "position": [
+                400,
+                0
+            ],
+            "data": {
+                "prompt": "Professional product photography of standard light box, LED backlit display, real estate listings visible, wall-mounted in office window, evening shot showing illumination, commercial property setting"
+            }
+        },
+        {
+            "id": 4,
+            "type": "ImageGenerator",
+            "position": [
+                600,
+                0
+            ],
+            "inputs": {
+                "model": 2,
+                "prompt": 3
+            }
+        },
+        {
+            "id": 5,
+            "type": "SaveImage",
+            "position": [
+                800,
+                0
+            ],
+            "inputs": {
+                "image": 4
+            },
+            "data": {
+                "filename": "light-boxes_standard_v1",
+                "folder": "light-boxes/standard"
+            }
+        }
+    ]
+}

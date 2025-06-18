@@ -1,0 +1,51 @@
+{
+    "last_node_id": 5,
+    "last_link_id": 6,
+    "nodes": [
+      {
+        "id": 0,
+        "type": "CheckpointLoaderSimple",
+        "pos": [100, 100],
+        "widgets_values": ["v1-5-pruned-emaonly.safetensors"]
+      },
+      {
+        "id": 1,
+        "type": "CLIPTextEncode",
+        "pos": [100, 300],
+        "widgets_values": ["a beautiful landscape"]
+      },
+      {
+        "id": 2,
+        "type": "EmptyLatentImage",
+        "pos": [100, 500],
+        "widgets_values": [512, 512, 1]
+      },
+      {
+        "id": 3,
+        "type": "KSampler",
+        "pos": [400, 300],
+        "widgets_values": [42, "randomize", 20, 8, "euler", "normal", 1]
+      },
+      {
+        "id": 4,
+        "type": "VAEDecode",
+        "pos": [700, 300],
+        "widgets_values": []
+      },
+      {
+        "id": 5,
+        "type": "SaveImage",
+        "pos": [900, 300],
+        "widgets_values": ["ComfyUI"]
+      }
+    ],
+    "links": [
+      [0, 0, 3, 0, "MODEL"],
+      [1, 0, 3, 1, "CONDITIONING"],
+      [1, 0, 3, 2, "CONDITIONING"],
+      [2, 0, 3, 3, "LATENT"],
+      [3, 0, 4, 0, "LATENT"],
+      [0, 2, 4, 1, "VAE"],
+      [4, 0, 5, 0, "IMAGE"]
+    ]
+  }

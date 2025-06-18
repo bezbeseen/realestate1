@@ -31,9 +31,14 @@ CRITICAL that we priorities these include and MAKE SURE that ALL PAGES HAVE THE 
 
 
 ## Navigation Structure
-- **Main Nav:** Print, Design, Code, Mail, Industries
-- **Dropdowns:** Industries (Real Estate)
-- **Product Categories:** business-cards, banners, flags, lawn-signs, a-frames
+- **Main Nav:** Products, Services, Industries, Contact, Promo Store
+- **Services Dropdown:** 
+  - Graphic Design (Logo Design, Branding, Photo Editing, Print Layout, Typography)
+  - Web Design (Website Development, Web Services, Email Design, Digital Marketing, Social Media, SEO)
+  - Mailing Services (EDDM, Newsletters, Postcards, Direct Mail, List Cleaning, Interactive Mail)
+- **Products Dropdown:** Prints, Signs, Materials, Promotional, Real Estate
+- **Industries Dropdown:** Real Estate
+- **Product Categories:** business-cards, banners, flags, lawn-signs, a-frames, and 33+ more
 
 
 
@@ -93,8 +98,17 @@ BEFORE making big changes: please communicate plan first for approve
 1. Edit products.json to add product definition
 2. Create content/products/[product-slug].html with product details
 3. Add product image to assets/images/products/
-4. Run node build.js
-5. Test at http://localhost:8001/products/[category]/[product-slug]/
+4. Run npm run build
+5. Test at http://localhost:8080/products/[category]/[product-slug].html
+
+
+
+### Adding a New Service
+1. Edit services.json to add service definition with proper parent category
+2. Set parent_service to "graphic-design", "web-design", or "mailing" 
+3. Add service image to assets/images/services/
+4. Run npm run build
+5. Test at http://localhost:8080/services/[parent-service]/[service-slug].html
 
 
 

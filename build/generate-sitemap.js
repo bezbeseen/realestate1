@@ -8,6 +8,7 @@ const OUTPUT_FILE = 'sitemap.xml';
 // Read products data
 const productsData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data/products.json'), 'utf8'));
 const categoriesData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data/categories.json'), 'utf8'));
+const servicesData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data/services.json'), 'utf8'));
 
 // Generate sitemap
 function generateSitemap() {
@@ -23,17 +24,17 @@ function generateSitemap() {
     
     // Main category pages
     urls.push({
-        loc: `${DOMAIN}/products/`,
+        loc: `${DOMAIN}/products.html`,
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly',
         priority: '0.8'
     });
     
     // Products category pages
-    const productCategories = [...new Set(productsData.map(product => product.category))];
+    const productCategories = [...new Set(productsData.map(product => product.category).filter(cat => cat))];
     productCategories.forEach(category => {
         urls.push({
-            loc: `${DOMAIN}/products/${category}/`,
+            loc: `${DOMAIN}/products/${category}.html`,
             lastmod: new Date().toISOString().split('T')[0],
             changefreq: 'weekly',
             priority: '0.8'
@@ -42,16 +43,9 @@ function generateSitemap() {
     
     // Individual product pages
     productsData.forEach(product => {
-        if (product.path) {
-            // Convert path from /products/category/product/index.html to /products/category/product.html
-            let cleanPath = product.path;
-            if (cleanPath.endsWith('/index.html')) {
-                cleanPath = cleanPath.replace('/index.html', '.html');
-            }
-            // Convert to URL (remove .html for cleaner URLs in sitemap)
-            const url = cleanPath.replace('.html', '/');
+        if (product.category && product.id) {
             urls.push({
-                loc: `${DOMAIN}/${url}`,
+                loc: `${DOMAIN}/products/${product.category}/${product.id}.html`,
                 lastmod: new Date().toISOString().split('T')[0],
                 changefreq: 'monthly',
                 priority: '0.7'
@@ -60,20 +54,44 @@ function generateSitemap() {
     });
     
     // Industry pages
-    Object.keys(categoriesData).forEach(industrySlug => {
-        urls.push({
-            loc: `${DOMAIN}/industries/${industrySlug}/`,
-            lastmod: new Date().toISOString().split('T')[0],
-            changefreq: 'monthly',
-            priority: '0.8'
+    if (categoriesData.industries) {
+        categoriesData.industries.forEach(industry => {
+            urls.push({
+                loc: `${DOMAIN}/industries/${industry.slug}.html`,
+                lastmod: new Date().toISOString().split('T')[0],
+                changefreq: 'monthly',
+                priority: '0.8'
+            });
         });
+    }
+    
+    // Service pages
+    servicesData.forEach(service => {
+        if (service.parent_service) {
+            // Sub-service pages
+            urls.push({
+                loc: `${DOMAIN}/services/${service.parent_service}/${service.id}.html`,
+                lastmod: new Date().toISOString().split('T')[0],
+                changefreq: 'monthly',
+                priority: '0.7'
+            });
+        } else {
+            // Main service pages
+            urls.push({
+                loc: `${DOMAIN}/services/${service.id}.html`,
+                lastmod: new Date().toISOString().split('T')[0],
+                changefreq: 'weekly',
+                priority: '0.8'
+            });
+        }
     });
     
     // Additional important pages
     const additionalPages = [
-        { path: '/about/', priority: '0.6' },
-        { path: '/contact/', priority: '0.6' },
-        { path: '/services/', priority: '0.7' }
+        { path: '/about.html', priority: '0.6' },
+        { path: '/contact.html', priority: '0.6' },
+        { path: '/services.html', priority: '0.8' },
+        { path: '/industries.html', priority: '0.8' }
     ];
     
     additionalPages.forEach(page => {
