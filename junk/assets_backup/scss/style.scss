@@ -1,0 +1,118 @@
+/* table of content - start
+==================================================================================================== */
+/* 
+
+Project Name 	:  Printem - HTML5 Template
+File 			:  CSS Base
+Version 		:  1.0.0
+Last change 	:  05 Octobar 2020
+Author 			:  BDevs (https://themeforest.net/user/bdevs)
+Developer:		:  Rakibul Islam Dewan
+
+================================================== 
+
+*/
+/* table of content - end
+==================================================================================================== */
+
+@import "variable"; 
+@import "reset";
+@import "header";
+@import "footer";
+
+@import "breadcrumb";
+@import "sidebar";
+@import "testimonial";
+@import "feature";
+@import "brand";
+@import "funfact";
+
+
+@import "about";
+@import "service";
+@import "portfolio";
+@import "blog";
+@import "shop";
+@import "details";
+@import "pricing";
+@import "team";
+@import "faq";
+@import "contact";
+
+@import "home";
+
+@import "responsive";
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* global area - start
+==================================================================================================== */
+body { margin: 0px; padding: 0px; font-size: 15px; font-weight: 400; line-height: 1.867; font-style: normal; color: #635E5B; background-color: #ffffff; text-rendering: optimizelegibility; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; }
+
+::selection { color: #ffffff; background-color: #FF711F; }
+
+::-moz-selection { color: #ffffff; background-color: #FF711F; }
+
+main { overflow: hidden; position: relative; }
+
+hr { height: 1px; border: none; background-color: #ededef; }
+
+.row, .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: 30px; }
+
+.g-0, .gx-0 { --bs-gutter-x: 0; }
+
+.container { max-width: 1200px; }
+
+.maxw_1420 { max-width: 1450px; }
+
+.maxw_1780 { max-width: 1810px; }
+
+.layer { position: relative !important; }
+
+[data-background] { background-size: cover; background-repeat: no-repeat; background-position: center center; }
+
+.deco_wrap { z-index: 1; position: relative; }
+.deco_wrap .deco_image { z-index: -1; position: absolute; }
+
+a, button {
+  cursor: pointer;
+  display: block;  /* Changed from inline-block since we want block-level behavior */
+  text-decoration: none;
+}
+
+a:hover, button:hover {
+  text-decoration: none;
+}
+
+button {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background: none;
+}
+
+button:focus {
+  outline: none;   
+}
+
+img { height: auto; max-width: 100%; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: 500; color: #222222; font-family: "Rubik", sans-serif; } 
+
+strong, span, small, label, i { } 
+
+.form_item { position: relative; margin-bottom: 30px; }
+.form_item .input_icon { top: 50%; right: 30px; margin: 0px; line-height: 1; position: absolute; color: #FF711F; transform: translateY(-50%); }
+.form_item .input_title { display: block; line-height: 1; font-size: 20px; font-weight: 500; margin-bottom: 15px; color: #FF711F; font-family: "Rubik", sans-serif; }
+.form_item input, .form_item textarea { width: 100%; border: none; outline: none; display: block; transition: all 0.3s ease-in-out; }
+.form_item input { height: 65px; padding: 0px 30px; }
+.form_item textarea { min-height: 130px; padding: 25px 30px; }
+.form_item .submit_btn { top: 50%; right: 0px; position: absolute; transform: translateY(-50%); }
+
+:-moz-placeholder { color: #616161; font-weight: 500; font-family: "Rubik", sans-serif; text-transform: capitalize; }
+
+::-moz-placeholder { color: #616161; font-weight: 500; font-family: "Rubik", sans-serif; text-transform: capitalize; }
+
+:-ms-input-placeholder { color: #616161; font-weight: 500; font-family: "Rubik", sans-serif; text-transform: capitalize; }
+
+::-webkit-input-placeholder { color: #616161; font-weight: 500; font-family: "Rubik", sans-serif; text-transform: capitalize; }

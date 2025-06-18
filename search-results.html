@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Search Results - BE SEEN</title>
+	<meta name="description" content="Search results for BE SEEN printing and design services">
+	
+	<!-- Include SEO -->
+	<div w3-include-html="includes_new/seo.html"></div>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H16V1KPFT"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-3H16V1KPFT');
+	</script>
+	
+	<script type="text/javascript">
+	    (function(c,l,a,r,i,t,y){
+	        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+	        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+	        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+	    })(window, document, "clarity", "script", "lkihe2qcle");
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+
+	<!-- Framework CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+	<!-- Icon CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/flaticon.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
+
+	<!-- Animation CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+
+	<!-- Carousel CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+
+	<!-- Nice Select CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/nice-select.css">
+
+	<!-- Magnific Popup CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bez.css">
+</head>
+
+<body>
+
+	<!-- Back to Top -->
+	<div id="thetop"></div>
+	<div id="backtotop">
+		<a href="#" id="scroll">
+			<i class="far fa-arrow-up"></i>
+		</a>
+	</div>
+
+	<!-- Header Section -->
+	<div w3-include-html="includes_new/header-with-analytics.html"></div>
+
+	<!-- Main Content -->
+	<main>
+
+		<!-- Mobile Menu -->
+		<div w3-include-html="includes_new/mobile-menu.html"></div>
+
+		<!-- Breadcrumb Section -->
+		<section class="breadcrumb_section d-flex align-items-center clearfix" data-background="assets/images/breadcrumb/bg_01.jpg">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<div class="breadcrumb_content">
+							<h1 class="page_title">Search Results</h1>
+							<ul class="breadcrumb_nav ul_li">
+								<li><a href="/index.html">Home</a></li>
+								<li>Search Results</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Search Results Section -->
+		<section class="search_results_section sec_ptb_130 clearfix">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-12">
+						<!-- Search Info -->
+						<div class="search_info_wrap mb_30">
+							<div class="row align-items-center">
+								<div class="col-lg-6">
+									<div class="search_info">
+										<p class="mb-0">
+											<span class="search_term_display"></span>
+											<small class="text_gray">(<span class="results_count">0</span> results found)</small>
+										</p>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="search_filter ul_li_right">
+										<select class="sort_select" id="sort_results">
+											<option value="relevance">Sort by Relevance</option>
+											<option value="name">Sort by Name</option>
+											<option value="category">Sort by Category</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Search Results Container -->
+						<div class="search_results_container">
+							<div id="search_results">
+								<!-- Results will be populated by JavaScript -->
+							</div>
+
+							<!-- No Results Message -->
+							<div id="no_results" class="no_results_message text-center py_50" style="display: none;">
+								<div class="no_results_icon mb_30">
+									<i class="fal fa-search" style="font-size: 64px; color: #ddd;"></i>
+								</div>
+								<h3>No Results Found</h3>
+								<p class="text_gray mb_30">Sorry, we couldn't find any results for your search. Try different keywords or browse our categories.</p>
+								<div class="btns_group ul_li_center">
+									<a class="custom_btn bg_default_blue" href="/products.html">Browse Products</a>
+									<a class="custom_btn btn_border" href="/services.html">View Services</a>
+								</div>
+							</div>
+
+							<!-- Loading State -->
+							<div id="search_loading" class="text-center py_50">
+								<div class="spinner-border text-primary" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+								<p class="mt-3">Searching...</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Sidebar -->
+					<div class="col-lg-4 col-md-12">
+						<aside class="sidebar">
+							<!-- Search Widget -->
+							<div class="widget search_widget">
+								<h3 class="widget_title">Search Again</h3>
+								<form action="/search-results.html" method="GET" class="search_form">
+									<div class="form_item">
+										<input type="search" name="q" placeholder="Search..." id="sidebar_search_input">
+										<button type="submit"><i class="fal fa-search"></i></button>
+									</div>
+								</form>
+							</div>
+
+							<!-- Categories Widget -->
+							<div class="widget categories_widget">
+								<h3 class="widget_title">Browse Categories</h3>
+								<ul class="categories_list ul_li_block">
+									<li><a href="/products/prints.html">Printing Services <span>(20+)</span></a></li>
+									<li><a href="/products/signs.html">Signs & Banners <span>(15+)</span></a></li>
+									<li><a href="/products/promotional.html">Promotional Products <span>(12+)</span></a></li>
+									<li><a href="/industries/real-estate.html">Real Estate <span>(8)</span></a></li>
+									<li><a href="/services.html">Design Services <span>(5)</span></a></li>
+								</ul>
+							</div>
+
+							<!-- Popular Products Widget -->
+							<div class="widget popular_products_widget">
+								<h3 class="widget_title">Popular Products</h3>
+								<ul class="popular_products_list">
+									<li>
+										<div class="item_image">
+											<img src="/assets/images/products/business-cards/thumb.jpg" alt="Business Cards">
+										</div>
+										<div class="item_content">
+											<h4><a href="/products/prints/business-cards/">Business Cards</a></h4>
+											<span class="item_price">Starting at $29.99</span>
+										</div>
+									</li>
+									<li>
+										<div class="item_image">
+											<img src="/assets/images/products/banners/thumb.jpg" alt="Vinyl Banners">
+										</div>
+										<div class="item_content">
+											<h4><a href="/products/prints/banners/">Vinyl Banners</a></h4>
+											<span class="item_price">Starting at $49.99</span>
+										</div>
+									</li>
+									<li>
+										<div class="item_image">
+											<img src="/assets/images/products/yard-signs/thumb.jpg" alt="Yard Signs">
+										</div>
+										<div class="item_content">
+											<h4><a href="/products/signs/yard-signs/">Yard Signs</a></h4>
+											<span class="item_price">Starting at $19.99</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<!-- Footer Section -->
+	<div w3-include-html="includes_new/footer.html"></div>
+
+	<!-- Framework JS -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Animation JS -->
+	<script src="assets/js/wow.min.js"></script>
+
+	<!-- Carousel JS -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+
+	<!-- Nice Select JS -->
+	<script src="assets/js/jquery.nice-select.min.js"></script>
+
+	<!-- Magnific Popup JS -->
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/search.js"></script>
+
+	<!-- W3 Include HTML -->
+	<script src="assets/js/w3-include-html.js"></script>
+	<script>
+		w3IncludeHTML();
+	</script>
+
+</body>
+</html> 

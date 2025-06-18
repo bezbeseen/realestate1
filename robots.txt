@@ -1,0 +1,51 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://realestate.getbeseen.com/sitemap.xml
+
+# Allow important pages
+Allow: /index.html
+Allow: /products/
+Allow: /industries/
+Allow: /assets/
+Allow: /includes_new/
+
+# Disallow development and internal files
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /build.js
+Disallow: /server.js
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /junk/
+Disallow: /assets_backup/
+Disallow: /frintem-template/
+Disallow: /scripts/
+Disallow: /api/
+Disallow: /*.log
+Disallow: /*.sh
+Disallow: /*.plist
+Disallow: /deploy*
+Disallow: /generate*
+Disallow: /fetch*
+Disallow: /update*
+Disallow: /.DS_Store
+Disallow: /.ftpquota
+Disallow: /ftp-simple.json
+
+# Block admin and development files
+Disallow: /ai-guide-form.html
+Disallow: /build-button.html
+Disallow: /staging-index.html
+Disallow: /commercial-signage.html
+
+# Allow search engines to crawl important assets
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Crawl delay (optional - be respectful)
+Crawl-delay: 1

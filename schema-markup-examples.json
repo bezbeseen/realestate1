@@ -1,0 +1,136 @@
+{
+  "business_cards_schema": {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Premium Real Estate Business Cards",
+    "description": "High-quality business cards with matte finish and spot UV coating, perfect for real estate professionals.",
+    "image": [
+      "https://realestate.getbeseen.com/assets/images/products/business-cards/main.jpg",
+      "https://realestate.getbeseen.com/assets/images/products/business-cards/matte-finish.jpg"
+    ],
+    "brand": {
+      "@type": "Brand",
+      "name": "BeSeen"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "29.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2025-12-31",
+      "seller": {
+        "@type": "Organization",
+        "name": "BeSeen Printing"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127"
+    },
+    "category": "Business Cards",
+    "material": "16pt cardstock with matte lamination",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Size",
+        "value": "3.5 x 2 inches"
+      },
+      {
+        "@type": "PropertyValue", 
+        "name": "Finish",
+        "value": "Matte with Spot UV option"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Quantity Options", 
+        "value": "100, 250, 500, 1000"
+      }
+    ]
+  },
+  
+  "printing_service_schema": {
+    "@context": "https://schema.org",
+    "@type": "PrintingService",
+    "name": "BeSeen Printing Services",
+    "description": "Professional printing services specializing in real estate marketing materials, business cards, banners, and custom signage.",
+    "url": "https://realestate.getbeseen.com",
+    "telephone": "+1-XXX-XXX-XXXX",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Your Street Address",
+      "addressLocality": "Your City",
+      "addressRegion": "Your State", 
+      "postalCode": "Your ZIP",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "XX.XXXXX",
+      "longitude": "-XX.XXXXX"
+    },
+    "openingHours": "Mo-Fr 08:00-17:00",
+    "priceRange": "$",
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "XX.XXXXX",
+        "longitude": "-XX.XXXXX"
+      },
+      "geoRadius": "50000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Printing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business Card Printing",
+            "description": "Custom business cards for real estate professionals"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Banner Printing",
+            "description": "Weather-resistant vinyl banners for outdoor advertising"
+          }
+        }
+      ]
+    }
+  },
+
+  "breadcrumb_schema": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://realestate.getbeseen.com/"
+      },
+      {
+        "@type": "ListItem", 
+        "position": 2,
+        "name": "Products",
+        "item": "https://realestate.getbeseen.com/products/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Prints", 
+        "item": "https://realestate.getbeseen.com/products/prints/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Business Cards"
+      }
+    ]
+  }
+} 

@@ -1,0 +1,84 @@
+/* Mobile Menu Styles */
+/*
+.sidebar-menu-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; 
+}
+
+.sidebar-menu-wrapper.active {
+    display: block;
+}
+
+.sidebar-menu-wrapper .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.sidebar-menu-wrapper .overlay.active {
+    display: block;
+}
+*/
+
+/* Dropdown Menu Styles */
+/*
+.sidebar-menu-wrapper .dropdown-menu {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
+
+.sidebar-menu-wrapper .dropdown.show > .dropdown-menu {
+    display: block;
+}
+
+.sidebar-menu-wrapper .dropdown-menu a {
+    padding: 12px 35px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+}
+
+.sidebar-menu-wrapper .dropdown-menu a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.sidebar-menu-wrapper .dropdown > a:after {
+    font-family: 'Font Awesome 5 Pro';
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-menu-wrapper .dropdown.show > a:after {
+    transform: rotate(180deg);
+}
+*/
+
+
+
+
+
+main {
+    margin-top: 130px;
+}
+
+.secondary_header .brand_logo {
+   
+
+    margin: 0px; 
+    padding-right: 18px;
+ 
+}

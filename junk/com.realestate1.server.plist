@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.realestate1.server</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/npm</string>
+        <string>start</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>WorkingDirectory</key>
+    <string>/Users/bez/Documents/GIT HTML/realestate1</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/bez/Documents/GIT HTML/realestate1/server-error.log</string>
+    <key>StandardOutPath</key>
+    <string>/Users/bez/Documents/GIT HTML/realestate1/server-output.log</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>FREEPIK_API_KEY</key>
+        <string>FPSXa4f54291a1c68d77624fc2bedb15d2ef</string>
+    </dict>
+</dict>
+</plist> 
