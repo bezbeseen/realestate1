@@ -1,6 +1,6 @@
 {
-  "last_node_id": 10,
-  "last_link_id": 25,
+  "last_node_id": 8,
+  "last_link_id": 10,
   "nodes": [
     {
       "id": 1,
@@ -33,7 +33,7 @@
         {"name": "CONDITIONING", "type": "CONDITIONING", "links": [5], "slot_index": 0}
       ],
       "properties": {"Node name for S&R": "CLIPTextEncode"},
-      "widgets_values": ["Professional product photography of business cards, premium style, square format 1:1 ratio, clean white background #FFFFFF, 45-degree angle showing dimension, soft studio lighting with subtle shadows, commercial photography style, high resolution, sharp focus, product centered, shallow depth of field, shot with 85mm lens, no text or watermarks"]
+      "widgets_values": ["Professional product photography of business cards, premium style, clean white background, commercial photography style, high resolution, sharp focus"]
     },
     {
       "id": 3,
@@ -50,7 +50,7 @@
         {"name": "CONDITIONING", "type": "CONDITIONING", "links": [6], "slot_index": 0}
       ],
       "properties": {"Node name for S&R": "CLIPTextEncode"},
-      "widgets_values": ["text, watermark, logo, blurry, low quality, distorted, cropped, out of frame, bad lighting, oversaturated, undersaturated, tilted angle, multiple products, messy background, reflections"]
+      "widgets_values": ["blurry, low quality, distorted, cropped, bad lighting, text, watermark"]
     },
     {
       "id": 4,
@@ -64,7 +64,7 @@
         {"name": "LATENT", "type": "LATENT", "links": [7], "slot_index": 0}
       ],
       "properties": {"Node name for S&R": "EmptyLatentImage"},
-      "widgets_values": [1024, 1024, 1]
+      "widgets_values": [512, 512, 1]
     },
     {
       "id": 5,
@@ -84,7 +84,7 @@
         {"name": "LATENT", "type": "LATENT", "links": [8], "slot_index": 0}
       ],
       "properties": {"Node name for S&R": "KSampler"},
-      "widgets_values": [156680208700286, "randomize", 20, 7, "dpmpp_2m", "karras", 1]
+      "widgets_values": [156680208700286, "randomize", 15, 7, "euler", "normal", 1]
     },
     {
       "id": 6,
@@ -104,46 +104,18 @@
       "properties": {"Node name for S&R": "VAEDecode"}
     },
     {
-      "id": 7,
-      "type": "ImageScaleBy",
-      "pos": [1450, 200],
-      "size": {"0": 315, "1": 82},
+      "id": 8,
+      "type": "SaveImage",
+      "pos": [1500, 200],
+      "size": {"0": 315, "1": 270},
       "flags": {},
       "order": 7,
       "mode": 0,
       "inputs": [
-        {"name": "image", "type": "IMAGE", "link": 9}
-      ],
-      "outputs": [
-        {"name": "IMAGE", "type": "IMAGE", "links": [10], "slot_index": 0}
-      ],
-      "properties": {"Node name for S&R": "ImageScaleBy"},
-      "widgets_values": ["lanczos", 1.171875]
-    },
-    {
-      "id": 8,
-      "type": "SaveImage",
-      "pos": [1800, 200],
-      "size": {"0": 315, "1": 270},
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {"name": "images", "type": "IMAGE", "link": 10}
+        {"name": "images", "type": "IMAGE", "link": 9}
       ],
       "properties": {},
-      "widgets_values": ["business_cards_premium"]
-    },
-    {
-      "id": 10,
-      "type": "Note",
-      "pos": [50, 50],
-      "size": {"0": 300, "1": 100},
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "properties": {"text": "PRODUCT IMAGE GENERATOR\nFor business cards - premium style\nOutput: 1200x1200px square\nWhite background #FFFFFF"},
-      "widgets_values": ["PRODUCT IMAGE GENERATOR\nFor business cards - premium style\nOutput: 1200x1200px square\nWhite background #FFFFFF"]
+      "widgets_values": ["business_cards_lowmem"]
     }
   ],
   "links": [
@@ -155,13 +127,12 @@
     [6, 3, 0, 5, 2, "CONDITIONING"],
     [7, 4, 0, 5, 3, "LATENT"],
     [8, 5, 0, 6, 0, "LATENT"],
-    [9, 6, 0, 7, 0, "IMAGE"],
-    [10, 7, 0, 8, 0, "IMAGE"]
+    [9, 6, 0, 8, 0, "IMAGE"]
   ],
   "groups": [
     {
-      "title": "Product Photography Pipeline",
-      "bounding": [40, -10, 2100, 700],
+      "title": "Low Memory Product Photography",
+      "bounding": [40, -10, 1900, 700],
       "color": "#3f789e"
     }
   ],
