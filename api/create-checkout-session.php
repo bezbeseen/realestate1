@@ -51,28 +51,47 @@ try {
         throw new Exception('Invalid JSON data: ' . json_last_error_msg());
     }
 
-    // Validate required fields
-    if (!isset($jsonObj->variant) || !isset($jsonObj->quantity) || !isset($jsonObj->price)) {
-        throw new Exception('Missing required fields');
-    }
-
-    // Create a checkout session
-    $checkout_session = \Stripe\Checkout\Session::create([
-        'payment_method_types' => ['card'],
-        'line_items' => [[
+    // Handle both single product and cart checkout
+    $lineItems = [];
+    
+    if (isset($jsonObj->line_items)) {
+        // Cart checkout with multiple items
+        $lineItems = $jsonObj->line_items;
+    } else {
+        // Single product checkout (backward compatibility)
+        if (!isset($jsonObj->variant) || !isset($jsonObj->quantity) || !isset($jsonObj->price)) {
+            throw new Exception('Missing required fields for single product checkout');
+        }
+        
+        $lineItems = [[
             'price_data' => [
                 'currency' => 'usd',
                 'product_data' => [
                     'name' => 'Business Cards - ' . $jsonObj->variant,
                     'description' => 'Quantity: ' . $jsonObj->quantity,
                 ],
-                'unit_amount' => $jsonObj->price * 100, // Convert to cents
+                'unit_amount' => $jsonObj->price * 100,
             ],
             'quantity' => 1,
-        ]],
+        ]];
+    }
+
+    // Get success and cancel URLs
+    $successUrl = isset($jsonObj->success_url) ? $jsonObj->success_url : 'https://' . $_SERVER['HTTP_HOST'] . '/success.html';
+    $cancelUrl = isset($jsonObj->cancel_url) ? $jsonObj->cancel_url : 'https://' . $_SERVER['HTTP_HOST'] . '/cart.html';
+
+    // Create a checkout session
+    $checkout_session = \Stripe\Checkout\Session::create([
+        'payment_method_types' => ['card'],
+        'line_items' => $lineItems,
         'mode' => 'payment',
-        'success_url' => 'https://' . $_SERVER['HTTP_HOST'] . '/success.html',
-        'cancel_url' => 'https://' . $_SERVER['HTTP_HOST'] . '/cancel.html',
+        'success_url' => $successUrl,
+        'cancel_url' => $cancelUrl,
+        'shipping_address_collection' => [
+            'allowed_countries' => ['US', 'CA'],
+        ],
+        'billing_address_collection' => 'required',
+        'customer_creation' => 'always',
     ]);
 
     echo json_encode(['id' => $checkout_session->id]);
