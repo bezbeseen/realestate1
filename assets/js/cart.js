@@ -1,12 +1,14 @@
 /**
- * Simple Cart System
+ * BE SEEN Cart System with Stripe Integration
  * Vanilla JavaScript with localStorage persistence
- * Follows AI guide: simple, clean, no heavy frameworks
+ * Follows AI guide: Bootstrap styling, vanilla JS, template system
  */
 
 class Cart {
     constructor() {
         this.items = this.loadFromStorage();
+        this.taxRate = 0.0825; // 8.25% default tax rate
+        this.stripe = window.Stripe ? window.Stripe('pk_test_51RYGJPQ67OoMep3yKwHEZgm4ryGehWXH2MzkE2GeSg0otn9O8jxDfcpUHMfKTlmjQpYBveOZ5NPl1NOVUqfIQPem00DPrC8jrN') : null;
         this.updateCartDisplay();
     }
 
@@ -63,9 +65,19 @@ class Cart {
         }
     }
 
-    // Get cart total
-    getTotal() {
+    // Get cart subtotal
+    getSubtotal() {
         return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    }
+
+    // Get tax amount
+    getTax() {
+        return this.getSubtotal() * this.taxRate;
+    }
+
+    // Get cart total (subtotal + tax)
+    getTotal() {
+        return this.getSubtotal() + this.getTax();
     }
 
     // Get item count
@@ -91,20 +103,25 @@ class Cart {
         }
     }
 
-    // Show notification
-    showNotification(message) {
+    // Show notification (Bootstrap alerts)
+    showNotification(message, type = 'success') {
         // Create notification element
         const notification = document.createElement('div');
-        notification.className = 'alert alert-success position-fixed';
-        notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 200px;';
-        notification.textContent = message;
+        notification.className = `alert alert-${type} alert-dismissible position-fixed`;
+        notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 250px;';
+        notification.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
         
         document.body.appendChild(notification);
         
-        // Remove after 3 seconds
+        // Auto-remove after 4 seconds
         setTimeout(() => {
-            notification.remove();
-        }, 3000);
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 4000);
     }
 
     // Open cart sidebar (works with existing cart button)
@@ -134,11 +151,22 @@ class Cart {
                             <div id="cart-items"></div>
                         </div>
                         <div class="modal-footer">
-                            <div class="d-flex justify-content-between align-items-center w-100">
-                                <h5>Total: <span id="cart-total">$0.00</span></h5>
-                                <div>
-                                    <button class="btn btn-outline-secondary me-2" onclick="cart.clearCart()">Clear Cart</button>
-                                    <button class="btn btn-primary" onclick="cart.checkout()">Checkout</button>
+                            <div class="w-100">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Subtotal:</span>
+                                    <span id="cart-subtotal">$0.00</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Tax:</span>
+                                    <span id="cart-tax">$0.00</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <strong>Total:</strong>
+                                    <strong id="cart-total">$0.00</strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-outline-secondary" onclick="cart.clearCart()">Clear Cart</button>
+                                    <button class="btn btn-primary" onclick="cart.checkout()">Secure Checkout</button>
                                 </div>
                             </div>
                         </div>
@@ -155,11 +183,15 @@ class Cart {
     // Render cart items in the cart modal
     renderCartItems() {
         const cartItems = document.getElementById('cart-items');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartTax = document.getElementById('cart-tax');
         const cartTotal = document.getElementById('cart-total');
         
-        if (cartTotal) {
-            cartTotal.textContent = `$${this.getTotal().toFixed(2)}`;
-        }
+        // Update pricing displays
+        if (cartSubtotal) cartSubtotal.textContent = `$${this.getSubtotal().toFixed(2)}`;
+        if (cartTax) cartTax.textContent = `$${this.getTax().toFixed(2)}`;
+        if (cartTotal) cartTotal.textContent = `$${this.getTotal().toFixed(2)}`;
+        
         
         if (cartItems) {
             if (this.items.length === 0) {
@@ -187,15 +219,65 @@ class Cart {
         }
     }
 
-    // Checkout function (placeholder for Stripe integration)
-    checkout() {
+    // Stripe checkout integration
+    async checkout() {
         if (this.items.length === 0) {
-            alert('Your cart is empty!');
+            this.showNotification('Your cart is empty!', 'warning');
             return;
         }
-        
-        // TODO: Integrate with Stripe
-        alert('Checkout functionality coming soon!');
+
+        if (!this.stripe) {
+            this.showNotification('Payment system not available', 'error');
+            return;
+        }
+
+        try {
+            // Prepare line items for Stripe
+            const lineItems = this.items.map(item => ({
+                price_data: {
+                    currency: 'usd',
+                    product_data: {
+                        name: item.name,
+                        description: item.variant ? `Variant: ${item.variant}` : '',
+                        images: item.image ? [item.image] : []
+                    },
+                    unit_amount: Math.round(item.price * 100) // Convert to cents
+                },
+                quantity: item.quantity
+            }));
+
+            // Create checkout session
+            const response = await fetch('/api/create-checkout-session.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    line_items: lineItems,
+                    success_url: window.location.origin + '/success.html?session_id={CHECKOUT_SESSION_ID}',
+                    cancel_url: window.location.origin + '/cart.html'
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                throw new Error(data.error);
+            }
+
+            // Redirect to Stripe Checkout
+            const result = await this.stripe.redirectToCheckout({
+                sessionId: data.id
+            });
+
+            if (result.error) {
+                throw new Error(result.error.message);
+            }
+
+        } catch (error) {
+            console.error('Checkout error:', error);
+            this.showNotification('Checkout failed: ' + error.message, 'danger');
+        }
     }
 
     // Initialize cart

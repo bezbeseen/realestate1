@@ -1,141 +1,484 @@
-# Product Image Folder Structure
+# Complete Image Folder Structure for BE SEEN Website
 
-/assets/images/products/
+## Main Directory Structure
+/assets/images/
+
+## PRODUCT CATEGORIES
+
+### PRINTS CATEGORY
+/assets/images/products/prints/
 ├── business-cards/
 │   ├── business-cards_standard.jpg
 │   ├── business-cards_premium.jpg
 │   ├── business-cards_luxury.jpg
-│   └── business-cards_economy.jpg
+│   ├── business-cards_economy.jpg
+│   ├── business-cards_spot-uv.jpg
+│   ├── business-cards_foil-stamped.jpg
+│   └── business-cards_embossed.jpg
 ├── banners/
-│   ├── banners_vinyl.jpg
+│   ├── banners_vinyl-13oz.jpg
 │   ├── banners_mesh.jpg
 │   ├── banners_fabric.jpg
-│   └── banners_retractable.jpg
+│   ├── banners_backlit.jpg
+│   ├── banners_stretch.jpg
+│   └── banners_blackout.jpg
+├── flyers/
+│   ├── flyers_standard.jpg
+│   ├── flyers_premium.jpg
+│   ├── flyers_glossy.jpg
+│   ├── flyers_matte.jpg
+│   └── flyers_uncoated.jpg
+├── brochures/
+│   ├── brochures_bi-fold.jpg
+│   ├── brochures_tri-fold.jpg
+│   ├── brochures_z-fold.jpg
+│   ├── brochures_gate-fold.jpg
+│   └── brochures_custom-fold.jpg
+├── posters/
+│   ├── posters_small-format.jpg
+│   ├── posters_large-format.jpg
+│   ├── posters_custom.jpg
+│   ├── posters_glossy.jpg
+│   └── posters_matte.jpg
+├── presentation-folders/
+│   ├── presentation-folders_standard.jpg
+│   ├── presentation-folders_business-card-slits.jpg
+│   ├── presentation-folders_custom.jpg
+│   ├── presentation-folders_die-cut.jpg
+│   └── presentation-folders_foil-stamped.jpg
+├── stickers/
+│   ├── stickers_vinyl.jpg
+│   ├── stickers_custom-shapes.jpg
+│   ├── stickers_weather-resistant.jpg
+│   ├── stickers_die-cut.jpg
+│   ├── stickers_kiss-cut.jpg
+│   └── stickers_transfer.jpg
+├── window-clings/
+│   ├── window-clings_static.jpg
+│   ├── window-clings_perforated.jpg
+│   ├── window-clings_one-way-vision.jpg
+│   └── window-clings_custom.jpg
+├── decals/
+│   ├── decals_vinyl.jpg
+│   ├── decals_reflective.jpg
+│   ├── decals_clear.jpg
+│   └── decals_custom.jpg
+├── canvas-prints/
+│   ├── canvas-prints_gallery-wrap.jpg
+│   ├── canvas-prints_museum-wrap.jpg
+│   └── canvas-prints_custom-size.jpg
+└── photos/
+    ├── photos_standard.jpg
+    ├── photos_premium.jpg
+    ├── photos_glossy.jpg
+    ├── photos_matte.jpg
+    └── photos_lustre.jpg
+
+### SIGNS CATEGORY
+/assets/images/products/signs/
 ├── yard-signs/
-│   ├── yard-signs_standard.jpg
-│   ├── yard-signs_premium.jpg
-│   └── yard-signs_double-sided.jpg
+│   ├── yard-signs_18x24.jpg
+│   ├── yard-signs_24x36.jpg
+│   ├── yard-signs_double-sided.jpg
+│   └── yard-signs_h-stakes.jpg
+├── a-frames/
+│   ├── a-frames_standard.jpg
+│   ├── a-frames_premium.jpg
+│   ├── a-frames_led-strip.jpg
+│   └── a-frames_full-led.jpg
 ├── retractable-banners/
 │   ├── retractable-banners_economy.jpg
 │   ├── retractable-banners_standard.jpg
 │   ├── retractable-banners_premium.jpg
 │   └── retractable-banners_deluxe.jpg
-├── flyers/
-│   ├── flyers_standard.jpg
-│   ├── flyers_premium.jpg
-│   └── flyers_glossy.jpg
-├── brochures/
-│   ├── brochures_bi-fold.jpg
-│   ├── brochures_tri-fold.jpg
-│   └── brochures_z-fold.jpg
-├── posters/
-│   ├── posters_small-format.jpg
-│   ├── posters_large-format.jpg
-│   └── posters_custom.jpg
-├── table-cloths/
-│   ├── table-cloths_6ft.jpg
-│   ├── table-cloths_8ft.jpg
-│   └── table-cloths_custom.jpg
-├── window-clings/
-│   ├── window-clings_standard.jpg
-│   └── window-clings_custom.jpg
-├── stickers/
-│   ├── stickers_vinyl.jpg
-│   ├── stickers_custom-shapes.jpg
-│   └── stickers_weather-resistant.jpg
-├── presentation-folders/
-│   ├── presentation-folders_standard.jpg
-│   ├── presentation-folders_business-card-slits.jpg
-│   └── presentation-folders_custom.jpg
-├── aluminum-signs/
-│   ├── aluminum-signs_18x24.jpg
-│   ├── aluminum-signs_24x36.jpg
-│   └── aluminum-signs_custom.jpg
-├── foam-board/
-│   ├── foam-board_standard.jpg
-│   └── foam-board_premium.jpg
-├── corrugated/
-│   ├── corrugated_4mm.jpg
-│   └── corrugated_6mm.jpg
-├── pvc-board/
-│   ├── pvc-board_standard.jpg
-│   └── pvc-board_premium.jpg
-├── styrene/
-│   ├── styrene_standard.jpg
-│   └── styrene_premium.jpg
-├── acrylic/
-│   ├── acrylic_clear.jpg
-│   └── acrylic_colored.jpg
 ├── flags/
 │   ├── flags_feather.jpg
-│   ├── flags_rectangle.jpg
-│   └── flags_teardrop.jpg
+│   ├── flags_straight.jpg
+│   ├── flags_teardrop.jpg
+│   └── flags_rectangle.jpg
 ├── channel-lettering/
-│   ├── channel-lettering_standard.jpg
-│   └── channel-lettering_led.jpg
+│   ├── channel-lettering_led-front.jpg
+│   ├── channel-lettering_led-back.jpg
+│   ├── channel-lettering_led-both.jpg
+│   └── channel-lettering_non-illuminated.jpg
 ├── 3d-lettering/
-│   ├── 3d-lettering_standard.jpg
-│   └── 3d-lettering_premium.jpg
+│   ├── 3d-lettering_acrylic.jpg
+│   ├── 3d-lettering_metal.jpg
+│   ├── 3d-lettering_foam.jpg
+│   └── 3d-lettering_custom.jpg
+├── window-graphics/
+│   ├── window-graphics_perforated.jpg
+│   ├── window-graphics_solid-vinyl.jpg
+│   ├── window-graphics_etched-glass.jpg
+│   └── window-graphics_one-way-vision.jpg
 ├── light-boxes/
 │   ├── light-boxes_standard.jpg
-│   └── light-boxes_led.jpg
-├── magnets/
-│   ├── magnets_standard.jpg
-│   └── magnets_custom.jpg
-├── a-frames/
-│   ├── a-frames_standard.jpg
-│   └── a-frames_premium.jpg
-├── pens/
-│   ├── pens_basic.jpg
-│   ├── pens_premium.jpg
-│   └── pens_metal.jpg
+│   ├── light-boxes_led.jpg
+│   ├── light-boxes_backlit.jpg
+│   └── light-boxes_edge-lit.jpg
+├── monument-signs/
+│   ├── monument-signs_stone.jpg
+│   ├── monument-signs_concrete.jpg
+│   ├── monument-signs_metal.jpg
+│   └── monument-signs_illuminated.jpg
+├── directional-signs/
+│   ├── directional-signs_wayfinding.jpg
+│   ├── directional-signs_parking.jpg
+│   ├── directional-signs_safety.jpg
+│   └── directional-signs_ada-compliant.jpg
+├── aluminum-signs/
+│   ├── aluminum-signs_040-thickness.jpg
+│   ├── aluminum-signs_063-thickness.jpg
+│   ├── aluminum-signs_080-thickness.jpg
+│   └── aluminum-signs_custom.jpg
+└── magnets/
+    ├── magnets_20mil.jpg
+    ├── magnets_30mil.jpg
+    ├── magnets_vehicle.jpg
+    └── magnets_custom.jpg
+
+### MATERIALS CATEGORY
+/assets/images/products/materials/
+├── corrugated/
+│   ├── corrugated_4mm.jpg
+│   ├── corrugated_6mm.jpg
+│   ├── corrugated_10mm.jpg
+│   └── corrugated_custom.jpg
+├── foam-board/
+│   ├── foam-board_3-16-inch.jpg
+│   ├── foam-board_1-2-inch.jpg
+│   ├── foam-board_3-4-inch.jpg
+│   └── foam-board_custom.jpg
+├── pvc-board/
+│   ├── pvc-board_1-8-inch.jpg
+│   ├── pvc-board_1-4-inch.jpg
+│   ├── pvc-board_1-2-inch.jpg
+│   └── pvc-board_custom.jpg
+├── styrene/
+│   ├── styrene_040-inch.jpg
+│   ├── styrene_060-inch.jpg
+│   └── styrene_custom.jpg
+└── acrylic/
+    ├── acrylic_1-8-inch.jpg
+    ├── acrylic_1-4-inch.jpg
+    ├── acrylic_clear.jpg
+    └── acrylic_colored.jpg
+
+### PROMOTIONAL CATEGORY
+/assets/images/products/promotional/
+├── table-cloths/
+│   ├── table-cloths_6ft-fitted.jpg
+│   ├── table-cloths_8ft-draped.jpg
+│   ├── table-cloths_10ft-stretch.jpg
+│   └── table-cloths_custom.jpg
 ├── tents/
-│   ├── tents_10x10.jpg
-│   ├── tents_10x15.jpg
-│   └── tents_10x20.jpg
+│   ├── tents_10x10-popup.jpg
+│   ├── tents_10x15-frame.jpg
+│   ├── tents_10x20-heavy-duty.jpg
+│   └── tents_custom.jpg
+├── pens/
+│   ├── pens_ballpoint.jpg
+│   ├── pens_gel.jpg
+│   ├── pens_stylus.jpg
+│   ├── pens_metal.jpg
+│   └── pens_custom.jpg
 ├── booths/
-│   ├── booths_standard.jpg
-│   └── booths_premium.jpg
-├── bags/
-│   ├── bags_tote.jpg
-│   ├── bags_drawstring.jpg
-│   └── bags_messenger.jpg
+│   ├── booths_10x10-portable.jpg
+│   ├── booths_10x20-modular.jpg
+│   ├── booths_20x20-custom.jpg
+│   └── booths_accessories.jpg
 ├── branded-apparel/
 │   ├── branded-apparel_t-shirts.jpg
-│   ├── branded-apparel_polos.jpg
+│   ├── branded-apparel_polo-shirts.jpg
 │   ├── branded-apparel_hoodies.jpg
-│   └── branded-apparel_hats.jpg
-├── photos/
-│   ├── photos_standard.jpg
-│   └── photos_premium.jpg
-├── decals/
-│   ├── decals_standard.jpg
-│   └── decals_custom.jpg
-├── canvas-prints/
-│   ├── canvas-prints_gallery-wrap.jpg
-│   └── canvas-prints_museum-quality.jpg
-├── commercial-signage/
-│   ├── commercial-signage_storefront.jpg
-│   ├── commercial-signage_monument.jpg
-│   ├── commercial-signage_led.jpg
-│   ├── commercial-signage_window-graphics.jpg
-│   └── commercial-signage_office.jpg
-├── real-estate-business-cards/
+│   ├── branded-apparel_hats.jpg
+│   └── branded-apparel_jackets.jpg
+└── bags/
+    ├── bags_tote.jpg
+    ├── bags_drawstring.jpg
+    ├── bags_messenger.jpg
+    └── bags_custom.jpg
+
+### REAL ESTATE CATEGORY
+/assets/images/products/real-estate/
+├── business-cards/
 │   ├── real-estate-business-cards_standard.jpg
 │   ├── real-estate-business-cards_premium.jpg
-│   └── real-estate-business-cards_luxury.jpg
-├── real-estate-lawn-signs/
+│   ├── real-estate-business-cards_luxury.jpg
+│   └── real-estate-business-cards_spot-uv.jpg
+├── lawn-signs/
 │   ├── real-estate-lawn-signs_18x24.jpg
 │   ├── real-estate-lawn-signs_24x36.jpg
-│   └── real-estate-lawn-signs_double-sided.jpg
-├── real-estate-banners/
-│   ├── real-estate-banners_standard.jpg
-│   └── real-estate-banners_premium.jpg
-├── real-estate-flags/
+│   ├── real-estate-lawn-signs_double-sided.jpg
+│   └── real-estate-lawn-signs_custom.jpg
+├── banners/
+│   ├── real-estate-banners_open-house.jpg
+│   ├── real-estate-banners_sold.jpg
+│   ├── real-estate-banners_coming-soon.jpg
+│   └── real-estate-banners_custom.jpg
+├── flags/
 │   ├── real-estate-flags_feather.jpg
-│   └── real-estate-flags_rectangle.jpg
-└── real-estate-a-frames/
-    ├── real-estate-a-frames_standard.jpg
-    └── real-estate-a-frames_premium.jpg
+│   ├── real-estate-flags_rectangle.jpg
+│   └── real-estate-flags_custom.jpg
+└── a-frames/
+    ├── real-estate-a-frames_open-house.jpg
+    ├── real-estate-a-frames_directional.jpg
+    └── real-estate-a-frames_custom.jpg
 
-# Total: 38 product folders, ~115 images 
+## SERVICE CATEGORIES
+
+### GRAPHIC DESIGN SERVICES
+/assets/images/services/graphic-design/
+├── logo-design/
+│   ├── logo-design_process.jpg
+│   ├── logo-design_examples.jpg
+│   ├── logo-design_branding.jpg
+│   └── logo-design_portfolio.jpg
+├── branding/
+│   ├── branding_identity.jpg
+│   ├── branding_guidelines.jpg
+│   ├── branding_collateral.jpg
+│   └── branding_strategy.jpg
+├── photo-editing/
+│   ├── photo-editing_retouching.jpg
+│   ├── photo-editing_color-correction.jpg
+│   ├── photo-editing_background-removal.jpg
+│   └── photo-editing_enhancement.jpg
+├── print-layout/
+│   ├── print-layout_brochures.jpg
+│   ├── print-layout_magazines.jpg
+│   ├── print-layout_catalogs.jpg
+│   └── print-layout_marketing.jpg
+└── typography/
+    ├── typography_fonts.jpg
+    ├── typography_hierarchy.jpg
+    ├── typography_readability.jpg
+    └── typography_custom.jpg
+
+### WEB DESIGN SERVICES
+/assets/images/services/web-design/
+├── websites/
+│   ├── websites_responsive.jpg
+│   ├── websites_ecommerce.jpg
+│   ├── websites_wordpress.jpg
+│   └── websites_custom.jpg
+├── web-services/
+│   ├── web-services_hosting.jpg
+│   ├── web-services_maintenance.jpg
+│   ├── web-services_security.jpg
+│   └── web-services_analytics.jpg
+├── email-design/
+│   ├── email-design_templates.jpg
+│   ├── email-design_newsletters.jpg
+│   ├── email-design_campaigns.jpg
+│   └── email-design_responsive.jpg
+├── marketing-campaigns/
+│   ├── marketing-campaigns_social.jpg
+│   ├── marketing-campaigns_digital.jpg
+│   ├── marketing-campaigns_content.jpg
+│   └── marketing-campaigns_strategy.jpg
+├── social-media/
+│   ├── social-media_management.jpg
+│   ├── social-media_content.jpg
+│   ├── social-media_advertising.jpg
+│   └── social-media_analytics.jpg
+└── seo/
+    ├── seo_optimization.jpg
+    ├── seo_keywords.jpg
+    ├── seo_analytics.jpg
+    └── seo_local.jpg
+
+### MAILING SERVICES
+/assets/images/services/mailing/
+├── eddm/
+│   ├── eddm_mapping.jpg
+│   ├── eddm_targeting.jpg
+│   ├── eddm_design.jpg
+│   └── eddm_delivery.jpg
+├── newsletters/
+│   ├── newsletters_design.jpg
+│   ├── newsletters_printing.jpg
+│   ├── newsletters_distribution.jpg
+│   └── newsletters_tracking.jpg
+├── postcards/
+│   ├── postcards_design.jpg
+│   ├── postcards_printing.jpg
+│   ├── postcards_mailing.jpg
+│   └── postcards_targeting.jpg
+├── direct-mailers/
+│   ├── direct-mailers_design.jpg
+│   ├── direct-mailers_printing.jpg
+│   ├── direct-mailers_targeting.jpg
+│   └── direct-mailers_tracking.jpg
+├── contact-list-cleaning/
+│   ├── contact-list-cleaning_verification.jpg
+│   ├── contact-list-cleaning_validation.jpg
+│   ├── contact-list-cleaning_segmentation.jpg
+│   └── contact-list-cleaning_maintenance.jpg
+└── interactive-mail/
+    ├── interactive-mail_qr-codes.jpg
+    ├── interactive-mail_ar.jpg
+    ├── interactive-mail_nfc.jpg
+    └── interactive-mail_personalization.jpg
+
+### COMMERCIAL SIGNAGE SERVICES
+/assets/images/services/commercial-signage/
+├── storefront-signs/
+│   ├── storefront-signs_illuminated.jpg
+│   ├── storefront-signs_dimensional.jpg
+│   ├── storefront-signs_vinyl.jpg
+│   └── storefront-signs_custom.jpg
+├── monument-signs/
+│   ├── monument-signs_stone.jpg
+│   ├── monument-signs_metal.jpg
+│   ├── monument-signs_illuminated.jpg
+│   └── monument-signs_landscaped.jpg
+├── led-signs/
+│   ├── led-signs_channel-letters.jpg
+│   ├── led-signs_cabinet.jpg
+│   ├── led-signs_digital.jpg
+│   └── led-signs_neon-replacement.jpg
+├── window-graphics/
+│   ├── window-graphics_frosted.jpg
+│   ├── window-graphics_perforated.jpg
+│   ├── window-graphics_full-coverage.jpg
+│   └── window-graphics_promotional.jpg
+├── office-signage/
+│   ├── office-signage_wayfinding.jpg
+│   ├── office-signage_directory.jpg
+│   ├── office-signage_room-identification.jpg
+│   └── office-signage_safety.jpg
+├── wayfinding/
+│   ├── wayfinding_exterior.jpg
+│   ├── wayfinding_interior.jpg
+│   ├── wayfinding_parking.jpg
+│   └── wayfinding_ada-compliant.jpg
+├── custom-displays/
+│   ├── custom-displays_trade-show.jpg
+│   ├── custom-displays_retail.jpg
+│   ├── custom-displays_museum.jpg
+│   └── custom-displays_interactive.jpg
+└── installation-maintenance/
+    ├── installation-maintenance_crane.jpg
+    ├── installation-maintenance_electrical.jpg
+    ├── installation-maintenance_permits.jpg
+    └── installation-maintenance_warranty.jpg
+
+## INDUSTRY CATEGORIES
+
+### REAL ESTATE INDUSTRY
+/assets/images/industries/real-estate/
+├── overview/
+│   ├── real-estate_industry-overview.jpg
+│   ├── real-estate_market-trends.jpg
+│   ├── real-estate_professional-services.jpg
+│   └── real-estate_success-stories.jpg
+├── marketing-materials/
+│   ├── real-estate_listing-presentations.jpg
+│   ├── real-estate_property-brochures.jpg
+│   ├── real-estate_market-reports.jpg
+│   └── real-estate_client-packages.jpg
+├── signage-solutions/
+│   ├── real-estate_yard-signs.jpg
+│   ├── real-estate_open-house.jpg
+│   ├── real-estate_directional.jpg
+│   └── real-estate_sold-signs.jpg
+├── digital-marketing/
+│   ├── real-estate_websites.jpg
+│   ├── real-estate_social-media.jpg
+│   ├── real-estate_email-campaigns.jpg
+│   └── real-estate_virtual-tours.jpg
+└── branding/
+    ├── real-estate_agent-branding.jpg
+    ├── real-estate_team-identity.jpg
+    ├── real-estate_brokerage-materials.jpg
+    └── real-estate_consistent-messaging.jpg
+
+## BLOG & CONTENT
+/assets/images/blog/
+├── featured/
+│   ├── blog_featured-1.jpg
+│   ├── blog_featured-2.jpg
+│   ├── blog_featured-3.jpg
+│   └── blog_featured-default.jpg
+├── categories/
+│   ├── blog_design-tips.jpg
+│   ├── blog_marketing-strategies.jpg
+│   ├── blog_industry-news.jpg
+│   ├── blog_case-studies.jpg
+│   └── blog_tutorials.jpg
+├── thumbnails/
+│   ├── blog_thumb-1.jpg
+│   ├── blog_thumb-2.jpg
+│   ├── blog_thumb-3.jpg
+│   └── blog_thumb-default.jpg
+└── authors/
+    ├── blog_author-1.jpg
+    ├── blog_author-2.jpg
+    └── blog_author-default.jpg
+
+## GENERAL WEBSITE IMAGES
+/assets/images/
+├── hero/
+│   ├── hero_homepage.jpg
+│   ├── hero_about.jpg
+│   ├── hero_services.jpg
+│   ├── hero_products.jpg
+│   ├── hero_contact.jpg
+│   └── hero_default.jpg
+├── backgrounds/
+│   ├── bg_section-1.jpg
+│   ├── bg_section-2.jpg
+│   ├── bg_section-3.jpg
+│   ├── bg_cta.jpg
+│   └── bg_footer.jpg
+├── team/
+│   ├── team_member-1.jpg
+│   ├── team_member-2.jpg
+│   ├── team_member-3.jpg
+│   └── team_placeholder.jpg
+├── testimonials/
+│   ├── testimonial_client-1.jpg
+│   ├── testimonial_client-2.jpg
+│   ├── testimonial_client-3.jpg
+│   └── testimonial_placeholder.jpg
+├── portfolio/
+│   ├── portfolio_project-1.jpg
+│   ├── portfolio_project-2.jpg
+│   ├── portfolio_project-3.jpg
+│   └── portfolio_placeholder.jpg
+├── clients/
+│   ├── client_logo-1.png
+│   ├── client_logo-2.png
+│   ├── client_logo-3.png
+│   └── client_placeholder.png
+├── icons/
+│   ├── icon_service-1.svg
+│   ├── icon_service-2.svg
+│   ├── icon_service-3.svg
+│   └── icon_default.svg
+├── about/
+│   ├── about_company-history.jpg
+│   ├── about_mission-vision.jpg
+│   ├── about_values.jpg
+│   └── about_facility.jpg
+├── contact/
+│   ├── contact_office.jpg
+│   ├── contact_map.jpg
+│   └── contact_team.jpg
+└── misc/
+    ├── logo_main.png
+    ├── logo_white.png
+    ├── logo_dark.png
+    ├── favicon.ico
+    ├── placeholder.jpg
+    └── loading.gif
+
+# SUMMARY STATISTICS
+- **Product Categories**: 5 main categories (Prints, Signs, Materials, Promotional, Real Estate)
+- **Product Subcategories**: 45+ individual product types
+- **Service Categories**: 4 main services with 20+ subcategories
+- **Industry Categories**: 1 main industry (Real Estate) with comprehensive coverage
+- **Total Estimated Images**: 400+ organized images across all categories
+- **Image Formats**: JPG for photos, PNG for logos/graphics, SVG for icons
+- **Responsive Variants**: Each image should have mobile/tablet/desktop versions where applicable 

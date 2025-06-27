@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portable SEO & Dev Tools</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f8f9fa; color: #343a40; }
+        .container { max-width: 800px; margin: 40px auto; padding: 30px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        h1, h2 { color: #007bff; border-bottom: 2px solid #dee2e6; padding-bottom: 10px; }
+        p { margin-bottom: 1.25rem; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .bookmarklet { display: inline-block; padding: 12px 24px; background-color: #28a745; color: #fff; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s, transform 0.3s; }
+        .bookmarklet:hover { background-color: #218838; transform: translateY(-2px); }
+        code { background-color: #e9ecef; padding: 0.2em 0.4em; margin: 0; font-size: 85%; border-radius: 3px; }
+        .instructions { background-color: #f1f3f5; padding: 20px; border-radius: 5px; margin-top: 20px; border: 1px solid #dee2e6; }
+        textarea { width: 100%; height: 150px; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace; font-size: 14px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Portable Website Analysis Tools</h1>
+        <p>This page creates a special bookmarklet to launch the analysis tools on any website.</p>
+
+        <div class="instructions">
+            <h2>Create Your Bookmarklet (Recommended Method)</h2>
+            <p>This method is the most reliable and avoids tricky browser issues.</p>
+            <ol>
+                <li>Using an FTP client or a file manager, upload the file <code>assets/js/universal-dev-tools.js</code> from your project folder to your web server.</li>
+                <li>Once uploaded, paste the full, public URL to that file in the box below.</li>
+                <li>Click the "Generate Bookmarklet" button.</li>
+                <li>Finally, <strong>drag the green "Dev Tools" button</strong> to your browser's bookmarks bar.</li>
+            </ol>
+            
+            <input type="text" id="script-url" placeholder="e.g., https://staging.getbeseen.com/universal-dev-tools.js" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ced4da; border-radius: 4px;">
+            <button onclick="generateBookmarklet()" style="padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Generate Bookmarklet</button>
+            
+            <p style="margin-top: 20px;"><a id="bookmarklet-link" class="bookmarklet" href="#">Dev Tools</a></p>
+            <p id="bookmarklet-warning" style="display: none; color: red;">Click 'Generate' first, then drag the green button.</p>
+        </div>
+
+        <div class="instructions">
+            <h2>Fallback Method: Developer Console</h2>
+            <p>If you cannot upload the script, you can copy its contents and paste them into the browser's developer console on the site you wish to test.</p>
+            <textarea id="script-content" readonly>Loading script for copy/paste...</textarea>
+        </div>
+    </div>
+
+    <script>
+        function generateBookmarklet() {
+            const scriptUrl = document.getElementById('script-url').value;
+            if (!scriptUrl || !scriptUrl.startsWith('http')) {
+                alert('Please enter a valid, full URL beginning with http or https.');
+                return;
+            }
+
+            // The loader script. Appending a timestamp to prevent caching issues.
+            const loaderScript = `(function(){ var s = document.createElement('script'); s.src = '${scriptUrl}?' + new Date().getTime(); document.body.appendChild(s); })();`;
+            
+            const bookmarkletLink = document.getElementById('bookmarklet-link');
+            bookmarkletLink.href = `javascript:${encodeURIComponent(loaderScript)}`;
+            document.getElementById('bookmarklet-warning').style.display = 'none';
+
+             // Add a helper to prevent accidental clicking
+            bookmarkletLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert("Don't click me! Drag me to your bookmarks bar to save the tool.");
+            });
+        }
+
+        // Fetch the script content to display in the textarea for the fallback method
+        fetch('assets/js/universal-dev-tools.js')
+            .then(response => response.text())
+            .then(scriptText => {
+                document.getElementById('script-content').value = scriptText;
+            })
+            .catch(error => {
+                const errorMsg = 'Failed to load script content for fallback method.';
+                console.error(errorMsg, error);
+                document.getElementById('script-content').value = errorMsg;
+            });
+
+        // Initial setup for the bookmarklet link to guide the user
+        document.getElementById('bookmarklet-link').addEventListener('click', function(e) {
+            if (e.target.href.endsWith('#')) {
+                e.preventDefault();
+                document.getElementById('bookmarklet-warning').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,12 +1,5 @@
 <!-- Analytics Loader - Comprehensive Tracking System -->
-<!-- Google Analytics (existing tracking) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H16V1KPFT"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-3H16V1KPFT');
-</script>
+<!-- Old analytics code removed - now using smart multi-domain configuration below -->
 
 <!-- Base Analytics Tracker -->
 <script src="/assets/js/analytics-tracker.js"></script>
@@ -338,4 +331,376 @@ if (window.location.hostname === 'localhost' || window.location.hostname.include
         };
     });
 }
+</script>
+
+<!-- Smart Page Detection & Auto-Tracking -->
+<script>
+function setupSmartPageTracking() {
+    const pageType = detectPageType();
+    const businessContext = getBusinessContext();
+    
+    // Auto-track based on page type
+    gtag('event', 'smart_page_view', {
+        'page_type': pageType,
+        'business_category': businessContext.category,
+        'product_focus': businessContext.product,
+        'service_focus': businessContext.service,
+        'conversion_potential': businessContext.conversionScore,
+        'page_depth': getPageDepth(),
+        'visit_sequence': getVisitSequence(),
+        'event_category': 'smart_tracking'
+    });
+    
+    // Set up page-specific auto-tracking
+    switch(pageType) {
+        case 'product_page':
+            setupProductPageTracking(businessContext);
+            break;
+        case 'service_page':
+            setupServicePageTracking(businessContext);
+            break;
+        case 'contact_page':
+            setupContactPageTracking();
+            break;
+        case 'quote_page':
+            setupQuotePageTracking();
+            break;
+        case 'homepage':
+            setupHomepageTracking();
+            break;
+    }
+}
+
+function detectPageType() {
+    const path = window.location.pathname.toLowerCase();
+    const title = document.title.toLowerCase();
+    
+    // Product pages
+    if (path.includes('/products/') || path.includes('/prints/') || path.includes('/signs/')) {
+        return 'product_page';
+    }
+    
+    // Service pages
+    if (path.includes('/services/') || title.includes('service')) {
+        return 'service_page';
+    }
+    
+    // Contact/Quote pages
+    if (path.includes('/contact') || path.includes('/quote') || title.includes('contact') || title.includes('quote')) {
+        return path.includes('/quote') ? 'quote_page' : 'contact_page';
+    }
+    
+    // Homepage
+    if (path === '/' || path === '/index.html' || path === '') {
+        return 'homepage';
+    }
+    
+    // About/Company pages
+    if (path.includes('/about') || title.includes('about')) {
+        return 'about_page';
+    }
+    
+    return 'general_page';
+}
+
+function getBusinessContext() {
+    const path = window.location.pathname.toLowerCase();
+    const title = document.title.toLowerCase();
+    const content = document.body.textContent.toLowerCase();
+    
+    let category = 'general';
+    let product = null;
+    let service = null;
+    let conversionScore = 1;
+    
+    // Detect product categories
+    if (path.includes('/business-card') || title.includes('business card')) {
+        category = 'business_cards';
+        product = 'business_cards';
+        conversionScore = 8; // High conversion potential
+    } else if (path.includes('/banner') || path.includes('/sign')) {
+        category = 'signage';
+        product = 'banners_signs';
+        conversionScore = 7;
+    } else if (path.includes('/flyer') || path.includes('/brochure')) {
+        category = 'marketing_materials';
+        product = 'print_marketing';
+        conversionScore = 6;
+    } else if (path.includes('/promotional')) {
+        category = 'promotional';
+        product = 'promotional_items';
+        conversionScore = 5;
+    }
+    
+    // Detect services
+    if (content.includes('graphic design') || title.includes('design')) {
+        service = 'graphic_design';
+        conversionScore += 2;
+    } else if (content.includes('web design') || path.includes('/web')) {
+        service = 'web_design';
+        conversionScore += 3;
+    } else if (content.includes('marketing') || content.includes('advertising')) {
+        service = 'marketing';
+        conversionScore += 2;
+    }
+    
+    return { category, product, service, conversionScore: Math.min(conversionScore, 10) };
+}
+
+function getPageDepth() {
+    const path = window.location.pathname;
+    return (path.match(/\//g) || []).length;
+}
+
+function getVisitSequence() {
+    const visited = sessionStorage.getItem('visited_pages');
+    if (!visited) {
+        sessionStorage.setItem('visited_pages', '1');
+        return 1;
+    }
+    const count = parseInt(visited) + 1;
+    sessionStorage.setItem('visited_pages', count.toString());
+    return count;
+}
+
+function setupProductPageTracking(context) {
+    // Auto-track product interest after 15 seconds
+    setTimeout(() => {
+        gtag('event', 'product_interest', {
+            'product_category': context.category,
+            'product_type': context.product,
+            'engagement_level': 'interested',
+            'time_threshold': 15,
+            'event_category': 'product_engagement'
+        });
+    }, 15000);
+    
+    // Track deep engagement after 45 seconds
+    setTimeout(() => {
+        gtag('event', 'product_deep_interest', {
+            'product_category': context.category,
+            'product_type': context.product,
+            'engagement_level': 'highly_interested',
+            'time_threshold': 45,
+            'event_category': 'product_engagement'
+        });
+    }, 45000);
+}
+
+function setupServicePageTracking(context) {
+    // Track service inquiry interest
+    setTimeout(() => {
+        gtag('event', 'service_interest', {
+            'service_type': context.service,
+            'business_category': context.category,
+            'engagement_level': 'considering',
+            'event_category': 'service_engagement'
+        });
+    }, 20000);
+}
+
+function setupContactPageTracking() {
+    // High-intent page - track immediately
+    gtag('event', 'high_intent_page', {
+        'page_type': 'contact',
+        'conversion_likelihood': 'high',
+        'event_category': 'conversion_funnel'
+    });
+}
+
+function setupQuotePageTracking() {
+    // Very high-intent page
+    gtag('event', 'very_high_intent_page', {
+        'page_type': 'quote',
+        'conversion_likelihood': 'very_high',
+        'event_category': 'conversion_funnel'
+    });
+}
+
+function setupHomepageTracking() {
+    // Track homepage exploration patterns
+    setTimeout(() => {
+        gtag('event', 'homepage_exploration', {
+            'exploration_time': 10,
+            'visitor_type': getVisitSequence() === 1 ? 'new' : 'returning',
+            'event_category': 'homepage_engagement'
+        });
+    }, 10000);
+}
+</script>
+
+<!-- Analytics Loader - Smart Multi-Domain Configuration -->
+<script>
+// Smart Analytics Configuration - Auto-detects domain and environment
+(function() {
+    // Domain and Environment Detection
+    const hostname = window.location.hostname;
+    const isMainSite = hostname === 'getbeseen.com' || hostname === 'www.getbeseen.com';
+    const isRealEstate = hostname === 'realestate.getbeseen.com' || hostname === 'www.realestate.getbeseen.com';
+    const isStaging = hostname.includes('staging') || hostname.includes('dev') || hostname.includes('test');
+    const isLocal = hostname === 'localhost' || hostname.includes('127.0.0.1');
+    
+    // Analytics Configuration by Domain and Environment
+    const analyticsConfig = {
+        // Main BeSeen.com site (printing business)
+        main_production: {
+            ga_id: 'G-MAIN-BESEEN', // You'll need to create this GA4 property for main site
+            clarity_id: 'main_clarity_id', // New Clarity project for main site
+            debug: false,
+            send_data: true,
+            site_type: 'main_business'
+        },
+        main_staging: {
+            ga_id: 'G-MAIN-STAGING', // Staging GA4 for main site testing
+            clarity_id: null,
+            debug: true,
+            send_data: true,
+            site_type: 'main_business_staging'
+        },
+        
+        // Real Estate subdomain
+        realestate_production: {
+            ga_id: 'G-3H16V1KPFT', // Your existing real estate GA4
+            clarity_id: 's1g9ngbmhd', // Your existing Clarity
+            debug: false,
+            send_data: true,
+            site_type: 'real_estate'
+        },
+        realestate_staging: {
+            ga_id: 'G-RE-STAGING', // Staging GA4 for real estate testing
+            clarity_id: 'lkihe2qcle', // Your second Clarity ID
+            debug: true,
+            send_data: true,
+            site_type: 'real_estate_staging'
+        },
+        
+        // Local development
+        local: {
+            ga_id: 'G-LOCAL-DEBUG',
+            clarity_id: null,
+            debug: true,
+            send_data: false, // Don't send analytics from local development
+            site_type: 'local_development'
+        }
+    };
+    
+    // Determine current configuration
+    let currentConfig = 'local';
+    if (isLocal) {
+        currentConfig = 'local';
+    } else if (isMainSite) {
+        currentConfig = isStaging ? 'main_staging' : 'main_production';
+    } else if (isRealEstate) {
+        currentConfig = isStaging ? 'realestate_staging' : 'realestate_production';
+    } else if (isStaging) {
+        // Default staging behavior (assumes this will become main site)
+        currentConfig = 'main_staging';
+    } else {
+        // Default production behavior (assumes this will become main site)
+        currentConfig = 'main_production';
+    }
+    
+    const config = analyticsConfig[currentConfig];
+    
+    // Console logging for setup verification
+    console.log(`🏢 Site Type: ${config.site_type}`);
+    console.log(`🌐 Domain: ${hostname}`);
+    console.log(`📊 GA4 Property: ${config.ga_id}`);
+    console.log(`🎯 Data Collection: ${config.send_data ? 'ENABLED' : 'DISABLED'}`);
+    console.log(`🔍 Debug Mode: ${config.debug ? 'ON' : 'OFF'}`);
+    
+    // Only load analytics if data collection is enabled and GA ID is real
+    if (config.send_data && !config.ga_id.includes('STAGING') && !config.ga_id.includes('DEBUG') && !config.ga_id.includes('MAIN')) {
+        // Load Google Analytics
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${config.ga_id}`;
+        document.head.appendChild(script);
+        
+        // Initialize dataLayer and gtag
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        
+        // Enhanced GA4 Configuration
+        gtag('config', config.ga_id, {
+            // Core Configuration
+            page_title: document.title,
+            page_location: window.location.href,
+            
+            // Business Context
+            custom_map: {
+                'custom_parameter_1': 'site_type',
+                'custom_parameter_2': 'business_vertical',
+                'custom_parameter_3': 'product_category',
+                'custom_parameter_4': 'lead_score',
+                'custom_parameter_5': 'customer_type'
+            },
+            
+            // Enhanced Ecommerce Configuration
+            send_page_view: true,
+            allow_enhanced_conversions: true,
+            allow_google_signals: true,
+            
+            // Privacy and Performance
+            cookie_expires: 63072000, // 2 years
+            cookie_update: true,
+            attribution_reporting_enabled: true,
+            
+            // Debug mode for non-production
+            debug_mode: config.debug
+        });
+        
+        // Set business context for analytics
+        gtag('event', 'page_view', {
+            'site_type': config.site_type,
+            'business_vertical': isRealEstate ? 'real_estate' : 'printing_services',
+            'hostname': hostname,
+            'custom_parameter_1': config.site_type,
+            'custom_parameter_2': isRealEstate ? 'real_estate' : 'printing_services'
+        });
+        
+        // Load Microsoft Clarity if configured
+        if (config.clarity_id && !config.clarity_id.includes('clarity_id')) {
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", config.clarity_id);
+        }
+        
+    } else {
+        console.log('🚫 Analytics disabled - using placeholder GA4 ID or local development');
+        // Create dummy gtag function for development/staging with placeholder IDs
+        window.gtag = function() {
+            if (config.debug) {
+                console.log('📊 [ANALYTICS DEBUG]', arguments);
+            }
+        };
+    }
+    
+    // Make configuration globally available for other scripts
+    window.analyticsConfig = {
+        environment: currentConfig,
+        config: config,
+        isMainSite: isMainSite,
+        isRealEstate: isRealEstate,
+        isStaging: isStaging,
+        isLocal: isLocal,
+        businessVertical: isRealEstate ? 'real_estate' : 'printing_services'
+    };
+    
+    // Setup instructions for deployment
+    if (config.debug) {
+        console.log('📋 SETUP INSTRUCTIONS:');
+        console.log('1. Create GA4 properties for:');
+        console.log('   - Main site: G-MAIN-BESEEN');
+        console.log('   - Main staging: G-MAIN-STAGING');
+        console.log('   - Real estate staging: G-RE-STAGING');
+        console.log('2. Create Clarity projects for main site');
+        console.log('3. Update the GA4 IDs in this script');
+        console.log('4. Configure AllInOneMarketing DNS records');
+    }
+})();
 </script> 

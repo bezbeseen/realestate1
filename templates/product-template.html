@@ -190,7 +190,7 @@
 
 								<!-- Add to Cart -->
 								<div class="d-grid">
-									<button class="addtocart_btn custom_btn bg_default_orange btn-lg">Add To Cart</button>
+									<button class="addtocart_btn custom_btn bg_default_orange btn-lg" onclick="addProductToCart(this)">Add To Cart</button>
 								</div>
 
 								<!-- Social Share -->
@@ -246,17 +246,27 @@
 	<!-- custom - js include -->
 	<script src="/assets/js/app-initializer.js"></script>
 
+	<!-- Stripe Integration -->
+	<script src="https://js.stripe.com/v3/"></script>
+	
 	<!-- Cart and App Initializer -->
-	<script src="/assets/js/working-cart-system.js"></script>
+	<script src="/assets/js/cart.js"></script>
 	<script src="/assets/js/main.js"></script>
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			const variantOptions = document.querySelectorAll('.variant-option');
-			const tabs = new bootstrap.Tab(document.querySelector('#productTab a'));
-
+			const quantityOptions = document.querySelectorAll('.quantity-option');
+			
+			// Handle variant selection
 			variantOptions.forEach(option => {
 				option.addEventListener('click', function() {
+					// Update selected variant
+					variantOptions.forEach(opt => opt.classList.remove('border-primary'));
+					this.classList.add('border-primary');
+					document.getElementById('selectedVariant').value = this.dataset.variant;
+					
+					// Switch image if target exists
 					const target = this.dataset.imageTarget;
 					if (target) {
 						const tabToShow = document.querySelector(`[data-bs-toggle="tab"][href="${target}"]`);
@@ -267,7 +277,45 @@
 					}
 				});
 			});
+			
+			// Handle quantity selection
+			quantityOptions.forEach(option => {
+				option.addEventListener('click', function() {
+					quantityOptions.forEach(opt => opt.classList.remove('border-primary'));
+					this.classList.add('border-primary');
+					document.getElementById('selectedQuantity').value = this.dataset.quantity;
+				});
+			});
 		});
+		
+		// Function to add product to cart (called by Add to Cart button)
+		function addProductToCart(button) {
+			const container = button.closest('.product-container');
+			const productId = container.dataset.productId;
+			const productName = container.dataset.productName;
+			const productPrice = parseFloat(container.dataset.productPrice);
+			const productImage = container.dataset.productImage;
+			
+			// Get selected variant and quantity
+			const selectedVariant = document.getElementById('selectedVariant')?.value || '';
+			const selectedQuantity = parseInt(document.getElementById('selectedQuantity')?.value || '1');
+			
+			// Create unique item ID with variant
+			const itemId = productId + (selectedVariant ? '-' + selectedVariant.toLowerCase().replace(/\s+/g, '-') : '');
+			
+			// Add to cart using the cart system
+			if (window.cart) {
+				for (let i = 0; i < selectedQuantity; i++) {
+					cart.addItem({
+						id: itemId,
+						name: productName + (selectedVariant ? ' - ' + selectedVariant : ''),
+						price: productPrice,
+						image: productImage,
+						variant: selectedVariant
+					});
+				}
+			}
+		}
 	</script>
 	
 </html> 
