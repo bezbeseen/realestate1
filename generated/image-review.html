@@ -400,6 +400,16 @@
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('Image Review Hub Initializing...');
+            console.log('Total categories:', Object.keys(imageData).length);
+            
+            let totalImages = 0;
+            Object.keys(imageData).forEach(category => {
+                console.log(`${category}: ${imageData[category].length} images`);
+                totalImages += imageData[category].length;
+            });
+            console.log('Total images:', totalImages);
+            
             renderCategories();
             renderImages();
             updateStats();
@@ -440,7 +450,9 @@
                 const commentCount = getCommentsForImage(image.name).length;
                 
                 imageDiv.innerHTML = `
-                    <img src="${image.image}" alt="${image.name}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlPC90ZXh0Pjwvc3ZnPg=='">
+                    <img src="${image.image}" alt="${image.name}" 
+                         onerror="console.error('Failed to load image:', '${image.image}'); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlPC90ZXh0Pjwvc3ZnPg=='"
+                         onload="console.log('Successfully loaded:', '${image.image}')">
                     <div class="image-info">
                         <h6 class="mb-1">${image.name}</h6>
                         <p class="text-muted mb-1">${image.description}</p>
