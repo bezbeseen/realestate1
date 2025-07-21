@@ -16,7 +16,7 @@
         }
         .image-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1rem;
             margin-top: 1rem;
         }
@@ -25,17 +25,19 @@
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.2s;
+            background: white;
         }
         .image-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         .image-item img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
         }
         .image-info {
-            padding: 0.5rem;
+            padding: 1rem;
             background: #f8f9fa;
         }
         .status-badge {
@@ -56,6 +58,29 @@
             color: white;
             border-radius: 10px;
             padding: 1.5rem;
+        }
+        .image-comments {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .comment-item {
+            border-left: 3px solid #007bff;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        .rating-stars {
+            color: #ffc107;
+        }
+        .modal-image-container {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .modal-image-container img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -153,33 +178,66 @@
             <div class="col-12">
                 <h3>
                     <i class="fas fa-comments me-2"></i>
-                    Review Comments
+                    All Review Comments
                 </h3>
                 <div id="commentsList" class="comment-section">
                     <p class="text-muted">No comments yet. Be the first to add a review!</p>
                 </div>
-                
-                <!-- Add Comment Form -->
-                <div class="card mt-3">
-                    <div class="card-body">
-                        <h5>Add Comment</h5>
-                        <form id="commentForm">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" id="commentName" class="form-control mb-3" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <select id="commentImage" class="form-select mb-3" required>
-                                        <option value="">Select an image...</option>
-                                    </select>
-                                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Image Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="modal-image-container">
+                                <img id="modalImage" src="" alt="" class="img-fluid">
                             </div>
-                            <div class="mb-3">
-                                <textarea id="commentText" class="form-control" rows="3" placeholder="Comment" required></textarea>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary me-2" onclick="downloadImage()">
+                                    <i class="fas fa-download me-2"></i>Download
+                                </button>
+                                <button class="btn btn-success me-2" onclick="approveImage()">
+                                    <i class="fas fa-check me-2"></i>Approve
+                                </button>
+                                <button class="btn btn-danger me-2" onclick="rejectImage()">
+                                    <i class="fas fa-times me-2"></i>Reject
+                                </button>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <select id="commentRating" class="form-select mb-3" required>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Image Details</h6>
+                            <div id="imageDetails">
+                                <!-- Image details will be populated here -->
+                            </div>
+                            
+                            <hr>
+                            
+                            <h6>Comments</h6>
+                            <div id="imageComments" class="image-comments">
+                                <!-- Comments for this specific image -->
+                            </div>
+                            
+                            <hr>
+                            
+                            <h6>Add Comment</h6>
+                            <form id="imageCommentForm">
+                                <div class="mb-3">
+                                    <input type="text" id="commentName" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea id="commentText" class="form-control" rows="3" placeholder="Your comment..." required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <select id="commentRating" class="form-select" required>
                                         <option value="">Select rating...</option>
                                         <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
                                         <option value="4">⭐⭐⭐⭐ Very Good</option>
@@ -188,37 +246,9 @@
                                         <option value="1">⭐ Poor</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary w-100">Submit Comment</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Image Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Image Preview</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <img id="modalImage" src="" alt="" class="img-fluid" style="max-height: 500px;">
-                    <div class="mt-3">
-                        <button class="btn btn-primary" onclick="downloadImage()">
-                            <i class="fas fa-download me-2"></i>Download
-                        </button>
-                        <button class="btn btn-secondary" onclick="approveImage()">
-                            <i class="fas fa-check me-2"></i>Approve
-                        </button>
-                        <button class="btn btn-danger" onclick="rejectImage()">
-                            <i class="fas fa-times me-2"></i>Reject
-                        </button>
+                                <button type="submit" class="btn btn-primary w-100">Submit Comment</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -227,124 +257,90 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Image data structure
+        // Updated image data structure with actual images from the generated folder
         const imageData = {
             "Business Cards": [
-                { name: "Standard Business Card", image: "assets/images/review-images/Business cards/standard business card.jpg", status: "pending", description: "Matte cardstock finish" },
-                { name: "Premium Business Card", image: "assets/images/review-images/Business cards/premium business card.jpg", status: "pending", description: "Glossy textured finish" },
-                { name: "Luxury Business Card", image: "assets/images/review-images/Business cards/luxury business card.jpg", status: "pending", description: "Foil embossing finish" },
-                { name: "Economy Business Card", image: "assets/images/review-images/Business cards/economy business card.jpg", status: "pending", description: "Basic design finish" }
+                { name: "Standard Business Card", image: "assets/images/review-images/Business cards/standard business card.jpg", status: "pending", description: "Matte cardstock finish", category: "Business Cards" },
+                { name: "Premium Business Card", image: "assets/images/review-images/Business cards/premium business card.jpg", status: "pending", description: "Glossy textured finish", category: "Business Cards" },
+                { name: "Luxury Business Card", image: "assets/images/review-images/Business cards/luxury business card.jpg", status: "pending", description: "Foil embossing finish", category: "Business Cards" },
+                { name: "Economy Business Card", image: "assets/images/review-images/Business cards/economy business card.jpg", status: "pending", description: "Basic design finish", category: "Business Cards" }
             ],
             "Banners": [
-                { name: "Vinyl Banner", image: "assets/images/review-images/Banners/vinyl banner.jpg", status: "pending", description: "Outdoor glossy finish" },
-                { name: "Mesh Banner", image: "assets/images/review-images/Banners/mesh banner.jpg", status: "pending", description: "Wind-resistant material" },
-                { name: "Fabric Banner", image: "assets/images/review-images/Banners/fabric banner.jpg", status: "pending", description: "Indoor events" },
-                { name: "Retractable Banner", image: "assets/images/review-images/Banners/retractable banner.jpg", status: "pending", description: "Portable display" }
+                { name: "Vinyl Banner", image: "assets/images/review-images/Banners/vinyl banner.jpg", status: "pending", description: "Outdoor glossy finish", category: "Banners" },
+                { name: "Mesh Banner", image: "assets/images/review-images/Banners/mesh banner.jpg", status: "pending", description: "Wind-resistant material", category: "Banners" },
+                { name: "Fabric Banner", image: "assets/images/review-images/Banners/fabric banner.jpg", status: "pending", description: "Indoor events", category: "Banners" },
+                { name: "Retractable Banner", image: "assets/images/review-images/Banners/retractable banner.jpg", status: "pending", description: "Portable display", category: "Banners" }
             ],
             "Brochures": [
-                { name: "Bi-fold Brochure", image: "assets/images/review-images/Broucher/bi-fold broucher.jpg", status: "pending", description: "Two-panel design" },
-                { name: "Tri-fold Brochure", image: "assets/images/review-images/Broucher/tri-fold broucher.jpg", status: "pending", description: "Three-panel design" },
-                { name: "Z-fold Brochure", image: "assets/images/review-images/Broucher/z-fold broucher.jpg", status: "pending", description: "Accordion style" }
+                { name: "Product Prints Brochure", image: "assets/images/review-images/Main categories/product prints broucher.jpg", status: "pending", description: "Professional brochure printing", category: "Brochures" }
             ],
             "Flyers": [
-                { name: "Standard Flyer", image: "assets/images/review-images/Flyers/Standard flyer.jpg", status: "pending", description: "Single-sided design" },
-                { name: "Premium Flyer", image: "assets/images/review-images/Flyers/Premium flyer.jpg", status: "pending", description: "High-quality finish" },
-                { name: "Glossy Flyer", image: "assets/images/review-images/Flyers/Glossy flyer.jpg", status: "pending", description: "Glossy finish" }
+                { name: "Product Prints Flyer", image: "assets/images/review-images/Main categories/flyer.jpg", status: "pending", description: "High-quality flyer printing", category: "Flyers" }
             ],
             "Posters": [
-                { name: "Small Poster", image: "assets/images/review-images/Posters/small poster.jpg", status: "pending", description: "Standard size printing" },
-                { name: "Large Poster", image: "assets/images/review-images/Posters/large poster.jpg", status: "pending", description: "Large format printing" },
-                { name: "Custom Sizes Poster", image: "assets/images/review-images/Posters/custom sizes poster.jpg", status: "pending", description: "Custom dimensions" }
+                { name: "Small Poster", image: "assets/images/review-images/Posters/small poster.jpg", status: "pending", description: "Standard size printing", category: "Posters" },
+                { name: "Large Poster", image: "assets/images/review-images/Posters/large poster.jpg", status: "pending", description: "Large format printing", category: "Posters" },
+                { name: "Custom Sizes Poster", image: "assets/images/review-images/Posters/custom sizes poster.jpg", status: "pending", description: "Custom dimensions", category: "Posters" }
             ],
             "Yard Signs": [
-                { name: "Standard Yard Sign", image: "assets/images/review-images/Yard Signs/standard yard signs.jpg", status: "pending", description: "Corrugated plastic" },
-                { name: "Double Sided Yard Sign", image: "assets/images/review-images/Yard Signs/double sided yard signs.jpg", status: "pending", description: "Two-sided printing" },
-                { name: "Premium Yard Sign", image: "assets/images/review-images/Yard Signs/premium yard signs.jpg", status: "pending", description: "High-quality finish" }
+                { name: "Yard Signs", image: "assets/images/review-images/Main categories/yard signs.jpg", status: "pending", description: "Corrugated plastic signs", category: "Yard Signs" }
             ],
             "Canvas Prints": [
-                { name: "Gallery Wrap Canvas", image: "assets/images/review-images/Canvas/gallery wrap canvas.jpg", status: "pending", description: "Gallery wrapped edges" },
-                { name: "Museum Quality Canvas", image: "assets/images/review-images/Canvas/museum quality canvas.jpg", status: "pending", description: "Premium archival quality" }
+                { name: "Canvas Prints", image: "assets/images/review-images/Main categories/canvas.jpg", status: "pending", description: "Gallery quality canvas", category: "Canvas Prints" }
             ],
             "Retractable Banners": [
-                { name: "Standard Retractable", image: "assets/images/review-images/Retractable Banners/Standard retractable banners.jpg", status: "pending", description: "Portable display" },
-                { name: "Premium Retractable", image: "assets/images/review-images/Retractable Banners/premium retractable banners.jpg", status: "pending", description: "High-end finish" },
-                { name: "Deluxe Retractable", image: "assets/images/review-images/Retractable Banners/deluxe retractable banners.jpg", status: "pending", description: "Custom branding" },
-                { name: "Economy Retractable", image: "assets/images/review-images/Retractable Banners/economy retractable banners.jpg", status: "pending", description: "Budget option" }
+                { name: "Retractable Banners", image: "assets/images/review-images/Main categories/Retractable Banners.jpg", status: "pending", description: "Portable display banners", category: "Retractable Banners" }
             ],
             "Branded Apparel": [
-                { name: "T-Shirts", image: "assets/images/review-images/Branded Apparel/T Shirt Branded Apparel.jpg", status: "pending", description: "Custom printed shirts" },
-                { name: "Hoodies", image: "assets/images/review-images/Branded Apparel/Hoodies Branded Apparel.jpg", status: "pending", description: "Branded sweatshirts" },
-                { name: "Polos", image: "assets/images/review-images/Branded Apparel/Polos Branded Apparel.jpg", status: "pending", description: "Professional polos" },
-                { name: "Hats", image: "assets/images/review-images/Branded Apparel/Hats Branded Apparel.jpg", status: "pending", description: "Custom embroidered caps" }
+                { name: "T-Shirts", image: "assets/images/review-images/Branded Apparel/T Shirt Branded Apparel.jpg", status: "pending", description: "Custom printed shirts", category: "Branded Apparel" },
+                { name: "Hoodies", image: "assets/images/review-images/Branded Apparel/Hoodies Branded Apparel.jpg", status: "pending", description: "Branded sweatshirts", category: "Branded Apparel" },
+                { name: "Polos", image: "assets/images/review-images/Branded Apparel/Polos Branded Apparel.jpg", status: "pending", description: "Professional polos", category: "Branded Apparel" },
+                { name: "Hats", image: "assets/images/review-images/Branded Apparel/Hats Branded Apparel.jpg", status: "pending", description: "Custom embroidered caps", category: "Branded Apparel" }
             ],
             "Stickers & Decals": [
-                { name: "Vinyl Stickers", image: "assets/images/review-images/Stickers & Decals/vinyl stickers & decals.jpg", status: "pending", description: "Weather resistant" },
-                { name: "Custom Shapes", image: "assets/images/review-images/Stickers & Decals/custom shapes stickers & decals.jpg", status: "pending", description: "Custom cut shapes" },
-                { name: "Weather Resistant", image: "assets/images/review-images/Stickers & Decals/weather resistant stickers & decals.jpg", status: "pending", description: "Outdoor durability" }
+                { name: "Stickers & Decals", image: "assets/images/review-images/Main categories/Stickers.jpg", status: "pending", description: "Custom vinyl stickers", category: "Stickers & Decals" }
             ],
             "Presentation Folders": [
-                { name: "Standard Folder", image: "assets/images/review-images/Presentation Folders/Standard presentation folders.jpg", status: "pending", description: "Basic presentation" },
-                { name: "Custom Folder", image: "assets/images/review-images/Presentation Folders/custom presentation folders.jpg", status: "pending", description: "High-quality finish" },
-                { name: "Slits Folder", image: "assets/images/review-images/Presentation Folders/slits presentation folders.jpg", status: "pending", description: "Branded design" }
+                { name: "Presentation Folders", image: "assets/images/review-images/Main categories/presentation folders.jpg", status: "pending", description: "Professional folders", category: "Presentation Folders" }
             ],
             "PVC Board": [
-                { name: "Standard PVC", image: "assets/images/review-images/PVC Board/standard pvc board.jpg", status: "pending", description: "Rigid plastic board" },
-                { name: "Premium PVC", image: "assets/images/review-images/PVC Board/premium pvc board.jpg", status: "pending", description: "Custom cut shapes" }
+                { name: "PVC Board", image: "assets/images/review-images/Main categories/pvc board.jpg", status: "pending", description: "Rigid plastic board", category: "PVC Board" }
             ],
             "Aluminum Signs": [
-                { name: "Standard Aluminum", image: "assets/images/review-images/Main categories/aluminum signs.jpg", status: "pending", description: "Durable metal signage" },
-                { name: "Custom Aluminum", image: "assets/images/review-images/Main categories/aluminum signs.jpg", status: "pending", description: "Custom cut shapes" },
-                { name: "Aluminum Plaques", image: "assets/images/review-images/Main categories/aluminum signs.jpg", status: "pending", description: "Professional plaques" }
+                { name: "Aluminum Signs", image: "assets/images/review-images/Main categories/aluminum signs.jpg", status: "pending", description: "Durable metal signage", category: "Aluminum Signs" }
             ],
             "Flags": [
-                { name: "Standard Flag", image: "assets/images/review-images/Main categories/flags.jpg", status: "pending", description: "Outdoor flag printing" },
-                { name: "Custom Flag", image: "assets/images/review-images/Main categories/flags.jpg", status: "pending", description: "Custom designs" },
-                { name: "Event Flags", image: "assets/images/review-images/Main categories/flags.jpg", status: "pending", description: "Event promotion" }
+                { name: "Flags", image: "assets/images/review-images/Main categories/flags.jpg", status: "pending", description: "Custom flag printing", category: "Flags" }
             ],
             "Table Cloths": [
-                { name: "Standard Table Cloth", image: "assets/images/review-images/Main categories/table cloths.jpg", status: "pending", description: "Event table covers" },
-                { name: "Custom Table Cloth", image: "assets/images/review-images/Main categories/table cloths.jpg", status: "pending", description: "Branded designs" },
-                { name: "Premium Table Cloth", image: "assets/images/review-images/Main categories/table cloths.jpg", status: "pending", description: "High-quality finish" }
+                { name: "Table Cloths", image: "assets/images/review-images/Main categories/table cloths.jpg", status: "pending", description: "Event table covers", category: "Table Cloths" }
             ],
             "Window Graphics": [
-                { name: "Window Decals", image: "assets/images/review-images/Main categories/window graphics.jpg", status: "pending", description: "Glass application" },
-                { name: "Window Clings", image: "assets/images/review-images/Main categories/window graphics.jpg", status: "pending", description: "Temporary graphics" },
-                { name: "Window Perforated", image: "assets/images/review-images/Main categories/window graphics.jpg", status: "pending", description: "See-through graphics" }
+                { name: "Window Graphics", image: "assets/images/review-images/Main categories/window graphics.jpg", status: "pending", description: "Glass application graphics", category: "Window Graphics" }
             ],
             "Corrugated Plastic": [
-                { name: "Standard Corrugated", image: "assets/images/review-images/Main categories/corrugated plastic.jpg", status: "pending", description: "Durable plastic signs" },
-                { name: "Custom Corrugated", image: "assets/images/review-images/Main categories/corrugated plastic.jpg", status: "pending", description: "Custom shapes" },
-                { name: "Corrugated Signs", image: "assets/images/review-images/Main categories/corrugated plastic.jpg", status: "pending", description: "Outdoor signage" }
+                { name: "Corrugated Plastic", image: "assets/images/review-images/Main categories/corrugated plastic.jpg", status: "pending", description: "Durable plastic signs", category: "Corrugated Plastic" }
             ],
             "Foam Board": [
-                { name: "Standard Foam Board", image: "assets/images/review-images/Main categories/foam board.jpg", status: "pending", description: "Lightweight signage" },
-                { name: "Custom Foam Board", image: "assets/images/review-images/Main categories/foam board.jpg", status: "pending", description: "Custom shapes" },
-                { name: "Foam Board Signs", image: "assets/images/review-images/Main categories/foam board.jpg", status: "pending", description: "Indoor displays" }
+                { name: "Foam Board", image: "assets/images/review-images/Main categories/foam board.jpg", status: "pending", description: "Lightweight signage", category: "Foam Board" }
             ],
             "Styrene & Acrylic": [
-                { name: "Standard Styrene", image: "assets/images/review-images/Main categories/styrene & acrylic.jpg", status: "pending", description: "Rigid plastic material" },
-                { name: "Acrylic Signs", image: "assets/images/review-images/Main categories/styrene & acrylic.jpg", status: "pending", description: "Premium acrylic" },
-                { name: "Custom Acrylic", image: "assets/images/review-images/Main categories/styrene & acrylic.jpg", status: "pending", description: "Custom acrylic work" }
+                { name: "Styrene & Acrylic", image: "assets/images/review-images/Main categories/styrene & acrylic.jpg", status: "pending", description: "Rigid plastic material", category: "Styrene & Acrylic" }
             ],
             "Promotional Pens": [
-                { name: "Standard Pens", image: "assets/images/review-images/Main categories/promotional pens.jpg", status: "pending", description: "Custom printed pens" },
-                { name: "Premium Pens", image: "assets/images/review-images/Main categories/promotional pens.jpg", status: "pending", description: "High-quality pens" },
-                { name: "Custom Pens", image: "assets/images/review-images/Main categories/promotional pens.jpg", status: "pending", description: "Branded pens" }
+                { name: "Promotional Pens", image: "assets/images/review-images/Main categories/promotional pens.jpg", status: "pending", description: "Custom printed pens", category: "Promotional Pens" }
             ],
             "Event Items": [
-                { name: "Event Banners", image: "assets/images/review-images/Main categories/evet items.jpg", status: "pending", description: "Event promotion" },
-                { name: "Event Signs", image: "assets/images/review-images/Main categories/evet items.jpg", status: "pending", description: "Event signage" },
-                { name: "Event Materials", image: "assets/images/review-images/Main categories/evet items.jpg", status: "pending", description: "Complete event packages" }
+                { name: "Event Items", image: "assets/images/review-images/Main categories/evet items.jpg", status: "pending", description: "Event promotion materials", category: "Event Items" }
             ],
             "Specialty Signs": [
-                { name: "Custom Signs", image: "assets/images/review-images/Main categories/Specialty Signs.jpg", status: "pending", description: "Specialized signage" },
-                { name: "Premium Signs", image: "assets/images/review-images/Main categories/Specialty Signs.jpg", status: "pending", description: "High-end signage" },
-                { name: "Specialty Materials", image: "assets/images/review-images/Main categories/Specialty Signs.jpg", status: "pending", description: "Unique materials" }
+                { name: "Specialty Signs", image: "assets/images/review-images/Main categories/Specialty Signs.jpg", status: "pending", description: "Specialized signage", category: "Specialty Signs" }
             ]
         };
 
         let currentView = 'images';
         let comments = JSON.parse(localStorage.getItem('imageComments') || '[]');
+        let currentImage = null;
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
@@ -385,12 +381,19 @@
                 imageDiv.className = 'image-item';
                 imageDiv.onclick = () => openImageModal(image);
                 
+                const commentCount = getCommentsForImage(image.name).length;
+                
                 imageDiv.innerHTML = `
                     <img src="${image.image}" alt="${image.name}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlPC90ZXh0Pjwvc3ZnPg=='">
                     <div class="image-info">
                         <h6 class="mb-1">${image.name}</h6>
                         <p class="text-muted mb-1">${image.description}</p>
-                        <span class="badge bg-warning status-badge">${image.status}</span>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning status-badge">${image.status}</span>
+                            <small class="text-muted">
+                                <i class="fas fa-comments me-1"></i>${commentCount}
+                            </small>
+                        </div>
                     </div>
                 `;
                 imagesGrid.appendChild(imageDiv);
@@ -413,9 +416,47 @@
         }
 
         function openImageModal(image) {
+            currentImage = image;
             document.getElementById('modalImage').src = image.image;
             document.getElementById('modalTitle').textContent = image.name;
+            
+            // Update image details
+            document.getElementById('imageDetails').innerHTML = `
+                <p><strong>Name:</strong> ${image.name}</p>
+                <p><strong>Category:</strong> ${image.category}</p>
+                <p><strong>Description:</strong> ${image.description}</p>
+                <p><strong>Status:</strong> <span class="badge bg-warning">${image.status}</span></p>
+            `;
+            
+            // Load comments for this specific image
+            loadImageComments(image.name);
+            
             new bootstrap.Modal(document.getElementById('imageModal')).show();
+        }
+
+        function loadImageComments(imageName) {
+            const imageComments = getCommentsForImage(imageName);
+            const commentsContainer = document.getElementById('imageComments');
+            
+            if (imageComments.length === 0) {
+                commentsContainer.innerHTML = '<p class="text-muted">No comments yet for this image.</p>';
+                return;
+            }
+
+            commentsContainer.innerHTML = imageComments.map(comment => `
+                <div class="comment-item">
+                    <h6>${comment.name}</h6>
+                    <p class="mb-1">${comment.comment}</p>
+                    <div class="d-flex justify-content-between">
+                        <small class="text-muted">${new Date(comment.date).toLocaleDateString()}</small>
+                        <span class="rating-stars">${'⭐'.repeat(comment.rating)}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getCommentsForImage(imageName) {
+            return comments.filter(comment => comment.image === imageName);
         }
 
         function toggleView() {
@@ -459,8 +500,8 @@
                         <h6>${comment.name}</h6>
                         <p class="mb-1">${comment.comment}</p>
                         <div class="d-flex justify-content-between">
-                            <small class="text-muted">${comment.image}</small>
-                            <span>${'⭐'.repeat(comment.rating)}</span>
+                            <small class="text-muted">${comment.image} - ${new Date(comment.date).toLocaleDateString()}</small>
+                            <span class="rating-stars">${'⭐'.repeat(comment.rating)}</span>
                         </div>
                     </div>
                 </div>
@@ -487,13 +528,18 @@
             renderImages(filteredImages);
         });
 
-        // Comment form
-        document.getElementById('commentForm').addEventListener('submit', function(e) {
+        // Image comment form
+        document.getElementById('imageCommentForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            if (!currentImage) {
+                alert('Please select an image first');
+                return;
+            }
             
             const comment = {
                 name: document.getElementById('commentName').value,
-                image: document.getElementById('commentImage').value,
+                image: currentImage.name,
                 comment: document.getElementById('commentText').value,
                 rating: parseInt(document.getElementById('commentRating').value),
                 date: new Date().toISOString()
@@ -502,43 +548,44 @@
             comments.push(comment);
             localStorage.setItem('imageComments', JSON.stringify(comments));
             
-            loadComments();
-            updateStats();
-            this.reset();
-        });
-
-        // Populate comment image dropdown
-        function populateCommentImageDropdown() {
-            const select = document.getElementById('commentImage');
-            const allImages = getAllImages();
+            // Reload comments for current image
+            loadImageComments(currentImage.name);
             
-            allImages.forEach(image => {
-                const option = document.createElement('option');
-                option.value = image.name;
-                option.textContent = `${image.name} (${image.category})`;
-                select.appendChild(option);
-            });
-        }
-
-        // Initialize comment dropdown
-        populateCommentImageDropdown();
+            // Update stats and re-render images to show new comment count
+            updateStats();
+            renderImages();
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('Comment added successfully!');
+        });
 
         function downloadImage() {
             const image = document.getElementById('modalImage');
             const link = document.createElement('a');
             link.href = image.src;
-            link.download = image.alt || 'image.jpg';
+            link.download = currentImage ? currentImage.name.replace(/\s+/g, '_') + '.jpg' : 'image.jpg';
             link.click();
         }
 
         function approveImage() {
-            // Implementation for approving images
-            alert('Image approved!');
+            if (currentImage) {
+                currentImage.status = 'approved';
+                updateStats();
+                renderImages();
+                alert('Image approved!');
+            }
         }
 
         function rejectImage() {
-            // Implementation for rejecting images
-            alert('Image rejected!');
+            if (currentImage) {
+                currentImage.status = 'rejected';
+                updateStats();
+                renderImages();
+                alert('Image rejected!');
+            }
         }
     </script>
 </body>
