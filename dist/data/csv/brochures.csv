@@ -1,0 +1,4 @@
+product_option,image_url,quantity,default,freepik_prompt
+tri-fold,https://img.b2bpic.net/premium-photo/blank-trifold-us-letter-size-brochure-3d-render_926199-4257808.jpg,1,true,"A photorealistic image of high-quality Professional Brochures, showcasing the tri-fold style. --data professional-brochures-tri-fold"
+z-fold,https://img.b2bpic.net/premium-photo/blank-4panel-accordion-fold-brochure-render-present-your-design_433979-5219.jpg,1,false,"A photorealistic image of high-quality Professional Brochures, showcasing the z-fold style. --data professional-brochures-z-fold"
+booklet,https://img.b2bpic.net/premium-photo/set-black-brochure-poster-templates-abstract-style-mock-up-design_1308175-222457.jpg,1,false,"A photorealistic image of high-quality Professional Brochures, showcasing the booklet style. --data professional-brochures-booklet"

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeSeen Website - AI Guide Builder</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .editable-section {
+            background-color: #fff3cd;
+            border: 2px dashed #ffc107;
+        }
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #495057;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .dos-donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .dos {
+            background-color: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+        .donts {
+            background-color: #f8d7da;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #dc3545;
+        }
+        .export-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .export-btn:hover {
+            background-color: #218838;
+        }
+        .comment-box {
+            background-color: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .comment-box h4 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .custom-section {
+            background-color: #f0f8ff;
+            border: 2px solid #17a2b8;
+            margin: 15px 0;
+            position: relative;
+        }
+        .remove-section-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1;
+        }
+        .remove-section-btn:hover {
+            background-color: #c82333;
+        }
+        .section-title-input {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: transparent;
+            border: 1px dashed #17a2b8;
+        }
+        @media (max-width: 768px) {
+            .dos-donts {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BeSeen Website - AI Guide Builder</h1>
+        
+        <div class="section">
+            <p><strong>Instructions:</strong> Fill out the sections below to customize your AI guide. Yellow sections are editable - add your own details, comments, and project-specific information.</p>
+            <button class="export-btn" onclick="exportToMarkdown()">Export to Markdown</button>
+            <button class="export-btn" onclick="exportToHTML()">Export to HTML</button>
+        </div>
+
+        <!-- Project Overview -->
+        <div class="section">
+            <h2>Project Overview</h2>
+            <div class="form-group">
+                <label>Business Name:</label>
+                <input type="text" id="businessName" value="BeSeen" placeholder="Your business name">
+            </div>
+            <div class="form-group">
+                <label>Business Services:</label>
+                <input type="text" id="businessServices" value="Printing, Design, Code, and Mail services" placeholder="What services do you offer?">
+            </div>
+            <div class="form-group">
+                <label>Website Description:</label>
+                <textarea id="websiteDescription" placeholder="Describe your website's purpose and goals">Professional business website with product catalog and industry-specific pages</textarea>
+            </div>
+            <div class="form-group">
+                <label>Tech Stack:</label>
+                <input type="text" id="techStack" value="Static HTML with includes system, W3.CSS framework, vanilla JavaScript" placeholder="Technologies used">
+            </div>
+            <div class="form-group">
+                <label>Build System:</label>
+                <input type="text" id="buildSystem" value="Node.js build script that generates pages from templates and copies assets" placeholder="How is the site built?">
+            </div>
+            
+            <div class="comment-box editable-section">
+                <h4>Your Comments & Additional Details:</h4>
+                <textarea id="overviewComments" placeholder="Add any additional project context, history, or important details here..."></textarea>
+            </div>
+        </div>
+
+        <!-- System Architecture -->
+        <div class="section">
+            <h2>System Architecture</h2>
+            
+            <h3>Template System</h3>
+            <div class="form-group">
+                <label>Product Template:</label>
+                <input type="text" id="productTemplate" value="templates/product.html" placeholder="Path to product template">
+            </div>
+            <div class="form-group">
+                <label>Industry Template:</label>
+                <input type="text" id="industryTemplate" value="templates/industry.html" placeholder="Path to industry template">
+            </div>
+            <div class="form-group">
+                <label>Build Command:</label>
+                <input type="text" id="buildCommand" value="node build.js" placeholder="Command to build the site">
+            </div>
+
+            <div class="comment-box editable-section">
+                <h4>Template System Notes:</h4>
+                <textarea id="templateComments" placeholder="Add notes about your template system, custom modifications, or important details..."></textarea>
+            </div>
+
+            <h3>Include System</h3>
+            <div class="form-group">
+                <label>Includes Directory:</label>
+                <input type="text" id="includesDir" value="includes_new/" placeholder="Directory containing include files">
+            </div>
+            <div class="form-group">
+                <label>Include Method:</label>
+                <input type="text" id="includeMethod" value="w3-include-html" placeholder="How includes are processed">
+            </div>
+
+            <div class="comment-box editable-section">
+                <h4>Include System Notes:</h4>
+                <textarea id="includeComments" placeholder="Add notes about your include system, any customizations, or important details..."></textarea>
+            </div>
+        </div>
+
+        <!-- Navigation Structure -->
+        <div class="section">
+            <h2>Navigation Structure</h2>
+            <div class="form-group">
+                <label>Main Navigation Items:</label>
+                <input type="text" id="mainNav" value="Print, Design, Code, Mail, Industries" placeholder="Main navigation items">
+            </div>
+            <div class="form-group">
+                <label>Dropdown Menus:</label>
+                <input type="text" id="dropdownMenus" value="Industries (Real Estate)" placeholder="Dropdown menu items">
+            </div>
+            <div class="form-group">
+                <label>Product Categories:</label>
+                <input type="text" id="productCategories" value="business-cards, banners, flags, lawn-signs, a-frames" placeholder="Product categories">
+            </div>
+
+            <div class="comment-box editable-section">
+                <h4>Navigation Notes:</h4>
+                <textarea id="navigationComments" placeholder="Add notes about navigation structure, planned additions, or important details..."></textarea>
+            </div>
+        </div>
+
+        <!-- Development Workflow -->
+        <div class="section">
+            <h2>Development Workflow</h2>
+            
+            <h3>Local Development Commands</h3>
+            <div class="code-block">
+                <div>Server Command: <input type="text" id="serverCommand" value="node server.js" style="width: 200px; display: inline;"></div>
+                <div>Build Command: <input type="text" id="buildCommandWorkflow" value="node build.js" style="width: 200px; display: inline;"></div>
+                <div>Port: <input type="text" id="devPort" value="8001" style="width: 100px; display: inline;"></div>
+            </div>
+
+            <div class="comment-box editable-section">
+                <h4>Workflow Notes:</h4>
+                <textarea id="workflowComments" placeholder="Add notes about your development workflow, deployment process, or important steps..."></textarea>
+            </div>
+        </div>
+
+        <!-- DOS AND DON'TS -->
+        <div class="section">
+            <h2>DOS AND DON'TS</h2>
+            
+            <div class="dos-donts">
+                <div class="dos">
+                    <h3>✅ DO</h3>
+                    <div class="form-group">
+                        <label>File Management Rules:</label>
+                        <textarea id="doFileManagement" placeholder="Add your file management rules...">Always use the existing template system for products and industries
+Keep all includes in includes_new/ directory
+Use the build system - never edit files in dist/ directly
+Follow the established naming conventions (kebab-case for slugs)</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Code Standards:</label>
+                        <textarea id="doCodeStandards" placeholder="Add your code standards...">Use W3.CSS classes for styling consistency
+Keep JavaScript vanilla (no frameworks)
+Use semantic HTML structure
+Maintain responsive design principles</textarea>
+                    </div>
+
+                    <div class="comment-box editable-section">
+                        <h4>Additional DOs:</h4>
+                        <textarea id="additionalDos" placeholder="Add any additional things that should be done..."></textarea>
+                    </div>
+                </div>
+
+                <div class="donts">
+                    <h3>❌ DON'T</h3>
+                    <div class="form-group">
+                        <label>File Management Restrictions:</label>
+                        <textarea id="dontFileManagement" placeholder="Add your file management restrictions...">Don't create standalone HTML files for products (use templates)
+Don't edit generated files in dist/ directory
+Don't create new include systems - use existing w3-include-html
+Don't break the established directory structure</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Code Restrictions:</label>
+                        <textarea id="dontCodeStandards" placeholder="Add your code restrictions...">Don't add heavy JavaScript frameworks
+Don't use inline styles (use CSS classes)
+Don't hardcode paths - use relative paths
+Don't create overly complex nested structures</textarea>
+                    </div>
+
+                    <div class="comment-box editable-section">
+                        <h4>Additional DON'Ts:</h4>
+                        <textarea id="additionalDonts" placeholder="Add any additional things that should NOT be done..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common Tasks -->
+        <div class="section">
+            <h2>Common Tasks</h2>
+            
+            <h3>Adding a New Product</h3>
+            <div class="form-group">
+                <label>Product Addition Steps:</label>
+                <textarea id="productSteps" placeholder="Customize the steps for adding products...">1. Edit products.json to add product definition
+2. Create content/products/[product-slug].html with product details
+3. Add product image to assets/images/products/
+4. Run node build.js
+5. Test at http://localhost:8001/products/[category]/[product-slug]/</textarea>
+            </div>
+
+            <div class="comment-box editable-section">
+                <h4>Product Addition Notes:</h4>
+                <textarea id="productNotes" placeholder="Add any additional notes about adding products..."></textarea>
+            </div>
+
+            <h3>Adding a New Industry</h3>
+            <div class="form-group">
+                <label>Industry Addition Steps:</label>
+                <textarea id="industrySteps" placeholder="Customize the steps for adding industries...">1. Edit categories.json to add industry definition
+2. Create content/industries/[industry-slug].html with industry content
+3. Update navigation in includes_new/header.html
+4. Add industry-specific products to products.json with industry in their industries array
+5. Run node build.js</textarea>
+            </div>
+
+            <div class="comment-box editable-section">
+                <h4>Industry Addition Notes:</h4>
+                <textarea id="industryNotes" placeholder="Add any additional notes about adding industries..."></textarea>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="section">
+            <h2>Troubleshooting</h2>
+            
+            <div class="form-group">
+                <label>Build Issues:</label>
+                <textarea id="buildIssues" placeholder="Add common build issues and solutions...">Missing includes: Check that build.js copies includes_new/ to dist/includes_new/
+Missing assets: Verify asset paths in build.js copy operations
+Template errors: Check JSON syntax in data files</textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Navigation Issues:</label>
+                <textarea id="navIssues" placeholder="Add common navigation issues and solutions...">Broken dropdowns: Check JavaScript includes and W3.CSS classes
+Mobile menu problems: Don't modify structure without understanding existing implementation
+Missing pages: Ensure build process generated the page and check URL structure</textarea>
+            </div>
+
+            <div class="comment-box editable-section">
+                <h4>Additional Troubleshooting:</h4>
+                <textarea id="additionalTroubleshooting" placeholder="Add any additional troubleshooting scenarios and solutions..."></textarea>
+            </div>
+        </div>
+
+        <!-- Key Conventions -->
+        <div class="section">
+            <h2>Key Conventions</h2>
+            
+            <div class="form-group">
+                <label>URL Structure:</label>
+                <input type="text" id="urlStructure" value="/products/[category]/[product-slug]/" placeholder="URL structure pattern">
+            </div>
+            <div class="form-group">
+                <label>Industry URLs:</label>
+                <input type="text" id="industryUrls" value="/industries/[industry-slug]/" placeholder="Industry URL pattern">
+            </div>
+            <div class="form-group">
+                <label>Image Paths:</label>
+                <input type="text" id="imagePaths" value="/assets/images/[category]/[filename]" placeholder="Image path pattern">
+            </div>
+            <div class="form-group">
+                <label>File Naming:</label>
+                <input type="text" id="fileNaming" value="kebab-case for all slugs and filenames" placeholder="File naming convention">
+            </div>
+
+            <div class="comment-box editable-section">
+                <h4>Additional Conventions:</h4>
+                <textarea id="additionalConventions" placeholder="Add any additional naming conventions or patterns..."></textarea>
+            </div>
+        </div>
+
+        <!-- Contact & Support -->
+        <div class="section editable-section">
+            <h2>Contact & Support</h2>
+            
+            <div class="form-group">
+                <label>Project Owner/Contact:</label>
+                <input type="text" id="projectOwner" placeholder="Your name or team contact">
+            </div>
+            <div class="form-group">
+                <label>Repository/Version Control:</label>
+                <input type="text" id="repository" placeholder="Git repository URL or version control info">
+            </div>
+            <div class="form-group">
+                <label>Deployment Info:</label>
+                <textarea id="deploymentInfo" placeholder="Add deployment process, hosting details, or production environment info..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Additional Support Notes:</label>
+                <textarea id="supportNotes" placeholder="Add any additional support information, team contacts, or important notes..."></textarea>
+            </div>
+        </div>
+
+        <!-- Custom Sections -->
+        <div class="section">
+            <h2>Custom Sections</h2>
+            <p>Add your own sections with custom titles and content:</p>
+            <button class="export-btn" onclick="addCustomSection()" style="background-color: #17a2b8;">+ Add Custom Section</button>
+            <div id="customSectionsContainer"></div>
+        </div>
+
+        <!-- Export Buttons -->
+        <div class="section">
+            <button class="export-btn" onclick="exportToMarkdown()">Export to Markdown</button>
+            <button class="export-btn" onclick="exportToHTML()">Export to HTML</button>
+            <button class="export-btn" onclick="saveForm()" style="background-color: #007bff;">Save Form Data</button>
+            <button class="export-btn" onclick="loadForm()" style="background-color: #6c757d;">Load Form Data</button>
+        </div>
+    </div>
+
+    <script>
+        let customSectionCounter = 0;
+
+        function addCustomSection() {
+            customSectionCounter++;
+            const container = document.getElementById('customSectionsContainer');
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'section custom-section editable-section';
+            sectionDiv.id = `customSection${customSectionCounter}`;
+            
+            sectionDiv.innerHTML = `
+                <button class="remove-section-btn" onclick="removeCustomSection('customSection${customSectionCounter}')" title="Remove Section">×</button>
+                <div class="form-group">
+                    <label>Section Title:</label>
+                    <input type="text" class="section-title-input" id="customTitle${customSectionCounter}" placeholder="Enter section title (e.g., 'API Documentation', 'Database Schema', etc.)">
+                </div>
+                <div class="form-group">
+                    <label>Section Content:</label>
+                    <textarea id="customContent${customSectionCounter}" placeholder="Add your custom content here. This could be technical details, special instructions, code snippets, or any other information relevant to your project..."></textarea>
+                </div>
+            `;
+            
+            container.appendChild(sectionDiv);
+            
+            // Focus on the title input
+            document.getElementById(`customTitle${customSectionCounter}`).focus();
+        }
+
+        function removeCustomSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section && confirm('Are you sure you want to remove this section?')) {
+                section.remove();
+            }
+        }
+
+        function exportToMarkdown() {
+            const content = generateMarkdown();
+            downloadFile('AI-GUIDE.md', content);
+        }
+
+        function exportToHTML() {
+            const content = generateHTML();
+            downloadFile('AI-GUIDE.html', content);
+        }
+
+        function generateMarkdown() {
+            // Get custom sections
+            let customSectionsMarkdown = '';
+            const customSections = document.querySelectorAll('[id^="customSection"]');
+            customSections.forEach(section => {
+                const titleInput = section.querySelector('[id^="customTitle"]');
+                const contentTextarea = section.querySelector('[id^="customContent"]');
+                if (titleInput && contentTextarea && titleInput.value.trim()) {
+                    customSectionsMarkdown += `\n## ${titleInput.value}\n\n${contentTextarea.value}\n`;
+                }
+            });
+
+            return `# ${document.getElementById('businessName').value} - AI Guide
+
+## Project Overview
+
+**Business:** ${document.getElementById('businessName').value} - ${document.getElementById('businessServices').value}  
+**Website:** ${document.getElementById('websiteDescription').value}  
+**Tech Stack:** ${document.getElementById('techStack').value}  
+**Build System:** ${document.getElementById('buildSystem').value}  
+
+${document.getElementById('overviewComments').value ? '### Additional Notes\n' + document.getElementById('overviewComments').value + '\n' : ''}
+
+## System Architecture
+
+### Template System
+- **Products:** Generated from \`${document.getElementById('productTemplate').value}\` using data from \`products.json\`
+- **Industries:** Generated from \`${document.getElementById('industryTemplate').value}\` using content from \`content/industries/\`
+- **Build Process:** Run \`${document.getElementById('buildCommand').value}\` to generate all pages into \`dist/\`
+
+${document.getElementById('templateComments').value ? '#### Template Notes\n' + document.getElementById('templateComments').value + '\n' : ''}
+
+### Include System
+- **Homepage & Static Pages:** Use \`${document.getElementById('includeMethod').value}\` for header, footer, mobile menu
+- **Includes Location:** \`${document.getElementById('includesDir').value}\` directory (copied to \`dist/includes_new/\` during build)
+
+${document.getElementById('includeComments').value ? '#### Include Notes\n' + document.getElementById('includeComments').value + '\n' : ''}
+
+## Navigation Structure
+- **Main Nav:** ${document.getElementById('mainNav').value}
+- **Dropdowns:** ${document.getElementById('dropdownMenus').value}
+- **Product Categories:** ${document.getElementById('productCategories').value}
+
+${document.getElementById('navigationComments').value ? '### Navigation Notes\n' + document.getElementById('navigationComments').value + '\n' : ''}
+
+## Development Workflow
+
+### Local Development
+\`\`\`bash
+${document.getElementById('serverCommand').value}    # Start dev server on localhost:${document.getElementById('devPort').value}
+${document.getElementById('buildCommandWorkflow').value}     # Build site to dist/
+\`\`\`
+
+${document.getElementById('workflowComments').value ? '### Workflow Notes\n' + document.getElementById('workflowComments').value + '\n' : ''}
+
+## DOS AND DON'TS
+
+### ✅ DO
+
+**File Management:**
+${document.getElementById('doFileManagement').value.split('\n').map(line => '- ' + line).join('\n')}
+
+**Code Standards:**
+${document.getElementById('doCodeStandards').value.split('\n').map(line => '- ' + line).join('\n')}
+
+${document.getElementById('additionalDos').value ? '**Additional DOs:**\n' + document.getElementById('additionalDos').value + '\n' : ''}
+
+### ❌ DON'T
+
+**File Management:**
+${document.getElementById('dontFileManagement').value.split('\n').map(line => '- ' + line).join('\n')}
+
+**Code Standards:**
+${document.getElementById('dontCodeStandards').value.split('\n').map(line => '- ' + line).join('\n')}
+
+${document.getElementById('additionalDonts').value ? '**Additional DON\'Ts:**\n' + document.getElementById('additionalDonts').value + '\n' : ''}
+
+## Common Tasks
+
+### Adding a New Product
+${document.getElementById('productSteps').value.split('\n').map((line, index) => `${index + 1}. ${line.replace(/^\d+\.\s*/, '')}`).join('\n')}
+
+${document.getElementById('productNotes').value ? '#### Product Notes\n' + document.getElementById('productNotes').value + '\n' : ''}
+
+### Adding a New Industry
+${document.getElementById('industrySteps').value.split('\n').map((line, index) => `${index + 1}. ${line.replace(/^\d+\.\s*/, '')}`).join('\n')}
+
+${document.getElementById('industryNotes').value ? '#### Industry Notes\n' + document.getElementById('industryNotes').value + '\n' : ''}
+
+## Troubleshooting
+
+### Build Issues
+${document.getElementById('buildIssues').value.split('\n').map(line => '- **' + line.split(':')[0] + ':** ' + line.split(':').slice(1).join(':')).join('\n')}
+
+### Navigation Issues
+${document.getElementById('navIssues').value.split('\n').map(line => '- **' + line.split(':')[0] + ':** ' + line.split(':').slice(1).join(':')).join('\n')}
+
+${document.getElementById('additionalTroubleshooting').value ? '### Additional Troubleshooting\n' + document.getElementById('additionalTroubleshooting').value + '\n' : ''}
+
+## Key Conventions
+
+- **URLs:** \`${document.getElementById('urlStructure').value}\`
+- **Industries:** \`${document.getElementById('industryUrls').value}\`
+- **Images:** \`${document.getElementById('imagePaths').value}\`
+- **File naming:** ${document.getElementById('fileNaming').value}
+
+${document.getElementById('additionalConventions').value ? '### Additional Conventions\n' + document.getElementById('additionalConventions').value + '\n' : ''}
+${customSectionsMarkdown}
+## Contact & Support
+
+${document.getElementById('projectOwner').value ? '**Project Owner:** ' + document.getElementById('projectOwner').value + '\n' : ''}
+${document.getElementById('repository').value ? '**Repository:** ' + document.getElementById('repository').value + '\n' : ''}
+${document.getElementById('deploymentInfo').value ? '**Deployment:** ' + document.getElementById('deploymentInfo').value + '\n' : ''}
+${document.getElementById('supportNotes').value ? '**Support Notes:** ' + document.getElementById('supportNotes').value + '\n' : ''}
+
+This is a static website with a build system. For major structural changes, always:
+1. Understand the existing system first
+2. Test changes locally
+3. Use the established patterns
+4. Document any new conventions
+
+Remember: The system is designed to be maintainable and scalable. Don't break established patterns without good reason.`;
+        }
+
+        function generateHTML() {
+            const markdownContent = generateMarkdown();
+            return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${document.getElementById('businessName').value} - AI Guide</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; }
+        h2 { color: #34495e; margin-top: 30px; }
+        h3 { color: #2980b9; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+        ul, ol { margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <pre>${markdownContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+</body>
+</html>`;
+        }
+
+        function downloadFile(filename, content) {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        function saveForm() {
+            const formData = {};
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                formData[input.id] = input.value;
+            });
+            localStorage.setItem('aiGuideFormData', JSON.stringify(formData));
+            alert('Form data saved to browser storage!');
+        }
+
+        function loadForm() {
+            const savedData = localStorage.getItem('aiGuideFormData');
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                Object.keys(formData).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.value = formData[key];
+                    }
+                });
+                alert('Form data loaded from browser storage!');
+            } else {
+                alert('No saved form data found.');
+            }
+        }
+    </script>
+</body>
+</html> 

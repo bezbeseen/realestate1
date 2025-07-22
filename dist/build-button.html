@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BE SEEN Build Tool</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .build-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .build-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            min-width: 200px;
+        }
+        
+        .build-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .build-btn:active {
+            transform: translateY(0);
+        }
+        
+        .output {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-align: left;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .status {
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+        .building { color: #ffc107; }
+        
+        .commands {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-align: left;
+        }
+        
+        .commands h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .command {
+            background: #333;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .command:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="build-container">
+        <h1>🚀 BE SEEN</h1>
+        <p class="subtitle">Build Tool Dashboard</p>
+        
+        <button class="build-btn" onclick="runBuild()">
+            🔨 Build Project
+        </button>
+        
+        <button class="build-btn" onclick="copyIndex()">
+            📄 Copy Index to Dist
+        </button>
+        
+        <div id="status" class="status"></div>
+        <div id="output" class="output"></div>
+        
+        <div class="commands">
+            <h3>📋 Quick Commands:</h3>
+            <div class="command" onclick="copyCommand('npm run build')">
+                npm run build
+            </div>
+            <div class="command" onclick="copyCommand('cp index.html dist/index.html')">
+                cp index.html dist/index.html
+            </div>
+            <div class="command" onclick="copyCommand('cd dist && python3 -m http.server 8001')">
+                cd dist && python3 -m http.server 8001
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = 'status ' + type;
+        }
+        
+        function showOutput(text) {
+            const output = document.getElementById('output');
+            output.style.display = 'block';
+            output.textContent = text;
+        }
+        
+        function runBuild() {
+            setStatus('🔨 Building project...', 'building');
+            showOutput('Running npm run build...\n\nNote: This is a demo interface. Please run the command in your terminal:\n\nnpm run build');
+            
+            // Simulate build process
+            setTimeout(() => {
+                setStatus('✅ Build completed! Check your terminal for details.', 'success');
+            }, 2000);
+        }
+        
+        function copyIndex() {
+            setStatus('📄 Copying index.html...', 'building');
+            showOutput('Running cp index.html dist/index.html...\n\nNote: This is a demo interface. Please run the command in your terminal:\n\ncp index.html dist/index.html');
+            
+            setTimeout(() => {
+                setStatus('✅ Index copied to dist!', 'success');
+            }, 1000);
+        }
+        
+        function copyCommand(command) {
+            navigator.clipboard.writeText(command).then(() => {
+                setStatus('📋 Command copied to clipboard!', 'success');
+            }).catch(() => {
+                setStatus('❌ Could not copy to clipboard', 'error');
+            });
+        }
+        
+        // Initial status
+        setStatus('Ready to build! 🎯', 'success');
+    </script>
+</body>
+</html> 
