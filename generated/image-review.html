@@ -371,7 +371,8 @@
         };
 
         let currentView = 'images';
-        let comments = JSON.parse(localStorage.getItem('imageComments') || '[]');
+        let comments = [];
+        let imageStatuses = {};
         let currentImage = null;
 
         // Initialize the page
@@ -386,11 +387,86 @@
             });
             console.log('Total images:', totalImages);
             
+            loadDataFromServer();
             renderCategories();
             renderImages();
             updateStats();
-            loadComments();
         });
+
+        async function loadDataFromServer() {
+            try {
+                const response = await fetch('api/save-image-data.php');
+                const data = await response.json();
+                
+                if (data.success) {
+                    comments = data.comments || [];
+                    imageStatuses = data.statuses || {};
+                    console.log('Loaded from server:', comments.length, 'comments,', Object.keys(imageStatuses).length, 'statuses');
+                }
+            } catch (error) {
+                console.error('Failed to load data from server:', error);
+                // Fallback to localStorage
+                comments = JSON.parse(localStorage.getItem('imageComments') || '[]');
+            }
+        }
+
+        async function saveCommentToServer(comment) {
+            try {
+                const response = await fetch('api/save-image-data.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'save_comment',
+                        name: comment.name,
+                        image: comment.image,
+                        comment: comment.comment,
+                        rating: comment.rating
+                    })
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    console.log('Comment saved to server successfully');
+                    return true;
+                } else {
+                    console.error('Failed to save comment:', result.message);
+                    return false;
+                }
+            } catch (error) {
+                console.error('Error saving comment:', error);
+                return false;
+            }
+        }
+
+        async function saveStatusToServer(imageName, status) {
+            try {
+                const response = await fetch('api/save-image-data.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'save_status',
+                        image: imageName,
+                        status: status
+                    })
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    console.log('Status saved to server successfully');
+                    return true;
+                } else {
+                    console.error('Failed to save status:', result.message);
+                    return false;
+                }
+            } catch (error) {
+                console.error('Error saving status:', error);
+                return false;
+            }
+        }
 
         function renderCategories() {
             const categoriesList = document.getElementById('categoriesList');
@@ -425,6 +501,9 @@
                 
                 const commentCount = getCommentsForImage(image.name).length;
                 
+                // Use saved status if available, otherwise use default
+                const savedStatus = imageStatuses[image.name] || image.status;
+                
                 imageDiv.innerHTML = `
                     <img src="${image.image}" alt="${image.name}" 
                          onerror="console.error('Failed to load image:', '${image.image}'); this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlPC90ZXh0Pjwvc3ZnPg=='"
@@ -433,7 +512,7 @@
                         <h6 class="mb-1">${image.name}</h6>
                         <p class="text-muted mb-1">${image.description}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="badge bg-warning status-badge">${image.status}</span>
+                            <span class="badge ${savedStatus === 'approved' ? 'bg-success' : savedStatus === 'rejected' ? 'bg-danger' : 'bg-warning'} status-badge">${savedStatus}</span>
                             <small class="text-muted">
                                 <i class="fas fa-comments me-1"></i>${commentCount}
                             </small>
@@ -464,12 +543,15 @@
             document.getElementById('modalImage').src = image.image;
             document.getElementById('modalTitle').textContent = image.name;
             
+            // Use saved status if available, otherwise use default
+            const savedStatus = imageStatuses[image.name] || image.status;
+            
             // Update image details
             document.getElementById('imageDetails').innerHTML = `
                 <p><strong>Name:</strong> ${image.name}</p>
                 <p><strong>Category:</strong> ${image.category}</p>
                 <p><strong>Description:</strong> ${image.description}</p>
-                <p><strong>Status:</strong> <span class="badge bg-warning">${image.status}</span></p>
+                <p><strong>Status:</strong> <span class="badge ${savedStatus === 'approved' ? 'bg-success' : savedStatus === 'rejected' ? 'bg-danger' : 'bg-warning'}">${savedStatus}</span></p>
             `;
             
             // Load comments for this specific image
@@ -527,7 +609,10 @@
             document.getElementById('totalCategories').textContent = Object.keys(imageData).length;
             document.getElementById('totalComments').textContent = comments.length;
             
-            const approvedCount = allImages.filter(img => img.status === 'approved').length;
+            const approvedCount = allImages.filter(img => {
+                const savedStatus = imageStatuses[img.name] || img.status;
+                return savedStatus === 'approved';
+            }).length;
             document.getElementById('approvedCount').textContent = approvedCount;
         }
 
@@ -568,12 +653,15 @@
         document.getElementById('statusFilter').addEventListener('change', function(e) {
             const status = e.target.value;
             const allImages = getAllImages();
-            const filteredImages = status ? allImages.filter(image => image.status === status) : allImages;
+            const filteredImages = status ? allImages.filter(image => {
+                const savedStatus = imageStatuses[image.name] || image.status;
+                return savedStatus === status;
+            }) : allImages;
             renderImages(filteredImages);
         });
 
         // Image comment form
-        document.getElementById('imageCommentForm').addEventListener('submit', function(e) {
+        document.getElementById('imageCommentForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             if (!currentImage) {
@@ -589,21 +677,25 @@
                 date: new Date().toISOString()
             };
             
-            comments.push(comment);
-            localStorage.setItem('imageComments', JSON.stringify(comments));
+            const success = await saveCommentToServer(comment);
             
-            // Reload comments for current image
-            loadImageComments(currentImage.name);
-            
-            // Update stats and re-render images to show new comment count
-            updateStats();
-            renderImages();
-            
-            // Reset form
-            this.reset();
-            
-            // Show success message
-            alert('Comment added successfully!');
+            if (success) {
+                comments.push(comment);
+                // Reload comments for current image
+                loadImageComments(currentImage.name);
+                
+                // Update stats and re-render images to show new comment count
+                updateStats();
+                renderImages();
+                
+                // Reset form
+                this.reset();
+                
+                // Show success message
+                alert('Comment added successfully!');
+            } else {
+                alert('Failed to add comment.');
+            }
         });
 
         function downloadImage() {
@@ -614,21 +706,31 @@
             link.click();
         }
 
-        function approveImage() {
+        async function approveImage() {
             if (currentImage) {
-                currentImage.status = 'approved';
-                updateStats();
-                renderImages();
-                alert('Image approved!');
+                const success = await saveStatusToServer(currentImage.name, 'approved');
+                if (success) {
+                    currentImage.status = 'approved';
+                    updateStats();
+                    renderImages();
+                    alert('Image approved!');
+                } else {
+                    alert('Failed to approve image.');
+                }
             }
         }
 
-        function rejectImage() {
+        async function rejectImage() {
             if (currentImage) {
-                currentImage.status = 'rejected';
-                updateStats();
-                renderImages();
-                alert('Image rejected!');
+                const success = await saveStatusToServer(currentImage.name, 'rejected');
+                if (success) {
+                    currentImage.status = 'rejected';
+                    updateStats();
+                    renderImages();
+                    alert('Image rejected!');
+                } else {
+                    alert('Failed to reject image.');
+                }
             }
         }
     </script>
