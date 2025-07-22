@@ -376,7 +376,7 @@
         let currentImage = null;
 
         // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', async function() {
             console.log('Image Review Hub Initializing...');
             console.log('Total categories:', Object.keys(imageData).length);
             
@@ -387,10 +387,14 @@
             });
             console.log('Total images:', totalImages);
             
-            loadDataFromServer();
+            // Load data from server first
+            await loadDataFromServer();
+            
+            // Then render everything with the loaded data
             renderCategories();
             renderImages();
             updateStats();
+            loadComments();
         });
 
         async function loadDataFromServer() {
@@ -402,6 +406,15 @@
                     comments = data.comments || [];
                     imageStatuses = data.statuses || {};
                     console.log('Loaded from server:', comments.length, 'comments,', Object.keys(imageStatuses).length, 'statuses');
+                    
+                    // Apply saved statuses to image data
+                    Object.keys(imageData).forEach(category => {
+                        imageData[category].forEach(image => {
+                            if (imageStatuses[image.name]) {
+                                image.status = imageStatuses[image.name];
+                            }
+                        });
+                    });
                 }
             } catch (error) {
                 console.error('Failed to load data from server:', error);
@@ -710,7 +723,19 @@
             if (currentImage) {
                 const success = await saveStatusToServer(currentImage.name, 'approved');
                 if (success) {
+                    // Update the image data
                     currentImage.status = 'approved';
+                    imageStatuses[currentImage.name] = 'approved';
+                    
+                    // Update the modal display
+                    const savedStatus = imageStatuses[currentImage.name] || currentImage.status;
+                    document.getElementById('imageDetails').innerHTML = `
+                        <p><strong>Name:</strong> ${currentImage.name}</p>
+                        <p><strong>Category:</strong> ${currentImage.category}</p>
+                        <p><strong>Description:</strong> ${currentImage.description}</p>
+                        <p><strong>Status:</strong> <span class="badge ${savedStatus === 'approved' ? 'bg-success' : savedStatus === 'rejected' ? 'bg-danger' : 'bg-warning'}">${savedStatus}</span></p>
+                    `;
+                    
                     updateStats();
                     renderImages();
                     alert('Image approved!');
@@ -724,7 +749,19 @@
             if (currentImage) {
                 const success = await saveStatusToServer(currentImage.name, 'rejected');
                 if (success) {
+                    // Update the image data
                     currentImage.status = 'rejected';
+                    imageStatuses[currentImage.name] = 'rejected';
+                    
+                    // Update the modal display
+                    const savedStatus = imageStatuses[currentImage.name] || currentImage.status;
+                    document.getElementById('imageDetails').innerHTML = `
+                        <p><strong>Name:</strong> ${currentImage.name}</p>
+                        <p><strong>Category:</strong> ${currentImage.category}</p>
+                        <p><strong>Description:</strong> ${currentImage.description}</p>
+                        <p><strong>Status:</strong> <span class="badge ${savedStatus === 'approved' ? 'bg-success' : savedStatus === 'rejected' ? 'bg-danger' : 'bg-warning'}">${savedStatus}</span></p>
+                    `;
+                    
                     updateStats();
                     renderImages();
                     alert('Image rejected!');
