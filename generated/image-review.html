@@ -82,6 +82,50 @@
             max-height: 400px;
             object-fit: contain;
         }
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+        .toast {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #28a745;
+            animation: slideIn 0.3s ease-out;
+        }
+        .toast.error {
+            border-left-color: #dc3545;
+        }
+        .toast.warning {
+            border-left-color: #ffc107;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .toast.fade-out {
+            animation: fadeOut 0.3s ease-in forwards;
+        }
+        @keyframes fadeOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -187,6 +231,9 @@
         </div>
     </div>
 
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
     <!-- Image Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1">
         <div class="modal-dialog modal-xl">
@@ -231,20 +278,7 @@
                             <h6>Add Comment</h6>
                             <form id="imageCommentForm">
                                 <div class="mb-3">
-                                    <input type="text" id="commentName" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="mb-3">
                                     <textarea id="commentText" class="form-control" rows="3" placeholder="Your comment..." required></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <select id="commentRating" class="form-select" required>
-                                        <option value="">Select rating...</option>
-                                        <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-                                        <option value="4">⭐⭐⭐⭐ Very Good</option>
-                                        <option value="3">⭐⭐⭐ Good</option>
-                                        <option value="2">⭐⭐ Fair</option>
-                                        <option value="1">⭐ Poor</option>
-                                    </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary w-100">Submit Comment</button>
                             </form>
@@ -423,6 +457,25 @@
             }
         }
 
+        function showToast(message, type = 'success') {
+            const toastContainer = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = message;
+            
+            toastContainer.appendChild(toast);
+            
+            // Auto-remove after 3 seconds
+            setTimeout(() => {
+                toast.classList.add('fade-out');
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
         async function saveCommentToServer(comment) {
             try {
                 const response = await fetch('api/save-image-data.php', {
@@ -588,7 +641,6 @@
                     <p class="mb-1">${comment.comment}</p>
                     <div class="d-flex justify-content-between">
                         <small class="text-muted">${new Date(comment.date).toLocaleDateString()}</small>
-                        <span class="rating-stars">${'⭐'.repeat(comment.rating)}</span>
                     </div>
                 </div>
             `).join('');
@@ -643,7 +695,6 @@
                         <p class="mb-1">${comment.comment}</p>
                         <div class="d-flex justify-content-between">
                             <small class="text-muted">${comment.image} - ${new Date(comment.date).toLocaleDateString()}</small>
-                            <span class="rating-stars">${'⭐'.repeat(comment.rating)}</span>
                         </div>
                     </div>
                 </div>
@@ -678,15 +729,15 @@
             e.preventDefault();
             
             if (!currentImage) {
-                alert('Please select an image first');
+                showToast('Please select an image first', 'error');
                 return;
             }
             
             const comment = {
-                name: document.getElementById('commentName').value,
+                name: 'Anonymous',
                 image: currentImage.name,
                 comment: document.getElementById('commentText').value,
-                rating: parseInt(document.getElementById('commentRating').value),
+                rating: 5,
                 date: new Date().toISOString()
             };
             
@@ -705,9 +756,9 @@
                 this.reset();
                 
                 // Show success message
-                alert('Comment added successfully!');
+                showToast('Comment added successfully!');
             } else {
-                alert('Failed to add comment.');
+                showToast('Failed to add comment.', 'error');
             }
         });
 
@@ -717,6 +768,7 @@
             link.href = image.src;
             link.download = currentImage ? currentImage.name.replace(/\s+/g, '_') + '.jpg' : 'image.jpg';
             link.click();
+            showToast('Download started!');
         }
 
         async function approveImage() {
@@ -738,9 +790,9 @@
                     
                     updateStats();
                     renderImages();
-                    alert('Image approved!');
+                    showToast('Image approved!');
                 } else {
-                    alert('Failed to approve image.');
+                    showToast('Failed to approve image.', 'error');
                 }
             }
         }
@@ -764,9 +816,9 @@
                     
                     updateStats();
                     renderImages();
-                    alert('Image rejected!');
+                    showToast('Image rejected!');
                 } else {
-                    alert('Failed to reject image.');
+                    showToast('Failed to reject image.', 'error');
                 }
             }
         }
