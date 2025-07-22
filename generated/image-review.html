@@ -578,7 +578,14 @@
                         <h6 class="mb-1">${image.name}</h6>
                         <p class="text-muted mb-1">${image.description}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="badge ${savedStatus === 'approved' ? 'bg-success' : savedStatus === 'rejected' ? 'bg-danger' : 'bg-warning'} status-badge">${savedStatus}</span>
+                            <select class="form-select form-select-sm status-dropdown" 
+                                    style="width: auto; min-width: 100px;" 
+                                    onchange="updateImageStatus('${image.name}', this.value)"
+                                    onclick="event.stopPropagation()">
+                                <option value="pending" ${savedStatus === 'pending' ? 'selected' : ''}>⏳ Pending</option>
+                                <option value="approved" ${savedStatus === 'approved' ? 'selected' : ''}>✅ Approved</option>
+                                <option value="rejected" ${savedStatus === 'rejected' ? 'selected' : ''}>❌ Rejected</option>
+                            </select>
                             <small class="text-muted">
                                 <i class="fas fa-comments me-1"></i>${commentCount}
                             </small>
@@ -604,6 +611,30 @@
             renderImages(categoryImages);
         }
 
+        async function updateImageStatus(imageName, newStatus) {
+            const success = await saveStatusToServer(imageName, newStatus);
+            if (success) {
+                // Update the image data
+                imageStatuses[imageName] = newStatus;
+                
+                // Find and update the image in the data
+                Object.keys(imageData).forEach(category => {
+                    imageData[category].forEach(image => {
+                        if (image.name === imageName) {
+                            image.status = newStatus;
+                        }
+                    });
+                });
+                
+                updateStats();
+                showToast(`Status updated to ${newStatus}!`);
+            } else {
+                showToast('Failed to update status.', 'error');
+                // Revert the dropdown to the previous value
+                renderImages();
+            }
+        }
+
         function openImageModal(image) {
             currentImage = image;
             document.getElementById('modalImage').src = image.image;
@@ -617,13 +648,35 @@
                 <p><strong>Name:</strong> ${image.name}</p>
                 <p><strong>Category:</strong> ${image.category}</p>
                 <p><strong>Description:</strong> ${image.description}</p>
-                <p><strong>Status:</strong> <span class="badge ${savedStatus === 'approved' ? 'bg-success' : savedStatus === 'rejected' ? 'bg-danger' : 'bg-warning'}">${savedStatus}</span></p>
+                <p><strong>Status:</strong> 
+                    <select class="form-select form-select-sm" 
+                            onchange="updateModalStatus('${image.name}', this.value)">
+                        <option value="pending" ${savedStatus === 'pending' ? 'selected' : ''}>⏳ Pending</option>
+                        <option value="approved" ${savedStatus === 'approved' ? 'selected' : ''}>✅ Approved</option>
+                        <option value="rejected" ${savedStatus === 'rejected' ? 'selected' : ''}>❌ Rejected</option>
+                    </select>
+                </p>
             `;
             
             // Load comments for this specific image
             loadImageComments(image.name);
             
             new bootstrap.Modal(document.getElementById('imageModal')).show();
+        }
+
+        async function updateModalStatus(imageName, newStatus) {
+            const success = await saveStatusToServer(imageName, newStatus);
+            if (success) {
+                // Update the image data
+                imageStatuses[imageName] = newStatus;
+                currentImage.status = newStatus;
+                
+                updateStats();
+                renderImages();
+                showToast(`Status updated to ${newStatus}!`);
+            } else {
+                showToast('Failed to update status.', 'error');
+            }
         }
 
         function loadImageComments(imageName) {
@@ -773,53 +826,13 @@
 
         async function approveImage() {
             if (currentImage) {
-                const success = await saveStatusToServer(currentImage.name, 'approved');
-                if (success) {
-                    // Update the image data
-                    currentImage.status = 'approved';
-                    imageStatuses[currentImage.name] = 'approved';
-                    
-                    // Update the modal display
-                    const savedStatus = imageStatuses[currentImage.name] || currentImage.status;
-                    document.getElementById('imageDetails').innerHTML = `
-                        <p><strong>Name:</strong> ${currentImage.name}</p>
-                        <p><strong>Category:</strong> ${currentImage.category}</p>
-                        <p><strong>Description:</strong> ${currentImage.description}</p>
-                        <p><strong>Status:</strong> <span class="badge ${savedStatus === 'approved' ? 'bg-success' : savedStatus === 'rejected' ? 'bg-danger' : 'bg-warning'}">${savedStatus}</span></p>
-                    `;
-                    
-                    updateStats();
-                    renderImages();
-                    showToast('Image approved!');
-                } else {
-                    showToast('Failed to approve image.', 'error');
-                }
+                await updateModalStatus(currentImage.name, 'approved');
             }
         }
 
         async function rejectImage() {
             if (currentImage) {
-                const success = await saveStatusToServer(currentImage.name, 'rejected');
-                if (success) {
-                    // Update the image data
-                    currentImage.status = 'rejected';
-                    imageStatuses[currentImage.name] = 'rejected';
-                    
-                    // Update the modal display
-                    const savedStatus = imageStatuses[currentImage.name] || currentImage.status;
-                    document.getElementById('imageDetails').innerHTML = `
-                        <p><strong>Name:</strong> ${currentImage.name}</p>
-                        <p><strong>Category:</strong> ${currentImage.category}</p>
-                        <p><strong>Description:</strong> ${currentImage.description}</p>
-                        <p><strong>Status:</strong> <span class="badge ${savedStatus === 'approved' ? 'bg-success' : savedStatus === 'rejected' ? 'bg-danger' : 'bg-warning'}">${savedStatus}</span></p>
-                    `;
-                    
-                    updateStats();
-                    renderImages();
-                    showToast('Image rejected!');
-                } else {
-                    showToast('Failed to reject image.', 'error');
-                }
+                await updateModalStatus(currentImage.name, 'rejected');
             }
         }
     </script>
