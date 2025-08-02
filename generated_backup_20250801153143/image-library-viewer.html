@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Library Viewer - BE SEEN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .image-category {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .image-item {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .image-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        .image-preview {
+            max-width: 200px;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .path-display {
+            font-family: monospace;
+            font-size: 12px;
+            color: #666;
+            word-break: break-all;
+            margin-top: 5px;
+        }
+        .category-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .error-image {
+            border: 2px dashed #e74c3c;
+            background: #fdf2f2;
+        }
+        .variable-name {
+            background: #28a745;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .success-image {
+            border: 2px solid #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center my-4">📸 Complete Image Library Viewer</h1>
+                <p class="text-center text-muted">BE SEEN Website - Website Images + Review Images</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <strong>Note:</strong> This viewer displays ALL images found on the website (36 local + 7 external) and review images from the "Be seen image review updated" folder. 
+                    Images with red borders indicate loading errors, green borders indicate successful loading.
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>Missing Images Fixed:</strong> The following images were referenced in HTML files but didn't exist and have been replaced:
+                    <ul class="mt-2 mb-0">
+                        <li><code>/assets/images/products/business-cards/thumb.jpg</code> → <code>main.jpg</code></li>
+                        <li><code>/assets/images/products/banners/thumb.jpg</code> → <code>standard_13_oz.jpg</code></li>
+                        <li><code>/assets/images/products/yard-signs/thumb.jpg</code> → <code>framed.jpg</code></li>
+                        <li><code>/assets/images/slider/img_02.png</code> → <code>bg_01.jpg</code></li>
+                        <li><code>/assets/images/feature/img_08.jpg</code> → <code>img_04.jpg</code></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="image-library-content">
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // Comprehensive image library - Review images + Website images
+        const IMAGE_LIBRARY = {
+            // Website Images (actually used on the site)
+            website: {
+                logo: {
+                    main: "/assets/images/logo/BeSeen_1.png",
+                    logo01_1x: "/assets/images/logo/logo_01_1x.png",
+                    logo01_2x: "/assets/images/logo/logo_01_2x.png",
+                    logo02_1x: "/assets/images/logo/logo_02_1x.png",
+                    logo02_2x: "/assets/images/logo/logo_02_2x.png",
+                    logo03_1x: "/assets/images/logo/logo_03_1x.png",
+                    logo03_2x: "/assets/images/logo/logo_03_2x.png",
+                    beSeenFaceWhite: "/assets/images/logo/be-seen-face-white.png",
+                    favouriteIcon: "/assets/images/logo/favourite_icon_01.png"
+                },
+                slider: {
+                    img01: "/assets/images/slider/img_01.png",
+                    bg01: "/assets/images/slider/bg_01.jpg"
+                },
+                feature: {
+                    icon01: "/assets/images/feature/icon_01.png",
+                    icon02: "/assets/images/feature/icon_02.png",
+                    icon03: "/assets/images/feature/icon_03.png",
+                    shape01: "/assets/images/feature/shape_01.png",
+                    shape02: "/assets/images/feature/shape_02.png",
+                    serivesWeb: "/assets/images/feature/serives-web.png",
+                    img01: "/assets/images/feature/img_01.jpg",
+                    img02: "/assets/images/feature/img_02.jpg",
+                    img03: "/assets/images/feature/img_03.jpg",
+                    img04: "/assets/images/feature/img_04.jpg"
+                },
+                services: {
+                    graphicDesign: "/assets/images/services/graphic-design.png",
+                    webDesign: "/assets/images/services/web-design.png",
+                    mailing: "/assets/images/services/mailing.png.png"
+                },
+                printing: {
+                    businessCard: "/assets/images/printing/business card.jpg",
+                    banner: "/assets/images/printing/banner.jpg"
+                },
+                signs: {
+                    sandwichBoard: "/assets/images/signs/signs-sandwichboard.webp",
+                    aFrame: "/assets/images/misc/aframe.png"
+                },
+                about: {
+                    img05: "/assets/images/about/img_05.jpg",
+                    circleBorder: "/assets/images/about/circle_border.png",
+                    bezPhoto: "/assets/images/about/bez-photo.png",
+                    marcPhoto: "/assets/images/about/marc-photo.jpg"
+                },
+                cta: {
+                    shape02: "/assets/images/cta/shape_02.png",
+                    img01: "/assets/images/cta/img_01.png"
+                },
+                testimonial: {
+                    quote01: "/assets/images/testimonial/quote_01.png",
+                    img01: "/assets/images/testimonial/img_01.png",
+                    img02: "/assets/images/testimonial/img_02.png",
+                    img03: "/assets/images/testimonial/img_03.png"
+                },
+                blog: {
+                    brochure: "/assets/images/blog/fullimage/brochure.jpg",
+                    banner7865180: "/assets/images/blog/fullimage/7865180.jpg",
+                    groupThree: "/assets/images/blog/fullimage/group-three-fashion-designers-working-atelier-with-color-palette.jpg"
+                },
+                products: {
+                    businessCardsMain: "/assets/images/products/business-cards/main.jpg",
+                    businessCardsHero: "/assets/images/products/business-cards/hero.jpg",
+                    businessCardsThumb1: "/assets/images/products/business-cards/thumb1.jpg",
+                    businessCardsThumb2: "/assets/images/products/business-cards/thumb2.jpg",
+                    businessCardsThumb3: "/assets/images/products/business-cards/thumb3.jpg",
+                    businessCardsThumb4: "/assets/images/products/business-cards/thumb4.jpg",
+                    businessCardsView2: "/assets/images/products/business-cards/view2.jpg",
+                    businessCardsView3: "/assets/images/products/business-cards/view3.jpg",
+                    businessCardsView4: "/assets/images/products/business-cards/view4.jpg",
+                    bannersStandard: "/assets/images/products/banners/standard_13_oz.jpg",
+                    yardSignsFramed: "/assets/images/products/yard-signs/framed.jpg",
+                    yardSignsHSteak: "/assets/images/products/yard-signs/h_steak.jpg",
+                    yardSignsSingleSteak: "/assets/images/products/yard-signs/single_steak.jpg"
+                },
+                // External images (from Google Storage)
+                external: {
+                    commercialSignage1: "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c45520b246836fa26c1a.png",
+                    commercialSignage2: "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c42320b2462492a26b90.png",
+                    commercialSignage3: "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c41720b246f4faa26b86.png",
+                    commercialSignage4: "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c3ee3786e500085a8d4d.png",
+                    productsBusinessCards: "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg",
+                    productsAFrame: "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png",
+                    productsFlags: "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b1e283c3295278bc16fc.webp"
+                }
+            },
+            
+            // Image Review System - ONLY using "Be seen image review updated"
+            review: {
+                basePath: "/assets/Be seen image review updated/",
+                categories: {
+                    businessCards: "/assets/Be seen image review updated/Business cards/",
+                    banners: "/assets/Be seen image review updated/Banners/",
+                    posters: "/assets/Be seen image review updated/Posters/",
+                    yardSigns: "/assets/Be seen image review updated/Yard Signs/",
+                    windowGraphics: "/assets/Be seen image review updated/Window Graphics/",
+                    tableCloths: "/assets/Be seen image review updated/Table Cloths/",
+                    styreneAcrylic: "/assets/Be seen image review updated/Styrene & Acrylic/",
+                    stickersDecals: "/assets/Be seen image review updated/Stickers & Decals/",
+                    specialtySigns: "/assets/Be seen image review updated/Specialty Signs/",
+                    retractableBanners: "/assets/Be seen image review updated/Retractable Banners/",
+                    pvcBoard: "/assets/Be seen image review updated/PVC Board/",
+                    promotionalPens: "/assets/Be seen image review updated/Promotional Pens/",
+                    presentationFolders: "/assets/Be seen image review updated/Presentation Folders/",
+                    foamBoard: "/assets/Be seen image review updated/Foam Board/",
+                    flyers: "/assets/Be seen image review updated/Flyers/",
+                    flags: "/assets/Be seen image review updated/Flags/",
+                    eventItems: "/assets/Be seen image review updated/Event Items/",
+                    corrugatedPlastic: "/assets/Be seen image review updated/Corrugated Plastic/",
+                    canvas: "/assets/Be seen image review updated/Canvas/",
+                    brochures: "/assets/Be seen image review updated/Broucher/",
+                    brandedApparel: "/assets/Be seen image review updated/Branded Apparel/",
+                    aluminumSigns: "/assets/Be seen image review updated/Aluminum Signs/"
+                },
+                // Specific image mappings for the new review system
+                images: {
+                    businessCards: {
+                        standard: "/assets/Be seen image review updated/Business cards/standard business card.jpg",
+                        premium: "/assets/Be seen image review updated/Business cards/premium business card.jpg",
+                        luxury: "/assets/Be seen image review updated/Business cards/luxury business card.jpg",
+                        economy: "/assets/Be seen image review updated/Business cards/economy business card.jpg"
+                    },
+                    banners: {
+                        vinyl: "/assets/Be seen image review updated/Banners/vinyl banner.jpg",
+                        retractable: "/assets/Be seen image review updated/Banners/retractable banner.jpg",
+                        mesh: "/assets/Be seen image review updated/Banners/mesh banner.jpg",
+                        fabric: "/assets/Be seen image review updated/Banners/fabric banner.jpg"
+                    },
+                    posters: {
+                        small: "/assets/Be seen image review updated/Posters/small poster.jpg",
+                        large: "/assets/Be seen image review updated/Posters/large poster.jpg",
+                        customSizes: "/assets/Be seen image review updated/Posters/custom sizes poster.jpg"
+                    },
+                    yardSigns: {
+                        standard: "/assets/Be seen image review updated/Yard Signs/standard yard signs.jpg",
+                        premium: "/assets/Be seen image review updated/Yard Signs/premium yard signs.jpg",
+                        doubleSided: "/assets/Be seen image review updated/Yard Signs/double sided yard signs.jpg"
+                    },
+                    windowGraphics: {
+                        perforated: "/assets/Be seen image review updated/Window Graphics/Perforated Window Graphics.jpg",
+                        oneWayVision: "/assets/Be seen image review updated/Window Graphics/One Way Vision Window Graphics.jpg"
+                    },
+                    tableCloths: {
+                        custom: "/assets/Be seen image review updated/Table Cloths/Custom Table Cloths.jpg",
+                        eightFt: "/assets/Be seen image review updated/Table Cloths/8ft Table Cloths.jpg",
+                        sixFt: "/assets/Be seen image review updated/Table Cloths/6ft Table Cloths.jpg"
+                    },
+                    promotionalPens: {
+                        premium: "/assets/Be seen image review updated/Promotional Pens/Premium Promotional Pens.jpg",
+                        metal: "/assets/Be seen image review updated/Promotional Pens/Metal Promotional Pens.jpg",
+                        customColors: "/assets/Be seen image review updated/Promotional Pens/Custom Colors Promotional Pens.jpg",
+                        basic: "/assets/Be seen image review updated/Promotional Pens/Basic Promotional Pens.jpg"
+                    },
+                    presentationFolders: {
+                        slits: "/assets/Be seen image review updated/Presentation Folders/slits presentation folders.jpg",
+                        custom: "/assets/Be seen image review updated/Presentation Folders/custom presentation folders.jpg",
+                        standard: "/assets/Be seen image review updated/Presentation Folders/Standard presentation folders.jpg"
+                    },
+                    foamBoard: {
+                        standard: "/assets/Be seen image review updated/Foam Board/Standard Foam Board.jpg",
+                        premium: "/assets/Be seen image review updated/Foam Board/Premium Foam Board.jpg"
+                    },
+                    flyers: {
+                        standard: "/assets/Be seen image review updated/Flyers/Standard flyer.jpg",
+                        premium: "/assets/Be seen image review updated/Flyers/Premium flyer.jpg",
+                        glossy: "/assets/Be seen image review updated/Flyers/Glossy flyer.jpg"
+                    },
+                    flags: {
+                        rectangle: "/assets/Be seen image review updated/Flags/Rectangle Flags.jpg",
+                        teardrop: "/assets/Be seen image review updated/Flags/Teardrop Flags.jpg",
+                        feather: "/assets/Be seen image review updated/Flags/Feather Flags.jpg"
+                    },
+                    eventItems: {
+                        toteBags: "/assets/Be seen image review updated/Event Items/Tote Bags Event Items.jpg",
+                        tents: "/assets/Be seen image review updated/Event Items/Tents Event Items.jpg",
+                        booths: "/assets/Be seen image review updated/Event Items/Booths Event Items.jpg"
+                    },
+                    canvas: {
+                        museumQuality: "/assets/Be seen image review updated/Canvas/museum quality canvas.jpg",
+                        galleryWrap: "/assets/Be seen image review updated/Canvas/gallery wrap canvas.jpg"
+                    },
+                    brochures: {
+                        zFold: "/assets/Be seen image review updated/Broucher/z-fold broucher.jpg",
+                        triFold: "/assets/Be seen image review updated/Broucher/tri-fold broucher.jpg",
+                        biFold: "/assets/Be seen image review updated/Broucher/bi-fold broucher.jpg"
+                    },
+                    brandedApparel: {
+                        tShirt: "/assets/Be seen image review updated/Branded Apparel/T Shirt Branded Apparel.jpg",
+                        polos: "/assets/Be seen image review updated/Branded Apparel/Polos Branded Apparel.jpg",
+                        hoodies: "/assets/Be seen image review updated/Branded Apparel/Hoodies Branded Apparel.jpg",
+                        hats: "/assets/Be seen image review updated/Branded Apparel/Hats Branded Apparel.jpg"
+                    }
+                }
+            }
+        };
+
+        function createImageItem(imagePath, imageName, imageData = null) {
+            const div = document.createElement('div');
+            div.className = 'image-item';
+            
+            const img = document.createElement('img');
+            img.src = imagePath;
+            img.alt = imageName;
+            img.className = 'image-preview';
+            
+            // Add variable name if available
+            if (imageData && imageData.variable) {
+                const variableDiv = document.createElement('div');
+                variableDiv.className = 'variable-name';
+                variableDiv.innerHTML = `<strong>Variable:</strong> ${imageData.variable}`;
+                div.appendChild(variableDiv);
+            }
+            
+            const pathDiv = document.createElement('div');
+            pathDiv.className = 'path-display';
+            pathDiv.textContent = imagePath;
+            
+            div.appendChild(img);
+            div.appendChild(pathDiv);
+            
+            // Check if image loads successfully
+            img.onload = function() {
+                div.classList.add('success-image');
+            };
+            
+            img.onerror = function() {
+                div.classList.add('error-image');
+            };
+            
+            return div;
+        }
+
+        function createCategorySection(categoryName, categoryData) {
+            const section = document.createElement('div');
+            section.className = 'image-category';
+            
+            const title = document.createElement('h3');
+            title.className = 'category-title';
+            title.textContent = categoryName;
+            
+            section.appendChild(title);
+            
+            // Create grid container for image items
+            const gridContainer = document.createElement('div');
+            gridContainer.className = 'image-grid';
+            
+            if (typeof categoryData === 'object' && categoryData !== null) {
+                Object.keys(categoryData).forEach(key => {
+                    const value = categoryData[key];
+                    if (typeof value === 'string') {
+                        // Direct image path
+                        gridContainer.appendChild(createImageItem(value, key));
+                    } else if (typeof value === 'object') {
+                        // Nested category
+                        const subSection = createCategorySection(key, value);
+                        section.appendChild(subSection);
+                    }
+                });
+            }
+            
+            section.appendChild(gridContainer);
+            
+            return section;
+        }
+
+        function displayImageLibrary() {
+            const container = document.getElementById('image-library-content');
+            
+            // Display website images
+            const websiteData = IMAGE_LIBRARY.website;
+            const websiteSection = createCategorySection('Website Images (Used on the site)', websiteData);
+            container.appendChild(websiteSection);
+            
+            // Display review images
+            const reviewData = IMAGE_LIBRARY.review;
+            const reviewSection = createCategorySection('Review Images (Be seen image review updated)', reviewData);
+            container.appendChild(reviewSection);
+        }
+
+        // Initialize the viewer
+        document.addEventListener('DOMContentLoaded', function() {
+            displayImageLibrary();
+        });
+    </script>
+</body>
+</html> 

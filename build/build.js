@@ -16,9 +16,9 @@ const config = {
 
 async function build() {
     try {
-        console.log('Starting CSV-enhanced build...');
+        console.log('Starting build process...');
 
-        // Register Handlebars partials with tracking comments
+        // Register Handlebars partials
         const partialsDir = config.includesDir;
         if (fs.existsSync(partialsDir)) {
             const partialFiles = fs.readdirSync(partialsDir);
@@ -26,22 +26,29 @@ async function build() {
                 if (file.endsWith('.html')) {
                     const partialName = path.basename(file, '.html');
                     const partialContent = fs.readFileSync(path.join(partialsDir, file), 'utf8');
-                    
-                    // Wrap partial content with tracking comments
                     const wrappedContent = `<!-- INCLUDE START: ${partialName} -->\n${partialContent}\n<!-- INCLUDE END: ${partialName} -->`;
-                    
                     Handlebars.registerPartial(partialName, wrappedContent);
                 }
             });
         }
         
+        // --- Load Image Library from JSON ---
+        const imageLibraryPath = path.join(config.dataDir, 'image-library.json');
+        if (!fs.existsSync(imageLibraryPath)) {
+            console.error('CRITICAL: data/image-library.json not found. Build cannot continue.');
+            return;
+        }
+        const IMAGE_LIBRARY = JSON.parse(fs.readFileSync(imageLibraryPath, 'utf8'));
+
+        // --- Register Handlebars Helpers ---
+        const helpersContent = fs.readFileSync(path.join(config.includesDir, 'image-helpers.html'), 'utf8');
+        const helpersScript = helpersContent.match(/<script>([\s\S]*?)<\/script>/)[1];
+        const registerHelpers = new Function('Handlebars', 'IMAGE_LIBRARY', helpersScript);
+        registerHelpers(Handlebars, IMAGE_LIBRARY);
+        
         // Clean and recreate the output directory
         if (fs.existsSync(config.outputDir)) {
-            try {
-        fs.removeSync(config.outputDir);
-            } catch (err) {
-                console.log('Warning: Could not fully remove output directory, continuing...');
-            }
+            fs.removeSync(config.outputDir);
         }
         fs.ensureDirSync(config.outputDir);
 
@@ -77,11 +84,50 @@ async function build() {
 
         // --- Merge CSV and Markdown data into products ---
         for (const product of products) {
-            console.log(`Processing product: ${product.id}`);
+            console.log(`Processing product: ${product.product_id}`); // Bugfix: was product.id
+
+            // Ensure product_details object exists
+            if (!product.product_details) {
+                product.product_details = {};
+            }
+
+            // --- BUILD GALLERY FROM IMAGE_LIBRARY ---
+            // This makes image-library.json the single source of truth for product galleries.
+            const productImagesData = IMAGE_LIBRARY.products[product.product_id];
+            if (productImagesData) {
+                const galleryImages = [];
+                const galleryThumbnails = [];
+                let index = 1;
+                for (const variantKey in productImagesData) {
+                    const variantData = productImagesData[variantKey];
+                    const imageId = `image_${index}`;
+                    galleryImages.push({
+                        id: imageId,
+                        src: variantData.path,
+                        alt: variantData.alt
+                    });
+                    galleryThumbnails.push({
+                        target: `#${imageId}`,
+                        src: variantData.path,
+                        alt: variantData.alt,
+                        label: variantKey.charAt(0).toUpperCase() + variantKey.slice(1) // Capitalize label
+                    });
+                    index++;
+                }
+
+                if (galleryImages.length > 0) {
+                    product.gallery = {
+                        main_images: galleryImages,
+                        thumbnails: galleryThumbnails
+                    };
+                }
+            }
+            // --- END GALLERY BUILD ---
+
             // Merge CSV data for product options
-            const csvPath = path.join(config.dataDir, 'csv', `${product.id}.csv`);
+            const csvPath = path.join(config.dataDir, 'csv', `${product.product_id}.csv`); // Bugfix: was product.id
             if (fs.existsSync(csvPath)) {
-                console.log(`  -> Merging CSV data for ${product.id}`);
+                console.log(`  -> Merging CSV data for ${product.product_id}`); // Bugfix: was product.id
                 const csvFile = fs.readFileSync(csvPath, 'utf8');
                 const { data: csvData } = Papa.parse(csvFile, { header: true, skipEmptyLines: true });
                 
@@ -113,33 +159,6 @@ async function build() {
 
                         if (primaryVariant) {
                             product.product_image = primaryVariant.image_url;
-                        }
-
-                        // --- Dynamically build the gallery from variants ---
-                        const galleryImages = variants.map((variant, index) => {
-                            if (!variant.image_url) return null;
-                            return {
-                                id: `image_${index + 1}`,
-                                src: variant.image_url,
-                                alt: variant.alt_tag || variant.name
-                            };
-                        }).filter(Boolean);
-
-                        const galleryThumbnails = variants.map((variant, index) => {
-                            if (!variant.image_url) return null;
-                            return {
-                                target: `#image_${index + 1}`,
-                                src: variant.image_url,
-                                alt: variant.alt_tag || variant.name,
-                                label: variant.label || variant.name
-                            };
-                        }).filter(Boolean);
-                        
-                        if (galleryImages.length > 0) {
-                            product.gallery = {
-                                main_images: galleryImages,
-                                thumbnails: galleryThumbnails
-                            };
                         }
                     }
                 }

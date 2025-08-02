@@ -43,6 +43,10 @@
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
+	
+	<!-- Image Library -->
+	{{> image-library}}
+	{{> image-helpers}}
 </head>
 
 <body>
@@ -78,7 +82,7 @@
 		================================================== -->
 
 		<!-- Breadcrumb -->
-		<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url({{hero_image_url}});">
+		<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url('{{getBreadcrumbImage category}}')">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -116,7 +120,7 @@
 								<div class="tab-content" id="productTabContent">
 									{{#each gallery.main_images}}
 									<div id="{{id}}" class="tab-pane {{#if @first}}active{{else}}fade{{/if}}">
-										<img src="{{#if src}}{{src}}{{else}}/assets/images/placeholder.jpg{{/if}}" alt="{{alt}}">
+										<img src="{{this.src}}" alt="{{alt}}">
 									</div>
 									{{/each}}
 								</div>
@@ -128,7 +132,7 @@
 									{{#each gallery.thumbnails}}
 									<li>
 										<a class="{{#if @first}}active{{/if}}" data-bs-toggle="tab" href="{{target}}">
-											<img src="{{#if src}}{{src}}{{else}}/assets/images/placeholder.jpg{{/if}}" alt="{{alt}}">
+											<img src="{{this.src}}" alt="{{alt}}">
 											<span class="thumbnail-label">{{label}}</span>
 										</a>
 									</li>
@@ -143,7 +147,7 @@
 								 data-product-id="{{id}}"
 								 data-product-name="{{product_name}}"
 								 data-product-price="{{product_details.price}}" 
-								 data-product-image="{{#if product_details.options.0.variants.0.image_url}}{{product_details.options.0.variants.0.image_url}}{{else}}/assets/images/placeholder.jpg{{/if}}">
+								 data-product-image="{{getProductImage product_id}}">
 								<h2 class="item_title mb_15">{{product_details.title}}</h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
 									<li><i class="fas fa-star"></i></li>

@@ -1,0 +1,226 @@
+{
+    "website": {
+        "logo": {
+            "main": { "path": "/assets/images/logo/BeSeen_1.png", "alt": "BeSeen Logo - Professional Printing Services for Real Estate Marketing", "variable": "WEBSITE_LOGO_MAIN" },
+            "logo01_1x": { "path": "/assets/images/logo/logo_01_1x.png", "alt": "BeSeen Logo 1x Resolution for High-Quality Printing", "variable": "WEBSITE_LOGO_1X" },
+            "logo01_2x": { "path": "/assets/images/logo/logo_01_2x.png", "alt": "BeSeen Logo 2x Resolution for Retina Displays and High-DPI Printing", "variable": "WEBSITE_LOGO_2X" },
+            "logo02_1x": { "path": "/assets/images/logo/logo_02_1x.png", "alt": "BeSeen Logo Variant 2 1x Resolution", "variable": "WEBSITE_LOGO_VARIANT2_1X" },
+            "logo02_2x": { "path": "/assets/images/logo/logo_02_2x.png", "alt": "BeSeen Logo Variant 2 2x Resolution", "variable": "WEBSITE_LOGO_VARIANT2_2X" },
+            "logo03_1x": { "path": "/assets/images/logo/logo_03_1x.png", "alt": "BeSeen Logo Variant 3 1x Resolution", "variable": "WEBSITE_LOGO_VARIANT3_1X" },
+            "logo03_2x": { "path": "/assets/images/logo/logo_03_2x.png", "alt": "BeSeen Logo Variant 3 2x Resolution", "variable": "WEBSITE_LOGO_VARIANT3_2X" },
+            "beSeenFaceWhite": { "path": "/assets/images/logo/be-seen-face-white.png", "alt": "BeSeen Face Logo White Version", "variable": "WEBSITE_LOGO_FACE_WHITE" },
+            "favouriteIcon": { "path": "/assets/images/logo/favourite_icon_01.png", "alt": "BeSeen Favourite Icon", "variable": "WEBSITE_LOGO_FAVOURITE_ICON" }
+        },
+        "services": {
+            "graphicDesign": { "path": "/assets/images/services/graphic-design.png", "alt": "Graphic Design Services Icon", "variable": "WEBSITE_SERVICES_GRAPHIC_DESIGN" },
+            "webDesign": { "path": "/assets/images/services/web-design.png", "alt": "Web Design Services Icon", "variable": "WEBSITE_SERVICES_WEB_DESIGN" },
+            "mailing": { "path": "/assets/images/services/mailing.png", "alt": "Mailing Services Icon", "variable": "WEBSITE_SERVICES_MAILING" },
+            "printSwatches": { "path": "/assets/images/services/print-swatches.png", "alt": "Print Swatches Service Image", "variable": "WEBSITE_SERVICES_PRINT_SWATCHES" },
+            "wideFormatPrinting": { "path": "/assets/images/services/wide-format-printing.png", "alt": "Wide Format Printing Service Image", "variable": "WEBSITE_SERVICES_WIDE_FORMAT_PRINTING" },
+            "signBanner": { "path": "/assets/images/services/sign-banner.jpg", "alt": "Sign and Banner Services Image", "variable": "WEBSITE_SERVICES_SIGN_BANNER" },
+            "promotionalBanner": { "path": "/assets/images/services/promotional-banner.jpeg", "alt": "Promotional Banner Services Image", "variable": "WEBSITE_SERVICES_PROMOTIONAL_BANNER" }
+        },
+        "hero": {
+            "slider1": { "path": "/assets/images/slider/img_01.png", "alt": "Professional Printing Services Slider Image", "variable": "WEBSITE_HERO_SLIDER1" },
+            "slider2": { "path": "/assets/images/slider/img_02.png", "alt": "Complete Solutions Background Slider", "variable": "WEBSITE_HERO_SLIDER2" },
+            "heroBackground": { "path": "/assets/images/backgrounds/bg_01.jpg", "alt": "Hero Background Image", "variable": "WEBSITE_HERO_BACKGROUND" }
+        },
+        "features": {
+            "icon1": { "path": "/assets/images/feature/icon_01.png", "alt": "Printing Services Feature Icon", "variable": "WEBSITE_FEATURES_ICON1" },
+            "icon2": { "path": "/assets/images/feature/icon_02.png", "alt": "Design Services Feature Icon", "variable": "WEBSITE_FEATURES_ICON2" },
+            "icon3": { "path": "/assets/images/feature/icon_03.png", "alt": "Online Experience Feature Icon", "variable": "WEBSITE_FEATURES_ICON3" },
+            "shape1": { "path": "/assets/images/feature/shape_01.png", "alt": "Feature Shape 1 Decoration", "variable": "WEBSITE_FEATURES_SHAPE1" },
+            "shape2": { "path": "/assets/images/feature/shape_02.png", "alt": "Feature Shape 2 Decoration", "variable": "WEBSITE_FEATURES_SHAPE2" },
+            "serivesWeb": { "path": "/assets/images/feature/serives-web.png", "alt": "Web Services Feature Icon", "variable": "WEBSITE_FEATURES_SERVICES_WEB" },
+            "img01": { "path": "/assets/images/feature/img_01.jpg", "alt": "Commercial Signage Feature Image", "variable": "WEBSITE_FEATURES_IMG01" },
+            "img02": { "path": "/assets/images/feature/img_02.jpg", "alt": "Design & Branding Feature Image", "variable": "WEBSITE_FEATURES_IMG02" },
+            "img03": { "path": "/assets/images/feature/img_03.jpg", "alt": "Web Design Feature Image", "variable": "WEBSITE_FEATURES_IMG03" },
+            "img04": { "path": "/assets/images/feature/img_04.jpg", "alt": "Mailing Services Feature Image", "variable": "WEBSITE_FEATURES_IMG04" }
+        },
+        "about": {
+            "img05": { "path": "/assets/images/about/img_05.jpg", "alt": "About GetBeSeen", "variable": "WEBSITE_ABOUT_IMG05" },
+            "circleBorder": { "path": "/assets/images/about/circle_border.png", "alt": "About Section Decoration", "variable": "WEBSITE_ABOUT_CIRCLE_BORDER" },
+            "bezPhoto": { "path": "/assets/images/about/bez-photo.png", "alt": "Behzaad Morid - Team Member", "variable": "WEBSITE_ABOUT_BEZ_PHOTO" },
+            "marcPhoto": { "path": "/assets/images/about/marc-photo.jpg", "alt": "Marc Cadet - Team Member", "variable": "WEBSITE_ABOUT_MARC_PHOTO" }
+        },
+        "cta": {
+            "shape02": { "path": "/assets/images/cta/shape_02.png", "alt": "Call to Action Shape", "variable": "WEBSITE_CTA_SHAPE02" },
+            "img01": { "path": "/assets/images/cta/img_01.png", "alt": "Get Quote Call to Action", "variable": "WEBSITE_CTA_IMG01" }
+        },
+        "testimonial": {
+            "quote01": { "path": "/assets/images/testimonial/quote_01.png", "alt": "Customer Testimonial Quote", "variable": "WEBSITE_TESTIMONIAL_QUOTE01" },
+            "img01": { "path": "/assets/images/testimonial/img_01.png", "alt": "Testimonial Client 1", "variable": "WEBSITE_TESTIMONIAL_IMG01" },
+            "img02": { "path": "/assets/images/testimonial/img_02.png", "alt": "Testimonial Client 2", "variable": "WEBSITE_TESTIMONIAL_IMG02" },
+            "img03": { "path": "/assets/images/testimonial/img_03.png", "alt": "Testimonial Client 3", "variable": "WEBSITE_TESTIMONIAL_IMG03" }
+        },
+        "blog": {
+            "brochure": { "path": "/assets/images/blog/fullimage/brochure.jpg", "alt": "How to Create Stunning Brochures", "variable": "WEBSITE_BLOG_BROCHURE" },
+            "banner7865180": { "path": "/assets/images/blog/fullimage/7865180.jpg", "alt": "The Power of Custom Banners", "variable": "WEBSITE_BLOG_BANNER" },
+            "groupThree": { "path": "/assets/images/blog/fullimage/group-three-fashion-designers-working-atelier-with-color-palette.jpg", "alt": "How to Choose a Printing Company", "variable": "WEBSITE_BLOG_GROUP_THREE" }
+        }
+    },
+    "categories": {
+        "yardSigns": { "path": "/assets/Be seen image review updated/Main categories/yard signs.jpg", "alt": "Professional yard signs for real estate listings and property marketing", "variable": "CATEGORY_YARD_SIGNS" },
+        "windowGraphics": { "path": "/assets/Be seen image review updated/Main categories/window graphics.jpg", "alt": "Custom window graphics and decals for storefront advertising and branding", "variable": "CATEGORY_WINDOW_GRAPHICS" },
+        "tableCloths": { "path": "/assets/Be seen image review updated/Main categories/table cloths.jpg", "alt": "Custom printed table cloths for events, trade shows, and promotional displays", "variable": "CATEGORY_TABLE_CLOTHS" },
+        "styreneAcrylic": { "path": "/assets/Be seen image review updated/Main categories/styrene & acrylic.jpg", "alt": "Styrene and acrylic signs for indoor and outdoor business displays", "variable": "CATEGORY_STYRENE_ACRYLIC" },
+        "pvcBoard": { "path": "/assets/Be seen image review updated/Main categories/pvc board.jpg", "alt": "PVC board signs for durable outdoor advertising and business displays", "variable": "CATEGORY_PVC_BOARD" },
+        "promotionalPens": { "path": "/assets/Be seen image review updated/Main categories/promotional pens.jpg", "alt": "Custom promotional pens with business branding for marketing and giveaways", "variable": "CATEGORY_PROMOTIONAL_PENS" },
+        "productPrintsBusinessCard": { "path": "/assets/Be seen image review updated/Main categories/product prints business card.jpg", "alt": "Product prints featuring business card designs and professional branding", "variable": "CATEGORY_PRODUCT_PRINTS_BUSINESS_CARD" },
+        "productPrintsBrochure": { "path": "/assets/Be seen image review updated/Main categories/product prints broucher.jpg", "alt": "Product prints featuring brochure designs for comprehensive business marketing", "variable": "CATEGORY_PRODUCT_PRINTS_BROCHURE" },
+        "productPrintsBanner": { "path": "/assets/Be seen image review updated/Main categories/product prints banner.jpg", "alt": "Product prints featuring banner designs for large-scale advertising and displays", "variable": "CATEGORY_PRODUCT_PRINTS_BANNER" },
+        "presentationFolders": { "path": "/assets/Be seen image review updated/Main categories/presentation folders.jpg", "alt": "Professional presentation folders for business meetings and client presentations", "variable": "CATEGORY_PRESENTATION_FOLDERS" },
+        "poster": { "path": "/assets/Be seen image review updated/Main categories/poster.jpg", "alt": "Custom posters for advertising, events, and promotional displays", "variable": "CATEGORY_POSTER" },
+        "foamBoard": { "path": "/assets/Be seen image review updated/Main categories/foam board.jpg", "alt": "Foam board signs for lightweight indoor displays and temporary signage", "variable": "CATEGORY_FOAM_BOARD" },
+        "flyer": { "path": "/assets/Be seen image review updated/Main categories/flyer.jpg", "alt": "Custom flyers for events, promotions, and business advertising", "variable": "CATEGORY_FLYER" },
+        "flags": { "path": "/assets/Be seen image review updated/Main categories/flags.jpg", "alt": "Custom flags for outdoor advertising, events, and business branding", "variable": "CATEGORY_FLAGS" },
+        "eventItems": { "path": "/assets/Be seen image review updated/Main categories/evet items.jpg", "alt": "Event items and promotional materials for trade shows and business events", "variable": "CATEGORY_EVENT_ITEMS" },
+        "corrugatedPlastic": { "path": "/assets/Be seen image review updated/Main categories/corrugated plastic.jpg", "alt": "Corrugated plastic signs for durable outdoor advertising and displays", "variable": "CATEGORY_CORRUGATED_PLASTIC" },
+        "canvas": { "path": "/assets/Be seen image review updated/Main categories/canvas.jpg", "alt": "Canvas prints for high-quality artwork and photographic displays", "variable": "CATEGORY_CANVAS" },
+        "brandedApparel": { "path": "/assets/Be seen image review updated/Main categories/branded apparel.jpg", "alt": "Custom branded apparel including t-shirts, polos, and promotional clothing", "variable": "CATEGORY_BRANDED_APPAREL" },
+        "aluminumSigns": { "path": "/assets/Be seen image review updated/Main categories/aluminum signs.jpg", "alt": "Aluminum signs for permanent outdoor advertising and business identification", "variable": "CATEGORY_ALUMINUM_SIGNS" },
+        "stickers": { "path": "/assets/Be seen image review updated/Main categories/Stickers.jpg", "alt": "Custom stickers and decals for promotional branding and product labeling", "variable": "CATEGORY_STICKERS" },
+        "specialtySigns": { "path": "/assets/Be seen image review updated/Main categories/Specialty Signs.jpg", "alt": "Specialty signs for unique applications and custom business displays", "variable": "CATEGORY_SPECIALTY_SIGNS" },
+        "retractableBanners": { "path": "/assets/Be seen image review updated/Main categories/Retractable Banners.jpg", "alt": "Portable retractable banner stands for indoor displays and trade shows", "variable": "CATEGORY_RETRACTABLE_BANNERS" }
+    },
+    "products": {
+        "businessCards": {
+            "standard": { "path": "/assets/Be seen image review updated/Business cards/standard business card.jpg", "alt": "Standard business cards with clean professional design for real estate marketing", "variable": "PRODUCTS_BUSINESS_CARDS_STANDARD" },
+            "premium": { "path": "/assets/Be seen image review updated/Business cards/premium business card.jpg", "alt": "Premium spot UV business cards with raised glossy logo for luxury real estate branding", "variable": "PRODUCTS_BUSINESS_CARDS_PREMIUM" },
+            "luxury": { "path": "/assets/Be seen image review updated/Business cards/luxury business card.jpg", "alt": "Luxury foil-stamped business cards with metallic accents for high-end real estate professionals", "variable": "PRODUCTS_BUSINESS_CARDS_LUXURY" },
+            "economy": { "path": "/assets/Be seen image review updated/Business cards/economy business card.jpg", "alt": "Economy business cards with quality printing for cost-effective real estate marketing", "variable": "PRODUCTS_BUSINESS_CARDS_ECONOMY" }
+        },
+        "banners": {
+            "vinyl": { "path": "/assets/Be seen image review updated/Banners/vinyl banner.jpg", "alt": "Weather-resistant vinyl banner with grommets for outdoor real estate advertising and events", "variable": "PRODUCTS_BANNERS_VINYL" },
+            "retractable": { "path": "/assets/Be seen image review updated/Banners/retractable banner.jpg", "alt": "Portable retractable banner stand for indoor real estate displays and trade shows", "variable": "PRODUCTS_BANNERS_RETRACTABLE" },
+            "mesh": { "path": "/assets/Be seen image review updated/Banners/mesh banner.jpg", "alt": "Wind-resistant mesh banner with perforated design for outdoor real estate displays", "variable": "PRODUCTS_BANNERS_MESH" },
+            "fabric": { "path": "/assets/Be seen image review updated/Banners/fabric banner.jpg", "alt": "Premium fabric banner with vibrant colors for high-end real estate marketing displays", "variable": "PRODUCTS_BANNERS_FABRIC" }
+        },
+        "yard_signs": {
+            "standard": { "path": "/assets/Be seen image review updated/Yard Signs/standard yard signs.jpg", "alt": "Standard yard signs for real estate listings and property marketing", "variable": "PRODUCTS_YARD_SIGNS_STANDARD" },
+            "premium": { "path": "/assets/Be seen image review updated/Yard Signs/premium yard signs.jpg", "alt": "Premium yard signs with enhanced durability and professional finish", "variable": "PRODUCTS_YARD_SIGNS_PREMIUM" },
+            "doubleSided": { "path": "/assets/Be seen image review updated/Yard Signs/double sided yard signs.jpg", "alt": "Double-sided yard signs for maximum visibility and impact", "variable": "PRODUCTS_YARD_SIGNS_DOUBLE_SIDED" }
+        },
+        "stickers": {
+            "vinyl": { "path": "/assets/Be seen image review updated/Stickers & Decals/vinyl stickers & decals.jpg", "alt": "Durable vinyl stickers for indoor and outdoor use", "variable": "PRODUCTS_STICKERS_VINYL" },
+            "customShape": { "path": "/assets/Be seen image review updated/Stickers & Decals/custom shapes stickers & decals.jpg", "alt": "Custom die-cut stickers in any shape", "variable": "PRODUCTS_STICKERS_CUSTOM_SHAPE" },
+            "weatherResistant": { "path": "/assets/Be seen image review updated/Stickers & Decals/weather resistant stickers & decals.jpg", "alt": "Weather resistant stickers for outdoor applications", "variable": "PRODUCTS_STICKERS_WEATHER_RESISTANT" }
+        },
+        "aluminum_signs": {
+            "18x24": { "path": "/assets/Be seen image review updated/Aluminum Signs/18x24 Aluminum Signs.jpg", "alt": "18x24 Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_18X24" },
+            "24x36": { "path": "/assets/Be seen image review updated/Aluminum Signs/24x36 Aluminum Signs.jpg", "alt": "24x36 Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_24X36" },
+            "custom": { "path": "/assets/Be seen image review updated/Aluminum Signs/Custom Aluminum Signs.jpg", "alt": "Custom Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_CUSTOM" }
+        },
+        "branded_apparel": {
+            "hats": { "path": "/assets/Be seen image review updated/Branded Apparel/Hats Branded Apparel.jpg", "alt": "Branded Hats", "variable": "PRODUCTS_BRANDED_APPAREL_HATS" },
+            "hoodies": { "path": "/assets/Be seen image review updated/Branded Apparel/Hoodies Branded Apparel.jpg", "alt": "Branded Hoodies", "variable": "PRODUCTS_BRANDED_APPAREL_HOODIES" },
+            "polos": { "path": "/assets/Be seen image review updated/Branded Apparel/Polos Branded Apparel.jpg", "alt": "Branded Polos", "variable": "PRODUCTS_BRANDED_APPAREL_POLOS" },
+            "tshirt": { "path": "/assets/Be seen image review updated/Branded Apparel/T Shirt Branded Apparel.jpg", "alt": "Branded T-Shirt", "variable": "PRODUCTS_BRANDED_APPAREL_TSHIRT" }
+        },
+        "brochures": {
+            "bifold": { "path": "/assets/Be seen image review updated/Broucher/bi-fold broucher.jpg", "alt": "Bi-fold Brochure", "variable": "PRODUCTS_BROCHURES_BIFOLD" },
+            "trifold": { "path": "/assets/Be seen image review updated/Broucher/tri-fold broucher.jpg", "alt": "Tri-fold Brochure", "variable": "PRODUCTS_BROCHURES_TRIFOLD" },
+            "zfold": { "path": "/assets/Be seen image review updated/Broucher/z-fold broucher.jpg", "alt": "Z-fold Brochure", "variable": "PRODUCTS_BROCHURES_ZFOLD" }
+        },
+        "canvas_prints": {
+            "galleryWrap": { "path": "/assets/Be seen image review updated/Canvas/gallery wrap canvas.jpg", "alt": "Gallery Wrap Canvas", "variable": "PRODUCTS_CANVAS_PRINTS_GALLERY_WRAP" },
+            "museumQuality": { "path": "/assets/Be seen image review updated/Canvas/museum quality canvas.jpg", "alt": "Museum Quality Canvas", "variable": "PRODUCTS_CANVAS_PRINTS_MUSEUM_QUALITY" }
+        },
+        "corrugated": {
+            "4mm": { "path": "/assets/Be seen image review updated/Corrugated Plastic/4mm Corrugated Plastic.jpg", "alt": "4mm Corrugated Plastic", "variable": "PRODUCTS_CORRUGATED_4MM" },
+            "6mm": { "path": "/assets/Be seen image review updated/Corrugated Plastic/6mm Corrugated Plastic.jpg", "alt": "6mm Corrugated Plastic", "variable": "PRODUCTS_CORRUGATED_6MM" }
+        },
+        "booths": {
+            "standard": { "path": "/assets/Be seen image review updated/Event Items/Booths Event Items.jpg", "alt": "Trade Show Booth", "variable": "PRODUCTS_BOOTHS_STANDARD" }
+        },
+        "tents": {
+            "standard": { "path": "/assets/Be seen image review updated/Event Items/Tents Event Items.jpg", "alt": "Promotional Tent", "variable": "PRODUCTS_TENTS_STANDARD" }
+        },
+        "bags": {
+            "tote": { "path": "/assets/Be seen image review updated/Event Items/Tote Bags Event Items.jpg", "alt": "Promotional Tote Bag", "variable": "PRODUCTS_BAGS_TOTE" }
+        },
+        "flags": {
+            "feather": { "path": "/assets/Be seen image review updated/Flags/Feather Flags.jpg", "alt": "Feather Flag", "variable": "PRODUCTS_FLAGS_FEATHER" },
+            "rectangle": { "path": "/assets/Be seen image review updated/Flags/Rectangle Flags.jpg", "alt": "Rectangle Flag", "variable": "PRODUCTS_FLAGS_RECTANGLE" },
+            "teardrop": { "path": "/assets/Be seen image review updated/Flags/Teardrop Flags.jpg", "alt": "Teardrop Flag", "variable": "PRODUCTS_FLAGS_TEARDROP" }
+        },
+        "flyers": {
+            "glossy": { "path": "/assets/Be seen image review updated/Flyers/Glossy flyer.jpg", "alt": "Glossy Flyer", "variable": "PRODUCTS_FLYERS_GLOSSY" },
+            "premium": { "path": "/assets/Be seen image review updated/Flyers/Premium flyer.jpg", "alt": "Premium Flyer", "variable": "PRODUCTS_FLYERS_PREMIUM" },
+            "standard": { "path": "/assets/Be seen image review updated/Flyers/Standard flyer.jpg", "alt": "Standard Flyer", "variable": "PRODUCTS_FLYERS_STANDARD" }
+        },
+        "foam_board": {
+            "premium": { "path": "/assets/Be seen image review updated/Foam Board/Premium Foam Board.jpg", "alt": "Premium Foam Board", "variable": "PRODUCTS_FOAM_BOARD_PREMIUM" },
+            "standard": { "path": "/assets/Be seen image review updated/Foam Board/Standard Foam Board.jpg", "alt": "Standard Foam Board", "variable": "PRODUCTS_FOAM_BOARD_STANDARD" }
+        },
+        "posters": {
+            "custom": { "path": "/assets/Be seen image review updated/Posters/custom sizes poster.jpg", "alt": "Custom Size Poster", "variable": "PRODUCTS_POSTERS_CUSTOM" },
+            "large": { "path": "/assets/Be seen image review updated/Posters/large poster.jpg", "alt": "Large Poster", "variable": "PRODUCTS_POSTERS_LARGE" },
+            "small": { "path": "/assets/Be seen image review updated/Posters/small poster.jpg", "alt": "Small Poster", "variable": "PRODUCTS_POSTERS_SMALL" }
+        },
+        "presentation_folders": {
+            "custom": { "path": "/assets/Be seen image review updated/Presentation Folders/custom presentation folders.jpg", "alt": "Custom Presentation Folder", "variable": "PRODUCTS_PRESENTATION_FOLDERS_CUSTOM" },
+            "standard": { "path": "/assets/Be seen image review updated/Presentation Folders/Standard presentation folders.jpg", "alt": "Standard Presentation Folder", "variable": "PRODUCTS_PRESENTATION_FOLDERS_STANDARD" },
+            "slits": { "path": "/assets/Be seen image review updated/Presentation Folders/slits presentation folders.jpg", "alt": "Presentation Folder with Slits", "variable": "PRODUCTS_PRESENTATION_FOLDERS_SLITS" }
+        },
+        "pens": {
+            "basic": { "path": "/assets/Be seen image review updated/Promotional Pens/Basic Promotional Pens.jpg", "alt": "Basic Promotional Pen", "variable": "PRODUCTS_PENS_BASIC" },
+            "metal": { "path": "/assets/Be seen image review updated/Promotional Pens/Metal Promotional Pens.jpg", "alt": "Metal Promotional Pen", "variable": "PRODUCTS_PENS_METAL" },
+            "customColor": { "path": "/assets/Be seen image review updated/Promotional Pens/Custom Colors Promotional Pens.jpg", "alt": "Custom Color Promotional Pen", "variable": "PRODUCTS_PENS_CUSTOM_COLOR" },
+            "premium": { "path": "/assets/Be seen image review updated/Promotional Pens/Premium Promotional Pens.jpg", "alt": "Premium Promotional Pen", "variable": "PRODUCTS_PENS_PREMIUM" }
+        },
+        "pvc_board": {
+            "premium": { "path": "/assets/Be seen image review updated/PVC Board/premium pvc board.jpg", "alt": "Premium PVC Board", "variable": "PRODUCTS_PVC_BOARD_PREMIUM" },
+            "standard": { "path": "/assets/Be seen image review updated/PVC Board/standard pvc board.jpg", "alt": "Standard PVC Board", "variable": "PRODUCTS_PVC_BOARD_STANDARD" }
+        },
+        "retractable_banners": {
+            "deluxe": { "path": "/assets/Be seen image review updated/Retractable Banners/deluxe retractable banners.jpg", "alt": "Deluxe Retractable Banner", "variable": "PRODUCTS_RETRACTABLE_BANNERS_DELUXE" },
+            "economy": { "path": "/assets/Be seen image review updated/Retractable Banners/economy retractable banners.jpg", "alt": "Economy Retractable Banner", "variable": "PRODUCTS_RETRACTABLE_BANNERS_ECONOMY" },
+            "premium": { "path": "/assets/Be seen image review updated/Retractable Banners/premium retractable banners.jpg", "alt": "Premium Retractable Banner", "variable": "PRODUCTS_RETRACTABLE_BANNERS_PREMIUM" },
+            "standard": { "path": "/assets/Be seen image review updated/Retractable Banners/Standard retractable banners.jpg", "alt": "Standard Retractable Banner", "variable": "PRODUCTS_RETRACTABLE_BANNERS_STANDARD" }
+        },
+        "commercial_signage": {
+            "standard": { "path": "/assets/images/signs/commercial-signage.jpg", "alt": "Commercial Signage", "variable": "PRODUCTS_COMMERCIAL_SIGNAGE_STANDARD" }
+        },
+        "channel_lettering": {
+            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/Channel Specialty Signs.jpg", "alt": "Channel Lettering Sign", "variable": "PRODUCTS_CHANNEL_LETTERING_STANDARD" }
+        },
+        "3d_lettering": {
+            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/3D Specialty Signs.jpg", "alt": "3D Lettering Sign", "variable": "PRODUCTS_3D_LETTERING_STANDARD" }
+        },
+        "light_boxes": {
+            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/Light Boxes Specialty Signs.jpg", "alt": "Light Box Sign", "variable": "PRODUCTS_LIGHT_BOXES_STANDARD" }
+        },
+        "magnets": {
+            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/Magnets Specialty Signs.jpg", "alt": "Magnetic Sign", "variable": "PRODUCTS_MAGNETS_STANDARD" }
+        },
+        "a_frames": {
+            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/A Frames Specialty Signs.jpg", "alt": "A-Frame Sign", "variable": "PRODUCTS_A_FRAMES_STANDARD" }
+        },
+        "styrene": {
+            "plate": { "path": "/assets/Be seen image review updated/Styrene & Acrylic/Styrene Plate.jpg", "alt": "Styrene Plate", "variable": "PRODUCTS_STYRENE_PLATE" }
+        },
+        "acrylic": {
+            "clear": { "path": "/assets/Be seen image review updated/Styrene & Acrylic/Acrylic Clear.jpg", "alt": "Clear Acrylic", "variable": "PRODUCTS_ACRYLIC_CLEAR" },
+            "colored": { "path": "/assets/Be seen image review updated/Styrene & Acrylic/Acrylic Colored.jpg", "alt": "Colored Acrylic", "variable": "PRODUCTS_ACRYLIC_COLORED" }
+        },
+        "table_cloths": {
+            "6ft": { "path": "/assets/Be seen image review updated/Table Cloths/6ft Table Cloths.jpg", "alt": "6ft Table Cloth", "variable": "PRODUCTS_TABLE_CLOTHS_6FT" },
+            "8ft": { "path": "/assets/Be seen image review updated/Table Cloths/8ft Table Cloths.jpg", "alt": "8ft Table Cloth", "variable": "PRODUCTS_TABLE_CLOTHS_8FT" },
+            "custom": { "path": "/assets/Be seen image review updated/Table Cloths/Custom Table Cloths.jpg", "alt": "Custom Table Cloth", "variable": "PRODUCTS_TABLE_CLOTHS_CUSTOM" }
+        },
+        "window_graphics": {
+            "oneWay": { "path": "/assets/Be seen image review updated/Window Graphics/One Way Vision Window Graphics.jpg", "alt": "One Way Vision Window Graphic", "variable": "PRODUCTS_WINDOW_GRAPHICS_ONE_WAY" },
+            "perforated": { "path": "/assets/Be seen image review updated/Window Graphics/Perforated Window Graphics.jpg", "alt": "Perforated Window Graphic", "variable": "PRODUCTS_WINDOW_GRAPHICS_PERFORATED" }
+        }
+    },
+    "external": {
+        "commercialSignage1": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c45520b246836fa26c1a.png", "alt": "Commercial Signage - Professional Display", "variable": "EXTERNAL_COMMERCIAL_SIGNAGE_1" },
+        "commercialSignage2": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c42320b2462492a26b90.png", "alt": "Commercial Signage - Business Solutions", "variable": "EXTERNAL_COMMERCIAL_SIGNAGE_2" },
+        "commercialSignage3": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c41720b246f4faa26b86.png", "alt": "Commercial Signage - Quality Printing", "variable": "EXTERNAL_COMMERCIAL_SIGNAGE_3" },
+        "commercialSignage4": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c3ee3786e500085a8d4d.png", "alt": "Commercial Signage - Custom Solutions", "variable": "EXTERNAL_COMMERCIAL_SIGNAGE_4" },
+        "productsBusinessCards": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg", "alt": "Business Cards and Other Printed Materials", "variable": "EXTERNAL_PRODUCTS_BUSINESS_CARDS" },
+        "productsAFrame": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "A-Frame Sign for Business", "variable": "EXTERNAL_PRODUCTS_AFRAME" },
+        "productsFlags": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b1e283c3295278bc16fc.webp", "alt": "Custom Promotional Flag", "variable": "EXTERNAL_PRODUCTS_FLAGS" }
+    }
+} 

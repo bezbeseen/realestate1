@@ -96,7 +96,347 @@
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
-</head>
+	
+	<!-- Image Library -->
+	<!-- INCLUDE START: image-library -->
+	<!-- 
+	📸 IMAGE LIBRARY - Centralized Image Management
+	This file used to contain the IMAGE_LIBRARY object, but it has been moved to /data/image-library.json.
+	This file is now deprecated and will be removed in a future update.
+	-->
+	<script>
+	// The IMAGE_LIBRARY object has been moved to /data/image-library.json
+	// This file is kept for backward compatibility with pages that might still include it.
+	// All new development should rely on the build process to load the JSON file.
+	console.warn("DEPRECATION WARNING: image-library.html is deprecated. The image library is now loaded from /data/image-library.json during the build process.");
+	</script> 
+	<!-- INCLUDE END: image-library -->	<!-- INCLUDE START: image-helpers -->
+	<!-- 
+	🖼️ IMAGE HANDLEBARS HELPERS
+	These helpers provide standardized image path generation for use in Handlebars templates.
+	Include this file in your templates to use the image helper functions.
+	-->
+	
+	<script>
+	// Register Handlebars helpers for image handling
+	if (typeof Handlebars !== 'undefined') {
+	    // Get product image by product ID using new image library
+	    Handlebars.registerHelper('getProductImage', function(productId) {
+	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.products) {
+	            const productKeyMap = {
+	                'business_cards': 'businessCards',
+	                'banners': 'banners',
+	                'stickers': 'stickers',
+	                'posters': 'posters',
+	                'brochures': 'brochures',
+	                'flyers': 'flyers',
+	                'presentation_folders': 'presentation_folders',
+	                'decals': 'stickers',
+	                'window_clings': 'window_graphics',
+	                'canvas_prints': 'canvas_prints',
+	                'photos': 'canvas_prints',
+	                'commercial_signage': 'commercial_signage',
+	                'a_frames': 'a_frames',
+	                'channel_lettering': 'channel_lettering',
+	                'flags': 'flags',
+	                'light_boxes': 'light_boxes',
+	                'retractable_banners': 'retractable_banners',
+	                '3d_lettering': '3d_lettering',
+	                'yard_signs': 'yard_signs',
+	                'corrugated': 'corrugated',
+	                'foam_board': 'foam_board',
+	                'styrene': 'styrene',
+	                'acrylic': 'acrylic',
+	                'pvc_board': 'pvc_board',
+	                'booths': 'booths',
+	                'table_cloths': 'table_cloths',
+	                'branded_apparel': 'branded_apparel',
+	                'pens': 'pens',
+	                'bags': 'bags',
+	                'tents': 'tents',
+	                'window_graphics': 'window_graphics',
+	                'aluminum_signs': 'aluminum_signs',
+	                'magnets': 'magnets',
+	                'real_estate_business_cards': 'businessCards',
+	                'real_estate_banners': 'banners',
+	                'real_estate_flags': 'flags',
+	                'real_estate_lawn_signs': 'yard_signs',
+	                'real_estate_a_frames': 'a_frames'
+	            };
+	
+	            const imageKey = productKeyMap[productId];
+	            if (imageKey && IMAGE_LIBRARY.products[imageKey]) {
+	                const productImages = IMAGE_LIBRARY.products[imageKey];
+	                const firstImage = Object.values(productImages)[0];
+	                if (firstImage && firstImage.path) {
+	                    return firstImage.path;
+	                }
+	            }
+	        }
+	        
+	        // Fallback to old system or placeholder
+	        const productImages = {
+	            'business_cards': '/assets/images/printing/business%20card.jpg',
+	            'banners': '/assets/images/printing/banner.jpg',
+	            'brochures': '/assets/images/printing/brochure.jpg',
+	            'flyers': '/assets/images/printing/flyer.jpg',
+	            'posters': '/assets/images/printing/poster.jpg',
+	            'stickers': '/assets/images/printing/sticker.jpg',
+	            'canvas_prints': '/assets/images/printing/canvas-print.jpg',
+	            'photos': '/assets/images/printing/photo.jpg',
+	            'a_frames': '/assets/images/misc/aframe.png',
+	            'channel_lettering': '/assets/images/signs/channel-letters.jpg',
+	            'yard_signs': '/assets/images/signs/yard-signs.jpg',
+	            'window_graphics': '/assets/images/signs/window-graphics.jpg',
+	            'aluminum_signs': '/assets/images/signs/aluminum-signs.jpg',
+	            'magnets': '/assets/images/signs/magnets.jpg',
+	            'flags': '/assets/images/promotional/flags.jpg',
+	            'tents': '/assets/images/promotional/tents.jpg',
+	            'table_cloths': '/assets/images/promotional/table-cloths.jpg',
+	            'branded_apparel': '/assets/images/promotional/apparel.jpg',
+	            'pens': '/assets/images/promotional/pens.jpg',
+	            'bags': '/assets/images/promotional/bags.jpg',
+	            'booths': '/assets/images/promotional/booths.jpg',
+	            'corrugated': '/assets/images/materials/corrugated.jpg',
+	            'foam_board': '/assets/images/materials/foam-board.jpg',
+	            'styrene': '/assets/images/materials/styrene.jpg',
+	            'acrylic': '/assets/images/materials/acrylic.jpg',
+	            'pvc_board': '/assets/images/materials/pvc-board.jpg',
+	            'real_estate_business_cards': '/assets/images/real-estate/business-cards.jpg',
+	            'real_estate_banners': '/assets/images/real-estate/banners.jpg',
+	            'real_estate_flags': '/assets/images/real-estate/flags.jpg',
+	            'real_estate_lawn_signs': '/assets/images/real-estate/lawn-signs.jpg',
+	            'real_estate_a_frames': '/assets/images/real-estate/a-frames.jpg'
+	        };
+	        
+	        return productImages[productId] || '/assets/images/placeholder.svg';
+	    });
+	    
+	    // Get service image by service ID using new image library
+	    Handlebars.registerHelper('getServiceImage', function(serviceId) {
+	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.website?.services) {
+	            const serviceMap = {
+	                'graphic_design': IMAGE_LIBRARY.website.services.graphicDesign?.path,
+	                'web_design': IMAGE_LIBRARY.website.services.webDesign?.path,
+	                'mailing': IMAGE_LIBRARY.website.services.mailing?.path,
+	                'logo_design': IMAGE_LIBRARY.website.services.graphicDesign?.path,
+	                'branding': IMAGE_LIBRARY.website.services.graphicDesign?.path,
+	                'photo_editing': IMAGE_LIBRARY.website.services.graphicDesign?.path,
+	                'print_layout': IMAGE_LIBRARY.website.services.graphicDesign?.path,
+	                'fonts_typography': IMAGE_LIBRARY.website.services.graphicDesign?.path,
+	                'websites': IMAGE_LIBRARY.website.services.webDesign?.path,
+	                'web_services': IMAGE_LIBRARY.website.services.webDesign?.path,
+	                'custom_email_design': IMAGE_LIBRARY.website.services.webDesign?.path,
+	                'marketing_campaigns': IMAGE_LIBRARY.website.services.webDesign?.path,
+	                'social_media': IMAGE_LIBRARY.website.services.webDesign?.path,
+	                'seo': IMAGE_LIBRARY.website.services.webDesign?.path,
+	                'eddm': IMAGE_LIBRARY.website.services.mailing?.path,
+	                'newsletters': IMAGE_LIBRARY.website.services.mailing?.path,
+	                'postcards': IMAGE_LIBRARY.website.services.mailing?.path,
+	                'direct_mailers': IMAGE_LIBRARY.website.services.mailing?.path,
+	                'contact_list_cleaning': IMAGE_LIBRARY.website.services.mailing?.path,
+	                'interactive_mail': IMAGE_LIBRARY.website.services.mailing?.path
+	            };
+	            
+	            return serviceMap[serviceId] || '/assets/images/placeholder.svg';
+	        }
+	        
+	        // Fallback to old system
+	        const serviceImages = {
+	            'graphic_design': '/assets/images/services/graphic-design.png',
+	            'web_design': '/assets/images/services/web-design.png',
+	            'mailing': '/assets/images/services/mailing.png.png',
+	            'logo_design': '/assets/images/services/graphic-design.png',
+	            'branding': '/assets/images/services/graphic-design.png',
+	            'photo_editing': '/assets/images/services/graphic-design.png',
+	            'print_layout': '/assets/images/services/graphic-design.png',
+	            'fonts_typography': '/assets/images/services/graphic-design.png',
+	            'websites': '/assets/images/services/web-design.png',
+	            'web_services': '/assets/images/services/web-design.png',
+	            'custom_email_design': '/assets/images/services/web-design.png',
+	            'marketing_campaigns': '/assets/images/services/web-design.png',
+	            'social_media': '/assets/images/services/web-design.png',
+	            'seo': '/assets/images/services/web-design.png',
+	            'eddm': '/assets/images/services/mailing.png.png',
+	            'newsletters': '/assets/images/services/mailing.png.png',
+	            'postcards': '/assets/images/services/mailing.png.png',
+	            'direct_mailers': '/assets/images/services/mailing.png.png',
+	            'contact_list_cleaning': '/assets/images/services/mailing.png.png',
+	            'interactive_mail': '/assets/images/services/mailing.png.png'
+	        };
+	        
+	        return serviceImages[serviceId] || '/assets/images/placeholder.svg';
+	    });
+	    
+	    // Get breadcrumb background by category
+	    Handlebars.registerHelper('getBreadcrumbImage', function(category) {
+	        const breadcrumbImages = {
+	            'prints': '/assets/images/breadcrumb/bg_01.jpg',
+	            'signs': '/assets/images/breadcrumb/bg_01.jpg',
+	            'promotional': '/assets/images/breadcrumb/bg_01.jpg',
+	            'materials': '/assets/images/breadcrumb/bg_01.jpg',
+	            'real-estate': '/assets/images/breadcrumb/bg_01.jpg'
+	        };
+	        
+	        return breadcrumbImages[category] || '/assets/images/breadcrumb/bg_01.jpg';
+	    });
+	    
+	    // Get category hero image using new image library
+	    Handlebars.registerHelper('getCategoryHeroImage', function(category) {
+	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.categories) {
+	            const categoryMap = {
+	                'yard_signs': IMAGE_LIBRARY.categories.yardSigns?.path,
+	                'window_graphics': IMAGE_LIBRARY.categories.windowGraphics?.path,
+	                'table_cloths': IMAGE_LIBRARY.categories.tableCloths?.path,
+	                'styrene_acrylic': IMAGE_LIBRARY.categories.styreneAcrylic?.path,
+	                'pvc_board': IMAGE_LIBRARY.categories.pvcBoard?.path,
+	                'promotional_pens': IMAGE_LIBRARY.categories.promotionalPens?.path,
+	                'business_cards': IMAGE_LIBRARY.categories.productPrintsBusinessCard?.path,
+	                'brochures': IMAGE_LIBRARY.categories.productPrintsBrochure?.path,
+	                'banners': IMAGE_LIBRARY.categories.productPrintsBanner?.path,
+	                'presentation_folders': IMAGE_LIBRARY.categories.presentationFolders?.path,
+	                'posters': IMAGE_LIBRARY.categories.poster?.path,
+	                'foam_board': IMAGE_LIBRARY.categories.foamBoard?.path,
+	                'flyers': IMAGE_LIBRARY.categories.flyer?.path,
+	                'flags': IMAGE_LIBRARY.categories.flags?.path,
+	                'event_items': IMAGE_LIBRARY.categories.eventItems?.path,
+	                'corrugated_plastic': IMAGE_LIBRARY.categories.corrugatedPlastic?.path,
+	                'canvas': IMAGE_LIBRARY.categories.canvas?.path,
+	                'branded_apparel': IMAGE_LIBRARY.categories.brandedApparel?.path,
+	                'aluminum_signs': IMAGE_LIBRARY.categories.aluminumSigns?.path,
+	                'stickers': IMAGE_LIBRARY.categories.stickers?.path,
+	                'specialty_signs': IMAGE_LIBRARY.categories.specialtySigns?.path,
+	                'retractable_banners': IMAGE_LIBRARY.categories.retractableBanners?.path
+	            };
+	            
+	            return categoryMap[category] || '/assets/images/placeholder.svg';
+	        }
+	        
+	        // Fallback to old system
+	        const heroImages = {
+	            'prints': '/assets/images/printing/banner.jpg',
+	            'signs': '/assets/images/signs/signs-sandwichboard.webp',
+	            'promotional': '/assets/images/promotional/flags.jpg',
+	            'materials': '/assets/images/materials/corrugated.jpg',
+	            'real-estate': '/assets/images/real-estate/banners.jpg'
+	        };
+	        
+	        return heroImages[category] || '/assets/images/backgrounds/bg_01.jpg';
+	    });
+	    
+	    // Get website image by variable path
+	    Handlebars.registerHelper('getWebsiteImage', function(imagePath) {
+	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.website) {
+	            const pathParts = imagePath.split('.');
+	            let current = IMAGE_LIBRARY.website;
+	            
+	            for (const part of pathParts) {
+	                if (current[part]) {
+	                    current = current[part];
+	                } else {
+	                    return '/assets/images/placeholder.svg';
+	                }
+	            }
+	            
+	            return typeof current === 'string' ? current : current.path;
+	        }
+	        
+	        return '/assets/images/placeholder.svg';
+	    });
+	    
+	    // Get logo image
+	    Handlebars.registerHelper('getLogoImage', function() {
+	        return '/assets/images/logo/BeSeen_1.png';
+	    });
+	    
+	    // Get favicon
+	    Handlebars.registerHelper('getFavicon', function() {
+	        return '/assets/images/favicon/favicon.ico';
+	    });
+	    
+	    // Get review image path
+	    Handlebars.registerHelper('getReviewImagePath', function(category, imageName) {
+	        const reviewCategories = {
+	            'banners': '/assets/images/review-images/Banners/',
+	            'business_cards': '/assets/images/review-images/Business cards/',
+	            'posters': '/assets/images/review-images/Posters/',
+	            'flyers': '/assets/images/review-images/Flyers/',
+	            'brochures': '/assets/images/review-images/Brochures/',
+	            'stickers': '/assets/images/review-images/Stickers/',
+	            'decals': '/assets/images/review-images/Decals/',
+	            'window_clings': '/assets/images/review-images/Window clings/',
+	            'canvas_prints': '/assets/images/review-images/Canvas prints/',
+	            'photos': '/assets/images/review-images/Photos/'
+	        };
+	        
+	        const basePath = reviewCategories[category] || '/assets/images/review-images/';
+	        return basePath + imageName;
+	    });
+	    
+	    // Get image with fallback
+	    Handlebars.registerHelper('getImageWithFallback', function(imagePath, fallbackPath) {
+	        return imagePath || fallbackPath || '/assets/images/placeholder.svg';
+	    });
+	    
+	    // Format image URL for safe use in CSS
+	    Handlebars.registerHelper('formatImageUrl', function(imagePath) {
+	        if (!imagePath) return '';
+	        return `url('${imagePath}')`;
+	    });
+	    
+	    // Get product category image
+	    Handlebars.registerHelper('getProductCategoryImage', function(category) {
+	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.categories) {
+	            const categoryImages = {
+	                'prints': IMAGE_LIBRARY.categories.productPrintsBusinessCard?.path,
+	                'signs': IMAGE_LIBRARY.categories.yardSigns?.path,
+	                'promotional': IMAGE_LIBRARY.categories.eventItems?.path,
+	                'materials': IMAGE_LIBRARY.categories.corrugatedPlastic?.path,
+	                'real-estate': IMAGE_LIBRARY.products.businessCards?.luxury?.path
+	            };
+	            return categoryImages[category] || '/assets/images/placeholder.svg';
+	        }
+	        return '/assets/images/placeholder.svg';
+	    });
+	}
+	</script>
+	
+	<!-- 📋 TEMPLATE USAGE EXAMPLES -->
+	<!-- 
+	USAGE IN HANDLEBARS TEMPLATES:
+	
+	1. Product Images:
+	   <img src="/assets/Be seen image review updated/Foam Board/Premium Foam Board.jpg" alt="Foam Board">
+	
+	2. Service Images:
+	   <img src="/assets/images/placeholder.svg" alt="">
+	
+	3. Breadcrumb Backgrounds:
+	   <section style="background-image: url(&#x27;/assets/images/breadcrumb/bg_01.jpg&#x27;)">
+	
+	4. Category Hero Images:
+	   <div style="background-image: url(&#x27;/assets/images/placeholder.svg&#x27;)">
+	
+	5. Logo:
+	   <img src="/assets/images/logo/BeSeen_1.png" alt="BE SEEN Logo">
+	
+	6. Review Images:
+	   <img src="/assets/images/review-images/undefined" alt="Review Image">
+	
+	7. Image with Fallback:
+	   <img src="/assets/images/placeholder.jpg" alt="Image">
+	
+	8. Product Category Images:
+	   <img src="/assets/Be seen image review updated/Main categories/corrugated plastic.jpg" alt="materials Products">
+	
+	BENEFITS:
+	- Consistent image paths across all templates
+	- Easy to update image paths in one place
+	- Automatic fallback handling
+	- Type-safe image references
+	- Clean template code
+	--> 
+	<!-- INCLUDE END: image-helpers --></head>
 
 <body>
 	<!-- backtotop - start -->
@@ -529,7 +869,7 @@
 		================================================== -->
 
 		<!-- Breadcrumb -->
-		<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url(/assets/images/breadcrumb/bg_05.jpg);">
+		<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url('/assets/images/breadcrumb/bg_01.jpg')">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -572,12 +912,30 @@
 						<div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 							<div class="details_image clearfix">
 								<div class="tab-content" id="productTabContent">
+									<div id="image_1" class="tab-pane active">
+										<img src="/assets/Be seen image review updated/Foam Board/Premium Foam Board.jpg" alt="Premium Foam Board">
+									</div>
+									<div id="image_2" class="tab-pane fade">
+										<img src="/assets/Be seen image review updated/Foam Board/Standard Foam Board.jpg" alt="Standard Foam Board">
+									</div>
 								</div>
 							</div>
 
 							<!-- Thumbnail Nav -->
 							<div class="mt-3">
 								<ul class="nav ul_li product_image_nav" id="productTab" role="tablist">
+									<li>
+										<a class="active" data-bs-toggle="tab" href="#image_1">
+											<img src="/assets/Be seen image review updated/Foam Board/Premium Foam Board.jpg" alt="Premium Foam Board">
+											<span class="thumbnail-label">Premium</span>
+										</a>
+									</li>
+									<li>
+										<a class="" data-bs-toggle="tab" href="#image_2">
+											<img src="/assets/Be seen image review updated/Foam Board/Standard Foam Board.jpg" alt="Standard Foam Board">
+											<span class="thumbnail-label">Standard</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -588,7 +946,7 @@
 								 data-product-id=""
 								 data-product-name="Foam Board"
 								 data-product-price="" 
-								 data-product-image="/assets/images/placeholder.jpg">
+								 data-product-image="/assets/Be seen image review updated/Foam Board/Premium Foam Board.jpg">
 								<h2 class="item_title mb_15"></h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
 									<li><i class="fas fa-star"></i></li>

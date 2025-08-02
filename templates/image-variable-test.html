@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Image Variable Test - {{page_title}}</title>
+    
+    <!-- Include the image library -->
+    {{> image-library}}
+    {{> image-helpers}}
+    
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; }
+        .image-test { margin: 10px 0; }
+        .variable-display { font-family: monospace; background: #f0f0f0; padding: 5px; margin: 5px 0; }
+        img { max-width: 200px; max-height: 150px; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Image Variable Test Template</h1>
+    <p>Testing the new CATEGORY_PRODUCT_VARIANT naming system in Handlebars templates</p>
+
+    <!-- Website Images Test -->
+    <div class="test-section">
+        <h2>🌐 Website Images Test</h2>
+        
+        <div class="image-test">
+            <h3>Logo Test</h3>
+            <img src="{{getWebsiteImage 'logo.main.path'}}" alt="{{getWebsiteImage 'logo.main.alt'}}">
+            <div class="variable-display">Variable: WEBSITE_LOGO_MAIN</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>Graphic Design Service</h3>
+            <img src="{{getWebsiteImage 'services.graphicDesign.path'}}" alt="{{getWebsiteImage 'services.graphicDesign.alt'}}">
+            <div class="variable-display">Variable: WEBSITE_SERVICES_GRAPHIC_DESIGN</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>Web Design Service</h3>
+            <img src="{{getWebsiteImage 'services.webDesign.path'}}" alt="{{getWebsiteImage 'services.webDesign.alt'}}">
+            <div class="variable-display">Variable: WEBSITE_SERVICES_WEB_DESIGN</div>
+        </div>
+    </div>
+
+    <!-- Category Images Test -->
+    <div class="test-section">
+        <h2>📂 Category Images Test</h2>
+        
+        <div class="image-test">
+            <h3>Yard Signs Category</h3>
+            <img src="{{getCategoryHeroImage 'yard_signs'}}" alt="Yard Signs Category">
+            <div class="variable-display">Variable: CATEGORY_YARD_SIGNS</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>Business Cards Category</h3>
+            <img src="{{getCategoryHeroImage 'business_cards'}}" alt="Business Cards Category">
+            <div class="variable-display">Variable: CATEGORY_BUSINESS_CARDS</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>Banners Category</h3>
+            <img src="{{getCategoryHeroImage 'banners'}}" alt="Banners Category">
+            <div class="variable-display">Variable: CATEGORY_BANNERS</div>
+        </div>
+    </div>
+
+    <!-- Product Variants Test -->
+    <div class="test-section">
+        <h2>🛍️ Product Variants Test</h2>
+        
+        <div class="image-test">
+            <h3>Business Cards - Standard</h3>
+            <img src="{{getProductImage 'business_cards'}}" alt="Standard Business Cards">
+            <div class="variable-display">Variable: PRODUCTS_BUSINESS_CARDS_STANDARD</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>Banners - Vinyl</h3>
+            <img src="{{getProductImage 'banners'}}" alt="Vinyl Banners">
+            <div class="variable-display">Variable: PRODUCTS_BANNERS_VINYL</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>Yard Signs - Standard</h3>
+            <img src="{{getProductImage 'yard_signs'}}" alt="Standard Yard Signs">
+            <div class="variable-display">Variable: PRODUCTS_YARD_SIGNS_STANDARD</div>
+        </div>
+    </div>
+
+    <!-- Service Images Test -->
+    <div class="test-section">
+        <h2>🔧 Service Images Test</h2>
+        
+        <div class="image-test">
+            <h3>Graphic Design Service</h3>
+            <img src="{{getServiceImage 'graphic_design'}}" alt="Graphic Design Service">
+            <div class="variable-display">Variable: WEBSITE_SERVICES_GRAPHIC_DESIGN</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>Web Design Service</h3>
+            <img src="{{getServiceImage 'web_design'}}" alt="Web Design Service">
+            <div class="variable-display">Variable: WEBSITE_SERVICES_WEB_DESIGN</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>Mailing Service</h3>
+            <img src="{{getServiceImage 'mailing'}}" alt="Mailing Service">
+            <div class="variable-display">Variable: WEBSITE_SERVICES_MAILING</div>
+        </div>
+    </div>
+
+    <!-- JavaScript Test -->
+    <div class="test-section">
+        <h2>⚡ JavaScript Variable Access Test</h2>
+        <div id="js-test-results">
+            <p>Loading JavaScript test results...</p>
+        </div>
+    </div>
+
+    <script>
+        // Test JavaScript access to the image library
+        document.addEventListener('DOMContentLoaded', function() {
+            const results = document.getElementById('js-test-results');
+            
+            if (typeof IMAGE_LIBRARY !== 'undefined') {
+                const testResults = [];
+                
+                // Test website images
+                if (IMAGE_LIBRARY.website?.logo?.main?.path) {
+                    testResults.push('✅ Website logo accessible');
+                }
+                
+                if (IMAGE_LIBRARY.website?.services?.graphicDesign?.path) {
+                    testResults.push('✅ Graphic design service accessible');
+                }
+                
+                // Test categories
+                if (IMAGE_LIBRARY.categories?.yardSigns?.path) {
+                    testResults.push('✅ Yard signs category accessible');
+                }
+                
+                // Test products
+                if (IMAGE_LIBRARY.products?.businessCards?.standard?.path) {
+                    testResults.push('✅ Business cards product accessible');
+                }
+                
+                // Test external images
+                if (IMAGE_LIBRARY.external?.commercialSignage1?.path) {
+                    testResults.push('✅ External images accessible');
+                }
+                
+                results.innerHTML = `
+                    <h3>JavaScript Access Test Results:</h3>
+                    <ul>
+                        ${testResults.map(result => `<li>${result}</li>`).join('')}
+                    </ul>
+                    <p><strong>Total Tests:</strong> ${testResults.length}</p>
+                    <p><strong>Success Rate:</strong> ${Math.round((testResults.length / 5) * 100)}%</p>
+                `;
+            } else {
+                results.innerHTML = '<p>❌ IMAGE_LIBRARY not found</p>';
+            }
+        });
+    </script>
+</body>
+</html> 

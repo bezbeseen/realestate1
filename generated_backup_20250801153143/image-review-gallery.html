@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Review Gallery - BE SEEN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gallery-container {
+            background: #f8f9fa;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        .filter-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        .category-title {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .image-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .image-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .image-preview {
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .image-info {
+            text-align: center;
+        }
+        .image-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .image-category {
+            color: #7f8c8d;
+            font-size: 12px;
+        }
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        .search-box {
+            border-radius: 25px;
+            border: 2px solid #e9ecef;
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .search-box:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+        .filter-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .filter-btn:hover {
+            background: #2980b9;
+        }
+        .filter-btn.active {
+            background: #27ae60;
+        }
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .stats-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #7f8c8d;
+        }
+        .no-results {
+            text-align: center;
+            padding: 50px;
+            color: #7f8c8d;
+        }
+        .category-count {
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .variable-name {
+            background: #28a745;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .error-image {
+            border: 2px dashed #e74c3c;
+            background: #fdf2f2;
+        }
+        .success-image {
+            border: 2px solid #27ae60;
+        }
+        .image-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <div class="container">
+            <!-- Header -->
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mb-4">
+                        <i class="fas fa-images"></i> Image Review Gallery
+                    </h1>
+                    <p class="text-center text-muted mb-5">
+                        BE SEEN - Updated Product Image Collection
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number" id="totalImages">0</div>
+                        <div class="stats-label">Total Images</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number" id="totalCategories">0</div>
+                        <div class="stats-label">Categories</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number" id="visibleImages">0</div>
+                        <div class="stats-label">Currently Visible</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number" id="searchResults">0</div>
+                        <div class="stats-label">Search Results</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="search-box" id="searchInput" placeholder="Search images...">
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="business-cards">Business Cards</button>
+                        <button class="filter-btn" data-filter="banners">Banners</button>
+                        <button class="filter-btn" data-filter="posters">Posters</button>
+                        <button class="filter-btn" data-filter="signs">Signs</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Content -->
+            <div id="galleryContent">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                    <p>Loading images...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Image Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" class="modal-image" src="" alt="">
+                </div>
+                <div class="modal-footer">
+                    <div class="text-start">
+                        <strong>Category:</strong> <span id="modalCategory"></span><br>
+                        <strong>File:</strong> <span id="modalFile"></span>
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Updated image library with new review images - ONLY using "Be seen image review updated"
+        const UPDATED_IMAGE_LIBRARY = {
+            "Business Cards": {
+                "standard business card.jpg": "/assets/Be seen image review updated/Business cards/standard business card.jpg",
+                "premium business card.jpg": "/assets/Be seen image review updated/Business cards/premium business card.jpg",
+                "luxury business card.jpg": "/assets/Be seen image review updated/Business cards/luxury business card.jpg",
+                "economy business card.jpg": "/assets/Be seen image review updated/Business cards/economy business card.jpg"
+            },
+            "Banners": {
+                "vinyl banner.jpg": "/assets/Be seen image review updated/Banners/vinyl banner.jpg",
+                "retractable banner.jpg": "/assets/Be seen image review updated/Banners/retractable banner.jpg",
+                "mesh banner.jpg": "/assets/Be seen image review updated/Banners/mesh banner.jpg",
+                "fabric banner.jpg": "/assets/Be seen image review updated/Banners/fabric banner.jpg"
+            },
+            "Posters": {
+                "small poster.jpg": "/assets/Be seen image review updated/Posters/small poster.jpg",
+                "large poster.jpg": "/assets/Be seen image review updated/Posters/large poster.jpg",
+                "custom sizes poster.jpg": "/assets/Be seen image review updated/Posters/custom sizes poster.jpg"
+            },
+            "Yard Signs": {
+                "standard yard signs.jpg": "/assets/Be seen image review updated/Yard Signs/standard yard signs.jpg",
+                "premium yard signs.jpg": "/assets/Be seen image review updated/Yard Signs/premium yard signs.jpg",
+                "double sided yard signs.jpg": "/assets/Be seen image review updated/Yard Signs/double sided yard signs.jpg"
+            },
+            "Window Graphics": {
+                "Perforated Window Graphics.jpg": "/assets/Be seen image review updated/Window Graphics/Perforated Window Graphics.jpg",
+                "One Way Vision Window Graphics.jpg": "/assets/Be seen image review updated/Window Graphics/One Way Vision Window Graphics.jpg"
+            },
+            "Table Cloths": {
+                "Custom Table Cloths.jpg": "/assets/Be seen image review updated/Table Cloths/Custom Table Cloths.jpg",
+                "8ft Table Cloths.jpg": "/assets/Be seen image review updated/Table Cloths/8ft Table Cloths.jpg",
+                "6ft Table Cloths.jpg": "/assets/Be seen image review updated/Table Cloths/6ft Table Cloths.jpg"
+            },
+            "Styrene & Acrylic": {
+                "styrene sign 1.jpg": "/assets/Be seen image review updated/Styrene & Acrylic/styrene sign 1.jpg",
+                "acrylic sign 1.jpg": "/assets/Be seen image review updated/Styrene & Acrylic/acrylic sign 1.jpg"
+            },
+            "Stickers & Decals": {
+                "sticker 1.jpg": "/assets/Be seen image review updated/Stickers & Decals/sticker 1.jpg",
+                "decal 1.jpg": "/assets/Be seen image review updated/Stickers & Decals/decal 1.jpg"
+            },
+            "Specialty Signs": {
+                "specialty sign 1.jpg": "/assets/Be seen image review updated/Specialty Signs/specialty sign 1.jpg",
+                "specialty sign 2.jpg": "/assets/Be seen image review updated/Specialty Signs/specialty sign 2.jpg"
+            },
+            "Retractable Banners": {
+                "retractable banner 1.jpg": "/assets/Be seen image review updated/Retractable Banners/retractable banner 1.jpg",
+                "retractable banner 2.jpg": "/assets/Be seen image review updated/Retractable Banners/retractable banner 2.jpg"
+            },
+            "PVC Board": {
+                "pvc sign 1.jpg": "/assets/Be seen image review updated/PVC Board/pvc sign 1.jpg",
+                "pvc sign 2.jpg": "/assets/Be seen image review updated/PVC Board/pvc sign 2.jpg"
+            },
+            "Promotional Pens": {
+                "Premium Promotional Pens.jpg": "/assets/Be seen image review updated/Promotional Pens/Premium Promotional Pens.jpg",
+                "Metal Promotional Pens.jpg": "/assets/Be seen image review updated/Promotional Pens/Metal Promotional Pens.jpg",
+                "Custom Colors Promotional Pens.jpg": "/assets/Be seen image review updated/Promotional Pens/Custom Colors Promotional Pens.jpg",
+                "Basic Promotional Pens.jpg": "/assets/Be seen image review updated/Promotional Pens/Basic Promotional Pens.jpg"
+            },
+            "Presentation Folders": {
+                "slits presentation folders.jpg": "/assets/Be seen image review updated/Presentation Folders/slits presentation folders.jpg",
+                "custom presentation folders.jpg": "/assets/Be seen image review updated/Presentation Folders/custom presentation folders.jpg",
+                "Standard presentation folders.jpg": "/assets/Be seen image review updated/Presentation Folders/Standard presentation folders.jpg"
+            },
+            "Foam Board": {
+                "Standard Foam Board.jpg": "/assets/Be seen image review updated/Foam Board/Standard Foam Board.jpg",
+                "Premium Foam Board.jpg": "/assets/Be seen image review updated/Foam Board/Premium Foam Board.jpg"
+            },
+            "Flyers": {
+                "Standard flyer.jpg": "/assets/Be seen image review updated/Flyers/Standard flyer.jpg",
+                "Premium flyer.jpg": "/assets/Be seen image review updated/Flyers/Premium flyer.jpg",
+                "Glossy flyer.jpg": "/assets/Be seen image review updated/Flyers/Glossy flyer.jpg"
+            },
+            "Flags": {
+                "Rectangle Flags.jpg": "/assets/Be seen image review updated/Flags/Rectangle Flags.jpg",
+                "Teardrop Flags.jpg": "/assets/Be seen image review updated/Flags/Teardrop Flags.jpg",
+                "Feather Flags.jpg": "/assets/Be seen image review updated/Flags/Feather Flags.jpg"
+            },
+            "Event Items": {
+                "Tote Bags Event Items.jpg": "/assets/Be seen image review updated/Event Items/Tote Bags Event Items.jpg",
+                "Tents Event Items.jpg": "/assets/Be seen image review updated/Event Items/Tents Event Items.jpg",
+                "Booths Event Items.jpg": "/assets/Be seen image review updated/Event Items/Booths Event Items.jpg"
+            },
+            "Corrugated Plastic": {
+                "corrugated sign 1.jpg": "/assets/Be seen image review updated/Corrugated Plastic/corrugated sign 1.jpg",
+                "corrugated sign 2.jpg": "/assets/Be seen image review updated/Corrugated Plastic/corrugated sign 2.jpg"
+            },
+            "Canvas": {
+                "museum quality canvas.jpg": "/assets/Be seen image review updated/Canvas/museum quality canvas.jpg",
+                "gallery wrap canvas.jpg": "/assets/Be seen image review updated/Canvas/gallery wrap canvas.jpg"
+            },
+            "Brochures": {
+                "z-fold broucher.jpg": "/assets/Be seen image review updated/Broucher/z-fold broucher.jpg",
+                "tri-fold broucher.jpg": "/assets/Be seen image review updated/Broucher/tri-fold broucher.jpg",
+                "bi-fold broucher.jpg": "/assets/Be seen image review updated/Broucher/bi-fold broucher.jpg"
+            },
+            "Branded Apparel": {
+                "T Shirt Branded Apparel.jpg": "/assets/Be seen image review updated/Branded Apparel/T Shirt Branded Apparel.jpg",
+                "Polos Branded Apparel.jpg": "/assets/Be seen image review updated/Branded Apparel/Polos Branded Apparel.jpg",
+                "Hoodies Branded Apparel.jpg": "/assets/Be seen image review updated/Branded Apparel/Hoodies Branded Apparel.jpg",
+                "Hats Branded Apparel.jpg": "/assets/Be seen image review updated/Branded Apparel/Hats Branded Apparel.jpg"
+            },
+            "Aluminum Signs": {
+                "aluminum sign 1.jpg": "/assets/Be seen image review updated/Aluminum Signs/aluminum sign 1.jpg",
+                "aluminum sign 2.jpg": "/assets/Be seen image review updated/Aluminum Signs/aluminum sign 2.jpg"
+            }
+        };
+
+        let currentFilter = 'all';
+        let currentSearch = '';
+        let isInitialized = false;
+
+        function extractVariableName(imageName, imagePath) {
+            // Try to extract variable name from image name or path
+            // Convert image name to a variable-like format
+            const cleanName = imageName
+                .replace(/[^a-zA-Z0-9\s]/g, '') // Remove special characters
+                .replace(/\s+/g, '_') // Replace spaces with underscores
+                .toUpperCase(); // Convert to uppercase
+            
+            if (cleanName && cleanName.length > 0) {
+                return cleanName;
+            }
+            return null;
+        }
+
+        function createImageItem(imageName, imagePath, category) {
+            const div = document.createElement('div');
+            div.className = 'image-item';
+            div.dataset.category = category.toLowerCase().replace(/\s+/g, '-');
+            div.dataset.name = imageName.toLowerCase();
+            
+            // Create loading spinner first
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'image-loading';
+            loadingDiv.innerHTML = '<div class="spinner"></div>';
+            
+            const img = document.createElement('img');
+            img.src = imagePath;
+            img.alt = imageName;
+            img.className = 'image-preview';
+            img.style.display = 'none';
+            
+            // Add variable name if available (extract from image name or path)
+            const variableName = extractVariableName(imageName, imagePath);
+            if (variableName) {
+                const variableDiv = document.createElement('div');
+                variableDiv.className = 'variable-name';
+                variableDiv.innerHTML = `<strong>Variable:</strong> ${variableName}`;
+                div.appendChild(variableDiv);
+            }
+            
+            const pathDiv = document.createElement('div');
+            pathDiv.className = 'path-display';
+            pathDiv.textContent = imagePath;
+            
+            div.appendChild(loadingDiv);
+            div.appendChild(img);
+            div.appendChild(pathDiv);
+            
+            // Handle image load events
+            img.onload = function() {
+                loadingDiv.style.display = 'none';
+                img.style.display = 'block';
+                div.classList.add('success-image');
+            };
+            
+            img.onerror = function() {
+                loadingDiv.style.display = 'none';
+                img.style.display = 'block';
+                img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+CiAgPHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjEzMCIgZmlsbD0iI2U5ZWNlZiIgc3Ryb2tlPSIjZGVlMmU2IiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSIxMDAiIHk9Ijg1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2Yzc1N2QiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkltYWdlIE5vdCBGb3VuZDwvdGV4dD4KICA8dGV4dCB4PSIxMDAiIHk9IjEwNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjYWRiNWJkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5QbGFjZWhvbGRlcjwvdGV4dD4KPC9zdmc+';
+                div.classList.add('error-image');
+            };
+            
+            div.addEventListener('click', () => showImageModal(imageName, imagePath, category));
+            
+            return div;
+        }
+
+        function createCategorySection(categoryName, images) {
+            const section = document.createElement('div');
+            section.className = 'category-card';
+            section.dataset.category = categoryName.toLowerCase().replace(/\s+/g, '-');
+            
+            const title = document.createElement('h3');
+            title.className = 'category-title';
+            title.innerHTML = `
+                ${categoryName}
+                <span class="category-count">${Object.keys(images).length}</span>
+            `;
+            
+            const imageGrid = document.createElement('div');
+            imageGrid.className = 'image-grid';
+            
+            Object.keys(images).forEach(imageName => {
+                const imagePath = images[imageName];
+                const imageItem = createImageItem(imageName, imagePath, categoryName);
+                imageGrid.appendChild(imageItem);
+            });
+            
+            section.appendChild(title);
+            section.appendChild(imageGrid);
+            
+            return section;
+        }
+
+        function displayGallery() {
+            if (!isInitialized) return;
+            
+            const container = document.getElementById('galleryContent');
+            container.innerHTML = '';
+            
+            let totalImages = 0;
+            let visibleImages = 0;
+            
+            Object.keys(UPDATED_IMAGE_LIBRARY).forEach(category => {
+                const images = UPDATED_IMAGE_LIBRARY[category];
+                totalImages += Object.keys(images).length;
+                
+                // Filter by category
+                if (currentFilter !== 'all' && !category.toLowerCase().includes(currentFilter.replace('-', ' '))) {
+                    return;
+                }
+                
+                // Filter by search
+                const filteredImages = {};
+                Object.keys(images).forEach(imageName => {
+                    if (currentSearch === '' || 
+                        imageName.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                        category.toLowerCase().includes(currentSearch.toLowerCase())) {
+                        filteredImages[imageName] = images[imageName];
+                        visibleImages++;
+                    }
+                });
+                
+                if (Object.keys(filteredImages).length > 0) {
+                    const section = createCategorySection(category, filteredImages);
+                    container.appendChild(section);
+                }
+            });
+            
+            // Update stats
+            document.getElementById('totalImages').textContent = totalImages;
+            document.getElementById('totalCategories').textContent = Object.keys(UPDATED_IMAGE_LIBRARY).length;
+            document.getElementById('visibleImages').textContent = visibleImages;
+            document.getElementById('searchResults').textContent = visibleImages;
+            
+            if (visibleImages === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search fa-2x"></i>
+                        <p>No images found matching your criteria.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function showImageModal(imageName, imagePath, category) {
+            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+            document.getElementById('modalTitle').textContent = imageName;
+            document.getElementById('modalImage').src = imagePath;
+            document.getElementById('modalCategory').textContent = category;
+            document.getElementById('modalFile').textContent = imagePath;
+            modal.show();
+        }
+
+        function setupEventListeners() {
+            // Search functionality with debouncing
+            let searchTimeout;
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    currentSearch = e.target.value;
+                    displayGallery();
+                }, 300);
+            });
+            
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    currentFilter = e.target.dataset.filter;
+                    displayGallery();
+                });
+            });
+        }
+
+        // Initialize the gallery
+        document.addEventListener('DOMContentLoaded', function() {
+            isInitialized = true;
+            displayGallery();
+            setupEventListeners();
+        });
+    </script>
+</body>
+</html> 

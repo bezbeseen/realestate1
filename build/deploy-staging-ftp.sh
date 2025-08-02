@@ -46,12 +46,12 @@ if command -v lftp &> /dev/null; then
     echo "Using lftp for deployment..."
     lftp -u $FTP_USER $FTP_HOST << EOF
 cd $FTP_PATH
-mirror -R --delete --verbose dist/ ./
+mirror -R --delete --verbose generated/ ./
 quit
 EOF
 else
     echo "lftp not found. Please install it with: brew install lftp"
-    echo "Or use Cyberduck to upload the dist/ folder contents."
+    echo "Or use Cyberduck to upload the generated/ folder contents."
     exit 1
 fi
 

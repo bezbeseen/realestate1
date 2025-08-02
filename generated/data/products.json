@@ -15,6 +15,23 @@
       { "name": "Business Cards" }
     ],
     "generation_pipeline": "standard_product_v1",
+    "gallery": {
+      "main_images": [
+        {
+          "id": "main1",
+          "src": "/assets/images/printing/business%20card.jpg",
+          "alt": "Business Card Example"
+        }
+      ],
+      "thumbnails": [
+        {
+          "id": "thumb1",
+          "src": "/assets/images/printing/business%20card.jpg",
+          "alt": "Business Card Example",
+          "label": "Standard"
+        }
+      ]
+    },
     "options": [
       {
         "id": "stock",
@@ -564,6 +581,142 @@
       { "name": "Products", "link": "/products.html" },
       { "name": "Promotional", "link": "/products/promotional.html" },
       { "name": "Promotional Tents" }
+    ],
+    "generation_pipeline": "standard_product_v1"
+  },
+  {
+    "product_id": "window_graphics",
+    "product_name": "Window Graphics",
+    "base_description": "Custom window graphics and decals for businesses.",
+    "category": "signs",
+    "path": "products/signs/window-graphics.html",
+    "page_title": "Window Graphics | Custom Decals | BE SEEN",
+    "seo_description": "Custom window graphics and decals for business branding and advertising.",
+    "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
+    "breadcrumbs": [
+      { "name": "Home", "link": "/index.html" },
+      { "name": "Products", "link": "/products.html" },
+      { "name": "Signs", "link": "/products/signs.html" },
+      { "name": "Window Graphics" }
+    ],
+    "generation_pipeline": "standard_product_v1"
+  },
+  {
+    "product_id": "aluminum_signs",
+    "product_name": "Aluminum Signs",
+    "base_description": "Durable aluminum signs for outdoor use.",
+    "category": "signs",
+    "path": "products/signs/aluminum-signs.html",
+    "page_title": "Aluminum Signs | Durable Outdoor Signs | BE SEEN",
+    "seo_description": "Durable aluminum signs for outdoor use and long-lasting business identification.",
+    "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
+    "breadcrumbs": [
+      { "name": "Home", "link": "/index.html" },
+      { "name": "Products", "link": "/products.html" },
+      { "name": "Signs", "link": "/products/signs.html" },
+      { "name": "Aluminum Signs" }
+    ],
+    "generation_pipeline": "standard_product_v1"
+  },
+  {
+    "product_id": "magnets",
+    "product_name": "Car Magnets",
+    "base_description": "Custom car magnets for vehicle advertising.",
+    "category": "signs",
+    "path": "products/signs/magnets.html",
+    "page_title": "Car Magnets | Vehicle Advertising | BE SEEN",
+    "seo_description": "Custom car magnets for vehicle advertising and mobile branding.",
+    "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
+    "breadcrumbs": [
+      { "name": "Home", "link": "/index.html" },
+      { "name": "Products", "link": "/products.html" },
+      { "name": "Signs", "link": "/products/signs.html" },
+      { "name": "Car Magnets" }
+    ],
+    "generation_pipeline": "standard_product_v1"
+  },
+  {
+    "product_id": "real_estate_business_cards",
+    "product_name": "Real Estate Business Cards",
+    "base_description": "Professional business cards for real estate agents.",
+    "category": "real-estate",
+    "path": "products/real-estate/business-cards.html",
+    "page_title": "Real Estate Business Cards | Professional Cards | BE SEEN",
+    "seo_description": "Professional business cards designed specifically for real estate agents and brokers.",
+    "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
+    "breadcrumbs": [
+      { "name": "Home", "link": "/index.html" },
+      { "name": "Products", "link": "/products.html" },
+      { "name": "Real Estate", "link": "/products/real-estate.html" },
+      { "name": "Business Cards" }
+    ],
+    "generation_pipeline": "standard_product_v1"
+  },
+  {
+    "product_id": "real_estate_banners",
+    "product_name": "Real Estate Banners",
+    "base_description": "Custom banners for real estate marketing.",
+    "category": "real-estate",
+    "path": "products/real-estate/banners.html",
+    "page_title": "Real Estate Banners | Marketing Banners | BE SEEN",
+    "seo_description": "Custom banners designed for real estate marketing and property promotion.",
+    "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
+    "breadcrumbs": [
+      { "name": "Home", "link": "/index.html" },
+      { "name": "Products", "link": "/products.html" },
+      { "name": "Real Estate", "link": "/products/real-estate.html" },
+      { "name": "Banners" }
+    ],
+    "generation_pipeline": "standard_product_v1"
+  },
+  {
+    "product_id": "real_estate_flags",
+    "product_name": "Real Estate Flags",
+    "base_description": "Marketing flags for real estate promotions.",
+    "category": "real-estate",
+    "path": "products/real-estate/flags.html",
+    "page_title": "Real Estate Flags | Marketing Flags | BE SEEN",
+    "seo_description": "Marketing flags designed for real estate promotions and property advertising.",
+    "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
+    "breadcrumbs": [
+      { "name": "Home", "link": "/index.html" },
+      { "name": "Products", "link": "/products.html" },
+      { "name": "Real Estate", "link": "/products/real-estate.html" },
+      { "name": "Flags" }
+    ],
+    "generation_pipeline": "standard_product_v1"
+  },
+  {
+    "product_id": "real_estate_lawn_signs",
+    "product_name": "Real Estate Lawn Signs",
+    "base_description": "Lawn signs for real estate listings.",
+    "category": "real-estate",
+    "path": "products/real-estate/lawn-signs.html",
+    "page_title": "Real Estate Lawn Signs | Property Signs | BE SEEN",
+    "seo_description": "Lawn signs designed for real estate listings and property marketing.",
+    "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
+    "breadcrumbs": [
+      { "name": "Home", "link": "/index.html" },
+      { "name": "Products", "link": "/products.html" },
+      { "name": "Real Estate", "link": "/products/real-estate.html" },
+      { "name": "Lawn Signs" }
+    ],
+    "generation_pipeline": "standard_product_v1"
+  },
+  {
+    "product_id": "real_estate_a_frames",
+    "product_name": "Real Estate A-Frame Signs",
+    "base_description": "A-frame signs for real estate marketing.",
+    "category": "real-estate",
+    "path": "products/real-estate/a-frames.html",
+    "page_title": "Real Estate A-Frame Signs | Portable Signs | BE SEEN",
+    "seo_description": "A-frame signs designed for real estate marketing and property promotion.",
+    "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
+    "breadcrumbs": [
+      { "name": "Home", "link": "/index.html" },
+      { "name": "Products", "link": "/products.html" },
+      { "name": "Real Estate", "link": "/products/real-estate.html" },
+      { "name": "A-Frame Signs" }
     ],
     "generation_pipeline": "standard_product_v1"
   }
