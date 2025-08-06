@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subdomain Test - images.getbeseen.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { text-align: center; }
+        .status { 
+            background: rgba(76, 175, 80, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .error {
+            background: rgba(244, 67, 54, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Subdomain Test</h1>
+        
+        <div class="status">
+            <h2>✅ Subdomain is Working!</h2>
+            <p>If you can see this page, your subdomain <code>images.getbeseen.com</code> is properly configured and accessible.</p>
+        </div>
+
+        <div class="error">
+            <h3>🚨 Nextcloud Issue</h3>
+            <p>The "Forbidden" error means Nextcloud permissions need to be fixed:</p>
+            <ol>
+                <li>Set main folder permissions to <code>755</code></li>
+                <li>Set <code>data/</code> folder permissions to <code>777</code></li>
+                <li>Set <code>config/</code> folder permissions to <code>777</code></li>
+                <li>Check that <code>.htaccess</code> file exists</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <p><strong>Current Time:</strong> <span id="timestamp"></span></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html> 

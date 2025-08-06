@@ -179,9 +179,7 @@
             "premium": { "path": "/assets/Be seen image review updated/Retractable Banners/premium retractable banners.jpg", "alt": "Premium Retractable Banner", "variable": "PRODUCTS_RETRACTABLE_BANNERS_PREMIUM" },
             "standard": { "path": "/assets/Be seen image review updated/Retractable Banners/Standard retractable banners.jpg", "alt": "Standard Retractable Banner", "variable": "PRODUCTS_RETRACTABLE_BANNERS_STANDARD" }
         },
-        "commercial_signage": {
-            "standard": { "path": "/assets/images/signs/commercial-signage.jpg", "alt": "Commercial Signage", "variable": "PRODUCTS_COMMERCIAL_SIGNAGE_STANDARD" }
-        },
+
         "channel_lettering": {
             "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/Channel Specialty Signs.jpg", "alt": "Channel Lettering Sign", "variable": "PRODUCTS_CHANNEL_LETTERING_STANDARD" }
         },
@@ -215,10 +213,7 @@
         }
     },
     "external": {
-        "commercialSignage1": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c45520b246836fa26c1a.png", "alt": "Commercial Signage - Professional Display", "variable": "EXTERNAL_COMMERCIAL_SIGNAGE_1" },
-        "commercialSignage2": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c42320b2462492a26b90.png", "alt": "Commercial Signage - Business Solutions", "variable": "EXTERNAL_COMMERCIAL_SIGNAGE_2" },
-        "commercialSignage3": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c41720b246f4faa26b86.png", "alt": "Commercial Signage - Quality Printing", "variable": "EXTERNAL_COMMERCIAL_SIGNAGE_3" },
-        "commercialSignage4": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837c3ee3786e500085a8d4d.png", "alt": "Commercial Signage - Custom Solutions", "variable": "EXTERNAL_COMMERCIAL_SIGNAGE_4" },
+
         "productsBusinessCards": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b6932b779f6c1bcc11a7.jpeg", "alt": "Business Cards and Other Printed Materials", "variable": "EXTERNAL_PRODUCTS_BUSINESS_CARDS" },
         "productsAFrame": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837959a4eb4a1718d1289e8.png", "alt": "A-Frame Sign for Business", "variable": "EXTERNAL_PRODUCTS_AFRAME" },
         "productsFlags": { "path": "https://storage.googleapis.com/msgsndr/TIotUx9EgciHgNOwY4he/media/6837b1e283c3295278bc16fc.webp", "alt": "Custom Promotional Flag", "variable": "EXTERNAL_PRODUCTS_FLAGS" }

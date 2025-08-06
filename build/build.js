@@ -90,6 +90,13 @@ async function build() {
             if (!product.product_details) {
                 product.product_details = {};
             }
+            
+            // Map product data to product_details structure
+            product.product_details.title = product.product_name;
+            product.product_details.description_short = product.base_description;
+            product.product_details.description_long = product.long_description;
+            product.product_details.price = product.price || "Contact for pricing";
+            product.product_details.quantity_options = [1, 5, 10, 25, 50, 100];
 
             // --- BUILD GALLERY FROM IMAGE_LIBRARY ---
             // This makes image-library.json the single source of truth for product galleries.

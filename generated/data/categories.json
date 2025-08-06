@@ -5,7 +5,7 @@
         "path": "products/prints.html",
         "page_title": "Professional Printing Services | BE SEEN",
         "seo_description": "High-quality printing for business cards, brochures, flyers, and more.",
-        "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
+        "hero_image_url": "/assets/images/backgrounds/bg.png",
         "breadcrumbs": [
             { "name": "Home", "link": "/index.html" },
             { "name": "Products", "link": "/products.html" },
@@ -18,7 +18,7 @@
         "path": "products/signs.html",
         "page_title": "Custom Signs and Banners | BE SEEN",
         "seo_description": "Durable and vibrant signs and banners for indoor and outdoor use.",
-        "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
+        "hero_image_url": "/assets/images/backgrounds/bg.png",
         "breadcrumbs": [
             { "name": "Home", "link": "/index.html" },
             { "name": "Products", "link": "/products.html" },
@@ -31,7 +31,7 @@
         "path": "products/promotional.html",
         "page_title": "Custom Promotional Products | BE SEEN",
         "seo_description": "Branded promotional products to represent your business.",
-        "hero_image_url": "/assets/images/breadcrumb/bg_04.jpg",
+        "hero_image_url": "/assets/images/backgrounds/bg.png",
         "breadcrumbs": [
             { "name": "Home", "link": "/index.html" },
             { "name": "Products", "link": "/products.html" },
@@ -44,7 +44,7 @@
         "path": "products/materials.html",
         "page_title": "Sign Materials & Substrates | BE SEEN",
         "seo_description": "Professional sign materials including corrugated plastic, foam board, PVC, styrene, and acrylic for all your signage needs.",
-        "hero_image_url": "/assets/images/breadcrumb/bg_05.jpg",
+        "hero_image_url": "/assets/images/backgrounds/bg.png",
         "breadcrumbs": [
             { "name": "Home", "link": "/index.html" },
             { "name": "Products", "link": "/products.html" },
