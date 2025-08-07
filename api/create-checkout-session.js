@@ -7,6 +7,12 @@ const router = express.Router();
 router.use(cors());
 router.use(express.json());
 
+router.get('/config', (req, res) => {
+    res.send({
+        publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+    });
+});
+
 router.post('/create-checkout-session', async (req, res) => {
     try {
         const { items } = req.body;

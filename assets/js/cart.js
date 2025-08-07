@@ -109,7 +109,10 @@ class Cart {
                                     <strong id="cart-sidebar-subtotal">$0.00</strong>
                                 </div>
                                 <hr>
-                                <a href="/checkout.html" class="btn btn-primary w-100">Proceed to Checkout</a>
+                                <div class="d-grid gap-2">
+                                    <a href="/checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                                    <a href="/cart.html" class="btn btn-outline-secondary">View Full Cart</a>
+                                </div>
                            </div>
                         </div>
                     </div>

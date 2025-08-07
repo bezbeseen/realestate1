@@ -396,6 +396,16 @@ async function build() {
             console.log('-> Generated checkout.html from template');
         }
 
+        // --- Generate Cart Page from template ---
+        const cartTemplatePath = path.join(config.templatesDir, 'cart-template.html');
+        if (fs.existsSync(cartTemplatePath)) {
+            const cartTemplate = Handlebars.compile(fs.readFileSync(cartTemplatePath, 'utf8'));
+            const compiledHtml = cartTemplate({});
+            const outputPath = path.join(config.outputDir, 'cart.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated cart.html from template');
+        }
+
         // Copy root HTML files (excluding the now-templated pages and index files)
         const otherHtmlFiles = await glob('*.html', { cwd: config.baseDir, ignore: ['products.html', 'services.html', 'products/promotional.html', 'index.html', 'staging-index.html', 'about.html', 'contact.html', 'blog.html'] });
         for (const file of otherHtmlFiles) {

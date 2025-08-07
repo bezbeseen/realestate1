@@ -1,9 +1,16 @@
 // This is your test publishable API key.
-const stripe = Stripe("pk_live_51RYGJFLueRJGe2lxoFIWFHSaVVERnBLaukfRxropvQYQkRgSbVst8DTn642vVlDrv09Hwx0qc35OLacJIEkbnpX4008JkOH8q3");
+let stripe;
 
 initialize();
 
 async function initialize() {
+    const { publishableKey } = await fetch("/api/config").then((r) => r.json());
+    if (!publishableKey) {
+        console.error('Failed to load Stripe publishable key.');
+        return;
+    }
+    stripe = Stripe(publishableKey);
+
     const checkoutDiv = document.getElementById('checkout');
     const items = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
 
