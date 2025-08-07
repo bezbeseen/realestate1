@@ -9,10 +9,21 @@
     "seo_description": "High-quality business cards in various stocks and finishes. Professional printing for your brand.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Business Cards" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Business Cards"
+      }
     ],
     "generation_pipeline": "standard_product_v1",
     "gallery": {
@@ -54,7 +65,7 @@
       {
         "id": "finish",
         "name": "Specialty Finish",
-          "variants": [
+        "variants": [
           {
             "id": "none",
             "name": "None",
@@ -69,7 +80,33 @@
           }
         ]
       }
-    ]
+    ],
+    "product_details": {
+      "title": "Business Cards",
+      "price": "25.00",
+      "description_short": "Professional business cards available in a variety of stocks and finishes.",
+      "description_long": "Professional business cards available in a variety of stocks and finishes.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "business_cards"
+    }
   },
   {
     "product_id": "banners",
@@ -81,17 +118,28 @@
     "seo_description": "Professional banners for indoor and outdoor use. Vinyl, mesh, and fabric options available.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Banners" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Banners"
+      }
     ],
     "generation_pipeline": "hanging_product_v1",
-      "options": [
-        {
+    "options": [
+      {
         "id": "material",
         "name": "Material",
-          "variants": [
+        "variants": [
           {
             "id": "13oz_vinyl",
             "name": "13oz Vinyl",
@@ -106,7 +154,33 @@
           }
         ]
       }
-    ]
+    ],
+    "product_details": {
+      "title": "Banners",
+      "price": "25.00",
+      "description_short": "Durable, weather-resistant banners for indoor and outdoor use.",
+      "description_long": "Durable, weather-resistant banners for indoor and outdoor use.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "banners"
+    }
   },
   {
     "product_id": "stickers",
@@ -118,12 +192,49 @@
     "seo_description": "High-quality custom stickers and decals for branding, decoration, and identification.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Stickers & Decals" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Stickers & Decals"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Stickers & Decals",
+      "price": "25.00",
+      "description_short": "Custom stickers and decals for branding and decoration.",
+      "description_long": "Custom stickers and decals for branding and decoration.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "stickers"
+    }
   },
   {
     "product_id": "posters",
@@ -135,12 +246,49 @@
     "seo_description": "Professional poster printing in various sizes and finishes for advertising and decoration.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Posters" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Posters"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Posters",
+      "price": "25.00",
+      "description_short": "High-quality posters for advertising and decoration.",
+      "description_long": "High-quality posters for advertising and decoration.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "posters"
+    }
   },
   {
     "product_id": "brochures",
@@ -152,12 +300,49 @@
     "seo_description": "High-quality brochure printing in various folds and finishes for effective marketing.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Brochures" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Brochures"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Brochures",
+      "price": "25.00",
+      "description_short": "Professional brochures for marketing and information.",
+      "description_long": "Professional brochures for marketing and information.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "brochures"
+    }
   },
   {
     "product_id": "flyers",
@@ -169,12 +354,49 @@
     "seo_description": "Professional flyer printing for promotions, events, and marketing campaigns.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Flyers" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Flyers"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Flyers",
+      "price": "25.00",
+      "description_short": "Effective flyers for promotions and events.",
+      "description_long": "Effective flyers for promotions and events.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "flyers"
+    }
   },
   {
     "product_id": "presentation_folders",
@@ -186,12 +408,49 @@
     "seo_description": "Custom presentation folders for organizing and presenting documents professionally.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Presentation Folders" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Presentation Folders"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Presentation Folders",
+      "price": "25.00",
+      "description_short": "Professional presentation folders for documents and materials.",
+      "description_long": "Professional presentation folders for documents and materials.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "presentation_folders"
+    }
   },
   {
     "product_id": "decals",
@@ -203,12 +462,49 @@
     "seo_description": "High-quality custom decals for vehicles, windows, and various surfaces.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Decals" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Decals"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Decals",
+      "price": "25.00",
+      "description_short": "Custom decals for vehicles, windows, and surfaces.",
+      "description_long": "Custom decals for vehicles, windows, and surfaces.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "decals"
+    }
   },
   {
     "product_id": "window_clings",
@@ -220,12 +516,49 @@
     "seo_description": "Removable window clings for temporary advertising and promotional displays.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Window Clings" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Window Clings"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Window Clings",
+      "price": "25.00",
+      "description_short": "Removable window clings for temporary advertising.",
+      "description_long": "Removable window clings for temporary advertising.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "window_clings"
+    }
   },
   {
     "product_id": "canvas_prints",
@@ -237,12 +570,49 @@
     "seo_description": "Professional canvas prints for artwork, photography, and decorative purposes.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Canvas Prints" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Canvas Prints"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Canvas Prints",
+      "price": "25.00",
+      "description_short": "High-quality canvas prints for artwork and photography.",
+      "description_long": "High-quality canvas prints for artwork and photography.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "canvas_prints"
+    }
   },
   {
     "product_id": "photos",
@@ -254,12 +624,49 @@
     "seo_description": "High-quality photo printing services for professional and personal use.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Photo Printing" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Photo Printing"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Photo Printing",
+      "price": "25.00",
+      "description_short": "Professional photo printing services.",
+      "description_long": "Professional photo printing services.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "photos"
+    }
   },
   {
     "product_id": "commercial_signage",
@@ -271,10 +678,21 @@
     "seo_description": "Professional commercial signage solutions for businesses and organizations.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Commercial Signage" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Commercial Signage"
+      }
     ],
     "generation_pipeline": "standard_product_v1",
     "product_details": {
@@ -282,7 +700,12 @@
       "price": "299.00",
       "description_short": "Professional commercial signage solutions for businesses and organizations.",
       "description_long": "High-quality commercial signage designed to enhance your business visibility and brand recognition. Perfect for storefronts, offices, and commercial spaces.",
-      "quantity_options": [1, 2, 5, 10],
+      "quantity_options": [
+        1,
+        2,
+        5,
+        10
+      ],
       "options": [
         {
           "name": "Type",
@@ -301,7 +724,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "commercial_signage"
     }
   },
   {
@@ -314,10 +738,21 @@
     "seo_description": "Portable A-frame signs for temporary advertising and directional purposes.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "A-Frame Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "A-Frame Signs"
+      }
     ],
     "generation_pipeline": "standard_product_v1",
     "product_details": {
@@ -325,7 +760,14 @@
       "price": "45.00",
       "description_short": "Portable A-frame signs for temporary advertising and directional purposes.",
       "description_long": "Maximize your advertising flexibility with our portable A-frame signs. These versatile displays are perfect for restaurants, retail stores, events, and any business that needs temporary or mobile advertising.",
-      "quantity_options": [1, 5, 10, 25, 50, 100],
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
       "options": [
         {
           "name": "Size",
@@ -344,7 +786,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "a_frames"
     }
   },
   {
@@ -357,12 +800,49 @@
     "seo_description": "Professional channel letter signs for business identification and branding.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Channel Lettering" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Channel Lettering"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Channel Lettering",
+      "price": "25.00",
+      "description_short": "Professional channel letter signs for businesses.",
+      "description_long": "Professional channel letter signs for businesses.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "channel_lettering"
+    }
   },
   {
     "product_id": "flags",
@@ -374,12 +854,49 @@
     "seo_description": "Custom flags for advertising, decoration, and promotional purposes.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Flags" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Flags"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Flags",
+      "price": "25.00",
+      "description_short": "Custom flags for advertising and decoration.",
+      "description_long": "Custom flags for advertising and decoration.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "flags"
+    }
   },
   {
     "product_id": "light_boxes",
@@ -391,12 +908,49 @@
     "seo_description": "Illuminated light box signs for enhanced visibility and advertising impact.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Light Boxes" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Light Boxes"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Light Boxes",
+      "price": "25.00",
+      "description_short": "Illuminated light box signs for visibility.",
+      "description_long": "Illuminated light box signs for visibility.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "light_boxes"
+    }
   },
   {
     "product_id": "retractable_banners",
@@ -408,12 +962,49 @@
     "seo_description": "Portable retractable banner stands for events, trade shows, and temporary displays.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Retractable Banners" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Retractable Banners"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Retractable Banners",
+      "price": "25.00",
+      "description_short": "Portable retractable banner stands for events and trade shows.",
+      "description_long": "Portable retractable banner stands for events and trade shows.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "retractable_banners"
+    }
   },
   {
     "product_id": "3d_lettering",
@@ -425,12 +1016,49 @@
     "seo_description": "Three-dimensional letter signs for dramatic visual impact and branding.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "3D Lettering" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "3D Lettering"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "3D Lettering",
+      "price": "25.00",
+      "description_short": "Three-dimensional letter signs for dramatic impact.",
+      "description_long": "Three-dimensional letter signs for dramatic impact.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "3d_lettering"
+    }
   },
   {
     "product_id": "yard_signs",
@@ -442,12 +1070,49 @@
     "seo_description": "Durable yard signs for real estate marketing, events, and temporary advertising.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Yard Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Yard Signs"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Yard Signs",
+      "price": "25.00",
+      "description_short": "Durable yard signs for real estate and events.",
+      "description_long": "Durable yard signs for real estate and events.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "yard_signs"
+    }
   },
   {
     "product_id": "corrugated",
@@ -459,12 +1124,49 @@
     "seo_description": "Durable corrugated plastic material for signs, displays, and outdoor applications.",
     "hero_image_url": "/assets/images/breadcrumb/bg_05.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "Corrugated Plastic" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "Corrugated Plastic"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Corrugated Plastic",
+      "price": "25.00",
+      "description_short": "Durable corrugated plastic for signs and displays.",
+      "description_long": "Durable corrugated plastic for signs and displays.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "corrugated"
+    }
   },
   {
     "product_id": "foam_board",
@@ -476,12 +1178,49 @@
     "seo_description": "Lightweight foam board material for signs, displays, and indoor applications.",
     "hero_image_url": "/assets/images/breadcrumb/bg_05.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "Foam Board" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "Foam Board"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Foam Board",
+      "price": "25.00",
+      "description_short": "Lightweight foam board for signs and displays.",
+      "description_long": "Lightweight foam board for signs and displays.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "foam_board"
+    }
   },
   {
     "product_id": "styrene",
@@ -493,12 +1232,49 @@
     "seo_description": "Rigid styrene material for durable signs, displays, and outdoor applications.",
     "hero_image_url": "/assets/images/breadcrumb/bg_05.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "Styrene" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "Styrene"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Styrene",
+      "price": "25.00",
+      "description_short": "Rigid styrene material for signs and displays.",
+      "description_long": "Rigid styrene material for signs and displays.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "styrene"
+    }
   },
   {
     "product_id": "acrylic",
@@ -510,12 +1286,49 @@
     "seo_description": "Clear acrylic material for professional signs, displays, and decorative applications.",
     "hero_image_url": "/assets/images/breadcrumb/bg_05.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "Acrylic" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "Acrylic"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Acrylic",
+      "price": "25.00",
+      "description_short": "Clear acrylic material for signs and displays.",
+      "description_long": "Clear acrylic material for signs and displays.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "acrylic"
+    }
   },
   {
     "product_id": "pvc_board",
@@ -527,12 +1340,49 @@
     "seo_description": "Durable PVC board material for signs, displays, and outdoor applications.",
     "hero_image_url": "/assets/images/breadcrumb/bg_05.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "PVC Board" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "PVC Board"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "PVC Board",
+      "price": "25.00",
+      "description_short": "Durable PVC board for signs and displays.",
+      "description_long": "Durable PVC board for signs and displays.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "pvc_board"
+    }
   },
   {
     "product_id": "booths",
@@ -544,12 +1394,49 @@
     "seo_description": "Custom trade show booths and displays for professional exhibitions and events.",
     "hero_image_url": "/assets/images/breadcrumb/bg_04.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Trade Show Booths" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Trade Show Booths"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Trade Show Booths",
+      "price": "25.00",
+      "description_short": "Custom trade show booths and displays.",
+      "description_long": "Custom trade show booths and displays.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "booths"
+    }
   },
   {
     "product_id": "table_cloths",
@@ -561,12 +1448,49 @@
     "seo_description": "Custom branded table cloths for events, trade shows, and promotional displays.",
     "hero_image_url": "/assets/images/breadcrumb/bg_04.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Table Cloths" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Table Cloths"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Table Cloths",
+      "price": "25.00",
+      "description_short": "Custom branded table cloths for events.",
+      "description_long": "Custom branded table cloths for events.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "table_cloths"
+    }
   },
   {
     "product_id": "branded_apparel",
@@ -578,12 +1502,49 @@
     "seo_description": "Custom branded clothing and apparel for team uniforms and promotional purposes.",
     "hero_image_url": "/assets/images/breadcrumb/bg_04.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Branded Apparel" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Branded Apparel"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Branded Apparel",
+      "price": "25.00",
+      "description_short": "Custom branded clothing and apparel.",
+      "description_long": "Custom branded clothing and apparel.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "branded_apparel"
+    }
   },
   {
     "product_id": "pens",
@@ -595,12 +1556,49 @@
     "seo_description": "Custom branded pens for promotional use and marketing campaigns.",
     "hero_image_url": "/assets/images/breadcrumb/bg_04.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Promotional Pens" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Promotional Pens"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Promotional Pens",
+      "price": "25.00",
+      "description_short": "Custom branded pens for promotional use.",
+      "description_long": "Custom branded pens for promotional use.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "pens"
+    }
   },
   {
     "product_id": "bags",
@@ -612,12 +1610,49 @@
     "seo_description": "Custom branded bags and totes for promotional use and events.",
     "hero_image_url": "/assets/images/breadcrumb/bg_04.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Promotional Bags" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Promotional Bags"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Promotional Bags",
+      "price": "25.00",
+      "description_short": "Custom branded bags and totes.",
+      "description_long": "Custom branded bags and totes.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "bags"
+    }
   },
   {
     "product_id": "tents",
@@ -629,12 +1664,49 @@
     "seo_description": "Custom branded tents and canopies for outdoor events and promotions.",
     "hero_image_url": "/assets/images/breadcrumb/bg_04.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Promotional Tents" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Promotional Tents"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Promotional Tents",
+      "price": "25.00",
+      "description_short": "Custom branded tents and canopies.",
+      "description_long": "Custom branded tents and canopies.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "tents"
+    }
   },
   {
     "product_id": "window_graphics",
@@ -646,12 +1718,49 @@
     "seo_description": "Custom window graphics and decals for business branding and advertising.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Window Graphics" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Window Graphics"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Window Graphics",
+      "price": "25.00",
+      "description_short": "Custom window graphics and decals for businesses.",
+      "description_long": "Custom window graphics and decals for businesses.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "window_graphics"
+    }
   },
   {
     "product_id": "aluminum_signs",
@@ -663,12 +1772,49 @@
     "seo_description": "Durable aluminum signs for outdoor use and long-lasting business identification.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Aluminum Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Aluminum Signs"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Aluminum Signs",
+      "price": "25.00",
+      "description_short": "Durable aluminum signs for outdoor use.",
+      "description_long": "Durable aluminum signs for outdoor use.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "aluminum_signs"
+    }
   },
   {
     "product_id": "magnets",
@@ -680,12 +1826,49 @@
     "seo_description": "Custom car magnets for vehicle advertising and mobile branding.",
     "hero_image_url": "/assets/images/breadcrumb/bg_03.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Car Magnets" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Car Magnets"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Car Magnets",
+      "price": "25.00",
+      "description_short": "Custom car magnets for vehicle advertising.",
+      "description_long": "Custom car magnets for vehicle advertising.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "magnets"
+    }
   },
   {
     "product_id": "real_estate_business_cards",
@@ -697,12 +1880,49 @@
     "seo_description": "Professional business cards designed specifically for real estate agents and brokers.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "Business Cards" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Business Cards"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Real Estate Business Cards",
+      "price": "25.00",
+      "description_short": "Professional business cards for real estate agents.",
+      "description_long": "Professional business cards for real estate agents.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "real_estate_business_cards"
+    }
   },
   {
     "product_id": "real_estate_banners",
@@ -714,12 +1934,49 @@
     "seo_description": "Custom banners designed for real estate marketing and property promotion.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "Banners" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Banners"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Real Estate Banners",
+      "price": "25.00",
+      "description_short": "Custom banners for real estate marketing.",
+      "description_long": "Custom banners for real estate marketing.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "real_estate_banners"
+    }
   },
   {
     "product_id": "real_estate_flags",
@@ -731,12 +1988,49 @@
     "seo_description": "Marketing flags designed for real estate promotions and property advertising.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "Flags" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Flags"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Real Estate Flags",
+      "price": "25.00",
+      "description_short": "Marketing flags for real estate promotions.",
+      "description_long": "Marketing flags for real estate promotions.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "real_estate_flags"
+    }
   },
   {
     "product_id": "real_estate_lawn_signs",
@@ -748,12 +2042,49 @@
     "seo_description": "Lawn signs designed for real estate listings and property marketing.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "Lawn Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Lawn Signs"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Real Estate Lawn Signs",
+      "price": "25.00",
+      "description_short": "Lawn signs for real estate listings.",
+      "description_long": "Lawn signs for real estate listings.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "real_estate_lawn_signs"
+    }
   },
   {
     "product_id": "real_estate_a_frames",
@@ -765,11 +2096,286 @@
     "seo_description": "A-frame signs designed for real estate marketing and property promotion.",
     "hero_image_url": "/assets/images/breadcrumb/bg_02.jpg",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "A-Frame Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "A-Frame Signs"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Real Estate A-Frame Signs",
+      "price": "25.00",
+      "description_short": "A-frame signs for real estate marketing.",
+      "description_long": "A-frame signs for real estate marketing.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard",
+              "price_change": 0
+            }
+          ]
+        }
+      ],
+      "id": "real_estate_a_frames"
+    }
+  },
+  {
+    "product_id": "corrugated_signs_deluxe",
+    "product_name": "Corrugated Plastic Signs",
+    "base_description": "Promote your business, event, or campaign with lightweight yet durable corrugated plastic signs.",
+    "category": "signs",
+    "path": "products/signs/corrugated-signs-deluxe.html",
+    "page_title": "Corrugated Plastic Signs | BE SEEN",
+    "seo_description": "Lightweight and durable corrugated plastic signs, perfect for outdoor or temporary indoor use.",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Corrugated Signs"
+      }
+    ],
+    "product_details": {
+      "price": "19.99",
+      "description_short": "Lightweight and durable corrugated plastic signs.",
+      "description_long": "Our full-color, UV-printed signs are ideal for outdoor or temporary indoor use, and are fully customizable to match your branding.",
+      "quantity_options": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "options": [
+        {
+          "name": "Size",
+          "variants": [
+            {
+              "name": "18\" x 24\"",
+              "price_change": 0
+            },
+            {
+              "name": "24\" x 36\"",
+              "price_change": 15
+            }
+          ]
+        }
+      ],
+      "id": "corrugated_signs_deluxe",
+      "title": "Corrugated Plastic Signs"
+    }
+  },
+  {
+    "product_id": "real_estate_business_cards_deluxe",
+    "product_name": "Premium Real Estate Business Cards",
+    "base_description": "Make a lasting impression with our premium real estate business cards. Each card is crafted using high-quality materials and finished with your choice of professional coatings.",
+    "category": "real-estate",
+    "path": "products/real-estate/business-cards-deluxe.html",
+    "page_title": "Real Estate Business Cards | BE SEEN",
+    "seo_description": "Premium business cards for real estate agents. Choose from various finishes like matte, glossy, and soft-touch.",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Business Cards"
+      }
+    ],
+    "product_details": {
+      "price": "25.83",
+      "description_short": "Premium business cards for real estate professionals.",
+      "description_long": "Choose from various finishes including matte, glossy, or soft-touch coating. Available in standard or custom sizes with options for specialty features like spot UV, foil stamping, and embossing.",
+      "quantity_options": [
+        250,
+        500,
+        1000,
+        2500
+      ],
+      "options": [
+        {
+          "name": "Finish",
+          "variants": [
+            {
+              "name": "Standard Matte",
+              "price_change": 0
+            },
+            {
+              "name": "Premium Spot UV",
+              "price_change": 15
+            },
+            {
+              "name": "Luxury Gold Foil",
+              "price_change": 30
+            }
+          ]
+        }
+      ],
+      "id": "real_estate_business_cards_deluxe",
+      "title": "Premium Real Estate Business Cards"
+    }
+  },
+  {
+    "product_id": "real_estate_banners_deluxe",
+    "product_name": "Professional Real Estate Banners",
+    "base_description": "Make your properties stand out with our high-quality real estate banners. Perfect for open houses, property listings, and special promotions.",
+    "category": "real-estate",
+    "path": "products/real-estate/banners-deluxe.html",
+    "page_title": "Real Estate Banners | BE SEEN",
+    "seo_description": "High-quality real estate banners for open houses and property listings. Weather-resistant and durable.",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Banners"
+      }
+    ],
+    "product_details": {
+      "price": "49.99",
+      "description_short": "High-quality banners for real estate.",
+      "description_long": "Choose from various sizes, materials, and finishing options. Weather-resistant and durable for both indoor and outdoor use, with professional installation available.",
+      "quantity_options": [
+        1,
+        2,
+        5,
+        10,
+        25,
+        50
+      ],
+      "options": [
+        {
+          "name": "Size",
+          "variants": [
+            {
+              "name": "2' x 4' Banner",
+              "price_change": 0
+            },
+            {
+              "name": "3' x 6' Banner",
+              "price_change": 40
+            },
+            {
+              "name": "4' x 8' Banner",
+              "price_change": 100
+            }
+          ]
+        }
+      ],
+      "id": "real_estate_banners_deluxe",
+      "title": "Professional Real Estate Banners"
+    }
+  },
+  {
+    "product_id": "real_estate_a_frames_deluxe",
+    "product_name": "Professional A-Frame Signs",
+    "base_description": "Drive traffic to your open houses with our premium A-Frame signs, built with durable materials and designed for maximum visibility.",
+    "category": "real-estate",
+    "path": "products/real-estate/a-frames-deluxe.html",
+    "page_title": "Real Estate A-Frame Signs | BE SEEN",
+    "seo_description": "Premium A-Frame signs for real estate. Durable, high-visibility, and perfect for open houses and property marketing.",
+    "breadcrumbs": [
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "A-Frame Signs"
+      }
+    ],
+    "product_details": {
+      "price": "89.99",
+      "description_short": "Premium A-Frame signs for real estate marketing.",
+      "description_long": "Choose from various sizes and styles, including quick-change inserts, weather-resistant materials, and custom branding options. Perfect for open houses, directional signage, and property marketing.",
+      "quantity_options": [
+        1,
+        2,
+        5,
+        10,
+        25,
+        50
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "variants": [
+            {
+              "name": "Standard A-Frame",
+              "price_change": 0
+            },
+            {
+              "name": "With Replaceable Panels",
+              "price_change": 20
+            },
+            {
+              "name": "With LED Lights",
+              "price_change": 30
+            },
+            {
+              "name": "Deluxe Package (Panels + LED)",
+              "price_change": 45
+            }
+          ]
+        }
+      ],
+      "id": "real_estate_a_frames_deluxe",
+      "title": "Professional A-Frame Signs"
+    }
   }
-] 
+]

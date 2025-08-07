@@ -910,9 +910,9 @@
 						<!-- Product Details -->
 						<div class="col-lg-5 col-md-9 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 							<div class="details_content product-container" 
-								 data-product-id=""
+								 data-product-id="magnets"
 								 data-product-name="Car Magnets"
-								 data-product-price="" 
+								 data-product-price="25.00" 
 								 data-product-image="/assets/Be seen image review updated/Specialty Signs/Magnets Specialty Signs.jpg">
 								<h2 class="item_title mb_15">Car Magnets</h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
@@ -922,8 +922,12 @@
 									<li><i class="fas fa-star"></i></li>
 									<li><i class="fas fa-star"></i></li>
 								</ul>
+								<span class="price_text mb_30"><strong>$25.00</strong></span>
 								<p class="mb_15">
 										Custom car magnets for vehicle advertising.
+								</p>
+								<p class="mb_30">
+									Custom car magnets for vehicle advertising.
 								</p>
 
 								<!-- Product Options -->
@@ -940,6 +944,18 @@
 								</div>
 
 								<!-- Quantity Options -->
+								<div class="product-options mb-4">
+									<label class="form-label d-block"><strong>Select Quantity</strong></label>
+									<div class="quantity-options d-grid gap-2" style="grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));">
+										<div class="quantity-option card p-2 text-center border-primary" data-quantity="1">1</div>
+										<div class="quantity-option card p-2 text-center " data-quantity="5">5</div>
+										<div class="quantity-option card p-2 text-center " data-quantity="10">10</div>
+										<div class="quantity-option card p-2 text-center " data-quantity="25">25</div>
+										<div class="quantity-option card p-2 text-center " data-quantity="50">50</div>
+										<div class="quantity-option card p-2 text-center " data-quantity="100">100</div>
+									</div>
+									<input type="hidden" id="selectedQuantity" value="1">
+								</div>
 
 								<!-- Add to Cart -->
 								<div class="d-grid mb-3">
@@ -1177,30 +1193,36 @@
         }
 
 		document.addEventListener('DOMContentLoaded', function() {
-			const variantOptions = document.querySelectorAll('.variant-option');
-			const quantityOptions = document.querySelectorAll('.quantity-option');
+			const productContainer = document.querySelector('.product-container');
+			const priceElement = document.querySelector('.price_text strong');
 			
-			// Handle variant selection
+			if (!productContainer || !priceElement) return;
+
+			let basePrice = parseFloat(productContainer.dataset.productPrice) || 0;
+
+			const updatePrice = () => {
+				let newPrice = basePrice;
+				const selectedOptions = document.querySelectorAll('.variant-option.border-primary');
+				selectedOptions.forEach(option => {
+					const priceChange = parseFloat(option.dataset.priceChange) || 0;
+					newPrice += priceChange;
+				});
+				priceElement.textContent = '$' + newPrice.toFixed(2);
+				productContainer.dataset.productPrice = newPrice.toFixed(2);
+			};
+
+			const variantOptions = document.querySelectorAll('.variant-option');
 			variantOptions.forEach(option => {
 				option.addEventListener('click', function() {
-					// Update selected variant
-					variantOptions.forEach(opt => opt.classList.remove('border-primary'));
+					// Handle single-choice selection for now
+					const parentOptions = this.closest('.variant-options');
+					parentOptions.querySelectorAll('.variant-option').forEach(opt => opt.classList.remove('border-primary'));
 					this.classList.add('border-primary');
-					document.getElementById('selectedVariant').value = this.dataset.variant;
-					
-					// Switch image if target exists
-					const target = this.dataset.imageTarget;
-					if (target) {
-						const tabToShow = document.querySelector(`[data-bs-toggle="tab"][href="${target}"]`);
-						if (tabToShow) {
-							const tab = new bootstrap.Tab(tabToShow);
-							tab.show();
-						}
-					}
+					updatePrice();
 				});
 			});
 			
-			// Handle quantity selection
+			const quantityOptions = document.querySelectorAll('.quantity-option');
 			quantityOptions.forEach(option => {
 				option.addEventListener('click', function() {
 					quantityOptions.forEach(opt => opt.classList.remove('border-primary'));
@@ -1208,6 +1230,9 @@
 					document.getElementById('selectedQuantity').value = this.dataset.quantity;
 				});
 			});
+
+			// Initial price calculation
+			updatePrice();
 		});
 	</script>
 	

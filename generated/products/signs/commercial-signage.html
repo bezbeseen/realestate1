@@ -910,7 +910,7 @@
 						<!-- Product Details -->
 						<div class="col-lg-5 col-md-9 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 							<div class="details_content product-container" 
-								 data-product-id=""
+								 data-product-id="commercial_signage"
 								 data-product-name="Commercial Signage"
 								 data-product-price="299.00" 
 								 data-product-image="/assets/images/signs/commercial-signage.jpg">
@@ -1217,30 +1217,36 @@
         }
 
 		document.addEventListener('DOMContentLoaded', function() {
-			const variantOptions = document.querySelectorAll('.variant-option');
-			const quantityOptions = document.querySelectorAll('.quantity-option');
+			const productContainer = document.querySelector('.product-container');
+			const priceElement = document.querySelector('.price_text strong');
 			
-			// Handle variant selection
+			if (!productContainer || !priceElement) return;
+
+			let basePrice = parseFloat(productContainer.dataset.productPrice) || 0;
+
+			const updatePrice = () => {
+				let newPrice = basePrice;
+				const selectedOptions = document.querySelectorAll('.variant-option.border-primary');
+				selectedOptions.forEach(option => {
+					const priceChange = parseFloat(option.dataset.priceChange) || 0;
+					newPrice += priceChange;
+				});
+				priceElement.textContent = '$' + newPrice.toFixed(2);
+				productContainer.dataset.productPrice = newPrice.toFixed(2);
+			};
+
+			const variantOptions = document.querySelectorAll('.variant-option');
 			variantOptions.forEach(option => {
 				option.addEventListener('click', function() {
-					// Update selected variant
-					variantOptions.forEach(opt => opt.classList.remove('border-primary'));
+					// Handle single-choice selection for now
+					const parentOptions = this.closest('.variant-options');
+					parentOptions.querySelectorAll('.variant-option').forEach(opt => opt.classList.remove('border-primary'));
 					this.classList.add('border-primary');
-					document.getElementById('selectedVariant').value = this.dataset.variant;
-					
-					// Switch image if target exists
-					const target = this.dataset.imageTarget;
-					if (target) {
-						const tabToShow = document.querySelector(`[data-bs-toggle="tab"][href="${target}"]`);
-						if (tabToShow) {
-							const tab = new bootstrap.Tab(tabToShow);
-							tab.show();
-						}
-					}
+					updatePrice();
 				});
 			});
 			
-			// Handle quantity selection
+			const quantityOptions = document.querySelectorAll('.quantity-option');
 			quantityOptions.forEach(option => {
 				option.addEventListener('click', function() {
 					quantityOptions.forEach(opt => opt.classList.remove('border-primary'));
@@ -1248,6 +1254,9 @@
 					document.getElementById('selectedQuantity').value = this.dataset.quantity;
 				});
 			});
+
+			// Initial price calculation
+			updatePrice();
 		});
 	</script>
 	
