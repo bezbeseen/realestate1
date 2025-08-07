@@ -630,10 +630,10 @@
 	                                </button>
 	                            </li>
 	                            <li>
-	                                <button type="button" class="cart_btn" onclick="Cart.openCartSidebar()" data-track="cart_button_click">
+	                                <a href="/checkout.html" class="cart_btn" data-track="cart_button_click">
 	                                    <i class="fal fa-shopping-cart"></i>
-	                                    <small class="cart_counter">0</small>
-	                                </button>
+	                                    <small class="cart_counter" style="display: none;">0</small>
+	                                </a>
 	                            </li>
 	                        </ul>
 	                    </div>
@@ -839,31 +839,7 @@
 						<!-- INCLUDE END: mobile-menu -->					</ul>
 				</div>
 			</div>
-			<!-- INCLUDE START: cart-sidebar -->
-			<div class="cart_sidebar">
-			    <div class="cart_header">
-			        <h3 class="mb-0">Shopping Cart</h3>
-			        <button type="button" class="close_btn"><i class="fal fa-times"></i></button>
-			    </div>
-			    <div class="cart_items_list">
-			        <ul class="ul_li_block clearfix">
-			            <!-- Cart items will be dynamically inserted here by SimpleCart -->
-			            <li class="text-center p-4">Your cart is empty</li>
-			        </ul>
-			    </div>
-			    <div class="cart_footer">
-			        <ul class="total_price ul_li_block clearfix">
-			            <li><span>Subtotal:</span> <small class="cart-subtotal">$0.00</small></li>
-			            <li><span>VAT:</span> <small class="cart-vat">$0.00</small></li>
-			            <li class="total"><span>Total:</span> <small class="cart-total">$0.00</small></li>
-			        </ul>
-			        <div class="btns_group">
-			            <a class="btn btn-primary w-100 mb-2" href="/cart">View Cart</a>
-			            <a class="btn btn-success w-100" href="/checkout">Checkout</a>
-			        </div>
-			    </div>
-			</div> 
-			<!-- INCLUDE END: cart-sidebar -->			<div class="overlay"></div>
+			<div class="overlay"></div>
 		</div>
 		<!-- sidebar mobile menu - end
 		================================================== -->
@@ -956,7 +932,7 @@
 								 data-product-name="Flags"
 								 data-product-price="" 
 								 data-product-image="/assets/Be seen image review updated/Flags/Feather Flags.jpg">
-								<h2 class="item_title mb_15"></h2>
+								<h2 class="item_title mb_15">Flags</h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
 									<li><i class="fas fa-star"></i></li>
 									<li><i class="fas fa-star"></i></li>
@@ -964,12 +940,8 @@
 									<li><i class="fas fa-star"></i></li>
 									<li><i class="fas fa-star"></i></li>
 								</ul>
-								<span class="price_text mb_30"><strong>$</strong></span>
 								<p class="mb_15">
-									
-								</p>
-								<p class="mb_30">
-									
+										Custom flags for advertising and decoration.
 								</p>
 
 								<!-- Product Options -->
@@ -1001,16 +973,15 @@
 								</div>
 
 								<!-- Quantity Options -->
-								<div class="product-options mb-4">
-									<label class="form-label d-block"><strong>Select Quantity</strong></label>
-									<div class="quantity-options d-grid gap-2" style="grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));">
-									</div>
-									<input type="hidden" id="selectedQuantity" value="">
-								</div>
 
 								<!-- Add to Cart -->
-								<div class="d-grid">
+								<div class="d-grid mb-3">
 									<button class="addtocart_btn custom_btn bg_default_orange btn-lg" onclick="addProductToCart(this)">Add To Cart</button>
+								</div>
+
+								<!-- Contact Us Button -->
+								<div class="d-grid">
+									<a href="/contact.html" class="custom_btn bg_default_blue btn-lg text-center">Contact Us</a>
 								</div>
 
 								<!-- Social Share -->
@@ -1246,6 +1217,19 @@
 	<script src="/assets/js/main.js"></script>
 
 	<script>
+        // This function is called when the "Add to Cart" button is clicked
+        function addProductToCart(button) {
+            const container = button.closest('.product-container');
+            if (window.cart) {
+                window.cart.addItem({
+                    id: container.dataset.productId,
+                    name: container.dataset.productName,
+                    price: parseFloat(container.dataset.productPrice),
+                    image: container.dataset.productImage
+                });
+            }
+        }
+
 		document.addEventListener('DOMContentLoaded', function() {
 			const variantOptions = document.querySelectorAll('.variant-option');
 			const quantityOptions = document.querySelectorAll('.quantity-option');
@@ -1279,35 +1263,6 @@
 				});
 			});
 		});
-		
-		// Function to add product to cart (called by Add to Cart button)
-		function addProductToCart(button) {
-			const container = button.closest('.product-container');
-			const productId = container.dataset.productId;
-			const productName = container.dataset.productName;
-			const productPrice = parseFloat(container.dataset.productPrice);
-			const productImage = container.dataset.productImage;
-			
-			// Get selected variant and quantity
-			const selectedVariant = document.getElementById('selectedVariant')?.value || '';
-			const selectedQuantity = parseInt(document.getElementById('selectedQuantity')?.value || '1');
-			
-			// Create unique item ID with variant
-			const itemId = productId + (selectedVariant ? '-' + selectedVariant.toLowerCase().replace(/\s+/g, '-') : '');
-			
-			// Add to cart using the cart system
-			if (window.cart) {
-				for (let i = 0; i < selectedQuantity; i++) {
-					cart.addItem({
-						id: itemId,
-						name: productName + (selectedVariant ? ' - ' + selectedVariant : ''),
-						price: productPrice,
-						image: productImage,
-						variant: selectedVariant
-					});
-				}
-			}
-		}
 	</script>
 	
 </html> 

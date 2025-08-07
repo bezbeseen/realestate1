@@ -18,7 +18,8 @@
     "http-proxy-middleware": "^2.0.6",
     "marked": "^15.0.12",
     "papaparse": "^5.5.3",
-    "sharp": "^0.34.2"
+    "sharp": "^0.34.2",
+    "stripe": "^18.4.0"
   },
   "devDependencies": {
     "browser-sync": "^3.0.2",

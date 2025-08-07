@@ -276,7 +276,33 @@
       { "name": "Signs", "link": "/products/signs.html" },
       { "name": "Commercial Signage" }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "Commercial Signage",
+      "price": "299.00",
+      "description_short": "Professional commercial signage solutions for businesses and organizations.",
+      "description_long": "High-quality commercial signage designed to enhance your business visibility and brand recognition. Perfect for storefronts, offices, and commercial spaces.",
+      "quantity_options": [1, 2, 5, 10],
+      "options": [
+        {
+          "name": "Type",
+          "variants": [
+            {
+              "id": "storefront",
+              "name": "Storefront",
+              "description": "Professional storefront signage",
+              "default": true
+            },
+            {
+              "id": "office",
+              "name": "Office",
+              "description": "Office building signage",
+              "default": false
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "product_id": "a_frames",
@@ -293,7 +319,33 @@
       { "name": "Signs", "link": "/products/signs.html" },
       { "name": "A-Frame Signs" }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "product_details": {
+      "title": "A-Frame Signs",
+      "price": "45.00",
+      "description_short": "Portable A-frame signs for temporary advertising and directional purposes.",
+      "description_long": "Maximize your advertising flexibility with our portable A-frame signs. These versatile displays are perfect for restaurants, retail stores, events, and any business that needs temporary or mobile advertising.",
+      "quantity_options": [1, 5, 10, 25, 50, 100],
+      "options": [
+        {
+          "name": "Size",
+          "variants": [
+            {
+              "id": "standard",
+              "name": "Standard",
+              "description": "24\" x 18\" portable A-frame sign",
+              "default": true
+            },
+            {
+              "id": "large",
+              "name": "Large",
+              "description": "36\" x 24\" portable A-frame sign",
+              "default": false
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "product_id": "channel_lettering",

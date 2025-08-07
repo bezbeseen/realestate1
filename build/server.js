@@ -6,42 +6,50 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 8001;
 
-// Enable CORS for all routes
+// --- Middleware ---
+// 1. Enable CORS for all routes
 app.use(cors());
 
-// Middleware
+// 2. Middleware to parse JSON bodies. This MUST come before any routes that need it.
 app.use(express.json());
+
+// 3. Simple logger to see all incoming requests
+app.use((req, res, next) => {
+    console.log(`Request received: ${req.method} ${req.url}`);
+    next();
+});
+
+// --- API Routes ---
+// 4. Define and use the API routes BEFORE any static or catch-all routes.
+const stripeRoutes = require('../api/create-checkout-session.js');
+app.use('/api', stripeRoutes);
+
+// --- Static Asset Serving ---
+// 5. Serve static files (CSS, JS, images) from the 'generated' directory.
+// The path '/assets' will be mapped to the '/generated/assets' directory.
 app.use(express.static(path.join(__dirname, '..', 'generated')));
 
-// Catch-all route for HTML files
-app.get('*', (req, res, next) => {
-    const requestedPath = req.path;
-    let filePath = requestedPath;
-    
-    // If the path doesn't end with .html, try adding it
-    if (!filePath.endsWith('.html')) {
-        filePath = filePath + '.html';
+// --- HTML Page Catch-All ---
+// 6. Catch-all route for serving HTML files. This comes last.
+app.get('*', (req, res) => {
+    let filePath = path.join(__dirname, '..', 'generated', req.path);
+
+    // If the direct path doesn't end in .html, try adding it
+    if (!req.path.endsWith('.html')) {
+        filePath += '.html';
     }
-    
-    // Remove leading slash
-    filePath = filePath.replace(/^\//, '');
-    
-    // Check if file exists in generated directory
-    const generatedFilePath = path.join(__dirname, '..', 'generated', filePath);
-    if (fs.existsSync(generatedFilePath)) {
-        res.sendFile(generatedFilePath);
+
+    // Check if the file exists
+    if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
     } else {
-        // If file doesn't exist, try index.html in that directory
-        const indexPath = path.join(__dirname, '..', 'generated', path.dirname(filePath), 'index.html');
-        if (fs.existsSync(indexPath)) {
-            res.sendFile(indexPath);
-        } else {
-            next(); // Pass to next middleware if file not found
-        }
+        // If the file doesn't exist, serve the main index.html as a fallback
+        res.sendFile(path.join(__dirname, '..', 'generated', 'index.html'));
     }
 });
 
-// Start server
+// --- Start Server ---
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
-}); 
+    console.log('Serving files from:', path.join(__dirname, '..', 'generated'));
+});

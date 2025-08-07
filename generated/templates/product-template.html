@@ -75,7 +75,6 @@
 					</ul>
 				</div>
 			</div>
-			{{> cart-sidebar}}
 			<div class="overlay"></div>
 		</div>
 		<!-- sidebar mobile menu - end
@@ -148,7 +147,7 @@
 								 data-product-name="{{product_name}}"
 								 data-product-price="{{product_details.price}}" 
 								 data-product-image="{{getProductImage product_id}}">
-								<h2 class="item_title mb_15">{{product_details.title}}</h2>
+								<h2 class="item_title mb_15">{{product_name}}</h2>
 								<ul class="rating_star ul_li mb_30 clearfix">
 									<li><i class="fas fa-star"></i></li>
 									<li><i class="fas fa-star"></i></li>
@@ -156,13 +155,21 @@
 									<li><i class="fas fa-star"></i></li>
 									<li><i class="fas fa-star"></i></li>
 								</ul>
+								{{#if product_details.price}}
 								<span class="price_text mb_30"><strong>${{product_details.price}}</strong></span>
+								{{/if}}
 								<p class="mb_15">
-									{{product_details.description_short}}
+									{{#if product_details.description_short}}
+										{{product_details.description_short}}
+									{{else}}
+										{{base_description}}
+									{{/if}}
 								</p>
+								{{#if product_details.description_long}}
 								<p class="mb_30">
 									{{product_details.description_long}}
 								</p>
+								{{/if}}
 
 								<!-- Product Options -->
 								{{#each product_details.options}}
@@ -182,6 +189,7 @@
 								{{/each}}
 
 								<!-- Quantity Options -->
+								{{#if product_details.quantity_options}}
 								<div class="product-options mb-4">
 									<label class="form-label d-block"><strong>Select Quantity</strong></label>
 									<div class="quantity-options d-grid gap-2" style="grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));">
@@ -191,10 +199,16 @@
 									</div>
 									<input type="hidden" id="selectedQuantity" value="{{product_details.quantity_options.[0]}}">
 								</div>
+								{{/if}}
 
 								<!-- Add to Cart -->
-								<div class="d-grid">
+								<div class="d-grid mb-3">
 									<button class="addtocart_btn custom_btn bg_default_orange btn-lg" onclick="addProductToCart(this)">Add To Cart</button>
+								</div>
+
+								<!-- Contact Us Button -->
+								<div class="d-grid">
+									<a href="/contact.html" class="custom_btn bg_default_blue btn-lg text-center">Contact Us</a>
 								</div>
 
 								<!-- Social Share -->
@@ -258,6 +272,19 @@
 	<script src="/assets/js/main.js"></script>
 
 	<script>
+        // This function is called when the "Add to Cart" button is clicked
+        function addProductToCart(button) {
+            const container = button.closest('.product-container');
+            if (window.cart) {
+                window.cart.addItem({
+                    id: container.dataset.productId,
+                    name: container.dataset.productName,
+                    price: parseFloat(container.dataset.productPrice),
+                    image: container.dataset.productImage
+                });
+            }
+        }
+
 		document.addEventListener('DOMContentLoaded', function() {
 			const variantOptions = document.querySelectorAll('.variant-option');
 			const quantityOptions = document.querySelectorAll('.quantity-option');
@@ -291,35 +318,6 @@
 				});
 			});
 		});
-		
-		// Function to add product to cart (called by Add to Cart button)
-		function addProductToCart(button) {
-			const container = button.closest('.product-container');
-			const productId = container.dataset.productId;
-			const productName = container.dataset.productName;
-			const productPrice = parseFloat(container.dataset.productPrice);
-			const productImage = container.dataset.productImage;
-			
-			// Get selected variant and quantity
-			const selectedVariant = document.getElementById('selectedVariant')?.value || '';
-			const selectedQuantity = parseInt(document.getElementById('selectedQuantity')?.value || '1');
-			
-			// Create unique item ID with variant
-			const itemId = productId + (selectedVariant ? '-' + selectedVariant.toLowerCase().replace(/\s+/g, '-') : '');
-			
-			// Add to cart using the cart system
-			if (window.cart) {
-				for (let i = 0; i < selectedQuantity; i++) {
-					cart.addItem({
-						id: itemId,
-						name: productName + (selectedVariant ? ' - ' + selectedVariant : ''),
-						price: productPrice,
-						image: productImage,
-						variant: selectedVariant
-					});
-				}
-			}
-		}
 	</script>
 	
 </html> 

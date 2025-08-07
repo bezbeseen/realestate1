@@ -165,17 +165,17 @@ async function build() {
             }
 
             // Merge Markdown content for the product body
-            const mdPath = path.join(__dirname, '..', 'content', 'products', `${product.id}.md`);
+            const mdPath = path.join(__dirname, '..', 'content', 'products', `${product.product_id.replace(/_/g, '-')}.md`);
             if (fs.existsSync(mdPath)) {
-                console.log(`  -> Merging Markdown content for ${product.id}`);
+                console.log(`  -> Merging Markdown content for ${product.product_id}`);
                 const mdContent = fs.readFileSync(mdPath, 'utf8');
                 product.product_content = marked(mdContent);
             }
 
             // Merge HTML content for the product body (overwrites Markdown if present)
-            const htmlPath = path.join(__dirname, '..', 'content', 'products', `${product.id}.html`);
+            const htmlPath = path.join(__dirname, '..', 'content', 'products', `${product.product_id.replace(/_/g, '-')}.html`);
             if (fs.existsSync(htmlPath)) {
-                console.log(`  -> Merging HTML content for ${product.id}`);
+                console.log(`  -> Merging HTML content for ${product.product_id}`);
                 product.product_content = fs.readFileSync(htmlPath, 'utf8');
             }
         }
@@ -374,6 +374,26 @@ async function build() {
             const outputPath = path.join(config.outputDir, 'search-results.html');
             fs.writeFileSync(outputPath, compiledHtml);
             console.log('-> Generated search-results.html from template');
+        }
+
+        // --- Generate Success Page from template ---
+        const successTemplatePath = path.join(config.templatesDir, 'success-template.html');
+        if (fs.existsSync(successTemplatePath)) {
+            const successTemplate = Handlebars.compile(fs.readFileSync(successTemplatePath, 'utf8'));
+            const compiledHtml = successTemplate({}); // No specific data needed for this page
+            const outputPath = path.join(config.outputDir, 'success.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated success.html from template');
+        }
+
+        // --- Generate Checkout Page from template ---
+        const checkoutTemplatePath = path.join(config.templatesDir, 'checkout-bootstrap-template.html');
+        if (fs.existsSync(checkoutTemplatePath)) {
+            const checkoutTemplate = Handlebars.compile(fs.readFileSync(checkoutTemplatePath, 'utf8'));
+            const compiledHtml = checkoutTemplate({});
+            const outputPath = path.join(config.outputDir, 'checkout.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated checkout.html from template');
         }
 
         // Copy root HTML files (excluding the now-templated pages and index files)
