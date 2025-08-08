@@ -14,7 +14,7 @@ Developer:		:  Rakibul Islam Dewan
 */
 /* table of content - end
 ==================================================================================================== */
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* global area - start
@@ -955,7 +955,7 @@ i {
   font-size: 24px;
   margin-bottom: 25px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .section_title .big_title {
   font-size: 50px;
@@ -971,7 +971,7 @@ i {
   font-size: 150px;
   position: absolute;
   transform: translateY(-50%);
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
   color: rgba(34, 34, 34, 0.102);
 }
 .section_title.text-center .biggest_title {
@@ -3188,7 +3188,7 @@ button {
   font-size: 15px;
   margin-bottom: 15px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .feature_listlayout_boxed2 .item_title {
   font-size: 24px;
@@ -3297,7 +3297,7 @@ button {
   display: block;
   margin-bottom: 15px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .feature_card .item_title {
   line-height: 1;
@@ -3773,7 +3773,7 @@ button {
   font-size: 15px;
   margin-bottom: 10px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .service_card .item_title {
   line-height: 1;
@@ -4882,7 +4882,7 @@ blockquote .blockquote_admin i {
   font-size: 24px;
   margin-bottom: 15px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .pricing_plan .item_title {
   line-height: 1;
@@ -5258,7 +5258,7 @@ blockquote .blockquote_admin i {
   padding-left: 60px;
   margin-bottom: 40px;
   color: #fec931;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .home_one_banner .sub_title:before {
   top: 50%;
@@ -5286,7 +5286,7 @@ blockquote .blockquote_admin i {
   font-size: 220px;
   position: absolute;
   transform: rotate(-45deg);
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
   -webkit-text-stroke-width: 1px;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.03);
@@ -5379,7 +5379,7 @@ blockquote .blockquote_admin i {
   line-height: 0.9;
   margin-right: 20px;
   color: #ff4328;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 /* what we do section - end */
@@ -5454,7 +5454,7 @@ blockquote .blockquote_admin i {
   padding-left: 60px;
   margin-bottom: 40px;
   color: #fec931;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .home_two_banner .sub_title:before {
   top: 50%;
@@ -5482,7 +5482,7 @@ blockquote .blockquote_admin i {
   font-size: 220px;
   position: absolute;
   transform: rotate(-45deg);
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
   -webkit-text-stroke-width: 1px;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.03);
@@ -5581,7 +5581,7 @@ blockquote .blockquote_admin i {
   padding-left: 60px;
   margin-bottom: 30px;
   color: #fec931;
-  font-family: "Pacifico", cursive;
+  font-family: "Bebas Neue", sans-serif;
 }
 .home_three_slider .small_title:before {
   top: 50%;
