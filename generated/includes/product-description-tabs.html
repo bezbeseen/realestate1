@@ -7,11 +7,22 @@
 
     <div class="tab-content wow fadeInUp2" data-wow-delay=".2s">
         <div id="overview_tab" class="tab-pane active">
-            <p>Our products are crafted with the highest quality materials and attention to detail, ensuring a professional finish that you can be proud of.</p>
+            <p>{{product.long_description}}</p>
         </div>
 
         <div id="details_tab" class="tab-pane fade">
-            <p>Detailed specifications, including materials, dimensions, and finishing options, are available for this product. Please consult the options above or contact us for more information.</p>
+            <h4>Features:</h4>
+            <ul>
+                {{#each product.features}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <h4>Use Cases:</h4>
+            <ul>
+                {{#each product.use_cases}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
         </div>
 
         <div id="shipping_tab" class="tab-pane fade">
