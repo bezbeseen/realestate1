@@ -1,0 +1,31 @@
+{
+  "name": "realestate1",
+  "version": "1.0.0",
+  "description": "This is a real estate website project.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node build/build.js",
+    "dev": "browser-sync start --server 'generated' --browser 'google chrome' --files 'generated' --ignore 'node_modules' --no-notify & chokidar '**/*.html' 'assets/**/*' -c 'npm run build' --initial --ignore 'generated/**' --ignore 'node_modules/**'"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.19.2",
+    "fs-extra": "^11.3.0",
+    "glob": "^11.0.0",
+    "handlebars": "^4.7.8",
+    "http-proxy-middleware": "^2.0.6",
+    "marked": "^15.0.12",
+    "papaparse": "^5.5.3",
+    "sharp": "^0.34.2",
+    "stripe": "^18.4.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "chokidar-cli": "^3.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

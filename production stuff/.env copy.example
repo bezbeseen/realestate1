@@ -1,0 +1,6 @@
+# This is an example file. Copy this to a new file named .env
+# and fill in your actual Stripe API keys.
+# This .env file should NOT be committed to git.
+
+STRIPE_PUBLISHABLE_KEY=your_publishable_key_here
+STRIPE_SECRET_KEY=your_secret_key_here
