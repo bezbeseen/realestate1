@@ -7,69 +7,13 @@
     "path": "products/prints/business-cards.html",
     "page_title": "Business Cards | Professional Printing | BE SEEN",
     "seo_description": "High-quality business cards in various stocks and finishes. Professional printing for your brand.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
       { "name": "Prints", "link": "/products/prints.html" },
       { "name": "Business Cards" }
     ],
-    "generation_pipeline": "standard_product_v1",
-    "gallery": {
-      "main_images": [
-        {
-          "id": "main1",
-          "src": "/assets/images/printing/business%20card.jpg",
-          "alt": "Business Card Example"
-        }
-      ],
-      "thumbnails": [
-        {
-          "id": "thumb1",
-          "src": "/assets/images/printing/business%20card.jpg",
-          "alt": "Business Card Example",
-          "label": "Standard"
-        }
-      ]
-    },
-    "options": [
-      {
-        "id": "stock",
-        "name": "Cardstock",
-        "variants": [
-          {
-            "id": "16pt_matte",
-            "name": "16pt Matte",
-            "description": "A sturdy, professional cardstock with a non-reflective matte finish.",
-            "generation_keywords": "16pt matte cardstock, professional feel, non-glossy"
-          },
-          {
-            "id": "32pt_uv",
-            "name": "32pt Glossy",
-            "description": "An extra-thick, durable card with a vibrant, high-gloss UV coating.",
-            "generation_keywords": "32pt thick cardstock, high-gloss UV coating, vibrant colors, light reflecting off surface"
-          }
-        ]
-      },
-      {
-        "id": "finish",
-        "name": "Specialty Finish",
-          "variants": [
-          {
-            "id": "none",
-            "name": "None",
-            "description": "Clean and simple, with no extra finish.",
-            "generation_keywords": "simple design, no special finish"
-          },
-          {
-            "id": "gold_foil",
-            "name": "Gold Foil",
-            "description": "Elegant gold foil stamping for a touch of luxury.",
-            "generation_keywords": "gold foil stamping, luxurious accents, metallic highlights"
-          }
-        ]
-      }
-    ]
+    "generation_pipeline": "standard_product_v1"
   },
   {
     "product_id": "banners",
@@ -79,34 +23,13 @@
     "path": "products/prints/banners.html",
     "page_title": "Custom Banners | Indoor & Outdoor | BE SEEN",
     "seo_description": "Professional banners for indoor and outdoor use. Vinyl, mesh, and fabric options available.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
       { "name": "Prints", "link": "/products/prints.html" },
       { "name": "Banners" }
     ],
-    "generation_pipeline": "hanging_product_v1",
-      "options": [
-        {
-        "id": "material",
-        "name": "Material",
-          "variants": [
-          {
-            "id": "13oz_vinyl",
-            "name": "13oz Vinyl",
-            "description": "Glossy, durable vinyl perfect for outdoor advertisements.",
-            "generation_keywords": "13oz glossy vinyl, weather-resistant, outdoor setting, grommets visible"
-          },
-          {
-            "id": "mesh",
-            "name": "Mesh",
-            "description": "Perforated mesh material that allows wind to pass through, ideal for fences.",
-            "generation_keywords": "perforated mesh banner, on construction fence, allows wind to pass through"
-          }
-        ]
-      }
-    ]
+    "generation_pipeline": "hanging_product_v1"
   },
   {
     "product_id": "stickers",
@@ -116,7 +39,6 @@
     "path": "products/prints/stickers.html",
     "page_title": "Custom Stickers & Decals | BE SEEN",
     "seo_description": "High-quality custom stickers and decals for branding, decoration, and identification.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -133,7 +55,6 @@
     "path": "products/prints/posters.html",
     "page_title": "Custom Posters | Printing Services | BE SEEN",
     "seo_description": "Professional poster printing in various sizes and finishes for advertising and decoration.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -150,7 +71,6 @@
     "path": "products/prints/brochures.html",
     "page_title": "Custom Brochures | Professional Printing | BE SEEN",
     "seo_description": "High-quality brochure printing in various folds and finishes for effective marketing.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -167,7 +87,6 @@
     "path": "products/prints/flyers.html",
     "page_title": "Custom Flyers | Promotional Printing | BE SEEN",
     "seo_description": "Professional flyer printing for promotions, events, and marketing campaigns.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -184,7 +103,6 @@
     "path": "products/prints/presentation-folders.html",
     "page_title": "Presentation Folders | Professional Printing | BE SEEN",
     "seo_description": "Custom presentation folders for organizing and presenting documents professionally.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -201,7 +119,6 @@
     "path": "products/prints/decals.html",
     "page_title": "Custom Decals | Vehicle & Window Decals | BE SEEN",
     "seo_description": "High-quality custom decals for vehicles, windows, and various surfaces.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -218,7 +135,6 @@
     "path": "products/prints/window-clings.html",
     "page_title": "Window Clings | Temporary Advertising | BE SEEN",
     "seo_description": "Removable window clings for temporary advertising and promotional displays.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -235,7 +151,6 @@
     "path": "products/prints/canvas-prints.html",
     "page_title": "Canvas Prints | Art & Photography | BE SEEN",
     "seo_description": "Professional canvas prints for artwork, photography, and decorative purposes.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -252,7 +167,6 @@
     "path": "products/prints/photos.html",
     "page_title": "Photo Printing | Professional Photography | BE SEEN",
     "seo_description": "High-quality photo printing services for professional and personal use.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -269,7 +183,6 @@
     "path": "products/signs/commercial-signage.html",
     "page_title": "Commercial Signage | Professional Signs | BE SEEN",
     "seo_description": "Professional commercial signage solutions for businesses and organizations.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -286,7 +199,6 @@
     "path": "products/signs/a-frames.html",
     "page_title": "A-Frame Signs | Portable Advertising | BE SEEN",
     "seo_description": "Portable A-frame signs for temporary advertising and directional purposes.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -303,7 +215,6 @@
     "path": "products/signs/channel-lettering.html",
     "page_title": "Channel Lettering | Professional Signs | BE SEEN",
     "seo_description": "Professional channel letter signs for business identification and branding.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -320,7 +231,6 @@
     "path": "products/signs/flags.html",
     "page_title": "Custom Flags | Advertising & Decoration | BE SEEN",
     "seo_description": "Custom flags for advertising, decoration, and promotional purposes.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -337,7 +247,6 @@
     "path": "products/signs/light-boxes.html",
     "page_title": "Light Boxes | Illuminated Signs | BE SEEN",
     "seo_description": "Illuminated light box signs for enhanced visibility and advertising impact.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -354,7 +263,6 @@
     "path": "products/signs/retractable-banners.html",
     "page_title": "Retractable Banners | Portable Displays | BE SEEN",
     "seo_description": "Portable retractable banner stands for events, trade shows, and temporary displays.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -371,7 +279,6 @@
     "path": "products/signs/3d-lettering.html",
     "page_title": "3D Lettering | Dimensional Signs | BE SEEN",
     "seo_description": "Three-dimensional letter signs for dramatic visual impact and branding.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -388,7 +295,6 @@
     "path": "products/signs/yard-signs.html",
     "page_title": "Yard Signs | Real Estate & Events | BE SEEN",
     "seo_description": "Durable yard signs for real estate marketing, events, and temporary advertising.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -405,7 +311,6 @@
     "path": "products/materials/corrugated.html",
     "page_title": "Corrugated Plastic | Sign Materials | BE SEEN",
     "seo_description": "Durable corrugated plastic material for signs, displays, and outdoor applications.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -422,7 +327,6 @@
     "path": "products/materials/foam-board.html",
     "page_title": "Foam Board | Sign Materials | BE SEEN",
     "seo_description": "Lightweight foam board material for signs, displays, and indoor applications.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -439,7 +343,6 @@
     "path": "products/materials/styrene.html",
     "page_title": "Styrene | Sign Materials | BE SEEN",
     "seo_description": "Rigid styrene material for durable signs, displays, and outdoor applications.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -456,7 +359,6 @@
     "path": "products/materials/acrylic.html",
     "page_title": "Acrylic | Sign Materials | BE SEEN",
     "seo_description": "Clear acrylic material for professional signs, displays, and decorative applications.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -473,7 +375,6 @@
     "path": "products/materials/pvc-board.html",
     "page_title": "PVC Board | Sign Materials | BE SEEN",
     "seo_description": "Durable PVC board material for signs, displays, and outdoor applications.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -490,7 +391,6 @@
     "path": "products/promotional/booths.html",
     "page_title": "Trade Show Booths | Custom Displays | BE SEEN",
     "seo_description": "Custom trade show booths and displays for professional exhibitions and events.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -507,7 +407,6 @@
     "path": "products/promotional/table-cloths.html",
     "page_title": "Table Cloths | Custom Branding | BE SEEN",
     "seo_description": "Custom branded table cloths for events, trade shows, and promotional displays.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -524,7 +423,6 @@
     "path": "products/promotional/branded-apparel.html",
     "page_title": "Branded Apparel | Custom Clothing | BE SEEN",
     "seo_description": "Custom branded clothing and apparel for team uniforms and promotional purposes.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -541,7 +439,6 @@
     "path": "products/promotional/pens.html",
     "page_title": "Promotional Pens | Custom Branding | BE SEEN",
     "seo_description": "Custom branded pens for promotional use and marketing campaigns.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -558,7 +455,6 @@
     "path": "products/promotional/bags.html",
     "page_title": "Promotional Bags | Custom Branding | BE SEEN",
     "seo_description": "Custom branded bags and totes for promotional use and events.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -575,7 +471,6 @@
     "path": "products/promotional/tents.html",
     "page_title": "Promotional Tents | Custom Branding | BE SEEN",
     "seo_description": "Custom branded tents and canopies for outdoor events and promotions.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -592,7 +487,6 @@
     "path": "products/signs/window-graphics.html",
     "page_title": "Window Graphics | Custom Decals | BE SEEN",
     "seo_description": "Custom window graphics and decals for business branding and advertising.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -609,7 +503,6 @@
     "path": "products/signs/aluminum-signs.html",
     "page_title": "Aluminum Signs | Durable Outdoor Signs | BE SEEN",
     "seo_description": "Durable aluminum signs for outdoor use and long-lasting business identification.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -626,7 +519,6 @@
     "path": "products/signs/magnets.html",
     "page_title": "Car Magnets | Vehicle Advertising | BE SEEN",
     "seo_description": "Custom car magnets for vehicle advertising and mobile branding.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -643,7 +535,6 @@
     "path": "products/real-estate/business-cards.html",
     "page_title": "Real Estate Business Cards | Professional Cards | BE SEEN",
     "seo_description": "Professional business cards designed specifically for real estate agents and brokers.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -660,7 +551,6 @@
     "path": "products/real-estate/banners.html",
     "page_title": "Real Estate Banners | Marketing Banners | BE SEEN",
     "seo_description": "Custom banners designed for real estate marketing and property promotion.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -677,7 +567,6 @@
     "path": "products/real-estate/flags.html",
     "page_title": "Real Estate Flags | Marketing Flags | BE SEEN",
     "seo_description": "Marketing flags designed for real estate promotions and property advertising.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -694,7 +583,6 @@
     "path": "products/real-estate/lawn-signs.html",
     "page_title": "Real Estate Lawn Signs | Property Signs | BE SEEN",
     "seo_description": "Lawn signs designed for real estate listings and property marketing.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },
@@ -711,7 +599,6 @@
     "path": "products/real-estate/a-frames.html",
     "page_title": "Real Estate A-Frame Signs | Portable Signs | BE SEEN",
     "seo_description": "A-frame signs designed for real estate marketing and property promotion.",
-    
     "breadcrumbs": [
       { "name": "Home", "link": "/index.html" },
       { "name": "Products", "link": "/products.html" },

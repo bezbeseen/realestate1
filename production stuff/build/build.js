@@ -125,7 +125,7 @@ async function build() {
             // --- END GALLERY BUILD ---
 
             // Merge CSV data for product options
-            const csvPath = path.join(config.dataDir, 'csv', `${product.product_id}.csv`); // Bugfix: was product.id
+            const csvPath = path.join(config.dataDir, 'csv', `${product.product_id.replace(/_/g, '-')}.csv`); // Bugfix: was product.id
             if (fs.existsSync(csvPath)) {
                 console.log(`  -> Merging CSV data for ${product.product_id}`); // Bugfix: was product.id
                 const csvFile = fs.readFileSync(csvPath, 'utf8');

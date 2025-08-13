@@ -888,21 +888,12 @@
 						<div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 							<div class="details_image clearfix">
 								<div class="tab-content" id="productTabContent">
-									<div id="main1" class="tab-pane active">
-										<img src="/assets/images/printing/business%20card.jpg" alt="Business Card Example">
-									</div>
 								</div>
 							</div>
 
 							<!-- Thumbnail Nav -->
 							<div class="mt-3">
 								<ul class="nav ul_li product_image_nav" id="productTab" role="tablist">
-									<li>
-										<a class="active" data-bs-toggle="tab" href="">
-											<img src="/assets/images/printing/business%20card.jpg" alt="Business Card Example">
-											<span class="thumbnail-label">Standard</span>
-										</a>
-									</li>
 								</ul>
 							</div>
 						</div>
@@ -927,6 +918,37 @@
 								</p>
 
 								<!-- Product Options -->
+								<div class="product-options mb-4">
+									<label class="form-label d-block"><strong>Select Option</strong></label>
+									<div class="variant-options d-grid gap-2">
+										<div class="variant-option card p-2 " data-variant="Standard" data-price-change="0" data-image-target="#image_">
+											<div class="d-flex justify-content-between">
+												<span>Standard</span>
+											</div>
+										</div>
+										<div class="variant-option card p-2 " data-variant="Premium" data-price-change="0" data-image-target="#image_">
+											<div class="d-flex justify-content-between">
+												<span>Premium</span>
+											</div>
+										</div>
+										<div class="variant-option card p-2 " data-variant="Spot UV" data-price-change="0" data-image-target="#image_">
+											<div class="d-flex justify-content-between">
+												<span>Spot UV</span>
+											</div>
+										</div>
+										<div class="variant-option card p-2 " data-variant="Gold Foil" data-price-change="0" data-image-target="#image_">
+											<div class="d-flex justify-content-between">
+												<span>Gold Foil</span>
+											</div>
+										</div>
+										<div class="variant-option card p-2 " data-variant="Embossed" data-price-change="0" data-image-target="#image_">
+											<div class="d-flex justify-content-between">
+												<span>Embossed</span>
+											</div>
+										</div>
+									</div>
+									<input type="hidden" id="selectedVariant" value="Standard">
+								</div>
 
 								<!-- Quantity Options -->
 
