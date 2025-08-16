@@ -14,7 +14,9 @@
         "services": {
             "graphicDesign": { "path": "/assets/images/services/graphic-design.png", "alt": "Graphic Design Services Icon", "variable": "WEBSITE_SERVICES_GRAPHIC_DESIGN" },
             "webDesign": { "path": "/assets/images/services/web-design.png", "alt": "Web Design Services Icon", "variable": "WEBSITE_SERVICES_WEB_DESIGN" },
-            "mailing": { "path": "/assets/images/services/mailing.png", "alt": "Mailing Services Icon", "variable": "WEBSITE_SERVICES_MAILING" },
+            "mailing": { "path": "/assets/images/pricing/mailing.png", "alt": "Mailing Services Icon", "variable": "WEBSITE_SERVICES_MAILING" },
+            "eddm": { "path": "/assets/images/eddm/eddm.png", "alt": "EDDM Icon", "variable": "WEBSITE_SERVICES_EDDM" },
+            "newsletters": { "path": "/assets/images/email/newsletter.png", "alt": "Newsletters Icon", "variable": "WEBSITE_SERVICES_NEWSLETTERS" },
             "printSwatches": { "path": "/assets/images/services/print-swatches.png", "alt": "Print Swatches Service Image", "variable": "WEBSITE_SERVICES_PRINT_SWATCHES" },
             "wideFormatPrinting": { "path": "/assets/images/services/wide-format-printing.png", "alt": "Wide Format Printing Service Image", "variable": "WEBSITE_SERVICES_WIDE_FORMAT_PRINTING" },
             "signBanner": { "path": "/assets/images/services/sign-banner.jpg", "alt": "Sign and Banner Services Image", "variable": "WEBSITE_SERVICES_SIGN_BANNER" },
@@ -22,7 +24,7 @@
         },
         "hero": {
             "slider1": { "path": "/assets/images/slider/img_01.png", "alt": "Professional Printing Services Slider Image", "variable": "WEBSITE_HERO_SLIDER1" },
-            "slider2": { "path": "/assets/images/slider/img_02.png", "alt": "Complete Solutions Background Slider", "variable": "WEBSITE_HERO_SLIDER2" },
+            "slider2": { "path": "/assets/images/placeholder.svg", "alt": "Complete Solutions Background Slider", "variable": "WEBSITE_HERO_SLIDER2" },
             "heroBackground": { "path": "/assets/images/backgrounds/bg_01.jpg", "alt": "Hero Background Image", "variable": "WEBSITE_HERO_BACKGROUND" }
         },
         "features": {
