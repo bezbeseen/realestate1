@@ -26,8 +26,7 @@ async function build() {
                 if (file.endsWith('.html')) {
                     const partialName = path.basename(file, '.html');
                     const partialContent = fs.readFileSync(path.join(partialsDir, file), 'utf8');
-                    const wrappedContent = `<!-- INCLUDE START: ${partialName} -->\n${partialContent}\n<!-- INCLUDE END: ${partialName} -->`;
-                    Handlebars.registerPartial(partialName, wrappedContent);
+                    Handlebars.registerPartial(partialName, partialContent);
                 }
             });
         }
