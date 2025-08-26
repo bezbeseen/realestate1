@@ -86,7 +86,7 @@
         "retractableBanners": { "path": "/assets/images/categories/Retractable Banners.jpg", "alt": "Portable retractable banner stands for indoor displays and trade shows", "variable": "CATEGORY_RETRACTABLE_BANNERS" }
     },
     "products": {
-        "businessCards": {
+        "business_cards": {
             "standard": { "path": "/assets/images/products/prints/business-cards/standard business card.jpg", "alt": "Standard business cards with clean professional design for real estate marketing", "variable": "PRODUCTS_BUSINESS_CARDS_STANDARD" },
             "premium": { "path": "/assets/images/products/prints/business-cards/premium business card.jpg", "alt": "Premium spot UV business cards with raised glossy logo for luxury real estate branding", "variable": "PRODUCTS_BUSINESS_CARDS_PREMIUM" },
             "luxury": { "path": "/assets/images/products/prints/business-cards/luxury business card.jpg", "alt": "Luxury foil-stamped business cards with metallic accents for high-end real estate professionals", "variable": "PRODUCTS_BUSINESS_CARDS_LUXURY" },
@@ -107,6 +107,12 @@
             "vinyl": { "path": "/assets/images/products/prints/stickers/vinyl stickers & decals.jpg", "alt": "Durable vinyl stickers for indoor and outdoor use", "variable": "PRODUCTS_STICKERS_VINYL" },
             "customShape": { "path": "/assets/images/products/prints/stickers/custom shapes stickers & decals.jpg", "alt": "Custom die-cut stickers in any shape", "variable": "PRODUCTS_STICKERS_CUSTOM_SHAPE" },
             "weatherResistant": { "path": "/assets/images/products/prints/stickers/weather resistant stickers & decals.jpg", "alt": "Weather resistant stickers for outdoor applications", "variable": "PRODUCTS_STICKERS_WEATHER_RESISTANT" }
+        },
+        "decals": {
+            "car": { "path": "/assets/images/products/decals/car_decals.jpg", "alt": "Custom car decals for vehicle branding and advertising", "variable": "PRODUCTS_DECALS_CAR" },
+            "vinyl": { "path": "/assets/images/products/prints/stickers/vinyl stickers & decals.jpg", "alt": "Durable vinyl decals for indoor and outdoor use", "variable": "PRODUCTS_DECALS_VINYL" },
+            "customShape": { "path": "/assets/images/products/prints/stickers/custom shapes stickers & decals.jpg", "alt": "Custom die-cut decals in any shape", "variable": "PRODUCTS_DECALS_CUSTOM_SHAPE" },
+            "weatherResistant": { "path": "/assets/images/products/prints/stickers/weather resistant stickers & decals.jpg", "alt": "Weather resistant decals for outdoor applications", "variable": "PRODUCTS_DECALS_WEATHER_RESISTANT" }
         },
         "aluminum_signs": {
             "18x24": { "path": "/assets/images/products/signs/aluminum-signs/18x24 Aluminum Signs.jpg", "alt": "18x24 Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_18X24" },
