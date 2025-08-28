@@ -366,6 +366,40 @@ async function build() {
             console.log('-> Generated blog.html from template');
         }
 
+        // --- Generate Individual Blog Post Pages ---
+        const blogPostTemplatePath = path.join(config.templatesDir, 'blog-post-template.html');
+        const blogPostsDataPath = path.join(config.dataDir, 'blog-posts.json');
+        
+        if (fs.existsSync(blogPostTemplatePath) && fs.existsSync(blogPostsDataPath)) {
+            const blogPostTemplate = Handlebars.compile(fs.readFileSync(blogPostTemplatePath, 'utf8'));
+            const blogPostsData = JSON.parse(fs.readFileSync(blogPostsDataPath, 'utf8'));
+            
+            for (const post of blogPostsData.posts) {
+                // Load content for this blog post
+                const contentPath = path.join(config.baseDir, 'content', 'blog', `${post.slug}.html`);
+                let content = '';
+                
+                if (fs.existsSync(contentPath)) {
+                    content = fs.readFileSync(contentPath, 'utf8');
+                } else {
+                    console.warn(`Warning: Content file not found for blog post: ${post.slug}`);
+                    content = '<p>Content coming soon...</p>';
+                }
+                
+                // Merge post data with content
+                const postData = {
+                    ...post,
+                    content: content
+                };
+                
+                // Generate the HTML
+                const compiledHtml = blogPostTemplate(postData);
+                const outputPath = path.join(config.outputDir, `${post.slug}.html`);
+                fs.writeFileSync(outputPath, compiledHtml);
+                console.log(`-> Generated blog post: ${post.slug}.html`);
+            }
+        }
+
         // --- Generate Search Results Page from template ---
         const searchResultsTemplatePath = path.join(config.templatesDir, 'search-results-template.html');
         if (fs.existsSync(searchResultsTemplatePath)) {
@@ -418,6 +452,22 @@ async function build() {
         if (fs.existsSync(devToolsSource)) {
             fs.copyFileSync(devToolsSource, devToolsDest);
             console.log('-> Copied developer-tools.html');
+        }
+
+        // Copy robots.txt
+        const robotsSource = path.join(__dirname, '..', 'robots.txt');
+        const robotsDest = path.join(config.outputDir, 'robots.txt');
+        if (fs.existsSync(robotsSource)) {
+            fs.copyFileSync(robotsSource, robotsDest);
+            console.log('-> Copied robots.txt');
+        }
+
+        // Copy .htaccess
+        const htaccessSource = path.join(__dirname, '..', '..', '.htaccess');
+        const htaccessDest = path.join(config.outputDir, '.htaccess');
+        if (fs.existsSync(htaccessSource)) {
+            fs.copyFileSync(htaccessSource, htaccessDest);
+            console.log('-> Copied .htaccess');
         }
 
         // --- Generate Sitemap ---

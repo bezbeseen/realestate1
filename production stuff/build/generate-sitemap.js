@@ -1,97 +1,80 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 // Configuration
-const DOMAIN = 'https://realestate.getbeseen.com';
+const DOMAIN = 'https://getbeseen.com';
 const OUTPUT_FILE = 'sitemap.xml';
-
-// Read products data
-const productsData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data/products.json'), 'utf8'));
-const categoriesData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data/categories.json'), 'utf8'));
-const servicesData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data/services.json'), 'utf8'));
 
 // Generate sitemap
 function generateSitemap() {
     const urls = [];
+    const outputDir = path.join(__dirname, '..', '..', 'generated');
     
-    // Homepage
-    urls.push({
-        loc: `${DOMAIN}/`,
-        lastmod: new Date().toISOString().split('T')[0],
-        changefreq: 'weekly',
-        priority: '1.0'
-    });
+    // Get all HTML files using find command (more reliable)
+    const findCommand = `find "${outputDir}" -name "*.html" | grep -v templates | grep -v assets | grep -v developer-tools | grep -v homepage.html | grep -v checkout.html | grep -v cart.html`;
     
-    // Main category pages
-    urls.push({
-        loc: `${DOMAIN}/products.html`,
-        lastmod: new Date().toISOString().split('T')[0],
-        changefreq: 'weekly',
-        priority: '0.8'
-    });
-    
-    // Products category pages
-    const productCategories = [...new Set(productsData.map(product => product.category).filter(cat => cat))];
-    productCategories.forEach(category => {
-        urls.push({
-            loc: `${DOMAIN}/products/${category}.html`,
-            lastmod: new Date().toISOString().split('T')[0],
-            changefreq: 'weekly',
-            priority: '0.8'
-        });
-    });
-    
-    // Individual product pages
-    productsData.forEach(product => {
-        if (product.path) {
-            urls.push({
-                loc: `${DOMAIN}${product.path}`,
-                lastmod: new Date().toISOString().split('T')[0],
-                changefreq: 'monthly',
-                priority: '0.7'
-            });
-        }
-    });
-    
-    // Industry pages
-    if (categoriesData.industries) {
-        categoriesData.industries.forEach(industry => {
-            urls.push({
-                loc: `${DOMAIN}/industries/${industry.slug}.html`,
-                lastmod: new Date().toISOString().split('T')[0],
-                changefreq: 'monthly',
-                priority: '0.8'
-            });
-        });
+    let htmlFiles = [];
+    try {
+        const result = execSync(findCommand, { encoding: 'utf8' });
+        htmlFiles = result.trim().split('\n').filter(file => file.length > 0);
+    } catch (error) {
+        console.error('Error finding HTML files:', error.message);
+        return;
     }
     
-    // Service pages
-    servicesData.forEach(service => {
-        if (service.path) {
-            urls.push({
-                loc: `${DOMAIN}/${service.path}`,
-                lastmod: new Date().toISOString().split('T')[0],
-                changefreq: 'monthly',
-                priority: '0.7'
-            });
+    console.log(`Found ${htmlFiles.length} HTML files for sitemap`);
+    
+    htmlFiles.forEach(filePath => {
+        // Convert absolute path to relative URL
+        const relativePath = path.relative(outputDir, filePath).replace(/\\/g, '/');
+        let url = relativePath === 'index.html' ? '/' : `/${relativePath}`;
+        
+        // Determine priority and changefreq based on path
+        let priority = '0.5';
+        let changefreq = 'monthly';
+        
+        if (url === '/') {
+            priority = '1.0';
+            changefreq = 'weekly';
+        } else if (url.includes('/products/') && url.split('/').length === 3) {
+            // Category pages like /products/prints.html
+            priority = '0.8';
+            changefreq = 'weekly';
+        } else if (url.includes('/products/')) {
+            // Individual product pages
+            priority = '0.7';
+        } else if (url.includes('/services/') && url.split('/').length === 3) {
+            // Main service pages
+            priority = '0.8';
+        } else if (url.includes('/services/')) {
+            // Service sub-pages
+            priority = '0.7';
+        } else if (url.includes('/industries/')) {
+            priority = '0.8';
+        } else if (['/products.html', '/services.html', '/industries.html'].includes(url)) {
+            priority = '0.8';
+            changefreq = 'weekly';
+        } else if (['/about.html', '/contact.html', '/blog.html'].includes(url)) {
+            priority = '0.6';
+        } else if (['/search-results.html', '/success.html'].includes(url)) {
+            priority = '0.3';
         }
+        
+        urls.push({
+            loc: `${DOMAIN}${url}`,
+            lastmod: new Date().toISOString().split('T')[0],
+            changefreq: changefreq,
+            priority: priority
+        });
     });
     
-    // Additional important pages
-    const additionalPages = [
-        { path: '/about.html', priority: '0.6' },
-        { path: '/contact.html', priority: '0.6' },
-        { path: '/services.html', priority: '0.8' },
-        { path: '/industries.html', priority: '0.8' }
-    ];
-    
-    additionalPages.forEach(page => {
-        urls.push({
-            loc: `${DOMAIN}${page.path}`,
-            lastmod: new Date().toISOString().split('T')[0],
-            changefreq: 'monthly',
-            priority: page.priority
-        });
+    // Sort URLs by priority (descending) then alphabetically
+    urls.sort((a, b) => {
+        if (b.priority !== a.priority) {
+            return parseFloat(b.priority) - parseFloat(a.priority);
+        }
+        return a.loc.localeCompare(b.loc);
     });
     
     // Generate XML
@@ -109,39 +92,30 @@ function generateSitemap() {
     
     xml += '</urlset>';
     
-    // Write to file
-    fs.writeFileSync(path.join(__dirname, '..', OUTPUT_FILE), xml);
+    // Write sitemap
+    const outputPath = path.join(__dirname, '..', '..', 'generated', OUTPUT_FILE);
+    fs.writeFileSync(outputPath, xml);
     
-    // Also write to external generated folder if it exists
-    if (fs.existsSync(path.join(__dirname, '..', '..', 'generated'))) {
-        fs.writeFileSync(path.join(__dirname, '..', '..', 'generated', OUTPUT_FILE), xml);
-    }
-    
-    console.log(`✅ Sitemap generated with ${urls.length} URLs`);
-    console.log(`📄 Saved to: ${OUTPUT_FILE}`);
-    
-    // Generate a summary report
+    // Generate summary
     const summary = {
-        total_urls: urls.length,
-        homepage: urls.filter(u => u.priority === '1.0').length,
-        category_pages: urls.filter(u => u.priority === '0.8').length,
-        product_pages: urls.filter(u => u.priority === '0.7').length,
-        other_pages: urls.filter(u => u.priority === '0.6').length
+        homepage: urls.filter(u => u.loc.endsWith('/')).length,
+        categoryPages: urls.filter(u => u.priority === '0.8').length,
+        productPages: urls.filter(u => u.loc.includes('/products/') && u.priority === '0.7').length,
+        servicePages: urls.filter(u => u.loc.includes('/services/')).length,
+        otherPages: urls.filter(u => !u.loc.includes('/products/') && !u.loc.includes('/services/') && !u.loc.includes('/industries/') && !u.loc.endsWith('/')).length,
+        totalUrls: urls.length
     };
     
-    console.log('\n📊 Sitemap Summary:');
+    console.log('✅ Sitemap generated with', summary.totalUrls, 'URLs');
+    console.log('📄 Saved to:', OUTPUT_FILE);
+    console.log('');
+    console.log('📊 Sitemap Summary:');
     console.log(`   Homepage: ${summary.homepage}`);
-    console.log(`   Category Pages: ${summary.category_pages}`);
-    console.log(`   Product Pages: ${summary.product_pages}`);
-    console.log(`   Other Pages: ${summary.other_pages}`);
-    console.log(`   Total URLs: ${summary.total_urls}`);
-    
-    return xml;
+    console.log(`   Category Pages: ${summary.categoryPages}`);
+    console.log(`   Product Pages: ${summary.productPages}`);
+    console.log(`   Service Pages: ${summary.servicePages}`);
+    console.log(`   Other Pages: ${summary.otherPages}`);
+    console.log(`   Total URLs: ${summary.totalUrls}`);
 }
 
-// Run if called directly
-if (require.main === module) {
-    generateSitemap();
-}
-
-module.exports = { generateSitemap }; 
+module.exports = { generateSitemap };

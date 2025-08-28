@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Tools - GetBeSeen</title>
+    <meta name="description" content="Password-protected developer tools for GetBeSeen website management, testing, and analysis. Access site statistics, link checking, SEO analysis, and more.">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -92,23 +93,45 @@
 <body>
     <h1>🚀 Developer Tools - GetBeSeen Website</h1>
     
+    <div id="passwordPrompt" style="display: none;">
+        <div class="stats">
+            <h2>🔐 Access Required</h2>
+            <p>This page contains developer tools and is password protected.</p>
+            <div class="button-container">
+                <button class="big-button" onclick="checkPassword()">
+                    🔑 Enter Password
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="protectedContent">
+    
     <div class="stats">
         <h2>📊 Website Statistics</h2>
-        <p><strong>Total Pages:</strong> 101+ pages</p>
-        <p><strong>Product Pages:</strong> 37</p>
-        <p><strong>Service Pages:</strong> 17</p>
-        <p><strong>Category Pages:</strong> 5</p>
-        <p><strong>Other Pages:</strong> Homepage, About, Contact, Blog, Industries</p>
+                    <p><strong>Total Pages:</strong> 91 pages</p>
+            <p><strong>Product Pages:</strong> 38 individual products</p>
+            <p><strong>Service Pages:</strong> 20 services (main + sub-services)</p>
+            <p><strong>Category Pages:</strong> 12 category pages</p>
+            <p><strong>Blog Pages:</strong> 1 main blog + 3 blog posts</p>
+            <p><strong>Other Pages:</strong> Homepage, About, Contact, Industries, Success, Search</p>
+            <p><strong>SEO Files:</strong> sitemap.xml (91 URLs), robots.txt</p>
     </div>
 
     <div class="button-container">
         <button class="big-button" onclick="openAllPages()">
-            🎯 Open All Pages (101+ pages)
+            🎯 Open All Pages (91 pages)
         </button>
         <label style="margin-left: 10px;">
             <input type="checkbox" id="openInNewWindow">
             Open in same window/tab
         </label>
+    </div>
+
+    <div class="button-container">
+        <button class="big-button" onclick="buildSite()" style="background-color: #28a745;">
+            🔨 Build Site
+        </button>
     </div>
 
     <div class="button-container">
@@ -225,8 +248,8 @@
         </div>
     </div>
 
-    <div class="warning">
-        <strong>⚠️ Warning:</strong> This will open 101+ browser tabs. Make sure your browser can handle it!
+            <div class="warning">
+            <strong>⚠️ Warning:</strong> This will open 91 browser tabs. Make sure your browser can handle it!
     </div>
 
     <div class="page-list">
@@ -250,6 +273,30 @@
     </div>
 
     <script>
+        // Password protection
+        const DEVELOPER_PASSWORD = 'getbeseen2024'; // Change this password
+        let isAuthenticated = false;
+
+        function checkPassword() {
+            const password = prompt('Enter developer password:');
+            if (password === DEVELOPER_PASSWORD) {
+                isAuthenticated = true;
+                document.getElementById('protectedContent').style.display = 'block';
+                document.getElementById('passwordPrompt').style.display = 'none';
+                return true;
+            } else if (password !== null) {
+                alert('Incorrect password!');
+                return false;
+            }
+            return false;
+        }
+
+        // Hide content initially and show password prompt
+        window.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('protectedContent').style.display = 'none';
+            document.getElementById('passwordPrompt').style.display = 'block';
+        });
+
         // All pages to open
         const allPages = [
             // Main pages
@@ -348,10 +395,39 @@
             '/industries/real-estate.html'
         ];
 
-        // Open all pages from the list
-        function openAllPages() {
+        // Load pages from sitemap dynamically
+        let allPagesFromSitemap = [];
+        
+        async function loadPagesFromSitemap() {
+            try {
+                const response = await fetch('/sitemap.xml');
+                const text = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(text, 'text/xml');
+                const urls = xmlDoc.getElementsByTagName('loc');
+                
+                allPagesFromSitemap = Array.from(urls).map(url => {
+                    const fullUrl = url.textContent;
+                    return fullUrl.replace('https://getbeseen.com', '');
+                });
+                
+                console.log(`Loaded ${allPagesFromSitemap.length} pages from sitemap`);
+                displayPagesFromSitemap();
+                return allPagesFromSitemap;
+            } catch (error) {
+                console.error('Error loading sitemap:', error);
+                return allPages; // fallback to hardcoded list
+            }
+        }
+
+        // Open all pages from sitemap
+        async function openAllPages() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
             const openInNewWindow = document.getElementById('openInNewWindow').checked;
-            const pagesToOpen = allPages;
+            const pagesToOpen = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
             const count = pagesToOpen.length;
 
             if (confirm(`This will open ${count} pages. Are you sure?`)) {
@@ -364,7 +440,7 @@
                         if (openInNewWindow) {
                             window.open(page, `page_${index}`);
                         } else {
-                        window.open(page, '_blank');
+                            window.open(page, '_blank');
                         }
                     }, index * delay); // Stagger opening to avoid overwhelming the browser
                 });
@@ -372,7 +448,42 @@
             }
         }
 
-        // Display pages in lists
+        // Display pages from sitemap in lists
+        function displayPagesFromSitemap() {
+            const mainPagesList = document.getElementById('mainPages');
+            const productPagesList = document.getElementById('productPages');
+            const servicePagesList = document.getElementById('servicePages');
+            const sitemapPagesList = document.getElementById('sitemapPages');
+            
+            // Clear existing lists
+            mainPagesList.innerHTML = '';
+            productPagesList.innerHTML = '';
+            servicePagesList.innerHTML = '';
+            sitemapPagesList.innerHTML = '';
+            
+            allPagesFromSitemap.forEach(page => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = page;
+                a.textContent = page;
+                a.target = '_blank';
+                li.appendChild(a);
+                
+                if (page.includes('/products/') && !page.endsWith('/products.html')) {
+                    productPagesList.appendChild(li);
+                } else if (page.includes('/services/') && !page.endsWith('/services.html')) {
+                    servicePagesList.appendChild(li);
+                } else {
+                    mainPagesList.appendChild(li);
+                }
+                
+                // Also add to sitemap list
+                const sitemapLi = li.cloneNode(true);
+                sitemapPagesList.appendChild(sitemapLi);
+            });
+        }
+
+        // Display pages in lists (fallback)
         function displayPages() {
             const mainPagesList = document.getElementById('mainPages');
             const productPagesList = document.getElementById('productPages');
@@ -396,19 +507,415 @@
             });
         }
 
-        // Display pages on load
-        displayPages();
+        // Build site function
+        async function buildSite() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            const buildButton = document.querySelector('button[onclick="buildSite()"]');
+            const originalText = buildButton.innerHTML;
+            
+            buildButton.innerHTML = '🔨 Building...';
+            buildButton.disabled = true;
+            
+            try {
+                const response = await fetch('/build', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                if (response.ok) {
+                    const result = await response.text();
+                    buildButton.innerHTML = '✅ Build Complete!';
+                    setTimeout(() => {
+                        buildButton.innerHTML = originalText;
+                        buildButton.disabled = false;
+                    }, 3000);
+                    
+                    // Reload the sitemap after build
+                    await loadPagesFromSitemap();
+                    
+                    alert('Site built successfully! All pages have been regenerated.');
+                } else {
+                    throw new Error('Build failed');
+                }
+            } catch (error) {
+                buildButton.innerHTML = '❌ Build Failed';
+                setTimeout(() => {
+                    buildButton.innerHTML = originalText;
+                    buildButton.disabled = false;
+                }, 3000);
+                
+                alert('Build failed. Please run "node build/build.js" manually from the terminal.');
+            }
+        }
 
-        // ... (The rest of the magic button functions would go here)
-        // For now, let's focus on getting the core functionality right.
-        async function checkAllNavLinks() { alert("This feature is temporarily disabled while we fix the page list."); }
-        async function checkAllImages() { alert("This feature is temporarily disabled while we fix the page list."); }
-        async function validateAllForms() { alert("This feature is temporarily disabled while we fix the page list."); }
-        async function checkPageSpeeds() { alert("This feature is temporarily disabled while we fix the page list."); }
-        async function generateSEOReport() { alert("This feature is temporarily disabled while we fix the page list."); }
-        async function findDuplicateContent() { alert("This feature is temporarily disabled while we fix the page list."); }
-        async function checkIncludesUsage() { alert("This feature is temporarily disabled while we fix the page list."); }
+        // Initialize on load
+        window.addEventListener('load', async () => {
+            await loadPagesFromSitemap();
+            if (allPagesFromSitemap.length === 0) {
+                displayPages(); // fallback
+            }
+        });
+
+        // Check all navigation links
+        async function checkAllNavLinks() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            const resultsDiv = document.getElementById('linkCheckResults');
+            const progressDiv = document.getElementById('linkCheckProgress');
+            const summaryDiv = document.getElementById('linkCheckSummary');
+            const brokenLinksContainer = document.getElementById('brokenLinksContainer');
+            const brokenLinksList = document.getElementById('brokenLinksList');
+            const workingLinksContainer = document.getElementById('workingLinksContainer');
+            const workingLinksList = document.getElementById('workingLinksList');
+
+            resultsDiv.style.display = 'block';
+            brokenLinksContainer.style.display = 'none';
+            workingLinksContainer.style.display = 'none';
+            brokenLinksList.innerHTML = '';
+            workingLinksList.innerHTML = '';
+
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const totalPages = pagesToCheck.length;
+            let checkedPages = 0;
+            let workingLinks = [];
+            let brokenLinks = [];
+
+            progressDiv.innerHTML = `<p>Checking ${totalPages} pages...</p>`;
+
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page, { method: 'HEAD' });
+                    if (response.ok) {
+                        workingLinks.push(page);
+                    } else {
+                        brokenLinks.push({ page, status: response.status });
+                    }
+                } catch (error) {
+                    brokenLinks.push({ page, error: error.message });
+                }
+                
+                checkedPages++;
+                progressDiv.innerHTML = `<p>Checking ${totalPages} pages... (${checkedPages}/${totalPages})</p>`;
+                
+                // Small delay to avoid overwhelming the server
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+
+            // Display results
+            summaryDiv.innerHTML = `
+                <p><strong>✅ Working Links:</strong> ${workingLinks.length}</p>
+                <p><strong>❌ Broken Links:</strong> ${brokenLinks.length}</p>
+                <p><strong>📊 Success Rate:</strong> ${Math.round((workingLinks.length / totalPages) * 100)}%</p>
+            `;
+
+            if (brokenLinks.length > 0) {
+                brokenLinksContainer.style.display = 'block';
+                brokenLinks.forEach(link => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${link.page}</strong> - ${link.status || link.error}`;
+                    brokenLinksList.appendChild(li);
+                });
+            }
+
+            if (workingLinks.length > 0) {
+                workingLinksContainer.style.display = 'block';
+                workingLinks.slice(0, 20).forEach(link => { // Show first 20
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = link;
+                    a.textContent = link;
+                    a.target = '_blank';
+                    li.appendChild(a);
+                    workingLinksList.appendChild(li);
+                });
+                if (workingLinks.length > 20) {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<em>... and ${workingLinks.length - 20} more working links</em>`;
+                    workingLinksList.appendChild(li);
+                }
+            }
+
+            progressDiv.innerHTML = `<p>✅ Link check completed!</p>`;
+        }
+
+        // Placeholder functions for other features
+        async function checkAllImages() {
+            const resultsDiv = document.getElementById('imageCheckResults');
+            const progressDiv = document.getElementById('imageCheckProgress');
+            const summaryDiv = document.getElementById('imageCheckSummary');
+
+            resultsDiv.style.display = 'block';
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            let totalImages = 0;
+            let brokenImages = 0;
+            let checkedPages = 0;
+
+            progressDiv.innerHTML = `<p>Checking images on ${pagesToCheck.length} pages...</p>`;
+
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const images = doc.querySelectorAll('img');
+                    
+                    for (const img of images) {
+                        if (img.src) {
+                            totalImages++;
+                            try {
+                                const imgResponse = await fetch(img.src, { method: 'HEAD' });
+                                if (!imgResponse.ok) brokenImages++;
+                            } catch (e) {
+                                brokenImages++;
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error(`Error checking ${page}:`, error);
+                }
+                
+                checkedPages++;
+                progressDiv.innerHTML = `<p>Checking images... (${checkedPages}/${pagesToCheck.length} pages)</p>`;
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+
+            summaryDiv.innerHTML = `
+                <p><strong>📊 Total Images:</strong> ${totalImages}</p>
+                <p><strong>✅ Working Images:</strong> ${totalImages - brokenImages}</p>
+                <p><strong>❌ Broken Images:</strong> ${brokenImages}</p>
+                <p><strong>📈 Success Rate:</strong> ${Math.round(((totalImages - brokenImages) / totalImages) * 100)}%</p>
+            `;
+            progressDiv.innerHTML = `<p>✅ Image check completed!</p>`;
+        }
+        async function validateAllForms() { alert("Form validation feature coming soon!"); }
+        async function checkPageSpeeds() { alert("Page speed checking feature coming soon!"); }
+        async function generateSEOReport() {
+            const resultsDiv = document.getElementById('seoReportResults');
+            const progressDiv = document.getElementById('seoReportProgress');
+            const summaryDiv = document.getElementById('seoReportSummary');
+
+            resultsDiv.style.display = 'block';
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            let pagesWithTitles = 0;
+            let pagesWithDescriptions = 0;
+            let pagesWithH1 = 0;
+            let checkedPages = 0;
+
+            progressDiv.innerHTML = `<p>Analyzing SEO for ${pagesToCheck.length} pages...</p>`;
+
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    const title = doc.querySelector('title');
+                    const description = doc.querySelector('meta[name="description"]');
+                    const h1 = doc.querySelector('h1');
+                    
+                    if (title && title.textContent.trim()) pagesWithTitles++;
+                    if (description && description.getAttribute('content')) pagesWithDescriptions++;
+                    if (h1 && h1.textContent.trim()) pagesWithH1++;
+                } catch (error) {
+                    console.error(`Error checking ${page}:`, error);
+                }
+                
+                checkedPages++;
+                progressDiv.innerHTML = `<p>Analyzing SEO... (${checkedPages}/${pagesToCheck.length} pages)</p>`;
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+
+            summaryDiv.innerHTML = `
+                <p><strong>📄 Pages with Titles:</strong> ${pagesWithTitles}/${checkedPages} (${Math.round((pagesWithTitles/checkedPages)*100)}%)</p>
+                <p><strong>📝 Pages with Descriptions:</strong> ${pagesWithDescriptions}/${checkedPages} (${Math.round((pagesWithDescriptions/checkedPages)*100)}%)</p>
+                <p><strong>📊 Pages with H1 Tags:</strong> ${pagesWithH1}/${checkedPages} (${Math.round((pagesWithH1/checkedPages)*100)}%)</p>
+                <p><strong>🔍 SEO Score:</strong> ${Math.round(((pagesWithTitles + pagesWithDescriptions + pagesWithH1)/(checkedPages*3))*100)}%</p>
+            `;
+            progressDiv.innerHTML = `<p>✅ SEO analysis completed!</p>`;
+        }
+        async function findDuplicateContent() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('duplicateContentResults') || createResultsDiv('duplicateContentResults', 'Duplicate Content Analysis');
+            const progressDiv = document.getElementById('duplicateContentProgress') || createProgressDiv('duplicateContentProgress');
+            
+            resultsDiv.style.display = 'block';
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const contentMap = new Map();
+            const duplicates = [];
+            let checkedPages = 0;
+
+            progressDiv.innerHTML = `<p>Analyzing content for ${pagesToCheck.length} pages...</p>`;
+
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    // Extract main content (remove header, footer, nav)
+                    const header = doc.querySelector('header');
+                    const footer = doc.querySelector('footer');
+                    const nav = doc.querySelector('nav');
+                    if (header) header.remove();
+                    if (footer) footer.remove();
+                    if (nav) nav.remove();
+                    
+                    const title = doc.querySelector('title')?.textContent?.trim() || '';
+                    const h1 = doc.querySelector('h1')?.textContent?.trim() || '';
+                    const description = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+                    const bodyText = doc.body?.textContent?.trim().substring(0, 500) || '';
+                    
+                    const contentKey = `${title}|${h1}|${description}`;
+                    
+                    if (contentMap.has(contentKey)) {
+                        duplicates.push({
+                            pages: [contentMap.get(contentKey), page],
+                            type: 'Identical titles/descriptions',
+                            content: { title, h1, description }
+                        });
+                    } else {
+                        contentMap.set(contentKey, page);
+                    }
+                } catch (error) {
+                    console.error(`Error checking ${page}:`, error);
+                }
+                
+                checkedPages++;
+                progressDiv.innerHTML = `<p>Analyzing content... (${checkedPages}/${pagesToCheck.length} pages)</p>`;
+                await new Promise(resolve => setTimeout(resolve, 30));
+            }
+
+            let resultsHTML = `<h3>🔍 Duplicate Content Results</h3>`;
+            if (duplicates.length === 0) {
+                resultsHTML += `<p style="color: green;">✅ No duplicate content found! All pages have unique titles and descriptions.</p>`;
+            } else {
+                resultsHTML += `<p style="color: orange;">⚠️ Found ${duplicates.length} potential duplicate content issues:</p><ul>`;
+                duplicates.forEach((dup, index) => {
+                    resultsHTML += `<li><strong>Issue ${index + 1}:</strong> ${dup.type}<br>`;
+                    resultsHTML += `Pages: ${dup.pages.join(' and ')}<br>`;
+                    resultsHTML += `Title: "${dup.content.title}"</li>`;
+                });
+                resultsHTML += `</ul>`;
+            }
+            
+            resultsDiv.innerHTML = resultsHTML;
+            progressDiv.innerHTML = `<p>✅ Duplicate content analysis completed!</p>`;
+        }
+
+        async function checkIncludesUsage() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('includesUsageResults') || createResultsDiv('includesUsageResults', 'Includes Usage Analysis');
+            const progressDiv = document.getElementById('includesUsageProgress') || createProgressDiv('includesUsageProgress');
+            
+            resultsDiv.style.display = 'block';
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const includeUsage = {
+                'header-with-analytics': 0,
+                'header': 0,
+                'footer': 0,
+                'mobile-menu': 0
+            };
+            const pageIncludeMap = new Map();
+            let checkedPages = 0;
+
+            progressDiv.innerHTML = `<p>Analyzing includes usage for ${pagesToCheck.length} pages...</p>`;
+
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    const pageIncludes = [];
+                    
+                    // Check for evidence of includes in the generated HTML
+                    if (html.includes('<!-- Analytics -->') || html.includes('gtag(')) {
+                        includeUsage['header-with-analytics']++;
+                        pageIncludes.push('header-with-analytics');
+                    }
+                    if (html.includes('<footer') && html.includes('getbeseen')) {
+                        includeUsage['footer']++;
+                        pageIncludes.push('footer');
+                    }
+                    if (html.includes('mobile') && html.includes('nav')) {
+                        includeUsage['mobile-menu']++;
+                        pageIncludes.push('mobile-menu');
+                    }
+                    
+                    pageIncludeMap.set(page, pageIncludes);
+                } catch (error) {
+                    console.error(`Error checking ${page}:`, error);
+                }
+                
+                checkedPages++;
+                progressDiv.innerHTML = `<p>Analyzing includes... (${checkedPages}/${pagesToCheck.length} pages)</p>`;
+                await new Promise(resolve => setTimeout(resolve, 30));
+            }
+
+            let resultsHTML = `<h3>📄 Includes Usage Analysis</h3>`;
+            resultsHTML += `<div style="margin: 20px 0;">`;
+            resultsHTML += `<h4>Include Usage Summary:</h4>`;
+            resultsHTML += `<ul>`;
+            Object.entries(includeUsage).forEach(([include, count]) => {
+                const percentage = Math.round((count / checkedPages) * 100);
+                resultsHTML += `<li><strong>${include}:</strong> ${count}/${checkedPages} pages (${percentage}%)</li>`;
+            });
+            resultsHTML += `</ul>`;
+            resultsHTML += `<p><strong>📊 Include Consistency Score:</strong> ${Math.round((includeUsage['header-with-analytics'] + includeUsage['footer']) / (checkedPages * 2) * 100)}%</p>`;
+            resultsHTML += `</div>`;
+            
+            resultsDiv.innerHTML = resultsHTML;
+            progressDiv.innerHTML = `<p>✅ Includes usage analysis completed!</p>`;
+        }
+
+        // Helper function to create results div
+        function createResultsDiv(id, title) {
+            let div = document.getElementById(id);
+            if (!div) {
+                div = document.createElement('div');
+                div.id = id;
+                div.style.display = 'none';
+                div.style.marginTop = '20px';
+                div.style.padding = '20px';
+                div.style.backgroundColor = '#f8f9fa';
+                div.style.border = '1px solid #dee2e6';
+                div.style.borderRadius = '5px';
+                document.getElementById('protectedContent').appendChild(div);
+            }
+            return div;
+        }
+
+        // Helper function to create progress div
+        function createProgressDiv(id) {
+            let div = document.getElementById(id);
+            if (!div) {
+                div = document.createElement('div');
+                div.id = id;
+                div.style.marginTop = '10px';
+                div.style.fontWeight = 'bold';
+                document.getElementById('protectedContent').appendChild(div);
+            }
+            return div;
+        }
 
     </script>
+    
+    </div> <!-- End protectedContent -->
 </body>
 </html> 
