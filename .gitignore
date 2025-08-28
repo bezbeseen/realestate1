@@ -2,3 +2,7 @@
 nextcloud/
 archive/
 .DS_Store
+
+# Node modules
+node_modules/
+production stuff/node_modules/

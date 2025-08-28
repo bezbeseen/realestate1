@@ -68,6 +68,10 @@ python3 -m http.server 8002
 - **`templates/`** - HTML templates for all page types
 - **`data/`** - JSON data (products.json, categories.json, etc.)
 - **`includes/`** - Shared HTML components (header, footer, etc.)
+  - **`analytics-loader.html`** - GA4, Clarity, marketing tracking (EDIT HERE for analytics)
+  - **`image-helpers.html`** - Product image path mappings (EDIT HERE for image fixes)
+  - **`header.html`** - Main navigation and branding
+  - **`footer.html`** - Footer content and links
 - **`assets/`** - CSS, JavaScript, images, fonts
 - **`content/`** - Enhanced HTML content for specific products
 - **`api/`** - Stripe checkout and payment processing
@@ -108,6 +112,7 @@ python3 -m http.server 8002
 
 **File Management:**
 - **ALWAYS work in `/production stuff/` folder** for source files
+- **CRITICAL:** Fix issues at the SOURCE level in templates/includes, NOT in generated files
 - Use the existing template system for products and categories
 - Run build process after making changes: `node build/build.js`
 - Test changes by serving from `/generated/` folder
@@ -129,10 +134,12 @@ python3 -m http.server 8002
 ### ❌ DON'T
 
 **File Management:**
-- **NEVER edit files in `/generated/` directory** (they get overwritten)
+- **NEVER edit files in `/generated/` directory** (they get overwritten by builds)
+- **NEVER make "quick fixes" in generated files** - they'll be lost on next build
 - Don't create standalone HTML files for products (use templates)
 - Don't break the new organized directory structure
 - Don't move files out of `/production stuff/` without updating paths
+- **NEVER delete image folders without checking dependencies** - build system uses them
 
 **Code Standards:**
 - Don't add heavy JavaScript frameworks
@@ -180,6 +187,17 @@ python3 -m http.server 8002
 ### Path Issues
 - **Images not loading:** Check asset paths are relative to generated folder
 - **CSS not applying:** Verify build process copied assets correctly
+
+### Common Fix Patterns
+- **Analytics not working:** Update `includes/analytics-loader.html` in production stuff, then rebuild
+- **Image paths broken:** Check `includes/image-helpers.html` for hardcoded paths
+- **Build overwrites fixes:** Always fix at SOURCE level (production stuff/), never in generated/
+- **"Fixes keep disappearing":** You're editing generated files - edit the templates instead
+
+### Emergency Recovery
+- **Accidentally deleted images:** Rebuild from production stuff to restore all assets
+- **Site completely broken:** Check if you edited generated/ instead of production stuff/
+- **Analytics reverted:** Check if GA4 IDs are set in source templates, not just generated files
 
 ## Key Conventions
 
