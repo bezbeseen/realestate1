@@ -911,7 +911,7 @@ function getVisitCount() {
     const visitCount = parseInt(localStorage.getItem('beseen_visit_count') || '0') + 1;
     localStorage.setItem('beseen_visit_count', visitCount.toString());
     localStorage.setItem('beseen_last_visit', new Date().toISOString());
-    return visitCount;
+    image.png    return visitCount;
 }
 
 function getUserJourneyStage(visitCount) {

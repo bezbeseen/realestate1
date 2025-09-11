@@ -83,89 +83,10 @@
 }
 </script>
 
-		<!-- Analytics handled by smart analytics-loader.html -->
+		<!-- All analytics are now handled by the analytics-loader.html include -->
+		<!-- This ensures consistency and prevents conflicting tracking codes -->
+		{{> analytics-loader}}
 
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "lkihe2qcle");
-</script>
-
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NVJHBFZ5');</script>
-<!-- End Google Tag Manager -->
-
-<!-- HTML Meta Tags -->
-<title>#1 Trusted Printing Company in Santa Clara, CA | GetBeSeen</title>
-<meta name="description" content="Discover professional printing solutions including business cards, banners, posters & more. Top-rated Santa Clara printing company for all your needs. Contact us.">
-
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://getbeseen.com/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="#1 Trusted Printing Company in Santa Clara, CA | GetBeSeen">
-<meta property="og:description" content="Discover professional printing solutions including business cards, banners, posters & more. Top-rated Santa Clara printing company for all your needs. Contact us.">
-<meta property="og:image" content="https://opengraph.b-cdn.net/production/documents/872e85a2-7fac-4ceb-a60b-61cdf7ebbbb0.png?token=XFKu-o9863uTi_YhhLsbPjzqXTMfxvbB5jze_JW0gR8&height=138&width=470&expires=33246312946">
-
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="getbeseen.com">
-<meta property="twitter:url" content="https://getbeseen.com/">
-<meta name="twitter:title" content="#1 Trusted Printing Company in Santa Clara, CA | GetBeSeen">
-<meta name="twitter:description" content="Discover professional printing solutions including business cards, banners, posters & more. Top-rated Santa Clara printing company for all your needs. Contact us.">
-<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/documents/872e85a2-7fac-4ceb-a60b-61cdf7ebbbb0.png?token=XFKu-o9863uTi_YhhLsbPjzqXTMfxvbB5jze_JW0gR8&height=138&width=470&expires=33246312946">
-
-<!-- Meta Tags Generated via https://www.opengraph.xyz -->
-		
-		<!-- Start of HubSpot Embed Code -->
-		<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/44599314.js"></script>
-		<!-- End of HubSpot Embed Code -->	
-
-		<script type="text/javascript">
-			(function(c,l,a,r,i,t,y){
-				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-				y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-			})(window, document, "clarity", "script", "lkihe2qcle");
-		</script>
-
-		<script>
-            function includeHTML() {
-              var z, i, elmnt, file, xhttp;
-              /* Loop through a collection of all HTML elements: */
-              z = document.getElementsByTagName("*");
-              for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                /*search for elements with a certain atrribute:*/
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                  /* Make an HTTP request using the attribute value as the file name: */
-                  xhttp = new XMLHttpRequest();
-                  xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4) {
-                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                      /* Remove the attribute, and call this function once more: */
-                      elmnt.removeAttribute("w3-include-html");
-                      includeHTML();
-                    }
-                  }
-                  xhttp.open("GET", file, true);
-                  xhttp.send();
-                  /* Exit the function: */
-                  return;
-                }
-              }
-            }
-            </script>
-		
-		
 
 	</head>
 

@@ -83,89 +83,1478 @@
 }
 </script>
 
-		<!-- Analytics handled by smart analytics-loader.html -->
-
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "lkihe2qcle");
-</script>
-
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NVJHBFZ5');</script>
-<!-- End Google Tag Manager -->
-
-<!-- HTML Meta Tags -->
-<title>#1 Trusted Printing Company in Santa Clara, CA | GetBeSeen</title>
-<meta name="description" content="Discover professional printing solutions including business cards, banners, posters & more. Top-rated Santa Clara printing company for all your needs. Contact us.">
-
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://getbeseen.com/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="#1 Trusted Printing Company in Santa Clara, CA | GetBeSeen">
-<meta property="og:description" content="Discover professional printing solutions including business cards, banners, posters & more. Top-rated Santa Clara printing company for all your needs. Contact us.">
-<meta property="og:image" content="https://opengraph.b-cdn.net/production/documents/872e85a2-7fac-4ceb-a60b-61cdf7ebbbb0.png?token=XFKu-o9863uTi_YhhLsbPjzqXTMfxvbB5jze_JW0gR8&height=138&width=470&expires=33246312946">
-
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="getbeseen.com">
-<meta property="twitter:url" content="https://getbeseen.com/">
-<meta name="twitter:title" content="#1 Trusted Printing Company in Santa Clara, CA | GetBeSeen">
-<meta name="twitter:description" content="Discover professional printing solutions including business cards, banners, posters & more. Top-rated Santa Clara printing company for all your needs. Contact us.">
-<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/documents/872e85a2-7fac-4ceb-a60b-61cdf7ebbbb0.png?token=XFKu-o9863uTi_YhhLsbPjzqXTMfxvbB5jze_JW0gR8&height=138&width=470&expires=33246312946">
-
-<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+		<!-- All analytics are now handled by the analytics-loader.html include -->
+		<!-- This ensures consistency and prevents conflicting tracking codes -->
+		<!-- Analytics Loader - Comprehensive Tracking System -->
+		<!-- Old analytics code removed - now using smart multi-domain configuration below -->
 		
-		<!-- Start of HubSpot Embed Code -->
-		<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/44599314.js"></script>
-		<!-- End of HubSpot Embed Code -->	
-
-		<script type="text/javascript">
-			(function(c,l,a,r,i,t,y){
-				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-				y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-			})(window, document, "clarity", "script", "lkihe2qcle");
-		</script>
-
+		<!-- Base Analytics Tracker -->
+		<script src="/assets/js/analytics-tracker.js"></script>
+		
+		<!-- Enhanced BeSeen Business Analytics -->
+		<script src="/assets/js/enhanced-analytics.js"></script>
+		
+		<!-- Analytics Configuration & Initialization -->
 		<script>
-            function includeHTML() {
-              var z, i, elmnt, file, xhttp;
-              /* Loop through a collection of all HTML elements: */
-              z = document.getElementsByTagName("*");
-              for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                /*search for elements with a certain atrribute:*/
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                  /* Make an HTTP request using the attribute value as the file name: */
-                  xhttp = new XMLHttpRequest();
-                  xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4) {
-                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                      /* Remove the attribute, and call this function once more: */
-                      elmnt.removeAttribute("w3-include-html");
-                      includeHTML();
-                    }
-                  }
-                  xhttp.open("GET", file, true);
-                  xhttp.send();
-                  /* Exit the function: */
-                  return;
-                }
-              }
-            }
-            </script>
+		document.addEventListener('DOMContentLoaded', function() {
+		    console.log('🚀 Analytics System Fully Loaded');
+		    
+		    // Enhanced tracking for BeSeen specific elements
+		    setupBeSeenSpecificTracking();
+		});
 		
+		function setupBeSeenSpecificTracking() {
+		    // Track phone number clicks specifically
+		    document.addEventListener('click', function(e) {
+		        if (e.target.closest('a[href^="tel:"]')) {
+		            const phoneNumber = e.target.closest('a').getAttribute('href').replace('tel:', '');
+		            gtag('event', 'phone_call_click', {
+		                'phone_number': phoneNumber,
+		                'page_location': window.location.href,
+		                'event_category': 'contact'
+		            });
+		        }
+		    });
 		
+		    // Track email clicks specifically  
+		    document.addEventListener('click', function(e) {
+		        if (e.target.closest('a[href^="mailto:"]')) {
+		            const email = e.target.closest('a').getAttribute('href').replace('mailto:', '');
+		            gtag('event', 'email_click', {
+		                'email_address': email,
+		                'page_location': window.location.href,
+		                'event_category': 'contact'
+		            });
+		        }
+		    });
+		
+		    // Track external link clicks (Promo Store, Login, etc.)
+		    document.addEventListener('click', function(e) {
+		        const link = e.target.closest('a');
+		        if (link && link.getAttribute('href')) {
+		            const href = link.getAttribute('href');
+		            const isExternal = href.startsWith('http') && !href.includes(window.location.hostname);
+		            
+		            if (isExternal) {
+		                gtag('event', 'external_link_click', {
+		                    'link_url': href,
+		                    'link_text': link.textContent.trim(),
+		                    'page_location': window.location.href,
+		                    'event_category': 'outbound'
+		                });
+		            }
+		        }
+		    });
+		
+		    // Track cart interactions
+		    document.addEventListener('click', function(e) {
+		        if (e.target.closest('.cart_btn')) {
+		            gtag('event', 'cart_open_attempt', {
+		                'page_location': window.location.href,
+		                'event_category': 'ecommerce'
+		            });
+		        }
+		    });
+		
+		    // Enhanced CTA Tracking - Track all Call-to-Action buttons
+		    document.addEventListener('click', function(e) {
+		        const element = e.target.closest('a, button');
+		        if (!element) return;
+		        
+		        const href = element.getAttribute('href') || '';
+		        const text = element.textContent.trim().toLowerCase();
+		        const classes = element.className || '';
+		        const pageInfo = getDescriptivePageInfo();
+		        
+		        // Quote/Get Quote buttons
+		        if (text.includes('quote') || text.includes('get quote') || classes.includes('quote')) {
+		            gtag('event', 'cta_quote_request', {
+		                'button_text': element.textContent.trim(),
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'very_high',
+		                'cta_type': 'quote_request',
+		                'event_category': 'cta_conversion'
+		            });
+		        }
+		        
+		        // Contact Us buttons
+		        else if (text.includes('contact') || text.includes('contact us') || href.includes('contact')) {
+		            gtag('event', 'cta_contact', {
+		                'button_text': element.textContent.trim(),
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'high',
+		                'cta_type': 'contact_request',
+		                'event_category': 'cta_conversion'
+		            });
+		        }
+		        
+		        // Call Now / Phone buttons
+		        else if (text.includes('call') || text.includes('phone') || href.includes('tel:')) {
+		            gtag('event', 'cta_call_now', {
+		                'button_text': element.textContent.trim(),
+		                'phone_number': href.replace('tel:', ''),
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'very_high',
+		                'cta_type': 'phone_call',
+		                'event_category': 'cta_conversion'
+		            });
+		        }
+		        
+		        // Learn More / View Details buttons
+		        else if (text.includes('learn more') || text.includes('view details') || text.includes('read more')) {
+		            gtag('event', 'cta_learn_more', {
+		                'button_text': element.textContent.trim(),
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'medium',
+		                'cta_type': 'engagement',
+		                'event_category': 'cta_engagement'
+		            });
+		        }
+		        
+		        // Shop Now / Order Now buttons
+		        else if (text.includes('shop') || text.includes('order') || text.includes('buy now')) {
+		            gtag('event', 'cta_shop_now', {
+		                'button_text': element.textContent.trim(),
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'very_high',
+		                'cta_type': 'purchase_intent',
+		                'event_category': 'cta_ecommerce'
+		            });
+		        }
+		        
+		        // Get Started / Start Project buttons
+		        else if (text.includes('get started') || text.includes('start') || text.includes('begin')) {
+		            gtag('event', 'cta_get_started', {
+		                'button_text': element.textContent.trim(),
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'high',
+		                'cta_type': 'project_start',
+		                'event_category': 'cta_conversion'
+		            });
+		        }
+		        
+		        // Download buttons (catalogs, price lists, etc.)
+		        else if (text.includes('download') || href.includes('.pdf') || href.includes('.doc')) {
+		            gtag('event', 'cta_download', {
+		                'button_text': element.textContent.trim(),
+		                'download_url': href,
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'medium',
+		                'cta_type': 'resource_download',
+		                'event_category': 'cta_engagement'
+		            });
+		        }
+		        
+		        // Navigation CTAs (Browse Products, View Services, etc.)
+		        else if (text.includes('browse') || text.includes('view all') || text.includes('see more')) {
+		            gtag('event', 'cta_browse', {
+		                'button_text': element.textContent.trim(),
+		                'destination_url': href,
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'low',
+		                'cta_type': 'navigation',
+		                'event_category': 'cta_navigation'
+		            });
+		        }
+		        
+		        // Primary action buttons (based on common CSS classes)
+		        else if (classes.includes('btn-primary') || classes.includes('cta') || classes.includes('action')) {
+		            gtag('event', 'cta_primary_action', {
+		                'button_text': element.textContent.trim(),
+		                'button_class': classes,
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'high',
+		                'cta_type': 'primary_action',
+		                'event_category': 'cta_conversion'
+		            });
+		        }
+		        
+		        // Generic important links (if they have specific styling or are in key locations)
+		        else if (classes.includes('important') || classes.includes('highlight') || element.closest('.hero, .banner, .cta-section')) {
+		            gtag('event', 'cta_featured_link', {
+		                'button_text': element.textContent.trim(),
+		                'destination_url': href,
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'conversion_intent': 'medium',
+		                'cta_type': 'featured_link',
+		                'event_category': 'cta_engagement'
+		            });
+		        }
+		    });
+		
+		    // Track login button clicks
+		    document.addEventListener('click', function(e) {
+		        if (e.target.closest('.login')) {
+		            gtag('event', 'cta_login', {
+		                'page_location': window.location.href,
+		                'page_description': getDescriptivePageInfo().description,
+		                'cta_type': 'account_access',
+		                'event_category': 'cta_engagement'
+		            });
+		        }
+		    });
+		    
+		    // Track specific business CTAs
+		    document.addEventListener('click', function(e) {
+		        const element = e.target.closest('a, button');
+		        if (!element) return;
+		        
+		        const text = element.textContent.trim().toLowerCase();
+		        const href = element.getAttribute('href') || '';
+		        const pageInfo = getDescriptivePageInfo();
+		        
+		        // Portfolio/Gallery CTAs
+		        if (text.includes('portfolio') || text.includes('gallery') || text.includes('examples')) {
+		            gtag('event', 'cta_view_portfolio', {
+		                'button_text': element.textContent.trim(),
+		                'page_category': pageInfo.category,
+		                'conversion_intent': 'medium',
+		                'cta_type': 'portfolio_view',
+		                'event_category': 'cta_engagement'
+		            });
+		        }
+		        
+		        // Pricing CTAs
+		        else if (text.includes('pricing') || text.includes('price') || text.includes('cost')) {
+		            gtag('event', 'cta_pricing_inquiry', {
+		                'button_text': element.textContent.trim(),
+		                'page_category': pageInfo.category,
+		                'conversion_intent': 'high',
+		                'cta_type': 'pricing_request',
+		                'event_category': 'cta_conversion'
+		            });
+		        }
+		        
+		        // Social media CTAs
+		        else if (href.includes('facebook') || href.includes('instagram') || href.includes('linkedin') || href.includes('twitter')) {
+		            gtag('event', 'cta_social_media', {
+		                'button_text': element.textContent.trim(),
+		                'social_platform': href.includes('facebook') ? 'facebook' : 
+		                                  href.includes('instagram') ? 'instagram' :
+		                                  href.includes('linkedin') ? 'linkedin' : 'other',
+		                'page_category': pageInfo.category,
+		                'cta_type': 'social_follow',
+		                'event_category': 'cta_social'
+		            });
+		        }
+		        
+		        // Newsletter/Email signup CTAs
+		        else if (text.includes('newsletter') || text.includes('subscribe') || text.includes('email updates')) {
+		            gtag('event', 'cta_newsletter_signup', {
+		                'button_text': element.textContent.trim(),
+		                'page_category': pageInfo.category,
+		                'conversion_intent': 'medium',
+		                'cta_type': 'email_signup',
+		                'event_category': 'cta_engagement'
+		            });
+		        }
+		        
+		        // Location/Directions CTAs
+		        else if (text.includes('directions') || text.includes('location') || text.includes('find us')) {
+		            gtag('event', 'cta_get_directions', {
+		                'button_text': element.textContent.trim(),
+		                'page_category': pageInfo.category,
+		                'conversion_intent': 'high',
+		                'cta_type': 'location_visit',
+		                'event_category': 'cta_conversion'
+		            });
+		        }
+		    });
+		
+		    // Enhanced Navigation Tracking
+		    document.addEventListener('click', function(e) {
+		        const element = e.target.closest('a');
+		        if (!element) return;
+		        
+		        const href = element.getAttribute('href') || '';
+		        const text = element.textContent.trim();
+		        const pageInfo = getDescriptivePageInfo();
+		        
+		        // Skip if already tracked by CTA handlers above
+		        if (element.dataset.ctaTracked) return;
+		        
+		        // Main navigation menu tracking
+		        if (element.closest('nav, .navbar, .main-menu, .navigation')) {
+		            gtag('event', 'navigation_main_menu', {
+		                'nav_item_text': text,
+		                'nav_destination': href,
+		                'current_page': pageInfo.description,
+		                'nav_type': 'main_menu',
+		                'event_category': 'navigation'
+		            });
+		        }
+		        
+		        // Footer navigation
+		        else if (element.closest('footer, .footer')) {
+		            gtag('event', 'navigation_footer', {
+		                'nav_item_text': text,
+		                'nav_destination': href,
+		                'current_page': pageInfo.description,
+		                'nav_type': 'footer',
+		                'event_category': 'navigation'
+		            });
+		        }
+		        
+		        // Breadcrumb navigation
+		        else if (element.closest('.breadcrumb, .breadcrumbs')) {
+		            gtag('event', 'navigation_breadcrumb', {
+		                'nav_item_text': text,
+		                'nav_destination': href,
+		                'current_page': pageInfo.description,
+		                'nav_type': 'breadcrumb',
+		                'event_category': 'navigation'
+		            });
+		        }
+		        
+		        // Logo clicks (back to homepage)
+		        else if (element.closest('.logo') || href === '/' || href === '/index.html') {
+		            gtag('event', 'navigation_logo_home', {
+		                'nav_item_text': text || 'Logo',
+		                'current_page': pageInfo.description,
+		                'nav_type': 'logo',
+		                'event_category': 'navigation'
+		            });
+		        }
+		        
+		        // Product category navigation
+		        else if (href.includes('/products/') && !href.includes('.html')) {
+		            gtag('event', 'navigation_product_category', {
+		                'nav_item_text': text,
+		                'product_category': href.split('/').pop(),
+		                'current_page': pageInfo.description,
+		                'nav_type': 'product_category',
+		                'event_category': 'navigation'
+		            });
+		        }
+		        
+		        // Service category navigation  
+		        else if (href.includes('/services/') && !href.includes('.html')) {
+		            gtag('event', 'navigation_service_category', {
+		                'nav_item_text': text,
+		                'service_category': href.split('/').pop(),
+		                'current_page': pageInfo.description,
+		                'nav_type': 'service_category',
+		                'event_category': 'navigation'
+		            });
+		        }
+		        
+		        // Internal page navigation (any internal link not caught above)
+		        else if (!href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('tel:') && href !== '') {
+		            gtag('event', 'navigation_internal_link', {
+		                'nav_item_text': text,
+		                'nav_destination': href,
+		                'current_page': pageInfo.description,
+		                'nav_type': 'internal',
+		                'event_category': 'navigation'
+		            });
+		        }
+		        
+		        // Mark as tracked to avoid duplicate tracking
+		        element.dataset.ctaTracked = 'true';
+		    });
+		
+		    // Track search functionality if present
+		    document.addEventListener('submit', function(e) {
+		        if (e.target.matches('form[role="search"], .search-form')) {
+		            const searchTerm = e.target.querySelector('input[type="search"], input[name="search"], input[name="q"]')?.value;
+		            if (searchTerm) {
+		                gtag('event', 'search', {
+		                    'search_term': searchTerm,
+		                    'event_category': 'site_search'
+		                });
+		            }
+		        }
+		    });
+		
+		    // Track video interactions if present
+		    document.addEventListener('play', function(e) {
+		        if (e.target.tagName === 'VIDEO') {
+		            gtag('event', 'video_play', {
+		                'video_title': e.target.title || 'Unknown Video',
+		                'event_category': 'video'
+		            });
+		        }
+		    }, true);
+		
+		    // Track PDF/Document downloads
+		    document.addEventListener('click', function(e) {
+		        const link = e.target.closest('a');
+		        if (link && link.getAttribute('href')) {
+		            const href = link.getAttribute('href');
+		            const isDownload = /\.(pdf|doc|docx|xls|xlsx|ppt|pptx|zip|rar)$/i.test(href);
+		            
+		            if (isDownload) {
+		                gtag('event', 'file_download', {
+		                    'file_name': href.split('/').pop(),
+		                    'file_type': href.split('.').pop().toLowerCase(),
+		                    'link_text': link.textContent.trim(),
+		                    'event_category': 'download'
+		                });
+		            }
+		        }
+		    });
+		
+		    // Track scroll depth milestones
+		    let scrollDepthMarkers = [25, 50, 75, 100];
+		    let scrollDepthReached = [];
+		    
+		    window.addEventListener('scroll', function() {
+		        const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+		        
+		        scrollDepthMarkers.forEach(function(marker) {
+		            if (scrollPercent >= marker && !scrollDepthReached.includes(marker)) {
+		                scrollDepthReached.push(marker);
+		                gtag('event', 'scroll_depth', {
+		                    'percent_scrolled': marker,
+		                    'event_category': 'engagement'
+		                });
+		            }
+		        });
+		    });
+		
+		    // Track time on page milestones
+		    const timeMarkers = [30, 60, 120, 300, 600]; // 30s, 1m, 2m, 5m, 10m
+		    let timeMarkersReached = [];
+		    const startTime = Date.now();
+		
+		    timeMarkers.forEach(function(marker) {
+		        setTimeout(function() {
+		            if (!document.hidden) {
+		                timeMarkersReached.push(marker);
+		                gtag('event', 'time_on_page', {
+		                    'time_seconds': marker,
+		                    'event_category': 'engagement'
+		                });
+		            }
+		        }, marker * 1000);
+		    });
+		
+		    // Track page visibility changes
+		    document.addEventListener('visibilitychange', function() {
+		        if (document.hidden) {
+		            const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+		            gtag('event', 'page_hidden', {
+		                'time_on_page': timeOnPage,
+		                'event_category': 'engagement'
+		            });
+		        } else {
+		            gtag('event', 'page_visible', {
+		                'event_category': 'engagement'
+		            });
+		        }
+		    });
+		
+		    // Enhanced Form Tracking with Lead Scoring
+		    document.addEventListener('submit', function(e) {
+		        const form = e.target;
+		        if (form.tagName === 'FORM') {
+		            const formName = form.name || form.id || 'unnamed_form';
+		            const formData = new FormData(form);
+		            const fieldCount = Array.from(formData.keys()).length;
+		            const pageInfo = getDescriptivePageInfo();
+		            
+		            // Extract form data for lead scoring
+		            const email = formData.get('email') || formData.get('Email') || '';
+		            const phone = formData.get('phone') || formData.get('Phone') || '';
+		            const company = formData.get('company') || formData.get('Company') || '';
+		            const message = formData.get('message') || formData.get('Message') || '';
+		            
+		            // Generate unique lead ID if this is a conversion form
+		            const leadId = generateLeadId();
+		            
+		            // Store lead info in localStorage for cross-session tracking
+		            if (email || phone) {
+		                const leadData = {
+		                    leadId: leadId,
+		                    email: email,
+		                    phone: phone,
+		                    company: company,
+		                    firstContact: new Date().toISOString(),
+		                    formPage: pageInfo.description,
+		                    leadScore: calculateLeadScore(formData, pageInfo)
+		                };
+		                localStorage.setItem('beseen_lead_' + leadId, JSON.stringify(leadData));
+		                localStorage.setItem('beseen_current_lead', leadId);
+		            }
+		            
+		            gtag('event', 'form_submit_enhanced', {
+		                'form_name': formName,
+		                'form_fields': fieldCount,
+		                'page_category': pageInfo.category,
+		                'page_description': pageInfo.description,
+		                'has_email': !!email,
+		                'has_phone': !!phone,
+		                'has_company': !!company,
+		                'message_length': message.length,
+		                'lead_id': leadId,
+		                'lead_score': calculateLeadScore(formData, pageInfo),
+		                'conversion_value': pageInfo.conversionScore,
+		                'event_category': 'form_conversion'
+		            });
+		            
+		            // Track as high-value conversion
+		            gtag('event', 'conversion', {
+		                'currency': 'USD',
+		                'value': pageInfo.conversionScore * 10, // Assign dollar value to conversion
+		                'conversion_type': 'lead_generation',
+		                'lead_quality': calculateLeadScore(formData, pageInfo),
+		                'source_page': pageInfo.description
+		            });
+		        }
+		    });
+		    
+		    // Form abandonment tracking
+		    document.addEventListener('focusout', function(e) {
+		        if (e.target.matches('input, textarea, select')) {
+		            const form = e.target.closest('form');
+		            if (form) {
+		                // Track that user started filling a form
+		                if (!form.dataset.formStarted) {
+		                    form.dataset.formStarted = 'true';
+		                    gtag('event', 'form_start', {
+		                        'form_name': form.name || form.id || 'unnamed_form',
+		                        'page_description': getDescriptivePageInfo().description,
+		                        'event_category': 'form_engagement'
+		                    });
+		                }
+		                
+		                // Track form progress
+		                const totalFields = form.querySelectorAll('input, textarea, select').length;
+		                const filledFields = Array.from(form.querySelectorAll('input, textarea, select')).filter(field => field.value.trim() !== '').length;
+		                const progressPercent = Math.round((filledFields / totalFields) * 100);
+		                
+		                gtag('event', 'form_progress', {
+		                    'form_name': form.name || form.id || 'unnamed_form',
+		                    'progress_percent': progressPercent,
+		                    'filled_fields': filledFields,
+		                    'total_fields': totalFields,
+		                    'event_category': 'form_engagement'
+		                });
+		            }
+		        }
+		    });
+		
+		    // Track error events
+		    window.addEventListener('error', function(e) {
+		        gtag('event', 'javascript_error', {
+		            'error_message': e.message,
+		            'error_source': e.filename,
+		            'error_line': e.lineno,
+		            'event_category': 'error'
+		        });
+		    });
+		
+		    // Track unhandled promise rejections
+		    window.addEventListener('unhandledrejection', function(e) {
+		        gtag('event', 'promise_rejection', {
+		            'error_reason': e.reason,
+		            'event_category': 'error'
+		        });
+		    });
+		}
+		
+		// Performance monitoring
+		window.addEventListener('load', function() {
+		    // Track page load time
+		    setTimeout(function() {
+		        const perfData = performance.getEntriesByType('navigation')[0];
+		        if (perfData) {
+		            gtag('event', 'page_load_time', {
+		                'load_time': Math.round(perfData.loadEventEnd - perfData.loadEventStart),
+		                'dom_ready_time': Math.round(perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart),
+		                'event_category': 'performance'
+		            });
+		        }
+		    }, 0);
+		});
+		
+		// Track custom BeSeen events
+		function trackCustomEvent(eventName, parameters = {}) {
+		    gtag('event', eventName, {
+		        ...parameters,
+		        'custom_tracking': true,
+		        'site_section': getBeSeeenSiteSection()
+		    });
+		}
+		
+		function getBeSeeenSiteSection() {
+		    const path = window.location.pathname;
+		    if (path.includes('/products/')) return 'products';
+		    if (path.includes('/services/')) return 'services';
+		    if (path.includes('/about')) return 'about';
+		    if (path.includes('/contact')) return 'contact';
+		    if (path === '/' || path === '/index.html') return 'home';
+		    return 'other';
+		}
+		
+		// Make tracking function globally available
+		window.trackCustomEvent = trackCustomEvent;
+		
+		// Log analytics initialization
+		console.log('📊 BeSeen Analytics System Initialized');
+		console.log('📋 Tracking: Page views, clicks, forms, scrolling, time on page, errors, performance');
+		console.log('🎯 Business Events: Phone calls, emails, cart, login, downloads, videos');
+		console.log('📱 Enhanced: Mobile interactions, product views, lead scoring');
+		</script>
+		
+		<!-- Development Analytics Dashboard Toggle -->
+		<script>
+		if (window.location.hostname === 'localhost' || window.location.hostname.includes('dev') || window.location.search.includes('debug=analytics')) {
+		    // Add analytics debug panel
+		    document.addEventListener('DOMContentLoaded', function() {
+		        const debugPanel = document.createElement('div');
+		        debugPanel.innerHTML = `
+		            <div id="analytics-debug" style="
+		                position: fixed;
+		                bottom: 20px;
+		                left: 20px;
+		                background: rgba(0,0,0,0.9);
+		                color: white;
+		                padding: 15px;
+		                border-radius: 8px;
+		                font-family: monospace;
+		                font-size: 12px;
+		                z-index: 999999;
+		                max-width: 400px;
+		                max-height: 300px;
+		                overflow-y: auto;
+		                display: none;
+		            ">
+		                <h4 style="margin: 0 0 10px 0;">🔍 Analytics Debug Panel</h4>
+		                <div id="debug-events"></div>
+		                <button onclick="clearDebugEvents()" style="margin-top: 10px; padding: 5px 10px; background: #007cba; color: white; border: none; border-radius: 3px; cursor: pointer;">Clear</button>
+		            </div>
+		            <button onclick="toggleDebugPanel()" style="
+		                position: fixed;
+		                bottom: 20px;
+		                left: 20px;
+		                background: #007cba;
+		                color: white;
+		                border: none;
+		                border-radius: 50%;
+		                width: 50px;
+		                height: 50px;
+		                cursor: pointer;
+		                z-index: 1000000;
+		                font-size: 20px;
+		            ">📊</button>
+		        `;
+		        document.body.appendChild(debugPanel);
+		
+		        // Override gtag to capture events in debug panel
+		        const originalGtag = window.gtag;
+		        window.gtag = function() {
+		            originalGtag.apply(window, arguments);
+		            
+		            if (arguments[0] === 'event') {
+		                addDebugEvent(arguments[1], arguments[2]);
+		            }
+		        };
+		
+		        window.toggleDebugPanel = function() {
+		            const panel = document.getElementById('analytics-debug');
+		            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+		        };
+		
+		        window.clearDebugEvents = function() {
+		            document.getElementById('debug-events').innerHTML = '';
+		        };
+		
+		        window.addDebugEvent = function(eventName, parameters) {
+		            const debugEvents = document.getElementById('debug-events');
+		            if (debugEvents) {
+		                const eventDiv = document.createElement('div');
+		                eventDiv.style.cssText = 'margin: 5px 0; padding: 5px; background: rgba(255,255,255,0.1); border-radius: 3px; font-size: 11px;';
+		                eventDiv.innerHTML = `
+		                    <strong>${eventName}</strong> <small>${new Date().toLocaleTimeString()}</small><br>
+		                    <small>${JSON.stringify(parameters, null, 2).substring(0, 100)}...</small>
+		                `;
+		                debugEvents.insertBefore(eventDiv, debugEvents.firstChild);
+		                
+		                // Keep only last 20 events
+		                while (debugEvents.children.length > 20) {
+		                    debugEvents.removeChild(debugEvents.lastChild);
+		                }
+		            }
+		        };
+		    });
+		}
+		</script>
+		
+		<!-- Smart Page Detection & Auto-Tracking -->
+		<script>
+		function setupSmartPageTracking() {
+		    const pageType = detectPageType();
+		    const businessContext = getBusinessContext();
+		    
+		    // Auto-track based on page type
+		    gtag('event', 'smart_page_view', {
+		        'page_type': pageType,
+		        'business_category': businessContext.category,
+		        'product_focus': businessContext.product,
+		        'service_focus': businessContext.service,
+		        'conversion_potential': businessContext.conversionScore,
+		        'page_depth': getPageDepth(),
+		        'visit_sequence': getVisitSequence(),
+		        'event_category': 'smart_tracking'
+		    });
+		    
+		    // Set up page-specific auto-tracking
+		    switch(pageType) {
+		        case 'product_page':
+		            setupProductPageTracking(businessContext);
+		            break;
+		        case 'service_page':
+		            setupServicePageTracking(businessContext);
+		            break;
+		        case 'contact_page':
+		            setupContactPageTracking();
+		            break;
+		        case 'quote_page':
+		            setupQuotePageTracking();
+		            break;
+		        case 'homepage':
+		            setupHomepageTracking();
+		            break;
+		    }
+		}
+		
+		function detectPageType() {
+		    const path = window.location.pathname.toLowerCase();
+		    const title = document.title.toLowerCase();
+		    
+		    // Product pages
+		    if (path.includes('/products/') || path.includes('/prints/') || path.includes('/signs/')) {
+		        return 'product_page';
+		    }
+		    
+		    // Service pages
+		    if (path.includes('/services/') || title.includes('service')) {
+		        return 'service_page';
+		    }
+		    
+		    // Contact/Quote pages
+		    if (path.includes('/contact') || path.includes('/quote') || title.includes('contact') || title.includes('quote')) {
+		        return path.includes('/quote') ? 'quote_page' : 'contact_page';
+		    }
+		    
+		    // Homepage
+		    if (path === '/' || path === '/index.html' || path === '') {
+		        return 'homepage';
+		    }
+		    
+		    // About/Company pages
+		    if (path.includes('/about') || title.includes('about')) {
+		        return 'about_page';
+		    }
+		    
+		    return 'general_page';
+		}
+		
+		function getBusinessContext() {
+		    const path = window.location.pathname.toLowerCase();
+		    const title = document.title.toLowerCase();
+		    const content = document.body.textContent.toLowerCase();
+		    
+		    let category = 'general';
+		    let product = null;
+		    let service = null;
+		    let conversionScore = 1;
+		    
+		    // Detect product categories
+		    if (path.includes('/business-card') || title.includes('business card')) {
+		        category = 'business_cards';
+		        product = 'business_cards';
+		        conversionScore = 8; // High conversion potential
+		    } else if (path.includes('/banner') || path.includes('/sign')) {
+		        category = 'signage';
+		        product = 'banners_signs';
+		        conversionScore = 7;
+		    } else if (path.includes('/flyer') || path.includes('/brochure')) {
+		        category = 'marketing_materials';
+		        product = 'print_marketing';
+		        conversionScore = 6;
+		    } else if (path.includes('/promotional')) {
+		        category = 'promotional';
+		        product = 'promotional_items';
+		        conversionScore = 5;
+		    }
+		    
+		    // Detect services
+		    if (content.includes('graphic design') || title.includes('design')) {
+		        service = 'graphic_design';
+		        conversionScore += 2;
+		    } else if (content.includes('web design') || path.includes('/web')) {
+		        service = 'web_design';
+		        conversionScore += 3;
+		    } else if (content.includes('marketing') || content.includes('advertising')) {
+		        service = 'marketing';
+		        conversionScore += 2;
+		    }
+		    
+		    return { category, product, service, conversionScore: Math.min(conversionScore, 10) };
+		}
+		
+		function getPageDepth() {
+		    const path = window.location.pathname;
+		    return (path.match(/\//g) || []).length;
+		}
+		
+		function getVisitSequence() {
+		    const visited = sessionStorage.getItem('visited_pages');
+		    if (!visited) {
+		        sessionStorage.setItem('visited_pages', '1');
+		        return 1;
+		    }
+		    const count = parseInt(visited) + 1;
+		    sessionStorage.setItem('visited_pages', count.toString());
+		    return count;
+		}
+		
+		// Generate unique lead ID
+		function generateLeadId() {
+		    return 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+		}
+		
+		// Calculate lead score based on form data and page context
+		function calculateLeadScore(formData, pageInfo) {
+		    let score = pageInfo.conversionScore || 5;
+		    
+		    // Boost score based on form completeness
+		    if (formData.get('email')) score += 2;
+		    if (formData.get('phone')) score += 3;
+		    if (formData.get('company')) score += 2;
+		    
+		    const message = formData.get('message') || '';
+		    if (message.length > 50) score += 2;
+		    if (message.length > 200) score += 1;
+		    
+		    // Boost based on urgency keywords
+		    if (message.toLowerCase().includes('urgent') || message.toLowerCase().includes('asap')) score += 2;
+		    if (message.toLowerCase().includes('budget') || message.toLowerCase().includes('quote')) score += 1;
+		    
+		    return Math.min(score, 10); // Cap at 10
+		}
+		
+		// Enhanced user tracking with cookies
+		function initializeUserTracking() {
+		    const userId = getUserId();
+		    const sessionId = getSessionId();
+		    const visitCount = getVisitCount();
+		    
+		    // Track returning vs new users
+		    gtag('config', 'G-X2DMYVRCXD', {
+		        'user_id': userId,
+		        'custom_map': {
+		            'custom_parameter_1': 'user_type',
+		            'custom_parameter_2': 'visit_count',
+		            'custom_parameter_3': 'session_id',
+		            'custom_parameter_4': 'lead_score',
+		            'custom_parameter_5': 'user_journey_stage'
+		        }
+		    });
+		    
+		    // Set user properties
+		    gtag('event', 'user_engagement', {
+		        'user_id': userId,
+		        'session_id': sessionId,
+		        'visit_count': visitCount,
+		        'user_type': visitCount === 1 ? 'new_visitor' : 'returning_visitor',
+		        'previous_lead': localStorage.getItem('beseen_current_lead') || null,
+		        'user_journey_stage': getUserJourneyStage(visitCount),
+		        'event_category': 'user_profiling'
+		    });
+		}
+		
+		function getUserId() {
+		    let userId = localStorage.getItem('beseen_user_id');
+		    if (!userId) {
+		        userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+		        localStorage.setItem('beseen_user_id', userId);
+		    }
+		    return userId;
+		}
+		
+		function getSessionId() {
+		    let sessionId = sessionStorage.getItem('beseen_session_id');
+		    if (!sessionId) {
+		        sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+		        sessionStorage.setItem('beseen_session_id', sessionId);
+		    }
+		    return sessionId;
+		}
+		
+		function getVisitCount() {
+		    const visitCount = parseInt(localStorage.getItem('beseen_visit_count') || '0') + 1;
+		    localStorage.setItem('beseen_visit_count', visitCount.toString());
+		    localStorage.setItem('beseen_last_visit', new Date().toISOString());
+		    image.png    return visitCount;
+		}
+		
+		function getUserJourneyStage(visitCount) {
+		    if (visitCount === 1) return 'awareness';
+		    if (visitCount <= 3) return 'consideration';
+		    if (visitCount <= 7) return 'evaluation';
+		    return 'decision';
+		}
+		
+		// Track user behavior patterns
+		function trackUserBehaviorPatterns() {
+		    const userId = getUserId();
+		    const pageInfo = getDescriptivePageInfo();
+		    
+		    // Track page sequence for user journey mapping
+		    const pageSequence = JSON.parse(sessionStorage.getItem('page_sequence') || '[]');
+		    pageSequence.push({
+		        page: pageInfo.description,
+		        timestamp: Date.now(),
+		        category: pageInfo.category
+		    });
+		    sessionStorage.setItem('page_sequence', JSON.stringify(pageSequence.slice(-10))); // Keep last 10 pages
+		    
+		    // Track time spent on different page types
+		    const pageStartTime = Date.now();
+		    sessionStorage.setItem('page_start_time', pageStartTime.toString());
+		    
+		    // Track when user leaves page
+		    window.addEventListener('beforeunload', function() {
+		        const timeSpent = Math.round((Date.now() - pageStartTime) / 1000);
+		        if (timeSpent > 5) { // Only track if spent more than 5 seconds
+		            gtag('event', 'page_time_detailed', {
+		                'page_description': pageInfo.description,
+		                'time_spent_seconds': timeSpent,
+		                'page_category': pageInfo.category,
+		                'conversion_potential': pageInfo.conversionScore,
+		                'user_id': userId,
+		                'event_category': 'engagement'
+		            });
+		        }
+		    });
+		}
+		
+		function setupProductPageTracking(context) {
+		    // Auto-track product interest after 15 seconds
+		    setTimeout(() => {
+		        gtag('event', 'product_interest', {
+		            'product_category': context.category,
+		            'product_type': context.product,
+		            'engagement_level': 'interested',
+		            'time_threshold': 15,
+		            'event_category': 'product_engagement'
+		        });
+		    }, 15000);
+		    
+		    // Track deep engagement after 45 seconds
+		    setTimeout(() => {
+		        gtag('event', 'product_deep_interest', {
+		            'product_category': context.category,
+		            'product_type': context.product,
+		            'engagement_level': 'highly_interested',
+		            'time_threshold': 45,
+		            'event_category': 'product_engagement'
+		        });
+		    }, 45000);
+		}
+		
+		function setupServicePageTracking(context) {
+		    // Track service inquiry interest
+		    setTimeout(() => {
+		        gtag('event', 'service_interest', {
+		            'service_type': context.service,
+		            'business_category': context.category,
+		            'engagement_level': 'considering',
+		            'event_category': 'service_engagement'
+		        });
+		    }, 20000);
+		}
+		
+		function setupContactPageTracking() {
+		    // High-intent page - track immediately
+		    gtag('event', 'high_intent_page', {
+		        'page_type': 'contact',
+		        'conversion_likelihood': 'high',
+		        'event_category': 'conversion_funnel'
+		    });
+		}
+		
+		function setupQuotePageTracking() {
+		    // Very high-intent page
+		    gtag('event', 'very_high_intent_page', {
+		        'page_type': 'quote',
+		        'conversion_likelihood': 'very_high',
+		        'event_category': 'conversion_funnel'
+		    });
+		}
+		
+		function setupHomepageTracking() {
+		    // Track homepage exploration patterns
+		    setTimeout(() => {
+		        gtag('event', 'homepage_exploration', {
+		            'exploration_time': 10,
+		            'visitor_type': getVisitSequence() === 1 ? 'new' : 'returning',
+		            'event_category': 'homepage_engagement'
+		        });
+		    }, 10000);
+		}
+		</script>
+		
+		<!-- Analytics Loader - Smart Multi-Domain Configuration -->
+		<script>
+		// Smart Analytics Configuration - Auto-detects domain and environment
+		(function() {
+		    // Domain and Environment Detection
+		    const hostname = window.location.hostname;
+		    const isMainSite = hostname === 'getbeseen.com' || hostname === 'www.getbeseen.com';
+		    const isRealEstate = hostname === 'realestate.getbeseen.com' || hostname === 'www.realestate.getbeseen.com';
+		    const isStaging = hostname.includes('staging') || hostname.includes('dev') || hostname.includes('test');
+		    const isLocal = hostname === 'localhost' || hostname.includes('127.0.0.1');
+		    
+		    // Analytics Configuration by Domain and Environment
+		    const analyticsConfig = {
+		        // Main BeSeen.com site (printing business)
+		        main_production: {
+		            ga_id: 'G-X2DMYVRCXD', // New GA4 property for main getbeseen.com site
+		            clarity_id: 't4cugujh39', // New Clarity project for main GetBeSeen site
+		            debug: false,
+		            send_data: true,
+		            site_type: 'main_business'
+		        },
+		        main_staging: {
+		            ga_id: 'G-MAIN-STAGING', // Staging GA4 for main site testing
+		            clarity_id: null,
+		            debug: true,
+		            send_data: true,
+		            site_type: 'main_business_staging'
+		        },
+		        
+		        // Real Estate subdomain
+		        realestate_production: {
+		            ga_id: 'G-3H16V1KPFT', // Your existing real estate GA4
+		            clarity_id: 's1g9ngbmhd', // Your existing Clarity
+		            debug: false,
+		            send_data: true,
+		            site_type: 'real_estate'
+		        },
+		        realestate_staging: {
+		            ga_id: 'G-RE-STAGING', // Staging GA4 for real estate testing
+		            clarity_id: 'lkihe2qcle', // Your second Clarity ID
+		            debug: true,
+		            send_data: true,
+		            site_type: 'real_estate_staging'
+		        },
+		        
+		        // Local development
+		        local: {
+		            ga_id: 'G-LOCAL-DEBUG',
+		            clarity_id: null,
+		            debug: true,
+		            send_data: false, // Don't send analytics from local development
+		            site_type: 'local_development'
+		        }
+		    };
+		    
+		    // Determine current configuration
+		    let currentConfig = 'local';
+		    if (isLocal) {
+		        currentConfig = 'local';
+		    } else if (isMainSite) {
+		        currentConfig = isStaging ? 'main_staging' : 'main_production';
+		    } else if (isRealEstate) {
+		        currentConfig = isStaging ? 'realestate_staging' : 'realestate_production';
+		    } else if (isStaging) {
+		        // Default staging behavior (assumes this will become main site)
+		        currentConfig = 'main_staging';
+		    } else {
+		        // Default production behavior (assumes this will become main site)
+		        currentConfig = 'main_production';
+		    }
+		    
+		    const config = analyticsConfig[currentConfig];
+		    
+		    // Console logging for setup verification
+		    console.log(`🏢 Site Type: ${config.site_type}`);
+		    console.log(`🌐 Domain: ${hostname}`);
+		    console.log(`📊 GA4 Property: ${config.ga_id}`);
+		    console.log(`🎯 Data Collection: ${config.send_data ? 'ENABLED' : 'DISABLED'}`);
+		    console.log(`🔍 Debug Mode: ${config.debug ? 'ON' : 'OFF'}`);
+		    
+		    // Only load analytics if data collection is enabled and GA ID is real
+		    if (config.send_data && !config.ga_id.includes('STAGING') && !config.ga_id.includes('DEBUG') && !config.ga_id.includes('MAIN')) {
+		        // Load Google Analytics
+		        const script = document.createElement('script');
+		        script.async = true;
+		        script.src = `https://www.googletagmanager.com/gtag/js?id=${config.ga_id}`;
+		        document.head.appendChild(script);
+		        
+		        // Initialize dataLayer and gtag
+		        window.dataLayer = window.dataLayer || [];
+		        function gtag(){dataLayer.push(arguments);}
+		        window.gtag = gtag;
+		        gtag('js', new Date());
+		        
+		        // Enhanced GA4 Configuration
+		        gtag('config', config.ga_id, {
+		            // Core Configuration
+		            page_title: document.title,
+		            page_location: window.location.href,
+		            
+		            // Business Context
+		            custom_map: {
+		                'custom_parameter_1': 'site_type',
+		                'custom_parameter_2': 'business_vertical',
+		                'custom_parameter_3': 'product_category',
+		                'custom_parameter_4': 'lead_score',
+		                'custom_parameter_5': 'customer_type'
+		            },
+		            
+		            // Enhanced Ecommerce Configuration
+		            send_page_view: true,
+		            allow_enhanced_conversions: true,
+		            allow_google_signals: true,
+		            
+		            // Privacy and Performance
+		            cookie_expires: 63072000, // 2 years
+		            cookie_update: true,
+		            attribution_reporting_enabled: true,
+		            
+		            // Debug mode for non-production
+		            debug_mode: config.debug
+		        });
+		        
+		        // Initialize enhanced user tracking
+		        initializeUserTracking();
+		        trackUserBehaviorPatterns();
+		        
+		        // Set business context for analytics with descriptive page info
+		        const pageInfo = getDescriptivePageInfo();
+		        const userId = getUserId();
+		        const sessionId = getSessionId();
+		        const visitCount = getVisitCount();
+		        
+		        gtag('event', 'descriptive_page_view', {
+		            'site_type': config.site_type,
+		            'business_vertical': isRealEstate ? 'real_estate' : 'printing_services',
+		            'hostname': hostname,
+		            'page_category': pageInfo.category,
+		            'page_subcategory': pageInfo.subcategory,
+		            'page_type': pageInfo.type,
+		            'product_focus': pageInfo.product,
+		            'service_focus': pageInfo.service,
+		            'page_description': pageInfo.description,
+		            'conversion_potential': pageInfo.conversionScore,
+		            'user_id': userId,
+		            'session_id': sessionId,
+		            'visit_count': visitCount,
+		            'user_type': visitCount === 1 ? 'new_visitor' : 'returning_visitor',
+		            'user_journey_stage': getUserJourneyStage(visitCount),
+		            'custom_parameter_1': pageInfo.category,
+		            'custom_parameter_2': pageInfo.description
+		        });
+		        
+		        // Load Microsoft Clarity if configured
+		        if (config.clarity_id && !config.clarity_id.includes('clarity_id')) {
+		            (function(c,l,a,r,i,t,y){
+		                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+		                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+		                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+		            })(window, document, "clarity", "script", config.clarity_id);
+		        }
+		        
+		    } else {
+		        console.log('🚫 Analytics disabled - using placeholder GA4 ID or local development');
+		        // Create dummy gtag function for development/staging with placeholder IDs
+		        window.gtag = function() {
+		            if (config.debug) {
+		                console.log('📊 [ANALYTICS DEBUG]', arguments);
+		            }
+		        };
+		    }
+		    
+		    // Make configuration globally available for other scripts
+		    window.analyticsConfig = {
+		        environment: currentConfig,
+		        config: config,
+		        isMainSite: isMainSite,
+		        isRealEstate: isRealEstate,
+		        isStaging: isStaging,
+		        isLocal: isLocal,
+		        businessVertical: isRealEstate ? 'real_estate' : 'printing_services'
+		    };
+		    
+		    // Enhanced page description function
+		    function getDescriptivePageInfo() {
+		        const path = window.location.pathname.toLowerCase();
+		        const title = document.title.toLowerCase();
+		        const url = window.location.href;
+		        
+		        // Homepage
+		        if (path === '/' || path === '/index.html' || path === '') {
+		            return {
+		                category: 'homepage',
+		                subcategory: 'main',
+		                type: 'landing',
+		                product: null,
+		                service: null,
+		                description: 'Homepage - Main Landing Page',
+		                conversionScore: 5
+		            };
+		        }
+		        
+		        // Product pages
+		        if (path.includes('/products/')) {
+		            if (path.includes('/business-cards')) {
+		                return {
+		                    category: 'products',
+		                    subcategory: 'prints',
+		                    type: 'product_detail',
+		                    product: 'business_cards',
+		                    service: null,
+		                    description: 'Business Cards - Product Detail Page',
+		                    conversionScore: 9
+		                };
+		            } else if (path.includes('/banners')) {
+		                return {
+		                    category: 'products',
+		                    subcategory: path.includes('/signs/') ? 'signs' : 'prints',
+		                    type: 'product_detail',
+		                    product: 'banners',
+		                    service: null,
+		                    description: 'Banners - Product Detail Page',
+		                    conversionScore: 8
+		                };
+		            } else if (path.includes('/prints.html')) {
+		                return {
+		                    category: 'products',
+		                    subcategory: 'prints',
+		                    type: 'category',
+		                    product: 'prints_category',
+		                    service: null,
+		                    description: 'Prints Category - All Print Products',
+		                    conversionScore: 7
+		                };
+		            } else if (path.includes('/signs.html')) {
+		                return {
+		                    category: 'products',
+		                    subcategory: 'signs',
+		                    type: 'category',
+		                    product: 'signs_category',
+		                    service: null,
+		                    description: 'Signs Category - All Sign Products',
+		                    conversionScore: 7
+		                };
+		            } else if (path.includes('/materials.html')) {
+		                return {
+		                    category: 'products',
+		                    subcategory: 'materials',
+		                    type: 'category',
+		                    product: 'materials_category',
+		                    service: null,
+		                    description: 'Materials Category - Printing Materials',
+		                    conversionScore: 6
+		                };
+		            } else if (path.includes('/promotional.html')) {
+		                return {
+		                    category: 'products',
+		                    subcategory: 'promotional',
+		                    type: 'category',
+		                    product: 'promotional_category',
+		                    service: null,
+		                    description: 'Promotional Category - Branded Items',
+		                    conversionScore: 6
+		                };
+		            } else if (path.includes('/real-estate.html')) {
+		                return {
+		                    category: 'products',
+		                    subcategory: 'real_estate',
+		                    type: 'category',
+		                    product: 'real_estate_category',
+		                    service: null,
+		                    description: 'Real Estate Category - Realtor Products',
+		                    conversionScore: 7
+		                };
+		            } else if (path.includes('/products.html')) {
+		                return {
+		                    category: 'products',
+		                    subcategory: 'overview',
+		                    type: 'main_category',
+		                    product: 'all_products',
+		                    service: null,
+		                    description: 'Products Overview - All Categories',
+		                    conversionScore: 6
+		                };
+		            } else {
+		                // Generic product page
+		                const productName = path.split('/').pop().replace('.html', '').replace('-', ' ');
+		                return {
+		                    category: 'products',
+		                    subcategory: 'detail',
+		                    type: 'product_detail',
+		                    product: productName,
+		                    service: null,
+		                    description: `Product: ${productName.charAt(0).toUpperCase() + productName.slice(1)}`,
+		                    conversionScore: 8
+		                };
+		            }
+		        }
+		        
+		        // Service pages
+		        if (path.includes('/services/')) {
+		            if (path.includes('/graphic-design')) {
+		                return {
+		                    category: 'services',
+		                    subcategory: 'graphic_design',
+		                    type: 'service_detail',
+		                    product: null,
+		                    service: 'graphic_design',
+		                    description: 'Graphic Design Services',
+		                    conversionScore: 7
+		                };
+		            } else if (path.includes('/web-design')) {
+		                return {
+		                    category: 'services',
+		                    subcategory: 'web_design',
+		                    type: 'service_detail',
+		                    product: null,
+		                    service: 'web_design',
+		                    description: 'Web Design Services',
+		                    conversionScore: 8
+		                };
+		            } else if (path.includes('/mailing')) {
+		                return {
+		                    category: 'services',
+		                    subcategory: 'mailing',
+		                    type: 'service_detail',
+		                    product: null,
+		                    service: 'mailing',
+		                    description: 'Mailing Services',
+		                    conversionScore: 7
+		                };
+		            } else if (path.includes('/services.html')) {
+		                return {
+		                    category: 'services',
+		                    subcategory: 'overview',
+		                    type: 'main_category',
+		                    product: null,
+		                    service: 'all_services',
+		                    description: 'Services Overview - All Service Categories',
+		                    conversionScore: 6
+		                };
+		            }
+		        }
+		        
+		        // Contact & conversion pages
+		        if (path.includes('/contact')) {
+		            return {
+		                category: 'conversion',
+		                subcategory: 'contact',
+		                type: 'high_intent',
+		                product: null,
+		                service: null,
+		                description: 'Contact Page - High Intent Visitors',
+		                conversionScore: 10
+		            };
+		        }
+		        
+		        // About page
+		        if (path.includes('/about')) {
+		            return {
+		                category: 'company',
+		                subcategory: 'about',
+		                type: 'informational',
+		                product: null,
+		                service: null,
+		                description: 'About Us - Company Information',
+		                conversionScore: 4
+		            };
+		        }
+		        
+		        // Blog pages
+		        if (path.includes('/blog') || path.includes('how-to-') || path.includes('the-power-of-')) {
+		            return {
+		                category: 'content',
+		                subcategory: 'blog',
+		                type: 'educational',
+		                product: null,
+		                service: null,
+		                description: 'Blog Content - Educational/SEO Content',
+		                conversionScore: 3
+		            };
+		        }
+		        
+		        // Cart & checkout
+		        if (path.includes('/cart')) {
+		            return {
+		                category: 'ecommerce',
+		                subcategory: 'cart',
+		                type: 'very_high_intent',
+		                product: null,
+		                service: null,
+		                description: 'Shopping Cart - Purchase Intent',
+		                conversionScore: 10
+		            };
+		        }
+		        
+		        if (path.includes('/checkout')) {
+		            return {
+		                category: 'ecommerce',
+		                subcategory: 'checkout',
+		                type: 'conversion',
+		                product: null,
+		                service: null,
+		                description: 'Checkout Process - Active Purchase',
+		                conversionScore: 10
+		            };
+		        }
+		        
+		        // Success page
+		        if (path.includes('/success')) {
+		            return {
+		                category: 'conversion',
+		                subcategory: 'success',
+		                type: 'completed',
+		                product: null,
+		                service: null,
+		                description: 'Success Page - Conversion Completed',
+		                conversionScore: 10
+		            };
+		        }
+		        
+		        // Default fallback
+		        const pageName = path.split('/').pop().replace('.html', '').replace('-', ' ');
+		        return {
+		            category: 'general',
+		            subcategory: 'other',
+		            type: 'standard',
+		            product: null,
+		            service: null,
+		            description: `General Page: ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}`,
+		            conversionScore: 3
+		        };
+		    }
+		    
+		    // Setup instructions for deployment
+		    if (config.debug) {
+		        console.log('📋 SETUP INSTRUCTIONS:');
+		        console.log('1. Create GA4 properties for:');
+		        console.log('   - Main site: G-MAIN-BESEEN');
+		        console.log('   - Main staging: G-MAIN-STAGING');
+		        console.log('   - Real estate staging: G-RE-STAGING');
+		        console.log('2. Create Clarity projects for main site');
+		        console.log('3. Update the GA4 IDs in this script');
+		        console.log('4. Configure AllInOneMarketing DNS records');
+		    }
+		})();
+		</script> 
 
 	</head>
 
