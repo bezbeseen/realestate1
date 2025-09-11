@@ -1,0 +1,38 @@
+[
+  {
+    "id": "real-estate",
+    "name": "Real Estate",
+    "fileName": "real-estate",
+    "path": "services/real-estate/index.html",
+    "description": "Professional marketing materials specifically designed for real estate professionals. From lawn signs to business cards, we help you showcase properties and build your brand.",
+    "page_title": "Real Estate Marketing Solutions",
+    "page_description": "Custom real estate banners, signs, business cards and marketing materials. Professional quality products to help real estate agents stand out.",
+    "banner_title": "Real Estate Marketing Solutions",
+    "banner_description": "Professional marketing materials designed specifically for real estate professionals to showcase properties and build their brand.",
+    "status": "active"
+  },
+  {
+    "id": "construction",
+    "name": "Construction",
+    "fileName": "construction",
+    "path": "services/construction/index.html", 
+    "description": "Coming soon - specialized marketing solutions for construction companies and contractors.",
+    "page_title": "Construction Marketing Solutions",
+    "page_description": "Marketing materials for construction companies - coming soon.",
+    "banner_title": "Construction Marketing Solutions",
+    "banner_description": "Specialized marketing materials for construction companies and contractors - launching soon.",
+    "status": "coming_soon"
+  },
+  {
+    "id": "sports-teams",
+    "name": "Sports Teams",
+    "fileName": "sports-teams",
+    "path": "services/sports-teams/index.html",
+    "description": "Coming soon - custom apparel, banners, and promotional materials for sports teams and athletic organizations.",
+    "page_title": "Sports Team Marketing Solutions", 
+    "page_description": "Custom jerseys, banners, and promotional materials for sports teams - coming soon.",
+    "banner_title": "Sports Team Solutions",
+    "banner_description": "Custom apparel, banners, and promotional materials for sports teams and athletic organizations - launching soon.",
+    "status": "coming_soon"
+  }
+] 

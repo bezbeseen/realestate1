@@ -1,0 +1,31 @@
+/* brand section - start
+==================================================================================================== */
+
+/* brand section - start */
+.brand_section {
+	&.bg_gray {
+		background-color: #f5f6fa;
+	}
+}
+/* brand section - start */
+
+
+/* primary brand section - start */
+.brands_list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.primary_brand_section {
+	.brand_logo {
+		display: flex;
+		min-height: 150px;
+		align-items: center;
+		justify-content: center;
+	}
+}
+/* primary brand section - end */
+
+/* brand section - end
+==================================================================================================== */
