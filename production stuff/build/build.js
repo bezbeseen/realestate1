@@ -470,6 +470,39 @@ async function build() {
             console.log('-> Copied .htaccess');
         }
 
+        // --- Generate Location Pages ---
+        try {
+            const locationsData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'locations.json'), 'utf8'));
+            const locationTemplate = fs.readFileSync(path.join(__dirname, '..', 'templates', 'location-template.html'), 'utf8');
+            
+            // Create locations directory
+            const locationsDir = path.join(config.outputDir, 'locations');
+            if (!fs.existsSync(locationsDir)) {
+                fs.mkdirSync(locationsDir, { recursive: true });
+            }
+            
+            locationsData.forEach(location => {
+                const compiledTemplate = Handlebars.compile(locationTemplate);
+                const html = compiledTemplate(location);
+                const outputPath = path.join(locationsDir, `${location.slug}.html`);
+                fs.writeFileSync(outputPath, html);
+                console.log(`-> Generated location page: locations/${location.slug}.html`);
+            });
+            
+            console.log(`Generated ${locationsData.length} location pages`);
+            
+            // Generate locations index page
+            const locationsIndexTemplate = fs.readFileSync(path.join(__dirname, '..', 'templates', 'locations-index-template.html'), 'utf8');
+            const compiledIndexTemplate = Handlebars.compile(locationsIndexTemplate);
+            const indexHtml = compiledIndexTemplate({ locations: locationsData });
+            const indexOutputPath = path.join(locationsDir, 'index.html');
+            fs.writeFileSync(indexOutputPath, indexHtml);
+            console.log('-> Generated locations index page: locations/index.html');
+            
+        } catch (error) {
+            console.warn('Warning: Could not generate location pages:', error.message);
+        }
+
         // --- Generate Sitemap ---
         try {
             const { generateSitemap } = require('./generate-sitemap.js');

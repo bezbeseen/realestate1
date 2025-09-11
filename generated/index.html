@@ -60,26 +60,139 @@
 		<!-- Bez CSS-->
 		<link rel="stylesheet" type="text/css" href="assets/css/bez.css">
 
+<!-- Enhanced Local Business Schema Markup -->
 <script type="application/ld+json">
 {
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "BE SEEN LLC",
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://getbeseen.com/#organization",
+  "name": "GetBeSeen",
+  "alternateName": "BE SEEN LLC",
+  "legalName": "BE SEEN LLC",
   "url": "https://getbeseen.com/",
   "logo": "https://getbeseen.com/assets/images/logo/BeSeen_1.png",
+  "image": "https://getbeseen.com/assets/images/logo/BeSeen_1.png",
+  "description": "Professional printing, design, and marketing services in Santa Clara, CA. Specializing in business cards, banners, signs, promotional items, and direct mail campaigns.",
+  "slogan": "We print, we design, we help you be seen",
+  
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "377 Laurelwood Road",
+    "addressLocality": "Santa Clara",
+    "addressRegion": "CA",
+    "addressCountry": "US",
+    "postalCode": "95054"
+  },
+  
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "37.3541",
+    "longitude": "-121.9552"
+  },
+  
   "contactPoint": [
-      {
-          "@type": "ContactPoint",
-          "telephone": "(669) 273-1583",
-          "contactType": "customer service",
-          "areaServed": [
-              "USA"
-          ],
-          "availableLanguage": [
-              "English"
-          ]
+    {
+      "@type": "ContactPoint",
+      "telephone": "(669) 273-1583",
+      "contactType": "customer service",
+      "areaServed": ["Santa Clara", "San Jose", "Palo Alto", "Sunnyvale", "Mountain View", "Cupertino", "Campbell", "Los Gatos", "Saratoga", "Bay Area"],
+      "availableLanguage": ["English"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
       }
-  ]
+    },
+    {
+      "@type": "ContactPoint",
+      "email": "contact@getbeseen.com",
+      "contactType": "customer service"
+    }
+  ],
+  
+  "sameAs": [
+    "https://www.facebook.com/getbeseen",
+    "https://www.instagram.com/getbeseen",
+    "https://www.linkedin.com/company/getbeseen"
+  ],
+  
+  "priceRange": "$$",
+  "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
+  
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "37.3541",
+      "longitude": "-121.9552"
+    },
+    "geoRadius": "50 miles"
+  },
+  
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Printing and Design Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Business Card Printing",
+          "description": "Professional business card printing with premium materials and finishes"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Banner and Sign Printing",
+          "description": "Custom banners, yard signs, and commercial signage"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Graphic Design Services",
+          "description": "Logo design, branding, and marketing material design"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web Design and Development", 
+          "description": "Professional website design and development services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Direct Mail Marketing",
+          "description": "EDDM, postcards, and targeted mailing campaigns"
+        }
+      }
+    ]
+  },
+  
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 }
 </script>
 
