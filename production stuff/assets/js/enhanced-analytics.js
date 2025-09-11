@@ -841,7 +841,15 @@ class BeSeenAnalytics {
                   Math.cos(lat * Math.PI / 180) * Math.cos(santaClaraLat * Math.PI / 180) *
                   Math.sin(dLon/2) * Math.sin(dLon/2);
         const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        return Math.round(R * c);
+        return R * c;
+    }
+
+    getTimingCategory(hour, isWeekday) {
+        if (!isWeekday) return 'weekend';
+        if (hour >= 8 && hour < 12) return 'morning';
+        if (hour >= 12 && hour < 17) return 'afternoon';
+        if (hour >= 17 && hour < 20) return 'evening';
+        return 'late_night';
     }
 }
 

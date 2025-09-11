@@ -911,7 +911,7 @@ function getVisitCount() {
     const visitCount = parseInt(localStorage.getItem('beseen_visit_count') || '0') + 1;
     localStorage.setItem('beseen_visit_count', visitCount.toString());
     localStorage.setItem('beseen_last_visit', new Date().toISOString());
-    image.png    return visitCount;
+    return visitCount;
 }
 
 function getUserJourneyStage(visitCount) {
@@ -1025,6 +1025,134 @@ function setupHomepageTracking() {
 <script>
 // Smart Analytics Configuration - Auto-detects domain and environment
 (function() {
+    // --- HELPER FUNCTIONS (DEFINED FIRST) ---
+
+    // Enhanced page description function
+    function getDescriptivePageInfo() {
+        const path = window.location.pathname.toLowerCase();
+        const title = document.title.toLowerCase();
+        
+        // Homepage
+        if (path === '/' || path === '/index.html' || path === '') {
+            return {
+                category: 'homepage', subcategory: 'main', type: 'landing',
+                product: null, service: null,
+                description: 'Homepage - Main Landing Page', conversionScore: 5
+            };
+        }
+        
+        // Product pages
+        if (path.includes('/products/')) {
+            const productName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+            let subcategory = 'detail';
+            if (path.includes('/prints.html')) subcategory = 'prints_category';
+            if (path.includes('/signs.html')) subcategory = 'signs_category';
+            if (path.includes('/materials.html')) subcategory = 'materials_category';
+            if (path.includes('/promotional.html')) subcategory = 'promotional_category';
+            if (path.includes('/real-estate.html')) subcategory = 'real_estate_category';
+
+            return {
+                category: 'products', subcategory: subcategory, type: 'product_page',
+                product: productName, service: null,
+                description: `Product: ${productName.charAt(0).toUpperCase() + productName.slice(1)}`, conversionScore: 8
+            };
+        }
+        
+        // Service pages
+        if (path.includes('/services/')) {
+            const serviceName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+            return {
+                category: 'services', subcategory: 'detail', type: 'service_page',
+                product: null, service: serviceName,
+                description: `Service: ${serviceName.charAt(0).toUpperCase() + serviceName.slice(1)}`, conversionScore: 7
+            };
+        }
+        
+        // Other pages
+        if (path.includes('/contact')) return { category: 'conversion', subcategory: 'contact', type: 'high_intent', description: 'Contact Page', conversionScore: 10 };
+        if (path.includes('/about')) return { category: 'company', subcategory: 'about', type: 'informational', description: 'About Us Page', conversionScore: 4 };
+        if (path.includes('/blog')) return { category: 'content', subcategory: 'blog', type: 'educational', description: 'Blog Page', conversionScore: 3 };
+        if (path.includes('/cart')) return { category: 'ecommerce', subcategory: 'cart', type: 'very_high_intent', description: 'Shopping Cart', conversionScore: 10 };
+        if (path.includes('/checkout')) return { category: 'ecommerce', subcategory: 'checkout', type: 'conversion', description: 'Checkout Process', conversionScore: 10 };
+        if (path.includes('/success')) return { category: 'conversion', subcategory: 'success', type: 'completed', description: 'Success Page', conversionScore: 10 };
+
+        // Default fallback
+        const pageName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+        return {
+            category: 'general', subcategory: 'other', type: 'standard',
+            description: `General Page: ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}`, conversionScore: 3
+        };
+    }
+
+    function getUserId() {
+        let userId = localStorage.getItem('beseen_user_id');
+        if (!userId) {
+            userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('beseen_user_id', userId);
+        }
+        return userId;
+    }
+
+    function getSessionId() {
+        let sessionId = sessionStorage.getItem('beseen_session_id');
+        if (!sessionId) {
+            sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            sessionStorage.setItem('beseen_session_id', sessionId);
+        }
+        return sessionId;
+    }
+
+    function getVisitCount() {
+        const visitCount = parseInt(localStorage.getItem('beseen_visit_count') || '0') + 1;
+        localStorage.setItem('beseen_visit_count', visitCount.toString());
+        localStorage.setItem('beseen_last_visit', new Date().toISOString());
+        return visitCount;
+    }
+
+    function getUserJourneyStage(visitCount) {
+        if (visitCount === 1) return 'awareness';
+        if (visitCount <= 3) return 'consideration';
+        if (visitCount <= 7) return 'evaluation';
+        return 'decision';
+    }
+    
+    function initializeUserTracking() {
+        const userId = getUserId();
+        const sessionId = getSessionId();
+        const visitCount = getVisitCount();
+        
+        gtag('config', 'G-X2DMYVRCXD', {
+            'user_id': userId
+        });
+        
+        gtag('event', 'user_properties', {
+            'user_id': userId,
+            'session_id': sessionId,
+            'visit_count': visitCount,
+            'user_type': visitCount === 1 ? 'new_visitor' : 'returning_visitor',
+            'user_journey_stage': getUserJourneyStage(visitCount),
+            'event_category': 'user_profiling'
+        });
+    }
+
+    function trackUserBehaviorPatterns() {
+        const pageInfo = getDescriptivePageInfo();
+        const pageStartTime = Date.now();
+        
+        window.addEventListener('beforeunload', function() {
+            const timeSpent = Math.round((Date.now() - pageStartTime) / 1000);
+            if (timeSpent > 5) {
+                gtag('event', 'page_time_spent', {
+                    'page_description': pageInfo.description,
+                    'time_spent_seconds': timeSpent,
+                    'event_category': 'engagement'
+                });
+            }
+        });
+    }
+
+    // --- MAIN EXECUTION LOGIC ---
+
     // Domain and Environment Detection
     const hostname = window.location.hostname;
     const isMainSite = hostname === 'getbeseen.com' || hostname === 'www.getbeseen.com';
@@ -1093,6 +1221,17 @@ function setupHomepageTracking() {
     }
     
     const config = analyticsConfig[currentConfig];
+    
+    // Make configuration globally available for other scripts
+    window.analyticsConfig = {
+        environment: currentConfig,
+        config: config,
+        isMainSite: isMainSite,
+        isRealEstate: isRealEstate,
+        isStaging: isStaging,
+        isLocal: isLocal,
+        businessVertical: isRealEstate ? 'real_estate' : 'printing_services'
+    };
     
     // Console logging for setup verification
     console.log(`🏢 Site Type: ${config.site_type}`);
@@ -1193,278 +1332,5 @@ function setupHomepageTracking() {
         };
     }
     
-    // Make configuration globally available for other scripts
-    window.analyticsConfig = {
-        environment: currentConfig,
-        config: config,
-        isMainSite: isMainSite,
-        isRealEstate: isRealEstate,
-        isStaging: isStaging,
-        isLocal: isLocal,
-        businessVertical: isRealEstate ? 'real_estate' : 'printing_services'
-    };
-    
-    // Enhanced page description function
-    function getDescriptivePageInfo() {
-        const path = window.location.pathname.toLowerCase();
-        const title = document.title.toLowerCase();
-        const url = window.location.href;
-        
-        // Homepage
-        if (path === '/' || path === '/index.html' || path === '') {
-            return {
-                category: 'homepage',
-                subcategory: 'main',
-                type: 'landing',
-                product: null,
-                service: null,
-                description: 'Homepage - Main Landing Page',
-                conversionScore: 5
-            };
-        }
-        
-        // Product pages
-        if (path.includes('/products/')) {
-            if (path.includes('/business-cards')) {
-                return {
-                    category: 'products',
-                    subcategory: 'prints',
-                    type: 'product_detail',
-                    product: 'business_cards',
-                    service: null,
-                    description: 'Business Cards - Product Detail Page',
-                    conversionScore: 9
-                };
-            } else if (path.includes('/banners')) {
-                return {
-                    category: 'products',
-                    subcategory: path.includes('/signs/') ? 'signs' : 'prints',
-                    type: 'product_detail',
-                    product: 'banners',
-                    service: null,
-                    description: 'Banners - Product Detail Page',
-                    conversionScore: 8
-                };
-            } else if (path.includes('/prints.html')) {
-                return {
-                    category: 'products',
-                    subcategory: 'prints',
-                    type: 'category',
-                    product: 'prints_category',
-                    service: null,
-                    description: 'Prints Category - All Print Products',
-                    conversionScore: 7
-                };
-            } else if (path.includes('/signs.html')) {
-                return {
-                    category: 'products',
-                    subcategory: 'signs',
-                    type: 'category',
-                    product: 'signs_category',
-                    service: null,
-                    description: 'Signs Category - All Sign Products',
-                    conversionScore: 7
-                };
-            } else if (path.includes('/materials.html')) {
-                return {
-                    category: 'products',
-                    subcategory: 'materials',
-                    type: 'category',
-                    product: 'materials_category',
-                    service: null,
-                    description: 'Materials Category - Printing Materials',
-                    conversionScore: 6
-                };
-            } else if (path.includes('/promotional.html')) {
-                return {
-                    category: 'products',
-                    subcategory: 'promotional',
-                    type: 'category',
-                    product: 'promotional_category',
-                    service: null,
-                    description: 'Promotional Category - Branded Items',
-                    conversionScore: 6
-                };
-            } else if (path.includes('/real-estate.html')) {
-                return {
-                    category: 'products',
-                    subcategory: 'real_estate',
-                    type: 'category',
-                    product: 'real_estate_category',
-                    service: null,
-                    description: 'Real Estate Category - Realtor Products',
-                    conversionScore: 7
-                };
-            } else if (path.includes('/products.html')) {
-                return {
-                    category: 'products',
-                    subcategory: 'overview',
-                    type: 'main_category',
-                    product: 'all_products',
-                    service: null,
-                    description: 'Products Overview - All Categories',
-                    conversionScore: 6
-                };
-            } else {
-                // Generic product page
-                const productName = path.split('/').pop().replace('.html', '').replace('-', ' ');
-                return {
-                    category: 'products',
-                    subcategory: 'detail',
-                    type: 'product_detail',
-                    product: productName,
-                    service: null,
-                    description: `Product: ${productName.charAt(0).toUpperCase() + productName.slice(1)}`,
-                    conversionScore: 8
-                };
-            }
-        }
-        
-        // Service pages
-        if (path.includes('/services/')) {
-            if (path.includes('/graphic-design')) {
-                return {
-                    category: 'services',
-                    subcategory: 'graphic_design',
-                    type: 'service_detail',
-                    product: null,
-                    service: 'graphic_design',
-                    description: 'Graphic Design Services',
-                    conversionScore: 7
-                };
-            } else if (path.includes('/web-design')) {
-                return {
-                    category: 'services',
-                    subcategory: 'web_design',
-                    type: 'service_detail',
-                    product: null,
-                    service: 'web_design',
-                    description: 'Web Design Services',
-                    conversionScore: 8
-                };
-            } else if (path.includes('/mailing')) {
-                return {
-                    category: 'services',
-                    subcategory: 'mailing',
-                    type: 'service_detail',
-                    product: null,
-                    service: 'mailing',
-                    description: 'Mailing Services',
-                    conversionScore: 7
-                };
-            } else if (path.includes('/services.html')) {
-                return {
-                    category: 'services',
-                    subcategory: 'overview',
-                    type: 'main_category',
-                    product: null,
-                    service: 'all_services',
-                    description: 'Services Overview - All Service Categories',
-                    conversionScore: 6
-                };
-            }
-        }
-        
-        // Contact & conversion pages
-        if (path.includes('/contact')) {
-            return {
-                category: 'conversion',
-                subcategory: 'contact',
-                type: 'high_intent',
-                product: null,
-                service: null,
-                description: 'Contact Page - High Intent Visitors',
-                conversionScore: 10
-            };
-        }
-        
-        // About page
-        if (path.includes('/about')) {
-            return {
-                category: 'company',
-                subcategory: 'about',
-                type: 'informational',
-                product: null,
-                service: null,
-                description: 'About Us - Company Information',
-                conversionScore: 4
-            };
-        }
-        
-        // Blog pages
-        if (path.includes('/blog') || path.includes('how-to-') || path.includes('the-power-of-')) {
-            return {
-                category: 'content',
-                subcategory: 'blog',
-                type: 'educational',
-                product: null,
-                service: null,
-                description: 'Blog Content - Educational/SEO Content',
-                conversionScore: 3
-            };
-        }
-        
-        // Cart & checkout
-        if (path.includes('/cart')) {
-            return {
-                category: 'ecommerce',
-                subcategory: 'cart',
-                type: 'very_high_intent',
-                product: null,
-                service: null,
-                description: 'Shopping Cart - Purchase Intent',
-                conversionScore: 10
-            };
-        }
-        
-        if (path.includes('/checkout')) {
-            return {
-                category: 'ecommerce',
-                subcategory: 'checkout',
-                type: 'conversion',
-                product: null,
-                service: null,
-                description: 'Checkout Process - Active Purchase',
-                conversionScore: 10
-            };
-        }
-        
-        // Success page
-        if (path.includes('/success')) {
-            return {
-                category: 'conversion',
-                subcategory: 'success',
-                type: 'completed',
-                product: null,
-                service: null,
-                description: 'Success Page - Conversion Completed',
-                conversionScore: 10
-            };
-        }
-        
-        // Default fallback
-        const pageName = path.split('/').pop().replace('.html', '').replace('-', ' ');
-        return {
-            category: 'general',
-            subcategory: 'other',
-            type: 'standard',
-            product: null,
-            service: null,
-            description: `General Page: ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}`,
-            conversionScore: 3
-        };
-    }
-    
-    // Setup instructions for deployment
-    if (config.debug) {
-        console.log('📋 SETUP INSTRUCTIONS:');
-        console.log('1. Create GA4 properties for:');
-        console.log('   - Main site: G-MAIN-BESEEN');
-        console.log('   - Main staging: G-MAIN-STAGING');
-        console.log('   - Real estate staging: G-RE-STAGING');
-        console.log('2. Create Clarity projects for main site');
-        console.log('3. Update the GA4 IDs in this script');
-        console.log('4. Configure AllInOneMarketing DNS records');
-    }
 })();
 </script> 
