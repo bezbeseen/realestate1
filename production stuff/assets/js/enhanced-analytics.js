@@ -851,6 +851,97 @@ class BeSeenAnalytics {
         if (hour >= 17 && hour < 20) return 'evening';
         return 'late_night';
     }
+
+    isInFunnelStep(step) {
+        const path = window.location.pathname.toLowerCase();
+        const title = document.title.toLowerCase();
+        
+        switch(step) {
+            case 'landing': return path === '/' || path === '/index.html';
+            case 'product_view': return path.includes('/products/');
+            case 'customization': return document.querySelector('.customize, [data-customize]');
+            case 'quote_request': return path.includes('/contact') || document.querySelector('.quote-form');
+            case 'contact_info': return document.querySelector('input[type="email"], input[type="tel"]');
+            case 'order_placed': return path.includes('/success') || path.includes('/checkout');
+            default: return false;
+        }
+    }
+
+    getSessionPageCount() {
+        const pages = sessionStorage.getItem('page_sequence');
+        return pages ? JSON.parse(pages).length : 1;
+    }
+
+    getLastVisitDate() {
+        return localStorage.getItem('beseen_last_visit') || new Date().toISOString();
+    }
+
+    getDaysSinceLastVisit(lastVisit) {
+        if (!lastVisit) return 0;
+        const lastDate = new Date(lastVisit);
+        const now = new Date();
+        return Math.floor((now - lastDate) / (1000 * 60 * 60 * 24));
+    }
+
+    getPreviousOrderHistory() {
+        return JSON.parse(localStorage.getItem('beseen_order_history') || '[]');
+    }
+
+    calculateEngagementLevel() {
+        const visitCount = this.getVisitCount();
+        const timeOnSite = this.getTimeOnSite();
+        return visitCount * 2 + Math.floor(timeOnSite / 60000); // Simple scoring
+    }
+
+    getFormTimeSpent(form) {
+        const startTime = form.dataset.formStartTime || Date.now();
+        return Math.floor((Date.now() - startTime) / 1000);
+    }
+
+    getCalculatorInputs(calculator) {
+        const inputs = calculator.querySelectorAll('input, select');
+        const data = { type: 'general', inputs: {}, estimatedCost: 0 };
+        inputs.forEach(input => {
+            data.inputs[input.name] = input.value;
+        });
+        return data;
+    }
+
+    getDesignSessionTime() {
+        return Math.floor((Date.now() - (sessionStorage.getItem('design_start') || Date.now())) / 1000);
+    }
+
+    getBulkTier(quantity) {
+        if (quantity >= 5000) return 'enterprise';
+        if (quantity >= 1000) return 'bulk';
+        if (quantity >= 500) return 'volume';
+        return 'standard';
+    }
+
+    estimateRevenue(quantity) {
+        return quantity * 0.50; // Rough estimate
+    }
+
+    estimateOrderValue(quantity) {
+        return quantity * 0.75; // Rough estimate
+    }
+
+    isPremiumOption(value) {
+        return value.toLowerCase().includes('premium') || value.toLowerCase().includes('luxury');
+    }
+
+    getCustomizationStep() {
+        const steps = document.querySelectorAll('.customization-step.active, .step.current');
+        return steps.length || 1;
+    }
+
+    getPageContext() {
+        return {
+            path: window.location.pathname,
+            title: document.title,
+            referrer: document.referrer
+        };
+    }
 }
 
 // Initialize enhanced analytics

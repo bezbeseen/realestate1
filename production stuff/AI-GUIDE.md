@@ -194,10 +194,53 @@ python3 -m http.server 8002
 - **Build overwrites fixes:** Always fix at SOURCE level (production stuff/), never in generated/
 - **"Fixes keep disappearing":** You're editing generated files - edit the templates instead
 
+### Analytics Troubleshooting
+
+**CRITICAL:** All analytics are centralized in `includes/analytics-loader.html`
+
+#### Analytics Configuration:
+- **Main Site GA4:** `G-X2DMYVRCXD` (getbeseen.com)
+- **Real Estate GA4:** `G-3H16V1KPFT` (realestate.getbeseen.com)
+- **Main Site Clarity:** `t4cugujh39`
+- **Real Estate Clarity:** `s1g9ngbmhd`
+
+#### Common Analytics Issues:
+
+**"Google Analytics shows nothing":**
+1. Check browser console for JavaScript errors
+2. Verify correct GA4 ID is loaded: Look for `📊 GA4 Property: G-X2DMYVRCXD`
+3. Check GA4 DebugView for real-time events
+4. **CRITICAL:** Purge server cache after uploading analytics fixes
+5. Test in Incognito mode to bypass browser extensions
+
+**"Analytics errors in console":**
+1. Search for hardcoded GA4 scripts in templates: `grep -r "gtag\|G-[A-Z0-9]" production stuff/`
+2. Remove any hardcoded analytics scripts from templates
+3. Ensure only `{{> analytics-loader}}` is used in templates
+4. Rebuild and deploy
+
+**"Data going to wrong GA4 property":**
+1. Check for conflicting GA4 IDs in source files
+2. Remove hardcoded scripts from individual templates
+3. Update `analytics-loader.html` with correct IDs only
+4. Rebuild and redeploy
+
+**"DebugView empty but console looks good":**
+1. Check if ad blockers are preventing data transmission
+2. Test in Incognito/Private browsing mode
+3. Check Network tab in DevTools for blocked requests to `google-analytics.com`
+4. Verify Data Stream configuration in GA4 matches the tracking ID
+
+#### Analytics File Locations:
+- **Main Config:** `production stuff/includes/analytics-loader.html`
+- **Enhanced Tracking:** `production stuff/assets/js/enhanced-analytics.js`
+- **Base Tracker:** `production stuff/assets/js/analytics-tracker.js`
+
 ### Emergency Recovery
 - **Accidentally deleted images:** Rebuild from production stuff to restore all assets
 - **Site completely broken:** Check if you edited generated/ instead of production stuff/
 - **Analytics reverted:** Check if GA4 IDs are set in source templates, not just generated files
+- **Server cache issues:** Always purge hosting provider cache after analytics updates
 
 ## Key Conventions
 
@@ -219,11 +262,38 @@ python3 -m http.server 8002
 
 ## Deployment Notes
 
-### For Production Deployment:
-1. Build the site: `cd "production stuff" && node build/build.js`
-2. Upload contents of `/generated/` folder to web server
-3. Ensure server can serve static files
-4. Configure environment variables for Stripe (if using)
+### Smart Deployment Strategy
+**CRITICAL:** Use the smart deployment system for efficient uploads.
+
+#### Create Deployment Packages:
+```bash
+# Create smart deployment folders
+cd "/path/to/realestate1"
+rm -rf smart_deployment
+mkdir -p smart_deployment/code_only smart_deployment/assets_only
+
+# Separate code from assets
+rsync -av --exclude 'assets' generated/ smart_deployment/code_only/
+rsync -av generated/assets/ smart_deployment/assets_only/
+```
+
+#### Deployment Types:
+
+**FULL DEPLOYMENT (Initial or major changes):**
+1. Build: `cd "production stuff" && node build/build.js`
+2. Upload `smart_deployment/code_only/` contents to server root
+3. Upload `smart_deployment/assets_only/` contents to server `/assets/` folder
+4. **CRITICAL:** Purge server cache after upload
+
+**CODE-ONLY DEPLOYMENT (Most updates):**
+1. Build: `cd "production stuff" && node build/build.js`
+2. Upload only `smart_deployment/code_only/` contents to server root
+3. Purge server cache
+
+**ASSETS-ONLY DEPLOYMENT (Image/JS/CSS changes):**
+1. Build: `cd "production stuff" && node build/build.js`
+2. Upload only `smart_deployment/assets_only/` contents to server `/assets/` folder
+3. Purge server cache
 
 ### For Development:
 1. Always work in `/production stuff/`
