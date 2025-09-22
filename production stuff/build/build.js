@@ -462,6 +462,14 @@ async function build() {
             console.log('-> Copied robots.txt');
         }
 
+        // Copy favicon.ico to root
+        const faviconSource = path.join(__dirname, '..', 'assets', 'images', 'favicon', 'favicon.ico');
+        const faviconDest = path.join(config.outputDir, 'favicon.ico');
+        if (fs.existsSync(faviconSource)) {
+            fs.copyFileSync(faviconSource, faviconDest);
+            console.log('-> Copied favicon.ico to root');
+        }
+
         // Copy .htaccess
         const htaccessSource = path.join(__dirname, '..', '..', '.htaccess');
         const htaccessDest = path.join(config.outputDir, '.htaccess');
