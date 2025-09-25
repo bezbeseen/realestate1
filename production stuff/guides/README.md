@@ -30,6 +30,7 @@ This folder contains all the essential files needed to build and run the website
 - **`content/`** - Enhanced product content (HTML)
 - **`api/`** - Stripe checkout and API endpoints
 - **`generated/`** - Built website files (auto-generated)
+- **`guides/`** - Documentation and guides (see [INDEX.md](./INDEX.md))
 
 ### Configuration Files:
 - **`package.json`** - Node.js dependencies

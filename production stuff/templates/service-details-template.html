@@ -12,7 +12,24 @@
 	<!-- <base href="/realestate1/"> -->
 
 	<title>{{ page_title }} - BE SEEN</title>
-	<meta name="description" content="Professional {{ page_title }} services from BE SEEN. Quality solutions for your business needs.">
+	<meta name="description" content="Professional {{ page_title }} services in Santa Clara, CA. {{ page_description }} Call (669) 273-1583 for quotes. Serving Silicon Valley businesses.">
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://getbeseen.com{{ page_path }}">
+	<meta property="og:title" content="{{ page_title }} - BE SEEN">
+	<meta property="og:description" content="Professional {{ page_title }} services in Santa Clara, CA. {{ page_description }} Call (669) 273-1583 for quotes.">
+	<meta property="og:image" content="https://getbeseen.com/assets/images/og-image.jpg">
+	<meta property="og:site_name" content="BE SEEN">
+	<meta property="og:locale" content="en_US">
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://getbeseen.com{{ page_path }}">
+	<meta property="twitter:title" content="{{ page_title }} - BE SEEN">
+	<meta property="twitter:description" content="Professional {{ page_title }} services in Santa Clara, CA. {{ page_description }} Call (669) 273-1583 for quotes.">
+	<meta property="twitter:image" content="https://getbeseen.com/assets/images/og-image.jpg">
+	
 	{{> seo}}
 
 	<!-- fraimwork - css include -->
@@ -37,6 +54,92 @@
 
 	<!-- custom - css include -->
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	
+	<!-- Service Enhancement Styles -->
+	<style>
+		.process_step {
+			display: flex;
+			align-items: flex-start;
+			gap: 15px;
+		}
+		.step_number {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+			font-size: 1.2rem;
+			flex-shrink: 0;
+		}
+		.step_content {
+			flex: 1;
+		}
+		.step_title {
+			font-weight: 600;
+			margin-bottom: 8px;
+			color: #333;
+		}
+		.pricing_card {
+			border: 2px solid #e9ecef;
+			border-radius: 8px;
+			transition: all 0.3s ease;
+		}
+		.pricing_card:hover {
+			border-color: #007cba;
+			transform: translateY(-5px);
+		}
+		.pricing_title {
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 10px;
+		}
+		.price_amount {
+			font-size: 2.5rem;
+			font-weight: bold;
+			color: #007cba;
+			margin-bottom: 10px;
+		}
+		.price_description {
+			font-size: 0.9rem;
+			color: #666;
+		}
+		.benefit_item {
+			display: flex;
+			align-items: flex-start;
+			gap: 15px;
+			margin-bottom: 20px;
+		}
+		.benefit_item .item_icon {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+		}
+		.benefit_item .item_content {
+			flex: 1;
+		}
+		.benefit_item .item_title {
+			font-weight: 600;
+			margin-bottom: 8px;
+			color: #333;
+		}
+		.faq_question {
+			font-weight: 600;
+			color: #333;
+			margin-bottom: 8px;
+		}
+		.faq_answer {
+			font-size: 0.9rem;
+			color: #666;
+			line-height: 1.5;
+		}
+	</style>
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
@@ -122,6 +225,80 @@
 							</div>
 							{{/each}}
 
+							<!-- Service Process Section -->
+							<div class="service_process_details mb_50">
+								<h3 class="title mb_30">How We Deliver {{service_name}}</h3>
+								<div class="row">
+									<div class="col-md-6 mb_30">
+										<div class="process_step">
+											<div class="step_number bg_default_orange text-white">1</div>
+											<div class="step_content">
+												<h5 class="step_title">Initial Consultation</h5>
+												<p>We discuss your project goals, timeline, and specific requirements to understand your vision.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 mb_30">
+										<div class="process_step">
+											<div class="step_number bg_default_yellow text-dark">2</div>
+											<div class="step_content">
+												<h5 class="step_title">Strategy Development</h5>
+												<p>Our team creates a customized strategy and timeline tailored to your business needs.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 mb_30">
+										<div class="process_step">
+											<div class="step_number bg_default_lightblue text-dark">3</div>
+											<div class="step_content">
+												<h5 class="step_title">Creative Execution</h5>
+												<p>We bring your vision to life with professional design and high-quality production.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 mb_30">
+										<div class="process_step">
+											<div class="step_number bg_default_orange text-white">4</div>
+											<div class="step_content">
+												<h5 class="step_title">Delivery & Support</h5>
+												<p>Timely delivery and ongoing support to ensure your project's success.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Pricing Information -->
+							<div class="pricing_info mb_50">
+								<h3 class="title mb_30">Investment & Value</h3>
+								<div class="row">
+									<div class="col-md-4 mb_20">
+										<div class="pricing_card text-center p-4 bg-white">
+											<h5 class="pricing_title">Starting From</h5>
+											<div class="price_amount">$299</div>
+											<p class="price_description">Basic {{service_name}} package</p>
+										</div>
+									</div>
+									<div class="col-md-4 mb_20">
+										<div class="pricing_card text-center p-4 bg_default_yellow">
+											<h5 class="pricing_title">Most Popular</h5>
+											<div class="price_amount">$599</div>
+											<p class="price_description">Professional {{service_name}} package</p>
+										</div>
+									</div>
+									<div class="col-md-4 mb_20">
+										<div class="pricing_card text-center p-4 bg-white">
+											<h5 class="pricing_title">Premium</h5>
+											<div class="price_amount">$999+</div>
+											<p class="price_description">Complete {{service_name}} solution</p>
+										</div>
+									</div>
+								</div>
+								<p class="text-center mt_20">
+									<em>All prices include consultation, design, and delivery. Contact us for a custom quote.</em>
+								</p>
+							</div>
+
 							<p class="mb-0 wow fadeInUp2" data-wow-delay=".1s">
 								Ready to get started? Contact us today to discuss your project requirements and receive a personalized quote. Our team of experts is here to help bring your vision to life with professional quality and exceptional service.
 							</p>
@@ -152,11 +329,16 @@
 							<div class="widget wow fadeInUp2 sb_download_btns clearfix" data-wow-delay=".1s">
 								<div class="btns_group clearfix">
 									<ul class="ul_li_block clearfix">
-
 										<li>
 											<a class="custom_btn bg_default_yellow" href="/contact.html">
-												contact us 
+												get quote 
 												<span><i class="fal fa-arrow-right"></i></span>
+											</a>
+										</li>
+										<li>
+											<a class="custom_btn bg_default_orange" href="tel:(669)273-1583">
+												call now 
+												<span><i class="fal fa-phone"></i></span>
 											</a>
 										</li>
 									</ul>
@@ -183,6 +365,23 @@
 									</a>
 								</div>
 							</div>
+
+							<!-- FAQ Section -->
+							<div class="widget wow fadeInUp2 sb_faq" data-wow-delay=".1s">
+								<h4 class="sidebar_title mb_30">Frequently Asked Questions</h4>
+								<div class="faq_item mb_20">
+									<h6 class="faq_question">How long does {{service_name}} take?</h6>
+									<p class="faq_answer">Most {{service_name}} projects are completed within 3-7 business days, depending on complexity.</p>
+								</div>
+								<div class="faq_item mb_20">
+									<h6 class="faq_question">Do you offer revisions?</h6>
+									<p class="faq_answer">Yes! We include up to 3 rounds of revisions to ensure you're completely satisfied.</p>
+								</div>
+								<div class="faq_item mb_20">
+									<h6 class="faq_question">What file formats do you provide?</h6>
+									<p class="faq_answer">We provide all standard formats including PDF, PNG, JPG, and source files when needed.</p>
+								</div>
+							</div>
 							
 						</aside>
 					</div>
@@ -190,7 +389,7 @@
 				</div>
 			</div>
 		</section>
-<!-- details_section - end -->
+		<!-- details_section - end -->
 
 <!-- cta_section - start -->
 <!-- <section class="cta_section sec_ptb_130 bg_default_orange clearfix">

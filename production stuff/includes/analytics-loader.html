@@ -199,6 +199,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 'conversion_intent': 'very_high',
                 'cta_type': 'quote_request'
             });
+            
+            // Also track as conversion
+            gtag('event', 'conversion', {
+                'currency': 'USD',
+                'value': 50.00,
+                'conversion_type': 'quote_request',
+                'source_page': pageInfo.description
+            });
+            
             console.log('🎯 QUOTE CTA tracked:', element.textContent.trim());
         }
         
@@ -223,6 +232,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 'conversion_intent': 'very_high',
                 'cta_type': 'phone_call'
             });
+            
+            // Also track as conversion
+            gtag('event', 'conversion', {
+                'currency': 'USD',
+                'value': 100.00,
+                'conversion_type': 'phone_call',
+                'source_page': pageInfo.description
+            });
+            
             console.log('📞 PHONE CTA tracked:', href);
         }
         

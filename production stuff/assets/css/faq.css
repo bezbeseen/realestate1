@@ -1,0 +1,141 @@
+/* FAQ Page Styles */
+.faq_section {
+    padding: 80px 0;
+}
+
+.faq_item {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq_item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #ff6b35;
+}
+
+.faq_title {
+    background: #f8f9fa;
+    padding: 20px 25px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.faq_title:hover {
+    background: #ff6b35;
+    color: #ffffff;
+}
+
+.faq_title:after {
+    content: '+';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+.faq_item.active .faq_title:after {
+    content: '-';
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq_content_text {
+    padding: 0 25px;
+    display: none;
+    background: #ffffff;
+}
+
+.faq_content_text p {
+    margin: 0;
+    padding: 20px 0;
+    line-height: 1.6;
+    color: #666;
+}
+
+.faq_sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.contact_info_wrap {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.contact_info_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact_info_item i {
+    margin-right: 15px;
+    font-size: 18px;
+    width: 20px;
+}
+
+.contact_info_item a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact_info_item a:hover {
+    color: #ff6b35;
+}
+
+.service_highlight_wrap {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.service_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service_list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #666;
+}
+
+.service_list li i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq_title {
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+    
+    .faq_content_text {
+        padding: 0 20px;
+    }
+    
+    .faq_sidebar {
+        position: static;
+        margin-top: 40px;
+    }
+}

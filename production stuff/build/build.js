@@ -356,6 +356,17 @@ async function build() {
             console.log('-> Generated contact.html from template');
         }
 
+        // --- Generate FAQ Page from content ---
+        const faqContentPath = path.join(config.baseDir, 'content', 'faq.html');
+        if (fs.existsSync(faqContentPath)) {
+            const faqContent = fs.readFileSync(faqContentPath, 'utf8');
+            const faqTemplate = Handlebars.compile(faqContent);
+            const compiledHtml = faqTemplate({});
+            const outputPath = path.join(config.outputDir, 'faq.html');
+            fs.writeFileSync(outputPath, compiledHtml);
+            console.log('-> Generated faq.html from content');
+        }
+
         // --- Generate Blog Page from template ---
         const blogTemplatePath = path.join(config.templatesDir, 'blog-template.html');
         if (fs.existsSync(blogTemplatePath)) {
