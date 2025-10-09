@@ -12,25 +12,28 @@
 	<!-- <base href="/realestate1/"> -->
 
 	<title>Professional Logo Design Services | BE SEEN - BE SEEN</title>
-	<meta name="description" content="Professional Professional Logo Design Services | BE SEEN services from BE SEEN. Quality solutions for your business needs.">
+	<meta name="description" content="Professional Professional Logo Design Services | BE SEEN services in Santa Clara, CA.  Call (669) 201-1661 for quotes. Serving Silicon Valley businesses.">
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://getbeseen.com">
+	<meta property="og:title" content="Professional Logo Design Services | BE SEEN - BE SEEN">
+	<meta property="og:description" content="Professional Professional Logo Design Services | BE SEEN services in Santa Clara, CA.  Call (669) 201-1661 for quotes.">
+	<meta property="og:image" content="https://getbeseen.com/assets/images/og-image.jpg">
+	<meta property="og:site_name" content="BE SEEN">
+	<meta property="og:locale" content="en_US">
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://getbeseen.com">
+	<meta property="twitter:title" content="Professional Logo Design Services | BE SEEN - BE SEEN">
+	<meta property="twitter:description" content="Professional Professional Logo Design Services | BE SEEN services in Santa Clara, CA.  Call (669) 201-1661 for quotes.">
+	<meta property="twitter:image" content="https://getbeseen.com/assets/images/og-image.jpg">
+	
 	<!-- Google tag (gtag.js) -->
 	<!-- Analytics handled by smart analytics-loader.html -->
 	
-	<script type="text/javascript">
-	  (function(c,l,a,r,i,t,y){
-	      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-	      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-	      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-	  })(window, document, "clarity", "script", "s1g9ngbmhd");
-	</script>
-	
-	<script type="text/javascript">
-	    (function(c,l,a,r,i,t,y){
-	        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-	        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-	        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-	    })(window, document, "clarity", "script", "lkihe2qcle");
-	</script>
+	<!-- Clarity now loaded via analytics-loader.html - removed duplicate to prevent conflicts -->
 	
 	<!-- Local Business Schema Markup for Google & Yelp -->
 	<script type="application/ld+json">
@@ -41,7 +44,7 @@
 	  "alternateName": "Get BE SEEN",
 	  "description": "Professional printing, signage, and marketing services in Santa Clara, CA. Specializing in business cards, banners, signs, and promotional materials for local businesses and real estate professionals.",
 	  "url": "https://getbeseen.com",
-	  "telephone": "(669) 273-1583",
+	  "telephone": "(669) 201-1661",
 	  "email": "contact@getbeseen.com",
 	  "address": {
 	    "@type": "PostalAddress",
@@ -159,13 +162,15 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 	
-	<!-- Favicon -->
+	<!-- Favicon - Comprehensive Setup -->
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
 	<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
 	<link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico"> 
+	<meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml"> 
 	
 	<!-- Local Business Verification for Google My Business -->
 	<meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
@@ -181,7 +186,7 @@
 	<meta property="business:contact_data:region" content="CA">
 	<meta property="business:contact_data:postal_code" content="95054">
 	<meta property="business:contact_data:country_name" content="United States">
-	<meta property="business:contact_data:phone_number" content="(669) 273-1583">
+	<meta property="business:contact_data:phone_number" content="(669) 201-1661">
 	<meta property="business:contact_data:website" content="https://getbeseen.com">
 	
 	<!-- Twitter with Local Business Focus -->
@@ -249,6 +254,92 @@
 
 	<!-- custom - css include -->
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	
+	<!-- Service Enhancement Styles -->
+	<style>
+		.process_step {
+			display: flex;
+			align-items: flex-start;
+			gap: 15px;
+		}
+		.step_number {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+			font-size: 1.2rem;
+			flex-shrink: 0;
+		}
+		.step_content {
+			flex: 1;
+		}
+		.step_title {
+			font-weight: 600;
+			margin-bottom: 8px;
+			color: #333;
+		}
+		.pricing_card {
+			border: 2px solid #e9ecef;
+			border-radius: 8px;
+			transition: all 0.3s ease;
+		}
+		.pricing_card:hover {
+			border-color: #007cba;
+			transform: translateY(-5px);
+		}
+		.pricing_title {
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 10px;
+		}
+		.price_amount {
+			font-size: 2.5rem;
+			font-weight: bold;
+			color: #007cba;
+			margin-bottom: 10px;
+		}
+		.price_description {
+			font-size: 0.9rem;
+			color: #666;
+		}
+		.benefit_item {
+			display: flex;
+			align-items: flex-start;
+			gap: 15px;
+			margin-bottom: 20px;
+		}
+		.benefit_item .item_icon {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+		}
+		.benefit_item .item_content {
+			flex: 1;
+		}
+		.benefit_item .item_title {
+			font-weight: 600;
+			margin-bottom: 8px;
+			color: #333;
+		}
+		.faq_question {
+			font-weight: 600;
+			color: #333;
+			margin-bottom: 8px;
+		}
+		.faq_answer {
+			font-size: 0.9rem;
+			color: #666;
+			line-height: 1.5;
+		}
+	</style>
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
@@ -258,7 +349,7 @@
 	<!-- backtotop - start -->
 	<div id="thetop"></div>
 	<div id="backtotop">
-		<a href="#" id="scroll">
+		<a href="#thetop" id="scroll" title="Back to top" aria-label="Back to top">
 			<i class="far fa-arrow-up"></i>
 		</a>
 	</div>
@@ -292,8 +383,8 @@
 	                            <ul class="header_contact_info ul_li clearfix">
 	                                <li data-contact-type="phone">
 	                                    <i class="far fa-phone"></i>
-	                                    <a href="tel:(669)273-1583" data-track="contact_phone_click">
-	                                        (669) 273-1583
+	                                    <a href="tel:6692011661" data-track="contact_phone_click">
+	                                        (669) 201-1661
 	                                    </a>
 	                                </li>
 	                            </ul>
@@ -369,8 +460,8 @@
 	                                    <a href="/industries.html" data-track="nav_industries">Industries</a>  
 	                                    <ul class="submenu">
 	                                        <li><a href="/industries/real-estate.html" data-track="nav_real_estate">Real Estate</a></li>   
-	                                        <li><a href="#" data-track="nav_construction" onclick="return false;" style="color: #999;">Construction (Coming Soon)</a></li> 
-	                                        <li><a href="#" data-track="nav_sports_teams" onclick="return false;" style="color: #999;">Sports Teams (Coming Soon)</a></li> 
+	                                        <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Construction (Coming Soon)</span></li> 
+	                                        <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Sports Teams (Coming Soon)</span></li> 
 	                                    </ul>
 	                                </li>
 	                                -->
@@ -478,13 +569,7 @@
 	        </div>
 	    </div>
 	
-	    <script type="text/javascript">
-	        (function(c,l,a,r,i,t,y){
-	            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-	            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-	            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-	        })(window, document, "clarity", "script", "s1g9ngbmhd");
-	    </script>
+	    <!-- Clarity now loaded via analytics-loader.html - removed duplicate to prevent conflicts -->
 	
 	    <!-- Enhanced Analytics Integration -->
 	    <script>
@@ -638,8 +723,8 @@
 						    <a href="#!" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Industries</a>
 						    <ul class="dropdown-menu">
 						        <li><a href="/industries/real-estate.html" data-track="mobile_nav_real_estate">Real Estate</a></li>
-						        <li><a href="#" onclick="return false;" style="color: #999;">Construction (Coming Soon)</a></li>
-						        <li><a href="#" onclick="return false;" style="color: #999;">Sports Teams (Coming Soon)</a></li>
+						        <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Construction (Coming Soon)</span></li>
+						        <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Sports Teams (Coming Soon)</span></li>
 						    </ul>
 						</li>
 						-->
@@ -733,6 +818,80 @@
 							<p class="mb_30">Create impactful logos that capture your brand essence with our expert design services. Our logo design process involves understanding your business values, target audience, and industry to craft a unique visual identity that stands out in the marketplace. We combine creativity with strategic thinking to deliver logos that not only look great but also communicate your brand message effectively.</p>
 							
 
+							<!-- Service Process Section -->
+							<div class="service_process_details mb_50">
+								<h3 class="title mb_30">How We Deliver Logo Design</h3>
+								<div class="row">
+									<div class="col-md-6 mb_30">
+										<div class="process_step">
+											<div class="step_number bg_default_orange text-white">1</div>
+											<div class="step_content">
+												<h5 class="step_title">Initial Consultation</h5>
+												<p>We discuss your project goals, timeline, and specific requirements to understand your vision.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 mb_30">
+										<div class="process_step">
+											<div class="step_number bg_default_yellow text-dark">2</div>
+											<div class="step_content">
+												<h5 class="step_title">Strategy Development</h5>
+												<p>Our team creates a customized strategy and timeline tailored to your business needs.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 mb_30">
+										<div class="process_step">
+											<div class="step_number bg_default_lightblue text-dark">3</div>
+											<div class="step_content">
+												<h5 class="step_title">Creative Execution</h5>
+												<p>We bring your vision to life with professional design and high-quality production.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 mb_30">
+										<div class="process_step">
+											<div class="step_number bg_default_orange text-white">4</div>
+											<div class="step_content">
+												<h5 class="step_title">Delivery & Support</h5>
+												<p>Timely delivery and ongoing support to ensure your project's success.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Pricing Information -->
+							<div class="pricing_info mb_50">
+								<h3 class="title mb_30">Investment & Value</h3>
+								<div class="row">
+									<div class="col-md-4 mb_20">
+										<div class="pricing_card text-center p-4 bg-white">
+											<h5 class="pricing_title">Starting From</h5>
+											<div class="price_amount">$299</div>
+											<p class="price_description">Basic Logo Design package</p>
+										</div>
+									</div>
+									<div class="col-md-4 mb_20">
+										<div class="pricing_card text-center p-4 bg_default_yellow">
+											<h5 class="pricing_title">Most Popular</h5>
+											<div class="price_amount">$599</div>
+											<p class="price_description">Professional Logo Design package</p>
+										</div>
+									</div>
+									<div class="col-md-4 mb_20">
+										<div class="pricing_card text-center p-4 bg-white">
+											<h5 class="pricing_title">Premium</h5>
+											<div class="price_amount">$999+</div>
+											<p class="price_description">Complete Logo Design solution</p>
+										</div>
+									</div>
+								</div>
+								<p class="text-center mt_20">
+									<em>All prices include consultation, design, and delivery. Contact us for a custom quote.</em>
+								</p>
+							</div>
+
 							<p class="mb-0 wow fadeInUp2" data-wow-delay=".1s">
 								Ready to get started? Contact us today to discuss your project requirements and receive a personalized quote. Our team of experts is here to help bring your vision to life with professional quality and exceptional service.
 							</p>
@@ -760,11 +919,16 @@
 							<div class="widget wow fadeInUp2 sb_download_btns clearfix" data-wow-delay=".1s">
 								<div class="btns_group clearfix">
 									<ul class="ul_li_block clearfix">
-
 										<li>
 											<a class="custom_btn bg_default_yellow" href="/contact.html">
-												contact us 
+												get quote 
 												<span><i class="fal fa-arrow-right"></i></span>
+											</a>
+										</li>
+										<li>
+											<a class="custom_btn bg_default_orange" href="tel:6692011661">
+												call now 
+												<span><i class="fal fa-phone"></i></span>
 											</a>
 										</li>
 									</ul>
@@ -791,6 +955,23 @@
 									</a>
 								</div>
 							</div>
+
+							<!-- FAQ Section -->
+							<div class="widget wow fadeInUp2 sb_faq" data-wow-delay=".1s">
+								<h4 class="sidebar_title mb_30">Frequently Asked Questions</h4>
+								<div class="faq_item mb_20">
+									<h6 class="faq_question">How long does Logo Design take?</h6>
+									<p class="faq_answer">Most Logo Design projects are completed within 3-7 business days, depending on complexity.</p>
+								</div>
+								<div class="faq_item mb_20">
+									<h6 class="faq_question">Do you offer revisions?</h6>
+									<p class="faq_answer">Yes! We include up to 3 rounds of revisions to ensure you're completely satisfied.</p>
+								</div>
+								<div class="faq_item mb_20">
+									<h6 class="faq_question">What file formats do you provide?</h6>
+									<p class="faq_answer">We provide all standard formats including PDF, PNG, JPG, and source files when needed.</p>
+								</div>
+							</div>
 							
 						</aside>
 					</div>
@@ -798,7 +979,7 @@
 				</div>
 			</div>
 		</section>
-<!-- details_section - end -->
+		<!-- details_section - end -->
 
 <!-- cta_section - start -->
 <!-- <section class="cta_section sec_ptb_130 bg_default_orange clearfix">
@@ -853,7 +1034,7 @@
 	                            <li><a href="/about.html">About Us</a></li>
 	                            <li><a href="/contact.html">Contact</a></li>
 	                            <li><a href="/blog.html">Blog</a></li>
-	                            <li><a href="/search-results.html">Search</a></li>
+	                            <li><a href="/locations/">Service Areas</a></li>
 	                        </ul>
 	                    </div>
 	                </div>
@@ -898,7 +1079,7 @@
 	                            Contact
 	                            <span><i class="fal fa-arrow-right"></i></span>
 	                        </a>
-	                        <span class="footer_hotline" style="padding-top:15px;"><i class="far fa-phone"></i>(669) 273-1583</span>
+	                        <span class="footer_hotline" style="padding-top:15px;"><i class="far fa-phone"></i>(669) 201-1661</span>
 	                    </div>
 	                </div>
 	    

@@ -1,0 +1,63 @@
+{
+  "primaryAudience": "New businesses, Construction, Chains, Landlords with multi-unit complexes, College/School/District Maintenance, City",
+  "favoriteCustomer": "Construction",
+  "geographicAreas": "Tri-City area and beyond. I've been to Fresno and Sacramento for jobs. If you pay, I play",
+  "serviceRadius": "30",
+  "mainCompetitors": "Honestly not sure. I'd imagine other small sign shops, of which there are quite a lot.",
+  "pricingStrategy": "competitive",
+  "businessName": "Sign Zone",
+  "tagline": "What can we do to EARN your business?",
+  "businessDescription": "We provide signage for a wide range of needs. We work with the customer to figure out what works best for their intended purpose, budget, and available space. We also do installation, removal, and disposal.",
+  "yearsInBusiness": "28",
+  "phoneNumber": "5105736150",
+  "emailAddress": "SignZoneCA@gmail.com",
+  "businessAddress": "45499 Industrial Place Suite 1",
+  "businessHours": "8:00AM - 5:00PM",
+  "saturdayHours": "By appointment only",
+  "websiteDomain": "Sign-Zone.com",
+  "products": [
+    "posters-banners",
+    "stickers-decals",
+    "other-prints",
+    "commercial-signage",
+    "channel-lettering",
+    "a-frame-signs",
+    "yard-signs",
+    "retractable-banners",
+    "window-graphics",
+    "car-magnets"
+  ],
+  "services": [
+    "sign-installation",
+    "rush-jobs",
+    "other-services"
+  ],
+  "mainIndustries": "Small business, Landlords, Construction, Schools/District",
+  "specialty": "Quality and honesty. I walk customers through what's available instead of pushing towards a product. Always point out my mistakes",
+  "paymentMethods": [
+    "cash",
+    "check",
+    "credit-cards",
+    "bank-transfer"
+  ],
+  "rushJobPricing": "yes-percentage",
+  "websiteFeatures": [
+    "quote-form",
+    "portfolio",
+    "contact-forms",
+    "mobile-friendly",
+    "google-business"
+  ],
+  "launchDate": "2025-11-01",
+  "mainGoal": "professional-image",
+  "budgetRange": "under-2000",
+  "communicationStyle": "professional",
+  "preferredContact": "all-methods",
+  "existingWebsite": "signzone.biz",
+  "contactName": "Colin May",
+  "contactPhone": "5105736150",
+  "contactEmail": "SignZoneCA@gmail.com",
+  "bestTimeToContact": "8AM-5PM weekdays",
+  "timestamp": "2025-09-26T16:58:58.041Z",
+  "formVersion": "1.0"
+}

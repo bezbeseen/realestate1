@@ -52,7 +52,7 @@
 	<!-- backtotop - start -->
 	<div id="thetop"></div>
 	<div id="backtotop">
-		<a href="#" id="scroll">
+		<a href="#thetop" id="scroll" title="Back to top" aria-label="Back to top">
 			<i class="far fa-arrow-up"></i>
 		</a>
 	</div>
@@ -147,7 +147,8 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			const variantOptions = document.querySelectorAll('.variant-option');
-			const tabs = new bootstrap.Tab(document.querySelector('#productTab a'));
+			const tabElement = document.querySelector('#productTab a');
+			const tabs = tabElement ? new bootstrap.Tab(tabElement) : null;
 
 			variantOptions.forEach(option => {
 				option.addEventListener('click', function() {
@@ -155,7 +156,7 @@
 					if (target) {
 						const tabToShow = document.querySelector(`[data-bs-toggle="tab"][href="${target}"]`);
 						if (tabToShow) {
-							const tab = new bootstrap.Tab(tabToShow);
+							const tab = tabToShow ? new bootstrap.Tab(tabToShow) : null;
 							tab.show();
 						}
 					}

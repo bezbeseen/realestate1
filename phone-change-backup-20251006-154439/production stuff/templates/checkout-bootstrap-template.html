@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Checkout - BE SEEN</title>
+    <meta name="description" content="Complete your payment securely." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Using Bootstrap for layout -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <!-- Stripe and our checkout script -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/assets/js/checkout.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+            <div class="col-md-6">
+                <div class="text-center mb-4">
+                    <a href="/index.html">
+                        <img src="/assets/images/logo/BeSeen_1.png" alt="BE SEEN Logo" style="max-width: 200px;">
+                    </a>
+                </div>
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <h1 class="card-title text-center mb-4">Secure Checkout</h1>
+                        <!-- The Stripe checkout form will be embedded here -->
+                        <div id="checkout"></div>
+                    </div>
+                </div>
+                 <div class="text-center mt-3">
+                    <a href="/" class="small">Return to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Shop Website Requirements Form | BE SEEN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .form-container {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #fafafa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section h2::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #e1e1e1;
+            transition: all 0.3s ease;
+        }
+        
+        .checkbox-item:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        
+        .checkbox-item label {
+            margin: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        
+        .inline-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .buttons {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9ff;
+            border-top: 1px solid #e1e1e1;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e1e1e1;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .inline-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏪 Sign Shop Website Requirements</h1>
+            <p>Complete this form to help us build your perfect website</p>
+        </div>
+        
+        <div class="form-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <form id="requirementsForm">
+                <!-- Strategic Overview -->
+                <div class="section">
+                    <h2>🎯 Strategic Overview</h2>
+                    
+                    <div class="form-group">
+                        <label for="primaryAudience">Primary Target Audience</label>
+                        <input type="text" id="primaryAudience" name="primaryAudience" placeholder="e.g., Small businesses, Real estate agents, Restaurants">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="favoriteCustomer">Favorite Type of Customer</label>
+                        <input type="text" id="favoriteCustomer" name="favoriteCustomer" placeholder="Who do you love working with most?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="geographicAreas">Geographic Target Areas</label>
+                        <input type="text" id="geographicAreas" name="geographicAreas" placeholder="e.g., Downtown, Northside, City of [Your City]">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceRadius">Service Radius (miles from your location)</label>
+                        <input type="number" id="serviceRadius" name="serviceRadius" placeholder="e.g., 25">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mainCompetitors">Main Competitors</label>
+                        <textarea id="mainCompetitors" name="mainCompetitors" placeholder="List your biggest competitors and what makes you different"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pricingStrategy">Pricing Strategy</label>
+                        <select id="pricingStrategy" name="pricingStrategy">
+                            <option value="">Select your pricing approach</option>
+                            <option value="competitive">Competitive (market rates)</option>
+                            <option value="premium">Premium (higher quality/service)</option>
+                            <option value="budget">Budget-friendly (cost-conscious customers)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Business Information -->
+                <div class="section">
+                    <h2>🏢 Business Information</h2>
+                    
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label for="businessName">Business Name</label>
+                            <input type="text" id="businessName" name="businessName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tagline">Business Tagline/Slogan</label>
+                            <input type="text" id="tagline" name="tagline" placeholder="Optional">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="businessDescription">Business Description</label>
+                        <textarea id="businessDescription" name="businessDescription" placeholder="2-3 sentences about what you do" required></textarea>
+                    </div>
+                    
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label for="yearsInBusiness">Years in Business</label>
+                            <input type="number" id="yearsInBusiness" name="yearsInBusiness" placeholder="e.g., 5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phoneNumber">Primary Phone Number</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                        </div>
+                    </div>
+                    
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address</label>
+                            <input type="email" id="emailAddress" name="emailAddress" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessAddress">Business Address</label>
+                            <input type="text" id="businessAddress" name="businessAddress" required>
+                        </div>
+                    </div>
+                    
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label for="businessHours">Business Hours (Monday-Friday)</label>
+                            <input type="text" id="businessHours" name="businessHours" placeholder="e.g., 8:00 AM - 6:00 PM">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="saturdayHours">Saturday Hours (if open)</label>
+                            <input type="text" id="saturdayHours" name="saturdayHours" placeholder="e.g., 9:00 AM - 2:00 PM or Closed">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="websiteDomain">Website Domain (if you already have one)</label>
+                        <input type="text" id="websiteDomain" name="websiteDomain" placeholder="e.g., yourbusiness.com">
+                    </div>
+                </div>
+                
+                <!-- Products & Services -->
+                <div class="section">
+                    <h2>🛍️ Products & Services</h2>
+                    
+                    <div class="form-group">
+                        <label>Print Products (check all that apply)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="businessCards" name="products" value="business-cards">
+                                <label for="businessCards">Business Cards</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="brochuresFlyers" name="products" value="brochures-flyers">
+                                <label for="brochuresFlyers">Brochures & Flyers</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="postersBanners" name="products" value="posters-banners">
+                                <label for="postersBanners">Posters & Banners</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stickersDecals" name="products" value="stickers-decals">
+                                <label for="stickersDecals">Stickers & Decals</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="windowClings" name="products" value="window-clings">
+                                <label for="windowClings">Window Clings</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="canvasPrints" name="products" value="canvas-prints">
+                                <label for="canvasPrints">Canvas Prints</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="photoPrinting" name="products" value="photo-printing">
+                                <label for="photoPrinting">Photo Printing</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="otherPrints" name="products" value="other-prints">
+                                <label for="otherPrints">Other Print Products</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Signs (check all that apply)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commercialSignage" name="products" value="commercial-signage">
+                                <label for="commercialSignage">Commercial Signage</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="channelLettering" name="products" value="channel-lettering">
+                                <label for="channelLettering">Channel Lettering</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="aFrameSigns" name="products" value="a-frame-signs">
+                                <label for="aFrameSigns">A-Frame Signs</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="yardSigns" name="products" value="yard-signs">
+                                <label for="yardSigns">Yard Signs</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="flags" name="products" value="flags">
+                                <label for="flags">Flags</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="retractableBanners" name="products" value="retractable-banners">
+                                <label for="retractableBanners">Retractable Banners</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="windowGraphics" name="products" value="window-graphics">
+                                <label for="windowGraphics">Window Graphics</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="carMagnets" name="products" value="car-magnets">
+                                <label for="carMagnets">Car Magnets</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Services (check all that apply)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="logoDesign" name="services" value="logo-design">
+                                <label for="logoDesign">Logo Design</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="branding" name="services" value="branding">
+                                <label for="branding">Branding</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="photoEditing" name="services" value="photo-editing">
+                                <label for="photoEditing">Photo Editing</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="signInstallation" name="services" value="sign-installation">
+                                <label for="signInstallation">Sign Installation</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="rushJobs" name="services" value="rush-jobs">
+                                <label for="rushJobs">Rush Jobs</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="otherServices" name="services" value="other-services">
+                                <label for="otherServices">Other Services</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mainIndustries">Main Industries You Serve</label>
+                        <input type="text" id="mainIndustries" name="mainIndustries" placeholder="e.g., Real Estate, Healthcare, Retail, Restaurants">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialty">Your Specialty (what you're best known for)</label>
+                        <input type="text" id="specialty" name="specialty" placeholder="e.g., Fast turnaround, Custom designs, Large format printing">
+                    </div>
+                </div>
+                
+                <!-- Payment & Pricing -->
+                <div class="section">
+                    <h2>💰 Payment & Pricing</h2>
+                    
+                    <div class="form-group">
+                        <label>Payment Methods You Accept</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cash" name="paymentMethods" value="cash">
+                                <label for="cash">Cash</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="check" name="paymentMethods" value="check">
+                                <label for="check">Check</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="creditCards" name="paymentMethods" value="credit-cards">
+                                <label for="creditCards">Credit Cards</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="paypal" name="paymentMethods" value="paypal">
+                                <label for="paypal">PayPal</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="bankTransfer" name="paymentMethods" value="bank-transfer">
+                                <label for="bankTransfer">Bank Transfer</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rushJobPricing">Rush Job Pricing</label>
+                        <select id="rushJobPricing" name="rushJobPricing">
+                            <option value="">Do you charge extra for rush jobs?</option>
+                            <option value="yes-premium">Yes, premium pricing</option>
+                            <option value="yes-percentage">Yes, percentage markup</option>
+                            <option value="no">No extra charge</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Website Features -->
+                <div class="section">
+                    <h2>📱 Website Features</h2>
+                    
+                    <div class="form-group">
+                        <label>What You Want on Your Website</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="quoteForm" name="websiteFeatures" value="quote-form">
+                                <label for="quoteForm">Online Quote Request Form</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="portfolio" name="websiteFeatures" value="portfolio">
+                                <label for="portfolio">Project Gallery/Portfolio</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="contactForms" name="websiteFeatures" value="contact-forms">
+                                <label for="contactForms">Contact Forms</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mobileFriendly" name="websiteFeatures" value="mobile-friendly">
+                                <label for="mobileFriendly">Mobile-Friendly Design</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="googleBusiness" name="websiteFeatures" value="google-business">
+                                <label for="googleBusiness">Google Business Integration</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="onlineCart" name="websiteFeatures" value="online-cart">
+                                <label for="onlineCart">Online Shopping Cart</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="reviews" name="websiteFeatures" value="reviews">
+                                <label for="reviews">Customer Reviews/Testimonials</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="blog" name="websiteFeatures" value="blog">
+                                <label for="blog">Blog/News Section</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="liveChat" name="websiteFeatures" value="live-chat">
+                                <label for="liveChat">Live Chat</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Details -->
+                <div class="section">
+                    <h2>📝 Project Details</h2>
+                    
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label for="launchDate">When do you want the website live?</label>
+                            <input type="date" id="launchDate" name="launchDate">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mainGoal">Main Goal</label>
+                            <select id="mainGoal" name="mainGoal">
+                                <option value="">Select main goal</option>
+                                <option value="more-customers">More Customers</option>
+                                <option value="online-orders">Online Orders</option>
+                                <option value="brand-awareness">Brand Awareness</option>
+                                <option value="professional-image">Professional Image</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budgetRange">Budget Range (for website development)</label>
+                        <select id="budgetRange" name="budgetRange">
+                            <option value="">Select budget range</option>
+                            <option value="under-2000">Under $2,000</option>
+                            <option value="2000-5000">$2,000 - $5,000</option>
+                            <option value="5000-10000">$5,000 - $10,000</option>
+                            <option value="over-10000">Over $10,000</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="communicationStyle">Communication Style</label>
+                        <select id="communicationStyle" name="communicationStyle">
+                            <option value="">Select communication style</option>
+                            <option value="professional">Professional</option>
+                            <option value="friendly">Friendly</option>
+                            <option value="casual">Casual</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferredContact">How do you want customers to contact you?</label>
+                        <select id="preferredContact" name="preferredContact">
+                            <option value="">Select preferred contact method</option>
+                            <option value="phone">Phone</option>
+                            <option value="email">Email</option>
+                            <option value="contact-form">Contact Form</option>
+                            <option value="all-methods">All Methods</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="existingWebsite">Any existing website you want to replace?</label>
+                        <input type="text" id="existingWebsite" name="existingWebsite" placeholder="e.g., www.oldwebsite.com">
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="section">
+                    <h2>📞 Contact Information</h2>
+                    
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" name="contactPhone">
+                        </div>
+                    </div>
+                    
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bestTimeToContact">Best Time to Contact</label>
+                            <input type="text" id="bestTimeToContact" name="bestTimeToContact" placeholder="e.g., 9 AM - 5 PM weekdays">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="buttons">
+            <button type="button" class="btn btn-primary" onclick="exportData()">📄 Export Form Data</button>
+            <button type="button" class="btn btn-secondary" onclick="resetForm()">🔄 Reset Form</button>
+        </div>
+    </div>
+
+    <!-- Include jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script>
+        // Update progress bar as user fills form
+        function updateProgress() {
+            const form = document.getElementById('requirementsForm');
+            const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+            const filled = Array.from(inputs).filter(input => input.value.trim() !== '').length;
+            const progress = (filled / inputs.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        // Add event listeners to track form completion
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('input', updateProgress);
+                input.addEventListener('change', updateProgress);
+            });
+            updateProgress();
+        });
+
+        // Collect form data
+        function collectFormData() {
+            const form = document.getElementById('requirementsForm');
+            const formData = new FormData(form);
+            const data = {};
+
+            // Collect text inputs
+            for (let [key, value] of formData.entries()) {
+                if (key === 'products' || key === 'services' || key === 'paymentMethods' || key === 'websiteFeatures') {
+                    if (!data[key]) data[key] = [];
+                    data[key].push(value);
+                } else {
+                    data[key] = value;
+                }
+            }
+
+            // Add timestamp
+            data.timestamp = new Date().toISOString();
+            data.formVersion = '1.0';
+
+            return data;
+        }
+
+        // Export data as JSON
+        function exportJSON(data) {
+            const jsonString = JSON.stringify(data, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${data.businessName || 'sign-shop'}-requirements.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Generate PDF
+        function generatePDF(data) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Set up fonts and colors
+            doc.setFontSize(20);
+            doc.setTextColor(102, 126, 234);
+            doc.text('Sign Shop Website Requirements', 20, 30);
+            
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0);
+            
+            let yPosition = 50;
+            const pageHeight = doc.internal.pageSize.height;
+            const margin = 20;
+            const lineHeight = 7;
+
+            // Helper function to add text with word wrapping
+            function addText(text, x, y, maxWidth = 170) {
+                const lines = doc.splitTextToSize(text, maxWidth);
+                doc.text(lines, x, y);
+                return y + (lines.length * lineHeight);
+            }
+
+            // Helper function to add section header
+            function addSection(title, y) {
+                if (y > pageHeight - 40) {
+                    doc.addPage();
+                    y = 20;
+                }
+                doc.setFontSize(14);
+                doc.setTextColor(102, 126, 234);
+                doc.text(title, margin, y);
+                doc.setFontSize(10);
+                doc.setTextColor(0, 0, 0);
+                return y + 10;
+            }
+
+            // Business Information
+            yPosition = addSection('Business Information', yPosition);
+            yPosition = addText(`Business Name: ${data.businessName || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Tagline: ${data.tagline || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Description: ${data.businessDescription || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Years in Business: ${data.yearsInBusiness || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Phone: ${data.phoneNumber || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Email: ${data.emailAddress || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Address: ${data.businessAddress || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Hours: ${data.businessHours || 'Not provided'}`, margin, yPosition);
+            yPosition += 5;
+
+            // Strategic Overview
+            yPosition = addSection('Strategic Overview', yPosition);
+            yPosition = addText(`Primary Audience: ${data.primaryAudience || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Favorite Customer: ${data.favoriteCustomer || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Geographic Areas: ${data.geographicAreas || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Service Radius: ${data.serviceRadius || 'Not provided'} miles`, margin, yPosition);
+            yPosition = addText(`Pricing Strategy: ${data.pricingStrategy || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Competitors: ${data.mainCompetitors || 'Not provided'}`, margin, yPosition);
+            yPosition += 5;
+
+            // Products & Services
+            yPosition = addSection('Products & Services', yPosition);
+            if (data.products && data.products.length > 0) {
+                yPosition = addText(`Products: ${data.products.join(', ')}`, margin, yPosition);
+            }
+            if (data.services && data.services.length > 0) {
+                yPosition = addText(`Services: ${data.services.join(', ')}`, margin, yPosition);
+            }
+            yPosition = addText(`Main Industries: ${data.mainIndustries || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Specialty: ${data.specialty || 'Not provided'}`, margin, yPosition);
+            yPosition += 5;
+
+            // Payment & Website Features
+            yPosition = addSection('Payment & Website Features', yPosition);
+            if (data.paymentMethods && data.paymentMethods.length > 0) {
+                yPosition = addText(`Payment Methods: ${data.paymentMethods.join(', ')}`, margin, yPosition);
+            }
+            yPosition = addText(`Rush Job Pricing: ${data.rushJobPricing || 'Not provided'}`, margin, yPosition);
+            if (data.websiteFeatures && data.websiteFeatures.length > 0) {
+                yPosition = addText(`Website Features: ${data.websiteFeatures.join(', ')}`, margin, yPosition);
+            }
+            yPosition += 5;
+
+            // Project Details
+            yPosition = addSection('Project Details', yPosition);
+            yPosition = addText(`Launch Date: ${data.launchDate || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Main Goal: ${data.mainGoal || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Budget Range: ${data.budgetRange || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Communication Style: ${data.communicationStyle || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Preferred Contact: ${data.preferredContact || 'Not provided'}`, margin, yPosition);
+            yPosition += 5;
+
+            // Contact Information
+            yPosition = addSection('Contact Information', yPosition);
+            yPosition = addText(`Contact Name: ${data.contactName || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Contact Phone: ${data.contactPhone || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Contact Email: ${data.contactEmail || 'Not provided'}`, margin, yPosition);
+            yPosition = addText(`Best Time to Contact: ${data.bestTimeToContact || 'Not provided'}`, margin, yPosition);
+
+            // Save PDF
+            const businessName = data.businessName ? data.businessName.replace(/[^a-zA-Z0-9]/g, '-') : 'sign-shop';
+            doc.save(`${businessName}-requirements.pdf`);
+        }
+
+        // Main export function
+        function exportData() {
+            const data = collectFormData();
+            
+            // Validate required fields
+            const requiredFields = ['businessName', 'businessDescription', 'phoneNumber', 'emailAddress', 'businessAddress', 'contactName', 'contactEmail'];
+            const missingFields = requiredFields.filter(field => !data[field]);
+            
+            if (missingFields.length > 0) {
+                alert(`Please fill in the following required fields:\n${missingFields.join(', ')}`);
+                return;
+            }
+
+            // Export both JSON and PDF
+            exportJSON(data);
+            generatePDF(data);
+            
+            alert('Form data exported successfully!\n\nFiles downloaded:\n- JSON file (for data processing)\n- PDF file (for review)');
+        }
+
+        // Reset form
+        function resetForm() {
+            if (confirm('Are you sure you want to reset the entire form? This will clear all your data.')) {
+                document.getElementById('requirementsForm').reset();
+                updateProgress();
+            }
+        }
+    </script>
+</body>
+</html>

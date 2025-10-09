@@ -68,7 +68,7 @@
         "name": "{{city_name}}, {{state}}"
       },
       
-      "telephone": "(669) 273-1583",
+      "telephone": "(669) 201-1661",
       "email": "contact@getbeseen.com",
       
       "hasOfferCatalog": {
@@ -110,7 +110,7 @@
                         <p class="text-white" style="font-size: 1.3rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">Serving {{city_name}} with premium printing, design, and marketing solutions</p>
                         <ul class="breadcrumb_nav ul_li_center" style="margin-top: 20px;">
                             <li><a href="/" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-white">Locations</a></li>
+                            <li><a href="/locations/" class="text-white">Locations</a></li>
                             <li class="text-white">{{city_name}}</li>
                         </ul>
                     </div>
@@ -140,7 +140,7 @@
                             <div class="col-lg-6 mb_30">
                                 <div class="feature_primary_2 clearfix">
                                     <div class="item_icon bg_default_yellow">
-                                        <i class="{{icon_primary}}" style="color: {{icon_primary_color}}; font-size: 1.5rem;"></i>
+                                        <i class="{{icon_primary}}" style="color: #000000; font-size: 1.5rem;"></i>
                                     </div>
                                     <div class="item_content">
                                         <h4 class="item_title">{{service_title_1}}</h4>
@@ -155,7 +155,7 @@
                             <div class="col-lg-6 mb_30">
                                 <div class="feature_primary_2 clearfix">
                                     <div class="item_icon bg_default_orange">
-                                        <i class="{{icon_secondary}}" style="color: {{icon_secondary_color}}; font-size: 1.5rem;"></i>
+                                        <i class="{{icon_secondary}}" style="color: #ffffff; font-size: 1.5rem;"></i>
                                     </div>
                                     <div class="item_content">
                                         <h4 class="item_title">{{service_title_2}}</h4>
@@ -176,11 +176,87 @@
                                 <span><i class="fal fa-arrow-right"></i></span>
                             </a>
                             <p class="mt_20">
-                                <strong>Call us:</strong> <a href="tel:(669)273-1583">(669) 273-1583</a><br>
+                                <strong>Call us:</strong> <a href="tel:6692011661">(669) 201-1661</a><br>
                                 <strong>Email:</strong> <a href="mailto:contact@getbeseen.com">contact@getbeseen.com</a><br>
                                 <strong>Distance from {{city_name}}:</strong> {{distance}}
                             </p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{> location-products}}
+
+    {{> location-services}}
+
+    <!-- Local Business Focus Section -->
+    <section class="feature_section sec_ptb_130 clearfix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+                    <div class="section_title text-center mb_50 wow fadeInUp2" data-wow-delay=".1s">
+                        <h4 class="small_title">{{city_name}} Specialists</h4>
+                        <h2 class="big_title mb-0">Serving {{city_name}} Industries</h2>
+                        <span class="biggest_title">Industries</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-delay=".1s">
+                    <div class="feature_primary_2 mb_30 clearfix">
+                        <div class="item_icon bg_default_orange">
+                            <i class="fal fa-home"></i>
+                        </div>
+                        <div class="item_content">
+                            <h4 class="item_title">Real Estate Marketing</h4>
+                            <p class="mb_15">Specialized printing solutions for {{city_name}} real estate professionals including yard signs, business cards, and marketing materials.</p>
+                            <a class="text_btn" href="/industries/real-estate.html">
+                                <span>Real Estate Solutions</span>
+                                <i class="far fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInRight" data-wow-delay=".2s">
+                    <div class="feature_primary_2 mb_30 clearfix">
+                        <div class="item_icon bg_default_yellow">
+                            <i class="fal fa-laptop-code"></i>
+                        </div>
+                        <div class="item_content">
+                            <h4 class="item_title">Tech Companies</h4>
+                            <p class="mb_15">Professional materials for {{city_name}} tech companies including business cards, presentations, and event materials.</p>
+                            <a class="text_btn" href="/products.html">
+                                <span>Tech Solutions</span>
+                                <i class="far fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta_section bg_default_blue text-white sec_ptb_130 clearfix">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
+                    <div class="cta_content">
+                        <h2 class="text-white mb_15">Need Printing Services in {{city_name}}?</h2>
+                        <p class="text-white mb-0">Fast turnaround, competitive pricing, and quality results. Serving {{city_name}} businesses with excellence for over 25 years.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+                    <div class="cta_btns_group text-right">
+                        <a class="custom_btn bg_white" href="/contact.html">
+                            Get {{city_name}} Quote
+                            <span><i class="fal fa-arrow-right"></i></span>
+                        </a>
+                        <p class="text-white mt_15 mb-0">
+                            <i class="fal fa-phone"></i> Call: <a href="tel:6692011661" class="text-white">(669) 201-1661</a>
+                        </p>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 		<title>GetBeSeen - Professional Printing, Design & Marketing | Santa Clara, CA</title>
-                <meta name="description" content="Professional printing & marketing services in Santa Clara, CA. Business cards, banners, signs & promotional materials for Silicon Valley businesses. Call (669) 273-1583 for quotes." />
+                <meta name="description" content="Professional printing & marketing services in Santa Clara, CA. Business cards, banners, signs & promotional materials for Silicon Valley businesses. Call (669) 201-1661 for quotes." />
                   <link rel="canonical" href="https://getbeseen.com/" />
 		<link rel="shortcut icon" href="assets/images/favicon/favicon-32x32.png">
 
@@ -93,7 +93,7 @@
   "contactPoint": [
     {
       "@type": "ContactPoint",
-      "telephone": "(669) 273-1583",
+      "telephone": "(669) 201-1661",
       "contactType": "customer service",
       "areaServed": ["Santa Clara", "San Jose", "Palo Alto", "Sunnyvale", "Mountain View", "Cupertino", "Campbell", "Los Gatos", "Saratoga", "Bay Area"],
       "availableLanguage": ["English"],
@@ -209,44 +209,153 @@
 		// Define helper functions
 		function getDescriptivePageInfo() {
 		    const path = window.location.pathname.toLowerCase();
+		    const title = document.title || 'Untitled Page';
 		    
+		    // Homepage
 		    if (path === '/' || path === '/index.html' || path === '') {
-		        return { category: 'homepage', type: 'landing', description: 'Homepage - Main Landing Page', conversionScore: 5 };
+		        return { category: 'homepage', type: 'landing', description: 'Homepage - Main Landing Page', title: title, conversionScore: 5 };
 		    }
+		    
+		    // Products
 		    if (path.includes('/products/')) {
 		        if (path.includes('/business-cards')) {
-		            return { category: 'products', type: 'product_detail', description: 'Business Cards - Product Detail Page', conversionScore: 9 };
+		            return { category: 'products', type: 'product_detail', description: 'Business Cards - Product Detail Page', title: title, conversionScore: 9 };
 		        } else if (path.includes('/prints.html')) {
-		            return { category: 'products', type: 'category', description: 'Prints Category - All Print Products', conversionScore: 7 };
+		            return { category: 'products', type: 'category', description: 'Prints Category - All Print Products', title: title, conversionScore: 7 };
 		        } else if (path.includes('/signs.html')) {
-		            return { category: 'products', type: 'category', description: 'Signs Category - All Sign Products', conversionScore: 7 };
+		            return { category: 'products', type: 'category', description: 'Signs Category - All Sign Products', title: title, conversionScore: 7 };
+		        } else if (path.includes('/promotional.html')) {
+		            return { category: 'products', type: 'category', description: 'Promotional Products Category', title: title, conversionScore: 7 };
+		        } else if (path.includes('/materials.html')) {
+		            return { category: 'products', type: 'category', description: 'Materials Category', title: title, conversionScore: 6 };
+		        } else if (path.includes('/real-estate.html')) {
+		            return { category: 'products', type: 'category', description: 'Real Estate Products Category', title: title, conversionScore: 8 };
 		        } else {
 		            const productName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
-		            return { category: 'products', type: 'product_detail', description: `Product: ${productName}`, conversionScore: 8 };
+		            return { category: 'products', type: 'product_detail', description: `Product: ${productName}`, title: title, conversionScore: 8 };
 		        }
 		    }
-		    if (path.includes('/services/')) {
-		        const serviceName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
-		        return { category: 'services', type: 'service_detail', description: `Service: ${serviceName}`, conversionScore: 7 };
-		    }
-		    if (path.includes('/contact')) return { category: 'conversion', type: 'high_intent', description: 'Contact Page', conversionScore: 10 };
-		    if (path.includes('/about')) return { category: 'company', type: 'informational', description: 'About Us Page', conversionScore: 4 };
-		    if (path.includes('/blog')) return { category: 'content', type: 'educational', description: 'Blog Page', conversionScore: 3 };
 		    
-		    const pageName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
-		    return { category: 'general', type: 'standard', description: `Page: ${pageName}`, conversionScore: 3 };
+		    // Services
+		    if (path.includes('/services') || path === '/services.html') {
+		        if (path === '/services.html' || path === '/services') {
+		            return { category: 'services', type: 'category', description: 'All Services Overview', title: title, conversionScore: 6 };
+		        } else {
+		            const serviceName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+		            return { category: 'services', type: 'service_detail', description: `Service: ${serviceName}`, title: title, conversionScore: 7 };
+		        }
+		    }
+		    
+		    // Industries
+		    if (path.includes('/industries/')) {
+		        if (path.includes('/industries.html')) {
+		            return { category: 'industries', type: 'category', description: 'Industries Overview', title: title, conversionScore: 6 };
+		        } else {
+		            const industryName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+		            return { category: 'industries', type: 'industry_detail', description: `Industry: ${industryName}`, title: title, conversionScore: 7 };
+		        }
+		    }
+		    
+		    // Locations
+		    if (path.includes('/locations/')) {
+		        const locationName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+		        if (locationName && locationName !== 'index' && locationName !== '') {
+		            return { category: 'locations', type: 'local_landing', description: `Location: ${locationName}`, title: title, conversionScore: 8 };
+		        } else {
+		            return { category: 'locations', type: 'locations_index', description: 'All Locations - Service Areas', title: title, conversionScore: 6 };
+		        }
+		    }
+		    
+		    // Blog
+		    if (path.includes('/blog')) {
+		        if (path.includes('/blog.html')) {
+		            return { category: 'content', type: 'blog_index', description: 'Blog - All Posts', title: title, conversionScore: 3 };
+		        } else {
+		            const postTitle = title.split(' | ')[0] || 'Blog Post';
+		            return { category: 'content', type: 'blog_post', description: `Blog Post: ${postTitle}`, title: title, conversionScore: 4 };
+		        }
+		    }
+		    
+		    // High-value pages
+		    if (path.includes('/contact')) return { category: 'conversion', type: 'high_intent', description: 'Contact Page', title: title, conversionScore: 10 };
+		    if (path.includes('/about')) return { category: 'company', type: 'informational', description: 'About Us Page', title: title, conversionScore: 4 };
+		    if (path.includes('/cart')) return { category: 'ecommerce', type: 'cart', description: 'Shopping Cart', title: title, conversionScore: 9 };
+		    if (path.includes('/checkout')) return { category: 'ecommerce', type: 'checkout', description: 'Checkout Process', title: title, conversionScore: 10 };
+		    if (path.includes('/success')) return { category: 'ecommerce', type: 'success', description: 'Order Success', title: title, conversionScore: 10 };
+		    
+		    // Fallback
+		    const pageName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ') || 'Unknown Page';
+		    return { category: 'general', type: 'standard', description: `Page: ${pageName}`, title: title, conversionScore: 3 };
 		}
 		
-		// Configure GA4
+		// Configure GA4 with enhanced page title tracking
 		gtag('config', 'G-1TBFCB5V4P', {
 		    page_title: document.title,
 		    page_location: window.location.href,
+		    page_path: window.location.pathname,
 		    send_page_view: true,
 		    allow_enhanced_conversions: true,
-		    cookie_expires: 63072000
+		    cookie_expires: 63072000,
+		    custom_map: {
+		        'custom_dimension_1': 'page_title',
+		        'custom_dimension_2': 'page_category'
+		    }
+		});
+		
+		// Send explicit page view with enhanced title tracking
+		const initialPageInfo = getDescriptivePageInfo();
+		gtag('event', 'page_view', {
+		    page_title: document.title,
+		    page_location: window.location.href,
+		    page_path: window.location.pathname,
+		    page_category: initialPageInfo.category,
+		    page_type: initialPageInfo.type,
+		    page_description: initialPageInfo.description,
+		    send_to: 'G-1TBFCB5V4P'
+		});
+		
+		// Additional title tracking for debugging
+		gtag('event', 'page_title_debug', {
+		    event_category: 'debugging',
+		    event_label: document.title,
+		    page_title_length: document.title.length,
+		    page_url: window.location.href,
+		    send_to: 'G-1TBFCB5V4P'
 		});
 		
 		console.log('✅ FRESH GA4 LOADED: G-1TBFCB5V4P');
+		
+		// Enhanced page title tracking after DOM loads
+		document.addEventListener('DOMContentLoaded', function() {
+		    // Wait a moment for any dynamic title changes
+		    setTimeout(function() {
+		        const finalTitle = document.title;
+		        const finalPageInfo = getDescriptivePageInfo();
+		        
+		        // Send comprehensive page data
+		        gtag('event', 'page_loaded_with_title', {
+		            event_category: 'page_tracking',
+		            event_label: finalTitle,
+		            page_title: finalTitle,
+		            page_category: finalPageInfo.category,
+		            page_type: finalPageInfo.type,
+		            page_description: finalPageInfo.description,
+		            page_url: window.location.href,
+		            page_path: window.location.pathname,
+		            title_character_count: finalTitle.length,
+		            has_title: finalTitle.length > 0,
+		            send_to: 'G-1TBFCB5V4P'
+		        });
+		        
+		        console.log('📊 GA4 Page Title Tracked:', {
+		            title: finalTitle,
+		            category: finalPageInfo.category,
+		            type: finalPageInfo.type,
+		            url: window.location.href
+		        });
+		        
+		    }, 500); // Wait 500ms for any dynamic content
+		});
 		
 		// Load Microsoft Clarity
 		(function(c,l,a,r,i,t,y){
@@ -290,6 +399,15 @@
 		                'conversion_intent': 'very_high',
 		                'cta_type': 'quote_request'
 		            });
+		            
+		            // Also track as conversion
+		            gtag('event', 'conversion', {
+		                'currency': 'USD',
+		                'value': 50.00,
+		                'conversion_type': 'quote_request',
+		                'source_page': pageInfo.description
+		            });
+		            
 		            console.log('🎯 QUOTE CTA tracked:', element.textContent.trim());
 		        }
 		        
@@ -314,6 +432,15 @@
 		                'conversion_intent': 'very_high',
 		                'cta_type': 'phone_call'
 		            });
+		            
+		            // Also track as conversion
+		            gtag('event', 'conversion', {
+		                'currency': 'USD',
+		                'value': 100.00,
+		                'conversion_type': 'phone_call',
+		                'source_page': pageInfo.description
+		            });
+		            
 		            console.log('📞 PHONE CTA tracked:', href);
 		        }
 		        
@@ -625,7 +752,7 @@
 		<!-- backtotop - start -->
 		<div id="thetop"></div>
 		<div id="backtotop">
-			<a href="#" id="scroll">
+			<a href="#thetop" id="scroll" title="Back to top" aria-label="Back to top">
 				<i class="far fa-arrow-up"></i>
 			</a>
 		</div>
@@ -664,8 +791,8 @@
 		                                    <ul class="header_contact_info ul_li clearfix">
 		                                        <li data-contact-type="phone">
 		                                            <i class="far fa-phone"></i>
-		                                            <a href="tel:(669)273-1583" data-track="contact_phone_click">
-		                                                (669) 273-1583
+		                                            <a href="tel:6692011661" data-track="contact_phone_click">
+		                                                (669) 201-1661
 		                                            </a>
 		                                        </li>
 		                                    </ul>
@@ -741,8 +868,8 @@
 		                                            <a href="/industries.html" data-track="nav_industries">Industries</a>  
 		                                            <ul class="submenu">
 		                                                <li><a href="/industries/real-estate.html" data-track="nav_real_estate">Real Estate</a></li>   
-		                                                <li><a href="#" data-track="nav_construction" onclick="return false;" style="color: #999;">Construction (Coming Soon)</a></li> 
-		                                                <li><a href="#" data-track="nav_sports_teams" onclick="return false;" style="color: #999;">Sports Teams (Coming Soon)</a></li> 
+		                                                <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Construction (Coming Soon)</span></li> 
+		                                                <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Sports Teams (Coming Soon)</span></li> 
 		                                            </ul>
 		                                        </li>
 		                                        -->
@@ -850,13 +977,7 @@
 		                </div>
 		            </div>
 		        
-		            <script type="text/javascript">
-		                (function(c,l,a,r,i,t,y){
-		                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-		                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-		                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-		                })(window, document, "clarity", "script", "s1g9ngbmhd");
-		            </script>
+		            <!-- Clarity now loaded via analytics-loader.html - removed duplicate to prevent conflicts -->
 		        
 		            <!-- Enhanced Analytics Integration -->
 		            <script>
@@ -1086,8 +1207,8 @@
 							    <a href="#!" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Industries</a>
 							    <ul class="dropdown-menu">
 							        <li><a href="/industries/real-estate.html" data-track="mobile_nav_real_estate">Real Estate</a></li>
-							        <li><a href="#" onclick="return false;" style="color: #999;">Construction (Coming Soon)</a></li>
-							        <li><a href="#" onclick="return false;" style="color: #999;">Sports Teams (Coming Soon)</a></li>
+							        <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Construction (Coming Soon)</span></li>
+							        <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Sports Teams (Coming Soon)</span></li>
 							    </ul>
 							</li>
 							-->
@@ -1906,7 +2027,7 @@
 		                              <li><a href="/about.html">About Us</a></li>
 		                              <li><a href="/contact.html">Contact</a></li>
 		                              <li><a href="/blog.html">Blog</a></li>
-		                              <li><a href="/search-results.html">Search</a></li>
+		                              <li><a href="/locations/">Service Areas</a></li>
 		                          </ul>
 		                      </div>
 		                  </div>
@@ -1951,7 +2072,7 @@
 		                              Contact
 		                              <span><i class="fal fa-arrow-right"></i></span>
 		                          </a>
-		                          <span class="footer_hotline" style="padding-top:15px;"><i class="far fa-phone"></i>(669) 273-1583</span>
+		                          <span class="footer_hotline" style="padding-top:15px;"><i class="far fa-phone"></i>(669) 201-1661</span>
 		                      </div>
 		                  </div>
 		      

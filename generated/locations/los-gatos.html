@@ -21,44 +21,153 @@
     // Define helper functions
     function getDescriptivePageInfo() {
         const path = window.location.pathname.toLowerCase();
+        const title = document.title || 'Untitled Page';
         
+        // Homepage
         if (path === '/' || path === '/index.html' || path === '') {
-            return { category: 'homepage', type: 'landing', description: 'Homepage - Main Landing Page', conversionScore: 5 };
+            return { category: 'homepage', type: 'landing', description: 'Homepage - Main Landing Page', title: title, conversionScore: 5 };
         }
+        
+        // Products
         if (path.includes('/products/')) {
             if (path.includes('/business-cards')) {
-                return { category: 'products', type: 'product_detail', description: 'Business Cards - Product Detail Page', conversionScore: 9 };
+                return { category: 'products', type: 'product_detail', description: 'Business Cards - Product Detail Page', title: title, conversionScore: 9 };
             } else if (path.includes('/prints.html')) {
-                return { category: 'products', type: 'category', description: 'Prints Category - All Print Products', conversionScore: 7 };
+                return { category: 'products', type: 'category', description: 'Prints Category - All Print Products', title: title, conversionScore: 7 };
             } else if (path.includes('/signs.html')) {
-                return { category: 'products', type: 'category', description: 'Signs Category - All Sign Products', conversionScore: 7 };
+                return { category: 'products', type: 'category', description: 'Signs Category - All Sign Products', title: title, conversionScore: 7 };
+            } else if (path.includes('/promotional.html')) {
+                return { category: 'products', type: 'category', description: 'Promotional Products Category', title: title, conversionScore: 7 };
+            } else if (path.includes('/materials.html')) {
+                return { category: 'products', type: 'category', description: 'Materials Category', title: title, conversionScore: 6 };
+            } else if (path.includes('/real-estate.html')) {
+                return { category: 'products', type: 'category', description: 'Real Estate Products Category', title: title, conversionScore: 8 };
             } else {
                 const productName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
-                return { category: 'products', type: 'product_detail', description: `Product: ${productName}`, conversionScore: 8 };
+                return { category: 'products', type: 'product_detail', description: `Product: ${productName}`, title: title, conversionScore: 8 };
             }
         }
-        if (path.includes('/services/')) {
-            const serviceName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
-            return { category: 'services', type: 'service_detail', description: `Service: ${serviceName}`, conversionScore: 7 };
-        }
-        if (path.includes('/contact')) return { category: 'conversion', type: 'high_intent', description: 'Contact Page', conversionScore: 10 };
-        if (path.includes('/about')) return { category: 'company', type: 'informational', description: 'About Us Page', conversionScore: 4 };
-        if (path.includes('/blog')) return { category: 'content', type: 'educational', description: 'Blog Page', conversionScore: 3 };
         
-        const pageName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
-        return { category: 'general', type: 'standard', description: `Page: ${pageName}`, conversionScore: 3 };
+        // Services
+        if (path.includes('/services') || path === '/services.html') {
+            if (path === '/services.html' || path === '/services') {
+                return { category: 'services', type: 'category', description: 'All Services Overview', title: title, conversionScore: 6 };
+            } else {
+                const serviceName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+                return { category: 'services', type: 'service_detail', description: `Service: ${serviceName}`, title: title, conversionScore: 7 };
+            }
+        }
+        
+        // Industries
+        if (path.includes('/industries/')) {
+            if (path.includes('/industries.html')) {
+                return { category: 'industries', type: 'category', description: 'Industries Overview', title: title, conversionScore: 6 };
+            } else {
+                const industryName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+                return { category: 'industries', type: 'industry_detail', description: `Industry: ${industryName}`, title: title, conversionScore: 7 };
+            }
+        }
+        
+        // Locations
+        if (path.includes('/locations/')) {
+            const locationName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+            if (locationName && locationName !== 'index' && locationName !== '') {
+                return { category: 'locations', type: 'local_landing', description: `Location: ${locationName}`, title: title, conversionScore: 8 };
+            } else {
+                return { category: 'locations', type: 'locations_index', description: 'All Locations - Service Areas', title: title, conversionScore: 6 };
+            }
+        }
+        
+        // Blog
+        if (path.includes('/blog')) {
+            if (path.includes('/blog.html')) {
+                return { category: 'content', type: 'blog_index', description: 'Blog - All Posts', title: title, conversionScore: 3 };
+            } else {
+                const postTitle = title.split(' | ')[0] || 'Blog Post';
+                return { category: 'content', type: 'blog_post', description: `Blog Post: ${postTitle}`, title: title, conversionScore: 4 };
+            }
+        }
+        
+        // High-value pages
+        if (path.includes('/contact')) return { category: 'conversion', type: 'high_intent', description: 'Contact Page', title: title, conversionScore: 10 };
+        if (path.includes('/about')) return { category: 'company', type: 'informational', description: 'About Us Page', title: title, conversionScore: 4 };
+        if (path.includes('/cart')) return { category: 'ecommerce', type: 'cart', description: 'Shopping Cart', title: title, conversionScore: 9 };
+        if (path.includes('/checkout')) return { category: 'ecommerce', type: 'checkout', description: 'Checkout Process', title: title, conversionScore: 10 };
+        if (path.includes('/success')) return { category: 'ecommerce', type: 'success', description: 'Order Success', title: title, conversionScore: 10 };
+        
+        // Fallback
+        const pageName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ') || 'Unknown Page';
+        return { category: 'general', type: 'standard', description: `Page: ${pageName}`, title: title, conversionScore: 3 };
     }
     
-    // Configure GA4
+    // Configure GA4 with enhanced page title tracking
     gtag('config', 'G-1TBFCB5V4P', {
         page_title: document.title,
         page_location: window.location.href,
+        page_path: window.location.pathname,
         send_page_view: true,
         allow_enhanced_conversions: true,
-        cookie_expires: 63072000
+        cookie_expires: 63072000,
+        custom_map: {
+            'custom_dimension_1': 'page_title',
+            'custom_dimension_2': 'page_category'
+        }
+    });
+    
+    // Send explicit page view with enhanced title tracking
+    const initialPageInfo = getDescriptivePageInfo();
+    gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        page_category: initialPageInfo.category,
+        page_type: initialPageInfo.type,
+        page_description: initialPageInfo.description,
+        send_to: 'G-1TBFCB5V4P'
+    });
+    
+    // Additional title tracking for debugging
+    gtag('event', 'page_title_debug', {
+        event_category: 'debugging',
+        event_label: document.title,
+        page_title_length: document.title.length,
+        page_url: window.location.href,
+        send_to: 'G-1TBFCB5V4P'
     });
     
     console.log('✅ FRESH GA4 LOADED: G-1TBFCB5V4P');
+    
+    // Enhanced page title tracking after DOM loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Wait a moment for any dynamic title changes
+        setTimeout(function() {
+            const finalTitle = document.title;
+            const finalPageInfo = getDescriptivePageInfo();
+            
+            // Send comprehensive page data
+            gtag('event', 'page_loaded_with_title', {
+                event_category: 'page_tracking',
+                event_label: finalTitle,
+                page_title: finalTitle,
+                page_category: finalPageInfo.category,
+                page_type: finalPageInfo.type,
+                page_description: finalPageInfo.description,
+                page_url: window.location.href,
+                page_path: window.location.pathname,
+                title_character_count: finalTitle.length,
+                has_title: finalTitle.length > 0,
+                send_to: 'G-1TBFCB5V4P'
+            });
+            
+            console.log('📊 GA4 Page Title Tracked:', {
+                title: finalTitle,
+                category: finalPageInfo.category,
+                type: finalPageInfo.type,
+                url: window.location.href
+            });
+            
+        }, 500); // Wait 500ms for any dynamic content
+    });
     
     // Load Microsoft Clarity
     (function(c,l,a,r,i,t,y){
@@ -102,6 +211,15 @@
                     'conversion_intent': 'very_high',
                     'cta_type': 'quote_request'
                 });
+                
+                // Also track as conversion
+                gtag('event', 'conversion', {
+                    'currency': 'USD',
+                    'value': 50.00,
+                    'conversion_type': 'quote_request',
+                    'source_page': pageInfo.description
+                });
+                
                 console.log('🎯 QUOTE CTA tracked:', element.textContent.trim());
             }
             
@@ -126,6 +244,15 @@
                     'conversion_intent': 'very_high',
                     'cta_type': 'phone_call'
                 });
+                
+                // Also track as conversion
+                gtag('event', 'conversion', {
+                    'currency': 'USD',
+                    'value': 100.00,
+                    'conversion_type': 'phone_call',
+                    'source_page': pageInfo.description
+                });
+                
                 console.log('📞 PHONE CTA tracked:', href);
             }
             
@@ -483,7 +610,7 @@
         "name": "Los Gatos, CA"
       },
       
-      "telephone": "(669) 273-1583",
+      "telephone": "(669) 201-1661",
       "email": "contact@getbeseen.com",
       
       "hasOfferCatalog": {
@@ -541,8 +668,8 @@
                                 <ul class="header_contact_info ul_li clearfix">
                                     <li data-contact-type="phone">
                                         <i class="far fa-phone"></i>
-                                        <a href="tel:(669)273-1583" data-track="contact_phone_click">
-                                            (669) 273-1583
+                                        <a href="tel:6692011661" data-track="contact_phone_click">
+                                            (669) 201-1661
                                         </a>
                                     </li>
                                 </ul>
@@ -618,8 +745,8 @@
                                         <a href="/industries.html" data-track="nav_industries">Industries</a>  
                                         <ul class="submenu">
                                             <li><a href="/industries/real-estate.html" data-track="nav_real_estate">Real Estate</a></li>   
-                                            <li><a href="#" data-track="nav_construction" onclick="return false;" style="color: #999;">Construction (Coming Soon)</a></li> 
-                                            <li><a href="#" data-track="nav_sports_teams" onclick="return false;" style="color: #999;">Sports Teams (Coming Soon)</a></li> 
+                                            <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Construction (Coming Soon)</span></li> 
+                                            <li><span style="color: #999; cursor: default; padding: 8px 15px; display: block;">Sports Teams (Coming Soon)</span></li> 
                                         </ul>
                                     </li>
                                     -->
@@ -727,13 +854,7 @@
             </div>
         </div>
     
-        <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "s1g9ngbmhd");
-        </script>
+        <!-- Clarity now loaded via analytics-loader.html - removed duplicate to prevent conflicts -->
     
         <!-- Enhanced Analytics Integration -->
         <script>
@@ -866,7 +987,7 @@
                         <p class="text-white" style="font-size: 1.3rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">Serving Los Gatos with premium printing, design, and marketing solutions</p>
                         <ul class="breadcrumb_nav ul_li_center" style="margin-top: 20px;">
                             <li><a href="/" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-white">Locations</a></li>
+                            <li><a href="/locations/" class="text-white">Locations</a></li>
                             <li class="text-white">Los Gatos</li>
                         </ul>
                     </div>
@@ -896,7 +1017,7 @@
                             <div class="col-lg-6 mb_30">
                                 <div class="feature_primary_2 clearfix">
                                     <div class="item_icon bg_default_yellow">
-                                        <i class="fal fa-gem" style="color: #6f42c1; font-size: 1.5rem;"></i>
+                                        <i class="fal fa-gem" style="color: #000000; font-size: 1.5rem;"></i>
                                     </div>
                                     <div class="item_content">
                                         <h4 class="item_title">Premium Los Gatos Business Cards</h4>
@@ -911,7 +1032,7 @@
                             <div class="col-lg-6 mb_30">
                                 <div class="feature_primary_2 clearfix">
                                     <div class="item_icon bg_default_orange">
-                                        <i class="fal fa-crown" style="color: #ffc107; font-size: 1.5rem;"></i>
+                                        <i class="fal fa-crown" style="color: #ffffff; font-size: 1.5rem;"></i>
                                     </div>
                                     <div class="item_content">
                                         <h4 class="item_title">Upscale Event Materials</h4>
@@ -932,11 +1053,199 @@
                                 <span><i class="fal fa-arrow-right"></i></span>
                             </a>
                             <p class="mt_20">
-                                <strong>Call us:</strong> <a href="tel:(669)273-1583">(669) 273-1583</a><br>
+                                <strong>Call us:</strong> <a href="tel:6692011661">(669) 201-1661</a><br>
                                 <strong>Email:</strong> <a href="mailto:contact@getbeseen.com">contact@getbeseen.com</a><br>
                                 <strong>Distance from Los Gatos:</strong> 15 minutes
                             </p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section for Location Pages -->
+    <section class="related_products_section sec_ptb_130 clearfix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+                    <div class="section_title text-center mb_50 wow fadeInUp2" data-wow-delay=".1s">
+                        <h4 class="small_title">Popular in Los Gatos</h4>
+                        <h2 class="big_title mb-0">Our Most Requested Services</h2>
+                        <span class="biggest_title">Services</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
+                    <article class="product_card text-center h-100">
+                        <a class="item_image" href="/products/prints/business-cards.html">
+                            <img src="/assets/images/products/prints/business-cards/premium business card.jpg" alt="Los Gatos Business Cards">
+                        </a>
+                        <div class="item_content">
+                            <h3 class="item_title">Business Cards</h3>
+                            <p class="mb-2">Premium business cards for Los Gatos professionals</p>
+                            <a href="/products/prints/business-cards.html" class="custom_btn bg_default_orange">VIEW BUSINESS CARDS</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".2s">
+                    <article class="product_card text-center h-100">
+                        <a class="item_image" href="/products/signs.html">
+                            <img src="/assets/images/services/sign-banner.jpg" alt="Los Gatos Signs & Banners">
+                        </a>
+                        <div class="item_content">
+                            <h3 class="item_title">Signs & Banners</h3>
+                            <p class="mb-2">Professional signage for Los Gatos businesses</p>
+                            <a href="/products/signs.html" class="custom_btn bg_default_orange">VIEW SIGNS</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+                    <article class="product_card text-center h-100">
+                        <a class="item_image" href="/products/promotional.html">
+                            <img src="/assets/images/promotional/promotional-solutions.jpg" alt="Los Gatos Promotional Products">
+                        </a>
+                        <div class="item_content">
+                            <h3 class="item_title">Promotional Products</h3>
+                            <p class="mb-2">Branded materials for Los Gatos marketing</p>
+                            <a href="/products/promotional.html" class="custom_btn bg_default_orange">VIEW PROMOTIONAL</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section for Location Pages -->
+    <section class="service_section sec_ptb_130 bg_gray clearfix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+                    <div class="section_title text-center mb_50 wow fadeInUp2" data-wow-delay=".1s">
+                        <h4 class="small_title">Complete Solutions</h4>
+                        <h2 class="big_title mb-0">Services We Provide in Los Gatos</h2>
+                        <span class="biggest_title">Services</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
+                    <div class="service_grid">
+                        <div class="item_image">
+                            <img src="/assets/images/printing/printing-services.jpg" alt="Los Gatos Printing Services">
+                        </div>
+                        <div class="item_content bg_gray">
+                            <h3 class="item_title">Printing Services</h3>
+                            <p>Business cards, flyers, brochures, and all your printing needs for Los Gatos businesses.</p>
+                            <a class="icon_btn" href="/services.html"><i class="fal fa-arrow-right"></i></a>
+                            <span class="bg_icon">
+                                <img src="/assets/images/services/bg_icon.png" alt="icon_not_found">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
+                    <div class="service_grid">
+                        <div class="item_image">
+                            <img src="/assets/images/misc/webdesign.png" alt="Los Gatos Graphic Design">
+                        </div>
+                        <div class="item_content bg_gray">
+                            <h3 class="item_title">Graphic Design</h3>
+                            <p>Professional design services including logos, branding, and marketing materials for Los Gatos.</p>
+                            <a class="icon_btn" href="/services/graphic-design.html"><i class="fal fa-arrow-right"></i></a>
+                            <span class="bg_icon">
+                                <img src="/assets/images/services/bg_icon.png" alt="icon_not_found">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".7s">
+                    <div class="service_grid">
+                        <div class="item_image">
+                            <img src="/assets/images/banner/mailer.png" alt="Los Gatos Direct Mail">
+                        </div>
+                        <div class="item_content bg_gray">
+                            <h3 class="item_title">Direct Mail</h3>
+                            <p>Targeted mailing campaigns and every door delivery services throughout Los Gatos.</p>
+                            <a class="icon_btn" href="/services/mailing.html"><i class="fal fa-arrow-right"></i></a>
+                            <span class="bg_icon">
+                                <img src="/assets/images/services/bg_icon.png" alt="icon_not_found">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Local Business Focus Section -->
+    <section class="feature_section sec_ptb_130 clearfix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+                    <div class="section_title text-center mb_50 wow fadeInUp2" data-wow-delay=".1s">
+                        <h4 class="small_title">Los Gatos Specialists</h4>
+                        <h2 class="big_title mb-0">Serving Los Gatos Industries</h2>
+                        <span class="biggest_title">Industries</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-delay=".1s">
+                    <div class="feature_primary_2 mb_30 clearfix">
+                        <div class="item_icon bg_default_orange">
+                            <i class="fal fa-home"></i>
+                        </div>
+                        <div class="item_content">
+                            <h4 class="item_title">Real Estate Marketing</h4>
+                            <p class="mb_15">Specialized printing solutions for Los Gatos real estate professionals including yard signs, business cards, and marketing materials.</p>
+                            <a class="text_btn" href="/industries/real-estate.html">
+                                <span>Real Estate Solutions</span>
+                                <i class="far fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInRight" data-wow-delay=".2s">
+                    <div class="feature_primary_2 mb_30 clearfix">
+                        <div class="item_icon bg_default_yellow">
+                            <i class="fal fa-laptop-code"></i>
+                        </div>
+                        <div class="item_content">
+                            <h4 class="item_title">Tech Companies</h4>
+                            <p class="mb_15">Professional materials for Los Gatos tech companies including business cards, presentations, and event materials.</p>
+                            <a class="text_btn" href="/products.html">
+                                <span>Tech Solutions</span>
+                                <i class="far fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta_section bg_default_blue text-white sec_ptb_130 clearfix">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
+                    <div class="cta_content">
+                        <h2 class="text-white mb_15">Need Printing Services in Los Gatos?</h2>
+                        <p class="text-white mb-0">Fast turnaround, competitive pricing, and quality results. Serving Los Gatos businesses with excellence for over 25 years.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+                    <div class="cta_btns_group text-right">
+                        <a class="custom_btn bg_white" href="/contact.html">
+                            Get Los Gatos Quote
+                            <span><i class="fal fa-arrow-right"></i></span>
+                        </a>
+                        <p class="text-white mt_15 mb-0">
+                            <i class="fal fa-phone"></i> Call: <a href="tel:6692011661" class="text-white">(669) 201-1661</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -957,7 +1266,7 @@
                                 <li><a href="/about.html">About Us</a></li>
                                 <li><a href="/contact.html">Contact</a></li>
                                 <li><a href="/blog.html">Blog</a></li>
-                                <li><a href="/search-results.html">Search</a></li>
+                                <li><a href="/locations/">Service Areas</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1002,7 +1311,7 @@
                                 Contact
                                 <span><i class="fal fa-arrow-right"></i></span>
                             </a>
-                            <span class="footer_hotline" style="padding-top:15px;"><i class="far fa-phone"></i>(669) 273-1583</span>
+                            <span class="footer_hotline" style="padding-top:15px;"><i class="far fa-phone"></i>(669) 201-1661</span>
                         </div>
                     </div>
         

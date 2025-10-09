@@ -13,6 +13,23 @@
 
 	<title>{{page_title}}</title>
 	<meta name="description" content="{{seo_description}}">
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="product">
+	<meta property="og:url" content="https://getbeseen.com{{ page_path }}">
+	<meta property="og:title" content="{{page_title}}">
+	<meta property="og:description" content="{{seo_description}}">
+	<meta property="og:image" content="https://getbeseen.com/assets/images/products/{{product_image}}">
+	<meta property="og:site_name" content="BE SEEN">
+	<meta property="og:locale" content="en_US">
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://getbeseen.com{{ page_path }}">
+	<meta property="twitter:title" content="{{page_title}}">
+	<meta property="twitter:description" content="{{seo_description}}">
+	<meta property="twitter:image" content="https://getbeseen.com/assets/images/products/{{product_image}}">
+	
 	{{> seo}}
 	
 	<!-- Analytics handled by analytics-loader.html include -->
@@ -56,7 +73,7 @@
 	<!-- backtotop - start -->
 	<div id="thetop"></div>
 	<div id="backtotop">
-		<a href="#" id="scroll">
+		<a href="#thetop" id="scroll" title="Back to top" aria-label="Back to top">
 			<i class="far fa-arrow-up"></i>
 		</a>
 	</div>
@@ -206,7 +223,7 @@
 
 								<!-- Add to Cart -->
 								<div class="d-grid mb-3">
-									<!-- <button class="addtocart_btn custom_btn bg_default_orange btn-lg" onclick="addProductToCart(this)">Add To Cart</button> -->
+									<button class="addtocart_btn custom_btn bg_default_orange btn-lg" onclick="addProductToCart(this)">Add To Cart</button>
 								</div>
 
 								<!-- Contact Us Button -->
@@ -277,8 +294,9 @@
 	<script>
         // This function is called when the "Add to Cart" button is clicked
         function addProductToCart(button) {
+            if (!button) return;
             const container = button.closest('.product-container');
-            if (window.cart) {
+            if (container && window.cart) {
                 window.cart.addItem({
                     id: container.dataset.productId,
                     name: container.dataset.productName,
