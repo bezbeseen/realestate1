@@ -290,9 +290,10 @@
                     const isExternal = this.getAttribute('data-external') === 'true';
                     const href = this.getAttribute('href');
                     
-                    // Send tracking event
-                    if (window.gtag) {
-                        gtag('event', 'header_interaction', {
+                    // Send tracking event to GTM dataLayer
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            'event': 'header_interaction',
                             'interaction_type': trackingId,
                             'section': section,
                             'link_url': href,
@@ -322,8 +323,9 @@
                     const menuName = this.getAttribute('data-menu') || this.querySelector('a').textContent.trim();
                     
                     hoverTimer = setTimeout(function() {
-                        if (window.gtag) {
-                            gtag('event', 'menu_hover_engaged', {
+                        if (window.dataLayer) {
+                            window.dataLayer.push({
+                                'event': 'menu_hover_engaged',
                                 'menu_name': menuName,
                                 'hover_duration': 1000,
                                 'event_category': 'engagement'
@@ -343,8 +345,9 @@
                     const parentMenu = this.closest('.has_child').querySelector('a').textContent.trim();
                     const submenuText = this.textContent.trim();
                     
-                    if (window.gtag) {
-                        gtag('event', 'submenu_click', {
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            'event': 'submenu_click',
                             'parent_menu': parentMenu,
                             'submenu_item': submenuText,
                             'link_url': this.getAttribute('href'),
@@ -357,8 +360,9 @@
             // Track mobile menu interactions
             document.addEventListener('click', function(e) {
                 if (e.target.closest('.mobile_menu_btn')) {
-                    if (window.gtag) {
-                        gtag('event', 'mobile_menu_interaction', {
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            'event': 'mobile_menu_interaction',
                             'action': 'open',
                             'viewport_width': window.innerWidth,
                             'event_category': 'mobile'
@@ -374,8 +378,9 @@
                     mutations.forEach(function(mutation) {
                         if (mutation.type === 'childList' || mutation.type === 'characterData') {
                             const newCount = parseInt(cartCounter.textContent) || 0;
-                            if (newCount > 0 && window.gtag) {
-                                gtag('event', 'cart_count_update', {
+                            if (newCount > 0 && window.dataLayer) {
+                                window.dataLayer.push({
+                                    'event': 'cart_count_update',
                                     'cart_items': newCount,
                                     'event_category': 'ecommerce'
                                 });

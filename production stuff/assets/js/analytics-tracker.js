@@ -587,11 +587,12 @@ class AnalyticsTracker {
             viewport_size: `${window.innerWidth}x${window.innerHeight}`
         };
 
-        // Track with Google Analytics if available
-        if (typeof gtag !== 'undefined') {
-            gtag('event', eventName, {
+        // Track with Google Tag Manager dataLayer
+        if (typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+                event: eventName,
                 event_category: category,
-                custom_parameters: eventData
+                ...eventData
             });
         }
 

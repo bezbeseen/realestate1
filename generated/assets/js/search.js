@@ -481,9 +481,10 @@ class BeSEENSearch {
     }
 
     trackEvent(eventName, data = {}) {
-        // Google Analytics tracking
-        if (typeof gtag !== 'undefined') {
-            gtag('event', eventName, {
+        // Google Tag Manager dataLayer tracking
+        if (typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+                event: eventName,
                 event_category: 'search',
                 ...data
             });
