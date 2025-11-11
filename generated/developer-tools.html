@@ -694,127 +694,67 @@
             document.getElementById('passwordPrompt').style.display = 'block';
         });
 
-        // All pages to open
-        const allPages = [
-            // Main pages
-            '/index.html',
-            '/about.html',
-            '/contact.html',
-            '/blog.html',
-            '/products.html',
-            '/services.html',
-            '/industries.html',
-            
-            // Category pages
-            '/products/prints.html',
-            '/products/signs.html',
-            '/products/promotional.html',
-            '/products/materials.html',
-            '/products/real-estate.html',
-            
-            // Product pages - Prints
-            '/products/prints/business-cards.html',
-            '/products/prints/banners.html',
-            '/products/prints/brochures.html',
-            '/products/prints/canvas-prints.html',
-            '/products/prints/decals.html',
-            '/products/prints/flyers.html',
-            '/products/prints/photos.html',
-            '/products/prints/posters.html',
-            '/products/prints/presentation-folders.html',
-            '/products/prints/stickers.html',
-            '/products/prints/window-clings.html',
-            
-            // Product pages - Signs
-            '/products/signs/yard-signs.html',
-            '/products/signs/retractable-banners.html',
-            '/products/signs/window-graphics.html',
-            '/products/signs/flags.html',
-            '/products/signs/light-boxes.html',
-            '/products/signs/channel-lettering.html',
-            '/products/signs/3d-lettering.html',
-            '/products/signs/commercial-signage.html',
-            '/products/signs/aluminum-signs.html',
-            '/products/signs/magnets.html',
-            '/products/signs/a-frames.html',
-            
-            // Product pages - Materials
-            '/products/materials/corrugated.html',
-            '/products/materials/foam-board.html',
-            '/products/materials/pvc-board.html',
-            '/products/materials/styrene.html',
-            '/products/materials/acrylic.html',
-            
-            // Product pages - Promotional
-            '/products/promotional/table-cloths.html',
-            '/products/promotional/tents.html',
-            '/products/promotional/pens.html',
-            '/products/promotional/booths.html',
-            '/products/promotional/branded-apparel.html',
-            '/products/promotional/bags.html',
-            
-            // Product pages - Real Estate
-            '/products/real-estate/business-cards.html',
-            '/products/real-estate/banners.html',
-            '/products/real-estate/flags.html',
-            '/products/real-estate/lawn-signs.html',
-            '/products/real-estate/a-frames.html',
-            
-            // Service pages
-            '/services/graphic-design.html',
-            '/services/web-design.html',
-            '/services/mailing.html',
-            
-            // Service sub-pages - Graphic Design
-            '/services/graphic-design/logo-design.html',
-            '/services/graphic-design/branding.html',
-            '/services/graphic-design/photo-editing.html',
-            '/services/graphic-design/print-layout.html',
-            '/services/graphic-design/fonts-typography.html',
-            
-            // Service sub-pages - Web Design
-            '/services/web-design/websites.html',
-            '/services/web-design/web-services.html',
-            '/services/web-design/custom-email-design.html',
-            '/services/web-design/marketing-campaigns.html',
-            '/services/web-design/social-media.html',
-            '/services/web-design/seo.html',
-            
-            // Service sub-pages - Mailing
-            '/services/mailing/eddm.html',
-            '/services/mailing/newsletters.html',
-            '/services/mailing/postcards.html',
-            '/services/mailing/direct-mailers.html',
-            '/services/mailing/contact-list-cleaning.html',
-            '/services/mailing/interactive-mail.html',
-            
-            // Industry pages
-            '/industries/real-estate.html'
-        ];
-
-        // Load pages from sitemap dynamically
-        let allPagesFromSitemap = [];
+        // Single source of truth: sitemap.xml
+        let allPages = [];
         
         async function loadPagesFromSitemap() {
             try {
                 const response = await fetch('/sitemap.xml');
+                if (!response.ok) {
+                    throw new Error(`Sitemap fetch failed: ${response.status}`);
+                }
+                
                 const text = await response.text();
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(text, 'text/xml');
                 const urls = xmlDoc.getElementsByTagName('loc');
                 
-                allPagesFromSitemap = Array.from(urls).map(url => {
+                if (urls.length === 0) {
+                    throw new Error('No URLs found in sitemap');
+                }
+                
+                allPages = Array.from(urls).map(url => {
                     const fullUrl = url.textContent;
                     return fullUrl.replace('https://getbeseen.com', '');
                 });
                 
-                console.log(`Loaded ${allPagesFromSitemap.length} pages from sitemap`);
+                console.log(`✅ Loaded ${allPages.length} pages from sitemap.xml`);
                 displayPagesFromSitemap();
-                return allPagesFromSitemap;
+                
+                // Update stats display with actual count
+                updateStatsDisplay();
+                
+                return allPages;
             } catch (error) {
-                console.error('Error loading sitemap:', error);
-                return allPages; // fallback to hardcoded list
+                console.error('❌ Error loading sitemap:', error);
+                alert('Failed to load sitemap.xml. Please ensure the file exists and is accessible.');
+                return [];
             }
+        }
+        
+        // Update stats display with real counts from sitemap
+        function updateStatsDisplay() {
+            const stats = {
+                total: allPages.length,
+                products: allPages.filter(p => p.includes('/products/') && !p.endsWith('/products.html')).length,
+                services: allPages.filter(p => p.includes('/services/') && !p.endsWith('/services.html')).length,
+                categories: allPages.filter(p => p.match(/\/products\/(prints|signs|materials|promotional|real-estate)\.html$/)).length,
+                locations: allPages.filter(p => p.includes('/locations/') && !p.endsWith('/locations/index.html')).length,
+                blog: allPages.filter(p => p.includes('.html') && (p.includes('blog') || p.includes('how-to'))).length
+            };
+            
+            // Update stat cards if they exist
+            const statCards = document.querySelectorAll('.stat-number');
+            if (statCards.length >= 6) {
+                statCards[0].textContent = stats.total;
+                statCards[1].textContent = stats.products;
+                statCards[2].textContent = stats.services;
+                statCards[3].textContent = stats.categories;
+                statCards[4].textContent = stats.locations;
+                statCards[5].textContent = stats.blog;
+            }
+            
+            console.log('📊 Stats updated:', stats);
         }
 
         // Open all pages from sitemap
@@ -823,13 +763,18 @@
                 alert('Please enter the password first!');
                 return;
             }
+            
+            if (allPages.length === 0) {
+                alert('Please wait for sitemap to load...');
+                return;
+            }
+            
             const openInNewWindow = document.getElementById('openInNewWindow').checked;
-            const pagesToOpen = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
-            const count = pagesToOpen.length;
+            const count = allPages.length;
 
             if (confirm(`This will open ${count} pages. Are you sure?`)) {
                 console.log(`Preparing to open ${count} pages.`);
-                pagesToOpen.forEach((page, index) => {
+                allPages.forEach((page, index) => {
                     // Use a longer, slightly randomized timeout
                     const delay = 200 + (Math.random() * 50);
                     setTimeout(() => {
@@ -858,7 +803,7 @@
             servicePagesList.innerHTML = '';
             sitemapPagesList.innerHTML = '';
             
-            allPagesFromSitemap.forEach(page => {
+            allPages.forEach(page => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.href = page;
@@ -978,7 +923,7 @@
             brokenLinksList.innerHTML = '';
             workingLinksList.innerHTML = '';
 
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             const totalPages = pagesToCheck.length;
             let checkedPages = 0;
             let workingLinks = [];
@@ -1049,7 +994,7 @@
             const summaryDiv = document.getElementById('imageCheckSummary');
 
             resultsDiv.style.display = 'block';
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             let totalImages = 0;
             let brokenImages = 0;
             let checkedPages = 0;
@@ -1100,7 +1045,7 @@
             const summaryDiv = document.getElementById('seoReportSummary');
 
             resultsDiv.style.display = 'block';
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             let pagesWithTitles = 0;
             let pagesWithDescriptions = 0;
             let pagesWithH1 = 0;
@@ -1149,7 +1094,7 @@
             const progressDiv = document.getElementById('duplicateContentProgress') || createProgressDiv('duplicateContentProgress');
             
             resultsDiv.style.display = 'block';
-            const allPagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const allPagesToCheck = allPages;
             
             // Filter out include files, templates, data files, and system files
             const pagesToCheck = allPagesToCheck.filter(page => {
@@ -1236,7 +1181,7 @@
             const progressDiv = document.getElementById('includesUsageProgress') || createProgressDiv('includesUsageProgress');
             
             resultsDiv.style.display = 'block';
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             const includeUsage = {
                 'header-with-analytics': 0,
                 'header': 0,
@@ -1314,7 +1259,7 @@
             pagesWithAnalyticsList.innerHTML = '';
             pagesMissingAnalyticsList.innerHTML = '';
 
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             const totalPages = pagesToCheck.length;
             let checkedPages = 0;
             let pagesWithGTM = [];
@@ -1424,7 +1369,7 @@
             const summaryDiv = document.getElementById('schemaCheckSummary');
             
             resultsDiv.style.display = 'block';
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             let pagesWithSchema = 0;
             let schemaTypes = {};
             
@@ -1482,7 +1427,7 @@
             const summaryDiv = document.getElementById('socialTagsSummary');
             
             resultsDiv.style.display = 'block';
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             let pagesWithOG = 0;
             let pagesWithTwitter = 0;
             let pagesWithBoth = 0;
@@ -1537,7 +1482,7 @@
             resultsDiv.style.display = 'block';
             progressDiv.innerHTML = `<p>⚠️ Note: This tool checks for common JS errors in HTML. For full console error detection, use browser DevTools on each page.</p>`;
             
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             let pagesWithIssues = [];
             
             for (const page of pagesToCheck) {
@@ -1589,7 +1534,7 @@
             const summaryDiv = document.getElementById('assetHunterSummary');
             
             resultsDiv.style.display = 'block';
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             let brokenAssets = [];
             let totalAssets = 0;
             
@@ -1662,7 +1607,7 @@
             const summaryDiv = document.getElementById('mobileCheckSummary');
             
             resultsDiv.style.display = 'block';
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const pagesToCheck = allPages;
             let pagesWithViewport = 0;
             let pagesWithResponsive = 0;
             let pagesMissingMobile = [];
