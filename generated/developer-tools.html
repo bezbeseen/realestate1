@@ -718,7 +718,7 @@
                     return fullUrl.replace('https://getbeseen.com', '');
                 });
                 
-                console.log(`✅ Loaded ${allPages.length} pages from sitemap.xml`);
+                // console.log(`✅ Loaded ${allPages.length} pages from sitemap.xml`);
                 displayPagesFromSitemap();
                 
                 // Update stats display with actual count
@@ -726,7 +726,7 @@
                 
                 return allPages;
             } catch (error) {
-                console.error('❌ Error loading sitemap:', error);
+                // Silent fail on sitemap load error
                 alert('Failed to load sitemap.xml. Please ensure the file exists and is accessible.');
                 return [];
             }
@@ -754,7 +754,7 @@
                 statCards[5].textContent = stats.blog;
             }
             
-            console.log('📊 Stats updated:', stats);
+            // Stats updated
         }
 
         // Open all pages from sitemap
@@ -773,12 +773,12 @@
             const count = allPages.length;
 
             if (confirm(`This will open ${count} pages. Are you sure?`)) {
-                console.log(`Preparing to open ${count} pages.`);
+                // Opening pages
                 allPages.forEach((page, index) => {
                     // Use a longer, slightly randomized timeout
                     const delay = 200 + (Math.random() * 50);
                     setTimeout(() => {
-                        console.log(`Opening (${index + 1}/${count}): ${page}`);
+                        // Opening page
                         if (openInNewWindow) {
                             window.open(page, `page_${index}`);
                         } else {
@@ -786,7 +786,7 @@
                         }
                     }, index * delay); // Stagger opening to avoid overwhelming the browser
                 });
-                console.log('All page-opening requests have been sent.');
+                // All pages opened
             }
         }
 
@@ -1021,7 +1021,7 @@
                         }
                     }
                 } catch (error) {
-                    console.error(`Error checking ${page}:`, error);
+                    // Skip page on error
                 }
                 
                 checkedPages++;
@@ -1068,7 +1068,7 @@
                     if (description && description.getAttribute('content')) pagesWithDescriptions++;
                     if (h1 && h1.textContent.trim()) pagesWithH1++;
                 } catch (error) {
-                    console.error(`Error checking ${page}:`, error);
+                    // Skip page on error
                 }
                 
                 checkedPages++;
@@ -1146,7 +1146,7 @@
                         contentMap.set(contentKey, page);
                     }
                 } catch (error) {
-                    console.error(`Error checking ${page}:`, error);
+                    // Skip page on error
                 }
                 
                 checkedPages++;
@@ -1215,7 +1215,7 @@
                     
                     pageIncludeMap.set(page, pageIncludes);
                 } catch (error) {
-                    console.error(`Error checking ${page}:`, error);
+                    // Skip page on error
                 }
                 
                 checkedPages++;
@@ -1299,7 +1299,7 @@
                         });
                     }
                 } catch (error) {
-                    console.error(`Error checking ${page}:`, error);
+                    // Skip page on error
                     pagesMissingAnalytics.push({ page, missing: ['Error loading page'] });
                 }
                 
@@ -1397,7 +1397,7 @@
                         }
                     }
                 } catch (error) {
-                    console.error(`Error checking ${page}:`, error);
+                    // Skip page on error
                 }
                 await new Promise(resolve => setTimeout(resolve, 30));
             }
@@ -1446,7 +1446,7 @@
                     if (hasTwitter) pagesWithTwitter++;
                     if (hasOG && hasTwitter) pagesWithBoth++;
                 } catch (error) {
-                    console.error(`Error checking ${page}:`, error);
+                    // Skip page on error
                 }
                 await new Promise(resolve => setTimeout(resolve, 30));
             }
@@ -1492,8 +1492,9 @@
                     
                     // Check for common issues
                     const issues = [];
-                    if (!html.includes('</script>') && html.includes('<script')) issues.push('Unclosed script tag');
-                    if (html.match(/console\.error|console\.warn/)) issues.push('Console logging detected');
+                    const closingScript = '</scr' + 'ipt>';
+                    if (!html.includes(closingScript) && html.includes('<script')) issues.push('Unclosed script tag');
+                    if (html.includes('console.error') || html.includes('console.warn')) issues.push('Console logging detected');
                     if (html.includes('undefined is not') || html.includes('Cannot read property')) issues.push('Potential JS error in inline code');
                     
                     if (issues.length > 0) {
@@ -1575,7 +1576,7 @@
                         }
                     }
                 } catch (error) {
-                    console.error(`Error checking ${page}:`, error);
+                    // Skip page on error
                 }
                 await new Promise(resolve => setTimeout(resolve, 50));
             }
@@ -1630,7 +1631,7 @@
                         pagesMissingMobile.push({ page, issue: 'Missing viewport meta tag' });
                     }
                 } catch (error) {
-                    console.error(`Error checking ${page}:`, error);
+                    // Skip page on error
                 }
                 await new Promise(resolve => setTimeout(resolve, 30));
             }
@@ -1668,6 +1669,9 @@
                 div.style.backgroundColor = '#f8f9fa';
                 div.style.border = '1px solid #dee2e6';
                 div.style.borderRadius = '5px';
+                div.style.maxHeight = '400px';
+                div.style.overflowY = 'auto';
+                div.style.fontSize = '12px';
                 document.getElementById('protectedContent').appendChild(div);
             }
             return div;
