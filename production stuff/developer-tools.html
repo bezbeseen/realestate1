@@ -469,10 +469,51 @@
                 </div>
 
                 <div class="tool-card">
+                    <span class="tool-icon">🏷️</span>
+                    <h3 class="tool-title">Schema Markup</h3>
+                    <p class="tool-description">Validate structured data and rich snippets on all pages</p>
+                    <button class="tool-button purple" onclick="checkSchemaMarkup()">Check Schema</button>
+                </div>
+
+                <div class="tool-card">
+                    <span class="tool-icon">📱</span>
+                    <h3 class="tool-title">Social Media Tags</h3>
+                    <p class="tool-description">Verify Open Graph and Twitter Card meta tags</p>
+                    <button class="tool-button info" onclick="checkSocialTags()">Check Social</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>🛠️ Advanced Diagnostics</h2>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="tool-card">
                     <span class="tool-icon">🔧</span>
                     <h3 class="tool-title">Includes Check</h3>
                     <p class="tool-description">Verify all pages are using the correct include files</p>
                     <button class="tool-button teal" onclick="checkIncludesUsage()">Check Includes</button>
+                </div>
+
+                <div class="tool-card">
+                    <span class="tool-icon">💥</span>
+                    <h3 class="tool-title">Console Errors</h3>
+                    <p class="tool-description">Scan for JavaScript errors and console warnings</p>
+                    <button class="tool-button danger" onclick="scanConsoleErrors()">Scan Errors</button>
+                </div>
+
+                <div class="tool-card">
+                    <span class="tool-icon">📦</span>
+                    <h3 class="tool-title">Asset Hunter</h3>
+                    <p class="tool-description">Find missing CSS, JS, and font files across the site</p>
+                    <button class="tool-button warning" onclick="huntBrokenAssets()">Hunt Assets</button>
+                </div>
+
+                <div class="tool-card">
+                    <span class="tool-icon">📱</span>
+                    <h3 class="tool-title">Mobile Check</h3>
+                    <p class="tool-description">Test viewport settings and mobile responsiveness</p>
+                    <button class="tool-button info" onclick="checkMobileReady()">Check Mobile</button>
                 </div>
             </div>
 
@@ -489,6 +530,46 @@
         <div class="page-list" id="pagesMissingAnalytics" style="display: none;">
             <h3>❌ Pages Missing Analytics</h3>
             <ul id="pagesMissingAnalyticsList"></ul>
+        </div>
+    </div>
+
+    <div id="schemaCheckResults" style="display: none;">
+        <div class="stats">
+            <h2>🏷️ Schema Markup Results</h2>
+            <div id="schemaCheckProgress"></div>
+            <div id="schemaCheckSummary"></div>
+        </div>
+    </div>
+
+    <div id="socialTagsResults" style="display: none;">
+        <div class="stats">
+            <h2>📱 Social Media Tags Results</h2>
+            <div id="socialTagsProgress"></div>
+            <div id="socialTagsSummary"></div>
+        </div>
+    </div>
+
+    <div id="consoleErrorsResults" style="display: none;">
+        <div class="stats">
+            <h2>💥 Console Errors Results</h2>
+            <div id="consoleErrorsProgress"></div>
+            <div id="consoleErrorsSummary"></div>
+        </div>
+    </div>
+
+    <div id="assetHunterResults" style="display: none;">
+        <div class="stats">
+            <h2>📦 Broken Assets Results</h2>
+            <div id="assetHunterProgress"></div>
+            <div id="assetHunterSummary"></div>
+        </div>
+    </div>
+
+    <div id="mobileCheckResults" style="display: none;">
+        <div class="stats">
+            <h2>📱 Mobile Readiness Results</h2>
+            <div id="mobileCheckProgress"></div>
+            <div id="mobileCheckSummary"></div>
         </div>
     </div>
 
@@ -1328,6 +1409,306 @@
             }
 
             progressDiv.innerHTML = `<p>✅ Analytics check completed!</p>`;
+        }
+
+        // NEW MAGIC FUNCTIONS
+
+        async function checkSchemaMarkup() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('schemaCheckResults');
+            const progressDiv = document.getElementById('schemaCheckProgress');
+            const summaryDiv = document.getElementById('schemaCheckSummary');
+            
+            resultsDiv.style.display = 'block';
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            let pagesWithSchema = 0;
+            let schemaTypes = {};
+            
+            progressDiv.innerHTML = `<p>Checking schema markup on ${pagesToCheck.length} pages...</p>`;
+            
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    
+                    // Check for JSON-LD schema
+                    const hasJsonLd = html.includes('application/ld+json');
+                    // Check for microdata
+                    const hasMicrodata = html.includes('itemscope') || html.includes('itemprop');
+                    
+                    if (hasJsonLd || hasMicrodata) {
+                        pagesWithSchema++;
+                        // Extract schema types
+                        const schemaMatches = html.match(/"@type":\s*"([^"]+)"/g);
+                        if (schemaMatches) {
+                            schemaMatches.forEach(match => {
+                                const type = match.match(/"@type":\s*"([^"]+)"/)[1];
+                                schemaTypes[type] = (schemaTypes[type] || 0) + 1;
+                            });
+                        }
+                    }
+                } catch (error) {
+                    console.error(`Error checking ${page}:`, error);
+                }
+                await new Promise(resolve => setTimeout(resolve, 30));
+            }
+            
+            const percentage = Math.round((pagesWithSchema / pagesToCheck.length) * 100);
+            let schemaList = Object.entries(schemaTypes)
+                .sort((a, b) => b[1] - a[1])
+                .map(([type, count]) => `<li><strong>${type}:</strong> ${count} pages</li>`)
+                .join('');
+            
+            summaryDiv.innerHTML = `
+                <p><strong>📊 Schema Coverage:</strong> ${pagesWithSchema}/${pagesToCheck.length} pages (${percentage}%)</p>
+                <p><strong>Schema Types Found:</strong></p>
+                <ul>${schemaList || '<li>No schema markup detected</li>'}</ul>
+            `;
+            progressDiv.innerHTML = `<p>✅ Schema check completed!</p>`;
+        }
+
+        async function checkSocialTags() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('socialTagsResults');
+            const progressDiv = document.getElementById('socialTagsProgress');
+            const summaryDiv = document.getElementById('socialTagsSummary');
+            
+            resultsDiv.style.display = 'block';
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            let pagesWithOG = 0;
+            let pagesWithTwitter = 0;
+            let pagesWithBoth = 0;
+            
+            progressDiv.innerHTML = `<p>Checking social media tags on ${pagesToCheck.length} pages...</p>`;
+            
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    
+                    const hasOG = html.includes('og:title') || html.includes('og:description') || html.includes('og:image');
+                    const hasTwitter = html.includes('twitter:card') || html.includes('twitter:title');
+                    
+                    if (hasOG) pagesWithOG++;
+                    if (hasTwitter) pagesWithTwitter++;
+                    if (hasOG && hasTwitter) pagesWithBoth++;
+                } catch (error) {
+                    console.error(`Error checking ${page}:`, error);
+                }
+                await new Promise(resolve => setTimeout(resolve, 30));
+            }
+            
+            const ogPercent = Math.round((pagesWithOG / pagesToCheck.length) * 100);
+            const twitterPercent = Math.round((pagesWithTwitter / pagesToCheck.length) * 100);
+            const bothPercent = Math.round((pagesWithBoth / pagesToCheck.length) * 100);
+            
+            summaryDiv.innerHTML = `
+                <p><strong>📱 Social Media Tag Coverage:</strong></p>
+                <ul>
+                    <li><strong>Open Graph (Facebook):</strong> ${pagesWithOG}/${pagesToCheck.length} pages (${ogPercent}%)</li>
+                    <li><strong>Twitter Cards:</strong> ${pagesWithTwitter}/${pagesToCheck.length} pages (${twitterPercent}%)</li>
+                    <li><strong>Both Platforms:</strong> ${pagesWithBoth}/${pagesToCheck.length} pages (${bothPercent}%)</li>
+                </ul>
+                <p style="margin-top: 15px; color: ${bothPercent >= 90 ? '#28a745' : bothPercent >= 70 ? '#ffc107' : '#dc3545'};">
+                    <strong>Social Media Score: ${bothPercent}%</strong>
+                </p>
+            `;
+            progressDiv.innerHTML = `<p>✅ Social tags check completed!</p>`;
+        }
+
+        async function scanConsoleErrors() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('consoleErrorsResults');
+            const progressDiv = document.getElementById('consoleErrorsProgress');
+            const summaryDiv = document.getElementById('consoleErrorsSummary');
+            
+            resultsDiv.style.display = 'block';
+            progressDiv.innerHTML = `<p>⚠️ Note: This tool checks for common JS errors in HTML. For full console error detection, use browser DevTools on each page.</p>`;
+            
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            let pagesWithIssues = [];
+            
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    
+                    // Check for common issues
+                    const issues = [];
+                    if (!html.includes('</script>') && html.includes('<script')) issues.push('Unclosed script tag');
+                    if (html.match(/console\.error|console\.warn/)) issues.push('Console logging detected');
+                    if (html.includes('undefined is not') || html.includes('Cannot read property')) issues.push('Potential JS error in inline code');
+                    
+                    if (issues.length > 0) {
+                        pagesWithIssues.push({ page, issues });
+                    }
+                } catch (error) {
+                    pagesWithIssues.push({ page, issues: ['Failed to fetch page'] });
+                }
+                await new Promise(resolve => setTimeout(resolve, 30));
+            }
+            
+            const cleanPages = pagesToCheck.length - pagesWithIssues.length;
+            const percentage = Math.round((cleanPages / pagesToCheck.length) * 100);
+            
+            let issuesList = pagesWithIssues.map(item => 
+                `<li><strong>${item.page}:</strong> ${item.issues.join(', ')}</li>`
+            ).join('');
+            
+            summaryDiv.innerHTML = `
+                <p><strong>✅ Clean Pages:</strong> ${cleanPages}/${pagesToCheck.length} (${percentage}%)</p>
+                <p><strong>⚠️ Pages with Potential Issues:</strong> ${pagesWithIssues.length}</p>
+                ${issuesList ? `<ul style="max-height: 300px; overflow-y: auto;">${issuesList}</ul>` : ''}
+                <p style="margin-top: 15px; font-style: italic; color: #666;">
+                    💡 Tip: Open individual pages in DevTools Console for detailed error reporting
+                </p>
+            `;
+            progressDiv.innerHTML = `<p>✅ Console error scan completed!</p>`;
+        }
+
+        async function huntBrokenAssets() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('assetHunterResults');
+            const progressDiv = document.getElementById('assetHunterProgress');
+            const summaryDiv = document.getElementById('assetHunterSummary');
+            
+            resultsDiv.style.display = 'block';
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            let brokenAssets = [];
+            let totalAssets = 0;
+            
+            progressDiv.innerHTML = `<p>Hunting for broken assets on ${pagesToCheck.length} pages...</p>`;
+            
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    // Check CSS files
+                    const cssLinks = doc.querySelectorAll('link[rel="stylesheet"]');
+                    for (const link of cssLinks) {
+                        if (link.href) {
+                            totalAssets++;
+                            try {
+                                const cssResponse = await fetch(link.href, { method: 'HEAD' });
+                                if (!cssResponse.ok) brokenAssets.push({ page, asset: link.href, type: 'CSS' });
+                            } catch (e) {
+                                brokenAssets.push({ page, asset: link.href, type: 'CSS' });
+                            }
+                        }
+                    }
+                    
+                    // Check JS files
+                    const scripts = doc.querySelectorAll('script[src]');
+                    for (const script of scripts) {
+                        if (script.src && !script.src.includes('google') && !script.src.includes('clarity')) {
+                            totalAssets++;
+                            try {
+                                const jsResponse = await fetch(script.src, { method: 'HEAD' });
+                                if (!jsResponse.ok) brokenAssets.push({ page, asset: script.src, type: 'JS' });
+                            } catch (e) {
+                                brokenAssets.push({ page, asset: script.src, type: 'JS' });
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error(`Error checking ${page}:`, error);
+                }
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+            
+            const workingAssets = totalAssets - brokenAssets.length;
+            const percentage = totalAssets > 0 ? Math.round((workingAssets / totalAssets) * 100) : 100;
+            
+            let assetsList = brokenAssets.map(item => 
+                `<li><strong>[${item.type}]</strong> ${item.page}<br><span style="color: #dc3545; font-size: 0.9em;">${item.asset}</span></li>`
+            ).join('');
+            
+            summaryDiv.innerHTML = `
+                <p><strong>📦 Total Assets Checked:</strong> ${totalAssets}</p>
+                <p><strong>✅ Working Assets:</strong> ${workingAssets} (${percentage}%)</p>
+                <p><strong>❌ Broken Assets:</strong> ${brokenAssets.length}</p>
+                ${assetsList ? `<ul style="max-height: 300px; overflow-y: auto;">${assetsList}</ul>` : '<p style="color: #28a745;">🎉 No broken assets found!</p>'}
+            `;
+            progressDiv.innerHTML = `<p>✅ Asset hunt completed!</p>`;
+        }
+
+        async function checkMobileReady() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('mobileCheckResults');
+            const progressDiv = document.getElementById('mobileCheckProgress');
+            const summaryDiv = document.getElementById('mobileCheckSummary');
+            
+            resultsDiv.style.display = 'block';
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            let pagesWithViewport = 0;
+            let pagesWithResponsive = 0;
+            let pagesMissingMobile = [];
+            
+            progressDiv.innerHTML = `<p>Checking mobile readiness on ${pagesToCheck.length} pages...</p>`;
+            
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    
+                    const hasViewport = html.includes('viewport') && html.includes('width=device-width');
+                    const hasResponsiveCSS = html.includes('max-width') || html.includes('min-width') || html.includes('@media');
+                    const hasBootstrap = html.includes('bootstrap');
+                    
+                    if (hasViewport) pagesWithViewport++;
+                    if (hasResponsiveCSS || hasBootstrap) pagesWithResponsive++;
+                    
+                    if (!hasViewport) {
+                        pagesMissingMobile.push({ page, issue: 'Missing viewport meta tag' });
+                    }
+                } catch (error) {
+                    console.error(`Error checking ${page}:`, error);
+                }
+                await new Promise(resolve => setTimeout(resolve, 30));
+            }
+            
+            const viewportPercent = Math.round((pagesWithViewport / pagesToCheck.length) * 100);
+            const responsivePercent = Math.round((pagesWithResponsive / pagesToCheck.length) * 100);
+            
+            let issuesList = pagesMissingMobile.map(item => 
+                `<li><strong>${item.page}:</strong> ${item.issue}</li>`
+            ).join('');
+            
+            summaryDiv.innerHTML = `
+                <p><strong>📱 Mobile Readiness Report:</strong></p>
+                <ul>
+                    <li><strong>Viewport Meta Tag:</strong> ${pagesWithViewport}/${pagesToCheck.length} pages (${viewportPercent}%)</li>
+                    <li><strong>Responsive CSS Detected:</strong> ${pagesWithResponsive}/${pagesToCheck.length} pages (${responsivePercent}%)</li>
+                </ul>
+                ${issuesList ? `<p><strong>⚠️ Pages Missing Viewport:</strong></p><ul>${issuesList}</ul>` : '<p style="color: #28a745;">🎉 All pages are mobile-ready!</p>'}
+                <p style="margin-top: 15px; color: ${viewportPercent >= 90 ? '#28a745' : viewportPercent >= 70 ? '#ffc107' : '#dc3545'};">
+                    <strong>Mobile Readiness Score: ${viewportPercent}%</strong>
+                </p>
+            `;
+            progressDiv.innerHTML = `<p>✅ Mobile check completed!</p>`;
         }
 
         // Helper function to create results div
