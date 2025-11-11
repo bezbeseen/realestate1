@@ -176,6 +176,28 @@
         </button>
     </div>
 
+    <div class="button-container">
+        <button class="big-button" onclick="checkAnalytics()" style="background-color: #007bff;">
+            📊 Check Analytics Tracking
+        </button>
+    </div>
+
+    <div id="analyticsCheckResults" style="display: none;">
+        <div class="stats">
+            <h2>📊 Analytics Tracking Results</h2>
+            <div id="analyticsCheckProgress"></div>
+            <div id="analyticsCheckSummary"></div>
+        </div>
+        <div class="page-list" id="pagesWithAnalytics" style="display: none;">
+            <h3>✅ Pages With Analytics</h3>
+            <ul id="pagesWithAnalyticsList"></ul>
+        </div>
+        <div class="page-list" id="pagesMissingAnalytics" style="display: none;">
+            <h3>❌ Pages Missing Analytics</h3>
+            <ul id="pagesMissingAnalyticsList"></ul>
+        </div>
+    </div>
+
     <div id="linkCheckResults" style="display: none;">
         <div class="stats">
             <h2>🔗 Navigation Link Check Results</h2>
@@ -752,12 +774,25 @@
             const progressDiv = document.getElementById('duplicateContentProgress') || createProgressDiv('duplicateContentProgress');
             
             resultsDiv.style.display = 'block';
-            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const allPagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            
+            // Filter out include files, templates, data files, and system files
+            const pagesToCheck = allPagesToCheck.filter(page => {
+                return !page.includes('/includes/') && 
+                       !page.includes('/templates/') && 
+                       !page.includes('/data/') &&
+                       !page.includes('.xml') &&
+                       !page.includes('.txt') &&
+                       !page.includes('.json') &&
+                       !page.includes('yandex_verification') &&
+                       !page.includes('developer-tools');
+            });
+            
             const contentMap = new Map();
             const duplicates = [];
             let checkedPages = 0;
 
-            progressDiv.innerHTML = `<p>Analyzing content for ${pagesToCheck.length} pages...</p>`;
+            progressDiv.innerHTML = `<p>Analyzing ${pagesToCheck.length} actual pages (filtered out ${allPagesToCheck.length - pagesToCheck.length} system files)...</p>`;
 
             for (const page of pagesToCheck) {
                 try {
@@ -882,6 +917,123 @@
             
             resultsDiv.innerHTML = resultsHTML;
             progressDiv.innerHTML = `<p>✅ Includes usage analysis completed!</p>`;
+        }
+
+        async function checkAnalytics() {
+            if (!isAuthenticated) {
+                alert('Please enter the password first!');
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('analyticsCheckResults');
+            const progressDiv = document.getElementById('analyticsCheckProgress');
+            const summaryDiv = document.getElementById('analyticsCheckSummary');
+            const pagesWithAnalyticsContainer = document.getElementById('pagesWithAnalytics');
+            const pagesWithAnalyticsList = document.getElementById('pagesWithAnalyticsList');
+            const pagesMissingAnalyticsContainer = document.getElementById('pagesMissingAnalytics');
+            const pagesMissingAnalyticsList = document.getElementById('pagesMissingAnalyticsList');
+
+            resultsDiv.style.display = 'block';
+            pagesWithAnalyticsContainer.style.display = 'none';
+            pagesMissingAnalyticsContainer.style.display = 'none';
+            pagesWithAnalyticsList.innerHTML = '';
+            pagesMissingAnalyticsList.innerHTML = '';
+
+            const pagesToCheck = allPagesFromSitemap.length > 0 ? allPagesFromSitemap : allPages;
+            const totalPages = pagesToCheck.length;
+            let checkedPages = 0;
+            let pagesWithGTM = [];
+            let pagesWithGA4 = [];
+            let pagesWithClarity = [];
+            let pagesWithFullAnalytics = [];
+            let pagesMissingAnalytics = [];
+
+            progressDiv.innerHTML = `<p>Checking analytics on ${totalPages} pages...</p>`;
+
+            for (const page of pagesToCheck) {
+                try {
+                    const response = await fetch(page);
+                    const html = await response.text();
+                    
+                    // Check for analytics components
+                    const hasGTM = html.includes('GTM-NVJHBFZ5') || html.includes('googletagmanager.com/gtm.js');
+                    const hasGA4 = html.includes('G-1TBFCB5V4P') || html.includes('gtag/js?id=G-1TBFCB5V4P');
+                    const hasClarity = html.includes('clarity.ms') || html.includes('t4cugujh39');
+                    const hasGtagFunction = html.includes('function gtag()') || html.includes('window.dataLayer');
+                    
+                    if (hasGTM) pagesWithGTM.push(page);
+                    if (hasGA4) pagesWithGA4.push(page);
+                    if (hasClarity) pagesWithClarity.push(page);
+                    
+                    if (hasGTM && hasGA4 && hasClarity && hasGtagFunction) {
+                        pagesWithFullAnalytics.push(page);
+                    } else if (!hasGTM && !hasGA4) {
+                        pagesMissingAnalytics.push({
+                            page,
+                            missing: [
+                                !hasGTM && 'GTM',
+                                !hasGA4 && 'GA4',
+                                !hasClarity && 'Clarity',
+                                !hasGtagFunction && 'dataLayer'
+                            ].filter(Boolean)
+                        });
+                    }
+                } catch (error) {
+                    console.error(`Error checking ${page}:`, error);
+                    pagesMissingAnalytics.push({ page, missing: ['Error loading page'] });
+                }
+                
+                checkedPages++;
+                progressDiv.innerHTML = `<p>Checking analytics... (${checkedPages}/${totalPages})</p>`;
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+
+            // Display results
+            const gtmPercentage = Math.round((pagesWithGTM.length / totalPages) * 100);
+            const ga4Percentage = Math.round((pagesWithGA4.length / totalPages) * 100);
+            const clarityPercentage = Math.round((pagesWithClarity.length / totalPages) * 100);
+            const fullAnalyticsPercentage = Math.round((pagesWithFullAnalytics.length / totalPages) * 100);
+
+            summaryDiv.innerHTML = `
+                <p><strong>📊 Analytics Coverage:</strong></p>
+                <ul>
+                    <li><strong>🏷️ Google Tag Manager (GTM-NVJHBFZ5):</strong> ${pagesWithGTM.length}/${totalPages} pages (${gtmPercentage}%)</li>
+                    <li><strong>📈 Google Analytics 4 (G-1TBFCB5V4P):</strong> ${pagesWithGA4.length}/${totalPages} pages (${ga4Percentage}%)</li>
+                    <li><strong>👁️ Microsoft Clarity:</strong> ${pagesWithClarity.length}/${totalPages} pages (${clarityPercentage}%)</li>
+                    <li><strong>✅ Full Analytics Setup:</strong> ${pagesWithFullAnalytics.length}/${totalPages} pages (${fullAnalyticsPercentage}%)</li>
+                </ul>
+                <p><strong>🎯 Overall Analytics Score:</strong> <span style="font-size: 24px; color: ${fullAnalyticsPercentage >= 90 ? '#28a745' : fullAnalyticsPercentage >= 70 ? '#ffc107' : '#dc3545'};">${fullAnalyticsPercentage}%</span></p>
+            `;
+
+            if (pagesMissingAnalytics.length > 0) {
+                pagesMissingAnalyticsContainer.style.display = 'block';
+                pagesMissingAnalytics.forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${item.page}</strong><br><span style="color: #dc3545;">Missing: ${item.missing.join(', ')}</span>`;
+                    pagesMissingAnalyticsList.appendChild(li);
+                });
+            }
+
+            if (pagesWithFullAnalytics.length > 0) {
+                pagesWithAnalyticsContainer.style.display = 'block';
+                pagesWithFullAnalytics.slice(0, 10).forEach(page => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = page;
+                    a.textContent = page;
+                    a.target = '_blank';
+                    li.appendChild(a);
+                    li.innerHTML += ' <span style="color: #28a745;">✅ Complete</span>';
+                    pagesWithAnalyticsList.appendChild(li);
+                });
+                if (pagesWithFullAnalytics.length > 10) {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<em>... and ${pagesWithFullAnalytics.length - 10} more pages with full analytics</em>`;
+                    pagesWithAnalyticsList.appendChild(li);
+                }
+            }
+
+            progressDiv.innerHTML = `<p>✅ Analytics check completed!</p>`;
         }
 
         // Helper function to create results div

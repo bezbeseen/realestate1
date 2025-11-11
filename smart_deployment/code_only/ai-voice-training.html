@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="AI Voice Assistant Training Data for BE SEEN Print & Sign Quote Collection System">
+    <title>AI Voice Assistant Training - BE SEEN Print & Sign</title>
+    <style>
+        body {
+            font-family: Inter, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #ffffff;
+            color: #1f2937;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        
+        .instructions {
+            background: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            padding: 16px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        
+        .instructions h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #1e40af;
+        }
+        
+        .instructions ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin: 5px 0;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 30px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        thead {
+            background: #f3f4f6;
+        }
+        
+        th {
+            font-weight: 600;
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            color: #374151;
+        }
+        
+        td {
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+        
+        tbody tr:hover {
+            background: #f9fafb;
+        }
+        
+        td b {
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        .section-header {
+            background: #f9fafb !important;
+            font-weight: 600;
+        }
+        
+        code {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        
+        .meta-info {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Voice Assistant Training Data</h1>
+    <p class="subtitle">Quote Collection System for BE SEEN Print & Sign</p>
+    
+    <div class="meta-info">
+        <strong>⚠️ Training Document:</strong> This page contains structured training data for AI voice assistants. It defines field collection prompts, validation rules, and conversation flow for automated quote intake.
+    </div>
+    
+    <div class="instructions">
+        <h2>📋 System Instructions</h2>
+        <ul>
+            <li><strong>Purpose:</strong> Collect comprehensive quote information via natural voice conversation</li>
+            <li><strong>Tone:</strong> Professional, friendly, efficient - balance speed with accuracy</li>
+            <li><strong>Validation:</strong> Confirm critical fields (phone, email, dates) before proceeding</li>
+            <li><strong>Error Handling:</strong> Reprompt once if unclear; offer SMS/email fallback for complex data</li>
+            <li><strong>Branching Logic:</strong> Project category (printing vs signage) determines follow-up questions</li>
+            <li><strong>Completion:</strong> Confirm all required fields collected; offer to repeat summary if needed</li>
+        </ul>
+    </div>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Field (Key)</th>
+                <th>Primary Voice Prompt</th>
+                <th>Expected Format</th>
+                <th>Validation & Handoffs</th>
+                <th>Conditional Follow-ups (if needed)</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>first_name</b>, <b>last_name</b></td>
+                <td>"Hi! I'll grab a few details for your quote. What's your first and last name?"</td>
+                <td>Free text (names)</td>
+                <td>If only one token: accept as first_name; reprompt for last_name once.</td>
+                <td>"Got it. And your last name?"</td>
+                <td>"Alex Chen"</td>
+            </tr>
+            <tr>
+                <td><b>phone</b></td>
+                <td>"What's the best phone number for updates?"</td>
+                <td>Digits, spoken or DTMF</td>
+                <td>Normalize to E.164; if < 10 digits, reprompt once; then offer SMS link.</td>
+                <td>"I heard 408-555-0199. Is that right?" (yes/no)</td>
+                <td>"(408) 555-0199"</td>
+            </tr>
+            <tr>
+                <td><b>email</b></td>
+                <td>"What email should we use for proofs?"</td>
+                <td>Spelled or spoken; allow "at/dot"</td>
+                <td>Basic email pattern; if unclear, confirm slowly or offer texted link to confirm.</td>
+                <td>"I captured alex at pinepress dot com. Is that correct?"</td>
+                <td>"alex@pinepress.com"</td>
+            </tr>
+            <tr>
+                <td><b>project_category</b></td>
+                <td>"Is this for <b>printing</b> or <b>signage</b>?"</td>
+                <td>Enum: printing | signage</td>
+                <td>If unclear, give short examples of each.</td>
+                <td>"Printing like business cards or flyers; signage like window vinyl or panels."</td>
+                <td>"Signage"</td>
+            </tr>
+            <tr>
+                <td><b>description</b></td>
+                <td>"In a sentence, what are you looking for?"</td>
+                <td>Free text (≥ 5 chars)</td>
+                <td>If too short, reprompt: "Any key details I should note?"</td>
+                <td>—</td>
+                <td>"Window logo + hours for front door."</td>
+            </tr>
+            <tr>
+                <td><b>due_date</b></td>
+                <td>"When do you need this by?"</td>
+                <td>YYYY-MM-DD or natural date ("next Friday")</td>
+                <td>Parse to date; if past/invalid, reprompt. If ≤48h, set priority=rush.</td>
+                <td>"I can put this as Friday the 18th. Is that right?"</td>
+                <td>"Next Friday" → 2025-10-17</td>
+            </tr>
+
+            <!-- PRINTING branch -->
+            <tr>
+                <td colspan="6" class="section-header"><b>🖨️ Printing Branch (if project_category=printing)</b></td>
+            </tr>
+            <tr>
+                <td><b>product_type</b></td>
+                <td>"Which product: business cards, postcards, flyers, folders, banner, stickers, or other?"</td>
+                <td>Enum</td>
+                <td>If other → capture free text to product_type_other.</td>
+                <td>—</td>
+                <td>"Business cards"</td>
+            </tr>
+            <tr>
+                <td><b>sizes_requested</b>, <b>size_units</b></td>
+                <td>"What size do you need? You can say something like three-and-a-half by two inches."</td>
+                <td>WxH + units (in/ft/mm). Allow multiple.</td>
+                <td>Parse numerals; if units missing, ask: "Is that in inches or millimeters?"</td>
+                <td>"Any other sizes for this order?"</td>
+                <td>"3.5 by 2 inches"</td>
+            </tr>
+            <tr>
+                <td><b>quantity</b></td>
+                <td>"How many do you need?"</td>
+                <td>Integer ≥1</td>
+                <td>If range ("2–3 hundred"), map to upper bound and note in comments.</td>
+                <td>—</td>
+                <td>"500"</td>
+            </tr>
+            <tr>
+                <td><b>artwork_status</b></td>
+                <td>"Do you have print-ready artwork, or do you need design help?"</td>
+                <td>Enum: have_print_ready | need_design_help | not_sure</td>
+                <td>—</td>
+                <td>—</td>
+                <td>"Need design help."</td>
+            </tr>
+
+            <!-- SIGNAGE branch -->
+            <tr>
+                <td colspan="6" class="section-header"><b>🏢 Signage Branch (if project_category=signage)</b></td>
+            </tr>
+            <tr>
+                <td><b>signage_type</b></td>
+                <td>"What type of sign: window vinyl, banner, A-frame, channel letters, wall graphic, or panel sign?"</td>
+                <td>Enum (+ other)</td>
+                <td>If other → capture free text.</td>
+                <td>—</td>
+                <td>"Window vinyl"</td>
+            </tr>
+            <tr>
+                <td><b>install_needed</b></td>
+                <td>"Do you need installation as well?"</td>
+                <td>yes | no | unsure</td>
+                <td>If yes → ask location next.</td>
+                <td>—</td>
+                <td>"Yes"</td>
+            </tr>
+            <tr>
+                <td><b>install_location</b></td>
+                <td>"Where is this being installed: interior, exterior, vehicle, or other?"</td>
+                <td>Enum</td>
+                <td>—</td>
+                <td>"Any site details like tinted glass, stucco, or landlord guidelines?" → <i>site_notes</i></td>
+                <td>"Exterior"</td>
+            </tr>
+            <tr>
+                <td><b>sizes_requested</b>, <b>size_units</b></td>
+                <td>"What size or panel dimensions do you need? You can say width by height in inches or feet."</td>
+                <td>WxH + units; allow multiples</td>
+                <td>If multiple panes, collect list; confirm total.</td>
+                <td>"Any additional panels or sizes?"</td>
+                <td>"72 by 24 inches"</td>
+            </tr>
+
+            <!-- Optional helpers -->
+            <tr>
+                <td colspan="6" class="section-header"><b>📍 Optional Helper Fields</b></td>
+            </tr>
+            <tr>
+                <td><b>zip_or_city</b></td>
+                <td>"What city or ZIP is this for?"</td>
+                <td>Free text</td>
+                <td>—</td>
+                <td>—</td>
+                <td>"San Jose 95112"</td>
+            </tr>
+            <tr>
+                <td><b>preferred_contact</b></td>
+                <td>"Do you prefer a call, email, or text?"</td>
+                <td>phone | email | sms</td>
+                <td>Map "text me" → sms</td>
+                <td>—</td>
+                <td>"Text"</td>
+            </tr>
+            <tr>
+                <td><b>budget_range</b> (optional)</td>
+                <td>"Do you have a budget range in mind?"</td>
+                <td>Free text or range</td>
+                <td>—</td>
+                <td>—</td>
+                <td>"Around $600–800"</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="instructions">
+        <h2>🤖 Conversation Flow Guidelines</h2>
+        <ul>
+            <li><strong>Opening:</strong> Start with greeting + first_name/last_name collection</li>
+            <li><strong>Contact Info:</strong> Collect phone and email early (critical for follow-up)</li>
+            <li><strong>Project Classification:</strong> Ask printing vs signage to determine branch</li>
+            <li><strong>Branch-Specific:</strong> Follow printing or signage question path based on category</li>
+            <li><strong>Optional Fields:</strong> Collect location, budget, preferred contact as time permits</li>
+            <li><strong>Confirmation:</strong> Summarize key details and confirm before ending call</li>
+            <li><strong>Closing:</strong> "Great! We'll get you a quote within 24 hours. Thank you for contacting BE SEEN!"</li>
+        </ul>
+    </div>
+
+    <div class="instructions">
+        <h2>⚡ Quick Reference - Required Fields</h2>
+        <p><strong>All Projects:</strong></p>
+        <ul>
+            <li>first_name, last_name</li>
+            <li>phone, email</li>
+            <li>project_category (printing | signage)</li>
+            <li>description</li>
+            <li>due_date</li>
+        </ul>
+        
+        <p><strong>+ Printing Projects:</strong></p>
+        <ul>
+            <li>product_type</li>
+            <li>sizes_requested + size_units</li>
+            <li>quantity</li>
+            <li>artwork_status</li>
+        </ul>
+        
+        <p><strong>+ Signage Projects:</strong></p>
+        <ul>
+            <li>signage_type</li>
+            <li>install_needed</li>
+            <li>install_location (if install_needed=yes)</li>
+            <li>sizes_requested + size_units</li>
+        </ul>
+    </div>
+
+    <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 12px;">
+        <p><strong>BE SEEN Print & Sign</strong> | Santa Clara, CA | <a href="https://getbeseen.com" style="color: #3b82f6;">getbeseen.com</a></p>
+        <p>Last Updated: October 2025 | For AI Training Use Only</p>
+    </footer>
+</body>
+</html>
+
