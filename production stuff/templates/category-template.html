@@ -13,6 +13,7 @@
 
 	<title>{{page_title}}</title>
 	<meta name="description" content="{{seo_description}}">
+	<link rel="canonical" href="https://getbeseen.com/{{path}}">
 	{{> seo}}
 	
 	<!-- Analytics handled by analytics-loader.html include -->
@@ -79,20 +80,8 @@
 		<!-- sidebar mobile menu - end
 		================================================== -->
 
-		<!-- Breadcrumb -->
-		<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url('{{hero_image_url}}'); background-size: cover;">
-			<div class="container">
-				<h1 class="page_title mb-0">{{category_name}}</h1>
-				<p class="mb-0 subtitle-text text-white">{{seo_description}}</p>
-				<ul class="breadcrumb_nav ul_li_right clearfix">
-					{{#each breadcrumbs}}
-					<li>
-						{{#if link}}<a href="{{link}}">{{name}}</a>{{else}}{{name}}{{/if}}
-					</li>
-					{{/each}}
-				</ul>
-			</div>
-		</section>
+		<!-- Breadcrumb (shared product-banner format) -->
+		{{> product-banner banner_title=category_name}}
 
 		<!-- Product Grid -->
 		<section class="shop_section sec_ptb_130 bg_gray clearfix">

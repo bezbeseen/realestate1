@@ -13,6 +13,7 @@
 
 	<title>Custom Signs and Banners | BE SEEN</title>
 	<meta name="description" content="Durable and vibrant signs and banners for indoor and outdoor use.">
+	<link rel="canonical" href="https://getbeseen.com/products/signs.html">
 	<!-- Google tag (gtag.js) -->
 	<!-- Analytics handled by smart analytics-loader.html -->
 	
@@ -177,31 +178,7 @@
 	<meta name="yelp:categories" content="Printing Services, Signs, Marketing, Business Services">
 	<meta name="yelp:price_range" content="$$">
 	
-	<!-- Include Google My Business Integration -->
-	<script>
-	// Load Google My Business enhancements
-	document.addEventListener('DOMContentLoaded', function() {
-	    // Create and append Google My Business content
-	    fetch('/includes/google-my-business.html')
-	        .then(response => response.text())
-	        .then(html => {
-	            const div = document.createElement('div');
-	            div.innerHTML = html;
-	            document.head.appendChild(div);
-	        })
-	        .catch(error => console.log('GMB integration loaded via build process'));
-	    
-	    // Create and append Yelp optimization content  
-	    fetch('/includes/yelp-optimization.html')
-	        .then(response => response.text())
-	        .then(html => {
-	            const div = document.createElement('div');
-	            div.innerHTML = html;
-	            document.head.appendChild(div);
-	        })
-	        .catch(error => console.log('Yelp optimization loaded via build process'));
-	});
-	</script>	
+	<!-- Google My Business & Yelp schema are included via partials at build time where needed (e.g. index, location pages). Dynamic fetch removed to prevent duplicate/conflicting JSON-LD and SEMrush structured-data errors. -->	
 	<!-- Analytics handled by analytics-loader.html include -->
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -1195,23 +1172,33 @@
 		<!-- sidebar mobile menu - end
 		================================================== -->
 
-		<!-- Breadcrumb -->
-		<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url('/assets/images/backgrounds/bg.png'); background-size: cover;">
-			<div class="container">
-				<h1 class="page_title mb-0">Custom Signs &amp; Banners</h1>
-				<p class="mb-0 subtitle-text text-white">Durable and vibrant signs and banners for indoor and outdoor use.</p>
-				<ul class="breadcrumb_nav ul_li_right clearfix">
-					<li>
-						<a href="/index.html">Home</a>
-					</li>
-					<li>
-						<a href="/products.html">Products</a>
-					</li>
-					<li>
-						Signs
-					</li>
-				</ul>
-			</div>
+		<!-- Breadcrumb (shared product-banner format) -->
+		<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url('/assets/images/backgrounds/bg.png'); background-size:cover;">
+		  <div class="container">
+		    <div class="row">
+		      <div class="col-12">
+		        <h1 class="page_title mb-0">Custom Signs &amp; Banners</h1>
+		        <div class="row">
+		          <div class="col-lg-9 col-md-10 col-sm-12">
+		            <p class="mb-0 subtitle-text text-white" style="font-size: 1.35rem; line-height: 1.6; margin-top: 0.75rem;">Durable and vibrant signs and banners for indoor and outdoor use.</p>
+		          </div>
+		        </div>
+		        <div class="mt-4">
+		          <ul class="breadcrumb_nav ul_li_right clearfix">
+		            <li>
+		              <a href="/index.html">Home</a>
+		            </li>
+		            <li>
+		              <a href="/products.html">Products</a>
+		            </li>
+		            <li>
+		              Signs
+		            </li>
+		          </ul>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
 		</section>
 
 		<!-- Product Grid -->

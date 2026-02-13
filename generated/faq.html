@@ -188,31 +188,7 @@
     <meta name="yelp:categories" content="Printing Services, Signs, Marketing, Business Services">
     <meta name="yelp:price_range" content="$$">
     
-    <!-- Include Google My Business Integration -->
-    <script>
-    // Load Google My Business enhancements
-    document.addEventListener('DOMContentLoaded', function() {
-        // Create and append Google My Business content
-        fetch('/includes/google-my-business.html')
-            .then(response => response.text())
-            .then(html => {
-                const div = document.createElement('div');
-                div.innerHTML = html;
-                document.head.appendChild(div);
-            })
-            .catch(error => console.log('GMB integration loaded via build process'));
-        
-        // Create and append Yelp optimization content  
-        fetch('/includes/yelp-optimization.html')
-            .then(response => response.text())
-            .then(html => {
-                const div = document.createElement('div');
-                div.innerHTML = html;
-                document.head.appendChild(div);
-            })
-            .catch(error => console.log('Yelp optimization loaded via build process'));
-    });
-    </script>    
+    <!-- Google My Business & Yelp schema are included via partials at build time where needed (e.g. index, location pages). Dynamic fetch removed to prevent duplicate/conflicting JSON-LD and SEMrush structured-data errors. -->    
     <!-- Analytics handled by analytics-loader.html include -->
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

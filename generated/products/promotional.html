@@ -175,31 +175,7 @@
     <meta name="yelp:categories" content="Printing Services, Signs, Marketing, Business Services">
     <meta name="yelp:price_range" content="$$">
     
-    <!-- Include Google My Business Integration -->
-    <script>
-    // Load Google My Business enhancements
-    document.addEventListener('DOMContentLoaded', function() {
-        // Create and append Google My Business content
-        fetch('/includes/google-my-business.html')
-            .then(response => response.text())
-            .then(html => {
-                const div = document.createElement('div');
-                div.innerHTML = html;
-                document.head.appendChild(div);
-            })
-            .catch(error => console.log('GMB integration loaded via build process'));
-        
-        // Create and append Yelp optimization content  
-        fetch('/includes/yelp-optimization.html')
-            .then(response => response.text())
-            .then(html => {
-                const div = document.createElement('div');
-                div.innerHTML = html;
-                document.head.appendChild(div);
-            })
-            .catch(error => console.log('Yelp optimization loaded via build process'));
-    });
-    </script>    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <!-- Google My Business & Yelp schema are included via partials at build time where needed (e.g. index, location pages). Dynamic fetch removed to prevent duplicate/conflicting JSON-LD and SEMrush structured-data errors. -->    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/flaticon.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/fontawesome.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
@@ -413,9 +389,15 @@
         </div>
         <div class="mt-4">
           <ul class="breadcrumb_nav ul_li_right clearfix">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/products.html">Products</a></li>
-            <li>Promotional</li>
+            <li>
+              <a href="/index.html">Home</a>
+            </li>
+            <li>
+              <a href="/products.html">Products</a>
+            </li>
+            <li>
+              Promotional
+            </li>
           </ul>
         </div>
       </div>

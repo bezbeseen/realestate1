@@ -730,31 +730,7 @@
 	<meta name="yelp:categories" content="Printing Services, Signs, Marketing, Business Services">
 	<meta name="yelp:price_range" content="$$">
 	
-	<!-- Include Google My Business Integration -->
-	<script>
-	// Load Google My Business enhancements
-	document.addEventListener('DOMContentLoaded', function() {
-	    // Create and append Google My Business content
-	    fetch('/includes/google-my-business.html')
-	        .then(response => response.text())
-	        .then(html => {
-	            const div = document.createElement('div');
-	            div.innerHTML = html;
-	            document.head.appendChild(div);
-	        })
-	        .catch(error => console.log('GMB integration loaded via build process'));
-	    
-	    // Create and append Yelp optimization content  
-	    fetch('/includes/yelp-optimization.html')
-	        .then(response => response.text())
-	        .then(html => {
-	            const div = document.createElement('div');
-	            div.innerHTML = html;
-	            document.head.appendChild(div);
-	        })
-	        .catch(error => console.log('Yelp optimization loaded via build process'));
-	});
-	</script>
+	<!-- Google My Business & Yelp schema are included via partials at build time where needed (e.g. index, location pages). Dynamic fetch removed to prevent duplicate/conflicting JSON-LD and SEMrush structured-data errors. -->
 	<!-- 
 	📸 IMAGE LIBRARY - Centralized Image Management
 	This file used to contain the IMAGE_LIBRARY object, but it has been moved to /data/image-library.json.
@@ -1544,9 +1520,9 @@
 					<div class="col-lg-7 col-md-8 col-sm-9">
 						                        <div class="section_title text-center mb_50 wow fadeInUp2" data-wow-delay=".1s">
                             <h4 class="small_title">Our Core Features</h4>
-                            <h1 class="big_title mb-0">
+                            <h2 class="big_title mb-0">
                                 Experience Allows Us To Create Amazing Things
-                            </h1>
+                            </h2>
                             <span class="biggest_title">Features</span>
                         </div>
 					</div>
@@ -1760,7 +1736,7 @@
 					</div>
 					<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 order-lg-last">
 						<div class="benefits_image wow fadeInUp2" data-wow-delay=".1s">
-							<img src="/assets/images/services/team-working.jpg" alt="BE SEEN Team Working" class="img-fluid">
+							<img src="/assets/images/services/sign-banner.jpg" alt="BE SEEN Team Working" class="img-fluid">
 						</div>
 					</div>
 				</div>

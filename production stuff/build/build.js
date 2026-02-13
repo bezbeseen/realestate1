@@ -45,11 +45,12 @@ async function build() {
         const registerHelpers = new Function('Handlebars', 'IMAGE_LIBRARY', helpersScript);
         registerHelpers(Handlebars, IMAGE_LIBRARY);
         
-        // Clean and recreate the output directory
+        // Clean output directory (empty it instead of remove to avoid ENOTEMPTY on Google Drive/sync)
         if (fs.existsSync(config.outputDir)) {
-            fs.removeSync(config.outputDir);
+            fs.emptyDirSync(config.outputDir);
+        } else {
+            fs.ensureDirSync(config.outputDir);
         }
-        fs.ensureDirSync(config.outputDir);
 
         // Copy static assets
         if (fs.existsSync(config.assetsDir)) {
@@ -257,7 +258,16 @@ async function build() {
         const promotionalTemplatePath = path.join(config.templatesDir, 'promotional-template.html');
         if (fs.existsSync(promotionalTemplatePath)) {
             const promotionalTemplate = Handlebars.compile(fs.readFileSync(promotionalTemplatePath, 'utf8'));
-            const compiledHtml = promotionalTemplate({}); // No specific data needed for this page
+            const promotionalData = {
+                banner_title: 'Promotional Products',
+                banner_subtitle: 'Make your brand unforgettable with our custom promotional products, including apparel, pens, bags, and more. Perfect for events, giveaways, and boosting brand awareness.',
+                breadcrumbs: [
+                    { name: 'Home', link: '/index.html' },
+                    { name: 'Products', link: '/products.html' },
+                    { name: 'Promotional' }
+                ]
+            };
+            const compiledHtml = promotionalTemplate(promotionalData);
             const outputPath = path.join(config.outputDir, 'products', 'promotional.html');
             fs.ensureDirSync(path.dirname(outputPath));
             fs.writeFileSync(outputPath, compiledHtml);
@@ -471,6 +481,14 @@ async function build() {
         if (fs.existsSync(robotsSource)) {
             fs.copyFileSync(robotsSource, robotsDest);
             console.log('-> Copied robots.txt');
+        }
+
+        // Copy llms.txt (for LLM crawlers / SEMrush)
+        const llmsSource = path.join(__dirname, '..', 'llms.txt');
+        const llmsDest = path.join(config.outputDir, 'llms.txt');
+        if (fs.existsSync(llmsSource)) {
+            fs.copyFileSync(llmsSource, llmsDest);
+            console.log('-> Copied llms.txt');
         }
 
         // Copy BingSiteAuth.xml
