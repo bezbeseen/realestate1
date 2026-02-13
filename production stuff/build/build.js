@@ -473,6 +473,14 @@ async function build() {
             console.log('-> Copied robots.txt');
         }
 
+        // Copy BingSiteAuth.xml
+        const bingAuthSource = path.join(__dirname, '..', 'BingSiteAuth.xml');
+        const bingAuthDest = path.join(config.outputDir, 'BingSiteAuth.xml');
+        if (fs.existsSync(bingAuthSource)) {
+            fs.copyFileSync(bingAuthSource, bingAuthDest);
+            console.log('-> Copied BingSiteAuth.xml');
+        }
+
         // Copy favicon.ico to root
         const faviconSource = path.join(__dirname, '..', 'assets', 'images', 'favicon', 'favicon.ico');
         const faviconDest = path.join(config.outputDir, 'favicon.ico');
