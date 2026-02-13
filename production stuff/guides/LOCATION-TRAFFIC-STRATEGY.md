@@ -28,7 +28,7 @@ Your location pages are likely getting traffic from:
 <div class="local-cta-banner" style="background: linear-gradient(135deg, #007cba, #ff6b35); padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center;">
     <h3 style="color: white; margin-bottom: 10px;">🎯 Serving [CITY NAME] Since 1999</h3>
     <p style="color: white; margin-bottom: 15px;">Same-day service available • Free quotes • Local delivery</p>
-    <a href="tel:(669)273-1583" class="custom_btn bg_white" style="margin-right: 10px;">📞 Call Now</a>
+    <a href="tel:(669)272-2682" class="custom_btn bg_white" style="margin-right: 10px;">📞 Call Now</a>
     <a href="/contact.html" class="custom_btn bg_default_yellow">Get Free Quote</a>
 </div>
 ```

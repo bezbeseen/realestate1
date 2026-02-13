@@ -7,7 +7,7 @@
 #### **Business Information Setup:**
 - **Business Name**: BE SEEN
 - **Address**: 377 Laurelwood Road, Santa Clara, CA 95054
-- **Phone**: (669) 273-1583
+- **Phone**: (669) 272-2682
 - **Website**: https://getbeseen.com
 - **Hours**: Monday-Friday 8:00 AM - 5:00 PM
 
@@ -23,7 +23,7 @@
 Professional printing and marketing services in Santa Clara, serving all of Silicon Valley. We specialize in business cards, banners, signs, and promotional materials for local businesses and real estate professionals.
 
 🏢 Serving: Santa Clara, San Jose, Mountain View, Palo Alto, Sunnyvale, Cupertino
-📞 Call for same-day quotes: (669) 273-1583
+📞 Call for same-day quotes: (669) 272-2682
 🚚 Free delivery available for large orders
 ⭐ 25+ years of printing excellence
 
@@ -69,7 +69,7 @@ Specialties:
 "Thanks [Name]! We appreciate your feedback on our [product type]. We're always working to improve and would love to earn that 5th star next time! - BE SEEN Team"
 
 3-Star or Below:
-"Hi [Name], thank you for your honest feedback. We'd love to make this right and discuss how we can improve your experience. Please call us at (669) 273-1583. - BE SEEN Team"
+"Hi [Name], thank you for your honest feedback. We'd love to make this right and discuss how we can improve your experience. Please call us at (669) 272-2682. - BE SEEN Team"
 ```
 
 ---
@@ -155,13 +155,13 @@ Palo Alto:
 ```
 Headline 1: Professional Printing in Santa Clara
 Headline 2: Business Cards, Banners & Signs
-Headline 3: Call (669) 273-1583 for Quote
+Headline 3: Call (669) 272-2682 for Quote
 
 Description 1: 25+ years serving Silicon Valley businesses. Same-day service available. Free quotes and design consultation.
 Description 2: From business cards to large banners. Quality printing with fast turnaround. Serving Santa Clara County.
 
 Extensions:
-• Call: (669) 273-1583
+• Call: (669) 272-2682
 • Location: 377 Laurelwood Road, Santa Clara
 • Sitelinks: Business Cards | Banners | Real Estate | Contact
 ```
@@ -180,7 +180,7 @@ Description 2: Trusted by Silicon Valley real estate professionals. Fast turnaro
 
 #### **Location Page Enhancements for Paid Traffic:**
 - **Clear CTAs** above the fold
-- **Phone number prominent** (669) 273-1583
+- **Phone number prominent** (669) 272-2682
 - **Local testimonials** and case studies
 - **Quick quote forms**
 - **Google Maps integration**
@@ -270,7 +270,7 @@ gtag('event', 'conversion', {
 ## 📞 **CALL-TO-ACTION OPTIMIZATION**
 
 ### **Primary CTAs for All Platforms:**
-1. **"Get Free Quote"** - (669) 273-1583
+1. **"Get Free Quote"** - (669) 272-2682
 2. **"Same-Day Service Available"**
 3. **"Free Design Consultation"**
 4. **"Silicon Valley's Trusted Printer"**

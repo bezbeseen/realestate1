@@ -219,18 +219,18 @@
 					{{/if}}
 						<div class="service_listlayout_boxed wow fadeInUp2 clearfix" data-wow-delay=".{{add @index 3}}s">
 							<div class="item_image">
-								<a href="/services/{{this.fileName}}.html">
+								<a href="/services/{{this.id}}.html">
 									<img src="{{getWebsiteImage (lookup @root.serviceImages this.id)}}" alt="{{this.name}}">
 								</a>
 							</div>
 							<div class="item_content">
 								<h3 class="item_title">
-									<a href="/services/{{this.fileName}}.html">{{this.name}}</a>
+									<a href="/services/{{this.id}}.html">{{this.name}}</a>
 								</h3>
 								<p>
 									{{this.description}}
 								</p>
-								<a class="text_btn" href="/services/{{this.fileName}}.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a>
+								<a class="text_btn" href="/services/{{this.id}}.html"><span>Read More</span> <i class="far fa-arrow-right"></i></a>
 							</div>
 						</div>
 					{{#if @last}}

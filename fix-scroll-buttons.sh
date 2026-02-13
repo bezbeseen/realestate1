@@ -25,3 +25,5 @@ echo "   • Maintains JavaScript functionality"
 echo ""
 
 echo "✅ Scroll-to-top accessibility improvements complete!"
+
+

@@ -4,7 +4,7 @@
 
 ### 1. **NAP Consistency Issue - URGENT**
 - **Current Live Website Phone**: 408.896.8161 ❌
-- **Correct Phone Number**: (669) 273-1583 ✅
+- **Correct Phone Number**: (669) 272-2682 ✅
 - **Action Required**: Update live website to use correct phone number
 
 ### 2. **Google My Business Setup Required**
@@ -67,7 +67,7 @@
 
 **Business Name**: BE SEEN  
 **Address**: 377 Laurelwood Road, Santa Clara, CA 95054  
-**Phone**: (669) 273-1583  
+**Phone**: (669) 272-2682  
 **Email**: contact@getbeseen.com  
 **Website**: https://getbeseen.com
 
@@ -111,7 +111,7 @@ Ensure consistent NAP across these platforms:
 
 ### **Google Analytics Goals**
 - Local search traffic increase
-- Phone call conversions: (669) 273-1583
+- Phone call conversions: (669) 272-2682
 - Contact form submissions from local visitors
 - "Directions" clicks from GMB
 

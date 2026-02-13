@@ -56,7 +56,7 @@
 ```
 Headline 1: Santa Clara Printing Services
 Headline 2: Business Cards & Signs
-Headline 3: Call (669) 273-1583
+Headline 3: Call (669) 272-2682
 
 Description: 25+ years serving Silicon Valley. Same-day service available. 
 Free quotes on business cards, banners, and signs.
