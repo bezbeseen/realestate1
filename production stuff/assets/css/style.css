@@ -1841,7 +1841,8 @@ button {
   font-size: 16px;
   padding: 17px 35px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: #ffffff !important;
+  opacity: 1 !important;
 }
 .sidebar_mobile_menu .mobile_menu_list > ul > li:hover > a, .sidebar_mobile_menu .mobile_menu_list > ul > li.active > a {
   color: #ffffff;
@@ -1874,7 +1875,8 @@ button {
   font-size: 15px;
   padding: 12px 35px;
   padding-left: 45px;
-  color: rgba(255, 255, 255, 0.6);
+  color: #ffffff !important;
+  opacity: 1 !important;
 }
 .sidebar_mobile_menu .mobile_menu_list .dropdown-menu > li:hover > a, .sidebar_mobile_menu .mobile_menu_list .dropdown-menu > li.active > a {
   color: #ffffff;
@@ -8465,5 +8467,98 @@ blockquote .blockquote_admin i {
 /* ====================================================================================================
 9 - media screen and (max-width: 320px) - end
 ==================================================================================================== */
+
+/* ====================================================================================================
+Link Theme Colors - Override default blue links to match theme
+==================================================================================================== */
+
+/* Header contact info links */
+.header_contact_info a,
+.header_top a {
+  color: #666666 !important;
+  transition: color 0.3s ease;
+}
+
+.header_contact_info a:hover,
+.header_top a:hover {
+  color: #ff4328 !important;
+  text-decoration: none;
+}
+
+/* Contact page info links */
+.contact_information_list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact_information_list a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact_information_list .item_content p {
+  color: #ff4328;
+}
+
+/* Contact info links */
+.contact_info a,
+.contact_info_box a,
+.contact_info_list a,
+.contact_area a:not(.custom_btn),
+.footer_widget a:not(.custom_btn),
+.info_box_iconbox a,
+.iconbox_item a:not(.custom_btn) {
+  color: #ff4328;
+  transition: color 0.3s ease;
+}
+
+.contact_info a:hover,
+.contact_info_box a:hover,
+.contact_info_list a:hover,
+.contact_area a:not(.custom_btn):hover,
+.footer_widget a:not(.custom_btn):hover,
+.info_box_iconbox a:hover,
+.iconbox_item a:not(.custom_btn):hover {
+  color: #e63920;
+  text-decoration: none;
+}
+
+/* General content area links */
+.content_area a:not(.custom_btn):not(.btn),
+.section_content a:not(.custom_btn):not(.btn),
+p a:not(.custom_btn):not(.btn) {
+  color: #ff4328;
+}
+
+.content_area a:not(.custom_btn):not(.btn):hover,
+.section_content a:not(.custom_btn):not(.btn):hover,
+p a:not(.custom_btn):not(.btn):hover {
+  color: #e63920;
+  text-decoration: underline;
+}
+
+/* FAQ and info links */
+.faq_section a,
+.accordion_body a,
+.panel-body a {
+  color: #ff4328;
+}
+
+.faq_section a:hover,
+.accordion_body a:hover,
+.panel-body a:hover {
+  color: #e63920;
+}
+
+/* Location page links */
+.location_info a,
+.location_details a:not(.custom_btn) {
+  color: #ff4328;
+}
+
+.location_info a:hover,
+.location_details a:not(.custom_btn):hover {
+  color: #e63920;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -176,7 +176,16 @@
 
         <!-- google map - start -->
         <div class="map_section wow fadeIn clearfix" data-wow-delay=".1s">
-            <div id="mapBox" data-lat="37.3831949" data-lon="-121.9417201" data-zoom="12" data-info="377 Laurelwood road Santa Clara CA 95054 " data-mlat="37.3831949" data-mlon="-121.9417201"></div>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.123456!2d-121.9417201!3d37.3831949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc9c5e7a3c6c5%3A0x1234567890abcdef!2s377%20Laurelwood%20Rd%2C%20Santa%20Clara%2C%20CA%2095054!5e0!3m2!1sen!2sus!4v1234567890"
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="BE SEEN Location - 377 Laurelwood Road, Santa Clara, CA">
+            </iframe>
         </div>
         <!-- google map - end -->
 
@@ -197,9 +206,7 @@
     <!-- mobile menu - jquery include -->
     <script src="assets/js/mCustomScrollbar.js"></script>
 
-    <!-- google map - jquery include -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-_af_N7ojIDvUo5yEbHKDtLhC2-sANvM"></script>
-    <script src="assets/js/gmaps.min.js"></script>
+    <!-- google map scripts removed - using iframe embed instead -->
 
     <!-- nice select - jquery include -->
     <script src="assets/js/nice-select.min.js"></script>
