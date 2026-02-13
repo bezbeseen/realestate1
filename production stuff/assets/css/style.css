@@ -1702,8 +1702,13 @@ button {
   width: 255px;
   display: flex;
   margin: -10px 0px;
+  padding: 10px 15px 10px 0;
   align-items: center;
   border-right: 1px solid #e2e2e2;
+}
+.secondary_header .brand_logo img {
+  max-height: 60px;
+  width: auto;
 }
 .secondary_header .header_icon_btns {
   width: 205px;
@@ -8559,6 +8564,32 @@ p a:not(.custom_btn):not(.btn):hover {
 .location_info a:hover,
 .location_details a:not(.custom_btn):hover {
   color: #e63920;
+}
+
+/* Make location cards fully clickable */
+.feature_listlayout_boxed2 {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature_listlayout_boxed2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature_listlayout_boxed2 .text_btn {
+  position: static;
+}
+
+.feature_listlayout_boxed2 .text_btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

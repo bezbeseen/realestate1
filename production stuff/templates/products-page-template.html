@@ -38,6 +38,7 @@
 
 	<!-- custom - css include -->
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/bez.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/product-pages.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/product-custom.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/product-image-styles.css">
@@ -47,6 +48,8 @@
 </head>
 
 <body>
+	{{> gtm-noscript}}
+	
 	<!-- backtotop - start -->
 	<div id="thetop"></div>
 	<div id="backtotop">
@@ -79,29 +82,18 @@
 
 		
 
-		<!-- banner_section - start ================================================== -->
-		<section class="banner_section home_two_banner clearfix" >
+		<!-- breadcrumb_section - start ================================================== -->
+		<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url('/assets/images/backgrounds/bg.png'); background-size: cover; background-position: center;">
 			<div class="container">
-				<div class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
-					<div class="col-lg-7 col-md-8 col-sm-12 col-xs-12">
-						<div class="slider_content text-white">
-							<h4 class="small_title">BE SEEN PRODUCTS</h4>
-							<h3 class="item_title text-uppercase text-white mb-0" style="font-size: 6rem;">Printing, Signs & Promotional Items</h3>
-							<p> High-quality, custom solutions to make your brand stand out. </p>
-						</div>
-
-						<ul class="breadcrumb_nav ul_li_right clearfix">
-							{{#each breadcrumbs}}
-							<li>
-								{{#if link}}<a href="{{link}}">{{name}}</a>{{else}}{{name}}{{/if}}
-							</li>
-							{{/each}}
-						</ul>
-					</div>
-				</div>
+				<h1 class="page_title mb-0">Printing, Signs & Promotional Items</h1>
+				<p class="mb-0 subtitle-text text-white">High-quality, custom solutions to make your brand stand out.</p>
+				<ul class="breadcrumb_nav ul_li_right clearfix">
+					<li><a href="/">Home</a></li>
+					<li>Products</li>
+				</ul>
 			</div>
 		</section>
-		<!-- banner_section - end ================================================== -->
+		<!-- breadcrumb_section - end ================================================== -->
 
 		<!-- service_section - start ================================================== -->
 		<section class="shop_section sec_ptb_130 bg_gray clearfix" id="products">
