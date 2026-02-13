@@ -219,6 +219,559 @@
 	        .catch(error => console.log('Yelp optimization loaded via build process'));
 	});
 	</script>
+	<!-- Analytics -->
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NVJHBFZ5');</script>
+	<!-- End Google Tag Manager -->
+	
+	<!-- ENHANCED GA4 SETUP WITH COMPREHENSIVE TRACKING -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1TBFCB5V4P"></script>
+	<script>
+	// Initialize GA4
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	
+	// Define helper functions
+	function getDescriptivePageInfo() {
+	    const path = window.location.pathname.toLowerCase();
+	    const title = document.title || 'Untitled Page';
+	    
+	    // Homepage
+	    if (path === '/' || path === '/index.html' || path === '') {
+	        return { category: 'homepage', type: 'landing', description: 'Homepage - Main Landing Page', title: title, conversionScore: 5 };
+	    }
+	    
+	    // Products
+	    if (path.includes('/products/')) {
+	        if (path.includes('/business-cards')) {
+	            return { category: 'products', type: 'product_detail', description: 'Business Cards - Product Detail Page', title: title, conversionScore: 9 };
+	        } else if (path.includes('/prints.html')) {
+	            return { category: 'products', type: 'category', description: 'Prints Category - All Print Products', title: title, conversionScore: 7 };
+	        } else if (path.includes('/signs.html')) {
+	            return { category: 'products', type: 'category', description: 'Signs Category - All Sign Products', title: title, conversionScore: 7 };
+	        } else if (path.includes('/promotional.html')) {
+	            return { category: 'products', type: 'category', description: 'Promotional Products Category', title: title, conversionScore: 7 };
+	        } else if (path.includes('/materials.html')) {
+	            return { category: 'products', type: 'category', description: 'Materials Category', title: title, conversionScore: 6 };
+	        } else if (path.includes('/real-estate.html')) {
+	            return { category: 'products', type: 'category', description: 'Real Estate Products Category', title: title, conversionScore: 8 };
+	        } else {
+	            const productName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+	            return { category: 'products', type: 'product_detail', description: `Product: ${productName}`, title: title, conversionScore: 8 };
+	        }
+	    }
+	    
+	    // Services
+	    if (path.includes('/services') || path === '/services.html') {
+	        if (path === '/services.html' || path === '/services') {
+	            return { category: 'services', type: 'category', description: 'All Services Overview', title: title, conversionScore: 6 };
+	        } else {
+	            const serviceName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+	            return { category: 'services', type: 'service_detail', description: `Service: ${serviceName}`, title: title, conversionScore: 7 };
+	        }
+	    }
+	    
+	    // Industries
+	    if (path.includes('/industries/')) {
+	        if (path.includes('/industries.html')) {
+	            return { category: 'industries', type: 'category', description: 'Industries Overview', title: title, conversionScore: 6 };
+	        } else {
+	            const industryName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+	            return { category: 'industries', type: 'industry_detail', description: `Industry: ${industryName}`, title: title, conversionScore: 7 };
+	        }
+	    }
+	    
+	    // Locations
+	    if (path.includes('/locations/')) {
+	        const locationName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ');
+	        if (locationName && locationName !== 'index' && locationName !== '') {
+	            return { category: 'locations', type: 'local_landing', description: `Location: ${locationName}`, title: title, conversionScore: 8 };
+	        } else {
+	            return { category: 'locations', type: 'locations_index', description: 'All Locations - Service Areas', title: title, conversionScore: 6 };
+	        }
+	    }
+	    
+	    // Blog
+	    if (path.includes('/blog')) {
+	        if (path.includes('/blog.html')) {
+	            return { category: 'content', type: 'blog_index', description: 'Blog - All Posts', title: title, conversionScore: 3 };
+	        } else {
+	            const postTitle = title.split(' | ')[0] || 'Blog Post';
+	            return { category: 'content', type: 'blog_post', description: `Blog Post: ${postTitle}`, title: title, conversionScore: 4 };
+	        }
+	    }
+	    
+	    // High-value pages
+	    if (path.includes('/contact')) return { category: 'conversion', type: 'high_intent', description: 'Contact Page', title: title, conversionScore: 10 };
+	    if (path.includes('/about')) return { category: 'company', type: 'informational', description: 'About Us Page', title: title, conversionScore: 4 };
+	    if (path.includes('/cart')) return { category: 'ecommerce', type: 'cart', description: 'Shopping Cart', title: title, conversionScore: 9 };
+	    if (path.includes('/checkout')) return { category: 'ecommerce', type: 'checkout', description: 'Checkout Process', title: title, conversionScore: 10 };
+	    if (path.includes('/success')) return { category: 'ecommerce', type: 'success', description: 'Order Success', title: title, conversionScore: 10 };
+	    
+	    // Fallback
+	    const pageName = path.split('/').pop().replace('.html', '').replace(/-/g, ' ') || 'Unknown Page';
+	    return { category: 'general', type: 'standard', description: `Page: ${pageName}`, title: title, conversionScore: 3 };
+	}
+	
+	// Configure GA4 with enhanced page title tracking
+	gtag('config', 'G-1TBFCB5V4P', {
+	    page_title: document.title,
+	    page_location: window.location.href,
+	    page_path: window.location.pathname,
+	    send_page_view: true,
+	    allow_enhanced_conversions: true,
+	    cookie_expires: 63072000,
+	    custom_map: {
+	        'custom_dimension_1': 'page_title',
+	        'custom_dimension_2': 'page_category'
+	    }
+	});
+	
+	// Send explicit page view with enhanced title tracking
+	const initialPageInfo = getDescriptivePageInfo();
+	gtag('event', 'page_view', {
+	    page_title: document.title,
+	    page_location: window.location.href,
+	    page_path: window.location.pathname,
+	    page_category: initialPageInfo.category,
+	    page_type: initialPageInfo.type,
+	    page_description: initialPageInfo.description,
+	    send_to: 'G-1TBFCB5V4P'
+	});
+	
+	// Additional title tracking for debugging
+	gtag('event', 'page_title_debug', {
+	    event_category: 'debugging',
+	    event_label: document.title,
+	    page_title_length: document.title.length,
+	    page_url: window.location.href,
+	    send_to: 'G-1TBFCB5V4P'
+	});
+	
+	console.log('✅ FRESH GA4 LOADED: G-1TBFCB5V4P');
+	
+	// Enhanced page title tracking after DOM loads
+	document.addEventListener('DOMContentLoaded', function() {
+	    // Wait a moment for any dynamic title changes
+	    setTimeout(function() {
+	        const finalTitle = document.title;
+	        const finalPageInfo = getDescriptivePageInfo();
+	        
+	        // Send comprehensive page data
+	        gtag('event', 'page_loaded_with_title', {
+	            event_category: 'page_tracking',
+	            event_label: finalTitle,
+	            page_title: finalTitle,
+	            page_category: finalPageInfo.category,
+	            page_type: finalPageInfo.type,
+	            page_description: finalPageInfo.description,
+	            page_url: window.location.href,
+	            page_path: window.location.pathname,
+	            title_character_count: finalTitle.length,
+	            has_title: finalTitle.length > 0,
+	            send_to: 'G-1TBFCB5V4P'
+	        });
+	        
+	        console.log('📊 GA4 Page Title Tracked:', {
+	            title: finalTitle,
+	            category: finalPageInfo.category,
+	            type: finalPageInfo.type,
+	            url: window.location.href
+	        });
+	        
+	    }, 500); // Wait 500ms for any dynamic content
+	});
+	
+	// Load Microsoft Clarity
+	(function(c,l,a,r,i,t,y){
+	    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+	    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+	    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+	})(window, document, "clarity", "script", "t4cugujh39");
+	
+	console.log('👁️ Microsoft Clarity loaded: t4cugujh39');
+	
+	// Send descriptive page view
+	const pageInfo = getDescriptivePageInfo();
+	gtag('event', 'descriptive_page_view', {
+	    'page_category': pageInfo.category,
+	    'page_type': pageInfo.type,
+	    'page_description': pageInfo.description,
+	    'conversion_potential': pageInfo.conversionScore,
+	    'business_vertical': 'printing_services'
+	});
+	
+	console.log('📊 Descriptive page view sent:', pageInfo.description);
+	
+	// Enhanced Click Tracking
+	document.addEventListener('DOMContentLoaded', function() {
+	    console.log('🚀 Enhanced Analytics Ready');
+	    
+	    document.addEventListener('click', function(e) {
+	        const element = e.target.closest('a, button');
+	        if (!element) return;
+	        
+	        const text = element.textContent.trim().toLowerCase();
+	        const href = element.getAttribute('href') || '';
+	        const pageInfo = getDescriptivePageInfo();
+	        
+	        // Quote/Get Quote CTAs (Very High Value)
+	        if (text.includes('quote') || text.includes('get quote')) {
+	            gtag('event', 'cta_quote_request', {
+	                'button_text': element.textContent.trim(),
+	                'page_category': pageInfo.category,
+	                'page_description': pageInfo.description,
+	                'conversion_intent': 'very_high',
+	                'cta_type': 'quote_request'
+	            });
+	            
+	            // Also track as conversion
+	            gtag('event', 'conversion', {
+	                'currency': 'USD',
+	                'value': 50.00,
+	                'conversion_type': 'quote_request',
+	                'source_page': pageInfo.description
+	            });
+	            
+	            console.log('🎯 QUOTE CTA tracked:', element.textContent.trim());
+	        }
+	        
+	        // Contact Us CTAs (Very High Value)
+	        else if (text.includes('contact') && !href.includes('mailto:')) {
+	            gtag('event', 'cta_contact', {
+	                'button_text': element.textContent.trim(),
+	                'page_category': pageInfo.category,
+	                'page_description': pageInfo.description,
+	                'conversion_intent': 'very_high',
+	                'cta_type': 'contact_request'
+	            });
+	            console.log('🎯 CONTACT CTA tracked:', element.textContent.trim());
+	        }
+	        
+	        // Phone CTAs (Very High Value)
+	        else if (href.includes('tel:')) {
+	            gtag('event', 'cta_phone_call', {
+	                'phone_number': href.replace('tel:', ''),
+	                'button_text': element.textContent.trim(),
+	                'page_description': pageInfo.description,
+	                'conversion_intent': 'very_high',
+	                'cta_type': 'phone_call'
+	            });
+	            
+	            // Also track as conversion
+	            gtag('event', 'conversion', {
+	                'currency': 'USD',
+	                'value': 100.00,
+	                'conversion_type': 'phone_call',
+	                'source_page': pageInfo.description
+	            });
+	            
+	            console.log('📞 PHONE CTA tracked:', href);
+	        }
+	        
+	        // Email CTAs (High Value)
+	        else if (href.includes('mailto:')) {
+	            gtag('event', 'cta_email', {
+	                'email_address': href.replace('mailto:', ''),
+	                'button_text': element.textContent.trim(),
+	                'page_description': pageInfo.description,
+	                'conversion_intent': 'high',
+	                'cta_type': 'email_contact'
+	            });
+	            console.log('📧 EMAIL CTA tracked:', href);
+	        }
+	        
+	        // Main Navigation Menu
+	        else if (element.closest('nav, .navbar, .main_menu')) {
+	            gtag('event', 'navigation_main_menu', {
+	                'nav_item_text': element.textContent.trim(),
+	                'nav_destination': href,
+	                'current_page': pageInfo.description,
+	                'nav_type': 'main_menu'
+	            });
+	            console.log('🧭 MAIN NAV tracked:', element.textContent.trim());
+	        }
+	        
+	        // Footer Navigation
+	        else if (element.closest('footer, .footer')) {
+	            gtag('event', 'navigation_footer', {
+	                'nav_item_text': element.textContent.trim(),
+	                'nav_destination': href,
+	                'current_page': pageInfo.description,
+	                'nav_type': 'footer'
+	            });
+	            console.log('🧭 FOOTER NAV tracked:', element.textContent.trim());
+	        }
+	        
+	        // Product Category Navigation
+	        else if (href.includes('/products/') && !href.includes('.html')) {
+	            gtag('event', 'navigation_product_category', {
+	                'product_category': href.split('/').pop(),
+	                'nav_item_text': element.textContent.trim(),
+	                'current_page': pageInfo.description
+	            });
+	            console.log('📦 PRODUCT NAV tracked:', element.textContent.trim());
+	        }
+	        
+	        // Service Category Navigation
+	        else if (href.includes('/services/') && !href.includes('.html')) {
+	            gtag('event', 'navigation_service_category', {
+	                'service_category': href.split('/').pop(),
+	                'nav_item_text': element.textContent.trim(),
+	                'current_page': pageInfo.description
+	            });
+	            console.log('⚙️ SERVICE NAV tracked:', element.textContent.trim());
+	        }
+	        
+	        // Read More / Learn More CTAs
+	        else if (text.includes('read more') || text.includes('learn more')) {
+	            gtag('event', 'cta_learn_more', {
+	                'button_text': element.textContent.trim(),
+	                'destination_url': href,
+	                'page_category': pageInfo.category,
+	                'conversion_intent': 'medium'
+	            });
+	            console.log('📚 LEARN MORE tracked:', element.textContent.trim());
+	        }
+	        
+	        // External Links (Promo Store, etc.)
+	        else if (href.startsWith('http') && !href.includes('getbeseen.com')) {
+	            gtag('event', 'external_link_click', {
+	                'link_url': href,
+	                'link_text': element.textContent.trim(),
+	                'page_location': window.location.href
+	            });
+	            console.log('🔗 EXTERNAL LINK tracked:', element.textContent.trim());
+	        }
+	        
+	        // Internal Page Navigation
+	        else if (href && !href.startsWith('http') && !href.startsWith('#')) {
+	            gtag('event', 'internal_navigation', {
+	                'link_text': element.textContent.trim(),
+	                'destination_url': href,
+	                'current_page': pageInfo.description
+	            });
+	            console.log('🏠 INTERNAL NAV tracked:', element.textContent.trim());
+	        }
+	    });
+	    
+	    // Enhanced Form Tracking with Lead Classification
+	    document.addEventListener('submit', function(e) {
+	        const form = e.target;
+	        if (form.tagName === 'FORM') {
+	            const formName = form.name || form.id || 'unnamed_form';
+	            const formData = new FormData(form);
+	            const fieldCount = Array.from(formData.keys()).length;
+	            const pageInfo = getDescriptivePageInfo();
+	            
+	            const email = formData.get('email') || formData.get('Email') || '';
+	            const phone = formData.get('phone') || formData.get('Phone') || '';
+	            const company = formData.get('company') || formData.get('Company') || '';
+	            const message = formData.get('message') || formData.get('Message') || '';
+	            
+	            // Generate unique lead ID
+	            const leadId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+	            
+	            // Mark user as lead in localStorage
+	            if (email || phone) {
+	                localStorage.setItem('beseen_is_lead', 'true');
+	                localStorage.setItem('beseen_lead_id', leadId);
+	                localStorage.setItem('beseen_lead_date', new Date().toISOString());
+	            }
+	            
+	            // Calculate lead score
+	            let leadScore = pageInfo.conversionScore || 5;
+	            if (email) leadScore += 3;
+	            if (phone) leadScore += 4;
+	            if (company) leadScore += 2;
+	            if (message.length > 50) leadScore += 2;
+	            
+	            // Enhanced form submission tracking
+	            gtag('event', 'form_submit_enhanced', {
+	                'form_name': formName,
+	                'form_fields': fieldCount,
+	                'page_category': pageInfo.category,
+	                'page_description': pageInfo.description,
+	                'has_email': !!email,
+	                'has_phone': !!phone,
+	                'has_company': !!company,
+	                'message_length': message.length,
+	                'lead_id': leadId,
+	                'lead_score': Math.min(leadScore, 10),
+	                'conversion_value': pageInfo.conversionScore
+	            });
+	            
+	            // Track as high-value conversion
+	            gtag('event', 'conversion', {
+	                'currency': 'USD',
+	                'value': pageInfo.conversionScore * 10,
+	                'conversion_type': 'lead_generation',
+	                'lead_quality': Math.min(leadScore, 10),
+	                'source_page': pageInfo.description
+	            });
+	            
+	            console.log('📝 LEAD CAPTURED! Form:', formName, 'Score:', Math.min(leadScore, 10));
+	        }
+	    });
+	    
+	    // Enhanced User Behavior Tracking
+	    let userId = localStorage.getItem('beseen_user_id');
+	    if (!userId) {
+	        userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+	        localStorage.setItem('beseen_user_id', userId);
+	    }
+	    
+	    const visitCount = parseInt(localStorage.getItem('beseen_visit_count') || '0') + 1;
+	    localStorage.setItem('beseen_visit_count', visitCount.toString());
+	    
+	    // Determine user classification
+	    const isLead = localStorage.getItem('beseen_is_lead') === 'true';
+	    const leadId = localStorage.getItem('beseen_lead_id');
+	    const leadDate = localStorage.getItem('beseen_lead_date');
+	    
+	    let userType = 'new_visitor';
+	    if (visitCount > 1) userType = 'returning_visitor';
+	    if (isLead) userType = 'qualified_lead';
+	    if (visitCount >= 5) userType = 'engaged_visitor';
+	    if (isLead && visitCount >= 3) userType = 'hot_lead';
+	    
+	    // User journey stage
+	    let journeyStage = 'awareness';
+	    if (visitCount <= 3) journeyStage = 'consideration';
+	    if (visitCount <= 7 || isLead) journeyStage = 'evaluation';
+	    if (isLead && visitCount >= 3) journeyStage = 'decision';
+	    
+	    // Device and Browser Detection
+	    const userAgent = navigator.userAgent;
+	    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+	    const isTablet = /iPad|Android(?=.*Tablet)|Windows NT.*Touch/i.test(userAgent);
+	    const isDesktop = !isMobile && !isTablet;
+	    
+	    let deviceType = 'desktop';
+	    if (isMobile) deviceType = 'mobile';
+	    if (isTablet) deviceType = 'tablet';
+	    
+	    // Browser detection
+	    let browser = 'unknown';
+	    if (userAgent.includes('Chrome')) browser = 'chrome';
+	    else if (userAgent.includes('Firefox')) browser = 'firefox';
+	    else if (userAgent.includes('Safari')) browser = 'safari';
+	    else if (userAgent.includes('Edge')) browser = 'edge';
+	    
+	    // Operating system detection
+	    let os = 'unknown';
+	    if (userAgent.includes('Windows')) os = 'windows';
+	    else if (userAgent.includes('Mac')) os = 'mac';
+	    else if (userAgent.includes('Linux')) os = 'linux';
+	    else if (userAgent.includes('Android')) os = 'android';
+	    else if (userAgent.includes('iOS')) os = 'ios';
+	    
+	    gtag('event', 'user_properties', {
+	        'user_id': userId,
+	        'visit_count': visitCount,
+	        'user_type': userType,
+	        'user_journey_stage': journeyStage,
+	        'is_qualified_lead': isLead,
+	        'lead_id': leadId || null,
+	        'days_since_lead': leadDate ? Math.floor((Date.now() - new Date(leadDate)) / (1000 * 60 * 60 * 24)) : null,
+	        'device_type': deviceType,
+	        'browser': browser,
+	        'operating_system': os,
+	        'screen_resolution': window.screen.width + 'x' + window.screen.height,
+	        'viewport_size': window.innerWidth + 'x' + window.innerHeight
+	    });
+	    
+	    // Send device-specific tracking
+	    gtag('event', 'device_info', {
+	        'device_type': deviceType,
+	        'browser': browser,
+	        'operating_system': os,
+	        'screen_width': window.screen.width,
+	        'screen_height': window.screen.height,
+	        'viewport_width': window.innerWidth,
+	        'viewport_height': window.innerHeight,
+	        'user_agent': userAgent.substring(0, 100) // Truncated for privacy
+	    });
+	    
+	    // Traffic Source Detection
+	    const referrer = document.referrer.toLowerCase();
+	    const urlParams = new URLSearchParams(window.location.search);
+	    
+	    let trafficSource = 'direct';
+	    let trafficMedium = 'none';
+	    let trafficCampaign = 'none';
+	    
+	    // Google sources
+	    if (referrer.includes('google.com')) {
+	        trafficSource = 'google';
+	        trafficMedium = referrer.includes('/search') ? 'organic_search' : 'google_other';
+	    }
+	    // Bing sources
+	    else if (referrer.includes('bing.com')) {
+	        trafficSource = 'bing';
+	        trafficMedium = 'organic_search';
+	    }
+	    // Yelp
+	    else if (referrer.includes('yelp.com')) {
+	        trafficSource = 'yelp';
+	        trafficMedium = 'business_listing';
+	    }
+	    // Social media
+	    else if (referrer.includes('facebook.com')) {
+	        trafficSource = 'facebook';
+	        trafficMedium = 'social';
+	    }
+	    else if (referrer.includes('instagram.com')) {
+	        trafficSource = 'instagram';
+	        trafficMedium = 'social';
+	    }
+	    else if (referrer.includes('linkedin.com')) {
+	        trafficSource = 'linkedin';
+	        trafficMedium = 'social';
+	    }
+	    // Email
+	    else if (referrer.includes('mail.') || referrer.includes('gmail.') || referrer.includes('outlook.')) {
+	        trafficSource = 'email';
+	        trafficMedium = 'email';
+	    }
+	    // Other websites
+	    else if (referrer && referrer !== '') {
+	        trafficSource = 'referral';
+	        trafficMedium = 'website';
+	    }
+	    
+	    // Check for UTM parameters
+	    const utmSource = urlParams.get('utm_source');
+	    const utmMedium = urlParams.get('utm_medium');
+	    const utmCampaign = urlParams.get('utm_campaign');
+	    
+	    if (utmSource) trafficSource = utmSource;
+	    if (utmMedium) trafficMedium = utmMedium;
+	    if (utmCampaign) trafficCampaign = utmCampaign;
+	    
+	    // Enhanced traffic source tracking
+	    gtag('event', 'traffic_source_analysis', {
+	        'traffic_source': trafficSource,
+	        'traffic_medium': trafficMedium,
+	        'traffic_campaign': trafficCampaign,
+	        'referrer_domain': referrer ? new URL('http://' + referrer.replace(/^https?:\/\//, '')).hostname : 'none',
+	        'is_organic_search': trafficMedium === 'organic_search',
+	        'is_social_traffic': trafficMedium === 'social',
+	        'is_business_listing': trafficMedium === 'business_listing',
+	        'user_type': userType,
+	        'device_type': deviceType
+	    });
+	    
+	    console.log('👤 User classified as:', userType, '| Journey stage:', journeyStage);
+	    console.log('📱 Device:', deviceType, '| Browser:', browser, '| OS:', os);
+	    console.log('🔍 Traffic source:', trafficSource, '| Medium:', trafficMedium);
+	});
+	</script>
 	<!-- fraimwork - css include -->
 	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 
@@ -737,29 +1290,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="cart_sidebar">
-			    <div class="cart_header">
-			        <h3 class="mb-0">Shopping Cart</h3>
-			        <button type="button" class="close_btn"><i class="fal fa-times"></i></button>
-			    </div>
-			    <div class="cart_items_list">
-			        <ul class="ul_li_block clearfix">
-			            <!-- Cart items will be dynamically inserted here by SimpleCart -->
-			            <li class="text-center p-4">Your cart is empty</li>
-			        </ul>
-			    </div>
-			    <div class="cart_footer">
-			        <ul class="total_price ul_li_block clearfix">
-			            <li><span>Subtotal:</span> <small class="cart-subtotal">$0.00</small></li>
-			            <li><span>VAT:</span> <small class="cart-vat">$0.00</small></li>
-			            <li class="total"><span>Total:</span> <small class="cart-total">$0.00</small></li>
-			        </ul>
-			        <div class="btns_group">
-			            <a class="btn btn-primary w-100 mb-2" href="/cart">View Cart</a>
-			            <a class="btn btn-success w-100" href="/checkout">Checkout</a>
-			        </div>
-			    </div>
-			</div> 			<div class="overlay"></div>
+			<div class="overlay"></div>
 		</div>
 		<!-- sidebar mobile menu - end
 		================================================== -->
@@ -1114,7 +1645,7 @@
 	        <div class="footer_bottom_boxed bg_white clearfix">
 	            <div class="row align-items-center justify-content-lg-between">
 	                <div class="col-lg-6 col-md-6">
-	                    <p class="copyright_text mb-0">© Copyright 2024-2025 All Right Reserved Design By <a class="author_links" href="/">BE SEEN LLC</a></p>
+	                    <p class="copyright_text mb-0">© Copyright 2026 All Rights Reserved. Design By <a class="author_links" href="/">BE SEEN LLC</a></p>
 	                </div>
 	    
 	                <div class="col-lg-6 col-md-6">
@@ -1153,8 +1684,6 @@
 	<script src="/assets/js/app-initializer.js"></script>
 
 	<!-- Cart and App Initializer -->
-	<script src="/assets/js/cart.js"></script>
-	<script src="/assets/js/cart-display.js"></script>
 	<script src="/assets/js/main.js"></script>
 
 </body>

@@ -1658,11 +1658,6 @@
 
 								<!-- Quantity Options -->
 
-								<!-- Add to Cart -->
-								<div class="d-grid mb-3">
-									<button class="addtocart_btn custom_btn bg_default_orange btn-lg" onclick="addProductToCart(this)">Add To Cart</button>
-								</div>
-
 								<!-- Contact Us Button -->
 								<div class="d-grid">
 									<a href="/contact.html" class="custom_btn bg_default_blue btn-lg text-center">Contact Us</a>
@@ -1948,7 +1943,7 @@
 	        <div class="footer_bottom_boxed bg_white clearfix">
 	            <div class="row align-items-center justify-content-lg-between">
 	                <div class="col-lg-6 col-md-6">
-	                    <p class="copyright_text mb-0">© Copyright 2024-2025 All Right Reserved Design By <a class="author_links" href="/">BE SEEN LLC</a></p>
+	                    <p class="copyright_text mb-0">© Copyright 2026 All Rights Reserved. Design By <a class="author_links" href="/">BE SEEN LLC</a></p>
 	                </div>
 	    
 	                <div class="col-lg-6 col-md-6">
@@ -1989,25 +1984,9 @@
 	<!-- Stripe Integration -->
 	<script src="https://js.stripe.com/v3/"></script>
 	
-	<!-- Cart and App Initializer -->
-	<script src="/assets/js/cart.js"></script>
 	<script src="/assets/js/main.js"></script>
 
 	<script>
-        // This function is called when the "Add to Cart" button is clicked
-        function addProductToCart(button) {
-            if (!button) return;
-            const container = button.closest('.product-container');
-            if (container && window.cart) {
-                window.cart.addItem({
-                    id: container.dataset.productId,
-                    name: container.dataset.productName,
-                    price: parseFloat(container.dataset.productPrice),
-                    image: container.dataset.productImage
-                });
-            }
-        }
-
 		document.addEventListener('DOMContentLoaded', function() {
 			const productContainer = document.querySelector('.product-container');
 			const priceElement = document.querySelector('.price_text strong');
