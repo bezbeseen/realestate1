@@ -646,7 +646,7 @@
     </div>
 
             <div class="warning">
-            <strong>⚠️ Warning:</strong> This will open 91 browser tabs. Make sure your browser can handle it!
+            <strong>⚠️ Warning:</strong> Opening all pages will create many browser tabs. Make sure your browser can handle it!
     </div>
 
     <div class="page-list">
@@ -891,14 +891,14 @@
                     buildButton.disabled = false;
                 }, 3000);
                 
-                alert('Build failed. Please run "node build/build.js" manually from the terminal.');
+                alert('Build failed. Please run the build script manually from the terminal.');
             }
         }
 
         // Initialize on load
         window.addEventListener('load', async () => {
             await loadPagesFromSitemap();
-            if (allPagesFromSitemap.length === 0) {
+            if (allPages.length === 0) {
                 displayPages(); // fallback
             }
         });
