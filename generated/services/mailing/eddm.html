@@ -12,22 +12,22 @@
 	<!-- <base href="/realestate1/"> -->
 
 	<title>EDDM - Every Door Direct Mail Services | BE SEEN - BE SEEN</title>
-	<meta name="description" content="Professional EDDM - Every Door Direct Mail Services | BE SEEN services in Santa Clara, CA.  Call (669) 272-2682 for quotes. Serving Silicon Valley businesses.">
-	
+	<meta name="description" content="Reach a targeted local audience with our efficient Every Door Direct Mail (EDDM) service. Cost-effective local marketing solutions.">
+	<link rel="canonical" href="https://getbeseen.com/services/mailing/eddm.html">
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://getbeseen.com">
+	<meta property="og:url" content="https://getbeseen.com/services/mailing/eddm.html">
 	<meta property="og:title" content="EDDM - Every Door Direct Mail Services | BE SEEN - BE SEEN">
-	<meta property="og:description" content="Professional EDDM - Every Door Direct Mail Services | BE SEEN services in Santa Clara, CA.  Call (669) 272-2682 for quotes.">
+	<meta property="og:description" content="Reach a targeted local audience with our efficient Every Door Direct Mail (EDDM) service. Cost-effective local marketing solutions.">
 	<meta property="og:image" content="https://getbeseen.com/assets/images/og-image.jpg">
 	<meta property="og:site_name" content="BE SEEN">
 	<meta property="og:locale" content="en_US">
 	
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://getbeseen.com">
+	<meta property="twitter:url" content="https://getbeseen.com/services/mailing/eddm.html">
 	<meta property="twitter:title" content="EDDM - Every Door Direct Mail Services | BE SEEN - BE SEEN">
-	<meta property="twitter:description" content="Professional EDDM - Every Door Direct Mail Services | BE SEEN services in Santa Clara, CA.  Call (669) 272-2682 for quotes.">
+	<meta property="twitter:description" content="Reach a targeted local audience with our efficient Every Door Direct Mail (EDDM) service. Cost-effective local marketing solutions.">
 	<meta property="twitter:image" content="https://getbeseen.com/assets/images/og-image.jpg">
 	
 	<!-- Google tag (gtag.js) -->
@@ -194,31 +194,7 @@
 	<meta name="yelp:categories" content="Printing Services, Signs, Marketing, Business Services">
 	<meta name="yelp:price_range" content="$$">
 	
-	<!-- Include Google My Business Integration -->
-	<script>
-	// Load Google My Business enhancements
-	document.addEventListener('DOMContentLoaded', function() {
-	    // Create and append Google My Business content
-	    fetch('/includes/google-my-business.html')
-	        .then(response => response.text())
-	        .then(html => {
-	            const div = document.createElement('div');
-	            div.innerHTML = html;
-	            document.head.appendChild(div);
-	        })
-	        .catch(error => console.log('GMB integration loaded via build process'));
-	    
-	    // Create and append Yelp optimization content  
-	    fetch('/includes/yelp-optimization.html')
-	        .then(response => response.text())
-	        .then(html => {
-	            const div = document.createElement('div');
-	            div.innerHTML = html;
-	            document.head.appendChild(div);
-	        })
-	        .catch(error => console.log('Yelp optimization loaded via build process'));
-	});
-	</script>
+	<!-- Google My Business & Yelp schema are included via partials at build time where needed (e.g. index, location pages). Dynamic fetch removed to prevent duplicate/conflicting JSON-LD and SEMrush structured-data errors. -->
 	<!-- Analytics -->
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

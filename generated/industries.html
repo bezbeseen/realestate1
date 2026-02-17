@@ -177,31 +177,7 @@
 	<meta name="yelp:categories" content="Printing Services, Signs, Marketing, Business Services">
 	<meta name="yelp:price_range" content="$$">
 	
-	<!-- Include Google My Business Integration -->
-	<script>
-	// Load Google My Business enhancements
-	document.addEventListener('DOMContentLoaded', function() {
-	    // Create and append Google My Business content
-	    fetch('/includes/google-my-business.html')
-	        .then(response => response.text())
-	        .then(html => {
-	            const div = document.createElement('div');
-	            div.innerHTML = html;
-	            document.head.appendChild(div);
-	        })
-	        .catch(error => console.log('GMB integration loaded via build process'));
-	    
-	    // Create and append Yelp optimization content  
-	    fetch('/includes/yelp-optimization.html')
-	        .then(response => response.text())
-	        .then(html => {
-	            const div = document.createElement('div');
-	            div.innerHTML = html;
-	            document.head.appendChild(div);
-	        })
-	        .catch(error => console.log('Yelp optimization loaded via build process'));
-	});
-	</script>	<!-- Google Tag Manager -->
+	<!-- Google My Business & Yelp schema are included via partials at build time where needed (e.g. index, location pages). Dynamic fetch removed to prevent duplicate/conflicting JSON-LD and SEMrush structured-data errors. -->	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -1228,7 +1204,7 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 						<div class="feature_card">
-							<a class="item_image plus_effect" href="/services/commercial-signage">
+							<a class="item_image plus_effect" href="/products/signs/commercial-signage.html">
 								<img src="/assets/images/feature/img_01.jpg" alt="Commercial Signage">
 							</a>
 							<div class="item_content">
@@ -1240,7 +1216,7 @@
 
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".3s">
 						<div class="feature_card">
-							<a class="item_image plus_effect" href="/services/graphic-design">
+							<a class="item_image plus_effect" href="/services/graphic-design.html">
 								<img src="/assets/images/feature/img_02.jpg" alt="Design & Branding">
 							</a>
 							<div class="item_content">
@@ -1252,7 +1228,7 @@
 
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".5s">
 						<div class="feature_card">
-							<a class="item_image plus_effect" href="/services/web-design">
+							<a class="item_image plus_effect" href="/services/web-design.html">
 								<img src="/assets/images/feature/img_03.jpg" alt="Web Design">
 							</a>
 							<div class="item_content">
@@ -1264,7 +1240,7 @@
 
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".7s">
 						<div class="feature_card">
-							<a class="item_image plus_effect" href="/services/mailing">
+							<a class="item_image plus_effect" href="/services/mailing.html">
 								<img src="/assets/images/feature/img_04.jpg" alt="Mailing Services">
 							</a>
 							<div class="item_content">
@@ -1278,7 +1254,7 @@
 				<div class="row justify-content-center mt-4">
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp2" data-wow-delay=".1s">
 						<div class="feature_card">
-							<a class="item_image plus_effect" href="/services/real-estate/">
+							<a class="item_image plus_effect" href="/industries/real-estate.html">
 								<img src="/assets/images/feature/img_08.jpg" alt="Real Estate Marketing">
 							</a>
 							<div class="item_content">

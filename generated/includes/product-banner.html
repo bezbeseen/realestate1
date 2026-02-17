@@ -1,0 +1,24 @@
+{{! Single banner format for all product/category pages - matches promotional style }}
+<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url('{{#if hero_image_url}}{{hero_image_url}}{{else}}/assets/images/backgrounds/bg.png{{/if}}'); background-size:cover;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="page_title mb-0">{{#if banner_title}}{{banner_title}}{{else}}{{product_name}}{{/if}}</h1>
+        <div class="row">
+          <div class="col-lg-9 col-md-10 col-sm-12">
+            <p class="mb-0 subtitle-text text-white" style="font-size: 1.35rem; line-height: 1.6; margin-top: 0.75rem;">{{#if banner_subtitle}}{{banner_subtitle}}{{else}}{{seo_description}}{{/if}}</p>
+          </div>
+        </div>
+        <div class="mt-4">
+          <ul class="breadcrumb_nav ul_li_right clearfix">
+            {{#each breadcrumbs}}
+            <li>
+              {{#if link}}<a href="{{link}}">{{name}}</a>{{else}}{{name}}{{/if}}
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

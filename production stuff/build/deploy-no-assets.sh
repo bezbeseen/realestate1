@@ -16,10 +16,18 @@ echo "📌 This script SKIPS:"
 echo "   ✗ assets/ folder (images, CSS, JS)"
 echo ""
 
-# FTP Configuration (matches your main site)
-FTP_HOST="ftp.getbeseen.com"
-FTP_USER="your-ftp-username"  # UPDATE THIS!
-FTP_PATH="/public_html/"
+# FTP Configuration (matches your main site - getbeseen.com on Bluehost)
+# Optional: set these in production stuff/.env (FTP_HOST, FTP_USER, FTP_PATH) so you don't commit credentials
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+if [ -f "$SCRIPT_DIR/../.env" ]; then
+  set -a
+  source "$SCRIPT_DIR/../.env"
+  set +a
+fi
+FTP_HOST="${FTP_HOST:-ftp.getbeseen.com}"
+FTP_USER="${FTP_USER:-behzaad.morid@gmail.com}"
+FTP_PATH="${FTP_PATH:-/public_html/getbeseem}"
 
 echo "🎯 Upload Target:"
 echo "   Host: $FTP_HOST"
@@ -36,19 +44,22 @@ fi
 
 echo ""
 echo "🔄 Uploading via FTP (excluding assets)..."
-echo "You'll be prompted for your FTP password..."
+if [ -z "$FTP_PASS" ]; then
+  echo "You'll be prompted for your FTP password."
+fi
 
 # Check if lftp is installed
 if ! command -v lftp &> /dev/null; then
-    echo "❌ lftp not found. Installing with Homebrew..."
-    brew install lftp
+    echo "❌ lftp not found. Install with: brew install lftp"
+    exit 1
 fi
 
-# Navigate to project root
-cd "$(dirname "$0")/../.."
+# Navigate to project root (parent of production stuff)
+cd "$PROJECT_ROOT"
 
 # Upload using lftp with exclusions
-lftp -u $FTP_USER $FTP_HOST << EOF
+if [ -n "$FTP_PASS" ]; then
+  lftp -u "$FTP_USER,$FTP_PASS" "$FTP_HOST" << EOF
 cd $FTP_PATH
 mirror -R --verbose \
   --exclude assets/ \
@@ -59,6 +70,19 @@ mirror -R --verbose \
   generated/ ./
 quit
 EOF
+else
+  lftp -u "$FTP_USER" "$FTP_HOST" << EOF
+cd $FTP_PATH
+mirror -R --verbose \
+  --exclude assets/ \
+  --exclude node_modules/ \
+  --exclude .git/ \
+  --exclude .DS_Store \
+  --exclude '*.log' \
+  generated/ ./
+quit
+EOF
+fi
 
 if [ $? -eq 0 ]; then
     echo ""

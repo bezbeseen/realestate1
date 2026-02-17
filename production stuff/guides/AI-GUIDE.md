@@ -43,10 +43,10 @@ realestate1/
 
 ### Build & Serve Process
 ```bash
-# 1. Navigate to production folder
+# 1. Navigate to production folder (from project root)
 cd "production stuff"
 
-# 2. Build the website
+# 2. Build the website (empties generated/ then writes all output)
 node build/build.js
 
 # 3. Start local server (from project root)
@@ -56,9 +56,12 @@ python3 -m http.server 8002
 # 4. View at http://localhost:8002
 ```
 
+**Build output cleanup:** The build **empties** the `generated/` folder (does not delete the directory). This avoids `ENOTEMPTY` errors when the project lives on Google Drive or other sync. See **guides/BUILD.md** for full build system documentation and troubleshooting.
+
 ### Key File Locations
 - **Edit source files:** `/production stuff/`
-- **View built website:** `/generated/`
+- **View built website:** `/generated/` (at project root; never edit generated files)
+- **Build system details:** `production stuff/guides/BUILD.md`
 - **Archive/reference:** `/archive/`
 
 ## 📁 Production Folder Details
