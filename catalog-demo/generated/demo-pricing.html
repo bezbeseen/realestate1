@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing demo – By sq ft, static, quantity</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html">Online Catalog</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="pricing-reference.html">Pricing reference</a>
+        <a href="demo-pricing.html">Pricing demo</a>
+        <a href="banners.html">Banners</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Tools</h3>
+      <ul>
+        <li><a href="pricing-reference.html">Pricing reference</a></li>
+        <li><a href="demo-pricing.html">Pricing demo</a></li>
+      </ul>
+      <h3>Pricing types</h3>
+      <ul>
+        <li><a href="#by-sqft">By sq ft</a></li>
+        <li><a href="#static">Static by size</a></li>
+        <li><a href="#quantity">Quantity + variants</a></li>
+      </ul>
+      <h3>Banners</h3>
+      <ul>
+        <li><a href="13oz-vinyl-banner.html">13oz Vinyl Banner</a></li>
+        <li><a href="vinyl-banner-backlit.html">Backlit Banner</a></li>
+        <li><a href="styrene.html">Styrene</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+
+      <h1 class="page-title">Pricing demo</h1>
+      <p class="page-subtitle">One example of each pricing model. See <a href="pricing-reference.html">Pricing reference</a> for the full layout of all master sheets.</p>
+
+      <!-- 1. By sq ft: one product type (vinyl banner), configurator driven by master sheet -->
+      <div id="by-sqft" style="margin-bottom: 2rem;">
+        <h2 class="section-title">1. By sq ft</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Vinyl banners, styrene, rigid, adhesive — price = area × unit price (optional min charge). Data from <code>BY_SQFT</code> sheet.</p>
+        <div class="configurator" data-product-slug="vinyl-banner-backlit">
+          <h3>Backlit Banner</h3>
+          <div class="config-row inline">
+            <div class="config-row">
+              <label for="config-width">Width (in.)</label>
+              <input type="number" id="config-width" min="0" step="1" value="24" placeholder="0">
+            </div>
+            <div class="config-row">
+              <label for="config-height">Height (in.)</label>
+              <input type="number" id="config-height" min="0" step="1" value="36" placeholder="0">
+            </div>
+          </div>
+          <div class="config-row">
+            <label>Area</label>
+            <p style="margin: 0;"><span id="config-area">0.00</span> ft²</p>
+          </div>
+          <div class="config-row">
+            <label for="config-sides"># of Sides</label>
+            <select id="config-sides">
+              <option value="1">1 Side</option>
+              <option value="2">2 Sides</option>
+            </select>
+          </div>
+          <div class="config-summary">
+            Total: <span id="config-total" class="total">$0.00</span>
+          </div>
+          <button type="button" class="btn-primary">Get quote</button>
+        </div>
+
+        <h3 class="section-title" style="margin-top: 2rem;">Product options from master sheet</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">These options exist for <strong>many</strong> products on <a href="https://getbeseen.bs.run/" target="_blank" rel="noopener">getbeseen.bs.run</a>. In the sheet we’ve added them to: 13oz, 18oz Blockout, Backlit, Mesh, Indoor, Pole Banner, 9oz Fabric, Blockout Fabric. See <a href="pricing-reference.html#by-sqft">Pricing reference → By sq ft</a> for the full list per product.</p>
+        <div class="configurator" id="options-from-sheet">
+          <h3>13oz Vinyl Banner — options</h3>
+          <div id="attributes-container">
+            <div class="config-row">
+              <label># of Sides</label>
+              <select data-attr="sides"><option value="1">1 Side</option><option value="2">2 Sides</option></select>
+            </div>
+            <div class="config-row">
+              <label>Material</label>
+              <select data-attr="material"><option>13oz. Matte Vinyl Banner</option></select>
+            </div>
+            <div class="config-row">
+              <label>Pole Pocket</label>
+              <select data-attr="polePocket">
+                <option>No Pole Pockets</option>
+                <option>2" - Top and Bottom (Fits 1" pole)</option>
+                <option>3" - Top and Bottom (Fits 1.5" pole)</option>
+                <option>4" - Top and Bottom (Fits 2" pole)</option>
+                <option>2" - Top Only</option>
+                <option>3" - Top Only</option>
+                <option>4" - Top Only</option>
+                <option>Custom Pole Pocket</option>
+              </select>
+            </div>
+            <div class="config-row">
+              <label>Hem</label>
+              <select data-attr="hem"><option>All Sides</option><option>No Hem</option></select>
+            </div>
+            <div class="config-row">
+              <label>Grommet</label>
+              <select data-attr="grommet">
+                <option>Every 2' All Sides</option>
+                <option>Every 2' Top &amp; Bottom</option>
+                <option>Every 2' Left &amp; Right</option>
+                <option>4 Corner Only</option>
+                <option>No Grommet</option>
+                <option>Custom Grommets</option>
+              </select>
+            </div>
+            <div class="config-row">
+              <label>Webbing</label>
+              <select data-attr="webbing">
+                <option>No Webbing, No D-rings</option>
+                <option>1" Webbing</option>
+                <option>1" Webbing w/ D-rings</option>
+                <option>1" Velcro - All Sides</option>
+              </select>
+            </div>
+            <div class="config-row">
+              <label>Corners</label>
+              <select data-attr="corners">
+                <option>No Reinforced Corners</option>
+                <option>Reinforce Top Only</option>
+                <option>Reinforce Bottom Only</option>
+                <option>Reinforce All Corners</option>
+              </select>
+            </div>
+            <div class="config-row">
+              <label>Rope</label>
+              <select data-attr="rope">
+                <option>No Rope</option>
+                <option>3/16" - Top Only</option>
+                <option>3/16" - Bottom Only</option>
+                <option>3/16" - Top and Bottom</option>
+                <option>5/16" - Top Only</option>
+                <option>5/16" - Bottom Only</option>
+                <option>5/16" - Top and Bottom</option>
+              </select>
+            </div>
+            <div class="config-row">
+              <label>Windslit</label>
+              <select data-attr="windslit"><option>No Windslits</option><option>Standard Windslits</option></select>
+            </div>
+          </div>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">These match <code>ProductPricing.getAttributes('13oz-vinyl-banner')</code> in the master sheet. Total above uses size only; option add-ons can be wired later.</p>
+        </div>
+      </div>
+
+      <!-- 2. Static by size/style: flags, a-frames, tents -->
+      <div id="static" style="margin-bottom: 2rem;">
+        <h2 class="section-title">2. Static by size/style</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">A-frames, tents, flags — fixed price per size. Data from <code>STATIC_BY_SIZE</code> sheet.</p>
+        <div class="configurator product-order-box">
+          <h3>Feather Angled Flag</h3>
+          <ul class="product-options-list" id="static-options">
+            <!-- Filled by JS from ProductPricing.getOptions('feather-angled-flag') -->
+          </ul>
+          <button type="button" class="btn-primary">Get quote for this product</button>
+        </div>
+      </div>
+
+      <!-- 3. By quantity + variants: business cards (placeholder) -->
+      <div id="quantity">
+        <h2 class="section-title">3. By quantity + variants</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Business cards: quantity tiers and variants (e.g. paper, coating). Data from <code>BY_QUANTITY_VARIANTS</code> sheet.</p>
+        <div class="configurator product-order-box">
+          <h3>Business Cards (example)</h3>
+          <p style="margin: 0 0 0.5rem;"><strong>Quantity</strong></p>
+          <ul class="product-options-list" id="qty-tiers"></ul>
+          <p style="margin: 1rem 0 0.5rem;"><strong>Variant</strong></p>
+          <ul class="product-options-list" id="qty-variants"></ul>
+          <button type="button" class="btn-primary">Get quote</button>
+        </div>
+      </div>
+
+      <p style="margin-top: 2rem;"><a href="pricing-reference.html" class="btn-primary">Open pricing reference (all sheets)</a></p>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <a href="pricing-reference.html">Pricing reference</a>
+  </footer>
+
+  <script src="assets/js/product-pricing.js"></script>
+  <script src="assets/js/apply-pricing-from-master.js"></script>
+  <script src="assets/js/configurator.js"></script>
+  <script>
+    (function () {
+      var P = window.ProductPricing;
+      if (!P) return;
+
+      // Product options (attributes) from master sheet — 13oz Vinyl Banner (container has static HTML fallback; JS can replace if getAttributes exists)
+      var container = document.getElementById('attributes-container');
+      var attrs = P.getAttributes && P.getAttributes('13oz-vinyl-banner');
+      if (container && attrs && container.children.length === 0) {
+        var attrLabels = { sides: '# of Sides', material: 'Material', polePocket: 'Pole Pocket', hem: 'Hem', grommet: 'Grommet', webbing: 'Webbing', corners: 'Corners', rope: 'Rope', windslit: 'Windslit' };
+        Object.keys(attrs).forEach(function (key) {
+          var choices = attrs[key];
+          if (!choices || !choices.length) return;
+          var sel = document.createElement('div');
+          sel.className = 'config-row';
+          var label = document.createElement('label');
+          label.textContent = attrLabels[key] || key;
+          var select = document.createElement('select');
+          select.setAttribute('data-attr', key);
+          choices.forEach(function (c) {
+            var opt = document.createElement('option');
+            opt.value = c.value || c.label;
+            opt.textContent = c.label + (c.desc ? ' — ' + c.desc : '');
+            select.appendChild(opt);
+          });
+          sel.appendChild(label);
+          sel.appendChild(select);
+          container.appendChild(sel);
+        });
+      }
+
+      // Static options: Feather Flag from STATIC_BY_SIZE
+      var opts = P.getOptions('feather-angled-flag') || (P.STATIC_BY_SIZE['feather-angled-flag'] && P.STATIC_BY_SIZE['feather-angled-flag'].options);
+      var ul = document.getElementById('static-options');
+      if (ul && opts && opts.length) {
+        opts.forEach(function (o) {
+          var li = document.createElement('li');
+          li.innerHTML = '<span class="option-unit">' + o.unit + '</span> <span class="total">' + o.price + '</span>';
+          ul.appendChild(li);
+        });
+      }
+
+      // Quantity + variants: business cards
+      var bc = P.BY_QUANTITY_VARIANTS['business-cards'];
+      if (bc) {
+        var tiersEl = document.getElementById('qty-tiers');
+        var variantsEl = document.getElementById('qty-variants');
+        if (tiersEl && bc.quantityTiers) {
+          bc.quantityTiers.forEach(function (t) {
+            var li = document.createElement('li');
+            li.innerHTML = '<span class="option-unit">' + t.qty + '</span> <span class="total">' + t.price + '</span>';
+            tiersEl.appendChild(li);
+          });
+        }
+        if (variantsEl && bc.variants) {
+          bc.variants.forEach(function (v) {
+            var li = document.createElement('li');
+            li.innerHTML = '<span class="option-unit">' + v.name + '</span> <span class="total">' + (v.priceMod ? '+$' + v.priceMod : '—') + '</span>';
+            variantsEl.appendChild(li);
+          });
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

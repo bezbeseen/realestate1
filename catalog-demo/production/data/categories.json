@@ -1,0 +1,63 @@
+{
+  "title": "Online Catalog",
+  "groups": [
+    {
+      "id": "signs-letters",
+      "name": "Signs / Letters",
+      "items": [
+        { "name": "Channel Letters", "slug": "channel-letter" }
+      ]
+    },
+    {
+      "id": "displays",
+      "name": "Indoor / Outdoor Displays",
+      "items": [
+        { "name": "Advertising Flags", "slug": "advertising-flags" },
+        { "name": "Banner Stands", "slug": "banner-stands" },
+        { "name": "Step and Repeat Backdrop", "slug": "step-repeat-backdrop" },
+        { "name": "Real Estate Products", "slug": "real-estate" },
+        { "name": "A Frame and Sign Holders", "slug": "a-frame-and-sign-holders" },
+        { "name": "Signicade A-Frames", "slug": "signicade-a-frame" },
+        { "name": "SEG Products", "slug": "seg-products" },
+        { "name": "Trade Show Products", "slug": "trade-show-products" },
+        { "name": "Custom Event Tents", "slug": "custom-event-tents" },
+        { "name": "Table Throws", "slug": "table-throw" },
+        { "name": "Hardware Only", "slug": "hardware-only" }
+      ]
+    },
+    {
+      "id": "banners",
+      "name": "Banners",
+      "items": [
+        { "name": "13oz Vinyl Banner", "slug": "13oz-vinyl-banner" },
+        { "name": "18oz Blockout Banner", "slug": "vinyl-banner-18oz-blockout" },
+        { "name": "Backlit Banner", "slug": "vinyl-banner-backlit" },
+        { "name": "Mesh Banner", "slug": "mesh-banners" },
+        { "name": "Indoor Banner", "slug": "super-smooth-indoor-banner" },
+        { "name": "Pole Banner", "slug": "pole-banner-set" },
+        { "name": "9oz Fabric Banner", "slug": "fabric-banner-9oz-wrinkle-free" },
+        { "name": "Blockout Fabric Banner", "slug": "fabric-block-out" },
+        { "name": "Tension Fabric", "slug": "tension-fabric" },
+        { "name": "Hand Banner", "slug": "hand-banner" }
+      ]
+    },
+    {
+      "id": "large-format",
+      "name": "Large Format",
+      "items": [
+        { "name": "Wall Art", "slug": "wall-art" },
+        { "name": "Wall Murals", "slug": "wall-murals" },
+        { "name": "Adhesive Products", "slug": "adhesive-products" },
+        { "name": "Rigid Signs and Magnets", "slug": "rigid-signs-and-magnets" },
+        { "name": "Reflective Products", "slug": "reflective-products" },
+        { "name": "Dry Erase Products", "slug": "dry-erase-products" },
+        { "name": "DTF and UV DTF", "slug": "dtf-and-uv-dtf" },
+        { "name": "Backlit Film", "slug": "backlit-film" },
+        { "name": "Premium Window Cling", "slug": "premium-window-cling" },
+        { "name": "Posters", "slug": "posters" },
+        { "name": "Styrene", "slug": "styrene" },
+        { "name": "Popup", "slug": "popup" }
+      ]
+    }
+  ]
+}

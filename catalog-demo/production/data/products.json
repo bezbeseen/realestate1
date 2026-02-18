@@ -1,0 +1,378 @@
+{
+  "channel-letter": {
+    "title": "Channel Letters",
+    "subtitle": "Ready to install, LED illuminated, UL Listed, with power supplies and installation patterns",
+    "products": [
+      { "name": "Standard Channel Letters", "slug": "standard-channel-letter", "bullets": ["Front lit & Dual lit", ".040 aluminum returns", "Acrylic faces with trimcaps"], "price": "$4.39", "priceType": "per-inch", "unit": "per inch" },
+      { "name": "Halo/Reverse Lit Channel Letters", "slug": "reverse-lit", "bullets": ["Multiple colors", "Stainless steel welded faces"], "price": null, "priceType": "quote" },
+      { "name": "Reverse Acrylic Lit", "slug": "reverse-acrylic-lit", "bullets": ["Reverse lit option"], "price": null, "priceType": "quote" },
+      { "name": "Premium Full Acrylic Face Lit", "slug": "full-acrylic-face-lit", "bullets": ["Multiple return colors", "Stainless steel returns"], "price": null, "priceType": "quote" },
+      { "name": "Premium Inset Acrylic Face Lit", "slug": "inset-acrylic-face-lit", "bullets": ["Inset acrylic", "Premium construction"], "price": null, "priceType": "quote" }
+    ]
+  },
+  "real-estate": {
+    "title": "Real Estate Products",
+    "subtitle": "Outdoor signage designed to be long-lasting and reusable",
+    "products": [
+      { "name": "Yard Sign and H-Stake", "slug": "yard-sign-and-h-stake", "bullets": ["24\"x18\" full color prints", "4mm coroplast sign"], "price": "$22.86", "priceType": "fixed" },
+      { "name": "Real Estate A-Frame", "slug": "real-estate-a-frame", "bullets": ["Full color 24\" x 18\" coroplast prints", "Portable for easy setup"], "price": "$95.61", "priceType": "fixed" },
+      { "name": "Real Estate Post", "slug": "real-estate-post", "bullets": ["Full color aluminum composite signs", "Easy to assemble pvc hardware"], "price": "$324.51", "priceType": "fixed" },
+      { "name": "Real Estate Frame", "slug": "real-estate-frame", "bullets": ["Steel framed outdoor sign", "Drop in 1 or 2 sided graphics"], "price": "$118.68", "priceType": "fixed" },
+      { "name": "Real Estate Hardware", "slug": "real-estate-hardware-only", "bullets": ["Graphic Not Included"], "price": null, "priceType": "see-all", "cta": "See All" }
+    ]
+  },
+  "real-estate-hardware-only": {
+    "title": "Real Estate Hardware Only",
+    "subtitle": "Frames and hardware without graphics",
+    "products": [
+      { "name": "Real Estate A-Frame Hardware Only", "slug": "real-estate-a-frame-only", "bullets": ["Frame only"], "price": "$75.90", "priceType": "fixed" },
+      { "name": "Real Estate Post Hardware Only", "slug": "real-estate-post-only", "bullets": ["Post and hardware only"], "price": "$280.47", "priceType": "fixed" },
+      { "name": "Real Estate Frame Hardware Only", "slug": "real-estate-frame-only", "bullets": ["Frame only"], "price": "$98.97", "priceType": "fixed" }
+    ]
+  },
+  "advertising-flags": {
+    "title": "Advertising Flags",
+    "subtitle": "We have different shapes and sizes for your indoor/outdoor flag purposes",
+    "products": [
+      { "name": "Feather Angled Flag", "slug": "feather-angled-flag", "bullets": ["Single and Double Sided", "Indoor and Outdoor bases"], "price": "$196.83", "priceType": "fixed", "unit": "Small 9 ft", "options": [ { "unit": "Small 9 ft", "price": "$196.83" }, { "unit": "Medium 10.5 ft", "price": "$196.83" }, { "unit": "Large 14 ft", "price": "$209.85" }, { "unit": "X-Large 18 ft", "price": "$263.64" } ] },
+      { "name": "Feather Convex Flag", "slug": "convex-flag", "bullets": ["Single and double sided", "Indoor and Outdoor bases"], "price": "$196.83", "priceType": "fixed", "unit": "Small 9 ft", "options": [ { "unit": "Small 9 ft", "price": "$196.83" }, { "unit": "Medium 10.5 ft", "price": "$196.83" }, { "unit": "Large 14 ft", "price": "$209.85" }, { "unit": "X-Large 18 ft", "price": "$263.64" } ] },
+      { "name": "Teardrop Flag", "slug": "teardrop-flag", "bullets": ["Single and double sided", "Indoor and Outdoor bases"], "price": "$196.83", "priceType": "fixed", "unit": "Small 7 ft", "options": [ { "unit": "Small 7 ft", "price": "$196.83" }, { "unit": "Medium 9 ft", "price": "$196.83" }, { "unit": "Large 11.2 ft", "price": "$209.85" }, { "unit": "X-Large 13.5 ft", "price": "$263.64" } ] },
+      { "name": "Rectangle Flag", "slug": "rectangle-flag", "bullets": ["Single and double sided", "Indoor and outdoor bases"], "price": "$308.85", "priceType": "fixed", "unit": "Small 8.5 ft", "options": [ { "unit": "Small 8.5 ft", "price": "$308.85" }, { "unit": "Medium 11.8 ft", "price": "$343.17" }, { "unit": "Large 15 ft", "price": "$377.49" } ] },
+      { "name": "Econo Feather Flag", "slug": "econo-feather-flag", "bullets": ["Single sided, flutters in wind", "Outdoor only - ground spike included"], "price": "$227.70", "priceType": "fixed", "unit": "16 ft" },
+      { "name": "Custom Pole Flag", "slug": "custom-pole-flag", "bullets": ["Grommet strips for pole installations", "Custom sizes, full color"], "price": "$59.40", "priceType": "fixed", "unit": "3' x 2'", "options": [ { "unit": "3' x 2'", "price": "$59.40" }, { "unit": "5' x 3'", "price": "$148.50" }, { "unit": "6' x 4'", "price": "$237.60" } ] },
+      { "name": "Flag Hardware", "slug": "flag-hardware", "bullets": ["Graphic Not Included"], "price": null, "priceType": "see-all", "cta": "See All" }
+    ]
+  },
+  "banner-stands": {
+    "title": "Banner Stands",
+    "subtitle": "Indoor vertical displays - great for in-store advertising and traveling exhibitors",
+    "products": [
+      { "name": "Tension Fabric Stand", "slug": "tension-fabric-stand", "bullets": ["Dye sub washable graphic", "Heavy duty but portable", "Best for double sided"], "price": "$428.97", "priceType": "fixed", "unit": "36\"x90\"", "options": [ { "unit": "36\"x90\"", "price": "$428.97" }, { "unit": "48\"x90\"", "price": "$494.97" } ] },
+      { "name": "Standard Retractable", "slug": "standard-retractable", "bullets": ["The original", "Compact", "Economic"], "price": "$164.97", "priceType": "fixed", "unit": "33\"x81\"", "options": [ { "unit": "23\"x66\"", "price": "$206.22" }, { "unit": "24\"x81\"", "price": "$214.50" }, { "unit": "33\"x81\"", "price": "$164.97" }, { "unit": "47\"x81\"", "price": "$336.30" } ] },
+      { "name": "Deluxe Retractable", "slug": "deluxe-retractable", "bullets": ["Upgraded retractable hardware"], "price": "$247.47", "priceType": "fixed", "unit": "33\"x81\" Single", "options": [ { "unit": "33\"x81\" Single Sided", "price": "$247.47" }, { "unit": "33\"x81\" Double Sided", "price": "$610.68" } ] },
+      { "name": "SD Retractable", "slug": "sd-retractable", "bullets": ["Adjustable height", "Top of the line"], "price": "$329.97", "priceType": "fixed", "unit": "36\"x92\"", "options": [ { "unit": "36\"x92\"", "price": "$329.97" }, { "unit": "48\"x92\"", "price": "$450.78" }, { "unit": "60\"x92\"", "price": "$593.01" } ] },
+      { "name": "X-Stand", "slug": "x-stand", "bullets": ["Easy change graphics", "Ultra lightweight"], "price": "$90.72", "priceType": "fixed", "unit": "24\"x63\"", "options": [ { "unit": "24\"x63\"", "price": "$90.72" }, { "unit": "32\"x71\"", "price": "$123.87" } ] },
+      { "name": "Step and Repeat Backdrop", "slug": "step-repeat-backdrop", "bullets": ["High quality fabric graphic", "Large tube - heavy duty"], "price": "$590.70", "priceType": "fixed", "unit": "10' W x 8' H" },
+      { "name": "Table Top Banner Stand", "slug": "table-top-banner-stand", "bullets": ["Stay flat vinyl graphic", "Mini retractable"], "price": "$65.97", "priceType": "fixed", "unit": "11.5\"x17.5\"" },
+      { "name": "Banner Stand Hardware", "slug": "banner-stand-hardware", "bullets": ["Graphic Not Included"], "price": null, "priceType": "see-all", "cta": "See All" }
+    ]
+  },
+  "step-repeat-backdrop": {
+    "title": "Step and Repeat Backdrop",
+    "subtitle": "Single sided only. Complimentary carrying bag. Low sheen fabric. Dye sub graphics. Adjustable height and width. Large tube hardware.",
+    "products": [
+      { "name": "Step and Repeat Backdrop", "slug": "step-repeat-backdrop", "bullets": ["9 oz. Fabric Banner", "10' W x 8' H and other sizes"], "price": "$590.70", "priceType": "fixed", "unit": "10' x 8'" }
+    ]
+  },
+  "a-frame-and-sign-holders": {
+    "title": "A Frame and Sign Holders",
+    "subtitle": "Display systems for banners, signs and posters",
+    "products": [
+      { "name": "Banner A-Frame", "slug": "banner-a-frame", "bullets": ["Indoor and outdoor", "Portable, easy assembly"], "price": "$302.20", "priceType": "fixed", "unit": "4ft", "options": [ { "unit": "4ft", "price": "$302.20" }, { "unit": "8ft", "price": "$359.65" } ] },
+      { "name": "Snap Poster Hanger", "slug": "snap-poster-hanger", "bullets": ["Supports multiple sizes", "Ready to hang in store"], "price": "$54.80", "priceType": "fixed", "unit": "24\" x 36\"", "options": [ { "unit": "24\" x 36\"", "price": "$54.80" }, { "unit": "36\" x 48\"", "price": "$95.85" } ] },
+      { "name": "Poster Stand", "slug": "poster-stand", "bullets": ["Holds 22\"x28\" PVC sign", "60\" tall - free standing"], "price": "$206.23", "priceType": "fixed" },
+      { "name": "Magnetic Wood Frame Hanger", "slug": "wood-frame-hanger", "bullets": ["Snap-to-hang solid wood"], "price": "$52.76", "priceType": "fixed", "unit": "17.5\"x24\"", "options": [ { "unit": "17.5\" x 24\"", "price": "$52.76" }, { "unit": "17.5\" x 36\"", "price": "$61.56" } ] },
+      { "name": "A Frame and Sign Holder Hardware", "slug": "a-frame-and-sign-holders-hardware", "bullets": ["Graphic Not Included"], "price": null, "priceType": "see-all", "cta": "See All" }
+    ]
+  },
+  "signicade-a-frame": {
+    "title": "Signicade A-Frames",
+    "subtitle": "The ultimate in sidewalk signage - Genuine Plasticade A-frames with full color UV prints",
+    "products": [
+      { "name": "Standard Signicade", "slug": "white-standard-signicade", "bullets": ["24\"x36\" mounted vinyl graphics"], "price": "$355.27", "priceType": "fixed" },
+      { "name": "Deluxe Signicade", "slug": "deluxe-signicade-a-frame", "bullets": ["Easy change graphics", "24\"x36\" coroplast inserts"], "price": "$448.77", "priceType": "fixed" },
+      { "name": "Simposign II", "slug": "white-simposign-a-frame", "bullets": ["Easy change graphics", "22\"x28\" coroplast inserts"], "price": "$373.97", "priceType": "fixed" },
+      { "name": "Signicade A-Frame Hardware", "slug": "signicade-a-frame-hardware-only", "bullets": ["Graphic Not Included"], "price": null, "priceType": "see-all", "cta": "See All" }
+    ]
+  },
+  "seg-products": {
+    "title": "SEG Products",
+    "subtitle": "Non-lit and backlit silicone edge graphics. Wall mount SEG.",
+    "products": [
+      { "name": "3ft SEG Display", "slug": "3ft-seg-fabric-stand", "bullets": ["Non-lit slim modern frame"], "price": "$395.67", "priceType": "fixed" },
+      { "name": "10ft SEG Display", "slug": "10ft-seg-fabric-display", "bullets": ["Non-lit slim modern frame"], "price": "$1,319.67", "priceType": "fixed" },
+      { "name": "20ft SEG Display", "slug": "20ft-seg-fabric-display", "bullets": ["Non-lit slim modern frame"], "price": "$2,639.67", "priceType": "fixed" },
+      { "name": "10ft SEG Backlit Display", "slug": "10ft-seg-backlit-fabric-display", "bullets": ["Backlit slim modern frame"], "price": "$3,629.67", "priceType": "fixed" },
+      { "name": "8ft SEG Backlit Popup Display", "slug": "8ft-seg-backlit-popup-display", "bullets": ["Popup frame with graphic edge"], "price": "$2,603.37", "priceType": "fixed" },
+      { "name": "10ft SEG Backlit Popup Display", "slug": "10ft-seg-backlit-popup-display", "bullets": ["Popup frame with graphic edge"], "price": "$3,299.67", "priceType": "fixed" },
+      { "name": "Custom SEG Fabric", "slug": "custom-seg-fabric", "bullets": ["Custom size", "Fabric graphic only"], "price": "$5.25", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Wall Mount SEG", "slug": "wall_mount_seg", "bullets": ["Black Aluminum Frame with SEG Graphic"], "price": "$147.96", "priceType": "fixed" }
+    ]
+  },
+  "trade-show-products": {
+    "title": "Trade Show Products",
+    "subtitle": "SEG, tension fabric, velcro pop-up displays, booth kits, and accessories",
+    "products": [
+      { "name": "3ft SEG Display", "slug": "3ft-seg-fabric-stand", "bullets": ["Slim modern frame"], "price": "$395.67", "priceType": "fixed" },
+      { "name": "10ft SEG Display", "slug": "10ft-seg-fabric-display", "bullets": ["Slim modern frame"], "price": "$1,319.67", "priceType": "fixed" },
+      { "name": "20ft SEG Display", "slug": "20ft-seg-fabric-display", "bullets": ["Slim modern frame"], "price": "$2,639.67", "priceType": "fixed" },
+      { "name": "8ft SEG Backlit Popup Display", "slug": "8ft-seg-backlit-popup-display", "bullets": ["Popup with graphic edge"], "price": "$2,603.37", "priceType": "fixed" },
+      { "name": "10ft SEG Backlit Popup Display", "slug": "10ft-seg-backlit-popup-display", "bullets": ["Popup with graphic edge"], "price": "$3,299.67", "priceType": "fixed" },
+      { "name": "10ft SEG Backlit Display", "slug": "10ft-seg-backlit-fabric-display", "bullets": ["Backlit slim frame"], "price": "$3,629.67", "priceType": "fixed" },
+      { "name": "6ft Curved Tension Fabric Display", "slug": "curve-tension-fabric-display", "bullets": ["Lightweight tube hardware", "Pillowcase graphics"], "price": "$675.67", "priceType": "fixed" },
+      { "name": "8ft Straight Tension Fabric Display", "slug": "straight-tension-fabric-displays", "bullets": ["Portable tube hardware"], "price": "$877.74", "priceType": "fixed", "unit": "8ft" },
+      { "name": "10' x 10' Booth", "slug": "10x10-custom-booth", "bullets": ["20 packages available"], "price": "$1,428.90", "priceType": "fixed" },
+      { "name": "10' x 20' Booth", "slug": "10x20-custom-booth", "bullets": ["10 packages available"], "price": "$3,408.90", "priceType": "fixed" },
+      { "name": "20' x 20' Booth", "slug": "20x20-custom-booth", "bullets": ["2 packages available"], "price": "$12,098.90", "priceType": "fixed" },
+      { "name": "Podium", "slug": "podium", "bullets": ["Trade show podium"], "price": "$877.80", "priceType": "fixed" },
+      { "name": "LED Light (Trade Show Display)", "slug": "led-light-trade-show-display", "bullets": ["Display lighting"], "price": "$377.30", "priceType": "fixed" },
+      { "name": "Trade Show Hardware Only", "slug": "tradeshow-hardware", "bullets": ["Graphic Not Included"], "price": null, "priceType": "see-all", "cta": "See All" }
+    ]
+  },
+  "custom-event-tents": {
+    "title": "Custom Event Tents",
+    "subtitle": "10' x 10', 10' x 15', 10' x 20' custom event tents with graphic options",
+    "products": [
+      { "name": "10ft Event Tent", "slug": "event-tent-canopy-graphic", "bullets": ["Complete set - canopy with wall options", "10'x10' aluminum frame"], "price": "$1,197.00", "priceType": "fixed" },
+      { "name": "10ft Tent Wall Graphics", "slug": "tent-wall-full-color", "bullets": ["Full or half wall replacement graphics"], "price": "$392.67", "priceType": "fixed", "unit": "Half Wall", "options": [ { "unit": "Half Wall", "price": "$392.67" }, { "unit": "Full Wall", "price": "$524.70" } ] },
+      { "name": "15ft Event Tent", "slug": "10x15-event-tent", "bullets": ["10'x15' aluminum frame"], "price": "$1,977.00", "priceType": "fixed" },
+      { "name": "20ft Event Tent", "slug": "10x20-event-tent", "bullets": ["10'x20' aluminum frame"], "price": "$2,337.00", "priceType": "fixed" },
+      { "name": "Tent Flag Kit", "slug": "tent-flag-teardrop", "bullets": ["Tent compatible flag kit"], "price": "$217.74", "priceType": "fixed" },
+      { "name": "Event Tent Hardware", "slug": "event-tent-hardware", "bullets": ["Graphic not included"], "price": null, "priceType": "see-all", "cta": "See All" }
+    ]
+  },
+  "table-throw": {
+    "title": "Table Throws",
+    "subtitle": "Full color dye sublimated 8.8 oz. polyester fabric table covers",
+    "products": [
+      { "name": "4' Table Throw", "slug": "4ft-table-cover", "bullets": ["Full color dye sub print"], "price": "$189.75", "priceType": "fixed", "unit": "3 sided" },
+      { "name": "6' Table Throw", "slug": "6ft-table-cover", "bullets": ["Full color dye sub print"], "price": "$236.49", "priceType": "fixed", "unit": "3 sided" },
+      { "name": "8' Table Throw", "slug": "8ft-table-cover", "bullets": ["Full color dye sub print"], "price": "$281.34", "priceType": "fixed", "unit": "3 sided" },
+      { "name": "Round Table Cover", "slug": "round-table-cover", "bullets": ["Full color dye sub print"], "price": "$235.95", "priceType": "fixed", "unit": "Standard" },
+      { "name": "Stretch Table Throw", "slug": "stretch-table-cover", "bullets": ["Fitted shaped", "Full color dye sub"], "price": "$424.71", "priceType": "fixed", "unit": "6ft" },
+      { "name": "Table Runner", "slug": "table-runner", "bullets": ["Full color dye sub print"], "price": "$65.34", "priceType": "fixed" },
+      { "name": "Solid Color Table Throws", "slug": "solid-color-table-throws-assorted-colors", "bullets": ["Unprinted single color throw"], "price": "$42.90", "priceType": "fixed" }
+    ]
+  },
+  "hardware-only": {
+    "title": "Hardware Only",
+    "subtitle": "Frames, stands, and hardware without graphics",
+    "products": [
+      { "name": "Hardware Only", "slug": "hardware-only", "bullets": ["Various frames and stands", "Graphics sold separately"], "price": null, "priceType": "quote" }
+    ]
+  },
+  "banners": {
+    "title": "Banners",
+    "subtitle": "Choose from a variety of materials for your full-color banner needs",
+    "products": [
+      { "name": "13oz. Vinyl Banner", "slug": "13oz-vinyl-banner", "bullets": ["Our most popular banner"], "price": "$5.45", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "18oz. Blockout Banner", "slug": "vinyl-banner-18oz-blockout", "bullets": ["Our most durable banner"], "price": "$9.10", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Backlit Banner", "slug": "vinyl-banner-backlit", "bullets": ["15 oz. translucent vinyl for lit signage"], "price": "$19.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Mesh Banner", "slug": "mesh-banners", "bullets": ["Best option for windy conditions"], "price": "$4.84", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Indoor Banner", "slug": "super-smooth-indoor-banner", "bullets": ["Great for closeup detail", "Flat and smooth surface vinyl"], "price": "$7.28", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Pole Banner", "slug": "pole-banner-set", "bullets": ["Ready to install hardware kit", "Durable 18 oz banners"], "price": "$8.72", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "9oz. Fabric Banner", "slug": "fabric-banner-9oz-wrinkle-free", "bullets": ["Wrinkle resistant and washable", "Dye sublimation print"], "price": "$7.92", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Blockout Fabric Banner", "slug": "fabric-block-out", "bullets": ["Blocks back lighting", "Dye sublimation print"], "price": "$19.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Tension Fabric", "slug": "tension-fabric", "bullets": ["2-way stretch for wraps", "Dye sublimation print"], "price": "$15.40", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Hand Banner", "slug": "hand-banner", "bullets": ["Left and right handles", "13oz vinyl, portable"], "price": "$90.24", "priceType": "fixed", "unit": "10/set" }
+    ]
+  },
+  "wall-art": {
+    "title": "Wall Art",
+    "subtitle": "Canvas wraps, framed prints, SEG, and acrylic",
+    "products": [
+      { "name": "Canvas Wrap", "slug": "canvas-wrap", "bullets": ["1.5\" thick gallery wrap"], "price": "$40.08", "priceType": "fixed" },
+      { "name": "Framed Canvas", "slug": "framed-canvas", "bullets": ["Frames: black, off white, pecan"], "price": "$96.08", "priceType": "fixed" },
+      { "name": "Wall Mount SEG", "slug": "wall_mount_seg", "bullets": ["Black Aluminum Frame with SEG Graphic"], "price": "$147.96", "priceType": "fixed" },
+      { "name": "Acrylic Prints", "slug": "acrylic-prints", "bullets": ["Back mounted with 1\" standoff hardware"], "price": "$278.24", "priceType": "fixed", "options": [ { "unit": "16\" x 24\"", "price": "$278.24" }, { "unit": "20\" x 30\"", "price": "$343.16" }, { "unit": "24\" x 36\"", "price": "$415.76" } ] },
+      { "name": "Magnetic Wood Frame Hanger", "slug": "wood-frame-hanger", "bullets": ["Snap-to-hang solid wood hangers"], "price": "$52.76", "priceType": "fixed" },
+      { "name": "Framed Prints", "slug": "framed-prints", "bullets": ["Eco-friendly natural wood styling"], "price": "$153.68", "priceType": "fixed" },
+      { "name": "Canvas Roll", "slug": "canvas-roll", "bullets": ["15 mil. semigloss artist canvas"], "price": "$14.52", "priceType": "per-sqft", "unit": "per ft²" }
+    ]
+  },
+  "wall-murals": {
+    "title": "Wall Murals",
+    "subtitle": "Large format wall murals and interior graphics",
+    "products": [
+      { "name": "Adhesive Wall Fabric", "slug": "wall-graphics", "bullets": ["Low tack - easy to remove and reposition", "Never falls down", "Designed for interior walls"], "price": "$14.52", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Non-Woven Wallpaper", "slug": "non_woven_wallpapper", "bullets": ["Not self adhesive", "Digitally printed lightweight PVC-free wallpaper", "Tear-resistant non-woven material"], "price": "$11.96", "priceType": "per-sqft", "unit": "per ft²" }
+    ]
+  },
+  "adhesive-products": {
+    "title": "Adhesive Products",
+    "subtitle": "Decals, vinyl graphics, and adhesive-backed signage",
+    "products": [
+      { "name": "Adhesive Vinyl", "slug": "adhesive-vinyl", "bullets": ["Permanent adhesive indoor and outdoor", "4mil white PVC calendar film"], "price": "$6.60", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "High Performance Vinyl", "slug": "adhesive-vinyl-high-performance", "bullets": ["Long term installs, flat or simple curves", "Initial low tack for repositioning", "3mil ultra-calendared PVC"], "price": "$14.52", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "3M IJ-180Cv3 Controltac", "slug": "vehicle-wrap-3m-cast", "bullets": ["Long term vehicle wrap", "2mil Cast vinyl + overlaminate"], "price": "$19.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Adhesive Window Perf", "slug": "adhesive-window-perf", "bullets": ["One-way visibility", "30% perforated window film"], "price": "$10.12", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Premium Window Cling", "slug": "premium-window-cling", "bullets": ["Easy to reposition and reuse", "Water-free installation"], "price": "$12.12", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Adhesive Wall Fabric", "slug": "wall-graphics", "bullets": ["Low tack, easy remove and reposition", "Designed for interior walls"], "price": "$14.52", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Adhesive Clear Vinyl", "slug": "adhesive-clear-vinyl", "bullets": ["Light pass through", "Crystal clear, CMYK semi-transparent"], "price": "$15.20", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Adhesive Translucent Vinyl", "slug": "adhesive-translucent-vinyl", "bullets": ["Optional double layer print", "3mil illumination film"], "price": "$19.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Floor Graphics", "slug": "floor-graphics", "bullets": ["Easy installation and clean removal", "7mil non-slip floor lamination"], "price": "$24.20", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Frosted Vinyl", "slug": "etched-printable-frosted-vinyl", "bullets": ["Privacy on windows", "Full color on frosted vinyl"], "price": "$19.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Reflective Adhesive Vinyl", "slug": "reflective-adhesive-vinyl", "bullets": ["Highly visible metallic surface", "4mil reflective permanent adhesive"], "price": "$19.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Dry Erase Adhesive Vinyl", "slug": "dry-erase-adhesive-vinyl", "bullets": ["4mil white PVC with dry erase coating"], "price": "$16.52", "priceType": "per-sqft", "unit": "per ft²" }
+    ]
+  },
+  "rigid-signs-and-magnets": {
+    "title": "Rigid Signs and Magnets",
+    "subtitle": "Rigid substrate signs and magnetic signage",
+    "products": [
+      { "name": "Magnets", "slug": "magnets", "bullets": ["High strength indoor/outdoor", "Flexible 30 mil magnet"], "price": "$15.96", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Coroplast", "slug": "coroplast", "bullets": ["Custom size indoor/outdoor", "4mm coroplast, H-Stake option"], "price": "$15.40", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Aluminum Sandwich Board", "slug": "aluminum-sandwich-board", "bullets": ["DiBond/ACP", "1/8\" aluminum composite"], "price": "$19.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "PVC Board", "slug": "pvc-board", "bullets": ["Durable indoor and short term outdoor"], "price": "$15.40", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Styrene", "slug": "styrene", "bullets": ["Semi-rigid, flexible, curveable"], "price": "$16.96", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Foam Board", "slug": "foamcore", "bullets": ["Lightweight poster board", "Indoor use only"], "price": "$15.40", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "GatorFoam", "slug": "gatorfoam", "bullets": ["Lightweight indoor", "Extra heavy-duty surface"], "price": "$20.04", "priceType": "per-sqft", "unit": "per ft²", "options": [ { "unit": "3/16\" White", "price": "$20.04 per ft²" }, { "unit": "1/2\" White", "price": "$40.04 per ft²" }, { "unit": "3/16\" Black", "price": "$20.04 per ft²" }, { "unit": "1/2\" Black", "price": "$40.04 per ft²" } ] },
+      { "name": "Acrylic Prints", "slug": "acrylic-prints", "bullets": ["Back mounted with 1\" standoff hardware"], "price": "$278.24", "priceType": "fixed", "options": [ { "unit": "16\" x 24\"", "price": "$278.24" }, { "unit": "20\" x 30\"", "price": "$343.16" }, { "unit": "24\" x 36\"", "price": "$415.76" } ] },
+      { "name": "Aluminum Sign", "slug": "aluminum-sign", "bullets": [".040 solid aluminum", "Long-lasting indoor/outdoor"], "price": "$52.80", "priceType": "fixed", "options": [ { "unit": "12\" x 18\"", "price": "$52.80" }, { "unit": "18\" x 24\"", "price": "$79.20" }, { "unit": "24\" x 36\"", "price": "$158.40" } ] }
+    ]
+  },
+  "reflective-products": {
+    "title": "Reflective Products",
+    "subtitle": "Reflective vinyl and safety signage",
+    "products": [
+      { "name": "Reflective Adhesive Vinyl", "slug": "reflective-adhesive-vinyl", "bullets": ["Highly visible", "4mil reflective permanent adhesive"], "price": "$19.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Reflective Signicade A-Frame", "slug": "reflective-signicade-a-frame", "bullets": ["Reflective A-frame signage"], "price": "$483.96", "priceType": "fixed" },
+      { "name": "Reflective Car Magnet", "slug": "reflective-car-magnet", "bullets": ["Vehicle magnets", "Reflective surface"], "price": "$44.00", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Reflective Coroplast", "slug": "reflective-coroplast", "bullets": ["Reflective coroplast signs"], "price": "$35.20", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Reflective Aluminum Sandwich Board", "slug": "reflective-aluminum-sandwich-board", "bullets": ["Reflective ACP/diBond"], "price": "$30.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Reflective Aluminum Sign", "slug": "reflective-aluminum-sign", "bullets": [".040 reflective aluminum"], "price": "$85.80", "priceType": "fixed" }
+    ]
+  },
+  "dry-erase-products": {
+    "title": "Dry Erase Products",
+    "subtitle": "Dry erase boards and writable surfaces",
+    "products": [
+      { "name": "Dry Erase Adhesive Vinyl", "slug": "dry-erase-adhesive-vinyl", "bullets": ["4mil white PVC with dry erase coating"], "price": "$16.52", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Dry Erase Magnet", "slug": "dry-erase-magnet", "bullets": ["Dry erase magnetic surface"], "price": "$30.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Dry Erase Coroplast", "slug": "dry-erase-coroplast", "bullets": ["Dry erase coroplast signs"], "price": "$24.20", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Dry Erase Aluminum Sandwich Board", "slug": "dry-erase-aluminum-sandwich-board", "bullets": ["Dry erase ACP"], "price": "$19.80", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Dry Erase Foamcore", "slug": "dry-erase-foamcore", "bullets": ["Dry erase foam board"], "price": "$24.20", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "Dry Erase PVC Board", "slug": "dry-erase-pvc-board", "bullets": ["Dry erase PVC board"], "price": "$24.20", "priceType": "per-sqft", "unit": "per ft²" }
+    ]
+  },
+  "dtf-and-uv-dtf": {
+    "title": "DTF and UV DTF",
+    "subtitle": "Direct to film and UV printing solutions",
+    "products": [
+      { "name": "DTF Transfer", "slug": "direct-to-film", "bullets": ["Quick melt - Cold Peel", "CMYK + White Ink", "Direct to Film fabric transfers"], "price": "$3.96", "priceType": "per-sqft", "unit": "per ft²" },
+      { "name": "UV DTF", "slug": "uv-dtf", "bullets": ["Instant adhesion, no heating", "CMYK + White + Gloss", "Works on any hard surface", "Permanent UV stickers"], "price": "$11.96", "priceType": "per-sqft", "unit": "per ft²" }
+    ]
+  },
+  "backlit-film": {
+    "title": "Backlit Film",
+    "subtitle": "Translucent film for light boxes and backlit displays",
+    "products": [
+      { "name": "Backlit Film", "slug": "backlit-film", "bullets": ["Light box compatible", "Vibrant colors"], "price": null, "priceType": "quote" }
+    ]
+  },
+  "premium-window-cling": {
+    "title": "Premium Window Cling",
+    "subtitle": "Removable window graphics and clings",
+    "products": [
+      { "name": "Premium Window Cling", "slug": "premium-window-cling", "bullets": ["Removable, no adhesive residue"], "price": null, "priceType": "quote" }
+    ]
+  },
+  "posters": {
+    "title": "Posters",
+    "subtitle": "Large format posters and display prints",
+    "products": [
+      { "name": "Posters", "slug": "posters", "bullets": ["Multiple sizes and substrates"], "price": null, "priceType": "quote" }
+    ]
+  },
+  "styrene": {
+    "title": "Styrene",
+    "subtitle": "Rigid styrene signs and displays",
+    "products": [
+      { "name": "Styrene", "slug": "styrene", "bullets": [".020\" High Impact Polystyrene", "Blockout material", "Matte finish", "Direct UV printing in full color", "Indoor and outdoor safe", "Lays flat after being rolled"], "price": "$16.96", "priceType": "per-sqft", "unit": "per ft²" }
+    ]
+  },
+  "popup": {
+    "title": "Popup",
+    "subtitle": "Pop-up displays and portable signage",
+    "products": [
+      { "name": "Popup", "slug": "popup", "bullets": ["Portable pop-up displays"], "price": null, "priceType": "quote" }
+    ]
+  },
+  "configuratorProducts": {
+    "13oz-vinyl-banner": {
+      "name": "13oz Vinyl Banner",
+      "unitPrice": 5.45,
+      "unitLabel": "per ft²",
+      "bullets": ["Welded oversized banners available", "Additional finishing available", "Free hemming and grommets", "Full color UV printed - Indoor and outdoor ready", "13 oz Matte Scrim Banner"],
+      "fullOptions": true,
+      "options": { "sides": ["1 Side", "2 Sides"], "material": ["13oz. Matte Vinyl Banner"], "polePocket": ["No Pole Pockets", "4\" - Top Only", "3\" - Top Only", "2\" - Top Only", "4\" - Top and Bottom", "3\" - Top and Bottom", "2\" - Top and Bottom"], "hem": ["All Sides", "No Hem"], "grommet": ["Every 2' All Sides", "No Grommet", "4 Corner Only", "Every 2' Left & Right", "Every 2' Top & Bottom"] }
+    },
+    "vinyl-banner-18oz-blockout": { "name": "18oz Blockout Banner", "unitPrice": 9.10, "unitLabel": "per ft²", "bullets": ["Our most durable banner"], "fullOptions": false },
+    "vinyl-banner-backlit": { "name": "Backlit Banner", "unitPrice": 19.80, "unitLabel": "per ft²", "bullets": ["15 oz. translucent vinyl for lit signage"], "fullOptions": false },
+    "mesh-banners": { "name": "Mesh Banner", "unitPrice": 4.84, "unitLabel": "per ft²", "bullets": ["Best option for windy conditions"], "fullOptions": false },
+    "super-smooth-indoor-banner": { "name": "Indoor Banner", "unitPrice": 7.28, "unitLabel": "per ft²", "bullets": ["Great for closeup detail", "Flat and smooth surface vinyl"], "fullOptions": false },
+    "pole-banner-set": { "name": "Pole Banner", "unitPrice": 8.72, "unitLabel": "per ft²", "bullets": ["Ready to install hardware kit", "Durable 18 oz banners"], "fullOptions": false },
+    "fabric-banner-9oz-wrinkle-free": { "name": "9oz Fabric Banner", "unitPrice": 7.92, "unitLabel": "per ft²", "bullets": ["Wrinkle resistant and washable", "Dye sublimation print"], "fullOptions": false },
+    "fabric-block-out": { "name": "Blockout Fabric Banner", "unitPrice": 19.80, "unitLabel": "per ft²", "bullets": ["Blocks back lighting", "Dye sublimation print"], "fullOptions": false },
+    "tension-fabric": { "name": "Tension Fabric", "unitPrice": 15.40, "unitLabel": "per ft²", "bullets": ["2-way stretch for wraps", "Dye sublimation print"], "fullOptions": false },
+    "custom-seg-fabric": { "name": "Custom SEG Fabric", "unitPrice": 5.25, "unitLabel": "per ft²", "bullets": ["Custom size", "Fabric graphic only"], "fullOptions": false },
+    "canvas-roll": { "name": "Canvas Roll", "unitPrice": 14.52, "unitLabel": "per ft²", "bullets": ["15 mil. semigloss artist canvas"], "fullOptions": false },
+    "styrene": {
+      "name": "Styrene",
+      "unitPrice": 16.96,
+      "unitLabel": "per ft²",
+      "minCharge": 32,
+      "grommetOnly": true,
+      "bullets": [".020\" High Impact Polystyrene", "Blockout material", "Matte finish", "Direct UV printing in full color", "Indoor and outdoor safe", "Lays flat after being rolled"]
+    },
+    "standard-channel-letter": {
+      "name": "Standard Channel Letters",
+      "unitPrice": 4.39,
+      "unitLabel": "per inch",
+      "perInch": true,
+      "bullets": ["Front lit & Dual lit", ".040 aluminum returns", "Acrylic faces with trimcaps"]
+    },
+    "posters": {
+      "name": "Posters",
+      "unitPrice": 12,
+      "unitLabel": "per ft²",
+      "minCharge": 25,
+      "grommetOnly": true,
+      "bullets": ["Multiple sizes and substrates", "UV or solvent print", "Matte or gloss finish"]
+    },
+    "premium-window-cling": {
+      "name": "Premium Window Cling",
+      "unitPrice": 12.12,
+      "unitLabel": "per ft²",
+      "minCharge": 28,
+      "grommetOnly": true,
+      "bullets": ["Easy to reposition and reuse", "Premium cling, water-free installation"]
+    },
+    "backlit-film": {
+      "name": "Backlit Film",
+      "unitPrice": 18,
+      "unitLabel": "per ft²",
+      "minCharge": 35,
+      "grommetOnly": true,
+      "bullets": ["Light box compatible", "Vibrant colors", "Translucent for backlit displays"]
+    },
+    "wall-graphics": { "name": "Adhesive Wall Fabric", "unitPrice": 14.52, "unitLabel": "per ft²", "minCharge": 30, "grommetOnly": true, "bullets": ["Low tack - easy to remove and reposition", "Never falls down", "Designed for interior walls"] },
+    "non_woven_wallpapper": { "name": "Non-Woven Wallpaper", "unitPrice": 11.96, "unitLabel": "per ft²", "minCharge": 25, "grommetOnly": true, "bullets": ["Not self adhesive", "Digitally printed PVC-free wallpaper", "Tear-resistant non-woven"] },
+    "adhesive-vinyl": { "name": "Adhesive Vinyl", "unitPrice": 6.60, "unitLabel": "per ft²", "minCharge": 20, "grommetOnly": true, "bullets": ["Permanent adhesive indoor and outdoor", "4mil white PVC calendar film"] },
+    "adhesive-vinyl-high-performance": { "name": "High Performance Vinyl", "unitPrice": 14.52, "unitLabel": "per ft²", "minCharge": 28, "grommetOnly": true, "bullets": ["Long term installs", "Low tack repositioning", "3mil ultra-calendared PVC"] },
+    "vehicle-wrap-3m-cast": { "name": "3M IJ-180Cv3 Controltac", "unitPrice": 19.80, "unitLabel": "per ft²", "minCharge": 35, "grommetOnly": true, "bullets": ["Vehicle wrap", "2mil Cast vinyl + overlaminate"] },
+    "adhesive-window-perf": { "name": "Adhesive Window Perf", "unitPrice": 10.12, "unitLabel": "per ft²", "minCharge": 25, "grommetOnly": true, "bullets": ["One-way visibility", "30% perforated window film"] },
+    "adhesive-clear-vinyl": { "name": "Adhesive Clear Vinyl", "unitPrice": 15.20, "unitLabel": "per ft²", "minCharge": 28, "grommetOnly": true, "bullets": ["Light pass through", "Crystal clear CMYK"] },
+    "adhesive-translucent-vinyl": { "name": "Adhesive Translucent Vinyl", "unitPrice": 19.80, "unitLabel": "per ft²", "minCharge": 35, "grommetOnly": true, "bullets": ["Double layer print option", "3mil illumination film"] },
+    "floor-graphics": { "name": "Floor Graphics", "unitPrice": 24.20, "unitLabel": "per ft²", "minCharge": 40, "grommetOnly": true, "bullets": ["Easy install and clean removal", "7mil non-slip floor lamination"] },
+    "etched-printable-frosted-vinyl": { "name": "Frosted Vinyl", "unitPrice": 19.80, "unitLabel": "per ft²", "minCharge": 35, "grommetOnly": true, "bullets": ["Privacy on windows", "Full color frosted vinyl"] },
+    "reflective-adhesive-vinyl": { "name": "Reflective Adhesive Vinyl", "unitPrice": 19.80, "unitLabel": "per ft²", "minCharge": 35, "grommetOnly": true, "bullets": ["Highly visible metallic surface", "4mil reflective permanent adhesive"] },
+    "dry-erase-adhesive-vinyl": { "name": "Dry Erase Adhesive Vinyl", "unitPrice": 16.52, "unitLabel": "per ft²", "minCharge": 28, "grommetOnly": true, "bullets": ["4mil white PVC with dry erase coating"] },
+    "magnets": { "name": "Magnets", "unitPrice": 15.96, "unitLabel": "per ft²", "minCharge": 30, "grommetOnly": true, "bullets": ["High strength indoor/outdoor", "Flexible 30 mil magnet"] },
+    "coroplast": { "name": "Coroplast", "unitPrice": 15.40, "unitLabel": "per ft²", "minCharge": 28, "grommetOnly": true, "bullets": ["Custom size indoor/outdoor", "4mm coroplast, H-Stake option"] },
+    "aluminum-sandwich-board": { "name": "Aluminum Sandwich Board", "unitPrice": 19.80, "unitLabel": "per ft²", "minCharge": 35, "grommetOnly": true, "bullets": ["DiBond/ACP", "1/8\" aluminum composite"] },
+    "pvc-board": { "name": "PVC Board", "unitPrice": 15.40, "unitLabel": "per ft²", "minCharge": 28, "grommetOnly": true, "bullets": ["Durable indoor and short term outdoor"] },
+    "foamcore": { "name": "Foam Board", "unitPrice": 15.40, "unitLabel": "per ft²", "minCharge": 28, "grommetOnly": true, "bullets": ["Lightweight poster board", "Indoor use only"] },
+    "gatorfoam": { "name": "GatorFoam", "unitPrice": 20.04, "unitLabel": "per ft²", "minCharge": 35, "grommetOnly": true, "bullets": ["Lightweight indoor", "Extra heavy-duty surface"] },
+    "reflective-car-magnet": { "name": "Reflective Car Magnet", "unitPrice": 44.00, "unitLabel": "per ft²", "minCharge": 50, "grommetOnly": true, "bullets": ["Vehicle magnets", "Reflective surface"] },
+    "reflective-coroplast": { "name": "Reflective Coroplast", "unitPrice": 35.20, "unitLabel": "per ft²", "minCharge": 45, "grommetOnly": true, "bullets": ["Reflective coroplast signs"] },
+    "reflective-aluminum-sandwich-board": { "name": "Reflective Aluminum Sandwich Board", "unitPrice": 30.80, "unitLabel": "per ft²", "minCharge": 40, "grommetOnly": true, "bullets": ["Reflective ACP/diBond"] },
+    "dry-erase-magnet": { "name": "Dry Erase Magnet", "unitPrice": 30.80, "unitLabel": "per ft²", "minCharge": 40, "grommetOnly": true, "bullets": ["Dry erase magnetic surface"] },
+    "dry-erase-coroplast": { "name": "Dry Erase Coroplast", "unitPrice": 24.20, "unitLabel": "per ft²", "minCharge": 35, "grommetOnly": true, "bullets": ["Dry erase coroplast signs"] },
+    "dry-erase-aluminum-sandwich-board": { "name": "Dry Erase Aluminum Sandwich Board", "unitPrice": 19.80, "unitLabel": "per ft²", "minCharge": 30, "grommetOnly": true, "bullets": ["Dry erase ACP"] },
+    "dry-erase-foamcore": { "name": "Dry Erase Foamcore", "unitPrice": 24.20, "unitLabel": "per ft²", "minCharge": 35, "grommetOnly": true, "bullets": ["Dry erase foam board"] },
+    "dry-erase-pvc-board": { "name": "Dry Erase PVC Board", "unitPrice": 24.20, "unitLabel": "per ft²", "minCharge": 35, "grommetOnly": true, "bullets": ["Dry erase PVC board"] },
+    "direct-to-film": { "name": "DTF Transfer", "unitPrice": 3.96, "unitLabel": "per ft²", "minCharge": 15, "grommetOnly": true, "bullets": ["Quick melt - Cold Peel", "CMYK + White Ink", "Direct to Film fabric transfers"] },
+    "uv-dtf": { "name": "UV DTF", "unitPrice": 11.96, "unitLabel": "per ft²", "minCharge": 25, "grommetOnly": true, "bullets": ["Instant adhesion, no heating", "CMYK + White + Gloss", "Permanent UV stickers"] }
+  }
+}

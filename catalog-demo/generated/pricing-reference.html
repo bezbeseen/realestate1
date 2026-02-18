@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing reference – Editable master sheets</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .ref-section { margin-bottom: 2.5rem; }
+    .ref-section h2 { font-size: 1.25rem; margin: 0 0 0.5rem; color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 0.25rem; }
+    .ref-section p.sub { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 1rem; }
+    .ref-table { width: 100%; max-width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-bottom: 1rem; }
+    .ref-table th, .ref-table td { text-align: left; padding: 0.4rem 0.5rem; border: 1px solid var(--border); vertical-align: top; }
+    .ref-table th { background: var(--bg); font-weight: 600; }
+    .ref-table input, .ref-table select, .ref-table textarea { width: 100%; padding: 0.35rem 0.5rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.9rem; }
+    .ref-table textarea { min-height: 2.5em; resize: vertical; }
+    .ref-table input[type="checkbox"] { width: auto; }
+    .ref-table .col-slug { width: 140px; }
+    .ref-table .col-name { width: 180px; }
+    .ref-table .col-num { width: 90px; }
+    .ref-table .col-desc { min-width: 200px; }
+    .ref-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; overflow-x: auto; }
+    .ref-block h4 { margin: 0 0 0.75rem; font-size: 0.95rem; }
+    .ref-block table { margin-bottom: 0.5rem; }
+    .ref-actions { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .ref-actions .btn-secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
+    .ref-actions .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+    .ref-json { font-family: ui-monospace, monospace; font-size: 0.8rem; white-space: pre-wrap; word-break: break-all; color: var(--text-muted); background: var(--bg); padding: 0.75rem; border-radius: 6px; max-height: 300px; overflow: auto; }
+    .ref-nav { margin-bottom: 1.5rem; }
+    .ref-nav a { margin-right: 1rem; }
+    .editable-note { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html">Online Catalog</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="pricing-reference.html">Pricing reference</a>
+        <a href="demo-pricing.html">Pricing demo</a>
+        <a href="banners.html">Banners</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Tools</h3>
+      <ul>
+        <li><a href="pricing-reference.html">Pricing reference</a></li>
+        <li><a href="demo-pricing.html">Pricing demo</a></li>
+      </ul>
+      <h3>Sheets</h3>
+      <ul>
+        <li><a href="#by-sqft">By sq ft</a></li>
+        <li><a href="#static">Static by size</a></li>
+        <li><a href="#quantity">Quantity + variants</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+
+      <h1 class="page-title">Pricing reference (editable)</h1>
+      <p class="page-subtitle">Edit the tables below. Use <strong>Export JSON</strong> to copy data for the master sheet, or <strong>Save to browser</strong> to keep changes locally.</p>
+
+      <div class="ref-actions">
+        <button type="button" class="btn-primary" id="btn-export">Export JSON</button>
+        <button type="button" class="btn-secondary" id="btn-save">Save to browser</button>
+        <button type="button" class="btn-secondary" id="btn-load">Load from browser</button>
+        <span class="editable-note" id="save-status"></span>
+      </div>
+      <div id="export-area" style="display: none; margin-top: 0.5rem;"><pre class="ref-json" id="export-json"></pre></div>
+
+      <div class="ref-nav">
+        <a href="#by-sqft" class="btn-primary">By sq ft</a>
+        <a href="#static" class="btn-primary">Static by size</a>
+        <a href="#quantity" class="btn-primary">Quantity + variants</a>
+      </div>
+
+      <div id="by-sqft" class="ref-section">
+        <h2>1. By sq ft (and per inch)</h2>
+        <p class="sub">Edit unit price, min charge, name, and description. Per inch = use perimeter pricing (e.g. channel letters).</p>
+        <p class="editable-note">All fields are editable. Description is for your notes or product copy.</p>
+        <table class="ref-table" id="table-by-sqft">
+          <thead>
+            <tr>
+              <th class="col-slug">Slug</th>
+              <th class="col-name">Name</th>
+              <th class="col-num">Unit price</th>
+              <th class="col-num">Min charge</th>
+              <th>Per inch</th>
+              <th class="col-desc">Description</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p class="sub" style="margin-top: 1rem;">Products with options (Pole Pocket, Hem, Grommet, etc.) — expand to edit option labels/descriptions.</p>
+        <div id="by-sqft-options"></div>
+      </div>
+
+      <div id="static" class="ref-section">
+        <h2>2. Static by size/style</h2>
+        <p class="sub">A-frames, tents, flags — edit name, price, and options (unit → price). Add a description per product.</p>
+        <p class="editable-note">Edit the table in each block. Rows are unit (size/style) and price.</p>
+        <div id="blocks-static"></div>
+      </div>
+
+      <div id="quantity" class="ref-section">
+        <h2>3. By quantity + variants</h2>
+        <p class="sub">Business cards, etc. Edit quantity tiers (qty → price) and variants (name, price modifier). Description per product.</p>
+        <div id="blocks-quantity"></div>
+      </div>
+
+      <p style="margin-top: 2rem;"><a href="demo-pricing.html" class="btn-primary">Try pricing demo</a> <a href="index.html" style="margin-left: 0.5rem;">View catalog</a></p>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <a href="index.html">View full catalog</a>
+  </footer>
+
+  <script src="assets/js/product-pricing.js"></script>
+  <script>
+(function () {
+  var P = window.ProductPricing;
+  if (!P) return;
+
+  var STORAGE_KEY = 'pricing-reference-edits';
+
+  // ---------- Build editable By sq ft table ----------
+  var tbody = document.getElementById('table-by-sqft').querySelector('tbody');
+  Object.keys(P.BY_SQFT).sort().forEach(function (slug) {
+    var p = P.BY_SQFT[slug];
+    var tr = document.createElement('tr');
+    tr.dataset.slug = slug;
+    var unitPrice = p.unitPrice != null ? String(p.unitPrice) : '';
+    var minCharge = p.minCharge != null ? String(p.minCharge) : '';
+    var desc = p.description || '';
+    tr.innerHTML =
+      '<td class="col-slug"><input type="text" value="' + escapeAttr(slug) + '" readonly class="col-slug-input" data-field="slug"></td>' +
+      '<td class="col-name"><input type="text" value="' + escapeAttr(p.name || '') + '" data-field="name" placeholder="Product name"></td>' +
+      '<td class="col-num"><input type="number" step="0.01" min="0" value="' + escapeAttr(unitPrice) + '" data-field="unitPrice" placeholder="0"></td>' +
+      '<td class="col-num"><input type="number" step="0.01" min="0" value="' + escapeAttr(minCharge) + '" data-field="minCharge" placeholder="—"></td>' +
+      '<td><input type="checkbox" data-field="perInch" ' + (p.perInch ? 'checked' : '') + '> Per inch</td>' +
+      '<td class="col-desc"><textarea data-field="description" placeholder="Notes or product description" rows="2">' + escapeAttr(desc) + '</textarea></td>';
+    tbody.appendChild(tr);
+  });
+
+  function escapeAttr(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // ---------- Build editable product options (By sq ft attributes) ----------
+  var bySqftOpts = document.getElementById('by-sqft-options');
+  Object.keys(P.BY_SQFT).sort().forEach(function (slug) {
+    var attrs = P.getAttributes(slug);
+    if (!attrs || !Object.keys(attrs).length) return;
+    var p = P.BY_SQFT[slug];
+    var block = document.createElement('div');
+    block.className = 'ref-block';
+    block.dataset.slug = slug;
+    var html = '<h4><code>' + slug + '</code> — ' + (p.name || '') + ' (options)</h4>';
+    Object.keys(attrs).forEach(function (key) {
+      var choices = attrs[key];
+      if (!choices || !choices.length) return;
+      html += '<p style="margin: 0.5rem 0 0.25rem; font-weight: 600;">' + key + '</p>';
+      html += '<table class="ref-table"><thead><tr><th>Label</th><th>Value</th><th>Description</th></tr></thead><tbody>';
+      choices.forEach(function (c, i) {
+        var label = (c.label || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+        var val = (c.value != null ? c.value : '').toString().replace(/"/g, '&quot;');
+        var desc = (c.desc || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+        html += '<tr data-attr="' + key + '" data-i="' + i + '">' +
+          '<td><input type="text" value="' + label + '" data-field="label"></td>' +
+          '<td><input type="text" value="' + val + '" data-field="value" placeholder="value"></td>' +
+          '<td><input type="text" value="' + desc + '" data-field="desc" placeholder="optional"></td></tr>';
+      });
+      html += '</tbody></table>';
+    });
+    block.innerHTML = html;
+    bySqftOpts.appendChild(block);
+  });
+
+  // ---------- Build editable Static by size ----------
+  var staticEl = document.getElementById('blocks-static');
+  Object.keys(P.STATIC_BY_SIZE).sort().forEach(function (slug) {
+    var p = P.STATIC_BY_SIZE[slug];
+    var block = document.createElement('div');
+    block.className = 'ref-block';
+    block.dataset.slug = slug;
+    var opts = (p.options && p.options.length) ? p.options : (p.price ? [{ unit: p.unit || '—', price: p.price }] : []);
+    var desc = p.description || '';
+    var rows = opts.map(function (o, i) {
+      return '<tr data-i="' + i + '"><td><input type="text" value="' + escapeAttr(o.unit) + '" data-field="unit" placeholder="Size/style"></td>' +
+        '<td><input type="text" value="' + escapeAttr(o.price) + '" data-field="price" placeholder="Price"></td></tr>';
+    }).join('');
+    if (!rows) rows = '<tr data-i="0"><td><input type="text" data-field="unit" placeholder="—"></td><td><input type="text" value="' + escapeAttr(p.price) + '" data-field="price"></td></tr>';
+    block.innerHTML =
+      '<h4><code>' + slug + '</code></h4>' +
+      '<p style="margin: 0 0 0.5rem;"><label>Name <input type="text" value="' + escapeAttr(p.name || '') + '" data-field="name" style="margin-left: 0.5rem; width: 200px;"></label></p>' +
+      '<p style="margin: 0 0 0.5rem;"><label>Description <textarea data-field="description" placeholder="Optional" rows="2" style="width: 100%; margin-top: 0.25rem;">' + escapeAttr(desc) + '</textarea></label></p>' +
+      '<table class="ref-table"><thead><tr><th>Unit / Size</th><th>Price</th></tr></thead><tbody>' + rows + '</tbody></table>';
+    staticEl.appendChild(block);
+  });
+
+  // ---------- Build editable Quantity + variants ----------
+  var qtyEl = document.getElementById('blocks-quantity');
+  Object.keys(P.BY_QUANTITY_VARIANTS).sort().forEach(function (slug) {
+    var p = P.BY_QUANTITY_VARIANTS[slug];
+    var block = document.createElement('div');
+    block.className = 'ref-block';
+    block.dataset.slug = slug;
+    var tiers = (p.quantityTiers || []).map(function (t, i) {
+      return '<tr data-i="' + i + '"><td><input type="number" value="' + (t.qty || '') + '" data-field="qty" placeholder="Qty"></td>' +
+        '<td><input type="text" value="' + escapeAttr(t.price) + '" data-field="price"></td></tr>';
+    }).join('');
+    var variants = (p.variants || []).map(function (v, i) {
+      return '<tr data-i="' + i + '"><td><input type="text" value="' + escapeAttr(v.name) + '" data-field="name"></td>' +
+        '<td><input type="number" value="' + (v.priceMod != null ? v.priceMod : '') + '" data-field="priceMod" placeholder="0"></td></tr>';
+    }).join('');
+    var desc = p.description || '';
+    block.innerHTML =
+      '<h4><code>' + slug + '</code> — ' + (p.name || '') + '</h4>' +
+      '<p style="margin: 0 0 0.5rem;"><label>Name <input type="text" value="' + escapeAttr(p.name || '') + '" data-field="name" style="margin-left: 0.5rem; width: 200px;"></label></p>' +
+      '<p style="margin: 0 0 0.5rem;"><label>Description <textarea data-field="description" placeholder="Optional" rows="2" style="width: 100%; margin-top: 0.25rem;">' + escapeAttr(desc) + '</textarea></label></p>' +
+      '<p style="margin: 0.5rem 0 0.25rem;"><strong>Quantity tiers</strong></p><table class="ref-table"><thead><tr><th>Qty</th><th>Price</th></tr></thead><tbody>' + tiers + '</tbody></table>' +
+      '<p style="margin: 0.5rem 0 0.25rem;"><strong>Variants</strong></p><table class="ref-table"><thead><tr><th>Name</th><th>Price mod ($)</th></tr></thead><tbody>' + variants + '</tbody></table>';
+    qtyEl.appendChild(block);
+  });
+
+  // ---------- Gather data from DOM ----------
+  function getData() {
+    var bySqft = {};
+    document.querySelectorAll('#table-by-sqft tbody tr').forEach(function (tr) {
+      var slug = (tr.querySelector('[data-field="slug"]') || {}).value || tr.dataset.slug;
+      if (!slug) return;
+      bySqft[slug] = {
+        name: (tr.querySelector('[data-field="name"]') || {}).value || '',
+        unitPrice: parseFloat((tr.querySelector('[data-field="unitPrice"]') || {}).value) || null,
+        minCharge: parseFloat((tr.querySelector('[data-field="minCharge"]') || {}).value) || null,
+        perInch: !!((tr.querySelector('[data-field="perInch"]') || {}).checked),
+        description: (tr.querySelector('[data-field="description"]') || {}).value || ''
+      };
+    });
+    // Merge back attributes from original P for bySqft (we don't edit structure here, only by-sqft table fields)
+    Object.keys(P.BY_SQFT).forEach(function (slug) {
+      if (P.BY_SQFT[slug].attributes) bySqft[slug].attributes = P.BY_SQFT[slug].attributes;
+    });
+    // Option blocks: read attribute edits (label, value, desc) per product
+    document.querySelectorAll('#by-sqft-options .ref-block').forEach(function (block) {
+      var slug = block.dataset.slug;
+      if (!bySqft[slug] || !bySqft[slug].attributes) return;
+      var attrs = bySqft[slug].attributes;
+      block.querySelectorAll('table.ref-table tbody tr').forEach(function (tr) {
+        var attr = tr.dataset.attr;
+        var i = parseInt(tr.dataset.i, 10);
+        if (attr && attrs[attr] && attrs[attr][i]) {
+          attrs[attr][i].label = (tr.querySelector('[data-field="label"]') || {}).value || '';
+          attrs[attr][i].value = (tr.querySelector('[data-field="value"]') || {}).value;
+          attrs[attr][i].desc = (tr.querySelector('[data-field="desc"]') || {}).value || '';
+        }
+      });
+    });
+
+    var staticBySize = {};
+    document.querySelectorAll('#blocks-static .ref-block').forEach(function (block) {
+      var slug = block.dataset.slug;
+      var name = (block.querySelector('[data-field="name"]') || {}).value || '';
+      var description = (block.querySelector('[data-field="description"]') || {}).value || '';
+      var rows = [];
+      block.querySelectorAll('table.ref-table tbody tr').forEach(function (tr) {
+        var unit = (tr.querySelector('[data-field="unit"]') || {}).value;
+        var price = (tr.querySelector('[data-field="price"]') || {}).value;
+        if (unit || price) rows.push({ unit: unit || '', price: price || '' });
+      });
+      staticBySize[slug] = { name: name, description: description, options: rows.length ? rows : (P.STATIC_BY_SIZE[slug] && P.STATIC_BY_SIZE[slug].price ? [{ unit: '', price: (block.querySelector('[data-field="price"]') || {}).value || '' }] : []) };
+    });
+
+    var byQty = {};
+    document.querySelectorAll('#blocks-quantity .ref-block').forEach(function (block) {
+      var slug = block.dataset.slug;
+      var nameInputs = block.querySelectorAll('[data-field="name"]');
+      var name = (nameInputs[0] || {}).value || '';
+      var description = (block.querySelector('[data-field="description"]') || {}).value || '';
+      var quantityTiers = [];
+      var variants = [];
+      var tables = block.querySelectorAll('table.ref-table');
+      if (tables[0]) {
+        (tables[0].querySelector('tbody') || {}).querySelectorAll('tr').forEach(function (tr) {
+          var qty = (tr.querySelector('[data-field="qty"]') || {}).value;
+          var price = (tr.querySelector('[data-field="price"]') || {}).value;
+          quantityTiers.push({ qty: qty ? parseInt(qty, 10) : 0, price: price || '' });
+        });
+      }
+      if (tables[1]) {
+        (tables[1].querySelector('tbody') || {}).querySelectorAll('tr').forEach(function (tr) {
+          var n = (tr.querySelector('[data-field="name"]') || {}).value || '';
+          var mod = (tr.querySelector('[data-field="priceMod"]') || {}).value;
+          variants.push({ name: n, priceMod: mod !== '' ? parseFloat(mod) : 0 });
+        });
+      }
+      byQty[slug] = { name: name, description: description, quantityTiers: quantityTiers, variants: variants };
+    });
+
+    return { BY_SQFT: bySqft, STATIC_BY_SIZE: staticBySize, BY_QUANTITY_VARIANTS: byQty };
+  }
+
+  // ---------- Export JSON ----------
+  document.getElementById('btn-export').onclick = function () {
+    var data = getData();
+    var json = JSON.stringify(data, null, 2);
+    var area = document.getElementById('export-area');
+    document.getElementById('export-json').textContent = json;
+    area.style.display = 'block';
+    document.getElementById('save-status').textContent = 'Copy the JSON above to update product-pricing.js or save to a file.';
+  };
+
+  // ---------- Save / Load from localStorage ----------
+  document.getElementById('btn-save').onclick = function () {
+    try {
+      var data = getData();
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      document.getElementById('save-status').textContent = 'Saved to browser.';
+    } catch (e) {
+      document.getElementById('save-status').textContent = 'Save failed: ' + e.message;
+    }
+  };
+
+  document.getElementById('btn-load').onclick = function () {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) { document.getElementById('save-status').textContent = 'Nothing saved yet.'; return; }
+      var data = JSON.parse(raw);
+      if (data.BY_SQFT) {
+        Object.keys(data.BY_SQFT).forEach(function (slug) {
+          var row = document.querySelector('#table-by-sqft tbody tr[data-slug="' + slug + '"]');
+          if (!row) return;
+          var d = data.BY_SQFT[slug];
+          var nameIn = row.querySelector('[data-field="name"]');
+          var upIn = row.querySelector('[data-field="unitPrice"]');
+          var mcIn = row.querySelector('[data-field="minCharge"]');
+          var piIn = row.querySelector('[data-field="perInch"]');
+          var descIn = row.querySelector('[data-field="description"]');
+          if (nameIn) nameIn.value = d.name || '';
+          if (upIn) upIn.value = d.unitPrice != null ? d.unitPrice : '';
+          if (mcIn) mcIn.value = d.minCharge != null ? d.minCharge : '';
+          if (piIn) piIn.checked = !!d.perInch;
+          if (descIn) descIn.value = d.description || '';
+        });
+      }
+      if (data.STATIC_BY_SIZE) {
+        Object.keys(data.STATIC_BY_SIZE).forEach(function (slug) {
+          var block = document.querySelector('#blocks-static .ref-block[data-slug="' + slug + '"]');
+          if (!block) return;
+          var d = data.STATIC_BY_SIZE[slug];
+          var nameIn = block.querySelector('[data-field="name"]');
+          var descIn = block.querySelector('[data-field="description"]');
+          if (nameIn) nameIn.value = d.name || '';
+          if (descIn) descIn.value = d.description || '';
+          var tbody = block.querySelector('table.ref-table tbody');
+          if (tbody && d.options && d.options.length) {
+            var rows = tbody.querySelectorAll('tr');
+            d.options.forEach(function (opt, i) {
+              var tr = rows[i];
+              if (!tr) return;
+              var u = tr.querySelector('[data-field="unit"]');
+              var p = tr.querySelector('[data-field="price"]');
+              if (u) u.value = opt.unit || '';
+              if (p) p.value = opt.price || '';
+            });
+          }
+        });
+      }
+      if (data.BY_QUANTITY_VARIANTS) {
+        Object.keys(data.BY_QUANTITY_VARIANTS).forEach(function (slug) {
+          var block = document.querySelector('#blocks-quantity .ref-block[data-slug="' + slug + '"]');
+          if (!block) return;
+          var d = data.BY_QUANTITY_VARIANTS[slug];
+          var nameInputs = block.querySelectorAll('[data-field="name"]');
+          if (nameInputs[0]) nameInputs[0].value = d.name || '';
+          var descIn = block.querySelector('[data-field="description"]');
+          if (descIn) descIn.value = d.description || '';
+          var tables = block.querySelectorAll('table.ref-table');
+          if (tables[0] && d.quantityTiers) {
+            var tbody = tables[0].querySelector('tbody');
+            if (tbody) {
+              var rows = tbody.querySelectorAll('tr');
+              d.quantityTiers.forEach(function (t, i) {
+                if (!rows[i]) return;
+                var q = rows[i].querySelector('[data-field="qty"]');
+                var p = rows[i].querySelector('[data-field="price"]');
+                if (q) q.value = t.qty != null ? t.qty : '';
+                if (p) p.value = t.price || '';
+              });
+            }
+          }
+          if (tables[1] && d.variants) {
+            var tbody = tables[1].querySelector('tbody');
+            if (tbody) {
+              var rows = tbody.querySelectorAll('tr');
+              d.variants.forEach(function (v, i) {
+                if (!rows[i]) return;
+                var n = rows[i].querySelector('[data-field="name"]');
+                var m = rows[i].querySelector('[data-field="priceMod"]');
+                if (n) n.value = v.name || '';
+                if (m) m.value = v.priceMod != null ? v.priceMod : '';
+              });
+            }
+          }
+        });
+      }
+      document.getElementById('save-status').textContent = 'Loaded from browser.';
+    } catch (e) {
+      document.getElementById('save-status').textContent = 'Load failed: ' + e.message;
+    }
+  };
+
+  // Load from browser on demand (already have Load button). Optionally on load, try to load from localStorage so edits persist across refresh:
+  try {
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      var data = JSON.parse(raw);
+      if (data.BY_SQFT) {
+        Object.keys(data.BY_SQFT).forEach(function (slug) {
+          var row = document.querySelector('#table-by-sqft tbody tr[data-slug="' + slug + '"]');
+          if (!row) return;
+          var d = data.BY_SQFT[slug];
+          var nameIn = row.querySelector('[data-field="name"]');
+          var upIn = row.querySelector('[data-field="unitPrice"]');
+          var mcIn = row.querySelector('[data-field="minCharge"]');
+          var piIn = row.querySelector('[data-field="perInch"]');
+          var descIn = row.querySelector('[data-field="description"]');
+          if (nameIn) nameIn.value = d.name != null ? d.name : nameIn.value;
+          if (upIn) upIn.value = d.unitPrice != null ? d.unitPrice : upIn.value;
+          if (mcIn) mcIn.value = d.minCharge != null ? d.minCharge : mcIn.value;
+          if (piIn) piIn.checked = !!d.perInch;
+          if (descIn) descIn.value = d.description != null ? d.description : descIn.value;
+        });
+      }
+    }
+  } catch (e) {}
+})();
+  </script>
+</body>
+</html>
