@@ -770,8 +770,10 @@
 	                'real_estate_rectangle_flag': 'real_estate_rectangle_flag', 'real_estate_econo_feather_flag': 'real_estate_econo_feather_flag', 'real_estate_custom_pole_flag': 'real_estate_custom_pole_flag',
 	                'light_boxes': 'light_boxes',
 	                'retractable_banners': 'retractable_banners',
+	                'tension_fabric_stand': 'retractable_banners', 'standard_retractable': 'retractable_banners', 'deluxe_retractable': 'retractable_banners', 'sd_retractable': 'retractable_banners', 'x_stand': 'retractable_banners', 'step_repeat_backdrop': 'retractable_banners', 'table_top_banner_stand': 'retractable_banners',
 	                '3d_lettering': '3d_lettering',
 	                'yard_signs': 'yard_signs',
+	                'yard_sign_and_h_stake': 'yard_signs', 'real_estate_a_frame_yard': 'yard_signs', 'real_estate_post': 'yard_signs', 'real_estate_frame': 'yard_signs',
 	                'corrugated': 'corrugated',
 	                'foam_board': 'foam_board',
 	                'styrene': 'styrene',
@@ -793,7 +795,21 @@
 	                'real_estate_a_frames': 'a_frames'
 	            };
 	
-	            const imageKey = productKeyMap[productId];
+	            let imageKey = productKeyMap[productId];
+	            if (!imageKey && productId) {
+	                // Hub child pages use prefixed product IDs (e.g. a_frames_banner_a_frame)
+	                if (productId.startsWith('a_frames_')) imageKey = 'a_frames';
+	                else if (productId.startsWith('banners_')) imageKey = 'banners';
+	                else if (productId.startsWith('light_boxes_')) imageKey = 'light_boxes';
+	                else if (productId.startsWith('retractable_banners_')) imageKey = 'retractable_banners';
+	                else if (productId.startsWith('yard_signs_')) imageKey = 'yard_signs';
+	                else if (productId.startsWith('commercial_signage_')) imageKey = 'commercial_signage';
+	                else if (productId.startsWith('channel_lettering_')) imageKey = 'channel_lettering';
+	                else if (productId.startsWith('3d_lettering_')) imageKey = '3d_lettering';
+	                else if (productId.startsWith('window_graphics_')) imageKey = 'window_graphics';
+	                else if (productId.startsWith('aluminum_signs_')) imageKey = 'aluminum_signs';
+	                else if (productId.startsWith('magnets_')) imageKey = 'magnets';
+	            }
 	            if (imageKey && IMAGE_LIBRARY.products[imageKey]) {
 	                const productImages = IMAGE_LIBRARY.products[imageKey];
 	                const firstImage = Object.values(productImages)[0];
@@ -820,6 +836,7 @@
 	            'aluminum_signs': '/assets/images/signs/aluminum-signs.jpg',
 	            'magnets': '/assets/images/signs/magnets.jpg',
 	            'flags': '/assets/images/promotional/flags.jpg',
+	            'retractable_banners': '/assets/images/categories/Retractable Banners.jpg',
 	            'tents': '/assets/images/promotional/tents.jpg',
 	            'table_cloths': '/assets/images/promotional/table-cloths.jpg',
 	            'branded_apparel': '/assets/images/promotional/apparel.jpg',

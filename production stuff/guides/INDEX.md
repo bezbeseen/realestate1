@@ -19,6 +19,7 @@ This folder contains all the documentation and guides for the BE SEEN website pr
 - **[README.md](./README.md)** - Project overview and setup instructions
 - **[BUILD.md](./BUILD.md)** - Build system: how it works, output cleanup (emptyDirSync), troubleshooting
 - **[DEPLOY-BLUEHOST.md](./DEPLOY-BLUEHOST.md)** - Deploy getbeseen.com to Bluehost via terminal (FTP/lftp)
+- **[MASS-DATA-UPLOAD.md](./MASS-DATA-UPLOAD.md)** - Safe bulk CSV/Sheets workflow for updating products.json at scale
 
 ## 🗂️ Guide Categories
 

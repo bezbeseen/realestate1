@@ -4,6 +4,7 @@ const { glob } = require('glob');
 const Handlebars = require('handlebars');
 const Papa = require('papaparse');
 const { marked } = require('marked');
+const { validateProductsData, collectProductsWarnings } = require('./validate-products');
 
 const config = {
     dataDir: path.join(__dirname, '..', 'data'),
@@ -44,6 +45,32 @@ async function build() {
         const helpersScript = helpersContent.match(/<script>([\s\S]*?)<\/script>/)[1];
         const registerHelpers = new Function('Handlebars', 'IMAGE_LIBRARY', helpersScript);
         registerHelpers(Handlebars, IMAGE_LIBRARY);
+
+        // Load and validate main product data before writing generated output.
+        const productsFilePath = path.join(config.dataDir, 'products.json');
+        if (!fs.existsSync(productsFilePath)) {
+            console.log('products.json not found. Skipping product page generation.');
+            return;
+        }
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf8'));
+        validateProductsData(products, productsFilePath);
+        console.log(`Validated ${products.length} products.`);
+        const contentProductsDir = path.join(__dirname, '..', 'content', 'products');
+        const contentStems = new Set();
+        if (fs.existsSync(contentProductsDir)) {
+            fs.readdirSync(contentProductsDir)
+                .filter(f => f.endsWith('.html') || f.endsWith('.md'))
+                .forEach(f => contentStems.add(path.basename(f, path.extname(f))));
+        }
+        const warningList = collectProductsWarnings(products, IMAGE_LIBRARY, { contentStems });
+        if (warningList.length > 0) {
+            console.warn(`⚠️  Product QA warnings: ${warningList.length}`);
+            warningList.slice(0, 40).forEach(w => console.warn(`  - ${w}`));
+            if (warningList.length > 40) {
+                console.warn(`  ... ${warningList.length - 40} more warning(s)`);
+            }
+            console.warn('  (warnings are non-blocking during reorganization)');
+        }
         
         // Clean output directory (empty it instead of remove to avoid ENOTEMPTY on Google Drive/sync)
         if (fs.existsSync(config.outputDir)) {
@@ -72,14 +99,6 @@ async function build() {
             fs.copySync(servicesDir, path.join(config.outputDir, 'services'), { overwrite: true });
         }
 
-        // Load main data file
-        const productsFilePath = path.join(config.dataDir, 'products.json');
-        if (!fs.existsSync(productsFilePath)) {
-            console.log('products.json not found. Skipping product page generation.');
-            return;
-        }
-        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf8'));
-        
         console.log(`Found ${products.length} products to process.`);
 
         // --- Merge CSV and Markdown data into products ---

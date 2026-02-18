@@ -1,5 +1,29 @@
 RewriteEngine On
 
+# Legacy URL redirects for normalized product slugs
+RewriteRule ^products/signs/magnets/magnets/?$ /products/signs/magnets/flexible-car-magnets [R=301,L]
+RewriteRule ^products/signs/magnets/magnets\.html$ /products/signs/magnets/flexible-car-magnets.html [R=301,L]
+RewriteRule ^products/signs/magnets/coroplast/?$ /products/signs/magnets/coroplast-sign-panel [R=301,L]
+RewriteRule ^products/signs/magnets/coroplast\.html$ /products/signs/magnets/coroplast-sign-panel.html [R=301,L]
+RewriteRule ^products/signs/magnets/pvc-board/?$ /products/signs/magnets/pvc-sign-board [R=301,L]
+RewriteRule ^products/signs/magnets/pvc-board\.html$ /products/signs/magnets/pvc-sign-board.html [R=301,L]
+RewriteRule ^products/signs/magnets/styrene/?$ /products/signs/magnets/styrene-sign-board [R=301,L]
+RewriteRule ^products/signs/magnets/styrene\.html$ /products/signs/magnets/styrene-sign-board.html [R=301,L]
+RewriteRule ^products/signs/magnets/foamcore/?$ /products/signs/magnets/foam-board-sign-panel [R=301,L]
+RewriteRule ^products/signs/magnets/foamcore\.html$ /products/signs/magnets/foam-board-sign-panel.html [R=301,L]
+RewriteRule ^products/signs/magnets/gatorfoam/?$ /products/signs/magnets/gatorfoam-sign-panel [R=301,L]
+RewriteRule ^products/signs/magnets/gatorfoam\.html$ /products/signs/magnets/gatorfoam-sign-panel.html [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/coroplast/?$ /products/signs/aluminum-signs/coroplast-sign-panel [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/coroplast\.html$ /products/signs/aluminum-signs/coroplast-sign-panel.html [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/pvc-board/?$ /products/signs/aluminum-signs/pvc-sign-board [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/pvc-board\.html$ /products/signs/aluminum-signs/pvc-sign-board.html [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/styrene/?$ /products/signs/aluminum-signs/styrene-sign-board [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/styrene\.html$ /products/signs/aluminum-signs/styrene-sign-board.html [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/foamcore/?$ /products/signs/aluminum-signs/foam-board-sign-panel [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/foamcore\.html$ /products/signs/aluminum-signs/foam-board-sign-panel.html [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/gatorfoam/?$ /products/signs/aluminum-signs/gatorfoam-sign-panel [R=301,L]
+RewriteRule ^products/signs/aluminum-signs/gatorfoam\.html$ /products/signs/aluminum-signs/gatorfoam-sign-panel.html [R=301,L]
+
 # Handle API requests
 RewriteRule ^api/create-checkout-session$ api/create-checkout-session.php [L]
 
