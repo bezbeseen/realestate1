@@ -178,22 +178,34 @@ async function build() {
                 console.log(`  -> Merging HTML content for ${product.product_id}`);
                 product.product_content = fs.readFileSync(htmlPath, 'utf8');
             }
+
+            // For single catalog_product with options, set product_details.price and catalog_options
+            if (product.catalog_products && product.catalog_products.length === 1) {
+                const cp = product.catalog_products[0];
+                const priceVal = (product.price || cp.price || '').toString().replace(/^\$/, '');
+                if (priceVal && (!product.product_details.price || product.product_details.price === '')) {
+                    product.product_details.price = priceVal;
+                }
+                if (cp.options && cp.options.length > 0) {
+                    product.catalog_options = cp.options;
+                }
+            }
         }
 
         // Compile and generate product pages
         const productTemplatePath = path.join(config.templatesDir, 'product-template.html');
+        const hubTemplatePath = path.join(config.templatesDir, 'flags-hub-template.html');
         if (fs.existsSync(productTemplatePath)) {
             const productTemplate = Handlebars.compile(fs.readFileSync(productTemplatePath, 'utf8'));
+            const hubTemplate = fs.existsSync(hubTemplatePath) ? Handlebars.compile(fs.readFileSync(hubTemplatePath, 'utf8')) : null;
             for (const product of products) {
-                if(product.path) {
-                    const compiledHtml = productTemplate(product);
-                    
-                    // Convert path from /products/category/product/index.html to /products/category/product.html
+                if (product.path) {
+                    const template = (product.is_hub && hubTemplate) ? hubTemplate : productTemplate;
+                    const compiledHtml = template(product);
                     let cleanPath = product.path;
                     if (cleanPath.endsWith('/index.html')) {
                         cleanPath = cleanPath.replace('/index.html', '.html');
                     }
-                    
                     const outputPath = path.join(config.outputDir, cleanPath);
                     fs.ensureDirSync(path.dirname(outputPath));
                     fs.writeFileSync(outputPath, compiledHtml);
@@ -211,8 +223,8 @@ async function build() {
             const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf8'));
 
             for (const category of categories) {
-                // Filter products that belong to the current category
-                category.products = products.filter(p => p.category === category.id);
+                // Filter products that belong to the current category (exclude hide_from_category)
+                category.products = products.filter(p => p.category === category.id && !p.hide_from_category);
                 category.category_id = category.id; // Bugfix: Pass category_id to the template
                 
                 // Generate the page

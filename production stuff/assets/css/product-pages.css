@@ -60,4 +60,94 @@
 .variant-option, 
 .quantity-option {
     cursor: pointer;
-} 
+}
+
+/* Configurator widget - matches template style */
+.configurator .form-label {
+    color: #222222;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+}
+
+.configurator-inner {
+    background-color: #f5f6fa !important;
+    border: 2px solid #dbdbdb !important;
+    border-radius: 4px;
+    padding: 1.25rem !important;
+}
+
+.configurator-inner h5 {
+    color: #222222;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.configurator-inner .form-control {
+    border: 2px solid #dbdbdb;
+    border-radius: 4px;
+    color: #222222;
+    font-family: "Hind", sans-serif;
+    transition: all 0.3s ease;
+}
+
+.configurator-inner .form-control:focus {
+    border-color: #ff4328;
+    box-shadow: 0 0 0 0.2rem rgba(255, 67, 40, 0.15);
+}
+
+.configurator-inner .form-select {
+    border: 2px solid #dbdbdb;
+    border-radius: 4px;
+    color: #222222;
+    font-family: "Hind", sans-serif;
+}
+
+.configurator-inner .form-select:focus {
+    border-color: #ff4328;
+}
+
+.configurator-inner small,
+.configurator-inner .text-muted {
+    color: #757575 !important;
+    font-family: "Hind", sans-serif;
+}
+
+.configurator-summary {
+    border-top: 2px solid #dbdbdb;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.configurator .config-summary .total {
+    color: #ff4328 !important;
+    font-size: 1.25rem;
+}
+
+.configurator .custom_btn.bg_default_blue {
+    margin-top: 1rem;
+}
+
+/* Configurator title area (price + bullets) */
+.details_content .configurator_config_price {
+    color: #222222;
+    font-family: "Rubik", sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.details_content .configurator_config_price strong {
+    color: #ff4328;
+}
+
+.details_content .configurator_config_bullets {
+    color: #757575;
+    font-family: "Hind", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.details_content .configurator_config_bullets li {
+    margin-bottom: 0.25rem;
+}

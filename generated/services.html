@@ -764,6 +764,10 @@
 	                'a_frames': 'a_frames',
 	                'channel_lettering': 'channel_lettering',
 	                'flags': 'flags',
+	                'convex_flag': 'convex_flag', 'feather_angled_flag': 'feather_angled_flag', 'teardrop_flag': 'teardrop_flag',
+	                'rectangle_flag': 'rectangle_flag', 'econo_feather_flag': 'econo_feather_flag', 'custom_pole_flag': 'custom_pole_flag',
+	                'real_estate_convex_flag': 'real_estate_convex_flag', 'real_estate_feather_angled_flag': 'real_estate_feather_angled_flag', 'real_estate_teardrop_flag': 'real_estate_teardrop_flag',
+	                'real_estate_rectangle_flag': 'real_estate_rectangle_flag', 'real_estate_econo_feather_flag': 'real_estate_econo_feather_flag', 'real_estate_custom_pole_flag': 'real_estate_custom_pole_flag',
 	                'light_boxes': 'light_boxes',
 	                'retractable_banners': 'retractable_banners',
 	                '3d_lettering': '3d_lettering',
@@ -1009,6 +1013,20 @@
 	        return `url('${imagePath}')`;
 	    });
 	    
+	    // Get flag product image by catalog slug (for hub child product cards)
+	    Handlebars.registerHelper('getProductImageBySlug', function(slug) {
+	        const slugToVariant = {
+	            'feather-angled-flag': 'feather', 'convex-flag': 'feather', 'econo-feather-flag': 'feather',
+	            'teardrop-flag': 'teardrop',
+	            'rectangle-flag': 'rectangle', 'custom-pole-flag': 'rectangle'
+	        };
+	        const variant = slugToVariant[slug || ''] || 'feather';
+	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.products?.flags?.[variant]?.path) {
+	            return IMAGE_LIBRARY.products.flags[variant].path;
+	        }
+	        return '/assets/Be seen image review updated/Flags/Feather Flags.jpg';
+	    });
+	
 	    // Get product category image
 	    Handlebars.registerHelper('getProductCategoryImage', function(category) {
 	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.categories) {

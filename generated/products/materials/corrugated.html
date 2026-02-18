@@ -811,6 +811,10 @@
 	                'a_frames': 'a_frames',
 	                'channel_lettering': 'channel_lettering',
 	                'flags': 'flags',
+	                'convex_flag': 'convex_flag', 'feather_angled_flag': 'feather_angled_flag', 'teardrop_flag': 'teardrop_flag',
+	                'rectangle_flag': 'rectangle_flag', 'econo_feather_flag': 'econo_feather_flag', 'custom_pole_flag': 'custom_pole_flag',
+	                'real_estate_convex_flag': 'real_estate_convex_flag', 'real_estate_feather_angled_flag': 'real_estate_feather_angled_flag', 'real_estate_teardrop_flag': 'real_estate_teardrop_flag',
+	                'real_estate_rectangle_flag': 'real_estate_rectangle_flag', 'real_estate_econo_feather_flag': 'real_estate_econo_feather_flag', 'real_estate_custom_pole_flag': 'real_estate_custom_pole_flag',
 	                'light_boxes': 'light_boxes',
 	                'retractable_banners': 'retractable_banners',
 	                '3d_lettering': '3d_lettering',
@@ -1056,6 +1060,20 @@
 	        return `url('${imagePath}')`;
 	    });
 	    
+	    // Get flag product image by catalog slug (for hub child product cards)
+	    Handlebars.registerHelper('getProductImageBySlug', function(slug) {
+	        const slugToVariant = {
+	            'feather-angled-flag': 'feather', 'convex-flag': 'feather', 'econo-feather-flag': 'feather',
+	            'teardrop-flag': 'teardrop',
+	            'rectangle-flag': 'rectangle', 'custom-pole-flag': 'rectangle'
+	        };
+	        const variant = slugToVariant[slug || ''] || 'feather';
+	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.products?.flags?.[variant]?.path) {
+	            return IMAGE_LIBRARY.products.flags[variant].path;
+	        }
+	        return '/assets/Be seen image review updated/Flags/Feather Flags.jpg';
+	    });
+	
 	    // Get product category image
 	    Handlebars.registerHelper('getProductCategoryImage', function(category) {
 	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.categories) {
@@ -1611,26 +1629,55 @@
 								<p class="mb_15">
 										Durable corrugated plastic for signs and displays.
 								</p>
+								<p class="configurator_config_price mb_2"><strong>$15.4 per ft²</strong> &nbsp;|&nbsp; min charge $28</p>
+								<ul class="configurator_config_bullets ps-3">
+									<li>Custom size indoor/outdoor</li>
+									<li>4mm coroplast, H-Stake option</li>
+								</ul>
 
-								<!-- Product Options -->
-								<div class="product-options mb-4">
-									<label class="form-label d-block"><strong>Select Option</strong></label>
-									<div class="variant-options d-grid gap-2">
-										<div class="variant-option card p-2 " data-variant="Single Sided" data-price-change="0" data-image-target="#image_">
-											<div class="d-flex justify-content-between">
-												<span>Single Sided</span>
-											</div>
-										</div>
-										<div class="variant-option card p-2 " data-variant="Double Sided " data-price-change="0" data-image-target="#image_">
-											<div class="d-flex justify-content-between">
-												<span>Double Sided </span>
-											</div>
-										</div>
-									</div>
-									<input type="hidden" id="selectedVariant" value="Single Sided">
-								</div>
+								<!-- Product Options (from CSV - hidden when configurator is used) -->
 
 								<!-- Quantity Options -->
+
+								<!-- Configurator Widget (width/height → live price) -->
+								<div class="configurator product-options mb-4" 
+									data-unit-price="15.4" 
+									data-min-charge="28"
+									>
+									<label class="form-label d-block mb_15"><strong>Calculate Your Price</strong></label>
+									<div class="configurator-inner">
+										<h5 class="mb_15">Coroplast</h5>
+										<div class="row g-2 mb_15">
+											<div class="col-6">
+												<label for="config-width" class="form-label">Width (in.)</label>
+												<input type="number" id="config-width" class="form-control" min="0" step="1" value="24" placeholder="0">
+											</div>
+											<div class="col-6">
+												<label for="config-height" class="form-label">Height (in.)</label>
+												<input type="number" id="config-height" class="form-control" min="0" step="1" value="36" placeholder="0">
+											</div>
+										</div>
+										<div class="mb_15">
+											<small class="text-muted">Area: <span id="config-area">6.00</span> ft²</small>
+											<span class="ms-2 small text-muted">min charge $28</span>
+										</div>
+										<div class="mb_15">
+											<label for="config-grommet" class="form-label">Grommets</label>
+											<select id="config-grommet" class="form-select form-select-sm">
+												<option value="0">None</option>
+												<option value="1">All four corners</option>
+												<option value="2">Top two corners</option>
+											</select>
+										</div>
+										<div class="config-summary configurator-summary">
+											<strong>Total: <span id="config-total" class="total">$0.00</span></strong>
+										</div>
+										<a href="/contact.html" class="custom_btn bg_default_blue">Get quote for this configuration <span><i class="fal fa-arrow-right"></i></span></a>
+									</div>
+								</div>
+
+								<!-- Size selector for single catalog product with options (e.g. flags) -->
+								<!-- Fixed-price catalog products (Signs, etc. - when no catalog_options) -->
 
 								<!-- Contact Us Button -->
 								<div class="d-grid">
@@ -1947,6 +1994,7 @@
 
 	<!-- custom - js include -->
 	<script src="/assets/js/app-initializer.js"></script>
+	<script src="/assets/js/configurator.js"></script>
 
 	<!-- Stripe Integration -->
 	<script src="https://js.stripe.com/v3/"></script>
@@ -1992,6 +2040,28 @@
 					document.getElementById('selectedQuantity').value = this.dataset.quantity;
 				});
 			});
+
+			// Catalog size options (flags, etc.) and ?Size= URL param pre-selection
+			const catalogSizeOptions = document.querySelectorAll('.catalog-size-option');
+			const priceDisplay = document.querySelector('.price_text strong');
+			const sizeInput = document.getElementById('selectedCatalogSize');
+			if (catalogSizeOptions.length && priceDisplay) {
+				const selectSize = (el) => {
+					catalogSizeOptions.forEach(o => o.classList.remove('border-primary'));
+					el.classList.add('border-primary');
+					priceDisplay.textContent = el.dataset.price || '';
+					if (sizeInput) sizeInput.value = el.dataset.unit;
+				};
+				const urlSize = new URLSearchParams(window.location.search).get('Size') || new URLSearchParams(window.location.search).get('size');
+				if (urlSize) {
+					const match = Array.from(catalogSizeOptions).find(o => (o.dataset.unit || '').toLowerCase().includes(String(urlSize).toLowerCase()));
+					if (match) selectSize(match);
+				}
+				catalogSizeOptions.forEach(opt => {
+					opt.addEventListener('click', function() { selectSize(this); });
+					opt.style.cursor = 'pointer';
+				});
+			}
 
 			// Initial price calculation
 			updatePrice();

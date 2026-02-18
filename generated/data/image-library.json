@@ -152,6 +152,18 @@
             "rectangle": { "path": "/assets/Be seen image review updated/Flags/Rectangle Flags.jpg", "alt": "Rectangle Flag", "variable": "PRODUCTS_FLAGS_RECTANGLE" },
             "teardrop": { "path": "/assets/Be seen image review updated/Flags/Teardrop Flags.jpg", "alt": "Teardrop Flag", "variable": "PRODUCTS_FLAGS_TEARDROP" }
         },
+        "convex_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Feather Flags.jpg", "alt": "Feather Convex Flag", "variable": "PRODUCTS_CONVEX_FLAG" } },
+        "feather_angled_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Feather Flags.jpg", "alt": "Feather Angled Flag", "variable": "PRODUCTS_FEATHER_ANGLED_FLAG" } },
+        "teardrop_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Teardrop Flags.jpg", "alt": "Teardrop Flag", "variable": "PRODUCTS_TEARDROP_FLAG" } },
+        "rectangle_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Rectangle Flags.jpg", "alt": "Rectangle Flag", "variable": "PRODUCTS_RECTANGLE_FLAG" } },
+        "econo_feather_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Feather Flags.jpg", "alt": "Econo Feather Flag", "variable": "PRODUCTS_ECONO_FEATHER_FLAG" } },
+        "custom_pole_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Rectangle Flags.jpg", "alt": "Custom Pole Flag", "variable": "PRODUCTS_CUSTOM_POLE_FLAG" } },
+        "real_estate_convex_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Feather Flags.jpg", "alt": "Real Estate Feather Convex Flag", "variable": "PRODUCTS_RE_CONVEX_FLAG" } },
+        "real_estate_feather_angled_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Feather Flags.jpg", "alt": "Real Estate Feather Angled Flag", "variable": "PRODUCTS_RE_FEATHER_ANGLED_FLAG" } },
+        "real_estate_teardrop_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Teardrop Flags.jpg", "alt": "Real Estate Teardrop Flag", "variable": "PRODUCTS_RE_TEARDROP_FLAG" } },
+        "real_estate_rectangle_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Rectangle Flags.jpg", "alt": "Real Estate Rectangle Flag", "variable": "PRODUCTS_RE_RECTANGLE_FLAG" } },
+        "real_estate_econo_feather_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Feather Flags.jpg", "alt": "Real Estate Econo Feather Flag", "variable": "PRODUCTS_RE_ECONO_FEATHER_FLAG" } },
+        "real_estate_custom_pole_flag": { "default": { "path": "/assets/Be seen image review updated/Flags/Rectangle Flags.jpg", "alt": "Real Estate Custom Pole Flag", "variable": "PRODUCTS_RE_CUSTOM_POLE_FLAG" } },
         "flyers": {
             "glossy": { "path": "/assets/Be seen image review updated/Flyers/Glossy flyer.jpg", "alt": "Glossy Flyer", "variable": "PRODUCTS_FLYERS_GLOSSY" },
             "premium": { "path": "/assets/Be seen image review updated/Flyers/Premium flyer.jpg", "alt": "Premium Flyer", "variable": "PRODUCTS_FLYERS_PREMIUM" },

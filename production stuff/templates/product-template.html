@@ -152,9 +152,11 @@
 									<li><i class="fas fa-star"></i></li>
 									<li><i class="fas fa-star"></i></li>
 								</ul>
+								{{#unless configurator_config}}
 								{{#if product_details.price}}
 								<span class="price_text mb_30"><strong>${{product_details.price}}</strong></span>
 								{{/if}}
+								{{/unless}}
 								<p class="mb_15">
 									{{#if product_details.description_short}}
 										{{product_details.description_short}}
@@ -167,8 +169,19 @@
 									{{product_details.description_long}}
 								</p>
 								{{/if}}
+								{{#if configurator_config}}
+								<p class="configurator_config_price mb_2"><strong>${{configurator_config.unitPrice}} {{configurator_config.unitLabel}}</strong>{{#if configurator_config.minCharge}} &nbsp;|&nbsp; min charge ${{configurator_config.minCharge}}{{/if}}</p>
+								{{#if configurator_config.bullets}}
+								<ul class="configurator_config_bullets ps-3">
+									{{#each configurator_config.bullets}}
+									<li>{{this}}</li>
+									{{/each}}
+								</ul>
+								{{/if}}
+								{{/if}}
 
-								<!-- Product Options -->
+								<!-- Product Options (from CSV - hidden when configurator is used) -->
+								{{#unless configurator_config}}
 								{{#each product_details.options}}
 								<div class="product-options mb-4">
 									<label class="form-label d-block"><strong>{{name}}</strong></label>
@@ -184,6 +197,7 @@
 									<input type="hidden" id="selectedVariant" value="{{variants.[0].name}}">
 								</div>
 								{{/each}}
+								{{/unless}}
 
 								<!-- Quantity Options -->
 								{{#if product_details.quantity_options}}
@@ -197,6 +211,110 @@
 									<input type="hidden" id="selectedQuantity" value="{{product_details.quantity_options.[0]}}">
 								</div>
 								{{/if}}
+
+								<!-- Configurator Widget (width/height → live price) -->
+								{{#if configurator_config}}
+								<div class="configurator product-options mb-4" 
+									data-unit-price="{{configurator_config.unitPrice}}" 
+									{{#if configurator_config.minCharge}}data-min-charge="{{configurator_config.minCharge}}"{{/if}}
+									{{#if configurator_config.perInch}}data-per-inch="true"{{/if}}>
+									<label class="form-label d-block mb_15"><strong>Calculate Your Price</strong></label>
+									<div class="configurator-inner">
+										<h5 class="mb_15">{{configurator_config.name}}</h5>
+										<div class="row g-2 mb_15">
+											<div class="col-6">
+												<label for="config-width" class="form-label">Width (in.)</label>
+												<input type="number" id="config-width" class="form-control" min="0" step="1" value="24" placeholder="0">
+											</div>
+											<div class="col-6">
+												<label for="config-height" class="form-label">Height (in.)</label>
+												<input type="number" id="config-height" class="form-control" min="0" step="1" value="36" placeholder="0">
+											</div>
+										</div>
+										<div class="mb_15">
+											<small class="text-muted">Area: <span id="config-area">6.00</span> ft²</small>
+											{{#if configurator_config.minCharge}}
+											<span class="ms-2 small text-muted">min charge ${{configurator_config.minCharge}}</span>
+											{{/if}}
+										</div>
+										{{#if configurator_config.grommetOnly}}
+										<div class="mb_15">
+											<label for="config-grommet" class="form-label">Grommets</label>
+											<select id="config-grommet" class="form-select form-select-sm">
+												<option value="0">None</option>
+												<option value="1">All four corners</option>
+												<option value="2">Top two corners</option>
+											</select>
+										</div>
+										{{/if}}
+										<div class="config-summary configurator-summary">
+											<strong>Total: <span id="config-total" class="total">$0.00</span></strong>
+										</div>
+										<a href="/contact.html" class="custom_btn bg_default_blue">Get quote for this configuration <span><i class="fal fa-arrow-right"></i></span></a>
+									</div>
+								</div>
+								{{/if}}
+
+								<!-- Size selector for single catalog product with options (e.g. flags) -->
+								{{#if catalog_options}}
+								<div class="product-options mb-4 catalog-size-selector">
+									<label class="form-label d-block mb_15"><strong>Select Size</strong></label>
+									<div class="catalog-size-options d-grid gap-2" style="grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));">
+										{{#each catalog_options}}
+										<div class="catalog-size-option card p-2 text-center {{#if @first}}border-primary{{/if}}" data-unit="{{unit}}" data-price="{{price}}">
+											<span class="d-block fw-semibold">{{unit}}</span>
+											<small class="text-muted">{{price}}</small>
+										</div>
+										{{/each}}
+									</div>
+									{{#if catalog_products.[0].bullets}}
+									<ul class="mb-0 mt-2 small configurator_config_bullets ps-3">
+										{{#each catalog_products.[0].bullets}}
+										<li>{{this}}</li>
+										{{/each}}
+									</ul>
+									{{/if}}
+									<input type="hidden" id="selectedCatalogSize" value="{{catalog_options.[0].unit}}">
+								</div>
+								{{/if}}
+								<!-- Fixed-price catalog products (Signs, etc. - when no catalog_options) -->
+								{{#unless configurator_config}}
+								{{#if catalog_products}}
+								{{#unless catalog_options}}
+								<div class="product-options mb-4 catalog-products-pricing">
+									<label class="form-label d-block mb_15"><strong>Options &amp; Pricing</strong></label>
+									<div class="catalog-products-list">
+										{{#each catalog_products}}
+										<div class="catalog-product-item card p-3 mb-2">
+											<div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+												<strong>{{name}}</strong>
+												{{#if price}}
+												<span class="price_text text-nowrap">{{price}}{{#if unit}} <small>{{unit}}</small>{{/if}}</span>
+												{{else}}
+												<span class="text-muted small">Quote</span>
+												{{/if}}
+											</div>
+											{{#if bullets}}
+											<ul class="mb-0 mt-1 small configurator_config_bullets ps-3">
+												{{#each bullets}}
+												<li>{{this}}</li>
+												{{/each}}
+											</ul>
+											{{/if}}
+											{{#if options}}
+											<div class="mt-2">
+												{{#each options}}
+												<span class="badge bg-light text-dark me-1 mb-1">{{unit}}: {{price}}</span>
+												{{/each}}
+											</div>
+											{{/if}}
+										</div>
+										{{/each}}
+									</div>
+								</div>
+								{{/unless}}
+								{{/if}}
+								{{/unless}}
 
 								<!-- Contact Us Button -->
 								<div class="d-grid">
@@ -255,6 +373,7 @@
 
 	<!-- custom - js include -->
 	<script src="/assets/js/app-initializer.js"></script>
+	<script src="/assets/js/configurator.js"></script>
 
 	<!-- Stripe Integration -->
 	<script src="https://js.stripe.com/v3/"></script>
@@ -300,6 +419,28 @@
 					document.getElementById('selectedQuantity').value = this.dataset.quantity;
 				});
 			});
+
+			// Catalog size options (flags, etc.) and ?Size= URL param pre-selection
+			const catalogSizeOptions = document.querySelectorAll('.catalog-size-option');
+			const priceDisplay = document.querySelector('.price_text strong');
+			const sizeInput = document.getElementById('selectedCatalogSize');
+			if (catalogSizeOptions.length && priceDisplay) {
+				const selectSize = (el) => {
+					catalogSizeOptions.forEach(o => o.classList.remove('border-primary'));
+					el.classList.add('border-primary');
+					priceDisplay.textContent = el.dataset.price || '';
+					if (sizeInput) sizeInput.value = el.dataset.unit;
+				};
+				const urlSize = new URLSearchParams(window.location.search).get('Size') || new URLSearchParams(window.location.search).get('size');
+				if (urlSize) {
+					const match = Array.from(catalogSizeOptions).find(o => (o.dataset.unit || '').toLowerCase().includes(String(urlSize).toLowerCase()));
+					if (match) selectSize(match);
+				}
+				catalogSizeOptions.forEach(opt => {
+					opt.addEventListener('click', function() { selectSize(this); });
+					opt.style.cursor = 'pointer';
+				});
+			}
 
 			// Initial price calculation
 			updatePrice();

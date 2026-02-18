@@ -8,12 +8,26 @@
     "page_title": "Business Cards | Professional Printing | BE SEEN",
     "seo_description": "High-quality business cards in various stocks and finishes. Professional printing for your brand.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Business Cards" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Business Cards"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Business Cards",
+    "description": "Professional business cards available in a variety of stocks and finishes.",
+    "meta_description": "High-quality business cards in various stocks and finishes. Professional printing for your brand."
   },
   {
     "product_id": "banners",
@@ -24,12 +38,144 @@
     "page_title": "Custom Banners | Indoor & Outdoor | BE SEEN",
     "seo_description": "Professional banners for indoor and outdoor use. Vinyl, mesh, and fabric options available.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Banners" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Banners"
+      }
     ],
-    "generation_pipeline": "hanging_product_v1"
+    "generation_pipeline": "hanging_product_v1",
+    "name": "Banners",
+    "description": "Durable, weather-resistant banners for indoor and outdoor use.",
+    "meta_description": "Professional banners for indoor and outdoor use. Vinyl, mesh, and fabric options available.",
+    "catalog_products": [
+      {
+        "name": "13oz. Vinyl Banner",
+        "slug": "13oz-vinyl-banner",
+        "bullets": [
+          "Our most popular banner"
+        ],
+        "price": "$5.45",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "18oz. Blockout Banner",
+        "slug": "vinyl-banner-18oz-blockout",
+        "bullets": [
+          "Our most durable banner"
+        ],
+        "price": "$9.10",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Backlit Banner",
+        "slug": "vinyl-banner-backlit",
+        "bullets": [
+          "15 oz. translucent vinyl for lit signage"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Mesh Banner",
+        "slug": "mesh-banners",
+        "bullets": [
+          "Best option for windy conditions"
+        ],
+        "price": "$4.84",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Indoor Banner",
+        "slug": "super-smooth-indoor-banner",
+        "bullets": [
+          "Great for closeup detail",
+          "Flat and smooth surface vinyl"
+        ],
+        "price": "$7.28",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Pole Banner",
+        "slug": "pole-banner-set",
+        "bullets": [
+          "Ready to install hardware kit",
+          "Durable 18 oz banners"
+        ],
+        "price": "$8.72",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "9oz. Fabric Banner",
+        "slug": "fabric-banner-9oz-wrinkle-free",
+        "bullets": [
+          "Wrinkle resistant and washable",
+          "Dye sublimation print"
+        ],
+        "price": "$7.92",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Blockout Fabric Banner",
+        "slug": "fabric-block-out",
+        "bullets": [
+          "Blocks back lighting",
+          "Dye sublimation print"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Tension Fabric",
+        "slug": "tension-fabric",
+        "bullets": [
+          "2-way stretch for wraps",
+          "Dye sublimation print"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Hand Banner",
+        "slug": "hand-banner",
+        "bullets": [
+          "Left and right handles",
+          "13oz vinyl, portable"
+        ],
+        "price": "$90.24",
+        "priceType": "fixed",
+        "unit": "10/set",
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "stickers",
@@ -40,12 +186,172 @@
     "page_title": "Custom Stickers & Decals | BE SEEN",
     "seo_description": "High-quality custom stickers and decals for branding, decoration, and identification.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Stickers & Decals" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Stickers & Decals"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Stickers & Decals",
+    "description": "Custom stickers and decals for branding and decoration.",
+    "meta_description": "High-quality custom stickers and decals for branding, decoration, and identification.",
+    "catalog_products": [
+      {
+        "name": "Adhesive Vinyl",
+        "slug": "adhesive-vinyl",
+        "bullets": [
+          "Permanent adhesive indoor and outdoor",
+          "4mil white PVC calendar film"
+        ],
+        "price": "$6.60",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "High Performance Vinyl",
+        "slug": "adhesive-vinyl-high-performance",
+        "bullets": [
+          "Long term installs, flat or simple curves",
+          "Initial low tack for repositioning",
+          "3mil ultra-calendared PVC"
+        ],
+        "price": "$14.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "3M IJ-180Cv3 Controltac",
+        "slug": "vehicle-wrap-3m-cast",
+        "bullets": [
+          "Long term vehicle wrap",
+          "2mil Cast vinyl + overlaminate"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Window Perf",
+        "slug": "adhesive-window-perf",
+        "bullets": [
+          "One-way visibility",
+          "30% perforated window film"
+        ],
+        "price": "$10.12",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Premium Window Cling",
+        "slug": "premium-window-cling",
+        "bullets": [
+          "Easy to reposition and reuse",
+          "Water-free installation"
+        ],
+        "price": "$12.12",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Wall Fabric",
+        "slug": "wall-graphics",
+        "bullets": [
+          "Low tack, easy remove and reposition",
+          "Designed for interior walls"
+        ],
+        "price": "$14.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Clear Vinyl",
+        "slug": "adhesive-clear-vinyl",
+        "bullets": [
+          "Light pass through",
+          "Crystal clear, CMYK semi-transparent"
+        ],
+        "price": "$15.20",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Translucent Vinyl",
+        "slug": "adhesive-translucent-vinyl",
+        "bullets": [
+          "Optional double layer print",
+          "3mil illumination film"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Floor Graphics",
+        "slug": "floor-graphics",
+        "bullets": [
+          "Easy installation and clean removal",
+          "7mil non-slip floor lamination"
+        ],
+        "price": "$24.20",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Frosted Vinyl",
+        "slug": "etched-printable-frosted-vinyl",
+        "bullets": [
+          "Privacy on windows",
+          "Full color on frosted vinyl"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Reflective Adhesive Vinyl",
+        "slug": "reflective-adhesive-vinyl",
+        "bullets": [
+          "Highly visible metallic surface",
+          "4mil reflective permanent adhesive"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Dry Erase Adhesive Vinyl",
+        "slug": "dry-erase-adhesive-vinyl",
+        "bullets": [
+          "4mil white PVC with dry erase coating"
+        ],
+        "price": "$16.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "posters",
@@ -56,12 +362,45 @@
     "page_title": "Custom Posters | Printing Services | BE SEEN",
     "seo_description": "Professional poster printing in various sizes and finishes for advertising and decoration.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Posters" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Posters"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Posters",
+    "description": "High-quality posters for advertising and decoration.",
+    "meta_description": "Professional poster printing in various sizes and finishes for advertising and decoration.",
+    "catalog_products": [
+      {
+        "name": "Posters",
+        "slug": "posters",
+        "bullets": [
+          "Multiple sizes and substrates"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      }
+    ],
+    "bullets": [
+      "Multiple sizes and substrates"
+    ],
+    "price": null,
+    "priceType": "quote",
+    "catalog_slug": "posters"
   },
   {
     "product_id": "brochures",
@@ -72,12 +411,26 @@
     "page_title": "Custom Brochures | Professional Printing | BE SEEN",
     "seo_description": "High-quality brochure printing in various folds and finishes for effective marketing.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Brochures" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Brochures"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Brochures",
+    "description": "Professional brochures for marketing and information.",
+    "meta_description": "High-quality brochure printing in various folds and finishes for effective marketing."
   },
   {
     "product_id": "flyers",
@@ -88,12 +441,26 @@
     "page_title": "Custom Flyers | Promotional Printing | BE SEEN",
     "seo_description": "Professional flyer printing for promotions, events, and marketing campaigns.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Flyers" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Flyers"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Flyers",
+    "description": "Effective flyers for promotions and events.",
+    "meta_description": "Professional flyer printing for promotions, events, and marketing campaigns."
   },
   {
     "product_id": "presentation_folders",
@@ -104,12 +471,26 @@
     "page_title": "Presentation Folders | Professional Printing | BE SEEN",
     "seo_description": "Custom presentation folders for organizing and presenting documents professionally.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Presentation Folders" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Presentation Folders"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Presentation Folders",
+    "description": "Professional presentation folders for documents and materials.",
+    "meta_description": "Custom presentation folders for organizing and presenting documents professionally."
   },
   {
     "product_id": "decals",
@@ -120,12 +501,172 @@
     "page_title": "Custom Decals | Vehicle & Window Decals | BE SEEN",
     "seo_description": "High-quality custom decals for vehicles, windows, and various surfaces.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Decals" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Decals"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Decals",
+    "description": "Custom decals for vehicles, windows, and surfaces.",
+    "meta_description": "High-quality custom decals for vehicles, windows, and various surfaces.",
+    "catalog_products": [
+      {
+        "name": "Adhesive Vinyl",
+        "slug": "adhesive-vinyl",
+        "bullets": [
+          "Permanent adhesive indoor and outdoor",
+          "4mil white PVC calendar film"
+        ],
+        "price": "$6.60",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "High Performance Vinyl",
+        "slug": "adhesive-vinyl-high-performance",
+        "bullets": [
+          "Long term installs, flat or simple curves",
+          "Initial low tack for repositioning",
+          "3mil ultra-calendared PVC"
+        ],
+        "price": "$14.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "3M IJ-180Cv3 Controltac",
+        "slug": "vehicle-wrap-3m-cast",
+        "bullets": [
+          "Long term vehicle wrap",
+          "2mil Cast vinyl + overlaminate"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Window Perf",
+        "slug": "adhesive-window-perf",
+        "bullets": [
+          "One-way visibility",
+          "30% perforated window film"
+        ],
+        "price": "$10.12",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Premium Window Cling",
+        "slug": "premium-window-cling",
+        "bullets": [
+          "Easy to reposition and reuse",
+          "Water-free installation"
+        ],
+        "price": "$12.12",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Wall Fabric",
+        "slug": "wall-graphics",
+        "bullets": [
+          "Low tack, easy remove and reposition",
+          "Designed for interior walls"
+        ],
+        "price": "$14.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Clear Vinyl",
+        "slug": "adhesive-clear-vinyl",
+        "bullets": [
+          "Light pass through",
+          "Crystal clear, CMYK semi-transparent"
+        ],
+        "price": "$15.20",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Translucent Vinyl",
+        "slug": "adhesive-translucent-vinyl",
+        "bullets": [
+          "Optional double layer print",
+          "3mil illumination film"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Floor Graphics",
+        "slug": "floor-graphics",
+        "bullets": [
+          "Easy installation and clean removal",
+          "7mil non-slip floor lamination"
+        ],
+        "price": "$24.20",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Frosted Vinyl",
+        "slug": "etched-printable-frosted-vinyl",
+        "bullets": [
+          "Privacy on windows",
+          "Full color on frosted vinyl"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Reflective Adhesive Vinyl",
+        "slug": "reflective-adhesive-vinyl",
+        "bullets": [
+          "Highly visible metallic surface",
+          "4mil reflective permanent adhesive"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Dry Erase Adhesive Vinyl",
+        "slug": "dry-erase-adhesive-vinyl",
+        "bullets": [
+          "4mil white PVC with dry erase coating"
+        ],
+        "price": "$16.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "window_clings",
@@ -136,12 +677,45 @@
     "page_title": "Window Clings | Temporary Advertising | BE SEEN",
     "seo_description": "Removable window clings for temporary advertising and promotional displays.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Window Clings" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Window Clings"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Window Clings",
+    "description": "Removable window clings for temporary advertising.",
+    "meta_description": "Removable window clings for temporary advertising and promotional displays.",
+    "catalog_products": [
+      {
+        "name": "Premium Window Cling",
+        "slug": "premium-window-cling",
+        "bullets": [
+          "Removable, no adhesive residue"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      }
+    ],
+    "bullets": [
+      "Removable, no adhesive residue"
+    ],
+    "price": null,
+    "priceType": "quote",
+    "catalog_slug": "premium-window-cling"
   },
   {
     "product_id": "canvas_prints",
@@ -152,12 +726,118 @@
     "page_title": "Canvas Prints | Art & Photography | BE SEEN",
     "seo_description": "Professional canvas prints for artwork, photography, and decorative purposes.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Canvas Prints" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Canvas Prints"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Canvas Prints",
+    "description": "High-quality canvas prints for artwork and photography.",
+    "meta_description": "Professional canvas prints for artwork, photography, and decorative purposes.",
+    "catalog_products": [
+      {
+        "name": "Canvas Wrap",
+        "slug": "canvas-wrap",
+        "bullets": [
+          "1.5\" thick gallery wrap"
+        ],
+        "price": "$40.08",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Framed Canvas",
+        "slug": "framed-canvas",
+        "bullets": [
+          "Frames: black, off white, pecan"
+        ],
+        "price": "$96.08",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Wall Mount SEG",
+        "slug": "wall_mount_seg",
+        "bullets": [
+          "Black Aluminum Frame with SEG Graphic"
+        ],
+        "price": "$147.96",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Acrylic Prints",
+        "slug": "acrylic-prints",
+        "bullets": [
+          "Back mounted with 1\" standoff hardware"
+        ],
+        "price": "$278.24",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "16\" x 24\"",
+            "price": "$278.24"
+          },
+          {
+            "unit": "20\" x 30\"",
+            "price": "$343.16"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$415.76"
+          }
+        ]
+      },
+      {
+        "name": "Magnetic Wood Frame Hanger",
+        "slug": "wood-frame-hanger",
+        "bullets": [
+          "Snap-to-hang solid wood hangers"
+        ],
+        "price": "$52.76",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Framed Prints",
+        "slug": "framed-prints",
+        "bullets": [
+          "Eco-friendly natural wood styling"
+        ],
+        "price": "$153.68",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Canvas Roll",
+        "slug": "canvas-roll",
+        "bullets": [
+          "15 mil. semigloss artist canvas"
+        ],
+        "price": "$14.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "photos",
@@ -168,12 +848,118 @@
     "page_title": "Photo Printing | Professional Photography | BE SEEN",
     "seo_description": "High-quality photo printing services for professional and personal use.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Prints", "link": "/products/prints.html" },
-      { "name": "Photo Printing" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Prints",
+        "link": "/products/prints.html"
+      },
+      {
+        "name": "Photo Printing"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Photo Printing",
+    "description": "Professional photo printing services.",
+    "meta_description": "High-quality photo printing services for professional and personal use.",
+    "catalog_products": [
+      {
+        "name": "Canvas Wrap",
+        "slug": "canvas-wrap",
+        "bullets": [
+          "1.5\" thick gallery wrap"
+        ],
+        "price": "$40.08",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Framed Canvas",
+        "slug": "framed-canvas",
+        "bullets": [
+          "Frames: black, off white, pecan"
+        ],
+        "price": "$96.08",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Wall Mount SEG",
+        "slug": "wall_mount_seg",
+        "bullets": [
+          "Black Aluminum Frame with SEG Graphic"
+        ],
+        "price": "$147.96",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Acrylic Prints",
+        "slug": "acrylic-prints",
+        "bullets": [
+          "Back mounted with 1\" standoff hardware"
+        ],
+        "price": "$278.24",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "16\" x 24\"",
+            "price": "$278.24"
+          },
+          {
+            "unit": "20\" x 30\"",
+            "price": "$343.16"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$415.76"
+          }
+        ]
+      },
+      {
+        "name": "Magnetic Wood Frame Hanger",
+        "slug": "wood-frame-hanger",
+        "bullets": [
+          "Snap-to-hang solid wood hangers"
+        ],
+        "price": "$52.76",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Framed Prints",
+        "slug": "framed-prints",
+        "bullets": [
+          "Eco-friendly natural wood styling"
+        ],
+        "price": "$153.68",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Canvas Roll",
+        "slug": "canvas-roll",
+        "bullets": [
+          "15 mil. semigloss artist canvas"
+        ],
+        "price": "$14.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "commercial_signage",
@@ -184,12 +970,123 @@
     "page_title": "Commercial Signage | Professional Signs | BE SEEN",
     "seo_description": "Professional commercial signage solutions for businesses and organizations.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Commercial Signage" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Commercial Signage"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Commercial Signage",
+    "description": "Professional commercial signage solutions.",
+    "meta_description": "Professional commercial signage solutions for businesses and organizations.",
+    "catalog_products": [
+      {
+        "name": "Standard Channel Letters",
+        "slug": "standard-channel-letter",
+        "bullets": [
+          "Front lit & Dual lit",
+          ".040 aluminum returns",
+          "Acrylic faces with trimcaps"
+        ],
+        "price": "$4.39",
+        "priceType": "per-inch",
+        "unit": "per inch",
+        "options": null
+      },
+      {
+        "name": "Halo/Reverse Lit Channel Letters",
+        "slug": "reverse-lit",
+        "bullets": [
+          "Multiple colors",
+          "Stainless steel welded faces"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Reverse Acrylic Lit",
+        "slug": "reverse-acrylic-lit",
+        "bullets": [
+          "Reverse lit option"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Premium Full Acrylic Face Lit",
+        "slug": "full-acrylic-face-lit",
+        "bullets": [
+          "Multiple return colors",
+          "Stainless steel returns"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Premium Inset Acrylic Face Lit",
+        "slug": "inset-acrylic-face-lit",
+        "bullets": [
+          "Inset acrylic",
+          "Premium construction"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Standard Signicade",
+        "slug": "white-standard-signicade",
+        "bullets": [
+          "24\"x36\" mounted vinyl graphics"
+        ],
+        "price": "$355.27",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Deluxe Signicade",
+        "slug": "deluxe-signicade-a-frame",
+        "bullets": [
+          "Easy change graphics",
+          "24\"x36\" coroplast inserts"
+        ],
+        "price": "$448.77",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Simposign II",
+        "slug": "white-simposign-a-frame",
+        "bullets": [
+          "Easy change graphics",
+          "22\"x28\" coroplast inserts"
+        ],
+        "price": "$373.97",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "a_frames",
@@ -200,12 +1097,137 @@
     "page_title": "A-Frame Signs | Portable Advertising | BE SEEN",
     "seo_description": "Portable A-frame signs for temporary advertising and directional purposes.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "A-Frame Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "A-Frame Signs"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "A-Frame Signs",
+    "description": "Portable A-frame signs for temporary advertising.",
+    "meta_description": "Portable A-frame signs for temporary advertising and directional purposes.",
+    "catalog_products": [
+      {
+        "name": "Banner A-Frame",
+        "slug": "banner-a-frame",
+        "bullets": [
+          "Indoor and outdoor",
+          "Portable, easy assembly"
+        ],
+        "price": "$302.20",
+        "priceType": "fixed",
+        "unit": "4ft",
+        "options": [
+          {
+            "unit": "4ft",
+            "price": "$302.20"
+          },
+          {
+            "unit": "8ft",
+            "price": "$359.65"
+          }
+        ]
+      },
+      {
+        "name": "Snap Poster Hanger",
+        "slug": "snap-poster-hanger",
+        "bullets": [
+          "Supports multiple sizes",
+          "Ready to hang in store"
+        ],
+        "price": "$54.80",
+        "priceType": "fixed",
+        "unit": "24\" x 36\"",
+        "options": [
+          {
+            "unit": "24\" x 36\"",
+            "price": "$54.80"
+          },
+          {
+            "unit": "36\" x 48\"",
+            "price": "$95.85"
+          }
+        ]
+      },
+      {
+        "name": "Poster Stand",
+        "slug": "poster-stand",
+        "bullets": [
+          "Holds 22\"x28\" PVC sign",
+          "60\" tall - free standing"
+        ],
+        "price": "$206.23",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Magnetic Wood Frame Hanger",
+        "slug": "wood-frame-hanger",
+        "bullets": [
+          "Snap-to-hang solid wood"
+        ],
+        "price": "$52.76",
+        "priceType": "fixed",
+        "unit": "17.5\"x24\"",
+        "options": [
+          {
+            "unit": "17.5\" x 24\"",
+            "price": "$52.76"
+          },
+          {
+            "unit": "17.5\" x 36\"",
+            "price": "$61.56"
+          }
+        ]
+      },
+      {
+        "name": "Standard Signicade",
+        "slug": "white-standard-signicade",
+        "bullets": [
+          "24\"x36\" mounted vinyl graphics"
+        ],
+        "price": "$355.27",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Deluxe Signicade",
+        "slug": "deluxe-signicade-a-frame",
+        "bullets": [
+          "Easy change graphics",
+          "24\"x36\" coroplast inserts"
+        ],
+        "price": "$448.77",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Simposign II",
+        "slug": "white-simposign-a-frame",
+        "bullets": [
+          "Easy change graphics",
+          "22\"x28\" coroplast inserts"
+        ],
+        "price": "$373.97",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "channel_lettering",
@@ -216,12 +1238,88 @@
     "page_title": "Channel Lettering | Professional Signs | BE SEEN",
     "seo_description": "Professional channel letter signs for business identification and branding.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Channel Lettering" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Channel Lettering"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Channel Lettering",
+    "description": "Professional channel letter signs for businesses.",
+    "meta_description": "Professional channel letter signs for business identification and branding.",
+    "catalog_products": [
+      {
+        "name": "Standard Channel Letters",
+        "slug": "standard-channel-letter",
+        "bullets": [
+          "Front lit & Dual lit",
+          ".040 aluminum returns",
+          "Acrylic faces with trimcaps"
+        ],
+        "price": "$4.39",
+        "priceType": "per-inch",
+        "unit": "per inch",
+        "options": null
+      },
+      {
+        "name": "Halo/Reverse Lit Channel Letters",
+        "slug": "reverse-lit",
+        "bullets": [
+          "Multiple colors",
+          "Stainless steel welded faces"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Reverse Acrylic Lit",
+        "slug": "reverse-acrylic-lit",
+        "bullets": [
+          "Reverse lit option"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Premium Full Acrylic Face Lit",
+        "slug": "full-acrylic-face-lit",
+        "bullets": [
+          "Multiple return colors",
+          "Stainless steel returns"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Premium Inset Acrylic Face Lit",
+        "slug": "inset-acrylic-face-lit",
+        "bullets": [
+          "Inset acrylic",
+          "Premium construction"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "flags",
@@ -232,12 +1330,177 @@
     "page_title": "Custom Flags | Advertising & Decoration | BE SEEN",
     "seo_description": "Custom flags for advertising, decoration, and promotional purposes.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Flags" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Flags"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Flags",
+    "description": "Custom flags for advertising and decoration.",
+    "meta_description": "Custom flags for advertising, decoration, and promotional purposes.",
+    "catalog_products": [
+      {
+        "name": "Feather Angled Flag",
+        "slug": "feather-angled-flag",
+        "bullets": [
+          "Single and Double Sided",
+          "Indoor and Outdoor bases"
+        ],
+        "price": "$196.83",
+        "priceType": "fixed",
+        "unit": "Small 9 ft",
+        "options": [
+          {
+            "unit": "Small 9 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Medium 10.5 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Large 14 ft",
+            "price": "$209.85"
+          },
+          {
+            "unit": "X-Large 18 ft",
+            "price": "$263.64"
+          }
+        ]
+      },
+      {
+        "name": "Feather Convex Flag",
+        "slug": "convex-flag",
+        "bullets": [
+          "Single and double sided",
+          "Indoor and Outdoor bases"
+        ],
+        "price": "$196.83",
+        "priceType": "fixed",
+        "unit": "Small 9 ft",
+        "options": [
+          {
+            "unit": "Small 9 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Medium 10.5 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Large 14 ft",
+            "price": "$209.85"
+          },
+          {
+            "unit": "X-Large 18 ft",
+            "price": "$263.64"
+          }
+        ]
+      },
+      {
+        "name": "Teardrop Flag",
+        "slug": "teardrop-flag",
+        "bullets": [
+          "Single and double sided",
+          "Indoor and Outdoor bases"
+        ],
+        "price": "$196.83",
+        "priceType": "fixed",
+        "unit": "Small 7 ft",
+        "options": [
+          {
+            "unit": "Small 7 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Medium 9 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Large 11.2 ft",
+            "price": "$209.85"
+          },
+          {
+            "unit": "X-Large 13.5 ft",
+            "price": "$263.64"
+          }
+        ]
+      },
+      {
+        "name": "Rectangle Flag",
+        "slug": "rectangle-flag",
+        "bullets": [
+          "Single and double sided",
+          "Indoor and outdoor bases"
+        ],
+        "price": "$308.85",
+        "priceType": "fixed",
+        "unit": "Small 8.5 ft",
+        "options": [
+          {
+            "unit": "Small 8.5 ft",
+            "price": "$308.85"
+          },
+          {
+            "unit": "Medium 11.8 ft",
+            "price": "$343.17"
+          },
+          {
+            "unit": "Large 15 ft",
+            "price": "$377.49"
+          }
+        ]
+      },
+      {
+        "name": "Econo Feather Flag",
+        "slug": "econo-feather-flag",
+        "bullets": [
+          "Single sided, flutters in wind",
+          "Outdoor only - ground spike included"
+        ],
+        "price": "$227.70",
+        "priceType": "fixed",
+        "unit": "16 ft",
+        "options": null
+      },
+      {
+        "name": "Custom Pole Flag",
+        "slug": "custom-pole-flag",
+        "bullets": [
+          "Grommet strips for pole installations",
+          "Custom sizes, full color"
+        ],
+        "price": "$59.40",
+        "priceType": "fixed",
+        "unit": "3' x 2'",
+        "options": [
+          {
+            "unit": "3' x 2'",
+            "price": "$59.40"
+          },
+          {
+            "unit": "5' x 3'",
+            "price": "$148.50"
+          },
+          {
+            "unit": "6' x 4'",
+            "price": "$237.60"
+          }
+        ]
+      }
+    ]
   },
   {
     "product_id": "light_boxes",
@@ -248,12 +1511,117 @@
     "page_title": "Light Boxes | Illuminated Signs | BE SEEN",
     "seo_description": "Illuminated light box signs for enhanced visibility and advertising impact.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Light Boxes" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Light Boxes"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Light Boxes",
+    "description": "Illuminated light box signs for visibility.",
+    "meta_description": "Illuminated light box signs for enhanced visibility and advertising impact.",
+    "catalog_products": [
+      {
+        "name": "3ft SEG Display",
+        "slug": "3ft-seg-fabric-stand",
+        "bullets": [
+          "Non-lit slim modern frame"
+        ],
+        "price": "$395.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "10ft SEG Display",
+        "slug": "10ft-seg-fabric-display",
+        "bullets": [
+          "Non-lit slim modern frame"
+        ],
+        "price": "$1,319.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "20ft SEG Display",
+        "slug": "20ft-seg-fabric-display",
+        "bullets": [
+          "Non-lit slim modern frame"
+        ],
+        "price": "$2,639.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "10ft SEG Backlit Display",
+        "slug": "10ft-seg-backlit-fabric-display",
+        "bullets": [
+          "Backlit slim modern frame"
+        ],
+        "price": "$3,629.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "8ft SEG Backlit Popup Display",
+        "slug": "8ft-seg-backlit-popup-display",
+        "bullets": [
+          "Popup frame with graphic edge"
+        ],
+        "price": "$2,603.37",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "10ft SEG Backlit Popup Display",
+        "slug": "10ft-seg-backlit-popup-display",
+        "bullets": [
+          "Popup frame with graphic edge"
+        ],
+        "price": "$3,299.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Custom SEG Fabric",
+        "slug": "custom-seg-fabric",
+        "bullets": [
+          "Custom size",
+          "Fabric graphic only"
+        ],
+        "price": "$5.25",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Wall Mount SEG",
+        "slug": "wall_mount_seg",
+        "bullets": [
+          "Black Aluminum Frame with SEG Graphic"
+        ],
+        "price": "$147.96",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "retractable_banners",
@@ -264,12 +1632,170 @@
     "page_title": "Retractable Banners | Portable Displays | BE SEEN",
     "seo_description": "Portable retractable banner stands for events, trade shows, and temporary displays.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Retractable Banners" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Retractable Banners"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Retractable Banners",
+    "description": "Portable retractable banner stands for events and trade shows.",
+    "meta_description": "Portable retractable banner stands for events, trade shows, and temporary displays.",
+    "catalog_products": [
+      {
+        "name": "Tension Fabric Stand",
+        "slug": "tension-fabric-stand",
+        "bullets": [
+          "Dye sub washable graphic",
+          "Heavy duty but portable",
+          "Best for double sided"
+        ],
+        "price": "$428.97",
+        "priceType": "fixed",
+        "unit": "36\"x90\"",
+        "options": [
+          {
+            "unit": "36\"x90\"",
+            "price": "$428.97"
+          },
+          {
+            "unit": "48\"x90\"",
+            "price": "$494.97"
+          }
+        ]
+      },
+      {
+        "name": "Standard Retractable",
+        "slug": "standard-retractable",
+        "bullets": [
+          "The original",
+          "Compact",
+          "Economic"
+        ],
+        "price": "$164.97",
+        "priceType": "fixed",
+        "unit": "33\"x81\"",
+        "options": [
+          {
+            "unit": "23\"x66\"",
+            "price": "$206.22"
+          },
+          {
+            "unit": "24\"x81\"",
+            "price": "$214.50"
+          },
+          {
+            "unit": "33\"x81\"",
+            "price": "$164.97"
+          },
+          {
+            "unit": "47\"x81\"",
+            "price": "$336.30"
+          }
+        ]
+      },
+      {
+        "name": "Deluxe Retractable",
+        "slug": "deluxe-retractable",
+        "bullets": [
+          "Upgraded retractable hardware"
+        ],
+        "price": "$247.47",
+        "priceType": "fixed",
+        "unit": "33\"x81\" Single",
+        "options": [
+          {
+            "unit": "33\"x81\" Single Sided",
+            "price": "$247.47"
+          },
+          {
+            "unit": "33\"x81\" Double Sided",
+            "price": "$610.68"
+          }
+        ]
+      },
+      {
+        "name": "SD Retractable",
+        "slug": "sd-retractable",
+        "bullets": [
+          "Adjustable height",
+          "Top of the line"
+        ],
+        "price": "$329.97",
+        "priceType": "fixed",
+        "unit": "36\"x92\"",
+        "options": [
+          {
+            "unit": "36\"x92\"",
+            "price": "$329.97"
+          },
+          {
+            "unit": "48\"x92\"",
+            "price": "$450.78"
+          },
+          {
+            "unit": "60\"x92\"",
+            "price": "$593.01"
+          }
+        ]
+      },
+      {
+        "name": "X-Stand",
+        "slug": "x-stand",
+        "bullets": [
+          "Easy change graphics",
+          "Ultra lightweight"
+        ],
+        "price": "$90.72",
+        "priceType": "fixed",
+        "unit": "24\"x63\"",
+        "options": [
+          {
+            "unit": "24\"x63\"",
+            "price": "$90.72"
+          },
+          {
+            "unit": "32\"x71\"",
+            "price": "$123.87"
+          }
+        ]
+      },
+      {
+        "name": "Step and Repeat Backdrop",
+        "slug": "step-repeat-backdrop",
+        "bullets": [
+          "High quality fabric graphic",
+          "Large tube - heavy duty"
+        ],
+        "price": "$590.70",
+        "priceType": "fixed",
+        "unit": "10' W x 8' H",
+        "options": null
+      },
+      {
+        "name": "Table Top Banner Stand",
+        "slug": "table-top-banner-stand",
+        "bullets": [
+          "Stay flat vinyl graphic",
+          "Mini retractable"
+        ],
+        "price": "$65.97",
+        "priceType": "fixed",
+        "unit": "11.5\"x17.5\"",
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "3d_lettering",
@@ -280,12 +1806,88 @@
     "page_title": "3D Lettering | Dimensional Signs | BE SEEN",
     "seo_description": "Three-dimensional letter signs for dramatic visual impact and branding.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "3D Lettering" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "3D Lettering"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "3D Lettering",
+    "description": "Three-dimensional letter signs for dramatic impact.",
+    "meta_description": "Three-dimensional letter signs for dramatic visual impact and branding.",
+    "catalog_products": [
+      {
+        "name": "Standard Channel Letters",
+        "slug": "standard-channel-letter",
+        "bullets": [
+          "Front lit & Dual lit",
+          ".040 aluminum returns",
+          "Acrylic faces with trimcaps"
+        ],
+        "price": "$4.39",
+        "priceType": "per-inch",
+        "unit": "per inch",
+        "options": null
+      },
+      {
+        "name": "Halo/Reverse Lit Channel Letters",
+        "slug": "reverse-lit",
+        "bullets": [
+          "Multiple colors",
+          "Stainless steel welded faces"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Reverse Acrylic Lit",
+        "slug": "reverse-acrylic-lit",
+        "bullets": [
+          "Reverse lit option"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Premium Full Acrylic Face Lit",
+        "slug": "full-acrylic-face-lit",
+        "bullets": [
+          "Multiple return colors",
+          "Stainless steel returns"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Premium Inset Acrylic Face Lit",
+        "slug": "inset-acrylic-face-lit",
+        "bullets": [
+          "Inset acrylic",
+          "Premium construction"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "yard_signs",
@@ -296,12 +1898,76 @@
     "page_title": "Yard Signs | Real Estate & Events | BE SEEN",
     "seo_description": "Durable yard signs for real estate marketing, events, and temporary advertising.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Yard Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Yard Signs"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Yard Signs",
+    "description": "Durable yard signs for real estate and events.",
+    "meta_description": "Durable yard signs for real estate marketing, events, and temporary advertising.",
+    "catalog_products": [
+      {
+        "name": "Yard Sign and H-Stake",
+        "slug": "yard-sign-and-h-stake",
+        "bullets": [
+          "24\"x18\" full color prints",
+          "4mm coroplast sign"
+        ],
+        "price": "$22.86",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate A-Frame",
+        "slug": "real-estate-a-frame",
+        "bullets": [
+          "Full color 24\" x 18\" coroplast prints",
+          "Portable for easy setup"
+        ],
+        "price": "$95.61",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate Post",
+        "slug": "real-estate-post",
+        "bullets": [
+          "Full color aluminum composite signs",
+          "Easy to assemble pvc hardware"
+        ],
+        "price": "$324.51",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate Frame",
+        "slug": "real-estate-frame",
+        "bullets": [
+          "Steel framed outdoor sign",
+          "Drop in 1 or 2 sided graphics"
+        ],
+        "price": "$118.68",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "corrugated",
@@ -312,12 +1978,176 @@
     "page_title": "Corrugated Plastic | Sign Materials | BE SEEN",
     "seo_description": "Durable corrugated plastic material for signs, displays, and outdoor applications.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "Corrugated Plastic" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "Corrugated Plastic"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Corrugated Plastic",
+    "description": "Durable corrugated plastic for signs and displays.",
+    "meta_description": "Durable corrugated plastic material for signs, displays, and outdoor applications.",
+    "catalog_products": [
+      {
+        "name": "Magnets",
+        "slug": "magnets",
+        "bullets": [
+          "High strength indoor/outdoor",
+          "Flexible 30 mil magnet"
+        ],
+        "price": "$15.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Coroplast",
+        "slug": "coroplast",
+        "bullets": [
+          "Custom size indoor/outdoor",
+          "4mm coroplast, H-Stake option"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Aluminum Sandwich Board",
+        "slug": "aluminum-sandwich-board",
+        "bullets": [
+          "DiBond/ACP",
+          "1/8\" aluminum composite"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "PVC Board",
+        "slug": "pvc-board",
+        "bullets": [
+          "Durable indoor and short term outdoor"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Styrene",
+        "slug": "styrene",
+        "bullets": [
+          "Semi-rigid, flexible, curveable"
+        ],
+        "price": "$16.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Foam Board",
+        "slug": "foamcore",
+        "bullets": [
+          "Lightweight poster board",
+          "Indoor use only"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "GatorFoam",
+        "slug": "gatorfoam",
+        "bullets": [
+          "Lightweight indoor",
+          "Extra heavy-duty surface"
+        ],
+        "price": "$20.04",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": [
+          {
+            "unit": "3/16\" White",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" White",
+            "price": "$40.04 per ft²"
+          },
+          {
+            "unit": "3/16\" Black",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" Black",
+            "price": "$40.04 per ft²"
+          }
+        ]
+      },
+      {
+        "name": "Acrylic Prints",
+        "slug": "acrylic-prints",
+        "bullets": [
+          "Back mounted with 1\" standoff hardware"
+        ],
+        "price": "$278.24",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "16\" x 24\"",
+            "price": "$278.24"
+          },
+          {
+            "unit": "20\" x 30\"",
+            "price": "$343.16"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$415.76"
+          }
+        ]
+      },
+      {
+        "name": "Aluminum Sign",
+        "slug": "aluminum-sign",
+        "bullets": [
+          ".040 solid aluminum",
+          "Long-lasting indoor/outdoor"
+        ],
+        "price": "$52.80",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "12\" x 18\"",
+            "price": "$52.80"
+          },
+          {
+            "unit": "18\" x 24\"",
+            "price": "$79.20"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$158.40"
+          }
+        ]
+      }
+    ]
   },
   {
     "product_id": "foam_board",
@@ -328,12 +2158,176 @@
     "page_title": "Foam Board | Sign Materials | BE SEEN",
     "seo_description": "Lightweight foam board material for signs, displays, and indoor applications.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "Foam Board" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "Foam Board"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Foam Board",
+    "description": "Lightweight foam board for signs and displays.",
+    "meta_description": "Lightweight foam board material for signs, displays, and indoor applications.",
+    "catalog_products": [
+      {
+        "name": "Magnets",
+        "slug": "magnets",
+        "bullets": [
+          "High strength indoor/outdoor",
+          "Flexible 30 mil magnet"
+        ],
+        "price": "$15.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Coroplast",
+        "slug": "coroplast",
+        "bullets": [
+          "Custom size indoor/outdoor",
+          "4mm coroplast, H-Stake option"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Aluminum Sandwich Board",
+        "slug": "aluminum-sandwich-board",
+        "bullets": [
+          "DiBond/ACP",
+          "1/8\" aluminum composite"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "PVC Board",
+        "slug": "pvc-board",
+        "bullets": [
+          "Durable indoor and short term outdoor"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Styrene",
+        "slug": "styrene",
+        "bullets": [
+          "Semi-rigid, flexible, curveable"
+        ],
+        "price": "$16.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Foam Board",
+        "slug": "foamcore",
+        "bullets": [
+          "Lightweight poster board",
+          "Indoor use only"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "GatorFoam",
+        "slug": "gatorfoam",
+        "bullets": [
+          "Lightweight indoor",
+          "Extra heavy-duty surface"
+        ],
+        "price": "$20.04",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": [
+          {
+            "unit": "3/16\" White",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" White",
+            "price": "$40.04 per ft²"
+          },
+          {
+            "unit": "3/16\" Black",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" Black",
+            "price": "$40.04 per ft²"
+          }
+        ]
+      },
+      {
+        "name": "Acrylic Prints",
+        "slug": "acrylic-prints",
+        "bullets": [
+          "Back mounted with 1\" standoff hardware"
+        ],
+        "price": "$278.24",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "16\" x 24\"",
+            "price": "$278.24"
+          },
+          {
+            "unit": "20\" x 30\"",
+            "price": "$343.16"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$415.76"
+          }
+        ]
+      },
+      {
+        "name": "Aluminum Sign",
+        "slug": "aluminum-sign",
+        "bullets": [
+          ".040 solid aluminum",
+          "Long-lasting indoor/outdoor"
+        ],
+        "price": "$52.80",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "12\" x 18\"",
+            "price": "$52.80"
+          },
+          {
+            "unit": "18\" x 24\"",
+            "price": "$79.20"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$158.40"
+          }
+        ]
+      }
+    ]
   },
   {
     "product_id": "styrene",
@@ -344,12 +2338,181 @@
     "page_title": "Styrene | Sign Materials | BE SEEN",
     "seo_description": "Rigid styrene material for durable signs, displays, and outdoor applications.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "Styrene" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "Styrene"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Styrene",
+    "description": "Rigid styrene material for signs and displays.",
+    "meta_description": "Rigid styrene material for durable signs, displays, and outdoor applications.",
+    "catalog_products": [
+      {
+        "name": "Styrene",
+        "slug": "styrene",
+        "bullets": [
+          ".020\" High Impact Polystyrene",
+          "Blockout material",
+          "Matte finish",
+          "Direct UV printing in full color",
+          "Indoor and outdoor safe",
+          "Lays flat after being rolled"
+        ],
+        "price": "$16.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Magnets",
+        "slug": "magnets",
+        "bullets": [
+          "High strength indoor/outdoor",
+          "Flexible 30 mil magnet"
+        ],
+        "price": "$15.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Coroplast",
+        "slug": "coroplast",
+        "bullets": [
+          "Custom size indoor/outdoor",
+          "4mm coroplast, H-Stake option"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Aluminum Sandwich Board",
+        "slug": "aluminum-sandwich-board",
+        "bullets": [
+          "DiBond/ACP",
+          "1/8\" aluminum composite"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "PVC Board",
+        "slug": "pvc-board",
+        "bullets": [
+          "Durable indoor and short term outdoor"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Foam Board",
+        "slug": "foamcore",
+        "bullets": [
+          "Lightweight poster board",
+          "Indoor use only"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "GatorFoam",
+        "slug": "gatorfoam",
+        "bullets": [
+          "Lightweight indoor",
+          "Extra heavy-duty surface"
+        ],
+        "price": "$20.04",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": [
+          {
+            "unit": "3/16\" White",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" White",
+            "price": "$40.04 per ft²"
+          },
+          {
+            "unit": "3/16\" Black",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" Black",
+            "price": "$40.04 per ft²"
+          }
+        ]
+      },
+      {
+        "name": "Acrylic Prints",
+        "slug": "acrylic-prints",
+        "bullets": [
+          "Back mounted with 1\" standoff hardware"
+        ],
+        "price": "$278.24",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "16\" x 24\"",
+            "price": "$278.24"
+          },
+          {
+            "unit": "20\" x 30\"",
+            "price": "$343.16"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$415.76"
+          }
+        ]
+      },
+      {
+        "name": "Aluminum Sign",
+        "slug": "aluminum-sign",
+        "bullets": [
+          ".040 solid aluminum",
+          "Long-lasting indoor/outdoor"
+        ],
+        "price": "$52.80",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "12\" x 18\"",
+            "price": "$52.80"
+          },
+          {
+            "unit": "18\" x 24\"",
+            "price": "$79.20"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$158.40"
+          }
+        ]
+      }
+    ]
   },
   {
     "product_id": "acrylic",
@@ -360,12 +2523,242 @@
     "page_title": "Acrylic | Sign Materials | BE SEEN",
     "seo_description": "Clear acrylic material for professional signs, displays, and decorative applications.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "Acrylic" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "Acrylic"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Acrylic",
+    "description": "Clear acrylic material for signs and displays.",
+    "meta_description": "Clear acrylic material for professional signs, displays, and decorative applications.",
+    "catalog_products": [
+      {
+        "name": "Magnets",
+        "slug": "magnets",
+        "bullets": [
+          "High strength indoor/outdoor",
+          "Flexible 30 mil magnet"
+        ],
+        "price": "$15.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Coroplast",
+        "slug": "coroplast",
+        "bullets": [
+          "Custom size indoor/outdoor",
+          "4mm coroplast, H-Stake option"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Aluminum Sandwich Board",
+        "slug": "aluminum-sandwich-board",
+        "bullets": [
+          "DiBond/ACP",
+          "1/8\" aluminum composite"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "PVC Board",
+        "slug": "pvc-board",
+        "bullets": [
+          "Durable indoor and short term outdoor"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Styrene",
+        "slug": "styrene",
+        "bullets": [
+          "Semi-rigid, flexible, curveable"
+        ],
+        "price": "$16.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Foam Board",
+        "slug": "foamcore",
+        "bullets": [
+          "Lightweight poster board",
+          "Indoor use only"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "GatorFoam",
+        "slug": "gatorfoam",
+        "bullets": [
+          "Lightweight indoor",
+          "Extra heavy-duty surface"
+        ],
+        "price": "$20.04",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": [
+          {
+            "unit": "3/16\" White",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" White",
+            "price": "$40.04 per ft²"
+          },
+          {
+            "unit": "3/16\" Black",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" Black",
+            "price": "$40.04 per ft²"
+          }
+        ]
+      },
+      {
+        "name": "Acrylic Prints",
+        "slug": "acrylic-prints",
+        "bullets": [
+          "Back mounted with 1\" standoff hardware"
+        ],
+        "price": "$278.24",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "16\" x 24\"",
+            "price": "$278.24"
+          },
+          {
+            "unit": "20\" x 30\"",
+            "price": "$343.16"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$415.76"
+          }
+        ]
+      },
+      {
+        "name": "Aluminum Sign",
+        "slug": "aluminum-sign",
+        "bullets": [
+          ".040 solid aluminum",
+          "Long-lasting indoor/outdoor"
+        ],
+        "price": "$52.80",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "12\" x 18\"",
+            "price": "$52.80"
+          },
+          {
+            "unit": "18\" x 24\"",
+            "price": "$79.20"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$158.40"
+          }
+        ]
+      },
+      {
+        "name": "Canvas Wrap",
+        "slug": "canvas-wrap",
+        "bullets": [
+          "1.5\" thick gallery wrap"
+        ],
+        "price": "$40.08",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Framed Canvas",
+        "slug": "framed-canvas",
+        "bullets": [
+          "Frames: black, off white, pecan"
+        ],
+        "price": "$96.08",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Wall Mount SEG",
+        "slug": "wall_mount_seg",
+        "bullets": [
+          "Black Aluminum Frame with SEG Graphic"
+        ],
+        "price": "$147.96",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Magnetic Wood Frame Hanger",
+        "slug": "wood-frame-hanger",
+        "bullets": [
+          "Snap-to-hang solid wood hangers"
+        ],
+        "price": "$52.76",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Framed Prints",
+        "slug": "framed-prints",
+        "bullets": [
+          "Eco-friendly natural wood styling"
+        ],
+        "price": "$153.68",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Canvas Roll",
+        "slug": "canvas-roll",
+        "bullets": [
+          "15 mil. semigloss artist canvas"
+        ],
+        "price": "$14.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "pvc_board",
@@ -376,12 +2769,176 @@
     "page_title": "PVC Board | Sign Materials | BE SEEN",
     "seo_description": "Durable PVC board material for signs, displays, and outdoor applications.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Materials", "link": "/products/materials.html" },
-      { "name": "PVC Board" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Materials",
+        "link": "/products/materials.html"
+      },
+      {
+        "name": "PVC Board"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "PVC Board",
+    "description": "Durable PVC board for signs and displays.",
+    "meta_description": "Durable PVC board material for signs, displays, and outdoor applications.",
+    "catalog_products": [
+      {
+        "name": "Magnets",
+        "slug": "magnets",
+        "bullets": [
+          "High strength indoor/outdoor",
+          "Flexible 30 mil magnet"
+        ],
+        "price": "$15.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Coroplast",
+        "slug": "coroplast",
+        "bullets": [
+          "Custom size indoor/outdoor",
+          "4mm coroplast, H-Stake option"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Aluminum Sandwich Board",
+        "slug": "aluminum-sandwich-board",
+        "bullets": [
+          "DiBond/ACP",
+          "1/8\" aluminum composite"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "PVC Board",
+        "slug": "pvc-board",
+        "bullets": [
+          "Durable indoor and short term outdoor"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Styrene",
+        "slug": "styrene",
+        "bullets": [
+          "Semi-rigid, flexible, curveable"
+        ],
+        "price": "$16.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Foam Board",
+        "slug": "foamcore",
+        "bullets": [
+          "Lightweight poster board",
+          "Indoor use only"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "GatorFoam",
+        "slug": "gatorfoam",
+        "bullets": [
+          "Lightweight indoor",
+          "Extra heavy-duty surface"
+        ],
+        "price": "$20.04",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": [
+          {
+            "unit": "3/16\" White",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" White",
+            "price": "$40.04 per ft²"
+          },
+          {
+            "unit": "3/16\" Black",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" Black",
+            "price": "$40.04 per ft²"
+          }
+        ]
+      },
+      {
+        "name": "Acrylic Prints",
+        "slug": "acrylic-prints",
+        "bullets": [
+          "Back mounted with 1\" standoff hardware"
+        ],
+        "price": "$278.24",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "16\" x 24\"",
+            "price": "$278.24"
+          },
+          {
+            "unit": "20\" x 30\"",
+            "price": "$343.16"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$415.76"
+          }
+        ]
+      },
+      {
+        "name": "Aluminum Sign",
+        "slug": "aluminum-sign",
+        "bullets": [
+          ".040 solid aluminum",
+          "Long-lasting indoor/outdoor"
+        ],
+        "price": "$52.80",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "12\" x 18\"",
+            "price": "$52.80"
+          },
+          {
+            "unit": "18\" x 24\"",
+            "price": "$79.20"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$158.40"
+          }
+        ]
+      }
+    ]
   },
   {
     "product_id": "booths",
@@ -392,12 +2949,195 @@
     "page_title": "Trade Show Booths | Custom Displays | BE SEEN",
     "seo_description": "Custom trade show booths and displays for professional exhibitions and events.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Trade Show Booths" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Trade Show Booths"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Trade Show Booths",
+    "description": "Custom trade show booths and displays.",
+    "meta_description": "Custom trade show booths and displays for professional exhibitions and events.",
+    "catalog_products": [
+      {
+        "name": "3ft SEG Display",
+        "slug": "3ft-seg-fabric-stand",
+        "bullets": [
+          "Slim modern frame"
+        ],
+        "price": "$395.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "10ft SEG Display",
+        "slug": "10ft-seg-fabric-display",
+        "bullets": [
+          "Slim modern frame"
+        ],
+        "price": "$1,319.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "20ft SEG Display",
+        "slug": "20ft-seg-fabric-display",
+        "bullets": [
+          "Slim modern frame"
+        ],
+        "price": "$2,639.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "8ft SEG Backlit Popup Display",
+        "slug": "8ft-seg-backlit-popup-display",
+        "bullets": [
+          "Popup with graphic edge"
+        ],
+        "price": "$2,603.37",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "10ft SEG Backlit Popup Display",
+        "slug": "10ft-seg-backlit-popup-display",
+        "bullets": [
+          "Popup with graphic edge"
+        ],
+        "price": "$3,299.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "10ft SEG Backlit Display",
+        "slug": "10ft-seg-backlit-fabric-display",
+        "bullets": [
+          "Backlit slim frame"
+        ],
+        "price": "$3,629.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "6ft Curved Tension Fabric Display",
+        "slug": "curve-tension-fabric-display",
+        "bullets": [
+          "Lightweight tube hardware",
+          "Pillowcase graphics"
+        ],
+        "price": "$675.67",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "8ft Straight Tension Fabric Display",
+        "slug": "straight-tension-fabric-displays",
+        "bullets": [
+          "Portable tube hardware"
+        ],
+        "price": "$877.74",
+        "priceType": "fixed",
+        "unit": "8ft",
+        "options": null
+      },
+      {
+        "name": "10' x 10' Booth",
+        "slug": "10x10-custom-booth",
+        "bullets": [
+          "20 packages available"
+        ],
+        "price": "$1,428.90",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "10' x 20' Booth",
+        "slug": "10x20-custom-booth",
+        "bullets": [
+          "10 packages available"
+        ],
+        "price": "$3,408.90",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "20' x 20' Booth",
+        "slug": "20x20-custom-booth",
+        "bullets": [
+          "2 packages available"
+        ],
+        "price": "$12,098.90",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Podium",
+        "slug": "podium",
+        "bullets": [
+          "Trade show podium"
+        ],
+        "price": "$877.80",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "LED Light (Trade Show Display)",
+        "slug": "led-light-trade-show-display",
+        "bullets": [
+          "Display lighting"
+        ],
+        "price": "$377.30",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Custom SEG Fabric",
+        "slug": "custom-seg-fabric",
+        "bullets": [
+          "Custom size",
+          "Fabric graphic only"
+        ],
+        "price": "$5.25",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Wall Mount SEG",
+        "slug": "wall_mount_seg",
+        "bullets": [
+          "Black Aluminum Frame with SEG Graphic"
+        ],
+        "price": "$147.96",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "table_cloths",
@@ -408,12 +3148,106 @@
     "page_title": "Table Cloths | Custom Branding | BE SEEN",
     "seo_description": "Custom branded table cloths for events, trade shows, and promotional displays.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Table Cloths" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Table Cloths"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Table Cloths",
+    "description": "Custom branded table cloths for events.",
+    "meta_description": "Custom branded table cloths for events, trade shows, and promotional displays.",
+    "catalog_products": [
+      {
+        "name": "4' Table Throw",
+        "slug": "4ft-table-cover",
+        "bullets": [
+          "Full color dye sub print"
+        ],
+        "price": "$189.75",
+        "priceType": "fixed",
+        "unit": "3 sided",
+        "options": null
+      },
+      {
+        "name": "6' Table Throw",
+        "slug": "6ft-table-cover",
+        "bullets": [
+          "Full color dye sub print"
+        ],
+        "price": "$236.49",
+        "priceType": "fixed",
+        "unit": "3 sided",
+        "options": null
+      },
+      {
+        "name": "8' Table Throw",
+        "slug": "8ft-table-cover",
+        "bullets": [
+          "Full color dye sub print"
+        ],
+        "price": "$281.34",
+        "priceType": "fixed",
+        "unit": "3 sided",
+        "options": null
+      },
+      {
+        "name": "Round Table Cover",
+        "slug": "round-table-cover",
+        "bullets": [
+          "Full color dye sub print"
+        ],
+        "price": "$235.95",
+        "priceType": "fixed",
+        "unit": "Standard",
+        "options": null
+      },
+      {
+        "name": "Stretch Table Throw",
+        "slug": "stretch-table-cover",
+        "bullets": [
+          "Fitted shaped",
+          "Full color dye sub"
+        ],
+        "price": "$424.71",
+        "priceType": "fixed",
+        "unit": "6ft",
+        "options": null
+      },
+      {
+        "name": "Table Runner",
+        "slug": "table-runner",
+        "bullets": [
+          "Full color dye sub print"
+        ],
+        "price": "$65.34",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Solid Color Table Throws",
+        "slug": "solid-color-table-throws-assorted-colors",
+        "bullets": [
+          "Unprinted single color throw"
+        ],
+        "price": "$42.90",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "branded_apparel",
@@ -424,12 +3258,26 @@
     "page_title": "Branded Apparel | Custom Clothing | BE SEEN",
     "seo_description": "Custom branded clothing and apparel for team uniforms and promotional purposes.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Branded Apparel" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Branded Apparel"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Branded Apparel",
+    "description": "Custom branded clothing and apparel.",
+    "meta_description": "Custom branded clothing and apparel for team uniforms and promotional purposes."
   },
   {
     "product_id": "pens",
@@ -440,12 +3288,26 @@
     "page_title": "Promotional Pens | Custom Branding | BE SEEN",
     "seo_description": "Custom branded pens for promotional use and marketing campaigns.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Promotional Pens" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Promotional Pens"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Promotional Pens",
+    "description": "Custom branded pens for promotional use.",
+    "meta_description": "Custom branded pens for promotional use and marketing campaigns."
   },
   {
     "product_id": "bags",
@@ -456,12 +3318,26 @@
     "page_title": "Promotional Bags | Custom Branding | BE SEEN",
     "seo_description": "Custom branded bags and totes for promotional use and events.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Promotional Bags" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Promotional Bags"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Promotional Bags",
+    "description": "Custom branded bags and totes.",
+    "meta_description": "Custom branded bags and totes for promotional use and events."
   },
   {
     "product_id": "tents",
@@ -472,12 +3348,93 @@
     "page_title": "Promotional Tents | Custom Branding | BE SEEN",
     "seo_description": "Custom branded tents and canopies for outdoor events and promotions.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Promotional", "link": "/products/promotional.html" },
-      { "name": "Promotional Tents" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Promotional",
+        "link": "/products/promotional.html"
+      },
+      {
+        "name": "Promotional Tents"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Promotional Tents",
+    "description": "Custom branded tents and canopies.",
+    "meta_description": "Custom branded tents and canopies for outdoor events and promotions.",
+    "catalog_products": [
+      {
+        "name": "10ft Event Tent",
+        "slug": "event-tent-canopy-graphic",
+        "bullets": [
+          "Complete set - canopy with wall options",
+          "10'x10' aluminum frame"
+        ],
+        "price": "$1,197.00",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "10ft Tent Wall Graphics",
+        "slug": "tent-wall-full-color",
+        "bullets": [
+          "Full or half wall replacement graphics"
+        ],
+        "price": "$392.67",
+        "priceType": "fixed",
+        "unit": "Half Wall",
+        "options": [
+          {
+            "unit": "Half Wall",
+            "price": "$392.67"
+          },
+          {
+            "unit": "Full Wall",
+            "price": "$524.70"
+          }
+        ]
+      },
+      {
+        "name": "15ft Event Tent",
+        "slug": "10x15-event-tent",
+        "bullets": [
+          "10'x15' aluminum frame"
+        ],
+        "price": "$1,977.00",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "20ft Event Tent",
+        "slug": "10x20-event-tent",
+        "bullets": [
+          "10'x20' aluminum frame"
+        ],
+        "price": "$2,337.00",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Tent Flag Kit",
+        "slug": "tent-flag-teardrop",
+        "bullets": [
+          "Tent compatible flag kit"
+        ],
+        "price": "$217.74",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "window_graphics",
@@ -488,12 +3445,171 @@
     "page_title": "Window Graphics | Custom Decals | BE SEEN",
     "seo_description": "Custom window graphics and decals for business branding and advertising.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Window Graphics" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Window Graphics"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Window Graphics",
+    "description": "Custom window graphics and decals for businesses.",
+    "meta_description": "Custom window graphics and decals for business branding and advertising.",
+    "catalog_products": [
+      {
+        "name": "Premium Window Cling",
+        "slug": "premium-window-cling",
+        "bullets": [
+          "Removable, no adhesive residue"
+        ],
+        "price": null,
+        "priceType": "quote",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Adhesive Vinyl",
+        "slug": "adhesive-vinyl",
+        "bullets": [
+          "Permanent adhesive indoor and outdoor",
+          "4mil white PVC calendar film"
+        ],
+        "price": "$6.60",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "High Performance Vinyl",
+        "slug": "adhesive-vinyl-high-performance",
+        "bullets": [
+          "Long term installs, flat or simple curves",
+          "Initial low tack for repositioning",
+          "3mil ultra-calendared PVC"
+        ],
+        "price": "$14.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "3M IJ-180Cv3 Controltac",
+        "slug": "vehicle-wrap-3m-cast",
+        "bullets": [
+          "Long term vehicle wrap",
+          "2mil Cast vinyl + overlaminate"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Window Perf",
+        "slug": "adhesive-window-perf",
+        "bullets": [
+          "One-way visibility",
+          "30% perforated window film"
+        ],
+        "price": "$10.12",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Wall Fabric",
+        "slug": "wall-graphics",
+        "bullets": [
+          "Low tack, easy remove and reposition",
+          "Designed for interior walls"
+        ],
+        "price": "$14.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Clear Vinyl",
+        "slug": "adhesive-clear-vinyl",
+        "bullets": [
+          "Light pass through",
+          "Crystal clear, CMYK semi-transparent"
+        ],
+        "price": "$15.20",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Adhesive Translucent Vinyl",
+        "slug": "adhesive-translucent-vinyl",
+        "bullets": [
+          "Optional double layer print",
+          "3mil illumination film"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Floor Graphics",
+        "slug": "floor-graphics",
+        "bullets": [
+          "Easy installation and clean removal",
+          "7mil non-slip floor lamination"
+        ],
+        "price": "$24.20",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Frosted Vinyl",
+        "slug": "etched-printable-frosted-vinyl",
+        "bullets": [
+          "Privacy on windows",
+          "Full color on frosted vinyl"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Reflective Adhesive Vinyl",
+        "slug": "reflective-adhesive-vinyl",
+        "bullets": [
+          "Highly visible metallic surface",
+          "4mil reflective permanent adhesive"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Dry Erase Adhesive Vinyl",
+        "slug": "dry-erase-adhesive-vinyl",
+        "bullets": [
+          "4mil white PVC with dry erase coating"
+        ],
+        "price": "$16.52",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "aluminum_signs",
@@ -504,12 +3620,176 @@
     "page_title": "Aluminum Signs | Durable Outdoor Signs | BE SEEN",
     "seo_description": "Durable aluminum signs for outdoor use and long-lasting business identification.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Aluminum Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Aluminum Signs"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Aluminum Signs",
+    "description": "Durable aluminum signs for outdoor use.",
+    "meta_description": "Durable aluminum signs for outdoor use and long-lasting business identification.",
+    "catalog_products": [
+      {
+        "name": "Magnets",
+        "slug": "magnets",
+        "bullets": [
+          "High strength indoor/outdoor",
+          "Flexible 30 mil magnet"
+        ],
+        "price": "$15.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Coroplast",
+        "slug": "coroplast",
+        "bullets": [
+          "Custom size indoor/outdoor",
+          "4mm coroplast, H-Stake option"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Aluminum Sandwich Board",
+        "slug": "aluminum-sandwich-board",
+        "bullets": [
+          "DiBond/ACP",
+          "1/8\" aluminum composite"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "PVC Board",
+        "slug": "pvc-board",
+        "bullets": [
+          "Durable indoor and short term outdoor"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Styrene",
+        "slug": "styrene",
+        "bullets": [
+          "Semi-rigid, flexible, curveable"
+        ],
+        "price": "$16.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Foam Board",
+        "slug": "foamcore",
+        "bullets": [
+          "Lightweight poster board",
+          "Indoor use only"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "GatorFoam",
+        "slug": "gatorfoam",
+        "bullets": [
+          "Lightweight indoor",
+          "Extra heavy-duty surface"
+        ],
+        "price": "$20.04",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": [
+          {
+            "unit": "3/16\" White",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" White",
+            "price": "$40.04 per ft²"
+          },
+          {
+            "unit": "3/16\" Black",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" Black",
+            "price": "$40.04 per ft²"
+          }
+        ]
+      },
+      {
+        "name": "Acrylic Prints",
+        "slug": "acrylic-prints",
+        "bullets": [
+          "Back mounted with 1\" standoff hardware"
+        ],
+        "price": "$278.24",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "16\" x 24\"",
+            "price": "$278.24"
+          },
+          {
+            "unit": "20\" x 30\"",
+            "price": "$343.16"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$415.76"
+          }
+        ]
+      },
+      {
+        "name": "Aluminum Sign",
+        "slug": "aluminum-sign",
+        "bullets": [
+          ".040 solid aluminum",
+          "Long-lasting indoor/outdoor"
+        ],
+        "price": "$52.80",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "12\" x 18\"",
+            "price": "$52.80"
+          },
+          {
+            "unit": "18\" x 24\"",
+            "price": "$79.20"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$158.40"
+          }
+        ]
+      }
+    ]
   },
   {
     "product_id": "magnets",
@@ -520,12 +3800,176 @@
     "page_title": "Car Magnets | Vehicle Advertising | BE SEEN",
     "seo_description": "Custom car magnets for vehicle advertising and mobile branding.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Signs", "link": "/products/signs.html" },
-      { "name": "Car Magnets" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Signs",
+        "link": "/products/signs.html"
+      },
+      {
+        "name": "Car Magnets"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Car Magnets",
+    "description": "Custom car magnets for vehicle advertising.",
+    "meta_description": "Custom car magnets for vehicle advertising and mobile branding.",
+    "catalog_products": [
+      {
+        "name": "Magnets",
+        "slug": "magnets",
+        "bullets": [
+          "High strength indoor/outdoor",
+          "Flexible 30 mil magnet"
+        ],
+        "price": "$15.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Coroplast",
+        "slug": "coroplast",
+        "bullets": [
+          "Custom size indoor/outdoor",
+          "4mm coroplast, H-Stake option"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Aluminum Sandwich Board",
+        "slug": "aluminum-sandwich-board",
+        "bullets": [
+          "DiBond/ACP",
+          "1/8\" aluminum composite"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "PVC Board",
+        "slug": "pvc-board",
+        "bullets": [
+          "Durable indoor and short term outdoor"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Styrene",
+        "slug": "styrene",
+        "bullets": [
+          "Semi-rigid, flexible, curveable"
+        ],
+        "price": "$16.96",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Foam Board",
+        "slug": "foamcore",
+        "bullets": [
+          "Lightweight poster board",
+          "Indoor use only"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "GatorFoam",
+        "slug": "gatorfoam",
+        "bullets": [
+          "Lightweight indoor",
+          "Extra heavy-duty surface"
+        ],
+        "price": "$20.04",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": [
+          {
+            "unit": "3/16\" White",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" White",
+            "price": "$40.04 per ft²"
+          },
+          {
+            "unit": "3/16\" Black",
+            "price": "$20.04 per ft²"
+          },
+          {
+            "unit": "1/2\" Black",
+            "price": "$40.04 per ft²"
+          }
+        ]
+      },
+      {
+        "name": "Acrylic Prints",
+        "slug": "acrylic-prints",
+        "bullets": [
+          "Back mounted with 1\" standoff hardware"
+        ],
+        "price": "$278.24",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "16\" x 24\"",
+            "price": "$278.24"
+          },
+          {
+            "unit": "20\" x 30\"",
+            "price": "$343.16"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$415.76"
+          }
+        ]
+      },
+      {
+        "name": "Aluminum Sign",
+        "slug": "aluminum-sign",
+        "bullets": [
+          ".040 solid aluminum",
+          "Long-lasting indoor/outdoor"
+        ],
+        "price": "$52.80",
+        "priceType": "fixed",
+        "unit": null,
+        "options": [
+          {
+            "unit": "12\" x 18\"",
+            "price": "$52.80"
+          },
+          {
+            "unit": "18\" x 24\"",
+            "price": "$79.20"
+          },
+          {
+            "unit": "24\" x 36\"",
+            "price": "$158.40"
+          }
+        ]
+      }
+    ]
   },
   {
     "product_id": "real_estate_business_cards",
@@ -536,12 +3980,76 @@
     "page_title": "Real Estate Business Cards | Professional Cards | BE SEEN",
     "seo_description": "Professional business cards designed specifically for real estate agents and brokers.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "Business Cards" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Business Cards"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Real Estate Business Cards",
+    "description": "Professional business cards for real estate agents.",
+    "meta_description": "Professional business cards designed specifically for real estate agents and brokers.",
+    "catalog_products": [
+      {
+        "name": "Yard Sign and H-Stake",
+        "slug": "yard-sign-and-h-stake",
+        "bullets": [
+          "24\"x18\" full color prints",
+          "4mm coroplast sign"
+        ],
+        "price": "$22.86",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate A-Frame",
+        "slug": "real-estate-a-frame",
+        "bullets": [
+          "Full color 24\" x 18\" coroplast prints",
+          "Portable for easy setup"
+        ],
+        "price": "$95.61",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate Post",
+        "slug": "real-estate-post",
+        "bullets": [
+          "Full color aluminum composite signs",
+          "Easy to assemble pvc hardware"
+        ],
+        "price": "$324.51",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate Frame",
+        "slug": "real-estate-frame",
+        "bullets": [
+          "Steel framed outdoor sign",
+          "Drop in 1 or 2 sided graphics"
+        ],
+        "price": "$118.68",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "real_estate_banners",
@@ -552,12 +4060,144 @@
     "page_title": "Real Estate Banners | Marketing Banners | BE SEEN",
     "seo_description": "Custom banners designed for real estate marketing and property promotion.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "Banners" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Banners"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Real Estate Banners",
+    "description": "Custom banners for real estate marketing.",
+    "meta_description": "Custom banners designed for real estate marketing and property promotion.",
+    "catalog_products": [
+      {
+        "name": "13oz. Vinyl Banner",
+        "slug": "13oz-vinyl-banner",
+        "bullets": [
+          "Our most popular banner"
+        ],
+        "price": "$5.45",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "18oz. Blockout Banner",
+        "slug": "vinyl-banner-18oz-blockout",
+        "bullets": [
+          "Our most durable banner"
+        ],
+        "price": "$9.10",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Backlit Banner",
+        "slug": "vinyl-banner-backlit",
+        "bullets": [
+          "15 oz. translucent vinyl for lit signage"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Mesh Banner",
+        "slug": "mesh-banners",
+        "bullets": [
+          "Best option for windy conditions"
+        ],
+        "price": "$4.84",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Indoor Banner",
+        "slug": "super-smooth-indoor-banner",
+        "bullets": [
+          "Great for closeup detail",
+          "Flat and smooth surface vinyl"
+        ],
+        "price": "$7.28",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Pole Banner",
+        "slug": "pole-banner-set",
+        "bullets": [
+          "Ready to install hardware kit",
+          "Durable 18 oz banners"
+        ],
+        "price": "$8.72",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "9oz. Fabric Banner",
+        "slug": "fabric-banner-9oz-wrinkle-free",
+        "bullets": [
+          "Wrinkle resistant and washable",
+          "Dye sublimation print"
+        ],
+        "price": "$7.92",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Blockout Fabric Banner",
+        "slug": "fabric-block-out",
+        "bullets": [
+          "Blocks back lighting",
+          "Dye sublimation print"
+        ],
+        "price": "$19.80",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Tension Fabric",
+        "slug": "tension-fabric",
+        "bullets": [
+          "2-way stretch for wraps",
+          "Dye sublimation print"
+        ],
+        "price": "$15.40",
+        "priceType": "per-sqft",
+        "unit": "per ft²",
+        "options": null
+      },
+      {
+        "name": "Hand Banner",
+        "slug": "hand-banner",
+        "bullets": [
+          "Left and right handles",
+          "13oz vinyl, portable"
+        ],
+        "price": "$90.24",
+        "priceType": "fixed",
+        "unit": "10/set",
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "real_estate_flags",
@@ -568,12 +4208,177 @@
     "page_title": "Real Estate Flags | Marketing Flags | BE SEEN",
     "seo_description": "Marketing flags designed for real estate promotions and property advertising.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "Flags" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Flags"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Real Estate Flags",
+    "description": "Marketing flags for real estate promotions.",
+    "meta_description": "Marketing flags designed for real estate promotions and property advertising.",
+    "catalog_products": [
+      {
+        "name": "Feather Angled Flag",
+        "slug": "feather-angled-flag",
+        "bullets": [
+          "Single and Double Sided",
+          "Indoor and Outdoor bases"
+        ],
+        "price": "$196.83",
+        "priceType": "fixed",
+        "unit": "Small 9 ft",
+        "options": [
+          {
+            "unit": "Small 9 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Medium 10.5 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Large 14 ft",
+            "price": "$209.85"
+          },
+          {
+            "unit": "X-Large 18 ft",
+            "price": "$263.64"
+          }
+        ]
+      },
+      {
+        "name": "Feather Convex Flag",
+        "slug": "convex-flag",
+        "bullets": [
+          "Single and double sided",
+          "Indoor and Outdoor bases"
+        ],
+        "price": "$196.83",
+        "priceType": "fixed",
+        "unit": "Small 9 ft",
+        "options": [
+          {
+            "unit": "Small 9 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Medium 10.5 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Large 14 ft",
+            "price": "$209.85"
+          },
+          {
+            "unit": "X-Large 18 ft",
+            "price": "$263.64"
+          }
+        ]
+      },
+      {
+        "name": "Teardrop Flag",
+        "slug": "teardrop-flag",
+        "bullets": [
+          "Single and double sided",
+          "Indoor and Outdoor bases"
+        ],
+        "price": "$196.83",
+        "priceType": "fixed",
+        "unit": "Small 7 ft",
+        "options": [
+          {
+            "unit": "Small 7 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Medium 9 ft",
+            "price": "$196.83"
+          },
+          {
+            "unit": "Large 11.2 ft",
+            "price": "$209.85"
+          },
+          {
+            "unit": "X-Large 13.5 ft",
+            "price": "$263.64"
+          }
+        ]
+      },
+      {
+        "name": "Rectangle Flag",
+        "slug": "rectangle-flag",
+        "bullets": [
+          "Single and double sided",
+          "Indoor and outdoor bases"
+        ],
+        "price": "$308.85",
+        "priceType": "fixed",
+        "unit": "Small 8.5 ft",
+        "options": [
+          {
+            "unit": "Small 8.5 ft",
+            "price": "$308.85"
+          },
+          {
+            "unit": "Medium 11.8 ft",
+            "price": "$343.17"
+          },
+          {
+            "unit": "Large 15 ft",
+            "price": "$377.49"
+          }
+        ]
+      },
+      {
+        "name": "Econo Feather Flag",
+        "slug": "econo-feather-flag",
+        "bullets": [
+          "Single sided, flutters in wind",
+          "Outdoor only - ground spike included"
+        ],
+        "price": "$227.70",
+        "priceType": "fixed",
+        "unit": "16 ft",
+        "options": null
+      },
+      {
+        "name": "Custom Pole Flag",
+        "slug": "custom-pole-flag",
+        "bullets": [
+          "Grommet strips for pole installations",
+          "Custom sizes, full color"
+        ],
+        "price": "$59.40",
+        "priceType": "fixed",
+        "unit": "3' x 2'",
+        "options": [
+          {
+            "unit": "3' x 2'",
+            "price": "$59.40"
+          },
+          {
+            "unit": "5' x 3'",
+            "price": "$148.50"
+          },
+          {
+            "unit": "6' x 4'",
+            "price": "$237.60"
+          }
+        ]
+      }
+    ]
   },
   {
     "product_id": "real_estate_lawn_signs",
@@ -584,12 +4389,76 @@
     "page_title": "Real Estate Lawn Signs | Property Signs | BE SEEN",
     "seo_description": "Lawn signs designed for real estate listings and property marketing.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "Lawn Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "Lawn Signs"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Real Estate Lawn Signs",
+    "description": "Lawn signs for real estate listings.",
+    "meta_description": "Lawn signs designed for real estate listings and property marketing.",
+    "catalog_products": [
+      {
+        "name": "Yard Sign and H-Stake",
+        "slug": "yard-sign-and-h-stake",
+        "bullets": [
+          "24\"x18\" full color prints",
+          "4mm coroplast sign"
+        ],
+        "price": "$22.86",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate A-Frame",
+        "slug": "real-estate-a-frame",
+        "bullets": [
+          "Full color 24\" x 18\" coroplast prints",
+          "Portable for easy setup"
+        ],
+        "price": "$95.61",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate Post",
+        "slug": "real-estate-post",
+        "bullets": [
+          "Full color aluminum composite signs",
+          "Easy to assemble pvc hardware"
+        ],
+        "price": "$324.51",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate Frame",
+        "slug": "real-estate-frame",
+        "bullets": [
+          "Steel framed outdoor sign",
+          "Drop in 1 or 2 sided graphics"
+        ],
+        "price": "$118.68",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      }
+    ]
   },
   {
     "product_id": "real_estate_a_frames",
@@ -600,11 +4469,149 @@
     "page_title": "Real Estate A-Frame Signs | Portable Signs | BE SEEN",
     "seo_description": "A-frame signs designed for real estate marketing and property promotion.",
     "breadcrumbs": [
-      { "name": "Home", "link": "/index.html" },
-      { "name": "Products", "link": "/products.html" },
-      { "name": "Real Estate", "link": "/products/real-estate.html" },
-      { "name": "A-Frame Signs" }
+      {
+        "name": "Home",
+        "link": "/index.html"
+      },
+      {
+        "name": "Products",
+        "link": "/products.html"
+      },
+      {
+        "name": "Real Estate",
+        "link": "/products/real-estate.html"
+      },
+      {
+        "name": "A-Frame Signs"
+      }
     ],
-    "generation_pipeline": "standard_product_v1"
+    "generation_pipeline": "standard_product_v1",
+    "name": "Real Estate A-Frame Signs",
+    "description": "A-frame signs for real estate marketing.",
+    "meta_description": "A-frame signs designed for real estate marketing and property promotion.",
+    "catalog_products": [
+      {
+        "name": "Yard Sign and H-Stake",
+        "slug": "yard-sign-and-h-stake",
+        "bullets": [
+          "24\"x18\" full color prints",
+          "4mm coroplast sign"
+        ],
+        "price": "$22.86",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate A-Frame",
+        "slug": "real-estate-a-frame",
+        "bullets": [
+          "Full color 24\" x 18\" coroplast prints",
+          "Portable for easy setup"
+        ],
+        "price": "$95.61",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate Post",
+        "slug": "real-estate-post",
+        "bullets": [
+          "Full color aluminum composite signs",
+          "Easy to assemble pvc hardware"
+        ],
+        "price": "$324.51",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Real Estate Frame",
+        "slug": "real-estate-frame",
+        "bullets": [
+          "Steel framed outdoor sign",
+          "Drop in 1 or 2 sided graphics"
+        ],
+        "price": "$118.68",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Banner A-Frame",
+        "slug": "banner-a-frame",
+        "bullets": [
+          "Indoor and outdoor",
+          "Portable, easy assembly"
+        ],
+        "price": "$302.20",
+        "priceType": "fixed",
+        "unit": "4ft",
+        "options": [
+          {
+            "unit": "4ft",
+            "price": "$302.20"
+          },
+          {
+            "unit": "8ft",
+            "price": "$359.65"
+          }
+        ]
+      },
+      {
+        "name": "Snap Poster Hanger",
+        "slug": "snap-poster-hanger",
+        "bullets": [
+          "Supports multiple sizes",
+          "Ready to hang in store"
+        ],
+        "price": "$54.80",
+        "priceType": "fixed",
+        "unit": "24\" x 36\"",
+        "options": [
+          {
+            "unit": "24\" x 36\"",
+            "price": "$54.80"
+          },
+          {
+            "unit": "36\" x 48\"",
+            "price": "$95.85"
+          }
+        ]
+      },
+      {
+        "name": "Poster Stand",
+        "slug": "poster-stand",
+        "bullets": [
+          "Holds 22\"x28\" PVC sign",
+          "60\" tall - free standing"
+        ],
+        "price": "$206.23",
+        "priceType": "fixed",
+        "unit": null,
+        "options": null
+      },
+      {
+        "name": "Magnetic Wood Frame Hanger",
+        "slug": "wood-frame-hanger",
+        "bullets": [
+          "Snap-to-hang solid wood"
+        ],
+        "price": "$52.76",
+        "priceType": "fixed",
+        "unit": "17.5\"x24\"",
+        "options": [
+          {
+            "unit": "17.5\" x 24\"",
+            "price": "$52.76"
+          },
+          {
+            "unit": "17.5\" x 36\"",
+            "price": "$61.56"
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -811,6 +811,10 @@
 	                'a_frames': 'a_frames',
 	                'channel_lettering': 'channel_lettering',
 	                'flags': 'flags',
+	                'convex_flag': 'convex_flag', 'feather_angled_flag': 'feather_angled_flag', 'teardrop_flag': 'teardrop_flag',
+	                'rectangle_flag': 'rectangle_flag', 'econo_feather_flag': 'econo_feather_flag', 'custom_pole_flag': 'custom_pole_flag',
+	                'real_estate_convex_flag': 'real_estate_convex_flag', 'real_estate_feather_angled_flag': 'real_estate_feather_angled_flag', 'real_estate_teardrop_flag': 'real_estate_teardrop_flag',
+	                'real_estate_rectangle_flag': 'real_estate_rectangle_flag', 'real_estate_econo_feather_flag': 'real_estate_econo_feather_flag', 'real_estate_custom_pole_flag': 'real_estate_custom_pole_flag',
 	                'light_boxes': 'light_boxes',
 	                'retractable_banners': 'retractable_banners',
 	                '3d_lettering': '3d_lettering',
@@ -1056,6 +1060,20 @@
 	        return `url('${imagePath}')`;
 	    });
 	    
+	    // Get flag product image by catalog slug (for hub child product cards)
+	    Handlebars.registerHelper('getProductImageBySlug', function(slug) {
+	        const slugToVariant = {
+	            'feather-angled-flag': 'feather', 'convex-flag': 'feather', 'econo-feather-flag': 'feather',
+	            'teardrop-flag': 'teardrop',
+	            'rectangle-flag': 'rectangle', 'custom-pole-flag': 'rectangle'
+	        };
+	        const variant = slugToVariant[slug || ''] || 'feather';
+	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.products?.flags?.[variant]?.path) {
+	            return IMAGE_LIBRARY.products.flags[variant].path;
+	        }
+	        return '/assets/Be seen image review updated/Flags/Feather Flags.jpg';
+	    });
+	
 	    // Get product category image
 	    Handlebars.registerHelper('getProductCategoryImage', function(category) {
 	        if (typeof IMAGE_LIBRARY !== 'undefined' && IMAGE_LIBRARY.categories) {
@@ -1594,9 +1612,59 @@
 										Professional business cards for real estate agents.
 								</p>
 
-								<!-- Product Options -->
+								<!-- Product Options (from CSV - hidden when configurator is used) -->
 
 								<!-- Quantity Options -->
+
+								<!-- Configurator Widget (width/height → live price) -->
+
+								<!-- Size selector for single catalog product with options (e.g. flags) -->
+								<!-- Fixed-price catalog products (Signs, etc. - when no catalog_options) -->
+								<div class="product-options mb-4 catalog-products-pricing">
+									<label class="form-label d-block mb_15"><strong>Options &amp; Pricing</strong></label>
+									<div class="catalog-products-list">
+										<div class="catalog-product-item card p-3 mb-2">
+											<div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+												<strong>Yard Sign and H-Stake</strong>
+												<span class="price_text text-nowrap">$22.86</span>
+											</div>
+											<ul class="mb-0 mt-1 small configurator_config_bullets ps-3">
+												<li>24&quot;x18&quot; full color prints</li>
+												<li>4mm coroplast sign</li>
+											</ul>
+										</div>
+										<div class="catalog-product-item card p-3 mb-2">
+											<div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+												<strong>Real Estate A-Frame</strong>
+												<span class="price_text text-nowrap">$95.61</span>
+											</div>
+											<ul class="mb-0 mt-1 small configurator_config_bullets ps-3">
+												<li>Full color 24&quot; x 18&quot; coroplast prints</li>
+												<li>Portable for easy setup</li>
+											</ul>
+										</div>
+										<div class="catalog-product-item card p-3 mb-2">
+											<div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+												<strong>Real Estate Post</strong>
+												<span class="price_text text-nowrap">$324.51</span>
+											</div>
+											<ul class="mb-0 mt-1 small configurator_config_bullets ps-3">
+												<li>Full color aluminum composite signs</li>
+												<li>Easy to assemble pvc hardware</li>
+											</ul>
+										</div>
+										<div class="catalog-product-item card p-3 mb-2">
+											<div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+												<strong>Real Estate Frame</strong>
+												<span class="price_text text-nowrap">$118.68</span>
+											</div>
+											<ul class="mb-0 mt-1 small configurator_config_bullets ps-3">
+												<li>Steel framed outdoor sign</li>
+												<li>Drop in 1 or 2 sided graphics</li>
+											</ul>
+										</div>
+									</div>
+								</div>
 
 								<!-- Contact Us Button -->
 								<div class="d-grid">
@@ -1810,6 +1878,7 @@
 
 	<!-- custom - js include -->
 	<script src="/assets/js/app-initializer.js"></script>
+	<script src="/assets/js/configurator.js"></script>
 
 	<!-- Stripe Integration -->
 	<script src="https://js.stripe.com/v3/"></script>
@@ -1855,6 +1924,28 @@
 					document.getElementById('selectedQuantity').value = this.dataset.quantity;
 				});
 			});
+
+			// Catalog size options (flags, etc.) and ?Size= URL param pre-selection
+			const catalogSizeOptions = document.querySelectorAll('.catalog-size-option');
+			const priceDisplay = document.querySelector('.price_text strong');
+			const sizeInput = document.getElementById('selectedCatalogSize');
+			if (catalogSizeOptions.length && priceDisplay) {
+				const selectSize = (el) => {
+					catalogSizeOptions.forEach(o => o.classList.remove('border-primary'));
+					el.classList.add('border-primary');
+					priceDisplay.textContent = el.dataset.price || '';
+					if (sizeInput) sizeInput.value = el.dataset.unit;
+				};
+				const urlSize = new URLSearchParams(window.location.search).get('Size') || new URLSearchParams(window.location.search).get('size');
+				if (urlSize) {
+					const match = Array.from(catalogSizeOptions).find(o => (o.dataset.unit || '').toLowerCase().includes(String(urlSize).toLowerCase()));
+					if (match) selectSize(match);
+				}
+				catalogSizeOptions.forEach(opt => {
+					opt.addEventListener('click', function() { selectSize(this); });
+					opt.style.cursor = 'pointer';
+				});
+			}
 
 			// Initial price calculation
 			updatePrice();
