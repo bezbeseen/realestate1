@@ -130,6 +130,12 @@ function slugToProductId(slug) {
   return slug.replace(/-/g, '_');
 }
 
+/** Normalize catalog slug to kebab-case for build validation. */
+function toKebabSlug(slug) {
+  if (!slug || typeof slug !== 'string') return slug;
+  return slug.replace(/_/g, '-').toLowerCase();
+}
+
 function mergeProduct(mainProduct, catalogProducts, configuratorProducts) {
   const merged = { ...mainProduct };
 
@@ -144,7 +150,7 @@ function mergeProduct(mainProduct, catalogProducts, configuratorProducts) {
 
   merged.catalog_products = catalogProducts.map((p) => ({
     name: p.name,
-    slug: p.slug,
+    slug: toKebabSlug(p.slug),
     bullets: p.bullets || [],
     price: p.price,
     priceType: p.priceType,
@@ -158,7 +164,7 @@ function mergeProduct(mainProduct, catalogProducts, configuratorProducts) {
     merged.bullets = p.bullets || [];
     merged.price = p.price;
     merged.priceType = p.priceType;
-    merged.catalog_slug = p.slug;
+    merged.catalog_slug = toKebabSlug(p.slug);
   }
 
   // Add configurator_config if any catalog product has configurator data

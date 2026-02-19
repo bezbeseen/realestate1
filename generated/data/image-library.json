@@ -87,48 +87,48 @@
     },
     "products": {
         "business_cards": {
-            "standard": { "path": "/assets/Be seen image review updated/Business cards/standard business card.jpg", "alt": "Standard business cards with clean professional design for real estate marketing", "variable": "PRODUCTS_BUSINESS_CARDS_STANDARD" },
-            "premium": { "path": "/assets/Be seen image review updated/Business cards/premium business card.jpg", "alt": "Premium spot UV business cards with raised glossy logo for luxury real estate branding", "variable": "PRODUCTS_BUSINESS_CARDS_PREMIUM" },
-            "luxury": { "path": "/assets/Be seen image review updated/Business cards/luxury business card.jpg", "alt": "Luxury foil-stamped business cards with metallic accents for high-end real estate professionals", "variable": "PRODUCTS_BUSINESS_CARDS_LUXURY" },
-            "economy": { "path": "/assets/Be seen image review updated/Business cards/economy business card.jpg", "alt": "Economy business cards with quality printing for cost-effective real estate marketing", "variable": "PRODUCTS_BUSINESS_CARDS_ECONOMY" }
+            "standard": { "path": "/assets/images/products/prints/business-cards/standard business card.jpg", "alt": "Standard business cards with clean professional design for real estate marketing", "variable": "PRODUCTS_BUSINESS_CARDS_STANDARD" },
+            "premium": { "path": "/assets/images/products/prints/business-cards/premium business card.jpg", "alt": "Premium spot UV business cards with raised glossy logo for luxury real estate branding", "variable": "PRODUCTS_BUSINESS_CARDS_PREMIUM" },
+            "luxury": { "path": "/assets/images/products/prints/business-cards/luxury business card.jpg", "alt": "Luxury foil-stamped business cards with metallic accents for high-end real estate professionals", "variable": "PRODUCTS_BUSINESS_CARDS_LUXURY" },
+            "economy": { "path": "/assets/images/products/prints/business-cards/economy business card.jpg", "alt": "Economy business cards with quality printing for cost-effective real estate marketing", "variable": "PRODUCTS_BUSINESS_CARDS_ECONOMY" }
         },
         "banners": {
-            "vinyl": { "path": "/assets/Be seen image review updated/Banners/vinyl banner.jpg", "alt": "Weather-resistant vinyl banner with grommets for outdoor real estate advertising and events", "variable": "PRODUCTS_BANNERS_VINYL" },
-            "retractable": { "path": "/assets/Be seen image review updated/Retractable Banners/Standard retractable banners.jpg", "alt": "Portable retractable banner stand for indoor real estate displays and trade shows", "variable": "PRODUCTS_BANNERS_RETRACTABLE" },
-            "mesh": { "path": "/assets/Be seen image review updated/Banners/mesh banner.jpg", "alt": "Wind-resistant mesh banner with perforated design for outdoor real estate displays", "variable": "PRODUCTS_BANNERS_MESH" },
-            "fabric": { "path": "/assets/Be seen image review updated/Banners/fabric banner.jpg", "alt": "Premium fabric banner with vibrant colors for high-end real estate marketing displays", "variable": "PRODUCTS_BANNERS_FABRIC" }
+            "vinyl": { "path": "/assets/images/products/prints/banners/vinyl banner.jpg", "alt": "Weather-resistant vinyl banner with grommets for outdoor real estate advertising and events", "variable": "PRODUCTS_BANNERS_VINYL" },
+            "retractable": { "path": "/assets/images/products/prints/banners/retractable banner.jpg", "alt": "Portable retractable banner stand for indoor real estate displays and trade shows", "variable": "PRODUCTS_BANNERS_RETRACTABLE" },
+            "mesh": { "path": "/assets/images/products/prints/banners/mesh banner.jpg", "alt": "Wind-resistant mesh banner with perforated design for outdoor real estate displays", "variable": "PRODUCTS_BANNERS_MESH" },
+            "fabric": { "path": "/assets/images/products/prints/banners/fabric banner.jpg", "alt": "Premium fabric banner with vibrant colors for high-end real estate marketing displays", "variable": "PRODUCTS_BANNERS_FABRIC" }
         },
         "yard_signs": {
-            "standard": { "path": "/assets/Be seen image review updated/Yard Signs/standard yard signs.jpg", "alt": "Standard yard signs for real estate listings and property marketing", "variable": "PRODUCTS_YARD_SIGNS_STANDARD" },
-            "premium": { "path": "/assets/Be seen image review updated/Yard Signs/premium yard signs.jpg", "alt": "Premium yard signs with enhanced durability and professional finish", "variable": "PRODUCTS_YARD_SIGNS_PREMIUM" },
-            "doubleSided": { "path": "/assets/Be seen image review updated/Yard Signs/double sided yard signs.jpg", "alt": "Double-sided yard signs for maximum visibility and impact", "variable": "PRODUCTS_YARD_SIGNS_DOUBLE_SIDED" }
+            "standard": { "path": "/assets/images/products/signs/yard-signs/standard yard signs.jpg", "alt": "Standard yard signs for real estate listings and property marketing", "variable": "PRODUCTS_YARD_SIGNS_STANDARD" },
+            "premium": { "path": "/assets/images/products/signs/yard-signs/premium yard signs.jpg", "alt": "Premium yard signs with enhanced durability and professional finish", "variable": "PRODUCTS_YARD_SIGNS_PREMIUM" },
+            "doubleSided": { "path": "/assets/images/products/signs/yard-signs/double sided yard signs.jpg", "alt": "Double-sided yard signs for maximum visibility and impact", "variable": "PRODUCTS_YARD_SIGNS_DOUBLE_SIDED" }
         },
         "stickers": {
-            "vinyl": { "path": "/assets/Be seen image review updated/Stickers & Decals/vinyl stickers & decals.jpg", "alt": "Durable vinyl stickers for indoor and outdoor use", "variable": "PRODUCTS_STICKERS_VINYL" },
-            "customShape": { "path": "/assets/Be seen image review updated/Stickers & Decals/custom shapes stickers & decals.jpg", "alt": "Custom die-cut stickers in any shape", "variable": "PRODUCTS_STICKERS_CUSTOM_SHAPE" },
-            "weatherResistant": { "path": "/assets/Be seen image review updated/Stickers & Decals/weather resistant stickers & decals.jpg", "alt": "Weather resistant stickers for outdoor applications", "variable": "PRODUCTS_STICKERS_WEATHER_RESISTANT" }
+            "vinyl": { "path": "/assets/images/products/prints/stickers/vinyl stickers & decals.jpg", "alt": "Durable vinyl stickers for indoor and outdoor use", "variable": "PRODUCTS_STICKERS_VINYL" },
+            "customShape": { "path": "/assets/images/products/prints/stickers/custom shapes stickers & decals.jpg", "alt": "Custom die-cut stickers in any shape", "variable": "PRODUCTS_STICKERS_CUSTOM_SHAPE" },
+            "weatherResistant": { "path": "/assets/images/products/prints/stickers/weather resistant stickers & decals.jpg", "alt": "Weather resistant stickers for outdoor applications", "variable": "PRODUCTS_STICKERS_WEATHER_RESISTANT" }
         },
         "decals": {
-            "car": { "path": "/assets/Be seen image review updated/Stickers & Decals/vinyl stickers & decals.jpg", "alt": "Custom car decals for vehicle branding and advertising", "variable": "PRODUCTS_DECALS_CAR" },
-            "vinyl": { "path": "/assets/Be seen image review updated/Stickers & Decals/vinyl stickers & decals.jpg", "alt": "Durable vinyl decals for indoor and outdoor use", "variable": "PRODUCTS_DECALS_VINYL" },
-            "customShape": { "path": "/assets/Be seen image review updated/Stickers & Decals/custom shapes stickers & decals.jpg", "alt": "Custom die-cut decals in any shape", "variable": "PRODUCTS_DECALS_CUSTOM_SHAPE" },
-            "weatherResistant": { "path": "/assets/Be seen image review updated/Stickers & Decals/weather resistant stickers & decals.jpg", "alt": "Weather resistant decals for outdoor applications", "variable": "PRODUCTS_DECALS_WEATHER_RESISTANT" }
+            "car": { "path": "/assets/images/products/decals/car_decals.jpg", "alt": "Custom car decals for vehicle branding and advertising", "variable": "PRODUCTS_DECALS_CAR" },
+            "vinyl": { "path": "/assets/images/products/prints/stickers/vinyl stickers & decals.jpg", "alt": "Durable vinyl decals for indoor and outdoor use", "variable": "PRODUCTS_DECALS_VINYL" },
+            "customShape": { "path": "/assets/images/products/prints/stickers/custom shapes stickers & decals.jpg", "alt": "Custom die-cut decals in any shape", "variable": "PRODUCTS_DECALS_CUSTOM_SHAPE" },
+            "weatherResistant": { "path": "/assets/images/products/prints/stickers/weather resistant stickers & decals.jpg", "alt": "Weather resistant decals for outdoor applications", "variable": "PRODUCTS_DECALS_WEATHER_RESISTANT" }
         },
         "aluminum_signs": {
-            "18x24": { "path": "/assets/Be seen image review updated/Aluminum Signs/18x24 Aluminum Signs.jpg", "alt": "18x24 Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_18X24" },
-            "24x36": { "path": "/assets/Be seen image review updated/Aluminum Signs/24x36 Aluminum Signs.jpg", "alt": "24x36 Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_24X36" },
-            "custom": { "path": "/assets/Be seen image review updated/Aluminum Signs/Custom Aluminum Signs.jpg", "alt": "Custom Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_CUSTOM" }
+            "18x24": { "path": "/assets/images/products/signs/aluminum-signs/18x24 Aluminum Signs.jpg", "alt": "18x24 Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_18X24" },
+            "24x36": { "path": "/assets/images/products/signs/aluminum-signs/24x36 Aluminum Signs.jpg", "alt": "24x36 Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_24X36" },
+            "custom": { "path": "/assets/images/products/signs/aluminum-signs/Custom Aluminum Signs.jpg", "alt": "Custom Aluminum Sign", "variable": "PRODUCTS_ALUMINUM_SIGNS_CUSTOM" }
         },
         "branded_apparel": {
-            "hats": { "path": "/assets/Be seen image review updated/Branded Apparel/Hats Branded Apparel.jpg", "alt": "Branded Hats", "variable": "PRODUCTS_BRANDED_APPAREL_HATS" },
-            "hoodies": { "path": "/assets/Be seen image review updated/Branded Apparel/Hoodies Branded Apparel.jpg", "alt": "Branded Hoodies", "variable": "PRODUCTS_BRANDED_APPAREL_HOODIES" },
-            "polos": { "path": "/assets/Be seen image review updated/Branded Apparel/Polos Branded Apparel.jpg", "alt": "Branded Polos", "variable": "PRODUCTS_BRANDED_APPAREL_POLOS" },
-            "tshirt": { "path": "/assets/Be seen image review updated/Branded Apparel/T Shirt Branded Apparel.jpg", "alt": "Branded T-Shirt", "variable": "PRODUCTS_BRANDED_APPAREL_TSHIRT" }
+            "hats": { "path": "/assets/images/products/promotional/branded-apparel/Hats Branded Apparel.jpg", "alt": "Branded Hats", "variable": "PRODUCTS_BRANDED_APPAREL_HATS" },
+            "hoodies": { "path": "/assets/images/products/promotional/branded-apparel/Hoodies Branded Apparel.jpg", "alt": "Branded Hoodies", "variable": "PRODUCTS_BRANDED_APPAREL_HOODIES" },
+            "polos": { "path": "/assets/images/products/promotional/branded-apparel/Polos Branded Apparel.jpg", "alt": "Branded Polos", "variable": "PRODUCTS_BRANDED_APPAREL_POLOS" },
+            "tshirt": { "path": "/assets/images/products/promotional/branded-apparel/T Shirt Branded Apparel.jpg", "alt": "Branded T-Shirt", "variable": "PRODUCTS_BRANDED_APPAREL_TSHIRT" }
         },
         "brochures": {
-            "bifold": { "path": "/assets/Be seen image review updated/Broucher/bi-fold broucher.jpg", "alt": "Bi-fold Brochure", "variable": "PRODUCTS_BROCHURES_BIFOLD" },
-            "trifold": { "path": "/assets/Be seen image review updated/Broucher/tri-fold broucher.jpg", "alt": "Tri-fold Brochure", "variable": "PRODUCTS_BROCHURES_TRIFOLD" },
-            "zfold": { "path": "/assets/Be seen image review updated/Broucher/z-fold broucher.jpg", "alt": "Z-fold Brochure", "variable": "PRODUCTS_BROCHURES_ZFOLD" }
+            "bifold": { "path": "/assets/images/products/prints/brochures/bi-fold broucher.jpg", "alt": "Bi-fold Brochure", "variable": "PRODUCTS_BROCHURES_BIFOLD" },
+            "trifold": { "path": "/assets/images/products/prints/brochures/tri-fold broucher.jpg", "alt": "Tri-fold Brochure", "variable": "PRODUCTS_BROCHURES_TRIFOLD" },
+            "zfold": { "path": "/assets/images/products/prints/brochures/z-fold broucher.jpg", "alt": "Z-fold Brochure", "variable": "PRODUCTS_BROCHURES_ZFOLD" }
         },
         "canvas_prints": {
             "galleryWrap": { "path": "/assets/Be seen image review updated/Canvas/gallery wrap canvas.jpg", "alt": "Gallery Wrap Canvas", "variable": "PRODUCTS_CANVAS_PRINTS_GALLERY_WRAP" },
@@ -200,22 +200,22 @@
             "standard": { "path": "/assets/Be seen image review updated/Retractable Banners/Standard retractable banners.jpg", "alt": "Standard Retractable Banner", "variable": "PRODUCTS_RETRACTABLE_BANNERS_STANDARD" }
         },
         "commercial_signage": {
-            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/Channel Specialty Signs.jpg", "alt": "Commercial Signage", "variable": "PRODUCTS_COMMERCIAL_SIGNAGE_STANDARD" }
+            "standard": { "path": "/assets/images/services/sign-banner.jpg", "alt": "Commercial Signage", "variable": "PRODUCTS_COMMERCIAL_SIGNAGE_STANDARD" }
         },
         "channel_lettering": {
-            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/Channel Specialty Signs.jpg", "alt": "Channel Lettering Sign", "variable": "PRODUCTS_CHANNEL_LETTERING_STANDARD" }
+            "standard": { "path": "/assets/images/products/signs/channel-lettering/Channel Specialty Signs.jpg", "alt": "Channel Lettering Sign", "variable": "PRODUCTS_CHANNEL_LETTERING_STANDARD" }
         },
         "3d_lettering": {
-            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/3D Specialty Signs.jpg", "alt": "3D Lettering Sign", "variable": "PRODUCTS_3D_LETTERING_STANDARD" }
+            "standard": { "path": "/assets/images/products/signs/3d-lettering/3D Specialty Signs.jpg", "alt": "3D Lettering Sign", "variable": "PRODUCTS_3D_LETTERING_STANDARD" }
         },
         "light_boxes": {
-            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/Light Boxes Specialty Signs.jpg", "alt": "Light Box Sign", "variable": "PRODUCTS_LIGHT_BOXES_STANDARD" }
+            "standard": { "path": "/assets/images/products/signs/light-boxes/Light Boxes Specialty Signs.jpg", "alt": "Light Box Sign", "variable": "PRODUCTS_LIGHT_BOXES_STANDARD" }
         },
         "magnets": {
-            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/Magnets Specialty Signs.jpg", "alt": "Magnetic Sign", "variable": "PRODUCTS_MAGNETS_STANDARD" }
+            "standard": { "path": "/assets/images/products/signs/magnets/Magnets Specialty Signs.jpg", "alt": "Magnetic Sign", "variable": "PRODUCTS_MAGNETS_STANDARD" }
         },
         "a_frames": {
-            "standard": { "path": "/assets/Be seen image review updated/Specialty Signs/A Frames Specialty Signs.jpg", "alt": "A-Frame Sign", "variable": "PRODUCTS_A_FRAMES_STANDARD" }
+            "standard": { "path": "/assets/images/products/signs/a-frames/A Frames Specialty Signs.jpg", "alt": "A-Frame Sign", "variable": "PRODUCTS_A_FRAMES_STANDARD" }
         },
         "styrene": {
             "plate": { "path": "/assets/Be seen image review updated/Styrene & Acrylic/Styrene Plate.jpg", "alt": "Styrene Plate", "variable": "PRODUCTS_STYRENE_PLATE" }

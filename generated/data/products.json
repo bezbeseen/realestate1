@@ -67,7 +67,7 @@
         ],
         "price": "$5.45",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -78,7 +78,7 @@
         ],
         "price": "$9.10",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -89,7 +89,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -100,7 +100,7 @@
         ],
         "price": "$4.84",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -112,7 +112,7 @@
         ],
         "price": "$7.28",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -124,7 +124,7 @@
         ],
         "price": "$8.72",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -136,7 +136,7 @@
         ],
         "price": "$7.92",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -148,7 +148,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -160,7 +160,7 @@
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -180,7 +180,7 @@
       "unitPrice": 5.45,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "13oz Vinyl Banner",
       "bullets": [
@@ -288,7 +288,7 @@
         ],
         "price": "$5.45",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -301,7 +301,7 @@
       "unitPrice": 5.45,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "13oz. Vinyl Banner",
       "bullets": [
@@ -352,7 +352,7 @@
         ],
         "price": "$9.10",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -365,7 +365,7 @@
       "unitPrice": 9.1,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "18oz. Blockout Banner",
       "bullets": [
@@ -416,7 +416,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -429,7 +429,7 @@
       "unitPrice": 19.8,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Backlit Banner",
       "bullets": [
@@ -480,7 +480,7 @@
         ],
         "price": "$4.84",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -493,7 +493,7 @@
       "unitPrice": 4.84,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Mesh Banner",
       "bullets": [
@@ -545,7 +545,7 @@
         ],
         "price": "$7.28",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -559,7 +559,7 @@
       "unitPrice": 7.28,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Indoor Banner",
       "bullets": [
@@ -612,7 +612,7 @@
         ],
         "price": "$8.72",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -626,7 +626,7 @@
       "unitPrice": 8.72,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Pole Banner",
       "bullets": [
@@ -679,7 +679,7 @@
         ],
         "price": "$7.92",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -693,7 +693,7 @@
       "unitPrice": 7.92,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "9oz. Fabric Banner",
       "bullets": [
@@ -746,7 +746,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -760,7 +760,7 @@
       "unitPrice": 19.8,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Blockout Fabric Banner",
       "bullets": [
@@ -813,7 +813,7 @@
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -827,7 +827,7 @@
       "unitPrice": 15.4,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Tension Fabric",
       "bullets": [
@@ -894,7 +894,7 @@
       "unitPrice": 90.24,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Hand Banner",
       "bullets": [
@@ -942,7 +942,7 @@
         ],
         "price": "$6.60",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -955,7 +955,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -967,7 +967,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -979,7 +979,7 @@
         ],
         "price": "$10.12",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -991,7 +991,7 @@
         ],
         "price": "$12.12",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1003,7 +1003,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1015,7 +1015,7 @@
         ],
         "price": "$15.20",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1027,7 +1027,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1039,7 +1039,7 @@
         ],
         "price": "$24.20",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1051,7 +1051,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1063,7 +1063,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1074,7 +1074,7 @@
         ],
         "price": "$16.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -1082,7 +1082,7 @@
       "unitPrice": 6.6,
       "minCharge": 20,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Adhesive Vinyl",
       "bullets": [
@@ -1143,7 +1143,7 @@
       "unitPrice": 12,
       "minCharge": 25,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Posters",
       "bullets": [
@@ -1282,7 +1282,7 @@
         ],
         "price": "$6.60",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1295,7 +1295,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1307,7 +1307,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1319,7 +1319,7 @@
         ],
         "price": "$10.12",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1331,7 +1331,7 @@
         ],
         "price": "$12.12",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1343,7 +1343,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1355,7 +1355,7 @@
         ],
         "price": "$15.20",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1367,7 +1367,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1379,7 +1379,7 @@
         ],
         "price": "$24.20",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1391,7 +1391,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1403,7 +1403,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -1414,7 +1414,7 @@
         ],
         "price": "$16.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -1422,7 +1422,7 @@
       "unitPrice": 6.6,
       "minCharge": 20,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Adhesive Vinyl",
       "bullets": [
@@ -1483,7 +1483,7 @@
       "unitPrice": 12.12,
       "minCharge": 28,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Premium Window Cling",
       "bullets": [
@@ -1609,7 +1609,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -1617,7 +1617,7 @@
       "unitPrice": 14.52,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Canvas Roll",
       "bullets": [
@@ -1742,7 +1742,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -1750,7 +1750,7 @@
       "unitPrice": 14.52,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Canvas Roll",
       "bullets": [
@@ -4106,7 +4106,7 @@
         ],
         "price": "$5.25",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -4137,7 +4137,7 @@
       "unitPrice": 18,
       "minCharge": 35,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Backlit Film",
       "bullets": [
@@ -4557,7 +4557,7 @@
         ],
         "price": "$5.25",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -4920,8 +4920,8 @@
     ],
     "generation_pipeline": "standard_product_v1",
     "name": "Tension Fabric Stand",
-    "description": "Dye sub washable graphic, heavy duty but portable. Best for double sided displays.",
-    "meta_description": "Tension fabric retractable banner stand. Dye sub washable graphic, heavy duty, portable. 36x90 and 48x90 sizes.",
+    "description": "Dye sub washable graphic, heavy duty but portable. Best for double sided.",
+    "meta_description": "Tension fabric retractable banner. Dye sub washable, heavy duty, portable. 36x90 and 48x90.",
     "catalog_products": [
       {
         "name": "Tension Fabric Stand",
@@ -4986,8 +4986,8 @@
     ],
     "generation_pipeline": "standard_product_v1",
     "name": "Standard Retractable",
-    "description": "The original retractable banner. Compact and economic. Multiple sizes.",
-    "meta_description": "Standard retractable banner stand. Compact, economic. 23x66, 24x81, 33x81, 47x81 sizes.",
+    "description": "The original retractable banner. Compact and economic.",
+    "meta_description": "Standard retractable banner stand. Compact, economic. Multiple sizes.",
     "catalog_products": [
       {
         "name": "Standard Retractable",
@@ -5061,7 +5061,7 @@
     "generation_pipeline": "standard_product_v1",
     "name": "Deluxe Retractable",
     "description": "Upgraded retractable hardware. Single or double sided.",
-    "meta_description": "Deluxe retractable banner stand. Upgraded hardware. 33x81 single or double sided.",
+    "meta_description": "Deluxe retractable banner. Upgraded hardware. 33x81 single or double sided.",
     "catalog_products": [
       {
         "name": "Deluxe Retractable",
@@ -5122,8 +5122,8 @@
     ],
     "generation_pipeline": "standard_product_v1",
     "name": "SD Retractable",
-    "description": "Adjustable height retractable. Top of the line. 36x92, 48x92, 60x92.",
-    "meta_description": "SD retractable banner stand. Adjustable height, top of the line. 36x92, 48x92, 60x92.",
+    "description": "Adjustable height retractable. Top of the line.",
+    "meta_description": "SD retractable banner. Adjustable height, top of the line. Multiple sizes.",
     "catalog_products": [
       {
         "name": "SD Retractable",
@@ -5190,8 +5190,8 @@
     ],
     "generation_pipeline": "standard_product_v1",
     "name": "X-Stand",
-    "description": "Easy change graphics. Ultra lightweight retractable.",
-    "meta_description": "X-Stand retractable banner. Easy change graphics, ultra lightweight. 24x63 and 32x71.",
+    "description": "Easy change graphics. Ultra lightweight.",
+    "meta_description": "X-Stand retractable banner. Easy change graphics, ultra lightweight.",
     "catalog_products": [
       {
         "name": "X-Stand",
@@ -5254,8 +5254,8 @@
     ],
     "generation_pipeline": "standard_product_v1",
     "name": "Step and Repeat Backdrop",
-    "description": "High quality fabric graphic. Large tube, heavy duty. 10' W x 8' H.",
-    "meta_description": "Step and repeat backdrop. High quality fabric graphic, large tube, heavy duty. 10x8 ft.",
+    "description": "High quality fabric graphic. Large tube, heavy duty.",
+    "meta_description": "Step and repeat backdrop. High quality fabric, large tube, heavy duty. 10x8 ft.",
     "catalog_products": [
       {
         "name": "Step and Repeat Backdrop",
@@ -5309,8 +5309,8 @@
     ],
     "generation_pipeline": "standard_product_v1",
     "name": "Table Top Banner Stand",
-    "description": "Stay flat vinyl graphic. Mini retractable. 11.5x17.5 in.",
-    "meta_description": "Table top banner stand. Stay flat vinyl graphic, mini retractable. 11.5x17.5 inch.",
+    "description": "Stay flat vinyl graphic. Mini retractable.",
+    "meta_description": "Table top banner stand. Stay flat vinyl, mini retractable. 11.5x17.5 in.",
     "catalog_products": [
       {
         "name": "Table Top Banner Stand",
@@ -5931,7 +5931,7 @@
     "generation_pipeline": "standard_product_v1",
     "name": "Real Estate A-Frame",
     "description": "Full color 24\" x 18\" coroplast yard signs. Portable A-frame for easy setup.",
-    "meta_description": "Portable real estate A-frame yard signs. 24x18 full color coroplast prints for property marketing.",
+    "meta_description": "Portable real estate A-frame yard signs. 24x18 full color coroplast for property marketing.",
     "catalog_products": [
       {
         "name": "Real Estate A-Frame",
@@ -6041,7 +6041,7 @@
     "generation_pipeline": "standard_product_v1",
     "name": "Real Estate Frame",
     "description": "Steel framed outdoor yard sign with drop-in 1 or 2 sided graphics.",
-    "meta_description": "Steel framed outdoor real estate sign. Drop-in one or two sided graphics for property marketing.",
+    "meta_description": "Steel framed outdoor real estate sign. Drop-in one or two sided graphics.",
     "catalog_products": [
       {
         "name": "Real Estate Frame",
@@ -6102,19 +6102,19 @@
         ],
         "price": "$15.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Coroplast",
-        "slug": "coroplast",
+        "slug": "coroplast-sign-panel",
         "bullets": [
           "Custom size indoor/outdoor",
           "4mm coroplast, H-Stake option"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -6126,69 +6126,69 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "PVC Board",
-        "slug": "pvc-board",
+        "slug": "pvc-sign-board",
         "bullets": [
           "Durable indoor and short term outdoor"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Styrene",
-        "slug": "styrene",
+        "slug": "styrene-sign-board",
         "bullets": [
           "Semi-rigid, flexible, curveable"
         ],
         "price": "$16.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Foam Board",
-        "slug": "foamcore",
+        "slug": "foam-board-sign-panel",
         "bullets": [
           "Lightweight poster board",
           "Indoor use only"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "GatorFoam",
-        "slug": "gatorfoam",
+        "slug": "gatorfoam-sign-panel",
         "bullets": [
           "Lightweight indoor",
           "Extra heavy-duty surface"
         ],
         "price": "$20.04",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": [
           {
             "unit": "3/16\" White",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" White",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           },
           {
             "unit": "3/16\" Black",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" Black",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           }
         ]
       },
@@ -6246,7 +6246,7 @@
       "unitPrice": 15.4,
       "minCharge": 28,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Coroplast",
       "bullets": [
@@ -6294,19 +6294,19 @@
         ],
         "price": "$15.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Coroplast",
-        "slug": "coroplast",
+        "slug": "coroplast-sign-panel",
         "bullets": [
           "Custom size indoor/outdoor",
           "4mm coroplast, H-Stake option"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -6318,69 +6318,69 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "PVC Board",
-        "slug": "pvc-board",
+        "slug": "pvc-sign-board",
         "bullets": [
           "Durable indoor and short term outdoor"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Styrene",
-        "slug": "styrene",
+        "slug": "styrene-sign-board",
         "bullets": [
           "Semi-rigid, flexible, curveable"
         ],
         "price": "$16.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Foam Board",
-        "slug": "foamcore",
+        "slug": "foam-board-sign-panel",
         "bullets": [
           "Lightweight poster board",
           "Indoor use only"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "GatorFoam",
-        "slug": "gatorfoam",
+        "slug": "gatorfoam-sign-panel",
         "bullets": [
           "Lightweight indoor",
           "Extra heavy-duty surface"
         ],
         "price": "$20.04",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": [
           {
             "unit": "3/16\" White",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" White",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           },
           {
             "unit": "3/16\" Black",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" Black",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           }
         ]
       },
@@ -6438,7 +6438,7 @@
       "unitPrice": 15.4,
       "minCharge": 28,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Foam Board",
       "bullets": [
@@ -6479,7 +6479,7 @@
     "catalog_products": [
       {
         "name": "Styrene",
-        "slug": "styrene",
+        "slug": "styrene-sign-board",
         "bullets": [
           ".020\" High Impact Polystyrene",
           "Blockout material",
@@ -6490,7 +6490,7 @@
         ],
         "price": "$16.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -6502,19 +6502,19 @@
         ],
         "price": "$15.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Coroplast",
-        "slug": "coroplast",
+        "slug": "coroplast-sign-panel",
         "bullets": [
           "Custom size indoor/outdoor",
           "4mm coroplast, H-Stake option"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -6526,58 +6526,58 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "PVC Board",
-        "slug": "pvc-board",
+        "slug": "pvc-sign-board",
         "bullets": [
           "Durable indoor and short term outdoor"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Foam Board",
-        "slug": "foamcore",
+        "slug": "foam-board-sign-panel",
         "bullets": [
           "Lightweight poster board",
           "Indoor use only"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "GatorFoam",
-        "slug": "gatorfoam",
+        "slug": "gatorfoam-sign-panel",
         "bullets": [
           "Lightweight indoor",
           "Extra heavy-duty surface"
         ],
         "price": "$20.04",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": [
           {
             "unit": "3/16\" White",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" White",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           },
           {
             "unit": "3/16\" Black",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" Black",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           }
         ]
       },
@@ -6635,7 +6635,7 @@
       "unitPrice": 16.96,
       "minCharge": 32,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Styrene",
       "bullets": [
@@ -6687,19 +6687,19 @@
         ],
         "price": "$15.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Coroplast",
-        "slug": "coroplast",
+        "slug": "coroplast-sign-panel",
         "bullets": [
           "Custom size indoor/outdoor",
           "4mm coroplast, H-Stake option"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -6711,69 +6711,69 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "PVC Board",
-        "slug": "pvc-board",
+        "slug": "pvc-sign-board",
         "bullets": [
           "Durable indoor and short term outdoor"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Styrene",
-        "slug": "styrene",
+        "slug": "styrene-sign-board",
         "bullets": [
           "Semi-rigid, flexible, curveable"
         ],
         "price": "$16.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Foam Board",
-        "slug": "foamcore",
+        "slug": "foam-board-sign-panel",
         "bullets": [
           "Lightweight poster board",
           "Indoor use only"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "GatorFoam",
-        "slug": "gatorfoam",
+        "slug": "gatorfoam-sign-panel",
         "bullets": [
           "Lightweight indoor",
           "Extra heavy-duty surface"
         ],
         "price": "$20.04",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": [
           {
             "unit": "3/16\" White",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" White",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           },
           {
             "unit": "3/16\" Black",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" Black",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           }
         ]
       },
@@ -6889,7 +6889,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -6897,7 +6897,7 @@
       "unitPrice": 15.96,
       "minCharge": 30,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Magnets",
       "bullets": [
@@ -6945,19 +6945,19 @@
         ],
         "price": "$15.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Coroplast",
-        "slug": "coroplast",
+        "slug": "coroplast-sign-panel",
         "bullets": [
           "Custom size indoor/outdoor",
           "4mm coroplast, H-Stake option"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -6969,69 +6969,69 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "PVC Board",
-        "slug": "pvc-board",
+        "slug": "pvc-sign-board",
         "bullets": [
           "Durable indoor and short term outdoor"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Styrene",
-        "slug": "styrene",
+        "slug": "styrene-sign-board",
         "bullets": [
           "Semi-rigid, flexible, curveable"
         ],
         "price": "$16.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Foam Board",
-        "slug": "foamcore",
+        "slug": "foam-board-sign-panel",
         "bullets": [
           "Lightweight poster board",
           "Indoor use only"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "GatorFoam",
-        "slug": "gatorfoam",
+        "slug": "gatorfoam-sign-panel",
         "bullets": [
           "Lightweight indoor",
           "Extra heavy-duty surface"
         ],
         "price": "$20.04",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": [
           {
             "unit": "3/16\" White",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" White",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           },
           {
             "unit": "3/16\" Black",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" Black",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           }
         ]
       },
@@ -7089,7 +7089,7 @@
       "unitPrice": 15.4,
       "minCharge": 28,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "PVC Board",
       "bullets": [
@@ -7280,7 +7280,7 @@
         ],
         "price": "$5.25",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7299,7 +7299,7 @@
       "unitPrice": 5.25,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "Custom SEG Fabric",
       "bullets": [
@@ -7655,7 +7655,7 @@
         ],
         "price": "$6.60",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7668,7 +7668,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7680,7 +7680,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7692,7 +7692,7 @@
         ],
         "price": "$10.12",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7704,7 +7704,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7716,7 +7716,7 @@
         ],
         "price": "$15.20",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7728,7 +7728,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7740,7 +7740,7 @@
         ],
         "price": "$24.20",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7752,7 +7752,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7764,7 +7764,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -7775,7 +7775,7 @@
         ],
         "price": "$16.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -7783,7 +7783,7 @@
       "unitPrice": 12.12,
       "minCharge": 28,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Premium Window Cling",
       "bullets": [
@@ -7952,7 +7952,7 @@
         ],
         "price": "$6.60",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8008,7 +8008,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8064,7 +8064,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8119,7 +8119,7 @@
         ],
         "price": "$10.12",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8174,7 +8174,7 @@
         ],
         "price": "$14.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8229,7 +8229,7 @@
         ],
         "price": "$15.20",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8284,7 +8284,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8339,7 +8339,7 @@
         ],
         "price": "$24.20",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8394,7 +8394,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8449,7 +8449,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8503,7 +8503,7 @@
         ],
         "price": "$16.52",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8552,19 +8552,19 @@
         ],
         "price": "$15.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Coroplast",
-        "slug": "coroplast",
+        "slug": "coroplast-sign-panel",
         "bullets": [
           "Custom size indoor/outdoor",
           "4mm coroplast, H-Stake option"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -8576,69 +8576,69 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "PVC Board",
-        "slug": "pvc-board",
+        "slug": "pvc-sign-board",
         "bullets": [
           "Durable indoor and short term outdoor"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Styrene",
-        "slug": "styrene",
+        "slug": "styrene-sign-board",
         "bullets": [
           "Semi-rigid, flexible, curveable"
         ],
         "price": "$16.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Foam Board",
-        "slug": "foamcore",
+        "slug": "foam-board-sign-panel",
         "bullets": [
           "Lightweight poster board",
           "Indoor use only"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "GatorFoam",
-        "slug": "gatorfoam",
+        "slug": "gatorfoam-sign-panel",
         "bullets": [
           "Lightweight indoor",
           "Extra heavy-duty surface"
         ],
         "price": "$20.04",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": [
           {
             "unit": "3/16\" White",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" White",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           },
           {
             "unit": "3/16\" Black",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" Black",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           }
         ]
       },
@@ -8696,7 +8696,7 @@
       "unitPrice": 19.8,
       "minCharge": 35,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Aluminum Sandwich Board",
       "bullets": [
@@ -8797,7 +8797,7 @@
         ],
         "price": "$15.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8852,7 +8852,7 @@
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8907,7 +8907,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -8961,7 +8961,7 @@
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -9014,7 +9014,7 @@
         ],
         "price": "$16.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -9068,7 +9068,7 @@
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -9123,23 +9123,23 @@
         ],
         "price": "$20.04",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": [
           {
             "unit": "3/16\" White",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" White",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           },
           {
             "unit": "3/16\" Black",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" Black",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           }
         ]
       }
@@ -9317,26 +9317,26 @@
     "catalog_products": [
       {
         "name": "Magnets",
-        "slug": "magnets",
+        "slug": "flexible-car-magnets",
         "bullets": [
           "High strength indoor/outdoor",
           "Flexible 30 mil magnet"
         ],
         "price": "$15.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Coroplast",
-        "slug": "coroplast",
+        "slug": "coroplast-sign-panel",
         "bullets": [
           "Custom size indoor/outdoor",
           "4mm coroplast, H-Stake option"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -9348,69 +9348,69 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "PVC Board",
-        "slug": "pvc-board",
+        "slug": "pvc-sign-board",
         "bullets": [
           "Durable indoor and short term outdoor"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Styrene",
-        "slug": "styrene",
+        "slug": "styrene-sign-board",
         "bullets": [
           "Semi-rigid, flexible, curveable"
         ],
         "price": "$16.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "Foam Board",
-        "slug": "foamcore",
+        "slug": "foam-board-sign-panel",
         "bullets": [
           "Lightweight poster board",
           "Indoor use only"
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
         "name": "GatorFoam",
-        "slug": "gatorfoam",
+        "slug": "gatorfoam-sign-panel",
         "bullets": [
           "Lightweight indoor",
           "Extra heavy-duty surface"
         ],
         "price": "$20.04",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": [
           {
             "unit": "3/16\" White",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" White",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           },
           {
             "unit": "3/16\" Black",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" Black",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           }
         ]
       },
@@ -9468,7 +9468,7 @@
       "unitPrice": 15.96,
       "minCharge": 30,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": true,
       "name": "Magnets",
       "bullets": [
@@ -9569,7 +9569,7 @@
         ],
         "price": "$15.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -9624,7 +9624,7 @@
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -9679,7 +9679,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -9733,7 +9733,7 @@
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -9786,7 +9786,7 @@
         ],
         "price": "$16.96",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -9840,7 +9840,7 @@
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       }
     ],
@@ -9895,23 +9895,23 @@
         ],
         "price": "$20.04",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": [
           {
             "unit": "3/16\" White",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" White",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           },
           {
             "unit": "3/16\" Black",
-            "price": "$20.04 per ft²"
+            "price": "$20.04 per ft\u00b2"
           },
           {
             "unit": "1/2\" Black",
-            "price": "$40.04 per ft²"
+            "price": "$40.04 per ft\u00b2"
           }
         ]
       }
@@ -10175,7 +10175,7 @@
         ],
         "price": "$5.45",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -10186,7 +10186,7 @@
         ],
         "price": "$9.10",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -10197,7 +10197,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -10208,7 +10208,7 @@
         ],
         "price": "$4.84",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -10220,7 +10220,7 @@
         ],
         "price": "$7.28",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -10232,7 +10232,7 @@
         ],
         "price": "$8.72",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -10244,7 +10244,7 @@
         ],
         "price": "$7.92",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -10256,7 +10256,7 @@
         ],
         "price": "$19.80",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -10268,7 +10268,7 @@
         ],
         "price": "$15.40",
         "priceType": "per-sqft",
-        "unit": "per ft²",
+        "unit": "per ft\u00b2",
         "options": null
       },
       {
@@ -10288,7 +10288,7 @@
       "unitPrice": 5.45,
       "minCharge": null,
       "perInch": false,
-      "unitLabel": "per ft²",
+      "unitLabel": "per ft\u00b2",
       "grommetOnly": false,
       "name": "13oz Vinyl Banner",
       "bullets": [
